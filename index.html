@@ -432,6 +432,13 @@ a{color:inherit;text-decoration:none;}
   margin-bottom:1.25rem;max-width:580px;
 }
 .about-bio p{margin-bottom:.75rem;}
+.credential-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:1.25rem;}
+.cred-card{background:#0f0f1a;border-radius:4px;padding:1rem 1.1rem;display:flex;flex-direction:column;gap:.3rem;}
+.cred-card--accent{background:#1a1a2e;border-top:2px solid var(--gold);}
+.cred-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);}
+.cred-title{font-size:.95rem;font-weight:700;color:#ffffff;line-height:1.2;font-family:'Playfair Display',serif;}
+.cred-sub{font-size:.75rem;color:rgba(255,255,255,0.5);font-style:italic;line-height:1.4;}
+@media(max-width:600px){.credential-grid{grid-template-columns:1fr;}}
 .credential-row{
   display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.75rem;
 }
@@ -499,7 +506,7 @@ a{color:inherit;text-decoration:none;}
       <a href="#profiles">Profiles</a>
       <a href="#resources">Resources</a>
       <a href="#about">About</a>
-      <a href="https://www.teacherspayteachers.com" target="_blank" class="nav-cta">Get Materials</a>
+      <a href="https://www.teacherspayteachers.com/Store/Economic-Democracy" target="_blank" class="nav-cta">Get Materials</a>
     </nav>
   </div>
 </header>
@@ -714,7 +721,8 @@ a{color:inherit;text-decoration:none;}
         <span class="resource-badge">$2.99</span>
         <span class="resource-title">Framework Handout</span>
         <span class="resource-desc">The matrix, four quadrant descriptions, placement activity, sentence frames, and reflection prompts. Five pages. Photocopier-friendly. Buy once, print every year.</span>
-        <a href="https://www.teacherspayteachers.com" target="_blank" class="resource-link">Get on TPT</a>
+        <a href="https://www.teacherspayteachers.com/Product/Economic-Democracy-Framework-15877089" target="_blank" class="resource-link">Get on TPT</a>
+        <a href="https://alfredo281.gumroad.com/l/ed-framework-handout" target="_blank" class="resource-link" style="margin-top:.25rem;">Get on Gumroad</a>
       </div>
     </div>
   </div>
@@ -733,7 +741,8 @@ a{color:inherit;text-decoration:none;}
         <span class="resource-badge">$2.99</span>
         <span class="resource-title">Revolution, Counterrevolution, and Reform</span>
         <span class="resource-desc">Student conceptual essay on the cyclical decision point in American history. Three historical decision points, five discussion questions, matrix application activity.</span>
-        <a href="https://www.teacherspayteachers.com" target="_blank" class="resource-link">Get on TPT</a>
+        <a href="https://www.teacherspayteachers.com/Product/Revolution-Counterrevolution-and-Reform-Student-Essay-15895016" target="_blank" class="resource-link">Get on TPT</a>
+        <a href="https://alfredo281.gumroad.com/l/ed-revolution-reform" target="_blank" class="resource-link" style="margin-top:.25rem;">Get on Gumroad</a>
       </div>
     </div>
   </div>
@@ -752,7 +761,8 @@ a{color:inherit;text-decoration:none;}
         <span class="resource-badge">$4.99</span>
         <span class="resource-title">Civic Economy Role-Play Lab</span>
         <span class="resource-desc">Seven roles. Six policy options. One governing dilemma. Students negotiate a real reform package under genuine constraint. The full democratic experience. 90–120 minutes.</span>
-        <a href="https://www.teacherspayteachers.com" target="_blank" class="resource-link">Get on TPT</a>
+        <a href="https://www.teacherspayteachers.com/Product/Civic-Economy-Role-Play-Lab-15895053" target="_blank" class="resource-link">Get on TPT</a>
+        <a href="https://alfredo281.gumroad.com/l/ed-role-play-lab" target="_blank" class="resource-link" style="margin-top:.25rem;">Get on Gumroad</a>
       </div>
     </div>
   </div>
@@ -788,13 +798,37 @@ a{color:inherit;text-decoration:none;}
         <p>I spent 14 years in public school classrooms — from founding a high school in the South Bronx to AP and IB History in Pasadena and U.S. History in Oakland — before spending the past decade building economic ecosystems for communities systematically left out of wealth creation.</p>
         <p>These lessons are grounded in classroom reality and shaped by what actually happens when communities try to build wealth, navigate power, and exercise democratic agency in the real world. That combination — classroom and lived experience — is what makes this curriculum different.</p>
       </div>
-      <div class="credential-row">
-        <span class="credential">Teacher of the Year · Bronx 2002</span>
-        <span class="credential">Founding Teacher · Mott Haven Village Prep</span>
-        <span class="credential">AP &amp; IB History · Blair HS Pasadena</span>
-        <span class="credential">Bay Area Director · NFTE</span>
-        <span class="credential">Co-Founder · ESO Ventures</span>
-        <span class="credential">TEDx · Top 10 Globally · May 2025</span>
+      <div class="credential-grid">
+        <div class="cred-card">
+          <span class="cred-label">Teacher of the Year</span>
+          <span class="cred-title">Bronx High Schools</span>
+          <span class="cred-sub">2002–2003 &nbsp;·&nbsp; Office of the Superintendent</span>
+        </div>
+        <div class="cred-card">
+          <span class="cred-label">Founding Teacher</span>
+          <span class="cred-title">Mott Haven Village Prep</span>
+          <span class="cred-sub">South Bronx &nbsp;·&nbsp; Small Schools Movement</span>
+        </div>
+        <div class="cred-card">
+          <span class="cred-label">AP &amp; IB History</span>
+          <span class="cred-title">Blair High School</span>
+          <span class="cred-sub">Pasadena, CA &nbsp;·&nbsp; Honors &amp; IB Programme</span>
+        </div>
+        <div class="cred-card cred-card--accent">
+          <span class="cred-label">Bay Area Director</span>
+          <span class="cred-title">NFTE</span>
+          <span class="cred-sub">Network for Teaching Entrepreneurship</span>
+        </div>
+        <div class="cred-card cred-card--accent">
+          <span class="cred-label">Co-Founder</span>
+          <span class="cred-title">ESO Ventures</span>
+          <span class="cred-sub">$22M raised &nbsp;·&nbsp; 700+ businesses incubated</span>
+        </div>
+        <div class="cred-card cred-card--accent">
+          <span class="cred-label">TEDx Talk</span>
+          <span class="cred-title">Top 10 Globally</span>
+          <span class="cred-sub">May 2025 &nbsp;·&nbsp; 100,000+ views</span>
+        </div>
       </div>
     </div>
   </div>
