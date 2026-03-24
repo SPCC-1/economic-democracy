@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Economic Democracy Curriculum — Economic Democracy Curriculum</title>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  :root{
+    --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+    --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+    --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+  }
+  html{font-size:16px;scroll-behavior:smooth;}
+  body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+  /* ── Nav ── */
+  .site-nav{border-bottom:2px solid var(--black);padding:.75rem 0;position:sticky;top:0;background:var(--paper);z-index:100;}
+  .nav-inner{max-width:960px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;gap:2rem;flex-wrap:wrap;}
+  .nav-home{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--black);white-space:nowrap;}
+  .nav-home span{font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;display:block;font-weight:400;}
+  .nav-links{display:flex;gap:1.5rem;flex-wrap:wrap;}
+  .nav-links a{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mid);}
+  .nav-links a:hover{color:var(--black);}
+  .nav-links a.active{color:var(--black);border-bottom:1.5px solid var(--black);}
+  /* ── Page wrapper ── */
+  .page{max-width:860px;margin:0 auto;padding:0 2rem 5rem;}
+  .page-wide{max-width:960px;margin:0 auto;padding:0 2rem 5rem;}
+  /* ── Footer ── */
+  .site-footer{border-top:2px solid var(--black);padding:1.5rem 2rem;max-width:960px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+  .footer-left{font-family:'Source Serif 4',serif;font-size:.8rem;color:var(--charcoal);font-weight:600;}
+  .footer-right{font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.05em;}
+  /* ── Typography shared ── */
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.75rem;}
+  .display-title{font-family:'Playfair Display',serif;font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;}
+  .section-rule{border:none;border-top:1px solid var(--rule);margin:2.5rem 0;}
+  /* ── Print ── */
+  @media print{
+    .site-nav{display:none;}
+    body{background:white;}
+    .page,.page-wide{max-width:100%;padding:0;}
+  }
+</style>
+</head>
+<body>
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-home">Economic Democracy<span>economicdemocracy.co</span></a>
+    <div class="nav-links"><a href="index.html" class="active">Home</a><a href="framework.html">The Framework</a><a href="anthology.html">250 Voices</a><a href="index.html#resources">Resources</a></div>
+  </div>
+</nav>
+<div class="page">
+
+  <style>
+  /* hero */
+  .hero{padding:4rem 0 3rem;border-bottom:3px solid var(--black);margin-bottom:3rem;}
+  .hero-kicker{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;}
+  .hero-title{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,6vw,4.8rem);font-weight:900;line-height:1.0;letter-spacing:-.03em;color:var(--black);margin-bottom:1.25rem;}
+  .hero-title em{font-style:italic;font-weight:400;}
+  .hero-sub{font-size:1.1rem;font-weight:300;color:var(--mid);max-width:560px;line-height:1.7;margin-bottom:2rem;}
+  .hero-meta{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.08em;color:var(--charcoal);}
+  /* argument */
+  .argument{margin-bottom:3rem;}
+  .argument-label{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;}
+  .argument p{font-size:1.05rem;font-weight:300;line-height:1.8;color:var(--ink);margin-bottom:1.25rem;max-width:640px;}
+  .argument p:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+  .argument p:last-child{margin-bottom:0;}
+  /* matrix teaser */
+  .matrix-block{background:var(--cream);border:1px solid var(--rule);padding:2rem;margin:2.5rem 0;display:grid;grid-template-columns:1fr 1fr;gap:1px;background-color:var(--rule);}
+  .quadrant{background:var(--cream);padding:1.25rem;display:flex;flex-direction:column;gap:.4rem;}
+  .q-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
+  .q-title{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--black);}
+  .q-desc{font-size:.8rem;color:var(--mid);font-weight:300;line-height:1.5;}
+  .matrix-caption{font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:var(--muted);letter-spacing:.06em;margin-top:1rem;text-align:center;}
+  @media(max-width:560px){.matrix-block{grid-template-columns:1fr;}}
+  /* nav cards */
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin:3rem 0;}
+  .card{background:var(--paper);padding:1.75rem;display:flex;flex-direction:column;gap:.6rem;transition:background .15s;}
+  .card:hover{background:var(--cream);}
+  .card-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);}
+  .card-title{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--black);}
+  .card-desc{font-size:.85rem;color:var(--mid);font-weight:300;line-height:1.55;flex:1;}
+  .card-link{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--charcoal);margin-top:.5rem;}
+  .card-link::after{content:' →';}
+  /* stat row */
+  .stats{display:flex;gap:3rem;flex-wrap:wrap;padding:2rem 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin:2.5rem 0;}
+  .stat-num{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;color:var(--black);line-height:1;}
+  .stat-label{font-family:'Source Serif 4',serif;font-size:.8rem;color:var(--mid);}
+</style>
+
+  <div class="hero">
+    <p class="hero-kicker">Economic Democracy Curriculum</p>
+    <h1 class="hero-title">Where should<br>power sit?<br><em>Who decides?</em></h1>
+    <p class="hero-sub">A framework for understanding how power, markets, and democracy interact — and why intelligent people who have experienced the same political economy reach such different conclusions about what it means and what should change.</p>
+    <p class="hero-meta">Grades 11–12 &nbsp;·&nbsp; AP / Honors / Seminar &nbsp;·&nbsp; Alfredo Mathew III &nbsp;·&nbsp; Working World LLC</p>
+  </div>
+
+  <div class="argument">
+    <p class="argument-label">The Argument</p>
+    <p>Public debates about the economy often sound chaotic, polarized, or emotional. People argue past one another using the same words — freedom, innovation, fairness, democracy — but mean very different things by them. Most political frameworks rely on a single left-right spectrum. That approach fails to capture the complexity of modern economic life, especially in an era of global markets, digital platforms, and artificial intelligence.</p>
+    <p>This curriculum uses two independent axes to map economic worldviews: where power is located, and how accountable it should be to democracy. Together, these axes reveal four distinct ways of thinking about the economy. None of them is simply correct. Each reflects different values, different assessments of risk, and different readings of history.</p>
+    <p>The goal is not consensus. It is democratic reasoning — the capacity to identify assumptions, distinguish values from facts, understand tradeoffs, and revise one's position in light of evidence. These are skills that matter beyond any economics class.</p>
+  </div>
+
+  <div class="matrix-block">
+    <div class="quadrant">
+      <span class="q-label">Quadrant I</span>
+      <span class="q-title">Public Power, Democratic Accountability</span>
+      <span class="q-desc">Markets should be shaped to serve collective goals. Regulation is a feature, not a bug.</span>
+    </div>
+    <div class="quadrant">
+      <span class="q-label">Quadrant II</span>
+      <span class="q-title">Private Markets, Democratic Guardrails</span>
+      <span class="q-desc">Private enterprise drives progress, but requires democratic limits to prevent abuse.</span>
+    </div>
+    <div class="quadrant">
+      <span class="q-label">Quadrant III</span>
+      <span class="q-title">Public Power, Expert Control</span>
+      <span class="q-desc">Complex systems require coordinated expertise. Democracy matters, but often indirectly.</span>
+    </div>
+    <div class="quadrant">
+      <span class="q-label">Quadrant IV</span>
+      <span class="q-title">Private Power, Elite Control</span>
+      <span class="q-desc">Progress comes from builders, not voters. Speed and scale are advantages, not threats.</span>
+    </div>
+  </div>
+  <p class="matrix-caption">The Power–Democracy–Economy Matrix &nbsp;·&nbsp; <a href="framework.html" style="color:var(--charcoal);text-decoration:underline;">Explore the framework →</a></p>
+
+  <div class="stats">
+    <div><div class="stat-num">250</div><div class="stat-label">Voices in the anthology<br>One per year of the United States</div></div>
+    <div><div class="stat-num">4</div><div class="stat-label">Quadrants<br>Every worldview represented</div></div>
+    <div><div class="stat-num">8</div><div class="stat-label">Categories<br>From founders to platform builders</div></div>
+    <div><div class="stat-num">1776</div><div class="stat-label">The unanswered question<br>still being argued today</div></div>
+  </div>
+
+  <div class="cards">
+    <a href="framework.html" class="card">
+      <span class="card-label">Start Here</span>
+      <span class="card-title">The Framework</span>
+      <span class="card-desc">Two axes. Four quadrants. A tool for mapping economic worldviews — not sorting people into boxes.</span>
+      <span class="card-link">Explore the matrix</span>
+    </a>
+    <a href="anthology.html" class="card">
+      <span class="card-label">250 Voices</span>
+      <span class="card-title">The Anthology</span>
+      <span class="card-desc">One voice for every year of the United States. From Hamilton to adrienne maree brown. From Keynes to Octavia Butler.</span>
+      <span class="card-link">Browse the anthology</span>
+    </a>
+    <a href="index.html#resources" class="card">
+      <span class="card-label">Free Download</span>
+      <span class="card-title">For Educators</span>
+      <span class="card-desc">Educator overview and teacher guide. Facilitation options, lesson structure, assessment guidance. Ready to use.</span>
+      <span class="card-link">Get the teacher guide</span>
+    </a>
+    <a href="index.html#resources" class="card">
+      <span class="card-label">$2.99</span>
+      <span class="card-title">For Students</span>
+      <span class="card-desc">The student handout. The matrix, four quadrant descriptions, placement activity, sentence frames, and reflection prompts.</span>
+      <span class="card-link">Get the student handout</span>
+    </a>
+  </div>
+
+</div>
+<footer class="site-footer">
+  <div class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC &nbsp;&middot;&nbsp; economicdemocracy.co</div>
+  <div class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-sonnet-4-6)</div>
+</footer>
+</body>
+</html>
