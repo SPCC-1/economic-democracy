@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Framework: Power, Democracy, and the Economy — Teacher Guide</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; color: #111; background: #fff; font-size: 14px; line-height: 1.5; }
+
+  .site-header { display: flex; align-items: stretch; background: #111; }
+  .site-header-main { flex: 1; padding: 12px 20px; }
+  .site-header-main .store-name { color: #fff; font-size: 15px; font-weight: bold; }
+  .site-header-main .store-sub { color: #bbb; font-size: 12px; }
+  .site-header-badge { background: #555; padding: 12px 20px; display: flex; align-items: center; }
+  .site-header-badge span { color: #fff; font-size: 12px; font-weight: bold; white-space: nowrap; }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 36px 32px; }
+
+  h1 { font-size: 32px; font-weight: bold; color: #111; line-height: 1.1; margin-bottom: 4px; }
+  h2.subtitle { font-size: 16px; font-weight: bold; color: #555; margin-bottom: 10px; }
+  .rule { height: 2px; background: #333; margin: 10px 0 16px; }
+
+  .tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+  .tag { background: #f0f0f0; border: 1px solid #ccc; color: #111; font-size: 11px; font-weight: bold; padding: 4px 10px; }
+
+  .includes-box { border-left: 3px solid #333; background: #f0f0f0; padding: 12px 16px; margin-bottom: 24px; }
+  .includes-box p { font-size: 13px; line-height: 1.6; margin-top: 4px; }
+
+  .section-heading { font-size: 15px; font-weight: bold; color: #111; border-bottom: 2px solid #333; padding-bottom: 5px; margin: 28px 0 12px; }
+
+  p.body { font-size: 13px; line-height: 1.7; margin-bottom: 10px; }
+  p.body-bold { font-size: 13px; font-weight: bold; line-height: 1.7; margin-bottom: 8px; }
+
+  ul.plain { list-style: none; padding: 0; margin-bottom: 10px; }
+  ul.plain li { font-size: 13px; line-height: 1.6; padding: 3px 0 3px 14px; position: relative; }
+  ul.plain li::before { content: "•"; position: absolute; left: 0; color: #555; }
+
+  .axes-table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+  .axes-table td { padding: 10px 12px; font-size: 13px; border-bottom: 1px solid #ccc; vertical-align: middle; }
+  .axes-table .axis-label { background: #222; color: #fff; font-weight: bold; width: 70px; text-align: center; }
+  .axes-table .axis-name { background: #f0f0f0; font-weight: bold; width: 160px; }
+  .axes-table .axis-desc { background: #fff; }
+
+  .quad-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: #333; margin-bottom: 20px; }
+  .quad-cell { background: #f0f0f0; padding: 14px; }
+  .quad-label { background: #222; color: #fff; font-size: 10px; font-weight: bold; padding: 4px 8px; margin: -14px -14px 10px; text-align: center; letter-spacing: 0.5px; }
+  .quad-title { font-size: 13px; font-weight: bold; margin-bottom: 4px; }
+  .quad-italic { font-size: 12px; color: #555; font-style: italic; margin-bottom: 6px; }
+  .quad-body { font-size: 12px; line-height: 1.6; color: #222; margin-bottom: 6px; }
+  .quad-tension { font-size: 11px; color: #888; font-style: italic; }
+
+  .dark-banner { background: #222; color: #fff; padding: 10px 14px; margin-bottom: 8px; }
+  .dark-banner.mid { background: #555; }
+  .dark-banner .banner-title { font-size: 13px; font-weight: bold; }
+  .dark-banner .banner-sub { font-size: 11px; color: #bbb; margin-top: 2px; }
+
+  .steps-table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+  .steps-table td { padding: 8px 10px; font-size: 12px; vertical-align: middle; border-bottom: 1px solid #ccc; }
+  .steps-table .step-label { background: #222; color: #fff; font-weight: bold; width: 70px; text-align: center; }
+  .steps-table .step-desc { background: #f0f0f0; }
+
+  .anth-table { width: 100%; border-collapse: collapse; margin-bottom: 4px; }
+  .anth-table tr:nth-child(odd) { background: #f0f0f0; }
+  .anth-table tr:nth-child(even) { background: #fff; }
+  .anth-table td { padding: 8px 10px; font-size: 12px; vertical-align: top; border-bottom: 1px solid #ccc; }
+  .anth-name { font-weight: bold; width: 130px; }
+  .anth-tend { color: #555; font-size: 11px; display: block; margin-top: 2px; }
+  .anth-why { font-size: 12px; line-height: 1.5; }
+  .anth-src { font-size: 11px; color: #555; margin-top: 3px; }
+
+  .closing-box { background: #222; color: #fff; padding: 14px 18px; text-align: center; font-size: 13px; font-style: italic; line-height: 1.7; margin-top: 20px; }
+  .doc-footer { text-align: center; font-size: 11px; color: #999; font-style: italic; padding: 14px 0 6px; }
+
+  @media (max-width: 600px) {
+    .quad-grid { grid-template-columns: 1fr; }
+    .container { padding: 20px 16px; }
+    h1 { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-main">
+    <div class="store-name">ECONOMIC DEMOCRACY &nbsp;·&nbsp; History, Power, and Participation</div>
+    <div class="store-sub">Alfredo Mathew III &nbsp;·&nbsp; <a href="https://www.alfredomathew.com" style="color:#bbb;">alfredomathew.com</a></div>
+  </div>
+  <div class="site-header-badge"><span>Teacher Guide | Free Resource</span></div>
+</header>
+
+<div class="container">
+
+  <h1>THE FRAMEWORK</h1>
+  <h2 class="subtitle">Power, Democracy, and the Economy</h2>
+  <div class="rule"></div>
+
+  <div class="tags">
+    <span class="tag">U.S. History</span>
+    <span class="tag">Government</span>
+    <span class="tag">Economics</span>
+    <span class="tag">Grades 9–12</span>
+    <span class="tag">AP / IB / Seminar</span>
+  </div>
+
+  <div class="includes-box">
+    <p><strong>This download includes two documents:</strong></p>
+    <p>1. &nbsp;Teacher Guide (this document) — free. Rationale, three-option facilitation guide, assessment criteria, and an anthology of 10 contemporary figures with matrix placements and suggested sources.</p>
+    <p>2. &nbsp;Student Handout — $2.99. Five pages: (1) introduction — why left/right is insufficient and what the two axes reveal; (2) the X/Y graph + four quadrant descriptions; (3) placement activity with three differentiated options; (4) sentence frame, paragraph writing space, and About Your Thinker reflection; (5) About the Framework + About Yourself reflections + closing.</p>
+    <p style="margin-top:8px; font-style:italic; color:#555;">Buy the student handout once. Print for every class, every year.</p>
+  </div>
+
+  <div class="section-heading">PURPOSE</div>
+  <p class="body">Public debates about the economy often sound chaotic, polarized, or emotional. People argue past one another using the same words — freedom, innovation, fairness, democracy — but mean very different things by them. Disagreements are routinely framed as left vs. right or pro-business vs. anti-business, which hides the deeper structural questions actually at stake.</p>
+  <p class="body">This framework is designed to move students beneath surface disagreement and examine the structural questions that shape modern economic life:</p>
+  <ul class="plain">
+    <li>Where should economic power sit?</li>
+    <li>Who should control it?</li>
+    <li>How much democratic oversight is necessary?</li>
+    <li>When does concentration of power become dangerous — or necessary?</li>
+  </ul>
+  <p class="body">Rather than asking students to memorize positions or choose sides, this framework helps them <strong>map worldviews, analyze assumptions, and understand tradeoffs.</strong></p>
+
+  <div class="section-heading">WHY A TWO-AXIS FRAMEWORK?</div>
+  <p class="body">Most political frameworks rely on a single left-right spectrum. That approach fails to capture the complexity of modern economic debates, especially in an era of global markets, digital platforms, and artificial intelligence.</p>
+  <p class="body-bold">This framework uses two independent axes:</p>
+  <table class="axes-table">
+    <tr>
+      <td class="axis-label">X-Axis</td>
+      <td class="axis-name">Where power is located</td>
+      <td class="axis-desc">Publicly constrained &nbsp;←→&nbsp; Privately held</td>
+    </tr>
+    <tr>
+      <td class="axis-label">Y-Axis</td>
+      <td class="axis-name">How accountable that power is</td>
+      <td class="axis-desc">High democratic accountability &nbsp;←→&nbsp; Low democratic accountability</td>
+    </tr>
+  </table>
+  <p class="body">Together, these axes reveal four distinct ways of thinking about the economy. None are inherently correct. Each reflects different values, priorities, and assessments of risk. Disagreements are often about:</p>
+  <ul class="plain">
+    <li>trust in markets vs. institutions</li>
+    <li>speed vs. consent</li>
+    <li>efficiency vs. legitimacy</li>
+    <li>expertise vs. participation</li>
+  </ul>
+
+  <div class="section-heading">THE FOUR QUADRANTS</div>
+  <div class="quad-grid">
+    <div class="quad-cell">
+      <div class="quad-label">QUADRANT I</div>
+      <div class="quad-title">Public Power + Democratic Accountability</div>
+      <div class="quad-italic">Markets should be shaped to serve collective goals.</div>
+      <div class="quad-body">Markets are designed systems. Because economic outcomes affect everyone, decisions about market structure should be subject to democratic oversight. Regulation, antitrust, and public investment are necessary tools — not obstacles — to ensure fairness, competition, and legitimacy.</div>
+      <div class="quad-tension">Core tension: How much public control is enough to protect democracy without stifling initiative?</div>
+    </div>
+    <div class="quad-cell">
+      <div class="quad-label">QUADRANT II</div>
+      <div class="quad-title">Private Markets + Democratic Guardrails</div>
+      <div class="quad-italic">Markets drive innovation best, but require limits.</div>
+      <div class="quad-body">Private enterprise and entrepreneurship are the primary engines of progress. Markets are valued for efficiency and responsiveness. However, unchecked markets can fail. Democratic institutions play a corrective role — stepping in to prevent abuse and preserve competition.</div>
+      <div class="quad-tension">Core tension: Where should guardrails end and overreach begin?</div>
+    </div>
+    <div class="quad-cell">
+      <div class="quad-label">QUADRANT III</div>
+      <div class="quad-title">Public Power + Elite / Expert Control</div>
+      <div class="quad-italic">Complex systems require centralized coordination.</div>
+      <div class="quad-body">In highly complex economies, mass participation is seen as insufficient for effective decision-making. Trained experts or technocratic bodies are trusted to manage risk. Democracy remains important, but often indirectly — through delegation rather than direct control.</div>
+      <div class="quad-tension">Core tension: Can democratic legitimacy be preserved when decisions are insulated from popular control?</div>
+    </div>
+    <div class="quad-cell">
+      <div class="quad-label">QUADRANT IV</div>
+      <div class="quad-title">Private Power + Elite Control</div>
+      <div class="quad-italic">Progress comes from builders, not voters.</div>
+      <div class="quad-body">Faith is placed in visionary leaders, entrepreneurs, and investors. Speed, scale, and concentration are seen as advantages. Democratic processes are viewed as slow and reactive — especially in fast-moving technological environments. Benefits are expected to spread outward over time.</div>
+      <div class="quad-tension">Core tension: Who protects the public when private power accelerates faster than accountability?</div>
+    </div>
+  </div>
+
+  <div class="section-heading">THE LEARNING GOAL: DEMOCRATIC REASONING</div>
+  <p class="body">The purpose of placing thinkers on this map is not to label them, praise them, or condemn them. It is to help students practice a set of democratic reasoning skills that are increasingly rare and increasingly necessary:</p>
+  <ul class="plain">
+    <li>Identifying assumptions behind arguments</li>
+    <li>Distinguishing values from facts</li>
+    <li>Understanding tradeoffs rather than searching for perfect solutions</li>
+    <li>Recognizing that power can be exercised in different forms</li>
+    <li>Revising one's position in light of new evidence</li>
+  </ul>
+  <p class="body" style="margin-top:10px;"><strong>Students are encouraged to disagree — but with reasons, not reflexes.</strong></p>
+  <p class="body">Students are inheriting an economy shaped by forces that feel distant and uncontrollable: global markets, algorithms, platforms, institutions, and capital flows. Without tools to understand these systems, frustration turns into cynicism or disengagement. This framework gives students language to describe what they are experiencing, structure to analyze competing claims, and practice holding multiple ideas at once.</p>
+
+  <div class="section-heading">FACILITATION GUIDE</div>
+
+  <div class="dark-banner">
+    <div class="banner-title">Step 1 — Introduce the Framework (10 min)</div>
+  </div>
+  <table class="steps-table">
+    <tr><td class="step-label">Step 1</td><td class="step-desc">Draw or project the two axes. Label clearly: X = where power sits (public ↔ private), Y = accountability to democracy (high ↔ low).</td></tr>
+    <tr><td class="step-label">Step 2</td><td class="step-desc">Name the four quadrants. Don't editorialize. Each is a coherent worldview held by real people.</td></tr>
+    <tr><td class="step-label">Step 3</td><td class="step-desc">Emphasize the key rule: <em>You can argue for multiple placements. You just can't argue without evidence.</em></td></tr>
+    <tr><td class="step-label">Step 4</td><td class="step-desc">"We are not sorting people into good and bad. We are mapping how power thinks about itself."</td></tr>
+  </table>
+
+  <div class="dark-banner mid">
+    <div class="banner-title">Step 2 — Choose Your Activity Option</div>
+    <div class="banner-sub">The student handout presents three differentiated options. Choose based on your class level and available time.</div>
+  </div>
+  <table class="steps-table" style="margin-bottom:8px;">
+    <tr>
+      <td class="step-label" style="background:#111;">Option A<br><span style="font-weight:normal;font-size:10px;">Guided</span></td>
+      <td class="step-desc"><strong>Teacher-Led Modeling.</strong> You provide the source and model the full placement process as a class before students work independently. Best for introducing the framework for the first time or for classes needing more scaffolding. Walk through: initial placement → cite evidence → model a plausible alternative → deliver key line: <em>"The disagreement isn't about facts. It's about priorities and tradeoffs."</em></td>
+    </tr>
+    <tr>
+      <td class="step-label" style="background:#333;">Option B<br><span style="font-weight:normal;font-size:10px;">Assigned</span></td>
+      <td class="step-desc"><strong>Source Provided.</strong> Assign each student or group a thinker and provide a source — speech, essay, interview, or article. Students read, place, and defend with evidence. Assign different profiles across the room so share-out surfaces genuine disagreement. Listen for: evidence use, axis confusion, overconfidence (no alternatives acknowledged).</td>
+    </tr>
+    <tr>
+      <td class="step-label" style="background:#555;">Option C<br><span style="font-weight:normal;font-size:10px;">Independent</span></td>
+      <td class="step-desc"><strong>Student-Selected Source.</strong> Students choose their own thinker and find their own sources. This option surfaces a critical insight: different sources present the same person differently. Placement should reflect the specific source analyzed. Debrief should address how source selection shapes interpretation — a media literacy lesson embedded in the activity.</td>
+    </tr>
+  </table>
+  <p class="body" style="font-size:12px; color:#555; font-style:italic; margin-bottom:16px;">All three options use the same sentence frame and paragraph writing space on p. 4 of the student handout.</p>
+
+  <div class="dark-banner">
+    <div class="banner-title">Step 3 — Think-Aloud Modeling (15–20 min, all options)</div>
+  </div>
+  <p class="body" style="margin-top:8px;">Regardless of which option you choose, model the placement process explicitly before students work independently:</p>
+  <table class="steps-table">
+    <tr><td class="step-label">State placement</td><td class="step-desc">"Based on the text, I'm placing this thinker here — toward private power and lower democratic constraint."</td></tr>
+    <tr><td class="step-label">Cite evidence</td><td class="step-desc">Reference a direct quote, a paraphrased claim, or a repeated theme from the source.</td></tr>
+    <tr><td class="step-label">Model alternative</td><td class="step-desc">"However, a reasonable student could argue for a different placement because..." Then shift the thinker and explain why.</td></tr>
+    <tr><td class="step-label">Key line</td><td class="step-desc">"The disagreement isn't about facts. It's about how we interpret priorities and tradeoffs."</td></tr>
+  </table>
+
+  <div class="dark-banner mid">
+    <div class="banner-title">Step 4 — Share Out (20 min)</div>
+  </div>
+  <ul class="plain" style="margin-top:8px;">
+    <li>Groups share their placement and one sentence of reasoning. Keep it brief — you want to hear from multiple groups.</li>
+    <li>Listen for: evidence use, axis confusion, overconfidence (no alternatives acknowledged).</li>
+    <li>Sentence frame for share-out: <em>We placed ___ here because ___. A different interpretation might place them ___ because ___.</em></li>
+    <li>Push students toward the insight: reasonable people can disagree about placement. That's the point.</li>
+  </ul>
+  <br>
+
+  <div class="dark-banner">
+    <div class="banner-title">Step 5 — Reflection (flexible format)</div>
+    <div class="banner-sub">Student handout pp. 4–5. Students can respond on the handout, in a journal, or online — your choice.</div>
+  </div>
+  <ul class="plain" style="margin-top:8px;">
+    <li><strong>P. 4 — About Your Thinker:</strong> Three prompts focused on assumptions, tradeoffs, and personal response to the argument. Space for a full written paragraph.</li>
+    <li><strong>P. 5 — About the Framework + About Yourself:</strong> Five prompts moving from analytical (what the framework reveals) to personal (where the student sits on the graph). Equal line spacing throughout for extended writing.</li>
+    <li>Reflections can be collected, shared aloud, discussed in pairs, or used as exit tickets. All formats work.</li>
+  </ul>
+  <br>
+
+  <div class="dark-banner mid">
+    <div class="banner-title">Assessment Focus (Teacher-Facing)</div>
+  </div>
+  <ul class="plain" style="margin-top:8px;">
+    <li>Use of evidence</li>
+    <li>Understanding of axes</li>
+    <li>Ability to acknowledge alternatives</li>
+    <li>Clarity of reasoning</li>
+    <li><strong>Do not assess based on ideological position.</strong></li>
+  </ul>
+
+  <div class="section-heading">CONTEMPORARY ANTHOLOGY: 10 FIGURES</div>
+  <p class="body">Each figure below articulates a clear, defensible worldview about power, markets, and democracy. Use these as the primary placement subjects for the student activity.</p>
+  <br>
+  <table class="anth-table">
+    <tr>
+      <td class="anth-name"><strong>Marc Andreessen</strong><span class="anth-tend">Quadrant IV — Private power / low democratic constraint</span></td>
+      <td class="anth-why">Articulates the most explicit modern case for accelerated technological progress led by private builders.<div class="anth-src">Sources: The Techno-Optimist Manifesto; long-form podcast interviews on innovation and regulation.</div></td>
+    </tr>
+    <tr>
+      <td class="anth-name"><strong>Peter Thiel</strong><span class="anth-tend">Quadrant IV — Private power / elite control</span></td>
+      <td class="anth-why">Presents a contrarian argument that competition is overrated and elite decision-making may outperform democratic processes.<div class="anth-src">Sources: Essays on competition and monopoly; interviews on democracy, technology, and power.</div></td>
+    </tr>
+    <tr>
+      <td class="anth-name"><strong>Lina Khan</strong><span class="anth-tend">Quadrant I — Public power / democratic accountability</span></td>
+      <td class="anth-why">Reinterprets antitrust for the platform age, focusing on power and market structure rather than prices alone.<div class="anth-src">Sources: Congressional testimony; legal essays on antitrust and platforms.</div></td>
+    </tr>
+    <tr>
+      <td class="anth-name"><strong>Mariana Mazzucato</strong><span class="anth-tend">Quadrant I — Public power / democratic legitimacy</span></td>
+      <td class="anth-why">Argues that innovation is often publicly funded and that markets should be shaped around shared missions.<div class="anth-src">Sources: Essays on the entrepreneurial state; policy talks and interviews.</div></td>
+    </tr>
+    <tr>
+      <td class="anth-name"><strong>Jamie Dimon</strong><span class="anth-tend">Quadrant II — Private markets / institutional accountability</span></td>
+      <td class="anth-why">Defends large institutions as necessary stabilizers in a complex global economy.<div class="anth-src">Sources: Annual shareholder letters; Congressional testimony; media interviews.</div></td>
+    </tr>
+    <tr>
+      <td class="anth-name"><strong>Kate Raworth</strong><span class="anth-tend">Quadrant I edge — Public constraint / democratic vision</span></td>
+      <td class="anth-why">Challenges growth as the primary economic goal and reframes success around human and planetary limits.<div class="anth-src">Sources: Excerpts from Doughnut Economics; talks to cities and international organizations.</div></td>
+    </tr>
+    <tr>
+      <td class="anth-name"><strong>Sam Altman</strong><span class="anth-tend">Quadrant IV leaning — Private power / speed over oversight</span></td>
+      <td class="anth-why">Represents the tension between accelerating AI capability and the democratic capacity to govern it.<div class="anth-src">Sources: Interviews and essays on AI development, safety, and speed.</div></td>
+    </tr>
+    <tr>
+      <td class="anth-name"><strong>Timnit Gebru</strong><span class="anth-tend">Quadrant I–II — Public accountability / distributed power</span></td>
+      <td class="anth-why">Centers ethics, labor, and accountability in AI development, highlighting hidden power and harm.<div class="anth-src">Sources: Research essays; public talks; open letters on AI ethics and labor.</div></td>
+    </tr>
+    <tr>
+      <td class="anth-name"><strong>Steve Bannon</strong><span class="anth-tend">Quadrant III contested — Public constraint / low democratic pluralism</span></td>
+      <td class="anth-why">Frames economic power through nationalism and populist critique of global capitalism. Analytically rich for axis ambiguity.<div class="anth-src">Sources: Speeches; long-form interviews; documentary excerpts.</div></td>
+    </tr>
+    <tr>
+      <td class="anth-name"><strong>MacKenzie Scott</strong><span class="anth-tend">Cross-quadrant — Private wealth / voluntary decentralization</span></td>
+      <td class="anth-why">Offers a rare case of extreme private wealth deliberately avoiding control or agenda-setting. Analytically rich.<div class="anth-src">Sources: Public letters about giving; interviews on philanthropy.</div></td>
+    </tr>
+  </table>
+
+  <div class="closing-box">
+    Students leave this lesson understanding that economic debates are not battles between good and evil — but disagreements about power, trust, and tradeoffs. That is the democratic skill this framework is designed to build.
+  </div>
+
+</div>
+
+<div class="doc-footer">Economic Democracy &nbsp;·&nbsp; Alfredo Mathew III &nbsp;·&nbsp; Teacher Guide &nbsp;·&nbsp; Free Resource &nbsp;·&nbsp; <a href="https://www.alfredomathew.com" style="color:#999;">alfredomathew.com</a></div>
+
+</body>
+</html>
