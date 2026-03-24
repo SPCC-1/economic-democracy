@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>250 Voices — Economic Democracy Core Anthology</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 5rem;}
+
+.masthead{border-bottom:3px solid var(--black);padding:1.75rem 0 1.5rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:var(--black);line-height:1.0;letter-spacing:-.02em;margin-bottom:.6rem;}
+.masthead-sub{font-size:1rem;font-weight:300;color:var(--mid);line-height:1.7;max-width:600px;margin-bottom:1rem;}
+
+.count-bar{display:flex;align-items:center;gap:1.5rem;padding:1.1rem 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin-bottom:2rem;}
+.count-num{font-family:'Playfair Display',serif;font-size:3.2rem;font-weight:900;color:var(--black);line-height:1;}
+.count-detail{font-size:.85rem;color:var(--mid);font-weight:300;line-height:1.55;}
+.count-detail strong{display:block;color:var(--charcoal);font-weight:600;font-size:.9rem;}
+
+.intro p{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.intro p:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.4rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+
+.toc-block{background:var(--cream);border:1px solid var(--rule);padding:1.5rem;margin:2rem 0;}
+.toc-label{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;}
+.toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:.35rem 2.5rem;}
+.toc-grid a{font-family:'Source Serif 4',serif;font-size:.88rem;color:var(--charcoal);text-decoration:none;line-height:1.6;display:flex;align-items:baseline;gap:.5rem;padding:.2rem 0;border-bottom:1px solid rgba(0,0,0,.06);}
+.toc-grid a:hover{color:var(--black);}
+.toc-grid a span{font-family:'IBM Plex Mono',monospace;font-size:.6rem;color:var(--muted);flex-shrink:0;}
+
+.cat-section{margin-bottom:3.5rem;}
+.cat-header{background:var(--black);color:var(--white);padding:1rem 1.5rem;margin-bottom:1.5rem;display:flex;align-items:baseline;gap:1rem;}
+.cat-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.15em;color:rgba(255,255,255,.3);flex-shrink:0;}
+.cat-title{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--white);}
+.cat-intro{font-size:.9rem;font-weight:300;color:var(--mid);line-height:1.75;max-width:660px;margin-bottom:1.5rem;font-style:italic;border-left:3px solid var(--rule);padding-left:1rem;}
+
+.person-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);}
+.person{background:var(--paper);padding:.9rem 1rem;display:flex;flex-direction:column;gap:.2rem;}
+.person:nth-child(odd){background:var(--cream);}
+.person-name{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--black);line-height:1.2;}
+.person-desc{font-size:.78rem;font-weight:300;color:var(--mid);line-height:1.5;}
+.person-tag{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.05em;color:var(--muted);margin-top:.15rem;}
+.person-tag.has-profile{color:var(--charcoal);}
+.person-tag.has-profile::before{content:'→ ';color:var(--black);}
+
+.doc-footer{border-top:2px solid var(--black);padding:1.1rem 0 .5rem;margin-top:3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+@media(max-width:600px){
+  .person-grid,.toc-grid{grid-template-columns:1fr;}
+  .page{padding:0 1rem 3rem;}
+}
+@media print{
+  body{background:white;font-size:9pt;}
+  .page{max-width:100%;padding:0;}
+  .cat-header{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .person{break-inside:avoid;}
+  .toc-block{display:none;}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Core Anthology</p>
+    <h1 class="masthead-title">250 Voices.<br>One per year of<br>the United States.</h1>
+    <p class="masthead-sub">From 1776 to 2026. Founders and abolitionists. Economists and poets. Platform builders and their critics. Organizers, theorists, artists, and radicals. The map of how power argues with itself.</p>
+  </div>
+
+  <div class="count-bar">
+    <div class="count-num">250</div>
+    <div class="count-detail">
+      <strong>Voices &nbsp;·&nbsp; 8 Sections</strong>
+      This is not a canon. It is a map. Every section holds the full tension —<br>
+      the architects of concentrated power and the people who challenged it.
+    </div>
+  </div>
+
+  <div class="intro">
+    <p>The United States is 250 years old. In 1776, a group of founders declared that all people are created equal — that life, liberty, and the pursuit of happiness are not privileges granted by kings but rights inherent to every human being. It was the most radical political statement of its age. It was also incomplete. The prosperity it promised was not distributed to the people who built it. Two hundred and fifty years later, we are still living inside that incompleteness.</p>
+    <p>This anthology marks that anniversary with 250 voices — one for every year of the republic — who have argued, organized, built, written, sung, theorized, and resisted their way through the central question the Declaration left unanswered: who should hold economic power, and to whom should it be accountable?</p>
+    <p>This is not a canon. It is a map of how power argues with itself. Every section holds the full tension — the architects of concentrated power and the organizers who challenged it, the economists who justified the system and the poets who named what the system cost, the platform builders and the critics who saw what was being built before most people noticed. The choice to place adrienne maree brown alongside Marc Andreessen, or Louis Kelso alongside Milton Friedman, or Pedro Pietri alongside Walt Whitman is deliberate. The map is only useful if it shows the whole terrain.</p>
+  </div>
+
+  <div class="toc-block" id="toc">
+    <p class="toc-label">8 Sections</p>
+    <div class="toc-grid">
+      <a href="#sec-i"><span>I.</span>Architects of the Experiment</a>
+      <a href="#sec-ii"><span>II.</span>Ideas That Built the World</a>
+      <a href="#sec-iii"><span>III.</span>Scale, Labor &amp; the Machine</a>
+      <a href="#sec-iv"><span>IV.</span>The Digital Revolution &amp; Its Critics</a>
+      <a href="#sec-v"><span>V.</span>Money, Wealth &amp; Who Controls It</a>
+      <a href="#sec-vi"><span>VI.</span>Power, Accountability &amp; Democratic Renewal</a>
+      <a href="#sec-vii"><span>VII.</span>Economic Anger, Identity &amp; Mobilization</a>
+      <a href="#sec-viii"><span>VIII.</span>Who Tells the Story of the Economy</a>
+    </div>
+  </div>
+
+  <!-- SECTION I -->
+  <div class="cat-section" id="sec-i">
+    <div class="cat-header"><span class="cat-roman">I</span><span class="cat-title">Architects of the Experiment</span></div>
+    <p class="cat-intro">The founders built a republic designed to prevent tyranny — but they disagreed, from the first session of Congress, about what tyranny looked like. Hamilton saw concentrated federal power as the engine of national strength. Jefferson saw it as the enemy of freedom. That argument has never ended. This section includes the architects of the original experiment alongside the abolitionists, suffragists, labor organizers, and radical democrats who spent the next century demanding that the experiment actually deliver on its promise.</p>
+    <div class="person-grid">
+      <div class="person"><span class="person-name">Alexander Hamilton</span><span class="person-desc">Strong national government, finance, public credit, industrial capacity</span></div>
+      <div class="person"><span class="person-name">Thomas Jefferson</span><span class="person-desc">Decentralization, agrarian independence, suspicion of concentrated power</span></div>
+      <div class="person"><span class="person-name">James Madison</span><span class="person-desc">Factions, institutional design, checks and balances, constitutional limits</span></div>
+      <div class="person"><span class="person-name">George Washington</span><span class="person-desc">Legitimacy, restraint, precedent — the power of choosing not to hold power</span></div>
+      <div class="person"><span class="person-name">Benjamin Franklin</span><span class="person-desc">Pragmatism, markets with norms, civic responsibility, the self-made myth</span></div>
+      <div class="person"><span class="person-name">Thomas Paine</span><span class="person-desc">Radical democracy, economic equality, redistribution — <em>Common Sense</em></span></div>
+      <div class="person"><span class="person-name">John Adams</span><span class="person-desc">Republican institutions, property rights, mixed government, fear of faction</span></div>
+      <div class="person"><span class="person-name">Abigail Adams</span><span class="person-desc">Women's inclusion in democratic life, moral economy, "remember the ladies"</span></div>
+      <div class="person"><span class="person-name">Frederick Douglass</span><span class="person-desc">Abolition, labor, self-determination — the most incisive critic of the Founders' incompleteness</span></div>
+      <div class="person"><span class="person-name">Harriet Tubman</span><span class="person-desc">Freedom as economic act — collective liberation, not individual escape</span></div>
+      <div class="person"><span class="person-name">Sojourner Truth</span><span class="person-desc">Intersectional freedom, economic justice, moral accountability</span></div>
+      <div class="person"><span class="person-name">Abraham Lincoln</span><span class="person-desc">Free labor ideology, Union, government as enabler of economic opportunity</span></div>
+      <div class="person"><span class="person-name">Elizabeth Cady Stanton</span><span class="person-desc">Suffrage, property rights for women, economic citizenship</span></div>
+      <div class="person"><span class="person-name">Susan B. Anthony</span><span class="person-desc">Voting as economic power — democracy requires full participation</span></div>
+      <div class="person"><span class="person-name">W.E.B. Du Bois</span><span class="person-desc">Double consciousness, economic democracy, cooperative institutions, Black Reconstruction</span></div>
+      <div class="person"><span class="person-name">Booker T. Washington</span><span class="person-desc">Economic self-reliance, vocational capital, entrepreneurship as survival strategy</span></div>
+      <div class="person"><span class="person-name">Ida B. Wells</span><span class="person-desc">Lynching as economic terrorism — the political economy of racial violence</span></div>
+      <div class="person"><span class="person-name">Eugene V. Debs</span><span class="person-desc">Worker ownership, democratic socialism, solidarity as economic architecture</span></div>
+      <div class="person"><span class="person-name">Samuel Gompers</span><span class="person-desc">Pragmatic unionism, wages over ideology, collective bargaining as democracy</span></div>
+      <div class="person"><span class="person-name">Robert La Follette</span><span class="person-desc">Progressive regulation, direct democracy, anti-monopoly — the original insurgent</span></div>
+      <div class="person"><span class="person-name">Theodore Roosevelt</span><span class="person-desc">Trust-busting, conservation, regulated capitalism — power checked by power</span></div>
+      <div class="person"><span class="person-name">Emma Goldman</span><span class="person-desc">Anarchist economics, voluntary cooperation, critique of wage slavery</span></div>
+      <div class="person"><span class="person-name">Mother Jones</span><span class="person-desc">Labor organizing, children's rights, the moral economy of the mines</span></div>
+      <div class="person"><span class="person-name">Louis Brandeis</span><span class="person-desc">Curse of bigness, democratic economy, privacy — "sunlight is the best disinfectant"</span></div>
+      <div class="person"><span class="person-name">Ida Tarbell</span><span class="person-desc">Investigative accountability — exposing Standard Oil as structural critique</span></div>
+      <div class="person"><span class="person-name">Frances Perkins</span><span class="person-desc">New Deal labor architecture, Social Security, the state as worker protector</span></div>
+      <div class="person"><span class="person-name">Dorothy Day</span><span class="person-desc">Catholic Worker, voluntary poverty, personalist economics, love as political act</span></div>
+      <div class="person"><span class="person-name">Huey Long</span><span class="person-desc">Share the Wealth — populist redistribution, democratic demagoguery, warning sign</span></div>
+      <div class="person"><span class="person-name">Henry George</span><span class="person-desc">Land value tax, single tax, commons and economic rent — unearned wealth</span></div>
+      <div class="person"><span class="person-name">Upton Sinclair</span><span class="person-desc">Muckraking literature, labor conditions, the cost of looking away</span></div>
+    </div>
+  </div>
+
+  <!-- SECTION II -->
+  <div class="cat-section" id="sec-ii">
+    <div class="cat-header"><span class="cat-roman">II</span><span class="cat-title">Ideas That Built the World</span></div>
+    <p class="cat-intro">Every economic policy debate is downstream of theory — the largely invisible set of assumptions about how markets work, who creates value, and what governments can and cannot do. This section maps the major theoretical traditions: classical liberalism, Marxism, Keynesianism, neoliberalism, institutional economics, post-colonial economics, feminist economics, and the emerging traditions of commons governance and ecological limits.</p>
+    <div class="person-grid">
+      <div class="person"><span class="person-name">Adam Smith</span><span class="person-desc">Markets, moral sentiments, competition — also wrote <em>Theory of Moral Sentiments</em></span></div>
+      <div class="person"><span class="person-name">Karl Marx</span><span class="person-desc">Class, ownership, exploitation, power relations — the diagnosis that won't go away</span></div>
+      <div class="person"><span class="person-name">John Maynard Keynes</span><span class="person-desc">Instability, demand management, government as stabilizer — "in the long run we are all dead"</span></div>
+      <div class="person"><span class="person-name">Milton Friedman</span><span class="person-desc">Market freedom, shareholder primacy, limited government — the Chicago counterrevolution</span></div>
+      <div class="person"><span class="person-name">Friedrich Hayek</span><span class="person-desc">Spontaneous order, price signals, the fatal conceit of central planning</span></div>
+      <div class="person"><span class="person-name">Joseph Schumpeter</span><span class="person-desc">Creative destruction, entrepreneurship, innovation cycles — capitalism eats itself to grow</span></div>
+      <div class="person"><span class="person-name">Louis Kelso</span><span class="person-desc">Universal capitalism, ESOP, binary economics — everyone can own capital, not just capitalists</span></div>
+      <div class="person"><span class="person-name">Thorstein Veblen</span><span class="person-desc">Conspicuous consumption, institutional economics, critique of the leisure class</span></div>
+      <div class="person"><span class="person-name">John Kenneth Galbraith</span><span class="person-desc">Countervailing power, the affluent society, corporate dominance over public life</span></div>
+      <div class="person"><span class="person-name">Amartya Sen</span><span class="person-desc">Capabilities approach, freedom as development — poverty as unfreedom</span></div>
+      <div class="person"><span class="person-name">Elinor Ostrom</span><span class="person-desc">Commons governance, polycentric systems — disproving the tragedy of the commons</span></div>
+      <div class="person"><span class="person-name">Thomas Piketty</span><span class="person-desc">Wealth concentration, r &gt; g, the math of inequality across generations</span></div>
+      <div class="person"><span class="person-name">Ivan Illich</span><span class="person-desc">Counterproductivity — institutions past a threshold produce the opposite of their purpose</span></div>
+      <div class="person"><span class="person-name">E.F. Schumacher</span><span class="person-desc">Small is beautiful, appropriate technology, human-scale economics</span></div>
+      <div class="person"><span class="person-name">Paulo Freire</span><span class="person-desc">Pedagogy of the oppressed — education as economic liberation or domestication</span></div>
+      <div class="person"><span class="person-name">Frantz Fanon</span><span class="person-desc">Wretched of the earth — colonialism as economic system, decolonization as reconstruction</span></div>
+      <div class="person"><span class="person-name">C.L.R. James</span><span class="person-desc">Black Jacobins — revolution, self-determination, the economics of empire</span></div>
+      <div class="person"><span class="person-name">Hannah Arendt</span><span class="person-desc">The human condition, public space, the banality of economic evil</span></div>
+      <div class="person"><span class="person-name">Herbert Marcuse</span><span class="person-desc">One-dimensional man — consumerism as political control, false needs</span></div>
+      <div class="person"><span class="person-name">Ha-Joon Chang</span><span class="person-desc">Industrial policy, kicking away the ladder — rich countries did not follow their own advice</span></div>
+      <div class="person"><span class="person-name">Hernando de Soto</span><span class="person-desc">Capital as formalization of assets — the poor have wealth, not recognized by law</span></div>
+      <div class="person"><span class="person-name">Dani Rodrik</span><span class="person-desc">Globalization paradox — democracy, sovereignty, and global markets cannot all coexist</span></div>
+      <div class="person"><span class="person-name">Mariana Mazzucato</span><span class="person-desc">Entrepreneurial state — public investment behind every major innovation</span><span class="person-tag has-profile">Profile available</span></div>
+      <div class="person"><span class="person-name">Kate Raworth</span><span class="person-desc">Doughnut economics — social foundation and ecological ceiling, not infinite growth</span><span class="person-tag has-profile">Profile available</span></div>
+      <div class="person"><span class="person-name">Stephanie Kelton</span><span class="person-desc">Modern Monetary Theory — sovereign currency changes what is "affordable"</span></div>
+      <div class="person"><span class="person-name">Yuval Noah Harari</span><span class="person-desc">Sapiens, Homo Deus — long-view on technology, power, and democratic accountability over AI</span></div>
+      <div class="person"><span class="person-name">Roberto Unger</span><span class="person-desc">Democratic experimentalism — institutional alternatives are possible, not utopian</span></div>
+      <div class="person"><span class="person-name">Robin Wall Kimmerer</span><span class="person-desc">Braiding Sweetgrass — gift economy, reciprocal stewardship, indigenous economics</span></div>
+      <div class="person"><span class="person-name">Cornel West</span><span class="person-desc">Prophetic tradition, democratic socialism, Black freedom struggle as moral economics</span></div>
+      <div class="person"><span class="person-name">bell hooks</span><span class="person-desc">Feminist economics, love as political economy, the margin as a place of radical possibility</span></div>
+      <div class="person"><span class="person-name">Angela Davis</span><span class="person-desc">Prison-industrial complex, abolitionist economics, freedom as institutional redesign</span></div>
+      <div class="person"><span class="person-name">Eduardo Galeano</span><span class="person-desc">Open Veins of Latin America — extraction as the structural grammar of the Americas</span></div>
+    </div>
+  </div>
+
+  <!-- SECTION III -->
+  <div class="cat-section" id="sec-iii">
+    <div class="cat-header"><span class="cat-roman">III</span><span class="cat-title">Scale, Labor &amp; the Machine</span></div>
+    <p class="cat-intro">The Industrial Revolution concentrated economic power at a scale America had never seen. Carnegie, Rockefeller, Morgan, and Ford built systems that transformed daily life — and produced monopoly, child labor, Homestead, Pullman, and the Triangle Shirtwaist fire. This section holds both sides of that reckoning.</p>
+    <div class="person-grid">
+      <div class="person"><span class="person-name">Andrew Carnegie</span><span class="person-desc">Steel, philanthropy, labor conflict — the gospel of wealth and its contradictions</span><span class="person-tag has-profile">Profile available</span></div>
+      <div class="person"><span class="person-name">John D. Rockefeller</span><span class="person-desc">Oil, monopoly, efficiency — Standard Oil as template for platform capitalism</span><span class="person-tag has-profile">Profile available</span></div>
+      <div class="person"><span class="person-name">J.P. Morgan</span><span class="person-desc">Finance, consolidation, crisis management — private central banking before the Fed</span><span class="person-tag has-profile">Profile available</span></div>
+      <div class="person"><span class="person-name">Henry Ford</span><span class="person-desc">Mass production, the $5 day, labor control — consumer capitalism's architect</span><span class="person-tag has-profile">Profile available</span></div>
+      <div class="person"><span class="person-name">Cornelius Vanderbilt</span><span class="person-desc">Transportation infrastructure dominance — who controls movement controls markets</span><span class="person-tag has-profile">Profile available</span></div>
+      <div class="person"><span class="person-name">Andrew Mellon</span><span class="person-desc">Treasury power, tax cuts for capital — the 1920s as preview</span></div>
+      <div class="person"><span class="person-name">Frederick Winslow Taylor</span><span class="person-desc">Scientific management — efficiency as ideology, the body as instrument</span></div>
+      <div class="person"><span class="person-name">Walter Reuther</span><span class="person-desc">UAW, profit-sharing, workers as stakeholders — the labor movement's peak imagination</span></div>
+      <div class="person"><span class="person-name">A. Philip Randolph</span><span class="person-desc">Brotherhood of Sleeping Car Porters — Black labor organizing as civil rights</span></div>
+      <div class="person"><span class="person-name">Cesar Chavez</span><span class="person-desc">Farm worker power, boycott as economic weapon, faith-based organizing</span></div>
+      <div class="person"><span class="person-name">Dolores Huerta</span><span class="person-desc">UFW co-founder, "Si se puede" — women's power inside labor movements</span></div>
+      <div class="person"><span class="person-name">Luisa Moreno</span><span class="person-desc">Latina labor organizer, CIO, El Congreso — the first national Latina civil rights assembly</span></div>
+      <div class="person"><span class="person-name">Harry Bridges</span><span class="person-desc">Longshore union, radical labor, the Pacific coast as contested economic space</span></div>
+      <div class="person"><span class="person-name">Florence Kelley</span><span class="person-desc">Labor standards, minimum wage, child labor — progressive reform as moral economics</span></div>
+      <div class="person"><span class="person-name">Harry Hopkins</span><span class="person-desc">Public works, direct employment — government as employer of last resort</span></div>
+      <div class="person"><span class="person-name">Henry Clay Frick</span><span class="person-desc">Homestead Strike suppression — what concentrated capital does when challenged</span></div>
+      <div class="person"><span class="person-name">Samuel Insull</span><span class="person-desc">Utility monopoly, public goods, regulatory origins — collapse as warning</span></div>
+      <div class="person"><span class="person-name">John L. Lewis</span><span class="person-desc">CIO, industrial unionism — the shift from craft to mass worker solidarity</span></div>
+      <div class="person"><span class="person-name">Philip Murray</span><span class="person-desc">Steelworkers union, worker power at industrial scale</span></div>
+      <div class="person"><span class="person-name">Nelson Rockefeller</span><span class="person-desc">Managed capitalism, public investment, the liberal Republican tradition</span></div>
+      <div class="person"><span class="person-name">Henry Kaiser</span><span class="person-desc">Wartime industrial production, Kaiser Permanente — employer as social institution</span></div>
+      <div class="person"><span class="person-name">W. Edwards Deming</span><span class="person-desc">Quality management, systems thinking — workers as assets not costs</span></div>
+      <div class="person"><span class="person-name">Saul Alinsky</span><span class="person-desc">Rules for Radicals — community organizing as economic power building</span></div>
+      <div class="person"><span class="person-name">Ella Baker</span><span class="person-desc">Participatory democracy, grassroots organizing — power built from below</span></div>
+      <div class="person"><span class="person-name">Bayard Rustin</span><span class="person-desc">March on Washington economic demands — civil rights as economic rights</span></div>
+      <div class="person"><span class="person-name">Fannie Lou Hamer</span><span class="person-desc">Mississippi Freedom Democratic Party — economic disenfranchisement as political disenfranchisement</span></div>
+      <div class="person"><span class="person-name">Grace Lee Boggs</span><span class="person-desc">Detroit, revolution, community rebuilding — economics as everyday practice</span></div>
+      <div class="person"><span class="person-name">Studs Terkel</span><span class="person-desc"><em>Working</em> — oral history of American labor, the economy told in the first person</span></div>
+    </div>
+  </div>
+
+  <!-- SECTION IV -->
+  <div class="cat-section" id="sec-iv">
+    <div class="cat-header"><span class="cat-roman">IV</span><span class="cat-title">The Digital Revolution &amp; Its Critics</span></div>
+    <p class="cat-intro">Software eating the world created a second Gilded Age — and a second reckoning. The platform builders of Silicon Valley concentrated economic power faster than any industrial monopolist. This section places the builders alongside the critics who named what was being built.</p>
+    <div class="person-grid">
+      <div class="person"><span class="person-name">Bill Gates</span><span class="person-desc">Software standards, antitrust, philanthropy — the first platform monopolist</span></div>
+      <div class="person"><span class="person-name">Steve Jobs &amp; Laurene Powell Jobs</span><span class="person-desc">Design, ecosystems, consumer technology — the creative monopoly as aspiration; wealth stewardship</span><span class="person-tag has-profile">Profile available</span></div>
+      <div class="person"><span class="person-name">Jeff Bezos</span><span class="person-desc">Platforms, logistics, labor, cloud — everything store as everything infrastructure</span><span class="person-tag has-profile">Profile available</span></div>
+      <div class="person"><span class="person-name">Mark Zuckerberg</span><span class="person-desc">Social media, attention economy, speech — democracy's new landlord</span><span class="person-tag has-profile">Profile available</span></div>
+      <div class="person"><span class="person-name">Sergey Brin &amp; Larry Page</span><span class="person-desc">Search, information infrastructure — organizing the world's knowledge for profit</span><span class="person-tag has-profile">Profile available</span></div>
+      <div class="person"><span class="person-name">Larry Ellison</span><span class="person-desc">Enterprise software, hidden data power — the infrastructure nobody sees</span><span class="person-tag has-profile">Profile available</span></div>
+      <div class="person"><span class="person-name">Jensen Huang</span><span class="person-desc">Compute, chips, AI infrastructure — the hardware layer determines everything</span><span class="person-tag has-profile">Profile available</span></div>
+      <div class="person"><span class="person-name">Sam Altman</span><span class="person-desc">AGI race, speed vs. safety — the stakes of who builds what first</span><span class="person-tag has-profile">Profile available</span></div>
+      <div class="person"><span class="person-name">Marc Andreessen</span><span class="person-desc">Software eats the world, techno-optimism — builders as the only legitimate authority</span><span class="person-tag has-profile">Profile available</span></div>
+      <div class="person"><span class="person-name">Peter Thiel</span><span class="person-desc">Competition is for losers, monopoly as achievement, elite decision-making</span><span class="person-tag has-profile">Profile available</span></div>
+      <div class="person"><span class="person-name">Elon Musk</span><span class="person-desc">Vertical integration, public infrastructure privatization — the commons as acquisition target</span><span class="person-tag has-profile">Profile available</span></div>
+      <div class="person"><span class="person-name">Reid Hoffman</span><span class="person-desc">Network effects, blitzscaling — growth as obligation, speed as virtue</span></div>
+      <div class="person"><span class="person-name">Jack Dorsey</span><span class="person-desc">Open protocols, decentralization, public square — what happens when you build the town square</span></div>
+      <div class="person"><span class="person-name">Jaron Lanier</span><span class="person-desc">Data as labor, digital dignity — you are not the product, you are the factory</span></div>
+      <div class="person"><span class="person-name">Shoshana Zuboff</span><span class="person-desc">Surveillance capitalism — behavioral modification as the real business model</span></div>
+      <div class="person"><span class="person-name">Evgeny Morozov</span><span class="person-desc">The net delusion — technology as tool of power, not liberation</span></div>
+      <div class="person"><span class="person-name">adrienne maree brown</span><span class="person-desc">Emergent strategy, fractals, pleasure activism — the large is a reflection of the small</span></div>
+      <div class="person"><span class="person-name">Octavia Butler</span><span class="person-desc"><em>Parable of the Sower</em> — science fiction as economic prophecy, collapse and rebuilding</span></div>
+      <div class="person"><span class="person-name">Ruha Benjamin</span><span class="person-desc">Race After Technology — coded inequality, the New Jim Code</span></div>
+      <div class="person"><span class="person-name">Timnit Gebru</span><span class="person-desc">AI ethics, algorithmic bias, labor — who builds AI determines who it serves</span><span class="person-tag has-profile">Profile available</span></div>
+      <div class="person"><span class="person-name">Joy Buolamwini</span><span class="person-desc">Algorithmic justice, coded bias — the politics of facial recognition</span></div>
+      <div class="person"><span class="person-name">Safiya Umoja Noble</span><span class="person-desc">Algorithms of Oppression — search as power, digital redlining</span></div>
+      <div class="person"><span class="person-name">Tim Berners-Lee</span><span class="person-desc">Open web, public protocols — the internet as commons, now under threat</span></div>
+      <div class="person"><span class="person-name">Reed Hastings</span><span class="person-desc">Streaming, cultural distribution, talent density — platform as culture machine</span><span class="person-tag has-profile">Profile available</span></div>
+      <div class="person"><span class="person-name">Nick Bostrom</span><span class="person-desc">Superintelligence, existential risk, long-termism — the philosophy behind AI caution</span></div>
+      <div class="person"><span class="person-name">Kate Crawford</span><span class="person-desc">Atlas of AI — the material and political cost of artificial intelligence</span></div>
+      <div class="person"><span class="person-name">Cathy O'Neil</span><span class="person-desc">Weapons of Math Destruction — algorithms amplify existing inequality</span></div>
+      <div class="person"><span class="person-name">Douglas Rushkoff</span><span class="person-desc">Team Human, program or be programmed — digital economics as survival question</span></div>
+      <div class="person"><span class="person-name">Nwamaka Agbo</span><span class="person-desc">Restorative economics, community ownership — technology and capital in service of the commons</span></div>
+      <div class="person"><span class="person-name">Tristan Harris</span><span class="person-desc">Humane technology, attention as exploitation — designing against manipulation</span></div>
+      <div class="person"><span class="person-name">Balaji Srinivasan</span><span class="person-desc">Network states, exit over voice — the libertarian response to democratic failure</span></div>
+      <div class="person"><span class="person-name">Travis Kalanick</span><span class="person-desc">Uber, gig economy, disruption — platform control without employer responsibility</span><span class="person-tag has-profile">Profile available</span></div>
+      <div class="person"><span class="person-name">Sam Walton &amp; the Walton Family</span><span class="person-desc">Retail dominance, low prices, generational wealth — everyday capitalism at scale</span><span class="person-tag has-profile">Profile available</span></div>
+      <div class="person"><span class="person-name">David Sacks</span><span class="person-desc">Platform politics, tech/ideology networks — attention, framing, agenda-setting</span><span class="person-tag has-profile">Profile available</span></div>
+    </div>
+  </div>
+
+  <!-- SECTION V -->
+  <div class="cat-section" id="sec-v">
+    <div class="cat-header"><span class="cat-roman">V</span><span class="cat-title">Money, Wealth &amp; Who Controls It</span></div>
+    <p class="cat-intro">Capital allocates the future. The people who control large pools of money — where it flows, under what conditions, toward what ends — exercise more structural power over daily life than most elected officials. This section maps that terrain: the orthodox practitioners and the growing chorus arguing that capital itself must be democratized.</p>
+    <div class="person-grid">
+      <div class="person"><span class="person-name">Warren Buffett</span><span class="person-desc">Patient capital, long-term ownership — compounding as philosophy, not just strategy</span><span class="person-tag has-profile">Profile available</span></div>
+      <div class="person"><span class="person-name">Ray Dalio</span><span class="person-desc">Global macro cycles, institutional capitalism — the mechanics of how money moves</span><span class="person-tag has-profile">Profile available</span></div>
+      <div class="person"><span class="person-name">Jamie Dimon</span><span class="person-desc">Institutional banking, systemic stability — large banks as necessary infrastructure</span><span class="person-tag has-profile">Profile available</span></div>
+      <div class="person"><span class="person-name">Larry Fink</span><span class="person-desc">ESG capital, stakeholder capitalism — $10 trillion asking what capital owes society</span></div>
+      <div class="person"><span class="person-name">George Soros</span><span class="person-desc">Reflexivity, open society — speculative capital with democratic purpose</span></div>
+      <div class="person"><span class="person-name">Paul Volcker</span><span class="person-desc">Monetary discipline, Volcker Rule — the line between banking and speculation</span></div>
+      <div class="person"><span class="person-name">Janet Yellen</span><span class="person-desc">Labor markets, inequality, central bank as social institution — technocracy with conscience</span></div>
+      <div class="person"><span class="person-name">Christine Lagarde</span><span class="person-desc">International monetary governance — supranational coordination as economic stabilizer</span></div>
+      <div class="person"><span class="person-name">Ben Bernanke</span><span class="person-desc">Financial crisis response, QE — the Fed as buyer of last resort</span></div>
+      <div class="person"><span class="person-name">Marriner Eccles</span><span class="person-desc">Depression-era Federal Reserve, demand-side economics — concentration causes collapse</span></div>
+      <div class="person"><span class="person-name">Jim Simons</span><span class="person-desc">Quantitative finance — mathematics replaces narrative, returns without story</span></div>
+      <div class="person"><span class="person-name">Michael Bloomberg</span><span class="person-desc">Data infrastructure, financial media, technocratic governance — information as capital</span></div>
+      <div class="person"><span class="person-name">MacKenzie Scott</span><span class="person-desc">Wealth without control — trust-based redistribution, giving without strings</span><span class="person-tag has-profile">Profile available</span></div>
+      <div class="person"><span class="person-name">Chuck Collins</span><span class="person-desc">Wealth inequality research — the case for progressive taxation from inside old money</span></div>
+      <div class="person"><span class="person-name">Nick Hanauer</span><span class="person-desc">Pitchforks argument, middle-out economics — rich people don't create jobs, customers do</span></div>
+      <div class="person"><span class="person-name">Abigail Disney</span><span class="person-desc">Inherited wealth critique, pay equity — accountability from inside the dynasty</span></div>
+      <div class="person"><span class="person-name">Darren Walker</span><span class="person-desc">Ford Foundation, justice philanthropy — can capital-holding institutions serve justice?</span></div>
+      <div class="person"><span class="person-name">Edgar Villanueva</span><span class="person-desc">Decolonizing Wealth — philanthropic extraction, indigenous economics, trust-based giving</span></div>
+      <div class="person"><span class="person-name">Mehrsa Baradaran</span><span class="person-desc">Black banking, postal banking, racial wealth gap — separate and unequal financial systems</span></div>
+      <div class="person"><span class="person-name">William Darity Jr.</span><span class="person-desc">Baby bonds, reparations, stratification economics — the architecture of racial wealth</span></div>
+      <div class="person"><span class="person-name">Felicia Wong</span><span class="person-desc">Roosevelt Institute, predistribution — rewriting the rules before capital concentrates</span></div>
+      <div class="person"><span class="person-name">Robert Shiller</span><span class="person-desc">Narrative economics — stories move markets as much as fundamentals</span></div>
+      <div class="person"><span class="person-name">Hyman Minsky</span><span class="person-desc">Financial instability hypothesis — stability creates instability, crisis is endogenous</span></div>
+      <div class="person"><span class="person-name">James Tobin</span><span class="person-desc">Tobin tax, public investment, full employment as goal — the state has tools it refuses to use</span></div>
+      <div class="person"><span class="person-name">Gar Alperovitz</span><span class="person-desc">Community wealth, democratic ownership, pluralist commonwealth — the next system</span></div>
+      <div class="person"><span class="person-name">Marjorie Kelly</span><span class="person-desc">Owning Our Future — generative vs. extractive ownership, the emerging ownership revolution</span></div>
+      <div class="person"><span class="person-name">Jessica Gordon Nembhard</span><span class="person-desc">Collective Courage — a century of Black cooperative economics the mainstream erased</span></div>
+      <div class="person"><span class="person-name">Juliet Schor</span><span class="person-desc">Plenitude, overwork, post-consumerist economics — working less as structural choice</span></div>
+    </div>
+  </div>
+
+  <!-- SECTION VI -->
+  <div class="cat-section" id="sec-vi">
+    <div class="cat-header"><span class="cat-roman">VI</span><span class="cat-title">Power, Accountability &amp; Democratic Renewal</span></div>
+    <p class="cat-intro">Democracy does not maintain itself. It requires institutions, laws, organizing, and people willing to do the slow unglamorous work of accountability. This section includes the regulators who updated antitrust for the platform age, the labor organizers who built power for workers the economy made invisible, and the global voices who insisted that economic justice and democratic dignity are the same struggle.</p>
+    <div class="person-grid">
+      <div class="person"><span class="person-name">Lina Khan</span><span class="person-desc">Antitrust, platform power, neo-Brandeisian revival — markets are designed, not natural</span><span class="person-tag has-profile">Profile available</span></div>
+      <div class="person"><span class="person-name">Elizabeth Warren</span><span class="person-desc">Consumer protection, structural reform — the system is rigged, here's the blueprint</span></div>
+      <div class="person"><span class="person-name">Bernie Sanders</span><span class="person-desc">Democratic socialism, worker ownership — the political revolution as economic argument</span></div>
+      <div class="person"><span class="person-name">Robert Reich</span><span class="person-desc">Supercapitalism, countervailing power — democracy and the economy are the same fight</span></div>
+      <div class="person"><span class="person-name">Heather McGhee</span><span class="person-desc">The Sum of Us — zero-sum racism, solidarity dividend, what we all lose from division</span></div>
+      <div class="person"><span class="person-name">Stacey Abrams</span><span class="person-desc">Voter power, economic democracy — political infrastructure as economic infrastructure</span></div>
+      <div class="person"><span class="person-name">Ai-jen Poo</span><span class="person-desc">Care economy, domestic worker organizing — the invisible labor that holds everything up</span></div>
+      <div class="person"><span class="person-name">Saru Jayaraman</span><span class="person-desc">One Fair Wage, restaurant worker organizing — tipped wages as structural exploitation</span></div>
+      <div class="person"><span class="person-name">Sarita Gupta</span><span class="person-desc">Worker center organizing, just transition, labor democracy beyond the union</span></div>
+      <div class="person"><span class="person-name">Darrick Hamilton</span><span class="person-desc">Federal job guarantee, racial capitalism, stratification economics</span></div>
+      <div class="person"><span class="person-name">Angela Glover Blackwell</span><span class="person-desc">PolicyLink, equitable growth — infrastructure and equity are the same investment</span></div>
+      <div class="person"><span class="person-name">Van Jones</span><span class="person-desc">Green economy, justice through climate — the new economy coalition</span></div>
+      <div class="person"><span class="person-name">Bill McKibben</span><span class="person-desc">Climate economics, fossil fuel divestment — the carbon budget as moral budget</span></div>
+      <div class="person"><span class="person-name">Naomi Klein</span><span class="person-desc">Shock doctrine, disaster capitalism, Green New Deal — crisis as opportunity for extraction or transformation</span></div>
+      <div class="person"><span class="person-name">Bryan Stevenson</span><span class="person-desc">Just Mercy, proximity, criminal justice as economic exclusion — the near and the far</span></div>
+      <div class="person"><span class="person-name">Matthew Desmond</span><span class="person-desc">Evicted — poverty by design, landlord extraction, the invisible architecture of exclusion</span></div>
+      <div class="person"><span class="person-name">Barbara Ehrenreich</span><span class="person-desc">Nickel and Dimed — working poor, the invisibility of the labor that holds the economy up</span></div>
+      <div class="person"><span class="person-name">Richard Rothstein</span><span class="person-desc">Color of Law — structural racism in housing, the government-built wealth gap</span></div>
+      <div class="person"><span class="person-name">Robin D.G. Kelley</span><span class="person-desc">Freedom Dreams — radical Black imagination, the economics of what hasn't existed yet</span></div>
+      <div class="person"><span class="person-name">Dean Baker</span><span class="person-desc">Predistribution, intellectual property reform — rigged rules, not natural markets</span></div>
+      <div class="person"><span class="person-name">Ibram X. Kendi</span><span class="person-desc">How to Be an Antiracist — structural racism as policy choice, not attitude</span></div>
+      <div class="person"><span class="person-name">Patricia Hill Collins</span><span class="person-desc">Black Feminist Thought — intersectionality, matrix of domination, standpoint economics</span></div>
+      <div class="person"><span class="person-name">Maria Hinojosa</span><span class="person-desc">Latino USA, economic journalism — the communities the mainstream economy ignores</span></div>
+      <div class="person"><span class="person-name">Vandana Shiva</span><span class="person-desc">Biopiracy, seed sovereignty — corporate enclosure of the living commons</span></div>
+      <div class="person"><span class="person-name">Wangari Maathai</span><span class="person-desc">Green Belt Movement — environmental organizing as economic democracy in Kenya</span></div>
+      <div class="person"><span class="person-name">Pope Francis</span><span class="person-desc">Laudato Si, care for the common home — Catholic social teaching as economic framework</span></div>
+      <div class="person"><span class="person-name">Desmond Tutu</span><span class="person-desc">Ubuntu economics — "I am because we are," the African communal alternative</span></div>
+      <div class="person"><span class="person-name">Nelson Mandela</span><span class="person-desc">Economic reconstruction after apartheid — liberation without economic transformation is incomplete</span></div>
+      <div class="person"><span class="person-name">Rigoberta Menchú</span><span class="person-desc">Indigenous rights, land as commons — economic justice in Guatemala and globally</span></div>
+      <div class="person"><span class="person-name">Arundhati Roy</span><span class="person-desc">The God of Small Things, the politics of power — the cost of economic dispossession</span></div>
+      <div class="person"><span class="person-name">Mahatma Gandhi</span><span class="person-desc">Non-cooperation, Swadeshi — economic self-determination as political strategy</span></div>
+      <div class="person"><span class="person-name">Ai Weiwei</span><span class="person-desc">Art as accountability — political economy through radical visibility</span></div>
+    </div>
+  </div>
+
+  <!-- SECTION VII -->
+  <div class="cat-section" id="sec-vii">
+    <div class="cat-header"><span class="cat-roman">VII</span><span class="cat-title">Economic Anger, Identity &amp; Mobilization</span></div>
+    <p class="cat-intro">Economic anxiety is among the most politically volatile forces in any democracy. This section maps the full range of how economic anger becomes political mobilization — from radical labor organizers to Black liberation movements, from the socialist left to the nationalist right. Martin Luther King Jr. and Steve Bannon are in the same section because they are responding to the same economic reality — and reaching opposite conclusions.</p>
+    <div class="person-grid">
+      <div class="person"><span class="person-name">Martin Luther King Jr.</span><span class="person-desc">Poor People's Campaign, democratic socialism — the radical economic King they don't teach</span></div>
+      <div class="person"><span class="person-name">Malcolm X</span><span class="person-desc">Economic self-determination, Black nationalism — land and capital as liberation tools</span></div>
+      <div class="person"><span class="person-name">Huey Newton</span><span class="person-desc">Black Panther survival programs — liberation requires ownership, not charity</span></div>
+      <div class="person"><span class="person-name">Fred Hampton</span><span class="person-desc">Rainbow Coalition, class solidarity across race — the most dangerous organizer they erased</span></div>
+      <div class="person"><span class="person-name">Alexandria Ocasio-Cortez</span><span class="person-desc">Green New Deal, democratic intervention — a new generation names the system</span></div>
+      <div class="person"><span class="person-name">Donald Trump</span><span class="person-desc">Nationalist economics, tariffs, disruption — economic anxiety as political fuel</span></div>
+      <div class="person"><span class="person-name">Steve Bannon</span><span class="person-desc">Deconstruct the administrative state — economic nationalism as culture war</span><span class="person-tag has-profile">Profile available</span></div>
+      <div class="person"><span class="person-name">Pat Buchanan</span><span class="person-desc">America First economics precursor — trade skepticism, sovereignty, nationalism's roots</span></div>
+      <div class="person"><span class="person-name">Ross Perot</span><span class="person-desc">Third-party economic critique, NAFTA opposition — populism from the right before Trump</span></div>
+      <div class="person"><span class="person-name">Ralph Nader</span><span class="person-desc">Corporate accountability, consumer rights — civic capitalism as protection</span></div>
+      <div class="person"><span class="person-name">Jesse Jackson</span><span class="person-desc">Rainbow Coalition, economic inclusion — keep hope alive as economic argument</span></div>
+      <div class="person"><span class="person-name">Felipe Luciano</span><span class="person-desc">Young Lords, Puerto Rican economic sovereignty — the Bronx as political economy</span></div>
+      <div class="person"><span class="person-name">Gloria Steinem</span><span class="person-desc">Feminist economics — the personal is political is economic</span></div>
+      <div class="person"><span class="person-name">Assata Shakur</span><span class="person-desc">Black liberation economics — the cost of survival in an extractive state</span></div>
+      <div class="person"><span class="person-name">Leonard Peltier</span><span class="person-desc">AIM, indigenous land rights — the oldest economic justice claim in America</span></div>
+      <div class="person"><span class="person-name">Winona LaDuke</span><span class="person-desc">Honor the Earth — indigenous economics, land sovereignty, energy democracy</span></div>
+      <div class="person"><span class="person-name">David Graeber</span><span class="person-desc">Debt: The First 5000 Years — the moral economics of obligation across history</span></div>
+      <div class="person"><span class="person-name">Noam Chomsky</span><span class="person-desc">Manufacturing consent, anarcho-syndicalism — power requires the consent it manufactures</span></div>
+      <div class="person"><span class="person-name">Howard Zinn</span><span class="person-desc">A People's History — the economic history of those who didn't win</span></div>
+      <div class="person"><span class="person-name">Chris Hedges</span><span class="person-desc">Death of the liberal class — corporate capture, the collapse of the reform tradition</span></div>
+      <div class="person"><span class="person-name">Keeanga-Yamahtta Taylor</span><span class="person-desc">From #BlackLivesMatter to Black Liberation — structural racism as economic argument</span></div>
+      <div class="person"><span class="person-name">Patrisse Cullors</span><span class="person-desc">BLM co-founder, abolition economics — the cost of policing as economic displacement</span></div>
+      <div class="person"><span class="person-name">Manning Marable</span><span class="person-desc">Malcolm X biography, Black political economy — race and class as inseparable</span></div>
+      <div class="person"><span class="person-name">Barbara Jordan</span><span class="person-desc">Economic democracy, constitutional accountability — "we the people" as economic claim</span></div>
+      <div class="person"><span class="person-name">Mike Davis</span><span class="person-desc">City of Quartz, Ecology of Fear — the political economy of Los Angeles as American future</span></div>
+      <div class="person"><span class="person-name">Marisol LeBrón</span><span class="person-desc">Puerto Rico, disaster capitalism — what happens when the laboratory of empire fails</span></div>
+      <div class="person"><span class="person-name">Thomas Sowell</span><span class="person-desc">Constrained vision, markets as anti-discrimination — the Black conservative alternative</span></div>
+      <div class="person"><span class="person-name">Shelby Steele</span><span class="person-desc">Individual agency, content of character — the case against structural analysis</span></div>
+      <div class="person"><span class="person-name">Charles Murray</span><span class="person-desc">Coming Apart — cultural and class separation, the economics of the white working class</span></div>
+      <div class="person"><span class="person-name">J.D. Vance</span><span class="person-desc">Hillbilly Elegy — Appalachian deindustrialization as personal biography</span></div>
+      <div class="person"><span class="person-name">Arlie Hochschild</span><span class="person-desc">Strangers in Their Own Land — the emotional economy of the American right</span></div>
+      <div class="person"><span class="person-name">Robert Putnam</span><span class="person-desc">Bowling Alone — social capital, civic decline, the commons we stopped building</span></div>
+      <div class="person"><span class="person-name">William Julius Wilson</span><span class="person-desc">When Work Disappears — structural poverty without scapegoats</span></div>
+      <div class="person"><span class="person-name">Chris Smalls</span><span class="person-desc">Amazon Labor Union — the worker who organized the biggest warehouse in America</span></div>
+    </div>
+  </div>
+
+  <!-- SECTION VIII -->
+  <div class="cat-section" id="sec-viii">
+    <div class="cat-header"><span class="cat-roman">VIII</span><span class="cat-title">Who Tells the Story of the Economy</span></div>
+    <p class="cat-intro">Before people can change an economy, they need to be able to see it. This section belongs to the writers, poets, journalists, broadcasters, satirists, and public intellectuals who have shaped how Americans understand power and money. The Nuyorican oral tradition of the South Bronx belongs in this canon not as a footnote but as one of its clearest economic witnesses.</p>
+    <div class="person-grid">
+      <div class="person"><span class="person-name">Walt Whitman</span><span class="person-desc">Leaves of Grass — democratic vistas, the dignity of labor, the body as commons</span></div>
+      <div class="person"><span class="person-name">Woody Guthrie</span><span class="person-desc">This Land Is Your Land — folk economics, the commons as song</span></div>
+      <div class="person"><span class="person-name">Langston Hughes</span><span class="person-desc">Harlem Renaissance, "Let America Be America Again" — the dream deferred as economic fact</span></div>
+      <div class="person"><span class="person-name">James Baldwin</span><span class="person-desc">Notes of a Native Son, The Fire Next Time — moral witness to economic exclusion</span></div>
+      <div class="person"><span class="person-name">Toni Morrison</span><span class="person-desc">Beloved, Song of Solomon — the economics of slavery and its enduring architecture</span></div>
+      <div class="person"><span class="person-name">Bonafide Rojas</span><span class="person-desc">Nuyorican poetry, Bronx oral tradition — economic life told from the inside</span></div>
+      <div class="person"><span class="person-name">Pedro Pietri</span><span class="person-desc">Puerto Rican Obituary — a funeral for the promise of the American Dream from the Bronx</span></div>
+      <div class="person"><span class="person-name">Piri Thomas</span><span class="person-desc">Down These Mean Streets — the economics of the South Bronx from inside</span></div>
+      <div class="person"><span class="person-name">Junot Diaz</span><span class="person-desc">The Brief Wondrous Life of Oscar Wao — diaspora, empire, and the cost of assimilation</span></div>
+      <div class="person"><span class="person-name">Sandra Cisneros</span><span class="person-desc">The House on Mango Street — economic aspiration in the Chicago barrio</span></div>
+      <div class="person"><span class="person-name">Ursula K. Le Guin</span><span class="person-desc">The Dispossessed — anarchism, scarcity, and what a different economy might feel like</span></div>
+      <div class="person"><span class="person-name">N.K. Jemisin</span><span class="person-desc">The Fifth Season — economic collapse, survival, and who gets to rebuild</span></div>
+      <div class="person"><span class="person-name">Michael Lewis</span><span class="person-desc">The Big Short, Flash Boys — financial storytelling as democratic accountability</span></div>
+      <div class="person"><span class="person-name">Ta-Nehisi Coates</span><span class="person-desc">Between the World and Me, The Case for Reparations — structural racism as economic argument</span></div>
+      <div class="person"><span class="person-name">Nikole Hannah-Jones</span><span class="person-desc">The 1619 Project — slavery as economic origin story of American prosperity</span></div>
+      <div class="person"><span class="person-name">Adrian Nicole LeBlanc</span><span class="person-desc">Random Family — poverty journalism, the intimate architecture of economic exclusion</span></div>
+      <div class="person"><span class="person-name">Isabel Wilkerson</span><span class="person-desc">Caste, The Warmth of Other Suns — the economics of the Great Migration and racial hierarchy</span></div>
+      <div class="person"><span class="person-name">Saidiya Hartman</span><span class="person-desc">Wayward Lives, Beautiful Experiments — Black women's economic survival as radical practice</span></div>
+      <div class="person"><span class="person-name">Edwidge Danticat</span><span class="person-desc">Haitian diaspora literature — extraction, empire, and what survival costs</span></div>
+      <div class="person"><span class="person-name">June Jordan</span><span class="person-desc">Poetry, Harlem, civic imagination — economic justice as literary practice</span></div>
+      <div class="person"><span class="person-name">Adrienne Rich</span><span class="person-desc">Of Woman Born, feminist poetics — the invisible labor economy named</span></div>
+      <div class="person"><span class="person-name">Audre Lorde</span><span class="person-desc">Sister Outsider — the master's tools, the economics of silence and voice</span></div>
+      <div class="person"><span class="person-name">Roxane Gay</span><span class="person-desc">Hunger, Bad Feminist — visibility, the body as economic site, the cost of being seen</span></div>
+      <div class="person"><span class="person-name">Rachel Maddow</span><span class="person-desc">Institutional accountability, democratic guardrails, investigative narrative</span></div>
+      <div class="person"><span class="person-name">Ezra Klein</span><span class="person-desc">Why We're Polarized, Abundance — institutional design as economic argument</span></div>
+      <div class="person"><span class="person-name">Kara Swisher</span><span class="person-desc">Tech accountability journalism — power and consequence in Silicon Valley</span></div>
+      <div class="person"><span class="person-name">Edward Said</span><span class="person-desc">Orientalism, Culture and Imperialism — the economics of how the powerful name the world</span></div>
+      <div class="person"><span class="person-name">Joe Rogan</span><span class="person-desc">Conversation, skepticism, anti-institutional influence — the attention economy as political economy</span></div>
+      <div class="person"><span class="person-name">Tucker Carlson</span><span class="person-desc">Populist narrative, elite betrayal — economic anger routed through cultural war</span></div>
+      <div class="person"><span class="person-name">Ben Shapiro</span><span class="person-desc">Market moralism, individual responsibility — conservative economic argument for the young</span></div>
+      <div class="person"><span class="person-name">Stephen Colbert</span><span class="person-desc">Satire, legitimacy, Colbert Report — comedy as economic accountability</span></div>
+      <div class="person"><span class="person-name">Malcolm Gladwell</span><span class="person-desc">Outliers, Tipping Point — the storytelling of inequality and social capital</span></div>
+      <div class="person"><span class="person-name">Robert Kiyosaki</span><span class="person-desc">Rich Dad Poor Dad — asset vs. wage narrative, financial literacy as ideology</span></div>
+      <div class="person"><span class="person-name">Anand Giridharadas</span><span class="person-desc">Winners Take All — the elite charade of changing the world, philanthropy as power preservation</span></div>
+    </div>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;·&nbsp; AI Synthesis: Claude (Anthropic, claude-sonnet-4-6) &nbsp;·&nbsp; 250 voices &nbsp;·&nbsp; 1776–2026</span>
+  </div>
+
+</div>
+</body>
+</html>

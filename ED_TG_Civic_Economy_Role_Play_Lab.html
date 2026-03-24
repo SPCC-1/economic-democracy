@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teacher Guide — Civic Economy Role-Play Lab — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+
+/* ── Masthead ── */
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.5rem;}
+.masthead-sub{font-size:.9rem;font-weight:300;color:var(--mid);line-height:1.6;max-width:580px;}
+.masthead-meta{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.08em;margin-top:.75rem;}
+
+/* ── Section headers ── */
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+
+/* ── Body text ── */
+.body-intro{font-size:1rem;font-weight:300;line-height:1.8;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.4rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.8;color:var(--ink);margin-bottom:1.1rem;max-width:680px;}
+
+/* ── At-a-glance ── */
+.glance{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:1.75rem 0;}
+.glance-cell{background:var(--cream);padding:1rem 1.1rem;}
+.glance-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem;}
+.glance-val{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);line-height:1.2;}
+@media(max-width:600px){.glance{grid-template-columns:1fr 1fr;}}
+
+/* ── Paired resource bar ── */
+.pair-bar{background:var(--black);color:var(--white);padding:.6rem 1.25rem;margin:2rem 0 .5rem;display:flex;align-items:center;gap:1rem;}
+.pair-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.4);}
+.pair-title{font-family:'Source Serif 4',serif;font-size:.85rem;font-weight:600;color:var(--white);}
+
+/* ── Objectives ── */
+.obj-list{list-style:none;margin:.75rem 0 1.25rem;}
+.obj-list li{font-size:.88rem;font-weight:300;color:var(--ink);padding:.4rem 0 .4rem 1.5rem;position:relative;line-height:1.6;border-bottom:1px solid var(--cream);}
+.obj-list li::before{content:'→';position:absolute;left:0;color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:.7rem;top:.45rem;}
+
+/* ── Phase blocks ── */
+.phase{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.5rem 0;background:var(--cream);}
+.phase-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem;display:flex;gap:1rem;}
+.phase-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.phase-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.phase-body p{margin-bottom:.6rem;}
+.phase-body p:last-child{margin-bottom:0;}
+
+/* ── Teacher script ── */
+.script{border:1px solid var(--rule);padding:1rem 1.25rem;margin:1rem 0;background:var(--white);}
+.script-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem;}
+.script-text{font-size:.88rem;font-style:italic;color:var(--charcoal);line-height:1.75;}
+
+/* ── Role guide cards ── */
+.role-guide-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin:1.5rem 0;}
+.role-guide-card{background:var(--paper);padding:1.1rem 1.25rem;}
+.role-guide-card:nth-child(odd){background:var(--cream);}
+.rg-num{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem;}
+.rg-title{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--black);margin-bottom:.3rem;}
+.rg-concern{font-size:.78rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.6rem;margin-bottom:.4rem;line-height:1.5;}
+.rg-note{font-size:.78rem;font-weight:300;color:var(--mid);line-height:1.55;}
+.rg-friction{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);margin-top:.35rem;border-top:1px solid var(--rule);padding-top:.35rem;letter-spacing:.02em;}
+@media(max-width:600px){.role-guide-grid{grid-template-columns:1fr;}}
+
+/* ── Policy matrix ── */
+.policy-guide{width:100%;border-collapse:collapse;margin:1.25rem 0;font-size:.83rem;}
+.policy-guide tr{border-bottom:1px solid var(--rule);}
+.policy-guide tr:nth-child(odd){background:var(--cream);}
+.policy-guide td{padding:.65rem .85rem;vertical-align:top;line-height:1.5;}
+.pg-num{font-family:'IBM Plex Mono',monospace;font-size:.6rem;color:var(--muted);width:2rem;}
+.pg-name{font-weight:700;color:var(--black);width:160px;}
+.pg-quadrant{color:var(--charcoal);font-style:italic;width:120px;}
+.pg-tension{color:var(--mid);font-weight:300;}
+
+/* ── Negotiation tracker ── */
+.neg-track{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.neg-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.75rem;}
+.neg-row{display:grid;grid-template-columns:160px 1fr;gap:.5rem 1.25rem;padding:.5rem 0;border-bottom:1px solid var(--rule);}
+.neg-row:last-child{border-bottom:none;}
+.neg-step{font-size:.82rem;font-weight:700;color:var(--charcoal);}
+.neg-desc{font-size:.82rem;font-weight:300;color:var(--mid);line-height:1.55;}
+@media(max-width:600px){.neg-row{grid-template-columns:1fr;}}
+
+/* ── Inset ── */
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+
+/* ── Differentiation ── */
+.diff-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin:1.5rem 0;}
+.diff-cell{background:var(--paper);padding:1.1rem;}
+.diff-cell:nth-child(even){background:var(--cream);}
+.diff-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem;}
+.diff-title{font-family:'Playfair Display',serif;font-size:.9rem;font-weight:700;color:var(--black);margin-bottom:.3rem;}
+.diff-body{font-size:.8rem;font-weight:300;color:var(--mid);line-height:1.6;}
+@media(max-width:600px){.diff-grid{grid-template-columns:1fr;}}
+
+/* ── Assessment ── */
+.assess{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.assess-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.65rem;}
+.assess-row{display:grid;grid-template-columns:1fr 2fr;gap:.5rem 1.5rem;margin-bottom:.5rem;padding-bottom:.5rem;border-bottom:1px solid var(--rule);}
+.assess-row:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.assess-criterion{font-size:.82rem;font-weight:700;color:var(--charcoal);}
+.assess-desc{font-size:.82rem;font-weight:300;color:var(--mid);line-height:1.55;}
+@media(max-width:600px){.assess-row{grid-template-columns:1fr;}}
+
+/* ── Closing ── */
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin-top:2.5rem;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;line-height:1.75;color:var(--white);}
+
+/* ── Footer ── */
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:9pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .role-guide-card,.phase{break-inside:avoid;}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Teacher Guide &nbsp;·&nbsp; Free Resource</p>
+    <h1 class="masthead-title">Civic Economy Role-Play Lab</h1>
+    <p class="masthead-sub">Teacher facilitation guide for the welfare state negotiation simulation. Seven roles, six policy options, one governing dilemma. Pair with the student lab document of the same name.</p>
+    <p class="masthead-meta">Working World LLC &nbsp;·&nbsp; Alfredo Mathew III &nbsp;·&nbsp; Grades 11–12 &nbsp;·&nbsp; 90–120 minutes</p>
+  </div>
+
+  <!-- AT A GLANCE -->
+  <div class="glance">
+    <div class="glance-cell">
+      <p class="glance-label">Time</p>
+      <p class="glance-val">90–120 min</p>
+    </div>
+    <div class="glance-cell">
+      <p class="glance-label">Format</p>
+      <p class="glance-val">Role Assignment · Negotiation · Debrief</p>
+    </div>
+    <div class="glance-cell">
+      <p class="glance-label">Paired Student Doc</p>
+      <p class="glance-val">Civic Economy Role-Play Lab (Student)</p>
+    </div>
+    <div class="glance-cell">
+      <p class="glance-label">Prerequisites</p>
+      <p class="glance-val">Framework lesson + Revolution/Reform reading recommended</p>
+    </div>
+  </div>
+
+  <div class="pair-bar">
+    <span class="pair-label">Paired resource</span>
+    <span class="pair-title">This guide accompanies: Civic Economy Role-Play Lab — Student Document ($4.99 on TPT)</span>
+  </div>
+
+  <!-- OVERVIEW -->
+  <p class="body-intro">This is the most demanding lesson in the curriculum — and the most rewarding when it works. Students are not asked to learn about democratic negotiation. They are asked to do it, in real time, under conditions of genuine constraint. There are no painless solutions in the scenario. Every proposal requires someone to accept less than they want. That is not a failure condition. That is the point.</p>
+
+  <p class="body">The scenario — reforming Social Security and Medicare in the face of demographic change and rising costs — is designed to be politically legitimate across ideological lines. It is not a debate about whether the welfare state should exist. It is a debate about how to sustain it. This framing is intentional: it forces students to engage with the structural problem rather than retreat to ideological positions.</p>
+
+  <div class="inset">
+    <strong>Teacher framing note:</strong> The essential question is structural, not ideological — "How should a shrinking workforce support an aging society, fairly, sustainably, and democratically?" Your job is to hold that framing when students try to collapse it into a left/right debate. Keep returning to the tradeoffs, not the positions.
+  </div>
+
+  <!-- LEARNING OBJECTIVES -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">Learning Objectives</span></div>
+
+  <ul class="obj-list">
+    <li>Inhabit a perspective genuinely different from their own and argue from it with specificity</li>
+    <li>Identify the tradeoffs in at least three policy options from the table</li>
+    <li>Negotiate a coalition across at least two roles — conceding something real to gain agreement</li>
+    <li>Place their group's final proposal on the Power–Democracy–Economy matrix and defend the placement</li>
+    <li>Connect the simulation to the Revolution/Counterrevolution/Reform framework from the prior reading</li>
+    <li>Articulate whose trust a reform proposal preserves — and whose it risks</li>
+  </ul>
+
+  <!-- SETUP AND PREPARATION -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">Setup and Preparation</span></div>
+
+  <p class="body">This lesson requires more setup than a standard discussion. Read this section before the day of the lesson.</p>
+
+  <div class="phase">
+    <p class="phase-meta"><span>Before class</span></p>
+    <p class="phase-title">What to prepare</p>
+    <div class="phase-body">
+      <p><strong>Assign roles in advance</strong> — do not let students self-select. Intentional misassignment is a core feature of the design. Assign students to roles that do not match their stated political views. The discomfort of arguing from an unfamiliar position is where the learning happens.</p>
+      <p><strong>Print or distribute the student lab document.</strong> Students need access to the seven role cards, six policy options, and four task steps throughout the simulation. The reflection prompts (Section VII of the student doc) are completed after the role-play ends.</p>
+      <p><strong>Review the policy options yourself.</strong> You need to be able to push back on proposals that ignore the tradeoffs. See the policy facilitation guide in Section IV of this document.</p>
+      <p><strong>Decide on class configuration.</strong> With 7 roles and a standard class of 28–32 students, you have two options: run one whole-class simulation (4–5 students per role), or run two or three simultaneous simulations with smaller groups. Simultaneous groups create a richer debrief — different groups often reach different agreements.</p>
+    </div>
+  </div>
+
+  <div class="phase">
+    <p class="phase-meta"><span>Class size guidance</span></p>
+    <p class="phase-title">Role assignment by class size</p>
+    <div class="phase-body">
+      <p><strong>15–21 students:</strong> One simulation, 2–3 students per role. Combine Roles 4 and 5 (Wealth Holder + Economist) if needed.</p>
+      <p><strong>22–28 students:</strong> One simulation, 3–4 students per role. All seven roles active.</p>
+      <p><strong>29–35 students:</strong> Two simultaneous simulations, 2–3 per role each. Debrief together — compare the two groups' final packages.</p>
+      <p><strong>Note:</strong> Role 7 (Elected Lawmaker) works best as a single student or pair who serves as the negotiation chair — keeping time, calling for proposals, and forcing the table toward agreement. Consider assigning your most confident student to this role.</p>
+    </div>
+  </div>
+
+  <!-- ROLE FACILITATION GUIDE -->
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">Role Facilitation Guide</span></div>
+
+  <p class="body">Each role has a core concern that drives their participation. Your job as facilitator is to make sure every role gets genuine representation — especially the ones students find uncomfortable to argue. Notes on each role follow.</p>
+
+  <div class="role-guide-grid">
+    <div class="role-guide-card">
+      <p class="rg-num">Role 1</p>
+      <p class="rg-title">Current Retiree</p>
+      <p class="rg-concern">"I paid into this system my entire life. These are earned benefits."</p>
+      <p class="rg-note">Students in this role often play it as passive. Push them to be specific: how much did they pay in? What does a modest cut mean in dollar terms per month? Make the stakes concrete.</p>
+      <p class="rg-friction">Natural tension with: Young Worker (Role 2), Economist (Role 5)</p>
+    </div>
+    <div class="role-guide-card">
+      <p class="rg-num">Role 2</p>
+      <p class="rg-title">Young Worker / Student</p>
+      <p class="rg-concern">"Why should I pay more into a system I may never receive?"</p>
+      <p class="rg-note">This role often attracts students who hold it genuinely. Push them to engage with the intergenerational contract — they benefited from public infrastructure and education built by prior generations. What do they owe back?</p>
+      <p class="rg-friction">Natural tension with: Retiree (Role 1), Lawmaker (Role 7)</p>
+    </div>
+    <div class="role-guide-card">
+      <p class="rg-num">Role 3</p>
+      <p class="rg-title">Small Business Owner</p>
+      <p class="rg-concern">"Higher taxes could mean fewer jobs or lower wages."</p>
+      <p class="rg-note">Students often underplay this role. Remind them that small business owners pay both the employer and employee share of payroll taxes — they have real skin in the game. Push them to be specific about what a 2% payroll tax increase means to a business with 8 employees.</p>
+      <p class="rg-friction">Natural tension with: Economist (Role 5), Technology Executive (Role 6)</p>
+    </div>
+    <div class="role-guide-card">
+      <p class="rg-num">Role 4</p>
+      <p class="rg-title">Wealth Holder / Investor</p>
+      <p class="rg-concern">"Why should wealth be targeted instead of fixing spending?"</p>
+      <p class="rg-note">This is often the most uncomfortable role to assign. Students may resist arguing it. Remind them that this position has serious intellectual backing — capital allocation, investment incentives, enforcement challenges. The goal is not to endorse it but to understand why it is at the table.</p>
+      <p class="rg-friction">Natural tension with: Young Worker (Role 2), Lawmaker (Role 7)</p>
+    </div>
+    <div class="role-guide-card">
+      <p class="rg-num">Role 5</p>
+      <p class="rg-title">Public Finance Economist</p>
+      <p class="rg-concern">"Promises must match resources, or the system collapses."</p>
+      <p class="rg-note">This role provides the structural constraint that keeps the simulation honest. The Economist should be empowered to reject proposals that don't add up. If students in this role go soft, prompt them: "Does this package actually close the funding gap? By how much? Over what time horizon?"</p>
+      <p class="rg-friction">Natural tension with: Retiree (Role 1), Lawmaker (Role 7)</p>
+    </div>
+    <div class="role-guide-card">
+      <p class="rg-num">Role 6</p>
+      <p class="rg-title">Technology Executive</p>
+      <p class="rg-concern">"If technology replaces labor, funding models must change."</p>
+      <p class="rg-note">This is the most forward-looking role. Students here should be pushing the table to ask structural questions: if automation eliminates 20% of payroll tax revenue, what replaces it? This role is a natural ally for novel proposals (robot tax, data tax) but should also be pushed to acknowledge the enforcement challenges.</p>
+      <p class="rg-friction">Natural tension with: Small Business Owner (Role 3), Economist (Role 5)</p>
+    </div>
+    <div class="role-guide-card">
+      <p class="rg-num">Role 7</p>
+      <p class="rg-title">Elected Lawmaker</p>
+      <p class="rg-concern">"What can actually pass without destroying trust?"</p>
+      <p class="rg-note">This role is the negotiation chair. They do not have a fixed policy position — their constraint is political viability. They must build a majority coalition. Push them: "Who have you talked to? What have you offered? What have you given up?" This is the role that forces the simulation toward a conclusion.</p>
+      <p class="rg-friction">Natural tension with: every other role simultaneously</p>
+    </div>
+  </div>
+
+  <!-- POLICY FACILITATION GUIDE -->
+  <div class="sec-header"><span class="sec-roman">IV</span><span class="sec-title">Policy Option Facilitation Guide</span></div>
+
+  <p class="body">Six policy options are on the table in the student document. Here is the matrix placement and core tension for each — use these to push back on proposals that ignore the tradeoffs.</p>
+
+  <table class="policy-guide">
+    <tr>
+      <td class="pg-num">1</td>
+      <td class="pg-name">Raise Payroll Taxes</td>
+      <td class="pg-quadrant">Q I / II border</td>
+      <td class="pg-tension">Preserves structure. Burdens workers and small employers directly. Ask: who pays proportionally more — a worker making $50K or an investor with $2M in capital gains?</td>
+    </tr>
+    <tr>
+      <td class="pg-num">2</td>
+      <td class="pg-name">Wealth / Capital Gains Tax</td>
+      <td class="pg-quadrant">Q I</td>
+      <td class="pg-tension">Redistributive logic. Shifts burden upward. Ask: what happens to investment behavior? Does the Economist accept this as structurally sound over 30 years?</td>
+    </tr>
+    <tr>
+      <td class="pg-num">3</td>
+      <td class="pg-name">Technology / AI Tax</td>
+      <td class="pg-quadrant">Q I (novel)</td>
+      <td class="pg-tension">Most forward-looking option. Ask: how do you define a "robot"? Who administers this? The Tech Executive should have strong views. The Economist should stress-test the revenue projections.</td>
+    </tr>
+    <tr>
+      <td class="pg-num">4</td>
+      <td class="pg-name">Reduce / Means-Test Benefits</td>
+      <td class="pg-quadrant">Q II / IV border</td>
+      <td class="pg-tension">Politically explosive. Ask: what does means-testing cost to administer? Does it break the universal character of the program — and if so, does that weaken political support for it long-term?</td>
+    </tr>
+    <tr>
+      <td class="pg-num">5</td>
+      <td class="pg-name">Raise Retirement Age</td>
+      <td class="pg-quadrant">Q II</td>
+      <td class="pg-tension">Unequal impact is the key issue. Ask the Retiree and Young Worker: does a construction worker and a knowledge worker have equal ability to work until 70? How does this option interact with race and class?</td>
+    </tr>
+    <tr>
+      <td class="pg-num">6</td>
+      <td class="pg-name">Fund with Debt</td>
+      <td class="pg-quadrant">Q III (technocratic deferral)</td>
+      <td class="pg-tension">The "do nothing" option in disguise. The Economist should reject this as a standalone solution. Ask: who pays the debt eventually? Is this a reform — or counterrevolution through inaction?</td>
+    </tr>
+  </table>
+
+  <!-- LESSON STRUCTURE -->
+  <div class="sec-header"><span class="sec-roman">V</span><span class="sec-title">Lesson Structure</span></div>
+
+  <div class="phase">
+    <p class="phase-meta"><span>Phase 1</span><span>10 min</span></p>
+    <p class="phase-title">Framing — The Structural Problem</p>
+    <div class="phase-body">
+      <p>Open with the essential question on the board: <em>"How should a shrinking workforce support an aging society — fairly, sustainably, and democratically?"</em> Do not take answers yet. Read Section I of the student doc aloud or have students read it silently. Establish the six structural facts (people living longer, birth rates falling, etc.) as the non-negotiable constraints.</p>
+      <p>Key teacher move: "This is not a debate about whether Social Security or Medicare should exist. That question is settled — these are among the most popular programs in American history. The question is how to sustain them. That is your job today."</p>
+    </div>
+  </div>
+
+  <div class="script">
+    <p class="script-label">Teacher script — framing</p>
+    <p class="script-text">"Today you are not students. You are the people who actually have to make this decision. Each of you has a role — a perspective, a set of concerns, a core question you need answered before you'll agree to anything. Your job is not to win. Your job is to find a package that can pass. That means you will have to give something up. Every single one of you. If your proposal doesn't cost you something, it's not a real proposal."</p>
+  </div>
+
+  <div class="phase">
+    <p class="phase-meta"><span>Phase 2</span><span>10–15 min</span></p>
+    <p class="phase-title">Role Immersion — Read and Prepare</p>
+    <div class="phase-body">
+      <p>Students read their role card and the six policy options. Each student or group should prepare: their opening position (which options they support and oppose), their core non-negotiable, and one thing they might be willing to trade.</p>
+      <p>Circulate during this phase. Push students who are reading passively: "What does your role actually need? What would make this crisis worse for you? What would you accept if you had to?"</p>
+    </div>
+  </div>
+
+  <div class="phase">
+    <p class="phase-meta"><span>Phase 3</span><span>30–40 min</span></p>
+    <p class="phase-title">Negotiation — Building the Package</p>
+    <div class="phase-body">
+      <p>The Lawmaker (Role 7) chairs. Each role presents their opening position in 60–90 seconds. Then the floor opens for negotiation. Your job as teacher is to enforce the constraints — not to direct the outcome.</p>
+      <p><strong>Constraint enforcement:</strong> If a proposal ignores a major tradeoff, push back in role: "The Economist says this doesn't close the gap. What's your response?" If a role goes silent, prompt them directly: "Young Worker — does this proposal work for you? What would you need to say yes?"</p>
+      <p><strong>The coalition requirement:</strong> Remind students at the halfway point that the final package must have at least two roles explicitly supporting it. The Lawmaker's job is to find that coalition.</p>
+      <p><strong>Time pressure:</strong> With 10 minutes left in this phase, announce: "You have 10 minutes to finalize a package. It does not need to be unanimous. It needs to be defensible." This creates productive urgency.</p>
+    </div>
+  </div>
+
+  <div class="phase">
+    <p class="phase-meta"><span>Phase 4</span><span>10–15 min</span></p>
+    <p class="phase-title">Proposal Presentation</p>
+    <div class="phase-body">
+      <p>Each group (or the full class) presents their final package: which policy options they chose, which roles supported it, and what each supporting role gave up. If running multiple simultaneous simulations, present all packages and compare.</p>
+      <p>Key comparison question: "Two groups working on the same problem reached different agreements. What does that tell us about democratic negotiation?"</p>
+    </div>
+  </div>
+
+  <div class="phase">
+    <p class="phase-meta"><span>Phase 5</span><span>15–20 min</span></p>
+    <p class="phase-title">Debrief — Back to the Matrix</p>
+    <div class="phase-body">
+      <p>Students step out of role and complete the three reflection prompts in Section VII of the student document. These connect the simulation back to the Power–Democracy–Economy matrix and the Revolution/Counterrevolution/Reform framework.</p>
+      <p>Run a whole-class share-out on the third reflection prompt: "Whose trust does your proposal preserve — and whose does it risk losing? Why does that matter for a democracy?" This is the synthesis question. Take 4–5 responses. Do not resolve.</p>
+    </div>
+  </div>
+
+  <!-- NEGOTIATION FACILITATION -->
+  <div class="sec-header"><span class="sec-roman">VI</span><span class="sec-title">Negotiation Facilitation — What to Watch For</span></div>
+
+  <div class="neg-track">
+    <p class="neg-label">Common negotiation failures — and how to intervene</p>
+    <div class="neg-row">
+      <p class="neg-step">Ideological deadlock</p>
+      <p class="neg-desc">Two roles refuse to engage across a fundamental value difference. Intervention: "Set aside whether this is fair in principle. Is it survivable for your role? What's the minimum you could accept?" Move from values to interests.</p>
+    </div>
+    <div class="neg-row">
+      <p class="neg-step">Math avoidance</p>
+      <p class="neg-desc">Groups propose combinations that sound politically appealing but don't add up. Intervention: activate the Economist. "Does this package actually close the funding gap? By what percentage? Over what time horizon?" Force specificity.</p>
+    </div>
+    <div class="neg-row">
+      <p class="neg-step">Silent roles</p>
+      <p class="neg-desc">One or two roles go quiet while louder roles dominate. Intervention: call on silent roles directly. "Retiree — this package raises the retirement age by two years. What does that mean for you, specifically?" Name the silence.</p>
+    </div>
+    <div class="neg-row">
+      <p class="neg-step">False consensus</p>
+      <p class="neg-desc">Groups agree too quickly on a package that papers over real tradeoffs. Intervention: "Who in this coalition is getting the worst deal? What did they give up? Is that actually acceptable to them, or are they just going along?" Make the costs visible.</p>
+    </div>
+    <div class="neg-row">
+      <p class="neg-step">Revolution creep</p>
+      <p class="neg-desc">A proposal emerges that would fundamentally restructure the program rather than reform it. Not necessarily wrong — but name it. "Is this a reform package or a replacement? What does the Revolution/Reform framework say about how likely this is to pass and stick?"</p>
+    </div>
+  </div>
+
+  <!-- DIFFERENTIATION -->
+  <div class="sec-header"><span class="sec-roman">VII</span><span class="sec-title">Differentiation Options</span></div>
+
+  <div class="diff-grid">
+    <div class="diff-cell">
+      <p class="diff-label">Option A — 90 min</p>
+      <p class="diff-title">Core Simulation</p>
+      <p class="diff-body">Phases 1–4. Framing, role immersion, negotiation, and proposal presentation. Assign reflection prompts as homework. Skip the full debrief.</p>
+    </div>
+    <div class="diff-cell">
+      <p class="diff-label">Option B — 120 min</p>
+      <p class="diff-title">Full Lab</p>
+      <p class="diff-body">All five phases. Full negotiation, presentation, and in-class debrief with matrix placement. Best for block periods or double periods.</p>
+    </div>
+    <div class="diff-cell">
+      <p class="diff-label">Option C — Two Days</p>
+      <p class="diff-title">Research + Simulation</p>
+      <p class="diff-body">Day 1: Students research one historical precedent from Section II of the student doc and prepare their role. Day 2: Full simulation. Historical grounding deepens the argument quality significantly.</p>
+    </div>
+  </div>
+
+  <!-- ASSESSMENT -->
+  <div class="sec-header"><span class="sec-roman">VIII</span><span class="sec-title">Assessment Guidance</span></div>
+
+  <p class="body">Assess the quality of civic reasoning — not the political direction of the final proposal. A group that produces a proposal that raises the retirement age and taxes capital gains, and can defend both tradeoffs with specificity, is demonstrating stronger civic skill than a group that reaches an easy consensus without examining the costs.</p>
+
+  <div class="assess">
+    <p class="assess-label">What to assess</p>
+    <div class="assess-row">
+      <p class="assess-criterion">Role fidelity</p>
+      <p class="assess-desc">Did the student argue from their assigned role with specificity? Or did they slip into their own views without engaging the role's constraints?</p>
+    </div>
+    <div class="assess-row">
+      <p class="assess-criterion">Tradeoff clarity</p>
+      <p class="assess-desc">Can the student name who benefits and who bears cost in their proposal — concretely, not generally? "Workers pay more" is general. "A worker earning $55K pays an additional $275/year" is concrete.</p>
+    </div>
+    <div class="assess-row">
+      <p class="assess-criterion">Negotiation evidence</p>
+      <p class="assess-desc">Did the student concede something real to build a coalition? Is there evidence in the final package that their role accepted a cost?</p>
+    </div>
+    <div class="assess-row">
+      <p class="assess-criterion">Matrix placement</p>
+      <p class="assess-desc">Can the student place the final package on the Power–Democracy–Economy matrix with a defensible explanation? Can they acknowledge an alternative placement?</p>
+    </div>
+    <div class="assess-row">
+      <p class="assess-criterion">Framework connection</p>
+      <p class="assess-desc">Does the student's reflection connect the simulation to the Revolution/Counterrevolution/Reform framework? Can they identify which option their package represents — and why?</p>
+    </div>
+  </div>
+
+  <div class="closing">
+    <p>"Democracy is not choosing between good and bad options.<br>It is choosing among difficult options without breaking the system.<br><br>Teaching students to do that — in real time, under constraint, across difference —<br>is the most important civic work a classroom can do."</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-sonnet-4-6)</span>
+  </div>
+
+</div>
+</body>
+</html>

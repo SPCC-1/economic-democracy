@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teacher Guide — Revolution, Counterrevolution, and Reform — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+
+/* ── Masthead ── */
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.5rem;}
+.masthead-sub{font-size:.9rem;font-weight:300;color:var(--mid);line-height:1.6;max-width:580px;}
+.masthead-meta{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.08em;margin-top:.75rem;}
+
+/* ── Section headers ── */
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+
+/* ── Body text ── */
+.body-intro{font-size:1rem;font-weight:300;line-height:1.8;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.4rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.8;color:var(--ink);margin-bottom:1.1rem;max-width:680px;}
+
+/* ── At-a-glance box ── */
+.glance{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:1.75rem 0;}
+.glance-cell{background:var(--cream);padding:1rem 1.1rem;}
+.glance-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem;}
+.glance-val{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);line-height:1.2;}
+@media(max-width:600px){.glance{grid-template-columns:1fr 1fr;}}
+
+/* ── Paired resource callout ── */
+.pair-bar{background:var(--black);color:var(--white);padding:.6rem 1.25rem;margin:2rem 0 .5rem;display:flex;align-items:center;gap:1rem;}
+.pair-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.4);}
+.pair-title{font-family:'Source Serif 4',serif;font-size:.85rem;font-weight:600;color:var(--white);}
+
+/* ── Objectives list ── */
+.obj-list{list-style:none;margin:.75rem 0 1.25rem;}
+.obj-list li{font-size:.88rem;font-weight:300;color:var(--ink);padding:.4rem 0 .4rem 1.5rem;position:relative;line-height:1.6;border-bottom:1px solid var(--cream);}
+.obj-list li::before{content:'→';position:absolute;left:0;color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:.7rem;top:.45rem;}
+
+/* ── Lesson phase blocks ── */
+.phase{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.5rem 0;background:var(--cream);}
+.phase-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem;display:flex;gap:1rem;}
+.phase-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.phase-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.phase-body p{margin-bottom:.6rem;}
+.phase-body p:last-child{margin-bottom:0;}
+
+/* ── Teacher script ── */
+.script{border:1px solid var(--rule);padding:1rem 1.25rem;margin:1rem 0;background:var(--white);}
+.script-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem;}
+.script-text{font-size:.88rem;font-style:italic;color:var(--charcoal);line-height:1.75;}
+
+/* ── Discussion question guide ── */
+.dq-guide{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-guide li{counter-increment:dq;margin-bottom:1.25rem;padding-left:2rem;position:relative;}
+.dq-guide li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.15rem;}
+.dq-q{font-size:.9rem;font-weight:600;color:var(--charcoal);line-height:1.5;margin-bottom:.35rem;}
+.dq-note{font-size:.83rem;font-weight:300;color:var(--mid);line-height:1.7;}
+.dq-listen{font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);margin-top:.3rem;letter-spacing:.02em;}
+
+/* ── Triad reference ── */
+.triad-ref{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.triad-cell{padding:1.25rem 1.25rem;display:flex;flex-direction:column;gap:.5rem;}
+.triad-cell:nth-child(1){background:var(--black);}
+.triad-cell:nth-child(2){background:var(--charcoal);}
+.triad-cell:nth-child(3){background:#444;}
+.triad-word{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:900;color:#ffffff;line-height:1.1;}
+.triad-note{font-size:.87rem;color:#ffffff;font-weight:400;line-height:1.6;}
+@media(max-width:600px){.triad-ref{grid-template-columns:1fr;}}
+
+/* ── Differentiation options ── */
+.diff-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin:1.5rem 0;}
+.diff-cell{background:var(--paper);padding:1.1rem;}
+.diff-cell:nth-child(even){background:var(--cream);}
+.diff-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem;}
+.diff-title{font-family:'Playfair Display',serif;font-size:.9rem;font-weight:700;color:var(--black);margin-bottom:.3rem;}
+.diff-body{font-size:.8rem;font-weight:300;color:var(--mid);line-height:1.6;}
+@media(max-width:600px){.diff-grid{grid-template-columns:1fr;}}
+
+/* ── Assessment box ── */
+.assess{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.assess-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.65rem;}
+.assess-row{display:grid;grid-template-columns:1fr 2fr;gap:.5rem 1.5rem;margin-bottom:.5rem;padding-bottom:.5rem;border-bottom:1px solid var(--rule);}
+.assess-row:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.assess-criterion{font-size:.82rem;font-weight:600;color:var(--charcoal);}
+.assess-desc{font-size:.82rem;font-weight:300;color:var(--mid);line-height:1.55;}
+@media(max-width:600px){.assess-row{grid-template-columns:1fr;}}
+
+/* ── Inset quote ── */
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+
+/* ── Closing ── */
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin-top:2.5rem;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;line-height:1.75;color:var(--white);}
+
+/* ── Footer ── */
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:9pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.triad-ref,.closing{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Teacher Guide &nbsp;·&nbsp; Free Resource</p>
+    <h1 class="masthead-title">Revolution, Counterrevolution,<br>and Reform</h1>
+    <p class="masthead-sub">Teacher facilitation guide for the conceptual essay on the cyclical decision point in American history. Pair with the student reading of the same name.</p>
+    <p class="masthead-meta">Working World LLC &nbsp;·&nbsp; Alfredo Mathew III &nbsp;·&nbsp; Grades 11–12 &nbsp;·&nbsp; 60–90 minutes</p>
+  </div>
+
+  <!-- AT A GLANCE -->
+  <div class="glance">
+    <div class="glance-cell">
+      <p class="glance-label">Time</p>
+      <p class="glance-val">60–90 min</p>
+    </div>
+    <div class="glance-cell">
+      <p class="glance-label">Format</p>
+      <p class="glance-val">Reading + Discussion + Matrix Application</p>
+    </div>
+    <div class="glance-cell">
+      <p class="glance-label">Paired Student Doc</p>
+      <p class="glance-val">Revolution, Counterrevolution, and Reform (Student Essay)</p>
+    </div>
+    <div class="glance-cell">
+      <p class="glance-label">Prerequisite</p>
+      <p class="glance-val">Framework lesson recommended but not required</p>
+    </div>
+  </div>
+
+  <div class="pair-bar">
+    <span class="pair-label">Paired resource</span>
+    <span class="pair-title">This guide accompanies: Revolution, Counterrevolution, and Reform — Student Reading ($2.99 on TPT)</span>
+  </div>
+
+  <!-- OVERVIEW -->
+  <p class="body-intro">This lesson uses three moments of American historical crisis — 1787, 1865–1877, and 1929–1938 — to teach a single transferable idea: that democratic societies repeatedly face a choice between tearing down existing systems, restoring the old order, or reforming what exists. The goal is not to celebrate reform as the obvious right answer. The goal is to give students a framework for analyzing why reform has been the recurring American response — and what that choice costs.</p>
+
+  <p class="body">The lesson works best when students come in ready to argue. The three options — Revolution, Counterrevolution, Reform — are designed to create productive disagreement. Your job is not to resolve that disagreement but to keep it rigorous: grounded in evidence, historically specific, and connected to the Power–Democracy–Economy matrix.</p>
+
+  <!-- LEARNING OBJECTIVES -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">Learning Objectives</span></div>
+
+  <p class="body">By the end of this lesson, students will be able to:</p>
+  <ul class="obj-list">
+    <li>Define revolution, counterrevolution, and reform as distinct political responses to systemic crisis</li>
+    <li>Identify which impulse dominated in each of the three historical decision points</li>
+    <li>Explain why reform has been the recurring American choice — and what that choice involves giving up</li>
+    <li>Place a historical reform on the Power–Democracy–Economy matrix and defend the placement</li>
+    <li>Connect the historical pattern to at least one contemporary political moment</li>
+  </ul>
+
+  <!-- THE CORE IDEA -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">The Core Idea — What You're Teaching</span></div>
+
+  <p class="body">The essay presents a three-part framework that appears repeatedly in American history. Make sure you are clear on the distinctions before facilitating:</p>
+
+  <div class="triad-ref">
+    <div class="triad-cell">
+      <span class="triad-word">Revolution</span>
+      <span class="triad-note">Tear down and start over. Radical restructuring. The existing system is beyond repair. Associated with total transformation — not always violent, but always structural.</span>
+    </div>
+    <div class="triad-cell">
+      <span class="triad-word">Counter&shy;revolution</span>
+      <span class="triad-note">Restore or freeze the old order. Resistance to change, or rollback of change already made. The belief that prior arrangements were better. Often underestimated as a political force.</span>
+    </div>
+    <div class="triad-cell">
+      <span class="triad-word">Reform</span>
+      <span class="triad-note">Rebuild from within. Preserve the institutional framework while changing what it produces. Accepts existing legitimacy structures as the arena for change. Requires accepting partial outcomes.</span>
+    </div>
+  </div>
+
+  <div class="inset">
+    <strong>Key teacher framing:</strong> Reform is not the "moderate" or "safe" option — it is the option that requires the most institutional knowledge and the highest tolerance for incompleteness. Students who are drawn to revolution or counterrevolution are often responding to legitimate grievances. Honor the grievance. Then ask what kind of change actually lasts.
+  </div>
+
+  <!-- LESSON STRUCTURE -->
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">Lesson Structure</span></div>
+
+  <div class="phase">
+    <p class="phase-meta"><span>Phase 1</span><span>10–15 min</span></p>
+    <p class="phase-title">Framing — The Three Options</p>
+    <div class="phase-body">
+      <p>Before students read, introduce the three terms using the triad at the top of the student handout. Do not define them fully — let students complete the definitions based on what they already know or intuit.</p>
+      <p>Ask: <em>"Think of a system you believe is broken — school, a workplace, a policy, anything. What would it mean to revolutionize it? To restore it? To reform it? What's the difference?"</em> Take 3–4 responses. Do not resolve. Move into the reading.</p>
+    </div>
+  </div>
+
+  <div class="script">
+    <p class="script-label">Teacher script — opening</p>
+    <p class="script-text">"Today we're going to look at a pattern that shows up again and again in American history. Every time the system hits a serious crisis, the same three options appear on the table. We're going to name them, study them in three specific historical moments, and then use our matrix to figure out where each choice actually sits. By the end, I want you to be able to look at any political debate — today, yesterday, or 200 years ago — and say: this is a revolution argument, this is a counterrevolution argument, this is a reform argument. And I want you to be able to explain which one is more likely to produce lasting change — and why."</p>
+  </div>
+
+  <div class="phase">
+    <p class="phase-meta"><span>Phase 2</span><span>15–20 min</span></p>
+    <p class="phase-title">Reading — Silent or Paired</p>
+    <div class="phase-body">
+      <p>Students read the essay independently or in pairs. While reading, they should annotate: mark one place where they agree with the essay's framing, and one place where they want to push back or ask a question.</p>
+      <p>If time is short, assign Sections I and II only (the three decision points and "Why Reform Feels Slow"). Section III (Discussion Questions) and Section IV (Apply the Framework) are the class activity.</p>
+    </div>
+  </div>
+
+  <div class="phase">
+    <p class="phase-meta"><span>Phase 3</span><span>20–25 min</span></p>
+    <p class="phase-title">Discussion — The Five Questions</p>
+    <div class="phase-body">
+      <p>Run the five discussion questions from Section III of the student essay as a whole-class or small-group discussion. See the detailed facilitation guide in Section IV of this document for each question. You do not need to cover all five — Questions 1, 2, and 5 are the core. Questions 3 and 4 are extensions.</p>
+      <p>Hold the last 5 minutes of this phase for the transition to matrix application: <em>"Now let's figure out where these choices actually sit on our Power–Democracy–Economy map."</em></p>
+    </div>
+  </div>
+
+  <div class="phase">
+    <p class="phase-meta"><span>Phase 4</span><span>15–20 min</span></p>
+    <p class="phase-title">Matrix Application — Section IV of Student Essay</p>
+    <div class="phase-body">
+      <p>Students complete the three write-in prompts from Section IV of the student essay. These can be done individually, in pairs, or as a structured whole-class activity where different groups are assigned different historical moments.</p>
+      <p>The key move: students must place not just the reform that was chosen, but also the revolutionary alternative and the counterrevolutionary alternative. This forces them to use all four quadrants — not just the one they instinctively prefer.</p>
+    </div>
+  </div>
+
+  <div class="phase">
+    <p class="phase-meta"><span>Phase 5</span><span>5–10 min</span></p>
+    <p class="phase-title">Closing — The Choice of Every Generation</p>
+    <div class="phase-body">
+      <p>Close with the final line of the essay: <em>"That decision — revolution, counterrevolution, or reform — is the central civic choice of every generation."</em> Ask students: <em>"Which choice do you think is dominant in American politics right now — and where does it sit on the matrix?"</em></p>
+      <p>Do not resolve. The goal is to send students out with the question active, not answered.</p>
+    </div>
+  </div>
+
+  <!-- DISCUSSION QUESTION GUIDE -->
+  <div class="sec-header"><span class="sec-roman">IV</span><span class="sec-title">Discussion Question Facilitation Guide</span></div>
+
+  <p class="body">The five questions below are from Section III of the student essay. Notes for each question follow.</p>
+
+  <ol class="dq-guide">
+    <li>
+      <p class="dq-q">In each of the three historical examples, who was pushing for revolution? Who was pushing for counterrevolution? Who argued for reform — and what did they have to give up?</p>
+      <p class="dq-note">This is the anchor question — it should take the most time. Push students to be specific: not "abolitionists wanted revolution" but "Frederick Douglass in 1865 argued for full citizenship as a structural demand — is that revolution or reform?" The key insight: the same person can argue for revolution on one issue and reform on another. And reform always requires someone to accept less than they wanted.</p>
+      <p class="dq-listen">Listen for: students who conflate "radical" with "revolutionary." Radicalism and revolution are not the same. The Reconstruction Amendments were radical — and reformist.</p>
+    </li>
+    <li>
+      <p class="dq-q">The essay says the constitutional system was "designed to absorb radical energy." What does that mean? Is that a feature or a flaw?</p>
+      <p class="dq-note">This is the tension question — the one most likely to produce real disagreement. Some students will see it as a feature: a system that prevents violent rupture and forces deliberation. Others will see it as a flaw: a system designed by property owners to protect existing hierarchies from challenge. Both readings have historical support. Your job is to keep both alive in the room simultaneously.</p>
+      <p class="dq-listen">Listen for: students who assume "designed to absorb" means "designed to suppress." Push them to distinguish between slowing change down and preventing it entirely.</p>
+    </li>
+    <li>
+      <p class="dq-q">Can you think of a moment in American history where reform failed or was blocked? What happened next?</p>
+      <p class="dq-note">Extension question — best for students who have more historical background. Reconstruction's collapse (1877), the failure of the ERA, blocked labor reforms of the 1940s are all strong examples. The key follow-up: when reform is blocked, does the pressure disappear — or does it resurface later, often in a different form?</p>
+      <p class="dq-listen">Listen for: students who conclude that blocked reform proves reform is impossible. Push back: what did the blockage produce? Did it delay change, redirect it, or eventually produce more radical pressure?</p>
+    </li>
+    <li>
+      <p class="dq-q">Where do you see these three impulses — revolution, counterrevolution, reform — in current political debates?</p>
+      <p class="dq-note">Contemporary application — handle carefully. The goal is not to label political parties but to identify the structural logic of arguments students observe. "Tear it all down" arguments exist on both left and right. So do "restore what we had" arguments. So do reform arguments. The matrix helps here: where does each impulse tend to sit on the Power–Democracy–Economy grid?</p>
+      <p class="dq-listen">Listen for: students who assign all revolution arguments to one side and all counterrevolution arguments to the other. History does not support this. Push for examples from both directions.</p>
+    </li>
+    <li>
+      <p class="dq-q">The essay calls reform a "democratic skill." Do you agree? What skills does reform require that revolution does not?</p>
+      <p class="dq-note">This is the synthesis question — save it for the end. Reform requires: tolerance for partial outcomes, willingness to work within institutions you may distrust, ability to build coalitions with people you disagree with, and long time horizons. Revolution requires: clarity about what needs to be destroyed, willingness to accept the costs of rupture, and confidence that the replacement will be better. Ask students: which set of skills is harder to cultivate? Which is more available in the current political environment?</p>
+      <p class="dq-listen">Listen for: students who frame reform as passive or cowardly. The essay explicitly rejects this. Reform requires more institutional knowledge and more patience than revolution — those are demanding skills, not weak ones.</p>
+    </li>
+  </ol>
+
+  <!-- MATRIX APPLICATION GUIDE -->
+  <div class="sec-header"><span class="sec-roman">V</span><span class="sec-title">Matrix Application — Teacher Notes</span></div>
+
+  <p class="body">The three write-in prompts in Section IV of the student essay ask students to place historical choices on the Power–Democracy–Economy matrix. Here is the suggested placement logic for each decision point. These are starting points for discussion, not correct answers — defensible placements that differ from these are valid.</p>
+
+  <div class="phase">
+    <p class="phase-meta"><span>Decision Point 1</span><span>1787 — The Constitution</span></p>
+    <p class="phase-title">Reform: Quadrant II (Private Markets, Democratic Guardrails)</p>
+    <div class="phase-body">
+      <p>The Constitution strengthened national capacity for commerce and governance while preserving significant private and state power. It added democratic accountability (elections, separation of powers) while limiting direct popular control. A revolutionary alternative might have looked like Quadrant I (strong central democratic power) or pushed even further toward decentralized Quadrant IV. The counterrevolutionary position — keep the Articles — preserved a weaker Quadrant III/IV arrangement.</p>
+    </div>
+  </div>
+
+  <div class="phase">
+    <p class="phase-meta"><span>Decision Point 2</span><span>1865–1877 — Reconstruction</span></p>
+    <p class="phase-title">Reform: Toward Quadrant I (Public Power, Democratic Accountability)</p>
+    <div class="phase-body">
+      <p>The Reconstruction Amendments moved toward Quadrant I by expanding democratic participation and federal power over civil rights. The revolutionary alternative — land redistribution ("40 acres and a mule") — would have been a deeper Quadrant I move, redistributing economic power directly. The counterrevolutionary response (Redemption, 1877) was a hard move back toward Quadrant IV: private power, elite control, minimal democratic accountability for Black citizens.</p>
+    </div>
+  </div>
+
+  <div class="phase">
+    <p class="phase-meta"><span>Decision Point 3</span><span>1929–1938 — The New Deal</span></p>
+    <p class="phase-title">Reform: Quadrant I / II Border (Public Power with Democratic and Technocratic Elements)</p>
+    <div class="phase-body">
+      <p>The New Deal expanded public power significantly (Quadrant I direction) but relied heavily on expert administration (Quadrant III elements). It preserved capitalism and private enterprise (not a Quadrant I purist move). The revolutionary alternatives of the 1930s — communism, socialism, Huey Long's "Share Our Wealth" — would have moved further into Quadrant I or even proposed new structures altogether. The counterrevolutionary position (laissez-faire restoration) would have been Quadrant IV.</p>
+    </div>
+  </div>
+
+  <!-- DIFFERENTIATION -->
+  <div class="sec-header"><span class="sec-roman">VI</span><span class="sec-title">Differentiation Options</span></div>
+
+  <div class="diff-grid">
+    <div class="diff-cell">
+      <p class="diff-label">Option A — 60 min</p>
+      <p class="diff-title">Core Lesson</p>
+      <p class="diff-body">Phases 1–3 only. Framing, reading, and discussion of Questions 1, 2, and 5. Skip matrix application. Close with the generation question.</p>
+    </div>
+    <div class="diff-cell">
+      <p class="diff-label">Option B — 90 min</p>
+      <p class="diff-title">Full Lesson</p>
+      <p class="diff-body">All five phases. Full discussion of all five questions. Matrix application completed individually or in pairs. Structured share-out at close.</p>
+    </div>
+    <div class="diff-cell">
+      <p class="diff-label">Option C — Two Days</p>
+      <p class="diff-title">Extended with Research</p>
+      <p class="diff-body">Day 1: Core lesson through discussion. Day 2: Students research a fourth decision point (their choice, from any era) and present a three-option analysis with matrix placement.</p>
+    </div>
+  </div>
+
+  <!-- ASSESSMENT -->
+  <div class="sec-header"><span class="sec-roman">VII</span><span class="sec-title">Assessment Guidance</span></div>
+
+  <p class="body">Evaluate students on the quality of their reasoning, not on which option they prefer. A student who argues for revolution in 1865 and can defend it with historical evidence is demonstrating exactly the skill this lesson targets.</p>
+
+  <div class="assess">
+    <p class="assess-label">What to assess</p>
+    <div class="assess-row">
+      <p class="assess-criterion">Conceptual distinction</p>
+      <p class="assess-desc">Can the student clearly distinguish between all three options? Do they avoid collapsing "radical" and "revolutionary," or "moderate" and "reformist"?</p>
+    </div>
+    <div class="assess-row">
+      <p class="assess-criterion">Historical specificity</p>
+      <p class="assess-desc">Is the student's analysis grounded in the actual content of the three decision points, or are they making generic claims about "American history"?</p>
+    </div>
+    <div class="assess-row">
+      <p class="assess-criterion">Matrix placement</p>
+      <p class="assess-desc">Can the student place a choice on the matrix and explain why — including acknowledging that alternative placements are defensible?</p>
+    </div>
+    <div class="assess-row">
+      <p class="assess-criterion">Tradeoff recognition</p>
+      <p class="assess-desc">Does the student acknowledge what reform costs — not just what it achieves? This is the key indicator of genuine engagement with the framework.</p>
+    </div>
+  </div>
+
+  <div class="inset">
+    <strong>Do not assess:</strong> Which option the student prefers. The goal of this lesson is analytical capacity, not political alignment. A student who argues for revolution with rigorous historical grounding is demonstrating stronger civic reasoning than a student who defaults to reform without examining its costs.
+  </div>
+
+  <!-- COMMON MISCONCEPTIONS -->
+  <div class="sec-header"><span class="sec-roman">VIII</span><span class="sec-title">Common Misconceptions to Address</span></div>
+
+  <ul class="obj-list">
+    <li><strong>"Reform = good, revolution = bad."</strong> The essay does not make this claim. Reform has been the American pattern — but the essay is explicit that it is incomplete and sometimes blocked. Reconstruction's failure is a reform failure.</li>
+    <li><strong>"Counterrevolution is always from the right."</strong> Counterrevolutionary impulses exist across the political spectrum — including resistance to change from entrenched interests that benefit from existing progressive institutions.</li>
+    <li><strong>"The constitutional system is neutral."</strong> The essay notes it was designed to absorb radical energy. That design reflects choices made by specific people with specific interests. Push students to ask: whose interests does slow deliberative change tend to protect?</li>
+    <li><strong>"We are obviously at a decision point right now."</strong> Challenge students to be specific about what system is under pressure, who is applying it, and which option each political actor is actually advocating.</li>
+  </ul>
+
+  <div class="closing">
+    <p>"Reform is not the safe choice.<br>It is the choice that requires the most patience, the most institutional knowledge,<br>and the highest tolerance for incompleteness.<br>Teaching students to see that — and to choose it deliberately — is the work."</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-sonnet-4-6)</span>
+  </div>
+
+</div>
+</body>
+</html>

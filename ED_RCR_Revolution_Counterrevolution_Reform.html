@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revolution, Counterrevolution, and Reform — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;}
+.masthead-meta{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.08em;margin-top:.5rem;}
+
+/* Three options banner */
+.triad{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--black);margin:2rem 0;}
+.triad-cell{padding:1rem 1.1rem;display:flex;flex-direction:column;gap:.3rem;}
+.triad-cell:nth-child(1){background:var(--black);}
+.triad-cell:nth-child(2){background:var(--charcoal);}
+.triad-cell:nth-child(3){background:#444;}
+.triad-num{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);}
+.triad-word{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:900;color:var(--white);line-height:1.1;}
+.triad-def{font-size:.75rem;color:rgba(255,255,255,.65);font-weight:300;line-height:1.5;margin-top:.2rem;}
+
+/* Body */
+.body-intro{font-size:1rem;font-weight:300;line-height:1.8;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.4rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.8;color:var(--ink);margin-bottom:1.1rem;max-width:680px;}
+
+/* Historical moments */
+.moment{border-left:3px solid var(--black);padding:.85rem 1.25rem;margin:1.5rem 0;background:var(--cream);}
+.moment-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem;}
+.moment-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.moment-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+
+/* Key insight */
+.insight{background:var(--black);color:var(--white);padding:1.1rem 1.5rem;margin:2rem 0;}
+.insight p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;line-height:1.7;color:var(--white);}
+
+/* Section header */
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+
+/* Discussion questions */
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+
+/* Write lines */
+.write-block{margin:1.5rem 0;}
+.write-prompt{font-size:.85rem;font-weight:600;color:var(--charcoal);margin-bottom:.6rem;}
+.write-line{border-bottom:1px solid var(--rule);height:1.8rem;margin-bottom:.35rem;}
+
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+@media(max-width:600px){
+  .triad{grid-template-columns:1fr;}
+  .page{padding:0 1rem 3rem;}
+}
+@media print{
+  body{background:white;font-size:9pt;}
+  .page{max-width:100%;padding:0;}
+  .triad,.sec-header,.insight{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Conceptual Essay &nbsp;·&nbsp; Student Reading</p>
+    <h1 class="masthead-title">Revolution, Counterrevolution,<br>and Reform</h1>
+    <p class="masthead-sub">The Cyclical Decision Point in American History</p>
+    <p class="masthead-meta">Working World LLC &nbsp;·&nbsp; Alfredo Mathew III &nbsp;·&nbsp; Grades 11–12</p>
+  </div>
+
+  <div class="triad">
+    <div class="triad-cell">
+      <span class="triad-num">Option 1</span>
+      <span class="triad-word">Revolution</span>
+      <span class="triad-def">A desire to tear down the existing system and start over</span>
+    </div>
+    <div class="triad-cell">
+      <span class="triad-num">Option 2</span>
+      <span class="triad-word">Counter&shy;revolution</span>
+      <span class="triad-def">A desire to restore or freeze the old order</span>
+    </div>
+    <div class="triad-cell">
+      <span class="triad-num">Option 3</span>
+      <span class="triad-word">Reform</span>
+      <span class="triad-def">A decision to rebuild, adapt, and strengthen institutions without abandoning them</span>
+    </div>
+  </div>
+
+  <p class="body-intro">A recurring pattern runs through American history, often unnoticed because it cuts across eras, parties, and personalities. Again and again, moments of deep crisis produce three competing impulses. The American experiment is distinctive not because it avoids conflict, but because it has repeatedly chosen reform over rupture as its primary response to crisis. This choice — never easy, never clean — has been a central source of both stability and prosperity.</p>
+
+  <p class="body">This is not because Americans lack radical ideas. On the contrary, radical critiques have always been present. But the constitutional system was deliberately designed to absorb radical energy, test it, slow it down, and translate only its most durable insights into law and institutions. The goal was not to suppress change, but to prevent change from destroying the very capacity to govern.</p>
+
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">Three Historical Decision Points</span></div>
+
+  <div class="moment">
+    <p class="moment-label">Decision Point 1 &nbsp;·&nbsp; 1787</p>
+    <p class="moment-title">The Articles of Confederation</p>
+    <p class="moment-body">Faced with a weak central government, economic disorder, and political fragmentation, the United States stood at a crossroads. One option was to abandon the experiment entirely. Another was to double down on radical decentralization. Instead, the Constitution represented a reformist choice: build on what existed, correct its failures, and strengthen national capacity without abandoning republican principles.</p>
+  </div>
+
+  <div class="moment">
+    <p class="moment-label">Decision Point 2 &nbsp;·&nbsp; 1865–1877</p>
+    <p class="moment-title">Reconstruction After the Civil War</p>
+    <p class="moment-body">The country again faced revolutionary pressure — this time driven by slavery's abolition and the demand for full equality. Counterrevolution also emerged, seeking to restore old hierarchies. The Reconstruction Amendments were a reformist response: they fundamentally reshaped citizenship and rights while preserving the constitutional framework. Their incomplete implementation reveals both the strength and fragility of reform as a path.</p>
+  </div>
+
+  <div class="moment">
+    <p class="moment-label">Decision Point 3 &nbsp;·&nbsp; 1929–1938</p>
+    <p class="moment-title">The Great Depression and the New Deal</p>
+    <p class="moment-body">Economic collapse fueled calls for radical transformation and, in some quarters, authoritarian alternatives. The New Deal did not abolish capitalism, nor did it leave markets untouched. It reformed the system — creating social insurance, regulating finance, and stabilizing demand — so that democracy could survive economic failure.</p>
+  </div>
+
+  <div class="insight">
+    <p>Each of these moments reflects a cyclical decision point: when existing systems fail, societies must choose whether to tear down, restore, or reform. The American tendency — imperfect but persistent — has been to build on top of what exists, layering new institutions, rights, and protections rather than starting from zero.</p>
+  </div>
+
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">Why Reform Feels Slow</span></div>
+
+  <p class="body">This pattern helps explain why American change often feels slow, frustrating, and incomplete. Reform prioritizes continuity and legitimacy over speed and purity. It trades revolutionary clarity for institutional durability. But it also helps explain why the United States has avoided the repeated collapses that have plagued other societies.</p>
+
+  <p class="body">Today, many argue that we are again at such a turning point. Economic inequality, technological disruption, political polarization, and declining trust in institutions have revived revolutionary and counterrevolutionary impulses. Calls to tear everything down coexist with demands to restore an imagined past. Understanding this cycle helps students see that the real question is not whether change is coming, but what kind of change will prevail.</p>
+
+  <p class="body">This course treats reform not as cowardice or compromise, but as a democratic skill — the ability to channel pressure into lasting institutions. Students will study moments when reform succeeded, when it failed, and when it was blocked. They will learn that stability is not the absence of conflict, but the product of repeatedly choosing to rebuild rather than abandon the system.</p>
+
+  <p class="body">Seen this way, American history is not a straight line of progress or decline. It is a series of decisions, made under pressure, about how much of the past to discard and how much to carry forward. <strong>That decision — revolution, counterrevolution, or reform — is the central civic choice of every generation.</strong></p>
+
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">Discussion Questions</span></div>
+
+  <ol class="dq-list">
+    <li>In each of the three historical examples, who was pushing for revolution? Who was pushing for counterrevolution? Who argued for reform — and what did they have to give up?</li>
+    <li>The essay says the constitutional system was "designed to absorb radical energy." What does that mean? Is that a feature or a flaw?</li>
+    <li>Can you think of a moment in American history where reform failed or was blocked? What happened next?</li>
+    <li>Where do you see these three impulses — revolution, counterrevolution, reform — in current political debates?</li>
+    <li>The essay calls reform a "democratic skill." Do you agree? What skills does reform require that revolution does not?</li>
+  </ol>
+
+  <div class="sec-header"><span class="sec-roman">IV</span><span class="sec-title">Apply the Framework</span></div>
+
+  <p class="body">After reading, use the Power–Democracy–Economy matrix from the Framework lesson to complete the following:</p>
+
+  <div class="write-block">
+    <p class="write-prompt">Choose one of the three historical moments. Which quadrant best describes the reform that was chosen — and why?</p>
+    <div class="write-line"></div><div class="write-line"></div><div class="write-line"></div>
+  </div>
+
+  <div class="write-block">
+    <p class="write-prompt">Which quadrant would a revolutionary response have occupied? What about a counterrevolutionary one?</p>
+    <div class="write-line"></div><div class="write-line"></div><div class="write-line"></div>
+  </div>
+
+  <div class="write-block">
+    <p class="write-prompt">The essay says we may be at another decision point today. Where would you place the dominant political responses on the matrix — and what does that tell you?</p>
+    <div class="write-line"></div><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;·&nbsp; AI Synthesis: Claude (Anthropic, claude-sonnet-4-6)</span>
+  </div>
+
+</div>
+</body>
+</html>

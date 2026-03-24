@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>250 Voices — Economic Democracy Curriculum</title>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  :root{
+    --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+    --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+    --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+  }
+  html{font-size:16px;scroll-behavior:smooth;}
+  body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+  /* ── Nav ── */
+  .site-nav{border-bottom:2px solid var(--black);padding:.75rem 0;position:sticky;top:0;background:var(--paper);z-index:100;}
+  .nav-inner{max-width:960px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;gap:2rem;flex-wrap:wrap;}
+  .nav-home{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--black);white-space:nowrap;}
+  .nav-home span{font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;display:block;font-weight:400;}
+  .nav-links{display:flex;gap:1.5rem;flex-wrap:wrap;}
+  .nav-links a{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mid);}
+  .nav-links a:hover{color:var(--black);}
+  .nav-links a.active{color:var(--black);border-bottom:1.5px solid var(--black);}
+  /* ── Page wrapper ── */
+  .page{max-width:860px;margin:0 auto;padding:0 2rem 5rem;}
+  .page-wide{max-width:960px;margin:0 auto;padding:0 2rem 5rem;}
+  /* ── Footer ── */
+  .site-footer{border-top:2px solid var(--black);padding:1.5rem 2rem;max-width:960px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+  .footer-left{font-family:'Source Serif 4',serif;font-size:.8rem;color:var(--charcoal);font-weight:600;}
+  .footer-right{font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.05em;}
+  /* ── Typography shared ── */
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.75rem;}
+  .display-title{font-family:'Playfair Display',serif;font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;}
+  .section-rule{border:none;border-top:1px solid var(--rule);margin:2.5rem 0;}
+  /* ── Print ── */
+  @media print{
+    .site-nav{display:none;}
+    body{background:white;}
+    .page,.page-wide{max-width:100%;padding:0;}
+  }
+</style>
+</head>
+<body>
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-home">Economic Democracy<span>economicdemocracy.co</span></a>
+    <div class="nav-links"><a href="index.html">Home</a><a href="framework.html">The Framework</a><a href="anthology.html" class="active">250 Voices</a><a href="educators.html">For Educators</a><a href="students.html">For Students</a></div>
+  </div>
+</nav>
+<div class="page">
+
+  <style>
+  .ant-hero{padding:3.5rem 0 2.5rem;border-bottom:3px solid var(--black);margin-bottom:3rem;}
+  .ant-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:900;color:var(--black);line-height:1.1;letter-spacing:-.02em;margin-bottom:.75rem;}
+  .ant-sub{font-size:1rem;font-weight:300;color:var(--mid);max-width:560px;line-height:1.7;}
+  .ant-intro p{font-size:1rem;font-weight:300;line-height:1.8;color:var(--ink);margin-bottom:1.25rem;max-width:640px;}
+  .ant-intro p:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.4rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+  .cat-toc{list-style:none;margin:2rem 0;display:grid;grid-template-columns:1fr 1fr;gap:.4rem 2rem;}
+  @media(max-width:560px){.cat-toc{grid-template-columns:1fr;}}
+  .cat-toc a{font-family:'Source Serif 4',serif;font-size:.88rem;color:var(--charcoal);text-decoration:none;line-height:1.6;display:block;padding:.3rem 0;border-bottom:1px solid var(--cream);}
+  .cat-toc a:hover{color:var(--black);}
+  .cat-toc span{font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);margin-right:.4em;}
+  .full-link{display:inline-block;margin:1.5rem 0;padding:.65rem 1.4rem;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;}
+  .full-link:hover{background:var(--charcoal);}
+  .count-bar{display:flex;align-items:center;gap:1.5rem;padding:1.25rem 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin:2rem 0;}
+  .count-num{font-family:'Playfair Display',serif;font-size:3rem;font-weight:900;color:var(--black);line-height:1;}
+  .count-detail{font-size:.85rem;color:var(--mid);font-weight:300;line-height:1.5;}
+  .count-detail strong{display:block;color:var(--charcoal);font-weight:600;}
+</style>
+  <div class="ant-hero">
+    <p class="eyebrow">The Anthology</p>
+    <h1 class="ant-title">250 Voices.<br>One per year of the<br>United States.</h1>
+    <p class="ant-sub">From 1776 to 2026. Founders and abolitionists. Economists and poets. Platform builders and their critics. Organizers, theorists, artists, and radicals. The map of how power argues with itself.</p>
+  </div>
+
+  <div class="count-bar">
+    <div class="count-num">250</div>
+    <div class="count-detail">
+      <strong>Voices &nbsp;·&nbsp; 8 Categories</strong>
+      This is not a canon. It is a map. Every section holds the full tension —<br>
+      the architects of concentrated power and the people who challenged it.
+    </div>
+  </div>
+
+  <div class="ant-intro">
+    <p>The United States is 250 years old. In 1776, a group of founders declared that all people are created equal — that life, liberty, and the pursuit of happiness are not privileges granted by kings but rights inherent to every human being. It was the most radical political statement of its age. It was also incomplete. The prosperity it promised was not distributed to the people who built it. Two hundred and fifty years later, we are still living inside that incompleteness.</p>
+    <p>This anthology marks that anniversary with 250 voices — one for every year of the republic — who have argued, organized, built, written, sung, theorized, and resisted their way through the central question the Declaration left unanswered: who should hold economic power, and to whom should it be accountable?</p>
+  </div>
+
+  <a href="ED_ANT_Core_Anthology_250.html" class="full-link">Browse the full anthology →</a>
+
+  <p class="eyebrow" style="margin-top:2.5rem;">8 Categories</p>
+  <ul class="cat-toc">
+    <li><a href="ED_ANT_Core_Anthology_250.html#sec-i"><span>I.</span>Architects of the Experiment</a></li>
+    <li><a href="ED_ANT_Core_Anthology_250.html#sec-ii"><span>II.</span>Ideas That Built the World</a></li>
+    <li><a href="ED_ANT_Core_Anthology_250.html#sec-iii"><span>III.</span>Scale, Labor &amp; the Machine</a></li>
+    <li><a href="ED_ANT_Core_Anthology_250.html#sec-iv"><span>IV.</span>The Digital Revolution &amp; Its Critics</a></li>
+    <li><a href="ED_ANT_Core_Anthology_250.html#sec-v"><span>V.</span>Money, Wealth &amp; Who Controls It</a></li>
+    <li><a href="ED_ANT_Core_Anthology_250.html#sec-vi"><span>VI.</span>Power, Accountability &amp; Democratic Renewal</a></li>
+    <li><a href="ED_ANT_Core_Anthology_250.html#sec-vii"><span>VII.</span>Economic Anger, Identity &amp; Mobilization</a></li>
+    <li><a href="ED_ANT_Core_Anthology_250.html#sec-viii"><span>VIII.</span>Who Tells the Story of the Economy</a></li>
+  </ul>
+
+</div>
+<footer class="site-footer">
+  <div class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC &nbsp;&middot;&nbsp; economicdemocracy.co</div>
+  <div class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-sonnet-4-6)</div>
+</footer>
+</body>
+</html>

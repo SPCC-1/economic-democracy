@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mapping Power, Democracy, and the Economy — Framework Rationale</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+
+/* ── Masthead ── */
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.5rem;}
+.masthead-sub{font-size:.9rem;font-weight:300;color:var(--mid);line-height:1.6;max-width:580px;}
+.masthead-meta{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.08em;margin-top:.75rem;}
+
+/* ── Section headers ── */
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+
+/* ── Body text ── */
+.body-intro{font-size:1rem;font-weight:300;line-height:1.8;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.4rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.8;color:var(--ink);margin-bottom:1.1rem;max-width:680px;}
+.body-bold{font-size:.92rem;font-weight:600;line-height:1.7;color:var(--charcoal);margin-bottom:.75rem;}
+
+/* ── Inset quote ── */
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+
+/* ── Axis blocks ── */
+.axis-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin:1.5rem 0;}
+.axis-cell{background:var(--paper);padding:1.25rem;}
+.axis-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem;}
+.axis-name{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.axis-desc{font-size:.82rem;font-weight:300;color:var(--mid);line-height:1.6;}
+
+/* ── Quadrant grid ── */
+.quad-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.quad-cell{background:var(--paper);padding:1.25rem;}
+.quad-cell:nth-child(even){background:var(--cream);}
+.quad-num{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem;}
+.quad-name{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--black);margin-bottom:.3rem;}
+.quad-tagline{font-size:.8rem;font-style:italic;color:var(--mid);margin-bottom:.5rem;}
+.quad-body{font-size:.8rem;font-weight:300;color:var(--ink);line-height:1.6;margin-bottom:.5rem;}
+.quad-tension{font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);border-top:1px solid var(--rule);padding-top:.5rem;letter-spacing:.02em;}
+
+/* ── Bullet list ── */
+.bullet-list{list-style:none;margin:.75rem 0 1.25rem 0;}
+.bullet-list li{font-size:.88rem;font-weight:300;color:var(--ink);padding:.25rem 0 .25rem 1.25rem;position:relative;line-height:1.6;border-bottom:1px solid var(--cream);}
+.bullet-list li::before{content:'—';position:absolute;left:0;color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:.75rem;}
+
+/* ── Closing box ── */
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin-top:2.5rem;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;line-height:1.7;color:var(--white);}
+
+/* ── Footer ── */
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+@media(max-width:600px){
+  .axis-grid,.quad-grid{grid-template-columns:1fr;}
+  .page{padding:0 1rem 3rem;}
+}
+@media print{
+  body{background:white;font-size:9pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .closing{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Framework Document &nbsp;·&nbsp; Teacher Resource</p>
+    <h1 class="masthead-title">Mapping Power, Democracy,<br>and the Economy</h1>
+    <p class="masthead-sub">A Framework for Understanding Competing Worldviews — Rationale and Pedagogical Guide</p>
+    <p class="masthead-meta">Working World LLC &nbsp;·&nbsp; Alfredo Mathew III &nbsp;·&nbsp; Grades 11–12 &nbsp;·&nbsp; AP / Honors / Seminar</p>
+  </div>
+
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">Purpose of This Exercise</span></div>
+
+  <p class="body-intro">Public debates about the economy often sound chaotic, polarized, or emotional. People argue past one another using the same words — freedom, innovation, fairness, democracy — but mean very different things by them. As a result, disagreements are often framed as "left vs. right" or "pro-business vs. anti-business," which hides the deeper questions actually at stake.</p>
+
+  <p class="body">This exercise is designed to help students move beneath surface disagreement and examine the structural questions that shape modern economic life:</p>
+
+  <ul class="bullet-list">
+    <li>Where should economic power sit?</li>
+    <li>Who should control it?</li>
+    <li>How much democratic oversight is necessary?</li>
+    <li>When does concentration of power become dangerous — or necessary?</li>
+  </ul>
+
+  <p class="body">Rather than asking students to memorize positions or choose sides, this framework helps them <strong>map worldviews, analyze assumptions, and understand tradeoffs.</strong></p>
+
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">Why a Two-Axis Framework?</span></div>
+
+  <p class="body">Most political frameworks rely on a single spectrum. That approach fails to capture the complexity of modern economic debates, especially in an era of global markets, digital platforms, and artificial intelligence.</p>
+
+  <p class="body-bold">This framework uses two independent axes:</p>
+
+  <div class="axis-grid">
+    <div class="axis-cell">
+      <p class="axis-label">X-Axis</p>
+      <p class="axis-name">Where economic power is located</p>
+      <p class="axis-desc">Publicly constrained &nbsp;←→&nbsp; Privately held. This is not simply "government vs. business." It is about who designs the rules, who enforces them, and who benefits from them.</p>
+    </div>
+    <div class="axis-cell">
+      <p class="axis-label">Y-Axis</p>
+      <p class="axis-name">How accountable that power is to democracy</p>
+      <p class="axis-desc">High democratic accountability &nbsp;←→&nbsp; Low democratic accountability. This axis cuts across both public and private power — technocratic public institutions can score low; democratically accountable private cooperatives can score high.</p>
+    </div>
+  </div>
+
+  <p class="body">Together, these axes reveal four distinct ways of thinking about the economy. Importantly, none of these positions are inherently "correct" or "incorrect." Each reflects different values, priorities, and assessments of risk.</p>
+
+  <p class="body">By placing thinkers on this grid, students learn that disagreements are often about:</p>
+
+  <ul class="bullet-list">
+    <li>Trust in markets vs. institutions</li>
+    <li>Speed vs. consent</li>
+    <li>Efficiency vs. legitimacy</li>
+    <li>Expertise vs. participation</li>
+  </ul>
+
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">The Four Quadrants: Narrative Descriptions</span></div>
+
+  <div class="quad-grid">
+    <div class="quad-cell">
+      <p class="quad-num">Quadrant I</p>
+      <p class="quad-name">Public Power with Democratic Accountability</p>
+      <p class="quad-tagline">"Markets should be shaped to serve collective goals."</p>
+      <p class="quad-body">This worldview holds that markets are not natural forces but designed systems. Because economic outcomes affect everyone, decisions about market structure should be subject to democratic oversight. Regulation, antitrust, public investment, and social protections are necessary tools to ensure fairness, competition, and legitimacy. Advocates worry that concentrated private power undermines democracy, limits opportunity, and weakens trust.</p>
+      <p class="quad-tension">Core tension: How much public control protects democracy without stifling initiative?</p>
+    </div>
+    <div class="quad-cell">
+      <p class="quad-num">Quadrant II</p>
+      <p class="quad-name">Private Markets with Democratic Guardrails</p>
+      <p class="quad-tagline">"Markets drive innovation best, but require limits."</p>
+      <p class="quad-body">Private enterprise and entrepreneurship are the primary engines of progress, creativity, and growth. Markets allocate resources efficiently and respond quickly to new information. However, unchecked markets can fail. Democratic institutions play a corrective role — stepping in to prevent abuse, protect consumers and workers, and preserve competition. Regulation is justified when it addresses clear harm, but skepticism remains about excessive intervention.</p>
+      <p class="quad-tension">Core tension: Where should guardrails end and overreach begin?</p>
+    </div>
+    <div class="quad-cell">
+      <p class="quad-num">Quadrant III</p>
+      <p class="quad-name">Public Power with Elite or Expert Control</p>
+      <p class="quad-tagline">"Complex systems require centralized coordination."</p>
+      <p class="quad-body">In highly complex economies — global finance, infrastructure, public health, climate systems — mass participation is seen as insufficient for effective decision-making. Trained experts, institutions, or technocratic bodies are trusted to manage risk and coordinate large systems. Democracy remains important, but often indirectly. Public consent is expressed through delegation rather than direct control. Stability and continuity are prioritized over responsiveness.</p>
+      <p class="quad-tension">Core tension: Can democratic legitimacy be preserved when decisions are insulated from popular control?</p>
+    </div>
+    <div class="quad-cell">
+      <p class="quad-num">Quadrant IV</p>
+      <p class="quad-name">Private Power with Elite Control</p>
+      <p class="quad-tagline">"Progress comes from builders, not voters."</p>
+      <p class="quad-body">This worldview places its faith in visionary leaders, entrepreneurs, and investors. Speed, scale, and concentration are seen as advantages, not threats. Democratic processes are viewed as slow, reactive, and often misinformed — especially in fast-moving technological environments. Markets and elites are trusted to shape the future, with the belief that benefits will eventually spread outward.</p>
+      <p class="quad-tension">Core tension: Who protects the public when private power accelerates faster than accountability?</p>
+    </div>
+  </div>
+
+  <div class="sec-header"><span class="sec-roman">IV</span><span class="sec-title">The Learning Goal: Exercising Democratic Reasoning</span></div>
+
+  <p class="body">The purpose of placing thinkers on this map is not to label them, praise them, or condemn them. It is to help students practice a set of democratic reasoning skills that are increasingly rare and increasingly necessary:</p>
+
+  <ul class="bullet-list">
+    <li>Identifying assumptions behind arguments</li>
+    <li>Distinguishing values from facts</li>
+    <li>Understanding tradeoffs rather than searching for perfect solutions</li>
+    <li>Recognizing that power can be exercised in different forms</li>
+    <li>Revising one's position in light of new evidence</li>
+  </ul>
+
+  <div class="inset">Students are encouraged to disagree — but with reasons, not reflexes.</div>
+
+  <div class="sec-header"><span class="sec-roman">V</span><span class="sec-title">Why This Matters for Students</span></div>
+
+  <p class="body">Students are inheriting an economy shaped by forces that feel distant and uncontrollable: global markets, algorithms, platforms, institutions, and capital flows. Without tools to understand these systems, frustration often turns into cynicism or disengagement.</p>
+
+  <p class="body">This framework gives students:</p>
+
+  <ul class="bullet-list">
+    <li>Language to describe what they are experiencing</li>
+    <li>Structure to analyze competing claims</li>
+    <li>Confidence to participate in complex discussions</li>
+    <li>Practice holding multiple ideas at once</li>
+  </ul>
+
+  <p class="body">They learn that disagreement is not a failure of democracy, but a feature of it — when handled with care and rigor.</p>
+
+  <div class="sec-header"><span class="sec-roman">VI</span><span class="sec-title">Why This Matters for Society</span></div>
+
+  <p class="body">A healthy democracy requires citizens who can tolerate complexity, understand opposing views, debate power without demonizing people, and make informed tradeoffs rather than demand perfect answers.</p>
+
+  <p class="body">By practicing these skills in the classroom, students are not just learning economics or civics. They are learning how to reason together in a pluralistic society. That is the deeper purpose of this exercise.</p>
+
+  <div class="closing">
+    <p>Economic debates are not battles between good and evil.<br>They are disagreements about power, trust, and tradeoffs.<br>The goal is not consensus — it is democratic reasoning.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;·&nbsp; AI Synthesis: Claude (Anthropic, claude-sonnet-4-6)</span>
+  </div>
+
+</div>
+</body>
+</html>

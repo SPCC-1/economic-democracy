@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Civic Economy Role-Play Lab — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;}
+.masthead-meta{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.08em;}
+
+.eq-block{background:var(--black);color:var(--white);padding:1.1rem 1.5rem;margin:1.75rem 0;}
+.eq-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.4rem;}
+.eq-text{font-family:'Playfair Display',serif;font-style:italic;font-size:1rem;color:var(--white);line-height:1.6;}
+
+.sec-header{background:var(--black);color:var(--white);padding:.65rem 1.25rem;margin:2rem 0 1rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--white);}
+
+.body{font-size:.9rem;font-weight:300;line-height:1.8;color:var(--ink);margin-bottom:1rem;max-width:680px;}
+.body-intro{font-size:1rem;font-weight:300;line-height:1.8;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro::first-letter{font-family:'Playfair Display',serif;font-size:3.2rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+
+/* Problem bullets */
+.problem-list{list-style:none;margin:.75rem 0 1.25rem;display:grid;grid-template-columns:1fr 1fr;gap:0 1.5rem;}
+.problem-list li{font-size:.85rem;font-weight:300;color:var(--ink);padding:.3rem 0 .3rem 1.1rem;position:relative;line-height:1.5;border-bottom:1px solid var(--cream);}
+.problem-list li::before{content:'↓';position:absolute;left:0;color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:.65rem;}
+
+/* Role cards */
+.role-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin:1.25rem 0;}
+.role-card{background:var(--paper);padding:1.1rem;}
+.role-card:nth-child(odd){background:var(--cream);}
+.role-num{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.role-title{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--black);margin-bottom:.3rem;}
+.role-concern-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:.5rem 0 .2rem;}
+.role-concern{font-size:.8rem;font-style:italic;color:var(--charcoal);line-height:1.5;border-left:2px solid var(--black);padding-left:.65rem;}
+.role-body{font-size:.8rem;font-weight:300;color:var(--mid);line-height:1.55;margin-top:.4rem;}
+
+/* Policy options */
+.policy-table{width:100%;border-collapse:collapse;margin:1.25rem 0;}
+.policy-table tr{border-bottom:1px solid var(--rule);}
+.policy-table tr:nth-child(odd){background:var(--cream);}
+.policy-table td{padding:.65rem .85rem;font-size:.83rem;vertical-align:top;}
+.policy-num{font-family:'IBM Plex Mono',monospace;font-size:.6rem;color:var(--muted);width:2rem;font-weight:500;}
+.policy-name{font-weight:600;color:var(--black);width:180px;}
+.policy-pro{color:var(--mid);font-weight:300;line-height:1.5;}
+.policy-con{color:var(--mid);font-weight:300;font-style:italic;line-height:1.5;}
+
+/* Task steps */
+.task-steps{counter-reset:ts;list-style:none;margin:1rem 0;}
+.task-steps li{counter-increment:ts;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2.2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.task-steps li::before{content:counter(ts);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;font-weight:500;background:var(--black);color:var(--white);width:1.4rem;height:1.4rem;display:flex;align-items:center;justify-content:center;top:.55rem;}
+
+/* Write lines */
+.write-block{margin:1.25rem 0;}
+.write-prompt{font-size:.85rem;font-weight:600;color:var(--charcoal);margin-bottom:.5rem;}
+.write-line{border-bottom:1px solid var(--rule);height:1.8rem;margin-bottom:.3rem;}
+
+/* Key insight */
+.insight{background:var(--black);color:var(--white);padding:1rem 1.4rem;margin:1.75rem 0;text-align:center;}
+.insight p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.7;}
+
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+@media(max-width:600px){
+  .role-grid,.problem-list{grid-template-columns:1fr;}
+  .page{padding:0 1rem 3rem;}
+}
+@media print{
+  body{background:white;font-size:9pt;}
+  .page{max-width:100%;padding:0;}
+  .eq-block,.sec-header,.insight{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .role-card{break-inside:avoid;}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Role-Play Lab &nbsp;·&nbsp; Student + Teacher</p>
+    <h1 class="masthead-title">Civic Economy Role-Play Lab</h1>
+    <p class="masthead-sub">The Welfare State, Demographic Change, and Intergenerational Responsibility</p>
+    <p class="masthead-meta">Working World LLC &nbsp;·&nbsp; Alfredo Mathew III &nbsp;·&nbsp; Grades 11–12 &nbsp;·&nbsp; 90–120 minutes</p>
+  </div>
+
+  <div class="eq-block">
+    <p class="eq-label">Essential Question</p>
+    <p class="eq-text">How should a shrinking workforce support an aging society — fairly, sustainably, and democratically?</p>
+  </div>
+
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">Why This Issue Matters</span></div>
+
+  <p class="body-intro">For most of U.S. history, the welfare state was built on a simple assumption: many workers supporting fewer retirees. That assumption is breaking down — and the pressures are structural, not ideological.</p>
+
+  <ul class="problem-list">
+    <li>People are living longer</li>
+    <li>Birth rates are falling</li>
+    <li>Fewer workers paying payroll taxes</li>
+    <li>Healthcare costs are rising</li>
+    <li>Debt levels are already high</li>
+    <li>Social Security and Medicare remain among the most popular programs in American history</li>
+  </ul>
+
+  <p class="body">This creates a true governing dilemma — not an ideological one. There are no painless solutions. Only tradeoffs. Students will be asked to find them.</p>
+
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">Historical Precedents to Study</span></div>
+
+  <p class="body">Before beginning the role-play, research and be prepared to reference at least two of the following:</p>
+
+  <ul class="problem-list">
+    <li>Creation of Social Security (1930s)</li>
+    <li>Expansion of Medicare and Medicaid (1960s)</li>
+    <li>Payroll tax funding model</li>
+    <li>Postwar demographic boom</li>
+    <li>Past benefit adjustments (retirement age, COLAs)</li>
+    <li>Use of debt to fund social programs</li>
+  </ul>
+
+  <p class="body" style="font-style:italic;color:var(--mid);">Key historical insight: The welfare state was created through reform, not revolution — and has been repeatedly adjusted rather than abandoned.</p>
+
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">The Governing Problem</span></div>
+
+  <p class="body"><strong>You are part of a national commission tasked with keeping Social Security and Medicare viable for the next 75 years.</strong></p>
+
+  <p class="body">You must decide: Who pays? How much? For how long? And who bears the cost of transition? Your proposal must be financially plausible, politically defensible, acknowledge intergenerational fairness, and draw on historical precedent.</p>
+
+  <div class="sec-header"><span class="sec-roman">IV</span><span class="sec-title">Role Archetypes — Assign 5–7</span></div>
+
+  <p class="body" style="font-size:.83rem;color:var(--mid);font-style:italic;">Each role has legitimate interests. No one is "wrong." Your job is to represent your role honestly — then negotiate across differences.</p>
+
+  <div class="role-grid">
+    <div class="role-card">
+      <p class="role-num">Role 1</p>
+      <p class="role-title">Retired Worker</p>
+      <p class="role-body">Paid into the system for decades. Depends on benefits for basic security. Feels promises should be honored.</p>
+      <p class="role-concern-label">Core concern</p>
+      <p class="role-concern">"I did what was asked of me. Don't change the rules now."</p>
+    </div>
+    <div class="role-card">
+      <p class="role-num">Role 2</p>
+      <p class="role-title">Young Worker / Student</p>
+      <p class="role-body">Faces student debt, housing costs, job insecurity. Doubts the system will exist when they retire.</p>
+      <p class="role-concern-label">Core concern</p>
+      <p class="role-concern">"Why should I pay more into a system I may never receive?"</p>
+    </div>
+    <div class="role-card">
+      <p class="role-num">Role 3</p>
+      <p class="role-title">Small Business Owner</p>
+      <p class="role-body">Pays payroll taxes. Worried about labor costs and competitiveness. Weighs employee welfare against survival.</p>
+      <p class="role-concern-label">Core concern</p>
+      <p class="role-concern">"Higher taxes could mean fewer jobs or lower wages."</p>
+    </div>
+    <div class="role-card">
+      <p class="role-num">Role 4</p>
+      <p class="role-title">Wealth Holder / Investor</p>
+      <p class="role-body">Income comes from capital, not wages. Often pays less into payroll tax-based systems. Questions the targeting of wealth.</p>
+      <p class="role-concern-label">Core concern</p>
+      <p class="role-concern">"Why should wealth be targeted instead of fixing spending?"</p>
+    </div>
+    <div class="role-card">
+      <p class="role-num">Role 5</p>
+      <p class="role-title">Public Finance Economist</p>
+      <p class="role-body">Focuses on long-term sustainability. Warns against unlimited debt. Treats the math as non-negotiable.</p>
+      <p class="role-concern-label">Core concern</p>
+      <p class="role-concern">"Promises must match resources, or the system collapses."</p>
+    </div>
+    <div class="role-card">
+      <p class="role-num">Role 6</p>
+      <p class="role-title">Technology Executive</p>
+      <p class="role-body">Operates in AI and automation-driven economy. Productivity rising, labor share shrinking. Questions whether old funding models still apply.</p>
+      <p class="role-concern-label">Core concern</p>
+      <p class="role-concern">"If technology replaces labor, funding models must change."</p>
+    </div>
+    <div class="role-card">
+      <p class="role-num">Role 7</p>
+      <p class="role-title">Elected Lawmaker</p>
+      <p class="role-body">Balances voters, budgets, and legitimacy. Knows reforms are politically risky. Wants to survive the next election.</p>
+      <p class="role-concern-label">Core concern</p>
+      <p class="role-concern">"What can actually pass without destroying trust?"</p>
+    </div>
+    <div class="role-card" style="background:var(--cream);">
+      <p class="role-num" style="color:var(--muted);">Note</p>
+      <p class="role-title" style="font-size:.85rem;">Facilitation tip</p>
+      <p class="role-body">Roles can be combined or split depending on class size. The goal is that every position at the table has a genuine advocate. Avoid assigning roles that match students' own stated positions — productive discomfort is part of the learning.</p>
+    </div>
+  </div>
+
+  <div class="sec-header"><span class="sec-roman">V</span><span class="sec-title">Policy Options on the Table</span></div>
+
+  <p class="body" style="font-size:.83rem;color:var(--mid);">Groups must evaluate at least three options. Combinations are encouraged.</p>
+
+  <table class="policy-table">
+    <tr>
+      <td class="policy-num">1</td>
+      <td class="policy-name">Raise Payroll Taxes</td>
+      <td class="policy-pro">Maintains existing structure. Politically familiar.</td>
+      <td class="policy-con">Burdens workers directly. May reduce employment.</td>
+    </tr>
+    <tr>
+      <td class="policy-num">2</td>
+      <td class="policy-name">Wealth or Capital Gains Tax</td>
+      <td class="policy-pro">Shifts burden upward. Addresses inequality.</td>
+      <td class="policy-con">Raises questions about incentives and enforcement.</td>
+    </tr>
+    <tr>
+      <td class="policy-num">3</td>
+      <td class="policy-name">Technology / Data / AI Tax</td>
+      <td class="policy-pro">Reflects automation replacing labor. Forward-looking.</td>
+      <td class="policy-con">Difficult to define and administer. Precedent unclear.</td>
+    </tr>
+    <tr>
+      <td class="policy-num">4</td>
+      <td class="policy-name">Reduce or Means-Test Benefits</td>
+      <td class="policy-pro">Protects long-term finances. Targets need.</td>
+      <td class="policy-con">Risks elderly poverty. May break political trust.</td>
+    </tr>
+    <tr>
+      <td class="policy-num">5</td>
+      <td class="policy-name">Raise Retirement Age</td>
+      <td class="policy-pro">Reflects longer lifespans. Reduces liability.</td>
+      <td class="policy-con">Unequal impact: physical laborers cannot wait longer.</td>
+    </tr>
+    <tr>
+      <td class="policy-num">6</td>
+      <td class="policy-name">Fund with Debt</td>
+      <td class="policy-pro">Preserves benefits now. Avoids immediate political pain.</td>
+      <td class="policy-con">Shifts burden to future generations. Unsustainable long-term.</td>
+    </tr>
+  </table>
+
+  <div class="sec-header"><span class="sec-roman">VI</span><span class="sec-title">Core Student Task</span></div>
+
+  <ol class="task-steps">
+    <li><strong>Propose a reform package.</strong> No "do nothing" or "abolish everything" options. Every proposal must be financially plausible and include at least two policy options from the table above.</li>
+    <li><strong>Explain tradeoffs clearly.</strong> Who pays more? Who pays less? Who is protected? Who takes on risk? Write it out explicitly before presenting.</li>
+    <li><strong>Defend with historical precedent.</strong> How has the U.S. adjusted social programs before? Why does reform — not rupture — make sense here?</li>
+    <li><strong>Negotiation phase.</strong> Form coalitions across roles. Concede something important. Preserve system legitimacy. You must find at least one other role to partner with.</li>
+  </ol>
+
+  <div class="sec-header"><span class="sec-roman">VII</span><span class="sec-title">Reflection — Back to the Matrix</span></div>
+
+  <p class="body">After the role-play, step out of your role and answer the following:</p>
+
+  <div class="write-block">
+    <p class="write-prompt">Where does your group's proposal sit on the Power–Democracy–Economy matrix? Which quadrant — and why?</p>
+    <div class="write-line"></div><div class="write-line"></div><div class="write-line"></div>
+  </div>
+
+  <div class="write-block">
+    <p class="write-prompt">Is your proposal closer to reform, revolution, or counterrevolution? Explain using the framework from the Revolution/Counterrevolution/Reform reading.</p>
+    <div class="write-line"></div><div class="write-line"></div><div class="write-line"></div>
+  </div>
+
+  <div class="write-block">
+    <p class="write-prompt">Whose trust does your proposal preserve — and whose does it risk losing? Why does that matter for a democracy?</p>
+    <div class="write-line"></div><div class="write-line"></div><div class="write-line"></div>
+  </div>
+
+  <div class="insight">
+    <p>Democracy is not choosing between good and bad options.<br>It is choosing among difficult options without breaking the system.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;·&nbsp; AI Synthesis: Claude (Anthropic, claude-sonnet-4-6)</span>
+  </div>
+
+</div>
+</body>
+</html>

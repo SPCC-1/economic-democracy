@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Students — Economic Democracy Curriculum</title>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  :root{
+    --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+    --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+    --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+  }
+  html{font-size:16px;scroll-behavior:smooth;}
+  body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+  /* ── Nav ── */
+  .site-nav{border-bottom:2px solid var(--black);padding:.75rem 0;position:sticky;top:0;background:var(--paper);z-index:100;}
+  .nav-inner{max-width:960px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;gap:2rem;flex-wrap:wrap;}
+  .nav-home{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--black);white-space:nowrap;}
+  .nav-home span{font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;display:block;font-weight:400;}
+  .nav-links{display:flex;gap:1.5rem;flex-wrap:wrap;}
+  .nav-links a{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mid);}
+  .nav-links a:hover{color:var(--black);}
+  .nav-links a.active{color:var(--black);border-bottom:1.5px solid var(--black);}
+  /* ── Page wrapper ── */
+  .page{max-width:860px;margin:0 auto;padding:0 2rem 5rem;}
+  .page-wide{max-width:960px;margin:0 auto;padding:0 2rem 5rem;}
+  /* ── Footer ── */
+  .site-footer{border-top:2px solid var(--black);padding:1.5rem 2rem;max-width:960px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+  .footer-left{font-family:'Source Serif 4',serif;font-size:.8rem;color:var(--charcoal);font-weight:600;}
+  .footer-right{font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.05em;}
+  /* ── Typography shared ── */
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.75rem;}
+  .display-title{font-family:'Playfair Display',serif;font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;}
+  .section-rule{border:none;border-top:1px solid var(--rule);margin:2.5rem 0;}
+  /* ── Print ── */
+  @media print{
+    .site-nav{display:none;}
+    body{background:white;}
+    .page,.page-wide{max-width:100%;padding:0;}
+  }
+</style>
+</head>
+<body>
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-home">Economic Democracy<span>economicdemocracy.co</span></a>
+    <div class="nav-links"><a href="index.html">Home</a><a href="framework.html">The Framework</a><a href="anthology.html">250 Voices</a><a href="educators.html">For Educators</a><a href="students.html" class="active">For Students</a></div>
+  </div>
+</nav>
+<div class="page">
+
+  <style>
+  .st-hero{padding:3.5rem 0 2.5rem;border-bottom:3px solid var(--black);margin-bottom:3rem;}
+  .st-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:900;color:var(--black);line-height:1.1;letter-spacing:-.02em;margin-bottom:.75rem;}
+  .st-sub{font-size:1rem;font-weight:300;color:var(--mid);max-width:560px;line-height:1.7;}
+  .price-block{background:var(--black);color:var(--white);padding:2rem;margin:2.5rem 0;display:flex;align-items:flex-start;gap:2rem;flex-wrap:wrap;}
+  .price-num{font-family:'Playfair Display',serif;font-size:4rem;font-weight:900;line-height:1;flex-shrink:0;}
+  .price-detail{display:flex;flex-direction:column;gap:.5rem;}
+  .price-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;}
+  .price-desc{font-size:.88rem;font-weight:300;opacity:.7;line-height:1.6;max-width:400px;}
+  .price-cta{display:inline-block;margin-top:.75rem;padding:.6rem 1.25rem;background:var(--white);color:var(--black);font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;}
+  .price-cta:hover{opacity:.85;}
+  .contains-list{list-style:none;margin:2rem 0;display:flex;flex-direction:column;gap:.6rem;max-width:540px;}
+  .contains-list li{font-size:.92rem;font-weight:300;color:var(--ink);padding-left:1.2rem;position:relative;line-height:1.6;}
+  .contains-list li::before{content:'→';position:absolute;left:0;color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:.75rem;}
+  .principle-block{border-left:3px solid var(--black);padding-left:1.25rem;margin:2rem 0;}
+  .principle-block p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.05rem;color:var(--charcoal);line-height:1.6;}
+  .principle-block cite{font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:var(--muted);letter-spacing:.06em;display:block;margin-top:.5rem;font-style:normal;}
+</style>
+  <div class="st-hero">
+    <p class="eyebrow">For Students</p>
+    <h1 class="st-title">A tool for reasoning<br>about the economy.<br>Not a test.</h1>
+    <p class="st-sub">The student handout gives you the matrix, the four quadrant descriptions, a placement activity, sentence frames, and reflection prompts. Your goal is not to be correct. Your goal is to be defensible.</p>
+  </div>
+
+  <div class="price-block">
+    <div class="price-num">$2.99</div>
+    <div class="price-detail">
+      <span class="price-title">Framework Student Handout</span>
+      <span class="price-desc">5 pages. The matrix, four quadrant descriptions, placement activity, sentence frames, three extension options, and closing reflection. Designed for one class period or self-directed use.</span>
+      <a href="https://www.teacherspayteachers.com" class="price-cta" target="_blank">Get on Teachers Pay Teachers</a>
+    </div>
+  </div>
+
+  <p class="eyebrow" style="margin-top:2rem;">What's inside</p>
+  <ul class="contains-list">
+    <li>The Power–Democracy–Economy Matrix with labeled axes</li>
+    <li>Four quadrant descriptions with core tensions named</li>
+    <li>Placement activity with think-pair-share structure</li>
+    <li>Sentence frames: "We placed ___ here because ___"</li>
+    <li>Alternative placement prompt: "A different interpretation might place them ___ because ___"</li>
+    <li>Three extension options: place yourself, place a caregiver, place a public figure not studied</li>
+    <li>Closing reflection: "One way my thinking changed today was…"</li>
+  </ul>
+
+  <div class="principle-block">
+    <p>"Students are inheriting an economy shaped by forces that feel distant and uncontrollable. Without tools to understand these systems, frustration often turns into cynicism or disengagement. This framework gives students language to describe what they are experiencing."</p>
+    <cite>— From the Educator Overview</cite>
+  </div>
+
+  <hr class="section-rule">
+  <p style="font-size:.9rem;font-weight:300;color:var(--mid);line-height:1.7;max-width:600px;">Are you the teacher? <a href="educators.html" style="color:var(--charcoal);text-decoration:underline;">See the free teacher resources →</a></p>
+
+</div>
+<footer class="site-footer">
+  <div class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC &nbsp;&middot;&nbsp; economicdemocracy.co</div>
+  <div class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-sonnet-4-6)</div>
+</footer>
+</body>
+</html>

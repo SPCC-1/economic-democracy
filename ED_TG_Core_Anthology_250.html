@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teacher Guide — 250 Voices Anthology — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+
+/* ── Masthead ── */
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.5rem;}
+.masthead-sub{font-size:.9rem;font-weight:300;color:var(--mid);line-height:1.6;max-width:580px;}
+.masthead-meta{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.08em;margin-top:.75rem;}
+
+/* ── Section headers ── */
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+
+/* ── Body ── */
+.body-intro{font-size:1rem;font-weight:300;line-height:1.8;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.4rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.8;color:var(--ink);margin-bottom:1.1rem;max-width:680px;}
+
+/* ── At-a-glance ── */
+.glance{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:1.75rem 0;}
+.glance-cell{background:var(--cream);padding:1rem 1.1rem;}
+.glance-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem;}
+.glance-val{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);line-height:1.2;}
+@media(max-width:600px){.glance{grid-template-columns:1fr 1fr;}}
+
+/* ── Paired resource bar ── */
+.pair-bar{background:var(--black);color:var(--white);padding:.6rem 1.25rem;margin:2rem 0 .5rem;display:flex;align-items:center;gap:1rem;}
+.pair-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.4);}
+.pair-title{font-family:'Source Serif 4',serif;font-size:.85rem;font-weight:600;color:var(--white);}
+
+/* ── Objectives ── */
+.obj-list{list-style:none;margin:.75rem 0 1.25rem;}
+.obj-list li{font-size:.88rem;font-weight:300;color:var(--ink);padding:.4rem 0 .4rem 1.5rem;position:relative;line-height:1.6;border-bottom:1px solid var(--cream);}
+.obj-list li::before{content:'→';position:absolute;left:0;color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:.7rem;top:.45rem;}
+
+/* ── Section guide cards ── */
+.section-guide{margin:1.5rem 0;}
+.sg-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;display:flex;align-items:baseline;gap:1rem;margin-bottom:0;}
+.sg-roman{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;color:rgba(255,255,255,.3);flex-shrink:0;}
+.sg-title{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--white);}
+.sg-body{border:1px solid var(--rule);border-top:none;padding:1.1rem 1.25rem;background:var(--paper);}
+.sg-intro{font-size:.85rem;font-weight:300;font-style:italic;color:var(--mid);line-height:1.7;margin-bottom:.75rem;border-left:2px solid var(--rule);padding-left:.85rem;}
+.sg-tensions{display:grid;grid-template-columns:1fr 1fr;gap:.4rem 1.5rem;margin-bottom:.65rem;}
+.sg-tension{font-size:.8rem;font-weight:300;color:var(--ink);padding-left:1rem;position:relative;line-height:1.5;}
+.sg-tension::before{content:'↔';position:absolute;left:0;color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:.65rem;}
+.sg-use{font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.03em;border-top:1px solid var(--rule);padding-top:.5rem;}
+@media(max-width:600px){.sg-tensions{grid-template-columns:1fr;}}
+
+/* ── Lesson model blocks ── */
+.phase{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.5rem 0;background:var(--cream);}
+.phase-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem;display:flex;gap:1rem;}
+.phase-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.phase-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.phase-body p{margin-bottom:.6rem;}
+.phase-body p:last-child{margin-bottom:0;}
+
+/* ── Script ── */
+.script{border:1px solid var(--rule);padding:1rem 1.25rem;margin:1rem 0;background:var(--white);}
+.script-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem;}
+.script-text{font-size:.88rem;font-style:italic;color:var(--charcoal);line-height:1.75;}
+
+/* ── Inset ── */
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+
+/* ── Pairing table ── */
+.pairing-table{width:100%;border-collapse:collapse;margin:1.25rem 0;}
+.pairing-table tr{border-bottom:1px solid var(--rule);}
+.pairing-table tr:nth-child(odd){background:var(--cream);}
+.pairing-table td{padding:.65rem .85rem;font-size:.83rem;vertical-align:top;line-height:1.5;}
+.pt-a{font-weight:700;color:var(--black);width:160px;}
+.pt-b{font-weight:700;color:var(--black);width:160px;}
+.pt-tension{color:var(--mid);font-weight:300;font-style:italic;}
+
+/* ── Activity cards ── */
+.activity-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin:1.5rem 0;}
+.activity-card{background:var(--paper);padding:1.25rem;}
+.activity-card:nth-child(even){background:var(--cream);}
+.act-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.act-title{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.act-time{font-family:'IBM Plex Mono',monospace;font-size:.6rem;color:var(--muted);margin-bottom:.4rem;}
+.act-body{font-size:.8rem;font-weight:300;color:var(--mid);line-height:1.6;}
+@media(max-width:600px){.activity-grid{grid-template-columns:1fr;}}
+
+/* ── Differentiation ── */
+.diff-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin:1.5rem 0;}
+.diff-cell{background:var(--paper);padding:1.1rem;}
+.diff-cell:nth-child(even){background:var(--cream);}
+.diff-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem;}
+.diff-title{font-family:'Playfair Display',serif;font-size:.9rem;font-weight:700;color:var(--black);margin-bottom:.3rem;}
+.diff-body{font-size:.8rem;font-weight:300;color:var(--mid);line-height:1.6;}
+@media(max-width:600px){.diff-grid{grid-template-columns:1fr;}}
+
+/* ── Assessment ── */
+.assess{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.assess-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.65rem;}
+.assess-row{display:grid;grid-template-columns:1fr 2fr;gap:.5rem 1.5rem;margin-bottom:.5rem;padding-bottom:.5rem;border-bottom:1px solid var(--rule);}
+.assess-row:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.assess-criterion{font-size:.82rem;font-weight:700;color:var(--charcoal);}
+.assess-desc{font-size:.82rem;font-weight:300;color:var(--mid);line-height:1.55;}
+@media(max-width:600px){.assess-row{grid-template-columns:1fr;}}
+
+/* ── Closing ── */
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin-top:2.5rem;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;line-height:1.75;color:var(--white);}
+
+/* ── Footer ── */
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:9pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.sg-header,.closing{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .phase,.activity-card{break-inside:avoid;}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Teacher Guide &nbsp;·&nbsp; Free Resource</p>
+    <h1 class="masthead-title">250 Voices<br>Anthology Teacher Guide</h1>
+    <p class="masthead-sub">How to use a map of 250 economic thinkers — from the Founders to the present — as a teaching tool across a full curriculum. Includes section guides, lesson models, pairing strategies, and activity designs.</p>
+    <p class="masthead-meta">Working World LLC &nbsp;·&nbsp; Alfredo Mathew III &nbsp;·&nbsp; Grades 11–12 &nbsp;·&nbsp; Multiple lesson formats</p>
+  </div>
+
+  <div class="glance">
+    <div class="glance-cell">
+      <p class="glance-label">Voices</p>
+      <p class="glance-val">250 · 1776–2026</p>
+    </div>
+    <div class="glance-cell">
+      <p class="glance-label">Sections</p>
+      <p class="glance-val">8 Categories</p>
+    </div>
+    <div class="glance-cell">
+      <p class="glance-label">Paired Student Doc</p>
+      <p class="glance-val">250 Voices — Core Anthology</p>
+    </div>
+    <div class="glance-cell">
+      <p class="glance-label">Use</p>
+      <p class="glance-val">Reference · Placement · Research · Discussion</p>
+    </div>
+  </div>
+
+  <div class="pair-bar">
+    <span class="pair-label">Paired resource</span>
+    <span class="pair-title">This guide accompanies: 250 Voices — Core Anthology (Free on the website)</span>
+  </div>
+
+  <!-- OVERVIEW -->
+  <p class="body-intro">The anthology is not a reading assignment. It is a map. Two hundred and fifty figures — one for every year of the republic — organized into eight sections that hold the full tension of how power and economics have been argued, organized, theorized, and contested in American life. The teacher's job is not to assign the whole thing. It is to help students navigate it strategically: to find the figures who illuminate a problem, to place them on the matrix, and to hear the argument that runs between them.</p>
+
+  <p class="body">The organizing principle of the anthology is deliberate tension. Hamilton and Jefferson sit in the same section. Martin Luther King Jr. and Steve Bannon are in Section VII. adrienne maree brown and Marc Andreessen are in Section IV. Louis Kelso and Milton Friedman are in Section V. The point is not that these figures are equivalent — it is that they are responding to the same structural conditions and reaching different conclusions. Students cannot understand the argument without hearing both sides of it.</p>
+
+  <div class="inset">
+    <strong>Core teacher framing:</strong> "This is not a list of heroes. It is not a list of villains. It is a map of the argument the United States has been having with itself for 250 years — about who should hold economic power, and who it should answer to. Your job is to find where you are on this map. And then to find the person who disagrees with you most directly — and understand why they are wrong, or why they might be right."
+  </div>
+
+  <!-- LEARNING OBJECTIVES -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">What the Anthology Teaches</span></div>
+
+  <p class="body">The anthology is a tool, not a syllabus. Used well, it builds the following capacities over time:</p>
+  <ul class="obj-list">
+    <li>Recognize that every major economic argument has a lineage — it did not begin with the current political moment</li>
+    <li>Place a specific figure on the Power–Democracy–Economy matrix and defend the placement with evidence</li>
+    <li>Identify the figure whose argument most directly challenges their own default position — and engage it seriously</li>
+    <li>Understand why intelligent, informed people in the same section reach opposing conclusions</li>
+    <li>Connect a historical figure to a contemporary debate — and identify what has changed and what has not</li>
+    <li>Recognize that the storytellers (Section VIII) are economic actors too — narrative shapes what is considered possible</li>
+  </ul>
+
+  <!-- SECTION GUIDE -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">Section-by-Section Teacher Guide</span></div>
+
+  <p class="body">Each of the eight sections has a core argument and a set of internal tensions. Notes for each section follow — including the central disagreement, suggested pairings, and best entry points for classroom use.</p>
+
+  <div class="section-guide">
+    <div class="sg-header"><span class="sg-roman">I</span><span class="sg-title">Architects of the Experiment</span></div>
+    <div class="sg-body">
+      <p class="sg-intro">The founders built a republic designed to prevent tyranny — but disagreed from the first Congress about what tyranny looked like. That argument has never ended. This section includes the architects of the original experiment alongside the abolitionists, suffragists, and labor organizers who spent the next century demanding it deliver on its promise.</p>
+      <div class="sg-tensions">
+        <span class="sg-tension">Hamilton (concentrated federal power) vs. Jefferson (decentralized agrarian independence)</span>
+        <span class="sg-tension">Franklin (self-made myth) vs. Paine (radical redistribution)</span>
+        <span class="sg-tension">Founders' promises vs. Douglass / Tubman / Truth on their incompleteness</span>
+        <span class="sg-tension">Lincoln's free labor ideology vs. the economic reality of Reconstruction's failure</span>
+      </div>
+      <p class="sg-use">Best entry point: Hamilton vs. Jefferson — still the clearest statement of the central argument. Best matrix exercise: place Paine (Q I) and Madison (Q II/III border) and ask why they were in the same room.</p>
+    </div>
+  </div>
+
+  <div class="section-guide">
+    <div class="sg-header"><span class="sg-roman">II</span><span class="sg-title">Ideas That Built the World</span></div>
+    <div class="sg-body">
+      <p class="sg-intro">The economists, philosophers, and system-builders whose ideas became the operating system of modern capitalism — and their challengers. Marx is here not as a political figure but as an analyst of industrial capitalism whose diagnosis has outlasted his prescription.</p>
+      <div class="sg-tensions">
+        <span class="sg-tension">Smith (self-regulating markets) vs. Marx (capital as accumulated labor)</span>
+        <span class="sg-tension">Keynes (managed demand) vs. Hayek (spontaneous order)</span>
+        <span class="sg-tension">Friedman (markets as democracy) vs. Ostrom (commons without markets)</span>
+        <span class="sg-tension">Kelso (universal capital ownership) vs. the wage-only model all others assume</span>
+      </div>
+      <p class="sg-use">Best entry point: Keynes vs. Hayek — the clearest statement of the Q I/Q II divide. Best surprise figure: Kelso — most students have never heard of him, but his argument (everyone should own capital, not just earn wages) is the intellectual ancestor of the curriculum's central thesis.</p>
+    </div>
+  </div>
+
+  <div class="section-guide">
+    <div class="sg-header"><span class="sg-roman">III</span><span class="sg-title">Scale, Labor &amp; the Machine</span></div>
+    <div class="sg-body">
+      <p class="sg-intro">What happens when markets scale beyond what any individual can see, understand, or contest? This section covers industrialization, labor organizing, the trust era, and the first great wave of democratic response to concentrated economic power.</p>
+      <div class="sg-tensions">
+        <span class="sg-tension">Carnegie / Rockefeller (concentration as efficiency) vs. Debs / Goldman (labor as commons)</span>
+        <span class="sg-tension">Teddy Roosevelt (regulated capitalism) vs. Taft / laissez-faire tradition</span>
+        <span class="sg-tension">Ford (high wages as consumer strategy) vs. Taylor (scientific management of labor)</span>
+        <span class="sg-tension">Jane Addams (settlement house economics) vs. industrial philanthropy as power preservation</span>
+      </div>
+      <p class="sg-use">Best entry point: Carnegie and Debs in the same room — they are responding to identical conditions and reaching opposite conclusions about who the economy is for. Best matrix exercise: place Carnegie (Q IV) and Debs (Q I) and trace the arc from one to the other through Roosevelt (Q II).</p>
+    </div>
+  </div>
+
+  <div class="section-guide">
+    <div class="sg-header"><span class="sg-roman">IV</span><span class="sg-title">The Digital Revolution &amp; Its Critics</span></div>
+    <div class="sg-body">
+      <p class="sg-intro">The platform economy is the newest incarnation of the oldest argument: when a technology scales fast enough to restructure entire economies, who governs it — and how? This section places the builders alongside the critics who saw what was being built before most people noticed.</p>
+      <div class="sg-tensions">
+        <span class="sg-tension">Andreessen / Thiel (private power, elite control) vs. Gebru / Zuboff (accountability and harm)</span>
+        <span class="sg-tension">Lanier (data ownership) vs. Zuckerberg (data as platform asset)</span>
+        <span class="sg-tension">Altman (AI as abundance) vs. critics of AI concentration</span>
+        <span class="sg-tension">Wu (new Brandeis antitrust) vs. platform monopoly as natural efficiency</span>
+      </div>
+      <p class="sg-use">Best entry point: Thiel's "competition is for losers" vs. Khan's antitrust revival — the starkest Q IV vs. Q I argument in contemporary economics. Best for student self-placement: ask students where they sit on this section's spectrum before and after reading. Most shift.</p>
+    </div>
+  </div>
+
+  <div class="section-guide">
+    <div class="sg-header"><span class="sg-roman">V</span><span class="sg-title">Money, Wealth &amp; Who Controls It</span></div>
+    <div class="sg-body">
+      <p class="sg-intro">Capital allocation is not a neutral technical process — it is a political act. This section maps the full range of arguments about how wealth is created, held, and distributed: from behavioral economics to sovereign wealth, from shareholder primacy to stakeholder capitalism.</p>
+      <div class="sg-tensions">
+        <span class="sg-tension">Friedman (shareholder primacy) vs. Freeman (stakeholder theory)</span>
+        <span class="sg-tension">Buffett (patient long-term capital) vs. activist shareholder extractivism</span>
+        <span class="sg-tension">Mazzucato (public investment as innovation engine) vs. private venture model</span>
+        <span class="sg-tension">Piketty (r &gt; g as structural law) vs. growth-optimist responses</span>
+      </div>
+      <p class="sg-use">Best entry point: Piketty's r &gt; g argument — accessible, structural, and immediately connects to the framework's central question about who holds economic power. Best surprise: Mazzucato — students who believe in markets are often startled to learn how much of Silicon Valley was built on public funding.</p>
+    </div>
+  </div>
+
+  <div class="section-guide">
+    <div class="sg-header"><span class="sg-roman">VI</span><span class="sg-title">Power, Accountability &amp; Democratic Renewal</span></div>
+    <div class="sg-body">
+      <p class="sg-intro">What does it take to make economic power answerable to democratic life? This section covers the full range of responses — from regulatory reform to worker organizing, from climate economics to global solidarity movements.</p>
+      <div class="sg-tensions">
+        <span class="sg-tension">Reich / McGhee (solidarity economics) vs. zero-sum racial framing</span>
+        <span class="sg-tension">Klein (shock doctrine) vs. technocratic crisis management</span>
+        <span class="sg-tension">Kelley (radical Black imagination) vs. pragmatic incremental reform</span>
+        <span class="sg-tension">Global south voices (Shiva, Maathai, Mandela) vs. Northern economic frameworks</span>
+      </div>
+      <p class="sg-use">Best entry point: Heather McGhee's "solidarity dividend" — the argument that racial division costs everyone, including white working-class voters, measurably. Best cross-section pairing: McGhee (VI) and Arlie Hochschild (VII) — two accounts of the same white working-class economic anxiety reaching opposite conclusions about its cause.</p>
+    </div>
+  </div>
+
+  <div class="section-guide">
+    <div class="sg-header"><span class="sg-roman">VII</span><span class="sg-title">Economic Anger, Identity &amp; Mobilization</span></div>
+    <div class="sg-body">
+      <p class="sg-intro">Economic anxiety is among the most politically volatile forces in any democracy. This section maps the full range of how economic anger becomes political mobilization — from radical labor to Black liberation, from socialist left to nationalist right. King and Bannon are in the same section because they are responding to the same economic reality and reaching opposite conclusions.</p>
+      <div class="sg-tensions">
+        <span class="sg-tension">King (Poor People's Campaign, democratic socialism) vs. Trump/Bannon (nationalist economics)</span>
+        <span class="sg-tension">Malcolm X (Black economic self-determination) vs. Sowell/Steele (individual agency)</span>
+        <span class="sg-tension">Hampton (class solidarity across race) vs. racial identity as primary organizing frame</span>
+        <span class="sg-tension">AOC (democratic intervention) vs. Buchanan/Perot (populism from the right)</span>
+      </div>
+      <p class="sg-use">Best entry point: King and Bannon — the juxtaposition is deliberately provocative. Both are responding to economic exclusion; their diagnoses and prescriptions are opposite. This pairing reliably generates the most productive student disagreement. Handle carefully: the goal is analysis, not equivalence.</p>
+    </div>
+  </div>
+
+  <div class="section-guide">
+    <div class="sg-header"><span class="sg-roman">VIII</span><span class="sg-title">Who Tells the Story of the Economy</span></div>
+    <div class="sg-body">
+      <p class="sg-intro">Before people can change an economy, they need to be able to see it. This section belongs to the writers, poets, journalists, satirists, and public intellectuals who shaped how Americans understand power and money. The Nuyorican oral tradition of the South Bronx belongs in this canon not as a footnote but as one of its clearest economic witnesses.</p>
+      <div class="sg-tensions">
+        <span class="sg-tension">Baldwin / Morrison / Coates (structural witness) vs. Kiyosaki / Gladwell (individual narrative)</span>
+        <span class="sg-tension">Pedro Pietri / Piri Thomas (inside the economic margin) vs. mainstream economic journalism</span>
+        <span class="sg-tension">Rogan / Carlson / Shapiro (attention economy as political economy) vs. accountability journalism</span>
+        <span class="sg-tension">Le Guin / Jemisin (speculative economic imagination) vs. realist economic analysis</span>
+      </div>
+      <p class="sg-use">Best entry point: Pedro Pietri's "Puerto Rican Obituary" — a funeral for the American Dream from inside the South Bronx. Most students have not encountered this voice. It reframes the economic argument from inside experience rather than outside analysis. Best question: "Who gets to be an economic thinker? What counts as economic argument?" Section VIII is the answer.</p>
+    </div>
+  </div>
+
+  <!-- LESSON MODELS -->
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">Four Lesson Models</span></div>
+
+  <p class="body">The anthology supports multiple lesson formats. Four tested models follow — from a single-period placement exercise to a multi-day research project.</p>
+
+  <div class="activity-grid">
+    <div class="activity-card">
+      <p class="act-label">Model A</p>
+      <p class="act-title">The Cold Open</p>
+      <p class="act-time">15–20 min · Any point in the curriculum</p>
+      <p class="act-body">Display 6–8 names from one section. No context. Ask students: "Place these figures on the matrix based only on what you know or can infer." Reveal the section intro. Discuss which placements held — and why students made the assumptions they did about unfamiliar names.</p>
+    </div>
+    <div class="activity-card">
+      <p class="act-label">Model B</p>
+      <p class="act-title">The Deliberate Pairing</p>
+      <p class="act-time">45–60 min · Section-specific</p>
+      <p class="act-body">Assign two figures from the same section who sit in opposing quadrants. Students research both (one class period or homework), then conduct a structured debate: each student argues from their assigned figure's position. Debrief with matrix placement and "what would it take for one to persuade the other?"</p>
+    </div>
+    <div class="activity-card">
+      <p class="act-label">Model C</p>
+      <p class="act-title">The Self-Placement</p>
+      <p class="act-time">30–40 min · After framework lesson</p>
+      <p class="act-body">Students choose three figures from anywhere in the anthology: one whose argument they find most compelling, one whose argument most challenges them, and one they had never heard of. They place all three on the matrix and write a paragraph on what the three together reveal about where they themselves stand.</p>
+    </div>
+    <div class="activity-card">
+      <p class="act-label">Model D</p>
+      <p class="act-title">The Research Profile</p>
+      <p class="act-time">2–3 class periods · Unit project</p>
+      <p class="act-body">Students select one figure from the anthology for independent research. Deliverable: a one-page profile in the same format as the 28 in-depth profiles — context, core argument, supporter and critic perspectives, quadrant placement, and one open question. This is the student contribution to an expanding class anthology.</p>
+    </div>
+  </div>
+
+  <!-- STRATEGIC PAIRINGS -->
+  <div class="sec-header"><span class="sec-roman">IV</span><span class="sec-title">High-Yield Cross-Section Pairings</span></div>
+
+  <p class="body">The most generative pairings are often across sections — figures who are responding to the same structural problem from different historical moments or ideological positions. These pairings work reliably for structured debate, think-pair-share, or written analysis.</p>
+
+  <table class="pairing-table">
+    <tr>
+      <td class="pt-a">Hamilton (I)</td>
+      <td class="pt-b">Andreessen (IV)</td>
+      <td class="pt-tension">Both argue for concentrated power as engine of national strength — 230 years apart. What has changed? What hasn't?</td>
+    </tr>
+    <tr>
+      <td class="pt-a">Debs (III)</td>
+      <td class="pt-b">Chris Smalls (VII)</td>
+      <td class="pt-tension">Union organizing across a century of industrial change. Same argument, different economy. What did the movement win? What did it lose?</td>
+    </tr>
+    <tr>
+      <td class="pt-a">Keynes (II)</td>
+      <td class="pt-b">Mazzucato (V)</td>
+      <td class="pt-tension">Both argue that markets require public investment to function. Mazzucato takes Keynes's logic into the innovation economy. How does the argument evolve?</td>
+    </tr>
+    <tr>
+      <td class="pt-a">King (VII)</td>
+      <td class="pt-b">Hochschild (VII)</td>
+      <td class="pt-tension">Two accounts of economic anger in America — one from the Black freedom movement, one from the white rural working class. What do they share? Where do they diverge?</td>
+    </tr>
+    <tr>
+      <td class="pt-a">Ostrom (II)</td>
+      <td class="pt-b">Lanier (IV)</td>
+      <td class="pt-tension">Both argue for non-market governance of shared resources — Ostrom for physical commons, Lanier for data. What would a Lanier-Ostrom framework for the internet actually look like?</td>
+    </tr>
+    <tr>
+      <td class="pt-a">Pietri / Thomas (VIII)</td>
+      <td class="pt-b">Ehrenreich (VI)</td>
+      <td class="pt-tension">Poverty from inside (South Bronx oral tradition) vs. poverty documented from outside (journalism). What does each mode of witness make visible that the other misses?</td>
+    </tr>
+    <tr>
+      <td class="pt-a">Friedman M. (II)</td>
+      <td class="pt-b">McGhee (VI)</td>
+      <td class="pt-tension">Friedman: markets are color-blind and self-correcting. McGhee: racial division costs everyone measurably. They cannot both be right. Who has the better evidence?</td>
+    </tr>
+  </table>
+
+  <!-- HANDLING DIFFICULT FIGURES -->
+  <div class="sec-header"><span class="sec-roman">V</span><span class="sec-title">Handling Difficult Figures</span></div>
+
+  <p class="body">Several figures in the anthology are politically charged in ways that can shut down discussion if not handled carefully. Notes on the most common challenges:</p>
+
+  <div class="phase">
+    <p class="phase-meta"><span>Section VII</span></p>
+    <p class="phase-title">Trump, Bannon, and the Nationalist Right</p>
+    <div class="phase-body">
+      <p>These figures belong in the anthology because they are responding to real economic conditions — deindustrialization, wage stagnation, the perceived abandonment of the white working class. The question is not whether their diagnosis is correct. The question is: what economic argument are they making, and where does it sit on the matrix?</p>
+      <p>Teacher move: "Set aside whether you agree or disagree with this figure politically. What is the economic argument they are making? Who does it benefit? Who does it harm? Where does it sit on the Power–Democracy–Economy matrix?" This keeps the analysis structural rather than personal.</p>
+    </div>
+  </div>
+
+  <div class="phase">
+    <p class="phase-meta"><span>Section VII</span></p>
+    <p class="phase-title">Malcolm X, Assata Shakur, Huey Newton</p>
+    <div class="phase-body">
+      <p>These figures are sometimes treated as too radical for classroom use. They are in the anthology because their economic arguments — about self-determination, land, capital, and the cost of survival in an extractive state — are rigorous and historically grounded. The same analytical frame applies: what is the economic argument? Where does it sit on the matrix?</p>
+      <p>Teacher move: "Frederick Douglass and Malcolm X are both in Section I/VII. Both are responding to economic exclusion. What is different about their proposed responses — and what does the difference tell us about what changed between 1865 and 1965?"</p>
+    </div>
+  </div>
+
+  <div class="phase">
+    <p class="phase-meta"><span>Section VIII</span></p>
+    <p class="phase-title">Rogan, Carlson, Shapiro — Media Figures as Economic Actors</p>
+    <div class="phase-body">
+      <p>These figures are in Section VIII not as political endorsements but as examples of how the attention economy shapes economic argument. The question is structural: what economic argument does each figure's platform amplify? Who does their audience become, economically, after consuming their content?</p>
+      <p>Teacher move: "Joe Rogan has more listeners than any cable news network. That is an economic fact. What economic arguments does his platform make visible — and which does it make invisible? That is the Section VIII question for every figure in this section."</p>
+    </div>
+  </div>
+
+  <!-- DIFFERENTIATION -->
+  <div class="sec-header"><span class="sec-roman">VI</span><span class="sec-title">Differentiation Options</span></div>
+
+  <div class="diff-grid">
+    <div class="diff-cell">
+      <p class="diff-label">Entry level</p>
+      <p class="diff-title">Single Section Focus</p>
+      <p class="diff-body">Assign one section only. Use the Cold Open model (Model A). Students place 6–8 figures from that section on the matrix. No prior knowledge required — inference and curiosity are the skills.</p>
+    </div>
+    <div class="diff-cell">
+      <p class="diff-label">Standard</p>
+      <p class="diff-title">Paired Figure Analysis</p>
+      <p class="diff-body">Assign one cross-section pairing from Section IV of this guide. Students research both figures and complete a structured written analysis. One class period of research plus one of discussion.</p>
+    </div>
+    <div class="diff-cell">
+      <p class="diff-label">Advanced</p>
+      <p class="diff-title">Original Profile Research</p>
+      <p class="diff-body">Model D — students produce an original profile of any anthology figure. Deliverable matches the format of the 28 in-depth profiles. Contributes to a class-built expansion of the anthology itself.</p>
+    </div>
+  </div>
+
+  <!-- ASSESSMENT -->
+  <div class="sec-header"><span class="sec-roman">VII</span><span class="sec-title">Assessment Guidance</span></div>
+
+  <div class="assess">
+    <p class="assess-label">What to assess</p>
+    <div class="assess-row">
+      <p class="assess-criterion">Map literacy</p>
+      <p class="assess-desc">Can the student navigate the anthology as a map — identifying where figures sit relative to each other, not just listing what they believed?</p>
+    </div>
+    <div class="assess-row">
+      <p class="assess-criterion">Tension recognition</p>
+      <p class="assess-desc">Does the student identify the genuine intellectual tension between two figures — not just describe them separately? Can they say what is actually at stake in the disagreement?</p>
+    </div>
+    <div class="assess-row">
+      <p class="assess-criterion">Matrix placement</p>
+      <p class="assess-desc">Can the student place a figure on the Power–Democracy–Economy matrix with a defensible argument — including acknowledging why an alternative placement is also possible?</p>
+    </div>
+    <div class="assess-row">
+      <p class="assess-criterion">Engagement with difficulty</p>
+      <p class="assess-desc">Does the student engage seriously with figures they disagree with — or do they dismiss them? The goal is analytical capacity, not ideological alignment.</p>
+    </div>
+    <div class="assess-row">
+      <p class="assess-criterion">Historical grounding</p>
+      <p class="assess-desc">Does the student connect a figure's argument to the historical conditions that produced it? Economic arguments do not arise in a vacuum — the conditions matter.</p>
+    </div>
+  </div>
+
+  <div class="closing">
+    <p>"This is not a canon. It is a map of how power argues with itself.<br><br>The map is only useful if it shows the whole terrain.<br>Your job is not to find the right side.<br>Your job is to understand the argument well enough<br>to participate in it responsibly."</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-sonnet-4-6)</span>
+  </div>
+
+</div>
+</body>
+</html>
