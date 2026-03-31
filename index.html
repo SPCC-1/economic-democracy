@@ -100,7 +100,7 @@ a{color:inherit;text-decoration:none;}
 }
 .hero-title{
   font-family:'Playfair Display',serif;
-  font-size:clamp(2.8rem,4.5vw,4.2rem);
+  font-size:clamp(3.4rem,5.5vw,5.2rem);
   font-weight:900;
   color:var(--black);
   line-height:1.0;
@@ -109,13 +109,13 @@ a{color:inherit;text-decoration:none;}
 }
 .hero-title em{
   font-style:italic;
-  font-weight:400;
-  color:var(--mid);
+  font-weight:900;
+  color:var(--black);
 }
 .hero-body{
-  font-size:1.05rem;
-  font-weight:300;
-  color:var(--mid);
+  font-size:1.1rem;
+  font-weight:400;
+  color:var(--charcoal);
   line-height:1.8;
   max-width:480px;
   margin-bottom:2rem;
@@ -503,9 +503,8 @@ a{color:inherit;text-decoration:none;}
     <nav class="site-nav-links">
       <a href="#framework">The Framework</a>
       <a href="#anthology">250 Voices</a>
-      <a href="#profiles">Profiles</a>
       <a href="#resources">Resources</a>
-      <a href="#about">About</a>
+      <a href="ED_ABOUT_Architect_v2.html">About</a>
       <a href="https://www.teacherspayteachers.com/Store/Economic-Democracy" target="_blank" class="nav-cta">Get Materials</a>
     </nav>
   </div>
@@ -529,16 +528,16 @@ a{color:inherit;text-decoration:none;}
         <span class="stat-text"><strong>Voices in the Anthology</strong>One per year of the United States · 1776–2026</span>
       </div>
       <div class="stat-item">
-        <span class="stat-num">28</span>
-        <span class="stat-text"><strong>In-Depth Profiles</strong>With supporter / critic perspectives and quadrant placement</span>
+        <span class="stat-num">10</span>
+        <span class="stat-text"><strong>Units across 2 Years</strong>From the Founding to Artificial Intelligence</span>
       </div>
       <div class="stat-item">
         <span class="stat-num">4</span>
         <span class="stat-text"><strong>Quadrants</strong>Every worldview mapped — none declared correct</span>
       </div>
       <div class="stat-item">
-        <span class="stat-num">10</span>
-        <span class="stat-text"><strong>Units across 2 Years</strong>From the Founding to Artificial Intelligence</span>
+        <span class="stat-num">1</span>
+        <span class="stat-text"><strong>Argument</strong>Who holds economic power — and to whom is it accountable?</span>
       </div>
     </div>
   </div>
@@ -593,34 +592,337 @@ a{color:inherit;text-decoration:none;}
 
 <!-- ANTHOLOGY -->
 <section class="section" id="anthology">
-  <div class="anthology-layout">
-    <div>
-      <p class="section-eyebrow">The Anthology</p>
-      <h2 class="section-heading">250 Voices.<br>One per year.</h2>
-      <p class="section-sub">From 1776 to 2026. The founders and the abolitionists. The economists who built the system and the poets who named what it cost. The platform builders and the critics who saw what was being built before most people noticed.</p>
-      <p style="font-size:.88rem;font-weight:300;color:var(--mid);line-height:1.7;margin-bottom:1.5rem;">This is not a canon. It is a map of how power argues with itself. Every section holds the full tension — disagreement is not a failure of the exercise, it is the exercise.</p>
-      <a href="ED_ANT_Core_Anthology_250.html" class="section-link">Browse all 250 voices</a>
+  <p class="section-eyebrow">The Anthology</p>
+  <h2 class="section-heading">250 Voices.<br>One per year.</h2>
+  <p class="section-sub">From 1776 to 2026. The founders and the abolitionists. The economists who built the system and the poets who named what it cost. The platform builders and the critics who saw what was being built before most people noticed.</p>
+  <p style="font-size:.88rem;font-weight:300;color:var(--mid);line-height:1.7;margin-bottom:2rem;">This is not a canon. It is a map of how power argues with itself. Every section holds the full tension — disagreement is not a failure of the exercise, it is the exercise.</p>
+
+  <style>
+  .profiles-preview{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;background:var(--rule);
+    border:1px solid var(--rule);
+    margin-bottom:1.5rem;
+  }
+  @media(max-width:700px){.profiles-preview{grid-template-columns:1fr 1fr;}}
+  @media(max-width:480px){.profiles-preview{grid-template-columns:1fr;}}
+
+  .section-accordion{
+    margin-bottom:1.5rem;
+    border:1px solid var(--rule);
+  }
+  .acc-row{border-bottom:1px solid var(--rule);}
+  .acc-row:last-child{border-bottom:none;}
+  .acc-trigger{
+    width:100%;background:none;border:none;cursor:pointer;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:.85rem 1.25rem;
+    font-family:'Source Serif 4',serif;
+    text-align:left;transition:background .15s;
+  }
+  .acc-trigger:hover{background:var(--cream);}
+  .acc-trigger[aria-expanded="true"]{background:var(--cream);}
+  .acc-left{display:flex;align-items:baseline;gap:.75rem;}
+  .acc-roman{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:.6rem;color:var(--muted);
+    letter-spacing:.1em;flex-shrink:0;width:1.2rem;
+  }
+  .acc-name{font-size:.92rem;font-weight:400;color:var(--charcoal);}
+  .acc-arrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:.65rem;color:var(--muted);
+    transition:transform .2s;flex-shrink:0;
+  }
+  .acc-trigger[aria-expanded="true"] .acc-arrow{transform:rotate(90deg);}
+  .acc-panel{
+    display:none;
+    padding:.5rem 1.25rem 1rem 3rem;
+    background:var(--cream);
+    border-top:1px solid var(--rule);
+  }
+  .acc-panel.open{display:block;}
+  .acc-panel ul{list-style:none;display:flex;flex-direction:column;gap:.35rem;}
+  .acc-panel ul li{font-size:.85rem;font-weight:300;color:var(--mid);line-height:1.5;}
+  .acc-panel ul li a{
+    color:var(--charcoal);border-bottom:1px solid var(--rule);
+    padding-bottom:1px;transition:color .15s,border-color .15s;
+  }
+  .acc-panel ul li a:hover{color:var(--black);border-color:var(--black);}
+  .acc-panel .coming-soon{
+    font-family:'IBM Plex Mono',monospace;font-size:.58rem;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+    display:inline-block;margin-left:.5rem;
+  }
+  </style>
+
+  <!-- 8 SECTION DROPDOWNS -->
+  <div class="section-accordion">
+    <div class="acc-row">
+      <button class="acc-trigger" aria-expanded="false" onclick="toggleAcc(this)">
+        <span class="acc-left"><span class="acc-roman">I</span><span class="acc-name">Architects of the Experiment</span></span>
+        <span class="acc-arrow">›</span>
+      </button>
+      <div class="acc-panel">
+        <ul>
+          <li><a href="profiles.html">Alexander Hamilton</a></li>
+          <li><a href="profiles.html">Thomas Jefferson</a></li>
+          <li><a href="profiles.html">James Madison</a></li>
+          <li><a href="profiles.html">George Washington</a></li>
+          <li><a href="profiles.html">Benjamin Franklin</a></li>
+          <li><a href="profiles.html">Thomas Paine</a></li>
+          <li><a href="profiles.html">John Adams</a></li>
+          <li><a href="profiles.html">Abigail Adams</a></li>
+          <li><a href="profiles.html">Frederick Douglass</a></li>
+          <li><a href="profiles.html">Harriet Tubman</a></li>
+          <li><a href="profiles.html">Sojourner Truth</a></li>
+          <li><a href="profiles.html">Abraham Lincoln</a></li>
+          <li><a href="profiles.html">Elizabeth Cady Stanton</a></li>
+          <li><a href="profiles.html">Susan B. Anthony</a></li>
+          <li><a href="profiles.html">W.E.B. Du Bois</a></li>
+          <li><a href="profiles.html">Booker T. Washington</a></li>
+          <li><a href="profiles.html">Ida B. Wells</a></li>
+          <li><a href="profiles.html">Eugene V. Debs</a></li>
+          <li><a href="profiles.html">Samuel Gompers</a></li>
+          <li><a href="profiles.html">Robert La Follette</a></li>
+          <li><a href="profiles.html">Theodore Roosevelt</a></li>
+          <li><a href="profiles.html">Emma Goldman</a></li>
+          <li><a href="profiles.html">Mother Jones</a></li>
+          <li><a href="profiles.html">Louis Brandeis</a></li>
+          <li><a href="profiles.html">Ida Tarbell</a></li>
+          <li><a href="profiles.html">Frances Perkins</a></li>
+          <li><a href="profiles.html">Dorothy Day</a></li>
+          <li><a href="profiles.html">Huey Long</a></li>
+          <li><a href="profiles.html">Henry George</a></li>
+          <li><a href="profiles.html">Upton Sinclair</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="anthology-categories">
-      <div class="cat-row"><span class="cat-roman">I</span><span class="cat-name">Architects of the Experiment</span></div>
-      <div class="cat-row"><span class="cat-roman">II</span><span class="cat-name">Ideas That Built the World</span></div>
-      <div class="cat-row"><span class="cat-roman">III</span><span class="cat-name">Scale, Labor &amp; the Machine</span></div>
-      <div class="cat-row"><span class="cat-roman">IV</span><span class="cat-name">The Digital Revolution &amp; Its Critics</span></div>
-      <div class="cat-row"><span class="cat-roman">V</span><span class="cat-name">Money, Wealth &amp; Who Controls It</span></div>
-      <div class="cat-row"><span class="cat-roman">VI</span><span class="cat-name">Power, Accountability &amp; Democratic Renewal</span></div>
-      <div class="cat-row"><span class="cat-roman">VII</span><span class="cat-name">Economic Anger, Identity &amp; Mobilization</span></div>
-      <div class="cat-row"><span class="cat-roman">VIII</span><span class="cat-name">Who Tells the Story of the Economy</span></div>
+    <div class="acc-row">
+      <button class="acc-trigger" aria-expanded="false" onclick="toggleAcc(this)">
+        <span class="acc-left"><span class="acc-roman">II</span><span class="acc-name">Ideas That Built the World</span></span>
+        <span class="acc-arrow">›</span>
+      </button>
+      <div class="acc-panel">
+        <ul>
+          <li><a href="profiles.html">Adam Smith</a></li>
+          <li><a href="profiles.html">Karl Marx</a></li>
+          <li><a href="profiles.html">John Maynard Keynes</a></li>
+          <li><a href="profiles.html">Milton Friedman</a></li>
+          <li><a href="profiles.html">Friedrich Hayek</a></li>
+          <li><a href="profiles.html">Joseph Schumpeter</a></li>
+          <li><a href="profiles.html">Louis Kelso</a></li>
+          <li><a href="profiles.html">Thorstein Veblen</a></li>
+          <li><a href="profiles.html">John Kenneth Galbraith</a></li>
+          <li><a href="profiles.html">Amartya Sen</a></li>
+          <li><a href="profiles.html">Elinor Ostrom</a></li>
+          <li><a href="profiles.html">Thomas Piketty</a></li>
+          <li><a href="profiles.html">Ha-Joon Chang</a></li>
+          <li><a href="profiles.html">Hernando de Soto</a></li>
+          <li><a href="profiles.html">Dani Rodrik</a></li>
+          <li><a href="profiles.html">Mariana Mazzucato</a></li>
+          <li><a href="profiles.html">Kate Raworth</a></li>
+          <li><a href="profiles.html">Stephanie Kelton</a></li>
+          <li><a href="profiles.html">Roberto Unger</a></li>
+          <li><a href="profiles.html">Robin Wall Kimmerer</a></li>
+          <li><a href="profiles.html">Cornel West</a></li>
+          <li><a href="profiles.html">bell hooks</a></li>
+          <li><a href="profiles.html">Angela Davis</a></li>
+          <li><a href="profiles.html">Eduardo Galeano</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="acc-row">
+      <button class="acc-trigger" aria-expanded="false" onclick="toggleAcc(this)">
+        <span class="acc-left"><span class="acc-roman">III</span><span class="acc-name">Scale, Labor &amp; the Machine</span></span>
+        <span class="acc-arrow">›</span>
+      </button>
+      <div class="acc-panel">
+        <ul>
+          <li><a href="profiles.html">Andrew Carnegie</a></li>
+          <li><a href="profiles.html">John D. Rockefeller</a></li>
+          <li><a href="profiles.html">J.P. Morgan</a></li>
+          <li><a href="profiles.html">Henry Ford</a></li>
+          <li><a href="profiles.html">Cornelius Vanderbilt</a></li>
+          <li><a href="profiles.html">Walter Reuther</a></li>
+          <li><a href="profiles.html">A. Philip Randolph</a></li>
+          <li><a href="profiles.html">Cesar Chavez</a></li>
+          <li><a href="profiles.html">Dolores Huerta</a></li>
+          <li><a href="profiles.html">Luisa Moreno</a></li>
+          <li><a href="profiles.html">Florence Kelley</a></li>
+          <li><a href="profiles.html">Ella Baker</a></li>
+          <li><a href="profiles.html">Bayard Rustin</a></li>
+          <li><a href="profiles.html">Fannie Lou Hamer</a></li>
+          <li><a href="profiles.html">Grace Lee Boggs</a></li>
+          <li><a href="profiles.html">Studs Terkel</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="acc-row">
+      <button class="acc-trigger" aria-expanded="false" onclick="toggleAcc(this)">
+        <span class="acc-left"><span class="acc-roman">IV</span><span class="acc-name">The Digital Revolution &amp; Its Critics</span></span>
+        <span class="acc-arrow">›</span>
+      </button>
+      <div class="acc-panel">
+        <ul>
+          <li><a href="profiles.html">Bill Gates</a></li>
+          <li><a href="profiles.html">Jeff Bezos</a></li>
+          <li><a href="profiles.html">Mark Zuckerberg</a></li>
+          <li><a href="profiles.html">Sam Altman</a></li>
+          <li><a href="profiles.html">Marc Andreessen</a></li>
+          <li><a href="profiles.html">Peter Thiel</a></li>
+          <li><a href="profiles.html">Elon Musk</a></li>
+          <li><a href="profiles.html">Jaron Lanier</a></li>
+          <li><a href="profiles.html">Shoshana Zuboff</a></li>
+          <li><a href="profiles.html">adrienne maree brown</a></li>
+          <li><a href="profiles.html">Ruha Benjamin</a></li>
+          <li><a href="profiles.html">Timnit Gebru</a></li>
+          <li><a href="profiles.html">Joy Buolamwini</a></li>
+          <li><a href="profiles.html">Safiya Umoja Noble</a></li>
+          <li><a href="profiles.html">Kate Crawford</a></li>
+          <li><a href="profiles.html">Tristan Harris</a></li>
+          <li><a href="profiles.html">Nwamaka Agbo</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="acc-row">
+      <button class="acc-trigger" aria-expanded="false" onclick="toggleAcc(this)">
+        <span class="acc-left"><span class="acc-roman">V</span><span class="acc-name">Money, Wealth &amp; Who Controls It</span></span>
+        <span class="acc-arrow">›</span>
+      </button>
+      <div class="acc-panel">
+        <ul>
+          <li><a href="profiles.html">Warren Buffett</a></li>
+          <li><a href="profiles.html">Ray Dalio</a></li>
+          <li><a href="profiles.html">Jamie Dimon</a></li>
+          <li><a href="profiles.html">Larry Fink</a></li>
+          <li><a href="profiles.html">George Soros</a></li>
+          <li><a href="profiles.html">Janet Yellen</a></li>
+          <li><a href="profiles.html">MacKenzie Scott</a></li>
+          <li><a href="profiles.html">Nick Hanauer</a></li>
+          <li><a href="profiles.html">Abigail Disney</a></li>
+          <li><a href="profiles.html">Darren Walker</a></li>
+          <li><a href="profiles.html">Edgar Villanueva</a></li>
+          <li><a href="profiles.html">Mehrsa Baradaran</a></li>
+          <li><a href="profiles.html">William Darity Jr.</a></li>
+          <li><a href="profiles.html">Gar Alperovitz</a></li>
+          <li><a href="profiles.html">Jessica Gordon Nembhard</a></li>
+          <li><a href="profiles.html">Marjorie Kelly</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="acc-row">
+      <button class="acc-trigger" aria-expanded="false" onclick="toggleAcc(this)">
+        <span class="acc-left"><span class="acc-roman">VI</span><span class="acc-name">Power, Accountability &amp; Democratic Renewal</span></span>
+        <span class="acc-arrow">›</span>
+      </button>
+      <div class="acc-panel">
+        <ul>
+          <li><a href="profiles.html">Lina Khan</a></li>
+          <li><a href="profiles.html">Elizabeth Warren</a></li>
+          <li><a href="profiles.html">Bernie Sanders</a></li>
+          <li><a href="profiles.html">Robert Reich</a></li>
+          <li><a href="profiles.html">Heather McGhee</a></li>
+          <li><a href="profiles.html">Stacey Abrams</a></li>
+          <li><a href="profiles.html">Ai-jen Poo</a></li>
+          <li><a href="profiles.html">Darrick Hamilton</a></li>
+          <li><a href="profiles.html">Van Jones</a></li>
+          <li><a href="profiles.html">Naomi Klein</a></li>
+          <li><a href="profiles.html">Bryan Stevenson</a></li>
+          <li><a href="profiles.html">Matthew Desmond</a></li>
+          <li><a href="profiles.html">Richard Rothstein</a></li>
+          <li><a href="profiles.html">Ibram X. Kendi</a></li>
+          <li><a href="profiles.html">Pope Francis</a></li>
+          <li><a href="profiles.html">Nelson Mandela</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="acc-row">
+      <button class="acc-trigger" aria-expanded="false" onclick="toggleAcc(this)">
+        <span class="acc-left"><span class="acc-roman">VII</span><span class="acc-name">Economic Anger, Identity &amp; Mobilization</span></span>
+        <span class="acc-arrow">›</span>
+      </button>
+      <div class="acc-panel">
+        <ul>
+          <li><a href="profiles.html">Martin Luther King Jr.</a></li>
+          <li><a href="profiles.html">Malcolm X</a></li>
+          <li><a href="profiles.html">Huey Newton</a></li>
+          <li><a href="profiles.html">Fred Hampton</a></li>
+          <li><a href="profiles.html">Alexandria Ocasio-Cortez</a></li>
+          <li><a href="profiles.html">Donald Trump</a></li>
+          <li><a href="profiles.html">Steve Bannon</a></li>
+          <li><a href="profiles.html">Jesse Jackson</a></li>
+          <li><a href="profiles.html">Felipe Luciano</a></li>
+          <li><a href="profiles.html">Gloria Steinem</a></li>
+          <li><a href="profiles.html">Winona LaDuke</a></li>
+          <li><a href="profiles.html">David Graeber</a></li>
+          <li><a href="profiles.html">Howard Zinn</a></li>
+          <li><a href="profiles.html">Chris Smalls</a></li>
+          <li><a href="profiles.html">William Julius Wilson</a></li>
+          <li><a href="profiles.html">J.D. Vance</a></li>
+          <li><a href="profiles.html">Thomas Sowell</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="acc-row">
+      <button class="acc-trigger" aria-expanded="false" onclick="toggleAcc(this)">
+        <span class="acc-left"><span class="acc-roman">VIII</span><span class="acc-name">Who Tells the Story of the Economy</span></span>
+        <span class="acc-arrow">›</span>
+      </button>
+      <div class="acc-panel">
+        <ul>
+          <li><a href="profiles.html">Walt Whitman</a></li>
+          <li><a href="profiles.html">Woody Guthrie</a></li>
+          <li><a href="profiles.html">Langston Hughes</a></li>
+          <li><a href="profiles.html">James Baldwin</a></li>
+          <li><a href="profiles.html">Toni Morrison</a></li>
+          <li><a href="profiles.html">Pedro Pietri</a></li>
+          <li><a href="profiles.html">Piri Thomas</a></li>
+          <li><a href="profiles.html">Junot Diaz</a></li>
+          <li><a href="profiles.html">Sandra Cisneros</a></li>
+          <li><a href="profiles.html">Ta-Nehisi Coates</a></li>
+          <li><a href="profiles.html">Nikole Hannah-Jones</a></li>
+          <li><a href="profiles.html">Isabel Wilkerson</a></li>
+          <li><a href="profiles.html">Audre Lorde</a></li>
+          <li><a href="profiles.html">June Jordan</a></li>
+          <li><a href="profiles.html">Anand Giridharadas</a></li>
+          <li><a href="profiles.html">Ezra Klein</a></li>
+          <li><a href="profiles.html">Kara Swisher</a></li>
+          <li><a href="profiles.html">Joe Rogan</a></li>
+          <li><a href="profiles.html">Tucker Carlson</a></li>
+        </ul>
+      </div>
     </div>
   </div>
-</section>
 
-<!-- PROFILES -->
-<section class="section" id="profiles">
-  <p class="section-eyebrow">Profiles</p>
-  <h2 class="section-heading">28 figures. 250 on the way.</h2>
-  <p class="section-sub">Each profile presents a figure with context, supporter and critic perspectives, a suggested quadrant placement, and student write-in space. New profiles added as the curriculum grows.</p>
-
+  <!-- 9 FEATURED PROFILE CARDS -->
+  <p class="section-eyebrow" style="margin-bottom:1rem;">Featured Profiles</p>
   <div class="profiles-preview">
+    <div class="profile-card">
+      <span class="pcard-section">Section I</span>
+      <span class="pcard-name">Alexander Hamilton</span>
+      <span class="pcard-desc">The Architecture of Power — institutions, finance, and the federal state</span>
+      <span class="pcard-quad">Suggested: <span>Q III / IV</span></span>
+    </div>
+    <div class="profile-card">
+      <span class="pcard-section">Section I</span>
+      <span class="pcard-name">Frederick Douglass</span>
+      <span class="pcard-desc">The Promise Confronted — when the founding argument meets someone it excluded</span>
+      <span class="pcard-quad">Suggested: <span>Q I</span></span>
+    </div>
+    <div class="profile-card">
+      <span class="pcard-section">Section I</span>
+      <span class="pcard-name">Booker T. Washington</span>
+      <span class="pcard-desc">Economic self-reliance, vocational capital — entrepreneurship as survival strategy</span>
+      <span class="pcard-quad">Suggested: <span>Q II</span></span>
+    </div>
+    <div class="profile-card">
+      <span class="pcard-section">Section III</span>
+      <span class="pcard-name">Frances Perkins</span>
+      <span class="pcard-desc">The New Deal's Architect — what industrial scale requires the state to repair</span>
+      <span class="pcard-quad">Suggested: <span>Q I</span></span>
+    </div>
     <div class="profile-card">
       <span class="pcard-section">Section III</span>
       <span class="pcard-name">Andrew Carnegie</span>
@@ -629,48 +931,40 @@ a{color:inherit;text-decoration:none;}
     </div>
     <div class="profile-card">
       <span class="pcard-section">Section IV</span>
-      <span class="pcard-name">Timnit Gebru</span>
-      <span class="pcard-desc">The Ethics of AI — technology is never neutral</span>
-      <span class="pcard-quad">Suggested: <span>Q I</span></span>
-    </div>
-    <div class="profile-card">
-      <span class="pcard-section">Section V</span>
-      <span class="pcard-name">MacKenzie Scott</span>
-      <span class="pcard-desc">Wealth Without Control — refusing to convert money into power</span>
-      <span class="pcard-quad">Suggested: <span>Q I / II</span></span>
-    </div>
-    <div class="profile-card">
-      <span class="pcard-section">Section IV</span>
       <span class="pcard-name">Peter Thiel</span>
       <span class="pcard-desc">The Age of Contrarian Power — monopoly as achievement</span>
       <span class="pcard-quad">Suggested: <span>Q IV</span></span>
     </div>
     <div class="profile-card">
-      <span class="pcard-section">Section VI</span>
-      <span class="pcard-name">Lina Khan</span>
-      <span class="pcard-desc">The Return of Antitrust — low prices aren't the only measure</span>
-      <span class="pcard-quad">Suggested: <span>Q I</span></span>
-    </div>
-    <div class="profile-card">
-      <span class="pcard-section">Section V</span>
-      <span class="pcard-name">Warren Buffett</span>
-      <span class="pcard-desc">The Age of Long-Term Capital — patience, ownership, compounding</span>
-      <span class="pcard-quad">Suggested: <span>Q II</span></span>
-    </div>
-    <div class="profile-card">
-      <span class="pcard-section">Section IV</span>
-      <span class="pcard-name">Sam Altman</span>
-      <span class="pcard-desc">The Age of AI — who builds the mind of the future</span>
-      <span class="pcard-quad">Suggested: <span>Q IV</span></span>
-    </div>
-    <div class="profile-card">
-      <span class="pcard-section">Section V</span>
+      <span class="pcard-section">Section II</span>
       <span class="pcard-name">Mariana Mazzucato</span>
       <span class="pcard-desc">The Entrepreneurial State — markets are shaped, not natural</span>
       <span class="pcard-quad">Suggested: <span>Q I</span></span>
     </div>
+    <div class="profile-card">
+      <span class="pcard-section">Section IV</span>
+      <span class="pcard-name">adrienne maree brown</span>
+      <span class="pcard-desc">Emergent strategy, fractals — the large is a reflection of the small</span>
+      <span class="pcard-quad">Suggested: <span>Q I</span></span>
+    </div>
+    <div class="profile-card">
+      <span class="pcard-section">Section VII</span>
+      <span class="pcard-name">Alexandria Ocasio-Cortez</span>
+      <span class="pcard-desc">Economic anger as politics — democratic socialism and the cost of the status quo</span>
+      <span class="pcard-quad">Suggested: <span>Q I</span></span>
+    </div>
   </div>
-  <a href="profiles.html" class="section-link">Browse all 28 profiles</a>
+
+  <a href="ED_ANT_Core_Anthology_250.html" class="section-link">Browse all 250 voices</a>
+
+  <script>
+  function toggleAcc(btn){
+    const panel = btn.nextElementSibling;
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', !expanded);
+    panel.classList.toggle('open', !expanded);
+  }
+  </script>
 </section>
 
 <!-- RESOURCES -->
@@ -702,7 +996,7 @@ a{color:inherit;text-decoration:none;}
         <span class="resource-badge free">Free</span>
         <span class="resource-title">Educator Overview</span>
         <span class="resource-desc">The rationale, scope, and teaching philosophy behind the full two-year curriculum. Four pages. Print and share with your department before the first day.</span>
-        <a href="ED_FR_Framework_Rationale.html" class="resource-link">View Framework Rationale</a>
+        <a href="educators.html" class="resource-link">View Educator Overview</a>
       </div>
     </div>
   </div>
@@ -715,7 +1009,7 @@ a{color:inherit;text-decoration:none;}
         <span class="resource-badge free">Free</span>
         <span class="resource-title">Teacher Guide — Mapping Power</span>
         <span class="resource-desc">Complete facilitation guide. Five-phase structure, teacher script, discussion question notes, three differentiation options. 60–90 minutes.</span>
-        <a href="ED_TG_Teacher_Guide.html" class="resource-link">View Teacher Guide</a>
+        <a href="educators.html" class="resource-link">View Teacher Guide</a>
       </div>
       <div class="resource-card">
         <span class="resource-badge">$2.99</span>
@@ -775,7 +1069,7 @@ a{color:inherit;text-decoration:none;}
         <span class="resource-badge free">Free</span>
         <span class="resource-title">Teacher Guide — 250 Voices</span>
         <span class="resource-desc">Section-by-section guide, four lesson models, seven high-yield cross-section pairings, notes on handling difficult figures. Use across the full curriculum.</span>
-        <a href="ED_TG_Core_Anthology_250.html" class="resource-link">View Teacher Guide</a>
+        <a href="ED_ANT_TeacherGuide.html" class="resource-link">View Teacher Guide</a>
       </div>
       <div class="resource-card">
         <span class="resource-badge free">Free</span>
@@ -791,12 +1085,11 @@ a{color:inherit;text-decoration:none;}
 <!-- ABOUT -->
 <div class="about-strip" id="about">
   <div class="about-inner">
-    <span class="about-label">About the Author</span>
+    <span class="about-label">About the Architect</span>
     <div class="about-content">
       <h3 class="about-name">Alfredo Mathew III</h3>
       <div class="about-bio">
-        <p>I spent 14 years in public school classrooms — from founding a high school in the South Bronx to AP and IB History in Pasadena and U.S. History in Oakland — before spending the past decade building economic ecosystems for communities systematically left out of wealth creation.</p>
-        <p>These lessons are grounded in classroom reality and shaped by what actually happens when communities try to build wealth, navigate power, and exercise democratic agency in the real world. That combination — classroom and lived experience — is what makes this curriculum different.</p>
+        <p>14 years in public school classrooms — founding a high school in the South Bronx, AP and IB History in Pasadena, U.S. History in Oakland. Then a decade building economic ecosystems for communities the mainstream economy decided to leave out. This curriculum is the synthesis of both.</p>
       </div>
       <div class="credential-grid">
         <div class="cred-card">
@@ -812,7 +1105,7 @@ a{color:inherit;text-decoration:none;}
         <div class="cred-card">
           <span class="cred-label">AP &amp; IB History</span>
           <span class="cred-title">Blair High School</span>
-          <span class="cred-sub">Pasadena, CA &nbsp;·&nbsp; Honors &amp; IB Programme</span>
+          <span class="cred-sub">Pasadena, CA &nbsp;·&nbsp; AP &amp; IB Programme</span>
         </div>
         <div class="cred-card cred-card--accent">
           <span class="cred-label">Bay Area Director</span>
@@ -822,7 +1115,7 @@ a{color:inherit;text-decoration:none;}
         <div class="cred-card cred-card--accent">
           <span class="cred-label">Co-Founder</span>
           <span class="cred-title">ESO Ventures</span>
-          <span class="cred-sub">$22M raised &nbsp;·&nbsp; 700+ businesses incubated</span>
+          <span class="cred-sub">$24M closed &nbsp;·&nbsp; 700+ businesses incubated &nbsp;·&nbsp; $8M+ deployed</span>
         </div>
         <div class="cred-card cred-card--accent">
           <span class="cred-label">TEDx Talk</span>
@@ -830,6 +1123,7 @@ a{color:inherit;text-decoration:none;}
           <span class="cred-sub">May 2025 &nbsp;·&nbsp; 100,000+ views</span>
         </div>
       </div>
+      <a href="ED_ABOUT_Architect_v2.html" style="display:inline-block;margin-top:1.75rem;font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--black);background:var(--white);padding:.5rem 1rem;border-bottom:2px solid var(--black);">About the Architect →</a>
     </div>
   </div>
 </div>

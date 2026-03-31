@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Guide for Educators · Economic Democracy</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0f0f0f;
+    --ink: #1a1a1a;
+    --charcoal: #2d2d2d;
+    --mid: #5a5a5a;
+    --muted: #8a8a8a;
+    --rule: #d4d4d4;
+    --paper: #faf9f7;
+    --cream: #f2f0ec;
+    --white: #ffffff;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { font-size: 16px; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Source Serif 4', serif;
+    font-weight: 300;
+    line-height: 1.75;
+    padding: 0 2rem 4rem;
+  }
+
+  /* MASTHEAD */
+  .masthead {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2rem 0 1.25rem;
+    border-bottom: 3px solid var(--black);
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .masthead-site {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--black);
+    text-decoration: none;
+  }
+
+  .masthead-section {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--mid);
+  }
+
+  /* ARTICLE HEADER */
+  .article-header {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 3.5rem 0 2.5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .article-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
+    font-size: 0.65rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 1.25rem;
+  }
+
+  .article-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    line-height: 1.08;
+    color: var(--black);
+    margin-bottom: 1rem;
+  }
+
+  .article-deck {
+    font-family: 'Source Serif 4', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: var(--charcoal);
+    max-width: 640px;
+  }
+
+  /* TOC NAV */
+  .toc-nav {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    gap: 1.5rem 2.5rem;
+    flex-wrap: wrap;
+  }
+
+  .toc-nav a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--mid);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .toc-nav a:hover { color: var(--black); }
+
+  /* SECTION HEADERS */
+  .section-header {
+    max-width: 860px;
+    margin: 3rem auto 0;
+    background: var(--black);
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .section-numeral {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--white);
+    line-height: 1.3;
+  }
+
+  /* BODY */
+  .body-content {
+    max-width: 860px;
+    margin: 0 auto;
+    padding-top: 2rem;
+  }
+
+  .body-content p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+    max-width: 720px;
+  }
+
+  .body-content p:last-child { margin-bottom: 0; }
+
+  /* DROP CAP */
+  .drop-cap::first-letter {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 3.8rem;
+    line-height: 0.85;
+    float: left;
+    margin-right: 0.08em;
+    margin-top: 0.05em;
+    color: var(--black);
+  }
+
+  /* CENTRAL QUESTION */
+  .central-question {
+    max-width: 720px;
+    margin: 0.5rem 0 2rem;
+    padding: 1.25rem 1.75rem;
+    background: var(--cream);
+    border-left: 4px solid var(--black);
+  }
+
+  .central-question p {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.15rem;
+    line-height: 1.5;
+    color: var(--black);
+    margin: 0;
+  }
+
+  /* AXES GRID */
+  .axes-grid {
+    max-width: 720px;
+    margin: 1.5rem 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1.5px solid var(--black);
+  }
+
+  .axis-header {
+    background: var(--black);
+    color: var(--white);
+    padding: 0.65rem 1.25rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .axis-header:first-child { border-right: 1px solid var(--charcoal); }
+
+  .axis-body {
+    padding: 1.1rem 1.25rem;
+    background: var(--white);
+    font-size: 0.975rem;
+    line-height: 1.7;
+    color: var(--ink);
+    border-top: 1px solid var(--rule);
+  }
+
+  .axis-body:first-of-type { border-right: 1.5px solid var(--black); }
+
+  .axis-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--mid);
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+
+  /* THREE PRINCIPLES */
+  .principles-list {
+    max-width: 720px;
+    margin: 1.5rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--rule);
+  }
+
+  .principle-item {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .principle-item:last-child { border-bottom: none; }
+
+  .principle-marker {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    color: var(--mid);
+    padding-top: 0.2rem;
+    white-space: nowrap;
+  }
+
+  .principle-text {
+    font-size: 0.975rem;
+    line-height: 1.7;
+    color: var(--ink);
+  }
+
+  .principle-text strong {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 0.25rem;
+    color: var(--black);
+  }
+
+  /* FORCING QUESTION */
+  .forcing-question {
+    max-width: 640px;
+    margin: 1.5rem 0;
+    padding: 1.25rem 1.75rem;
+    background: var(--cream);
+    border-left: 3px solid var(--black);
+  }
+
+  .forcing-question p {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.55;
+    color: var(--black);
+    margin: 0;
+  }
+
+  /* PAIRINGS TABLE */
+  .pairings-table {
+    max-width: 860px;
+    margin: 1.5rem 0 0;
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .pairings-table thead tr {
+    background: var(--black);
+  }
+
+  .pairings-table thead th {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 0.6rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--white);
+    padding: 0.75rem 1.25rem;
+    text-align: left;
+  }
+
+  .pairings-table thead th:first-child {
+    width: 32%;
+    border-right: 1px solid var(--charcoal);
+  }
+
+  .pairings-table tbody tr {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .pairings-table tbody tr:nth-child(even) {
+    background: var(--cream);
+  }
+
+  .pairings-table tbody tr:last-child {
+    border-bottom: 1.5px solid var(--black);
+  }
+
+  .pairings-table tbody td {
+    padding: 1rem 1.25rem;
+    vertical-align: top;
+    font-size: 0.975rem;
+    line-height: 1.65;
+    color: var(--ink);
+  }
+
+  .pairings-table tbody td:first-child {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 0.975rem;
+    color: var(--black);
+    border-right: 1px solid var(--rule);
+  }
+
+  /* ACTIVITIES */
+  .activity-block {
+    max-width: 720px;
+    margin: 2rem 0 0;
+    border-top: 1.5px solid var(--black);
+    padding-top: 1.5rem;
+  }
+
+  .activity-block + .activity-block {
+    margin-top: 2rem;
+  }
+
+  .activity-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--black);
+    margin-bottom: 0.75rem;
+  }
+
+  .activity-body {
+    font-size: 0.975rem;
+    line-height: 1.75;
+    color: var(--ink);
+    margin-bottom: 1rem;
+  }
+
+  .activity-goal {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 0.58rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    border-left: 3px solid var(--black);
+    padding: 0.6rem 1rem;
+    line-height: 1.7;
+  }
+
+  /* WRITING PROMPTS */
+  .prompts-list {
+    max-width: 720px;
+    margin: 1.5rem 0 0;
+    counter-reset: prompt-counter;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--rule);
+  }
+
+  .prompts-list li {
+    counter-increment: prompt-counter;
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--rule);
+    font-size: 0.975rem;
+    line-height: 1.7;
+    color: var(--ink);
+    align-items: start;
+  }
+
+  .prompts-list li:last-child { border-bottom: none; }
+
+  .prompts-list li::before {
+    content: counter(prompt-counter);
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 0.65rem;
+    color: var(--mid);
+    padding-top: 0.2rem;
+  }
+
+  /* ASSESSMENT GRID */
+  .assessment-grid {
+    max-width: 720px;
+    margin: 1.5rem 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .assess-col-header {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 0.65rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--black);
+    border-bottom: 2px solid var(--black);
+    padding-bottom: 0.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .assess-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .assess-col ul li {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--ink);
+    padding-left: 1rem;
+    border-left: 2px solid var(--rule);
+  }
+
+  /* CLOSING BLOCK */
+  .closing-block {
+    max-width: 860px;
+    margin: 3rem auto 0;
+    background: var(--black);
+    padding: 2.5rem;
+  }
+
+  .closing-block p {
+    font-family: 'Source Serif 4', serif;
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--cream);
+    margin-bottom: 1.25rem;
+    max-width: 660px;
+  }
+
+  .closing-block p:last-child { margin-bottom: 0; }
+
+  .closing-block .final-line {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--white);
+    margin-top: 1.5rem;
+    border-top: 1px solid #2d3347;
+    padding-top: 1.5rem;
+  }
+
+  /* PAGE NAV */
+  .page-nav {
+    max-width: 860px;
+    margin: 2.5rem auto 0;
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .page-nav a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--black);
+    text-decoration: none;
+    border-bottom: 1px solid var(--black);
+    padding-bottom: 1px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  .page-nav a:hover { color: var(--mid); border-color: var(--mid); }
+
+  /* FOOTER */
+  footer {
+    max-width: 860px;
+    margin: 2rem auto 0;
+    padding: 1rem 0 0;
+    border-top: 2px solid var(--black);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  footer span {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    color: var(--mid);
+  }
+
+  @media (max-width: 600px) {
+    .axes-grid { grid-template-columns: 1fr; }
+    .assessment-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <a href="/" class="masthead-site">Economic Democracy</a>
+  <span class="masthead-section">250 Voices · Educator Guide</span>
+</header>
+
+<!-- ARTICLE HEADER -->
+<div class="article-header">
+  <p class="article-label">A Guide for Educators</p>
+  <h1 class="article-title">Who Owns,<br>Who Decides,<br>Who Benefits</h1>
+  <p class="article-deck">How to use the 250 Voices Anthology across sections, grade levels, and teaching styles — without being limited by any of them.</p>
+</div>
+
+<!-- TOC NAV -->
+<nav class="toc-nav">
+  <a href="#what-this-is">I · What This Is</a>
+  <a href="#framework">II · The Framework</a>
+  <a href="#profiles">III · How to Use the Profiles</a>
+  <a href="#sequencing">IV · Sequencing</a>
+  <a href="#pairings">V · Suggested Pairings</a>
+  <a href="#activities">VI · Core Activities</a>
+  <a href="#prompts">VII · Writing Prompts</a>
+  <a href="#assessment">VIII · Assessment</a>
+</nav>
+
+<!-- I. WHAT THIS IS -->
+<div class="section-header" id="what-this-is">
+  <span class="section-numeral">I</span>
+  <span class="section-title">What This Is</span>
+</div>
+
+<div class="body-content">
+  <p class="drop-cap">This is not a canned curriculum. It is a set of tools, voices, and frameworks you can use, sequence, and adapt however your classroom requires. The 250 Voices Anthology is organized into eight sections spanning the full arc of American economic history — from the founding argument through the digital age — but it is not designed to be taught chronologically, completely, or in any single order. The map is yours to navigate.</p>
+
+  <p>The only thing this guide asks you to hold constant is the central question:</p>
+
+  <div class="central-question">
+    <p>Who holds economic power, and to whom is it accountable?</p>
+  </div>
+
+  <p>Everything else — which voices you use, how you pair them, how long you spend, which activities you run — is yours to decide. The best version of this curriculum is the one you build for the students in front of you.</p>
+</div>
+
+<!-- II. THE FRAMEWORK -->
+<div class="section-header" id="framework">
+  <span class="section-numeral">II</span>
+  <span class="section-title">The Framework</span>
+</div>
+
+<div class="body-content">
+  <p>Two axes organize every figure in the anthology. Students place each figure on the grid themselves. There is no answer key. The placement is the argument — and the argument is the learning.</p>
+
+  <div class="axes-grid">
+    <div class="axis-header">Axis 1</div>
+    <div class="axis-header">Axis 2</div>
+    <div class="axis-body">
+      <span class="axis-label">Where does power sit?</span>
+      Private ←→ Public. Who controls the economy — individuals, markets, and private institutions, or governments, public bodies, and collective structures?
+    </div>
+    <div class="axis-body">
+      <span class="axis-label">Who does power answer to?</span>
+      Elite / Expert ←→ Democratic / Popular. Are economic decisions made by those with specialized knowledge and concentrated authority, or are they accountable to broad participation?
+    </div>
+  </div>
+
+  <p>Three things to establish with students before they begin:</p>
+
+  <div class="principles-list">
+    <div class="principle-item">
+      <span class="principle-marker">01</span>
+      <div class="principle-text">
+        <strong>No quadrant is correct.</strong>
+        Each represents a genuine theory of how power should work, with real historical evidence behind it. The goal is not to sort figures into boxes — it is to develop precise language for what students are already observing in the world.
+      </div>
+    </div>
+    <div class="principle-item">
+      <span class="principle-marker">02</span>
+      <div class="principle-text">
+        <strong>Placement is a starting point, not a conclusion.</strong>
+        Many figures resist easy placement. Some changed positions over a lifetime. Some operated in one quadrant while justifying themselves in the language of another. The tension is more instructive than the answer.
+      </div>
+    </div>
+    <div class="principle-item">
+      <span class="principle-marker">03</span>
+      <div class="principle-text">
+        <strong>The framework has limits.</strong>
+        Some voices in this anthology — particularly those speaking from experiences of exclusion — challenge the assumptions embedded in all four quadrants. When a figure doesn't fit, that's not a failure of the exercise. It's the most important moment in it.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- III. HOW TO USE THE PROFILES -->
+<div class="section-header" id="profiles">
+  <span class="section-numeral">III</span>
+  <span class="section-title">How to Use the Profiles</span>
+</div>
+
+<div class="body-content">
+  <p>Each profile presents a figure's argument on its own terms before it presents any critique. This is intentional. Students who learn to state an opposing view with accuracy and fairness — before they disagree with it — are developing the most important intellectual skill this curriculum can build.</p>
+
+  <p>Teach each profile as a position, not a biography. Every figure represents a theory of power, a theory of ownership, and a theory of human nature. A useful forcing question for any profile:</p>
+
+  <div class="forcing-question">
+    <p>"According to this figure, a functioning economy requires ____________."</p>
+  </div>
+
+  <p>This single sentence forces synthesis and exposes the assumptions beneath every argument. Do not cover profiles and move on. Return to the same figures repeatedly as the anthology progresses. Hamilton reads differently after Perkins. Jefferson reads differently after Douglass. The meaning of a position deepens when students see what it enables, what it excludes, and what later figures do with it.</p>
+</div>
+
+<!-- IV. SEQUENCING -->
+<div class="section-header" id="sequencing">
+  <span class="section-numeral">IV</span>
+  <span class="section-title">Sequencing</span>
+</div>
+
+<div class="body-content">
+  <p>Start with tension, not timeline. The instinct to teach chronologically is understandable but counterproductive here. Students who feel a genuine disagreement first — who understand why Hamilton and Jefferson cannot both be right — will engage the history with more urgency than students who encounter it as a sequence of dates and names.</p>
+
+  <p>A strong opening sequence for any section: pair two figures who share a historical moment but reach opposite conclusions. Let students sit with the disagreement before you provide context. The confusion is productive.</p>
+
+  <p>Within each section, the profiles can be used in any order. Across sections, the eight themes are designed to accumulate — each section adds a dimension the previous one couldn't fully address. But you do not need to teach all eight, or all 250 voices. Depth with fewer figures is more valuable than coverage of all of them.</p>
+</div>
+
+<!-- V. SUGGESTED PAIRINGS -->
+<div class="section-header" id="pairings">
+  <span class="section-numeral">V</span>
+  <span class="section-title">Suggested Pairings</span>
+</div>
+
+<div class="body-content">
+  <p>These pairings isolate specific fracture lines in the argument. Each one works across sections and at any point in the course.</p>
+
+  <table class="pairings-table">
+    <thead>
+      <tr>
+        <th>Pairing</th>
+        <th>Focus</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Hamilton &amp; Jefferson</td>
+        <td>Structure vs. liberty. The founding poles. Teach these first, return to them often. Every subsequent figure is, in some way, responding to this disagreement.</td>
+      </tr>
+      <tr>
+        <td>Jefferson &amp; Douglass</td>
+        <td>Ideals vs. lived experience. What happens when the founding promise meets someone it was designed to exclude. The most important pairing in Section I.</td>
+      </tr>
+      <tr>
+        <td>Du Bois &amp; Booker T. Washington</td>
+        <td>Structural transformation vs. incremental self-reliance. Two genuine strategies for survival under the same system of exclusion.</td>
+      </tr>
+      <tr>
+        <td>Debs &amp; Gompers</td>
+        <td>Worker ownership vs. wages. Systemic change vs. negotiation within the existing structure. The labor movement's permanent internal argument.</td>
+      </tr>
+      <tr>
+        <td>Carnegie &amp; Frances Perkins</td>
+        <td>What industrial scale produces, and what it requires the state to repair. Teaches students how the New Deal is a response, not an origin.</td>
+      </tr>
+      <tr>
+        <td>Roosevelt &amp; Brandeis</td>
+        <td>Regulate concentrated power vs. break it up. Two Progressive Era thinkers who agree on the problem and disagree entirely on the remedy.</td>
+      </tr>
+      <tr>
+        <td>Friedman &amp; Keynes</td>
+        <td>The twentieth century's defining theoretical argument. Markets as self-correcting vs. markets as inherently unstable.</td>
+      </tr>
+      <tr>
+        <td>Zuboff &amp; Andreessen</td>
+        <td>The digital economy named as extraction vs. celebrated as liberation. The founding argument reborn in the platform age.</td>
+      </tr>
+      <tr>
+        <td>Lina Khan &amp; Peter Thiel</td>
+        <td>Antitrust revived vs. monopoly as achievement. The same concentration of power, evaluated by completely opposite frameworks.</td>
+      </tr>
+      <tr>
+        <td>Martin Luther King Jr. &amp; Steve Bannon</td>
+        <td>The same economic anxiety, opposite conclusions about cause and remedy. The most challenging pairing in the anthology. Use it late, when students have enough framework to hold the complexity.</td>
+      </tr>
+      <tr>
+        <td>adrienne maree brown &amp; Hamilton</td>
+        <td>An unexpected pairing across centuries. Both are systems thinkers who believe scale and structure matter. They reach entirely different conclusions about who the system should serve.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- VI. CORE ACTIVITIES -->
+<div class="section-header" id="activities">
+  <span class="section-numeral">VI</span>
+  <span class="section-title">Core Activities</span>
+</div>
+
+<div class="body-content">
+  <p>These five activities work across sections, with any figures, at any point in the course. You do not need to run all of them. Each one can stand alone.</p>
+
+  <div class="activity-block">
+    <div class="activity-title">The Two-Axis Debate</div>
+    <div class="activity-body">Divide the room into four quadrants. Assign students figures to represent. Pose a prompt — <em>Which quadrant produces the most just and stable economy?</em> — and require students to argue from their assigned figure, not their own opinion.</div>
+    <div class="activity-goal">Goal: Make the strongest possible case for a position the student may not hold.</div>
+  </div>
+
+  <div class="activity-block">
+    <div class="activity-title">The Constitutional Convention Reimagined</div>
+    <div class="activity-body">Set the scene: it is 2026 and the economic rules of the country are being rewritten. Assign figures from across the anthology. Students must argue from their figure's worldview — no modern language, no positions the figure wouldn't recognize.</div>
+    <div class="activity-goal">Goal: Students discover that these frameworks are genuinely incompatible. You cannot build a single coherent system from Hamilton, Douglass, Debs, and Friedman. That incompatibility is the lesson.</div>
+  </div>
+
+  <div class="activity-block">
+    <div class="activity-title">The Mock Trial</div>
+    <div class="activity-body">Put the American economy on trial for failure to deliver economic democracy. Assign prosecution, defense, and witnesses from across the anthology. Students must use evidence from the profiles.</div>
+    <div class="activity-goal">Goal: The trial works best when both sides are equally well-prepared — which requires students to take seriously the strongest version of a position they may disagree with.</div>
+  </div>
+
+  <div class="activity-block">
+    <div class="activity-title">The Policy Design Lab</div>
+    <div class="activity-body">Prompt: design an economic system using three figures from different quadrants. Constraints: define the ownership model, define the role of government, define how value is distributed.</div>
+    <div class="activity-goal">Goal: Students quickly discover that the frameworks do not fit together easily. The friction is the point.</div>
+  </div>
+
+  <div class="activity-block">
+    <div class="activity-title">Parallel Across Time</div>
+    <div class="activity-body">Ask students to map a single economic problem — housing, labor, monopoly, data ownership — across three historical moments: the industrial era, the postwar era, and the present. Then ask: which figure becomes more relevant over time, and why?</div>
+    <div class="activity-goal">Goal: Reveals that the anthology is not a history of solved problems. It is a map of recurring ones.</div>
+  </div>
+</div>
+
+<!-- VII. WRITING PROMPTS -->
+<div class="section-header" id="prompts">
+  <span class="section-numeral">VII</span>
+  <span class="section-title">Writing Prompts</span>
+</div>
+
+<div class="body-content">
+  <p>These prompts work at any point in the course and across all sections.</p>
+
+  <ol class="prompts-list">
+    <li>Is economic democracy compatible with capitalism as currently structured?</li>
+    <li>Does ownership matter more than wages?</li>
+    <li>Which is more dangerous: concentrated private power or concentrated public power?</li>
+    <li>What would Jefferson say about Amazon? What would Hamilton say about Bitcoin?</li>
+    <li>Choose a figure from the anthology and place them in a current economic debate. What would they argue, and where would their framework fail?</li>
+    <li>Two figures in this anthology agree on the problem but disagree on the solution. Who are they, and why does the disagreement matter?</li>
+  </ol>
+</div>
+
+<!-- VIII. ASSESSMENT -->
+<div class="section-header" id="assessment">
+  <span class="section-numeral">VIII</span>
+  <span class="section-title">Assessment</span>
+</div>
+
+<div class="body-content">
+  <p>Avoid testing for memorization. The goal of this curriculum is not to produce students who can recall positions — it is to produce students who can analyze them.</p>
+
+  <div class="assessment-grid">
+    <div class="assess-col">
+      <div class="assess-col-header">Avoid</div>
+      <ul>
+        <li>Recall of dates, names, and positions</li>
+        <li>Single correct answers</li>
+        <li>Coverage over depth</li>
+        <li>Certainty as a sign of understanding</li>
+      </ul>
+    </div>
+    <div class="assess-col">
+      <div class="assess-col-header">Assess For</div>
+      <ul>
+        <li>Ability to place an argument accurately and defend the placement</li>
+        <li>Ability to state an opposing view with fairness before disagreeing with it</li>
+        <li>Ability to identify where a framework fails — what it cannot see, who it excludes</li>
+        <li>Ability to connect an argument from the past to a problem in the present</li>
+      </ul>
+    </div>
+  </div>
+
+  <p>Good answers should contain tension, not certainty. A student who can say <em>this figure is right about X and wrong about Y, and here is why both are true</em> is doing the work this curriculum is designed to produce.</p>
+</div>
+
+<!-- CLOSING BLOCK -->
+<div class="closing-block">
+  <p>Do not treat this anthology as finished or fixed. Add voices your students need. Challenge the quadrant placements. Let students disagree with the framing itself. The curriculum is not the authority — the argument is. And the argument has always belonged to whoever is willing to enter it.</p>
+  <p>The goal is not to arrive at the answer. It is to give students the language, the frameworks, and the historical grounding to carry the argument forward.</p>
+  <p class="final-line">That is the work of every generation. It is now theirs.</p>
+</div>
+
+<!-- PAGE NAV -->
+<nav class="page-nav">
+  <a href="/anthology">Browse the 250 Voices →</a>
+  <a href="/introduction">Read the Introduction →</a>
+  <a href="/framework">The Framework →</a>
+</nav>
+
+<!-- FOOTER -->
+<footer>
+  <span>Alfredo Mathew III · alfredomathew.com</span>
+  <span>Working World LLC · AI Synthesis: Claude (Anthropic, claude-sonnet-4-6)</span>
+</footer>
+
+</body>
+</html>
