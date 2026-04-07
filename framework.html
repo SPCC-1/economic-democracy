@@ -3,55 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Framework — Economic Democracy Curriculum</title>
-  <style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-  :root{
-    --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
-    --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
-    --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
-  }
-  html{font-size:16px;scroll-behavior:smooth;}
-  body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;}
-  a{color:inherit;text-decoration:none;}
-  /* ── Nav ── */
-  .site-nav{border-bottom:2px solid var(--black);padding:.75rem 0;position:sticky;top:0;background:var(--paper);z-index:100;}
-  .nav-inner{max-width:960px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;gap:2rem;flex-wrap:wrap;}
-  .nav-home{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--black);white-space:nowrap;}
-  .nav-home span{font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;display:block;font-weight:400;}
-  .nav-links{display:flex;gap:1.5rem;flex-wrap:wrap;}
-  .nav-links a{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mid);}
-  .nav-links a:hover{color:var(--black);}
-  .nav-links a.active{color:var(--black);border-bottom:1.5px solid var(--black);}
-  /* ── Page wrapper ── */
-  .page{max-width:860px;margin:0 auto;padding:0 2rem 5rem;}
-  .page-wide{max-width:960px;margin:0 auto;padding:0 2rem 5rem;}
-  /* ── Footer ── */
-  .site-footer{border-top:2px solid var(--black);padding:1.5rem 2rem;max-width:960px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
-  .footer-left{font-family:'Source Serif 4',serif;font-size:.8rem;color:var(--charcoal);font-weight:600;}
-  .footer-right{font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.05em;}
-  /* ── Typography shared ── */
-  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.75rem;}
-  .display-title{font-family:'Playfair Display',serif;font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;}
-  .section-rule{border:none;border-top:1px solid var(--rule);margin:2.5rem 0;}
-  /* ── Print ── */
-  @media print{
-    .site-nav{display:none;}
-    body{background:white;}
-    .page,.page-wide{max-width:100%;padding:0;}
-  }
-</style>
-</head>
-<body>
-<nav class="site-nav">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-home">Economic Democracy<span>economicdemocracy.co</span></a>
-    <div class="nav-links"><a href="index.html">Home</a><a href="framework.html" class="active">The Framework</a><a href="anthology.html">250 Voices</a><a href="index.html#resources">Resources</a></div>
-  </div>
-</nav>
-<div class="page">
-
+  <meta name="description" content="Two axes, four quadrants, one endless argument. A framework for mapping where economic power sits and how accountable it is to democracy.">
+  <title>The Framework — Economic Democracy</title>
+  <link rel="stylesheet" href="styles.css">
   <style>
   .fw-hero{padding:3.5rem 0 2.5rem;border-bottom:3px solid var(--black);margin-bottom:3rem;}
   .fw-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:900;color:var(--black);line-height:1.1;letter-spacing:-.02em;margin-bottom:.75rem;}
@@ -70,7 +24,29 @@
   .q-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.6;}
   .q-tension{font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--muted);border-top:1px solid var(--rule);padding-top:.6rem;margin-top:.4rem;letter-spacing:.03em;}
   @media(max-width:560px){.q-grid{grid-template-columns:1fr;}}
-</style>
+  </style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-home">Economic Democracy<span>economicdemocracy.co</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="framework.html" class="active">The Framework</a>
+      <a href="ED_ANT_Core_Anthology_250.html">250 Voices</a>
+      <a href="index.html#resources">Resources</a>
+      <a href="https://www.teacherspayteachers.com/Store/Economic-Democracy" target="_blank" class="nav-cta">Get Materials</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page" id="main">
+
   <div class="fw-hero">
     <p class="eyebrow">The Framework</p>
     <h1 class="fw-title">Two Axes.<br>Four Quadrants.<br>One Endless Argument.</h1>
@@ -126,12 +102,21 @@
   </div>
 
   <hr class="section-rule">
-  <p style="font-size:.9rem;font-weight:300;color:var(--mid);line-height:1.7;max-width:600px;">The goal of this framework is not to sort people into boxes or to declare one quadrant correct. It is to give students precise language for what they are already observing — and practice holding competing claims with rigor rather than reflexes. <a href="anthology.html" style="color:var(--charcoal);text-decoration:underline;">Explore the 250 voices →</a></p>
+  <p style="font-size:.9rem;font-weight:300;color:var(--mid);line-height:1.7;max-width:600px;">The goal of this framework is not to sort people into boxes or to declare one quadrant correct. It is to give students precise language for what they are already observing — and practice holding competing claims with rigor rather than reflexes. <a href="anthology.html" style="color:var(--charcoal);text-decoration:underline;">Explore the 250 voices &rarr;</a></p>
 
 </div>
+
 <footer class="site-footer">
-  <div class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC &nbsp;&middot;&nbsp; economicdemocracy.co</div>
-  <div class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-sonnet-4-6)</div>
+  <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC &nbsp;&middot;&nbsp; economicdemocracy.co</span>
+  <span class="footer-right">AI Synthesis: Claude (Anthropic, claude-sonnet-4-6) &nbsp;&middot;&nbsp; Economic Democracy Curriculum</span>
 </footer>
+
+<script>
+document.querySelector('.nav-toggle').addEventListener('click', function(){
+  this.classList.toggle('open');
+  this.setAttribute('aria-expanded', this.classList.contains('open'));
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+</script>
 </body>
 </html>

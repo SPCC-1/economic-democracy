@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Argument at the Center of the American Experiment · Economic Democracy</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 <style>
   :root {
     --black: #0f0f0f;
@@ -401,9 +402,26 @@
 </head>
 <body>
 
+<a href="#main" class="skip-link">Skip to content</a>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-home">Economic Democracy<span>economicdemocracy.co</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="framework.html">The Framework</a>
+      <a href="ED_ANT_Core_Anthology_250.html">250 Voices</a>
+      <a href="index.html#resources">Resources</a>
+      <a href="https://www.teacherspayteachers.com/Store/Economic-Democracy" target="_blank" class="nav-cta">Get Materials</a>
+    </div>
+  </div>
+</nav>
+
 <!-- MASTHEAD -->
-<header class="masthead">
-  <a href="/" class="masthead-site">Economic Democracy</a>
+<header class="masthead" id="main">
+  <a href="index.html" class="masthead-site">Economic Democracy</a>
   <span class="masthead-section">250 Voices · Introduction</span>
 </header>
 
@@ -526,9 +544,9 @@
 
 <!-- PAGE NAV -->
 <nav class="page-nav">
-  <a href="/anthology">Browse the 250 Voices →</a>
-  <a href="/framework">Read the Framework →</a>
-  <a href="/about">About the Architect →</a>
+  <a href="anthology.html">Browse the 250 Voices →</a>
+  <a href="framework.html">Read the Framework →</a>
+  <a href="ED_ABOUT_Architect_v2.html">About the Architect →</a>
 </nav>
 
 <!-- FOOTER -->
@@ -537,5 +555,13 @@
   <span>Working World LLC · AI Synthesis: Claude (Anthropic, claude-sonnet-4-6)</span>
 </footer>
 
+
+<script>
+document.querySelector('.nav-toggle').addEventListener('click', function(){
+  this.classList.toggle('open');
+  this.setAttribute('aria-expanded', this.classList.contains('open'));
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+</script>
 </body>
 </html>

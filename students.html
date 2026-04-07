@@ -1,11 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="refresh" content="0;url=index.html#resources">
-<title>For Students — Economic Democracy</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Student materials for the Economic Democracy curriculum — framework handouts, placement activities, role-play labs, and reflection prompts. Buy once, print every year.">
+  <title>For Students — Economic Democracy</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+  .resource-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin-bottom:2.5rem;}
+  .resource-card{background:var(--paper);padding:1.5rem;display:flex;flex-direction:column;gap:.5rem;}
+  .resource-card:nth-child(even){background:var(--cream);}
+  .resource-badge{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--white);background:var(--black);display:inline-block;padding:.2rem .55rem;width:fit-content;}
+  .resource-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);line-height:1.25;}
+  .resource-desc{font-size:.82rem;font-weight:300;color:var(--mid);line-height:1.6;flex:1;}
+  .resource-link{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--charcoal);display:inline-block;border-bottom:1px solid var(--rule);padding-bottom:.1rem;margin-top:.25rem;width:fit-content;transition:color .15s,border-color .15s;}
+  .resource-link:hover{color:var(--black);border-color:var(--black);}
+  .resource-link::after{content:' \2192';}
+  .note-block{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:2rem 0;font-size:.85rem;font-weight:300;color:var(--mid);line-height:1.7;}
+  .note-block strong{color:var(--charcoal);font-weight:600;}
+  @media(max-width:600px){.resource-grid{grid-template-columns:1fr;}}
+  </style>
 </head>
 <body>
-<script>window.location.href="index.html#resources";</script>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-home">Economic Democracy<span>economicdemocracy.co</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="framework.html">The Framework</a>
+      <a href="ED_ANT_Core_Anthology_250.html">250 Voices</a>
+      <a href="index.html#resources">Resources</a>
+      <a href="https://www.teacherspayteachers.com/Store/Economic-Democracy" target="_blank" class="nav-cta">Get Materials</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page" id="main">
+
+  <div class="hero">
+    <p class="hero-eyebrow">For Students</p>
+    <h1 class="hero-title">Your handouts.<br>Your framework.</h1>
+    <p class="hero-sub">Student materials include the framework handout, placement activities, sentence frames, and reflection prompts. Buy once — your teacher prints for every class, every year.</p>
+  </div>
+
+  <div class="note-block">
+    <strong>For teachers:</strong> Student materials are available on Teachers Pay Teachers and Gumroad. Purchase once, print unlimited copies for your students. Every paid student resource has a free teacher guide on the <a href="educators.html" style="color:var(--charcoal);text-decoration:underline;">Educators page</a>.
+  </div>
+
+  <div class="resource-grid">
+    <div class="resource-card">
+      <span class="resource-badge">$2.99</span>
+      <span class="resource-title">Framework Student Handout</span>
+      <span class="resource-desc">The matrix, four quadrant descriptions, placement activity, sentence frames, and reflection prompts. Five pages. Photocopier-friendly.</span>
+      <a href="https://www.teacherspayteachers.com/Product/Economic-Democracy-Framework-15877089" target="_blank" class="resource-link">Get on TPT</a>
+      <a href="https://alfredo281.gumroad.com/l/ed-framework-handout" target="_blank" class="resource-link">Get on Gumroad</a>
+    </div>
+    <div class="resource-card">
+      <span class="resource-badge">$2.99</span>
+      <span class="resource-title">Revolution, Counterrevolution, and Reform</span>
+      <span class="resource-desc">Student conceptual essay on the cyclical decision point in American history. Three historical decision points, five discussion questions, matrix application activity.</span>
+      <a href="https://www.teacherspayteachers.com/Product/Revolution-Counterrevolution-and-Reform-Student-Essay-15895016" target="_blank" class="resource-link">Get on TPT</a>
+      <a href="https://alfredo281.gumroad.com/l/ed-revolution-reform" target="_blank" class="resource-link">Get on Gumroad</a>
+    </div>
+    <div class="resource-card">
+      <span class="resource-badge">$4.99</span>
+      <span class="resource-title">Civic Economy Role-Play Lab</span>
+      <span class="resource-desc">Seven roles. Six policy options. One governing dilemma. Students negotiate a real reform package under genuine constraint. 90-120 minutes.</span>
+      <a href="https://www.teacherspayteachers.com/Product/Civic-Economy-Role-Play-Lab-15895053" target="_blank" class="resource-link">Get on TPT</a>
+      <a href="https://alfredo281.gumroad.com/l/ed-role-play-lab" target="_blank" class="resource-link">Get on Gumroad</a>
+    </div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC &nbsp;&middot;&nbsp; economicdemocracy.co</span>
+  <span class="footer-right">AI Synthesis: Claude (Anthropic, claude-sonnet-4-6) &nbsp;&middot;&nbsp; Economic Democracy Curriculum</span>
+</footer>
+
+<script>
+document.querySelector('.nav-toggle').addEventListener('click', function(){
+  this.classList.toggle('open');
+  this.setAttribute('aria-expanded', this.classList.contains('open'));
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+</script>
 </body>
 </html>

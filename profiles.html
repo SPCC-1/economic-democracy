@@ -3,42 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profiles — Economic Democracy Curriculum</title>
+  <meta name="description" content="28 profiles of economic figures — industrialists, tech founders, economists, and critics — each placed on the Economic Democracy framework. 222 more coming.">
+  <title>Profiles — Economic Democracy</title>
+  <link rel="stylesheet" href="styles.css">
   <style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-  :root{
-    --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
-    --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
-    --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
-  }
-  html{font-size:16px;scroll-behavior:smooth;}
-  body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;}
-  a{color:inherit;text-decoration:none;}
-
-  /* ── Nav ── */
-  .site-nav{border-bottom:2px solid var(--black);padding:.75rem 0;position:sticky;top:0;background:var(--paper);z-index:100;}
-  .nav-inner{max-width:960px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;gap:2rem;flex-wrap:wrap;}
-  .nav-home{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--black);white-space:nowrap;}
-  .nav-home span{font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;display:block;font-weight:400;}
-  .nav-links{display:flex;gap:1.5rem;flex-wrap:wrap;}
-  .nav-links a{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mid);}
-  .nav-links a:hover{color:var(--black);}
-  .nav-links a.active{color:var(--black);border-bottom:1.5px solid var(--black);}
-
-  .page{max-width:960px;margin:0 auto;padding:0 2rem 5rem;}
-
-  /* ── Footer ── */
-  .site-footer{border-top:2px solid var(--black);padding:1.5rem 2rem;max-width:960px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
-  .footer-left{font-family:'Source Serif 4',serif;font-size:.8rem;color:var(--charcoal);font-weight:600;}
-  .footer-right{font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:.05em;}
-
-  /* ── Hero ── */
-  .hero{padding:3.5rem 0 2.5rem;border-bottom:3px solid var(--black);margin-bottom:2.5rem;}
-  .hero-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.75rem;}
-  .hero-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.75rem;}
-  .hero-sub{font-size:1rem;font-weight:300;color:var(--mid);max-width:580px;line-height:1.7;}
-
   /* ── Count bar ── */
   .count-bar{display:flex;gap:3rem;flex-wrap:wrap;padding:1.25rem 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin-bottom:2rem;}
   .count-num{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:900;color:var(--black);line-height:1;}
@@ -57,15 +25,14 @@
 
   /* ── Profile cards ── */
   .profile-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin-bottom:1rem;}
-  .profile-card{background:var(--paper);padding:1.25rem;display:flex;flex-direction:column;gap:.4rem;transition:background .12s;}
+  .profile-card{background:var(--paper);padding:1.25rem;display:flex;flex-direction:column;gap:.4rem;transition:background .12s;position:relative;}
   .profile-card:hover{background:var(--cream);}
   .card-section{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
   .card-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);line-height:1.2;}
   .card-sub{font-size:.78rem;font-weight:300;color:var(--mid);font-style:italic;line-height:1.4;flex:1;}
   .card-quad{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.06em;color:var(--muted);border-top:1px solid var(--rule);padding-top:.5rem;margin-top:.3rem;}
   .card-quad span{color:var(--charcoal);font-weight:500;}
-  .card-link{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;color:var(--charcoal);}
-  .card-link::after{content:' →';}
+  .card-status{font-family:'IBM Plex Mono',monospace;font-size:.55rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-top:.25rem;}
 
   /* ── Coming soon ── */
   .coming-block{margin:2.5rem 0;}
@@ -82,28 +49,31 @@
 
   @media(max-width:600px){
     .profile-grid{grid-template-columns:1fr;}
-    .page{padding:0 1rem 3rem;}
     .count-bar{gap:1.5rem;}
   }
   </style>
 </head>
 <body>
 
+<a href="#main" class="skip-link">Skip to content</a>
+
 <nav class="site-nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-home">Economic Democracy<span>economicdemocracy.co</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
     <div class="nav-links">
-      <a href="index.html">Home</a>
       <a href="framework.html">The Framework</a>
-      <a href="anthology.html">250 Voices</a>
+      <a href="ED_ANT_Core_Anthology_250.html">250 Voices</a>
       <a href="profiles.html" class="active">Profiles</a>
-      <a href="educators.html">For Educators</a>
-      <a href="students.html">For Students</a>
+      <a href="index.html#resources">Resources</a>
+      <a href="https://www.teacherspayteachers.com/Store/Economic-Democracy" target="_blank" class="nav-cta">Get Materials</a>
     </div>
   </div>
 </nav>
 
-<div class="page">
+<div class="page" id="main">
 
   <div class="hero">
     <p class="hero-eyebrow">Profiles</p>
@@ -123,217 +93,250 @@
       <p class="anthology-cta-text">All 250 figures — the complete anthology</p>
       <p class="anthology-cta-sub">Browse all voices by section before selecting figures for placement activities</p>
     </div>
-    <a href="ED_ANT_Core_Anthology_250.html" class="anthology-cta-link">Browse the anthology →</a>
+    <a href="ED_ANT_Core_Anthology_250.html" class="anthology-cta-link">Browse the anthology &rarr;</a>
   </div>
 
   <div class="filter-bar">
     <span class="filter-label">Filter</span>
     <button class="filter-btn active" onclick="filterSection('all',this)">All profiles</button>
-    <button class="filter-btn" onclick="filterSection('III',this)">III · Scale &amp; Labor</button>
-    <button class="filter-btn" onclick="filterSection('IV',this)">IV · Digital Revolution</button>
-    <button class="filter-btn" onclick="filterSection('V',this)">V · Money &amp; Wealth</button>
-    <button class="filter-btn" onclick="filterSection('VI',this)">VI · Accountability</button>
-    <button class="filter-btn" onclick="filterSection('VII',this)">VII · Economic Anger</button>
+    <button class="filter-btn" onclick="filterSection('III',this)">III &middot; Scale &amp; Labor</button>
+    <button class="filter-btn" onclick="filterSection('IV',this)">IV &middot; Digital Revolution</button>
+    <button class="filter-btn" onclick="filterSection('V',this)">V &middot; Money &amp; Wealth</button>
+    <button class="filter-btn" onclick="filterSection('VI',this)">VI &middot; Accountability</button>
+    <button class="filter-btn" onclick="filterSection('VII',this)">VII &middot; Economic Anger</button>
   </div>
 
   <!-- SECTION III -->
   <div class="sec-header" data-section="III"><span class="sec-roman">III</span><span class="sec-title">Scale, Labor &amp; the Machine</span></div>
   <div class="profile-grid" data-section="III">
-    <a href="ED_PROF_andrew-carnegie.html" class="profile-card">
+    <div class="profile-card">
       <span class="card-section">Section III</span>
       <span class="card-name">Andrew Carnegie</span>
       <span class="card-sub">The Age of Steel — from immigrant poverty to industrial empire</span>
       <span class="card-quad">Suggested: <span>Quadrant IV</span></span>
-      <span class="card-link">Read profile</span>
-    </a>
-    <a href="ED_PROF_john-d-rockefeller.html" class="profile-card">
+      <span class="card-status">Profile coming soon</span>
+    </div>
+    <div class="profile-card">
       <span class="card-section">Section III</span>
       <span class="card-name">John D. Rockefeller</span>
       <span class="card-sub">The Age of Oil — Standard Oil and the first great monopoly</span>
       <span class="card-quad">Suggested: <span>Quadrant IV</span></span>
-      <span class="card-link">Read profile</span>
-    </a>
-    <a href="ED_PROF_cornelius-vanderbilt.html" class="profile-card">
+      <span class="card-status">Profile coming soon</span>
+    </div>
+    <div class="profile-card">
       <span class="card-section">Section III</span>
       <span class="card-name">Cornelius Vanderbilt</span>
       <span class="card-sub">The Age of Transportation — who controls movement controls markets</span>
       <span class="card-quad">Suggested: <span>Quadrant IV</span></span>
-      <span class="card-link">Read profile</span>
-    </a>
-    <a href="ED_PROF_henry-ford.html" class="profile-card">
+      <span class="card-status">Profile coming soon</span>
+    </div>
+    <div class="profile-card">
       <span class="card-section">Section III</span>
       <span class="card-name">Henry Ford</span>
       <span class="card-sub">The Age of Mass Production — the assembly line and the social contract</span>
       <span class="card-quad">Suggested: <span>Quadrant IV</span></span>
-      <span class="card-link">Read profile</span>
-    </a>
-    <a href="ED_PROF_jp-morgan.html" class="profile-card">
+      <span class="card-status">Profile coming soon</span>
+    </div>
+    <div class="profile-card">
       <span class="card-section">Section III</span>
       <span class="card-name">J.P. Morgan</span>
       <span class="card-sub">The Age of Finance — private banker as de facto central bank</span>
       <span class="card-quad">Suggested: <span>Quadrant III / IV</span></span>
-      <span class="card-link">Read profile</span>
-    </a>
+      <span class="card-status">Profile coming soon</span>
+    </div>
   </div>
 
   <!-- SECTION IV -->
   <div class="sec-header" data-section="IV"><span class="sec-roman">IV</span><span class="sec-title">The Digital Revolution &amp; Its Critics</span></div>
   <div class="profile-grid" data-section="IV">
-    <a href="ED_PROF_jeff-bezos.html" class="profile-card">
+    <div class="profile-card">
       <span class="card-section">Section IV</span><span class="card-name">Jeff Bezos</span>
       <span class="card-sub">The Age of Platforms — infrastructure for exchange at global scale</span>
-      <span class="card-quad">Suggested: <span>Quadrant IV</span></span><span class="card-link">Read profile</span>
-    </a>
-    <a href="ED_PROF_jensen-huang.html" class="profile-card">
+      <span class="card-quad">Suggested: <span>Quadrant IV</span></span>
+      <span class="card-status">Profile coming soon</span>
+    </div>
+    <div class="profile-card">
       <span class="card-section">Section IV</span><span class="card-name">Jensen Huang</span>
       <span class="card-sub">The Age of Compute — who controls the chips controls the future</span>
-      <span class="card-quad">Suggested: <span>Quadrant IV</span></span><span class="card-link">Read profile</span>
-    </a>
-    <a href="ED_PROF_larry-ellison.html" class="profile-card">
+      <span class="card-quad">Suggested: <span>Quadrant IV</span></span>
+      <span class="card-status">Profile coming soon</span>
+    </div>
+    <div class="profile-card">
       <span class="card-section">Section IV</span><span class="card-name">Larry Ellison</span>
       <span class="card-sub">The Age of Data — enterprise software as invisible infrastructure</span>
-      <span class="card-quad">Suggested: <span>Quadrant IV</span></span><span class="card-link">Read profile</span>
-    </a>
-    <a href="ED_PROF_marc-andreessen.html" class="profile-card">
+      <span class="card-quad">Suggested: <span>Quadrant IV</span></span>
+      <span class="card-status">Profile coming soon</span>
+    </div>
+    <div class="profile-card">
       <span class="card-section">Section IV</span><span class="card-name">Marc Andreessen</span>
       <span class="card-sub">The Birth of the Modern Internet — structure determines who wins</span>
-      <span class="card-quad">Suggested: <span>Quadrant IV</span></span><span class="card-link">Read profile</span>
-    </a>
-    <a href="ED_PROF_mark-zuckerberg.html" class="profile-card">
+      <span class="card-quad">Suggested: <span>Quadrant IV</span></span>
+      <span class="card-status">Profile coming soon</span>
+    </div>
+    <div class="profile-card">
       <span class="card-section">Section IV</span><span class="card-name">Mark Zuckerberg</span>
       <span class="card-sub">The Age of Social Media — attention, data, and the architecture of belief</span>
-      <span class="card-quad">Suggested: <span>Quadrant IV</span></span><span class="card-link">Read profile</span>
-    </a>
-    <a href="ED_PROF_peter-thiel.html" class="profile-card">
+      <span class="card-quad">Suggested: <span>Quadrant IV</span></span>
+      <span class="card-status">Profile coming soon</span>
+    </div>
+    <div class="profile-card">
       <span class="card-section">Section IV</span><span class="card-name">Peter Thiel</span>
       <span class="card-sub">The Age of Contrarian Power — monopoly as achievement, not failure</span>
-      <span class="card-quad">Suggested: <span>Quadrant IV</span></span><span class="card-link">Read profile</span>
-    </a>
-    <a href="ED_PROF_reed-hastings.html" class="profile-card">
+      <span class="card-quad">Suggested: <span>Quadrant IV</span></span>
+      <span class="card-status">Profile coming soon</span>
+    </div>
+    <div class="profile-card">
       <span class="card-section">Section IV</span><span class="card-name">Reed Hastings</span>
       <span class="card-sub">The Age of Digital Distribution — when distribution changes, industries disappear</span>
-      <span class="card-quad">Suggested: <span>Quadrant II / IV</span></span><span class="card-link">Read profile</span>
-    </a>
-    <a href="ED_PROF_sam-altman.html" class="profile-card">
+      <span class="card-quad">Suggested: <span>Quadrant II / IV</span></span>
+      <span class="card-status">Profile coming soon</span>
+    </div>
+    <div class="profile-card">
       <span class="card-section">Section IV</span><span class="card-name">Sam Altman</span>
       <span class="card-sub">The Age of Artificial Intelligence — who builds the mind of the future</span>
-      <span class="card-quad">Suggested: <span>Quadrant IV</span></span><span class="card-link">Read profile</span>
-    </a>
-    <a href="ED_PROF_david-sacks.html" class="profile-card">
+      <span class="card-quad">Suggested: <span>Quadrant IV</span></span>
+      <span class="card-status">Profile coming soon</span>
+    </div>
+    <div class="profile-card">
       <span class="card-section">Section IV</span><span class="card-name">David Sacks</span>
       <span class="card-sub">The Age of Platform Politics — technology, capital, and narrative power</span>
-      <span class="card-quad">Suggested: <span>Quadrant IV</span></span><span class="card-link">Read profile</span>
-    </a>
-    <a href="ED_PROF_elon-musk.html" class="profile-card">
+      <span class="card-quad">Suggested: <span>Quadrant IV</span></span>
+      <span class="card-status">Profile coming soon</span>
+    </div>
+    <div class="profile-card">
       <span class="card-section">Section IV</span><span class="card-name">Elon Musk</span>
       <span class="card-sub">The Age of Technology — private power over systems everyone depends on</span>
-      <span class="card-quad">Suggested: <span>Quadrant IV</span></span><span class="card-link">Read profile</span>
-    </a>
-    <a href="ED_PROF_travis-kalanick.html" class="profile-card">
+      <span class="card-quad">Suggested: <span>Quadrant IV</span></span>
+      <span class="card-status">Profile coming soon</span>
+    </div>
+    <div class="profile-card">
       <span class="card-section">Section IV</span><span class="card-name">Travis Kalanick</span>
       <span class="card-sub">The Age of the Gig Economy — platform control without employer responsibility</span>
-      <span class="card-quad">Suggested: <span>Quadrant IV</span></span><span class="card-link">Read profile</span>
-    </a>
-    <a href="ED_PROF_sam-walton.html" class="profile-card">
+      <span class="card-quad">Suggested: <span>Quadrant IV</span></span>
+      <span class="card-status">Profile coming soon</span>
+    </div>
+    <div class="profile-card">
       <span class="card-section">Section IV</span><span class="card-name">Sam Walton &amp; the Walton Family</span>
       <span class="card-sub">The Age of Retail — structural power through everyday consumption</span>
-      <span class="card-quad">Suggested: <span>Quadrant II / IV</span></span><span class="card-link">Read profile</span>
-    </a>
-    <a href="ED_PROF_brin-page.html" class="profile-card">
+      <span class="card-quad">Suggested: <span>Quadrant II / IV</span></span>
+      <span class="card-status">Profile coming soon</span>
+    </div>
+    <div class="profile-card">
       <span class="card-section">Section IV</span><span class="card-name">Sergey Brin &amp; Larry Page</span>
       <span class="card-sub">The Age of Search — organizing the world's information for profit</span>
-      <span class="card-quad">Suggested: <span>Quadrant IV</span></span><span class="card-link">Read profile</span>
-    </a>
-    <a href="ED_PROF_steve-jobs.html" class="profile-card">
+      <span class="card-quad">Suggested: <span>Quadrant IV</span></span>
+      <span class="card-status">Profile coming soon</span>
+    </div>
+    <div class="profile-card">
       <span class="card-section">Section IV</span><span class="card-name">Steve Jobs &amp; Laurene Powell Jobs</span>
       <span class="card-sub">The Age of Design — experience as power, wealth as responsibility</span>
-      <span class="card-quad">Suggested: <span>Quadrant II / IV</span></span><span class="card-link">Read profile</span>
-    </a>
-    <a href="ED_PROF_timnit-gebru.html" class="profile-card">
+      <span class="card-quad">Suggested: <span>Quadrant II / IV</span></span>
+      <span class="card-status">Profile coming soon</span>
+    </div>
+    <div class="profile-card">
       <span class="card-section">Section IV</span><span class="card-name">Timnit Gebru</span>
       <span class="card-sub">The Ethics of Artificial Intelligence — technology is never neutral</span>
-      <span class="card-quad">Suggested: <span>Quadrant I</span></span><span class="card-link">Read profile</span>
-    </a>
+      <span class="card-quad">Suggested: <span>Quadrant I</span></span>
+      <span class="card-status">Profile coming soon</span>
+    </div>
   </div>
 
   <!-- SECTION V -->
   <div class="sec-header" data-section="V"><span class="sec-roman">V</span><span class="sec-title">Money, Wealth &amp; Who Controls It</span></div>
   <div class="profile-grid" data-section="V">
-    <a href="ED_PROF_warren-buffett.html" class="profile-card">
+    <div class="profile-card">
       <span class="card-section">Section V</span><span class="card-name">Warren Buffett</span>
       <span class="card-sub">The Age of Long-Term Capital — patience, ownership, and compounding power</span>
-      <span class="card-quad">Suggested: <span>Quadrant II</span></span><span class="card-link">Read profile</span>
-    </a>
-    <a href="ED_PROF_ray-dalio.html" class="profile-card">
+      <span class="card-quad">Suggested: <span>Quadrant II</span></span>
+      <span class="card-status">Profile coming soon</span>
+    </div>
+    <div class="profile-card">
       <span class="card-section">Section V</span><span class="card-name">Ray Dalio</span>
       <span class="card-sub">The Age of Global Capital — macro patterns and power through prediction</span>
-      <span class="card-quad">Suggested: <span>Quadrant III / IV</span></span><span class="card-link">Read profile</span>
-    </a>
-    <a href="ED_PROF_jamie-dimon.html" class="profile-card">
+      <span class="card-quad">Suggested: <span>Quadrant III / IV</span></span>
+      <span class="card-status">Profile coming soon</span>
+    </div>
+    <div class="profile-card">
       <span class="card-section">Section V</span><span class="card-name">Jamie Dimon</span>
       <span class="card-sub">The Defense of Institutional Capitalism — stability requires scale</span>
-      <span class="card-quad">Suggested: <span>Quadrant II / III</span></span><span class="card-link">Read profile</span>
-    </a>
-    <a href="ED_PROF_mackenzie-scott.html" class="profile-card">
+      <span class="card-quad">Suggested: <span>Quadrant II / III</span></span>
+      <span class="card-status">Profile coming soon</span>
+    </div>
+    <div class="profile-card">
       <span class="card-section">Section V</span><span class="card-name">MacKenzie Scott</span>
       <span class="card-sub">Wealth Without Control — refusing to convert money into power</span>
-      <span class="card-quad">Suggested: <span>Quadrant I / II</span></span><span class="card-link">Read profile</span>
-    </a>
-    <a href="ED_PROF_mariana-mazzucato.html" class="profile-card">
+      <span class="card-quad">Suggested: <span>Quadrant I / II</span></span>
+      <span class="card-status">Profile coming soon</span>
+    </div>
+    <div class="profile-card">
       <span class="card-section">Section V</span><span class="card-name">Mariana Mazzucato</span>
       <span class="card-sub">The Case for the Entrepreneurial State — markets are shaped, not natural</span>
-      <span class="card-quad">Suggested: <span>Quadrant I</span></span><span class="card-link">Read profile</span>
-    </a>
-    <a href="ED_PROF_kate-raworth.html" class="profile-card">
+      <span class="card-quad">Suggested: <span>Quadrant I</span></span>
+      <span class="card-status">Profile coming soon</span>
+    </div>
+    <div class="profile-card">
       <span class="card-section">Section V</span><span class="card-name">Kate Raworth</span>
       <span class="card-sub">The Challenge to Endless Growth — thriving within planetary limits</span>
-      <span class="card-quad">Suggested: <span>Quadrant I</span></span><span class="card-link">Read profile</span>
-    </a>
+      <span class="card-quad">Suggested: <span>Quadrant I</span></span>
+      <span class="card-status">Profile coming soon</span>
+    </div>
   </div>
 
   <!-- SECTION VI -->
   <div class="sec-header" data-section="VI"><span class="sec-roman">VI</span><span class="sec-title">Power, Accountability &amp; Democratic Renewal</span></div>
   <div class="profile-grid" data-section="VI">
-    <a href="ED_PROF_lina-khan.html" class="profile-card">
+    <div class="profile-card">
       <span class="card-section">Section VI</span><span class="card-name">Lina Khan</span>
       <span class="card-sub">The Return of Antitrust — low prices are not the only measure of healthy markets</span>
-      <span class="card-quad">Suggested: <span>Quadrant I</span></span><span class="card-link">Read profile</span>
-    </a>
+      <span class="card-quad">Suggested: <span>Quadrant I</span></span>
+      <span class="card-status">Profile coming soon</span>
+    </div>
   </div>
 
   <!-- SECTION VII -->
   <div class="sec-header" data-section="VII"><span class="sec-roman">VII</span><span class="sec-title">Economic Anger, Identity &amp; Mobilization</span></div>
   <div class="profile-grid" data-section="VII">
-    <a href="ED_PROF_steve-bannon.html" class="profile-card">
+    <div class="profile-card">
       <span class="card-section">Section VII</span><span class="card-name">Steve Bannon</span>
       <span class="card-sub">The Populist Critique of the Modern Economy — economic anger as political force</span>
-      <span class="card-quad">Suggested: <span>Quadrant III / IV</span></span><span class="card-link">Read profile</span>
-    </a>
+      <span class="card-quad">Suggested: <span>Quadrant III / IV</span></span>
+      <span class="card-status">Profile coming soon</span>
+    </div>
   </div>
 
   <!-- Coming soon -->
   <div class="coming-block">
     <p class="coming-label">Coming — 222 more profiles across all 8 sections</p>
     <div class="coming-grid">
-      <div class="coming-item">Section I · Architects of the Experiment<br><span style="font-size:.72rem;opacity:.6;">Hamilton, Jefferson, Douglass, Tubman, Du Bois…</span></div>
-      <div class="coming-item">Section II · Ideas That Built the World<br><span style="font-size:.72rem;opacity:.6;">Smith, Marx, Keynes, Friedman, Ostrom…</span></div>
-      <div class="coming-item">Section III · More Scale &amp; Labor figures<br><span style="font-size:.72rem;opacity:.6;">Reuther, Chavez, Huerta, Baker…</span></div>
-      <div class="coming-item">Section IV · More Digital figures<br><span style="font-size:.72rem;opacity:.6;">Gates, Lanier, Zuboff, Butler…</span></div>
-      <div class="coming-item">Section V · More Money &amp; Wealth figures<br><span style="font-size:.72rem;opacity:.6;">Fink, Soros, Minsky, Kelly…</span></div>
-      <div class="coming-item">Section VI · More Accountability figures<br><span style="font-size:.72rem;opacity:.6;">Warren, Sanders, King, Maathai…</span></div>
-      <div class="coming-item">Section VII · More Mobilization figures<br><span style="font-size:.72rem;opacity:.6;">MLK, Malcolm X, Hampton, Chomsky…</span></div>
-      <div class="coming-item">Section VIII · Who Tells the Story<br><span style="font-size:.72rem;opacity:.6;">Baldwin, Morrison, Pietri, Lewis…</span></div>
+      <div class="coming-item">Section I &middot; Architects of the Experiment<br><span style="font-size:.72rem;opacity:.6;">Hamilton, Jefferson, Douglass, Tubman, Du Bois&hellip;</span></div>
+      <div class="coming-item">Section II &middot; Ideas That Built the World<br><span style="font-size:.72rem;opacity:.6;">Smith, Marx, Keynes, Friedman, Ostrom&hellip;</span></div>
+      <div class="coming-item">Section III &middot; More Scale &amp; Labor figures<br><span style="font-size:.72rem;opacity:.6;">Reuther, Chavez, Huerta, Baker&hellip;</span></div>
+      <div class="coming-item">Section IV &middot; More Digital figures<br><span style="font-size:.72rem;opacity:.6;">Gates, Lanier, Zuboff, Butler&hellip;</span></div>
+      <div class="coming-item">Section V &middot; More Money &amp; Wealth figures<br><span style="font-size:.72rem;opacity:.6;">Fink, Soros, Minsky, Kelly&hellip;</span></div>
+      <div class="coming-item">Section VI &middot; More Accountability figures<br><span style="font-size:.72rem;opacity:.6;">Warren, Sanders, King, Maathai&hellip;</span></div>
+      <div class="coming-item">Section VII &middot; More Mobilization figures<br><span style="font-size:.72rem;opacity:.6;">MLK, Malcolm X, Hampton, Chomsky&hellip;</span></div>
+      <div class="coming-item">Section VIII &middot; Who Tells the Story<br><span style="font-size:.72rem;opacity:.6;">Baldwin, Morrison, Pietri, Lewis&hellip;</span></div>
     </div>
   </div>
 
 </div>
 
 <footer class="site-footer">
-  <div class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC &nbsp;&middot;&nbsp; economicdemocracy.co</div>
-  <div class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-sonnet-4-6)</div>
+  <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC &nbsp;&middot;&nbsp; economicdemocracy.co</span>
+  <span class="footer-right">AI Synthesis: Claude (Anthropic, claude-sonnet-4-6) &nbsp;&middot;&nbsp; Economic Democracy Curriculum</span>
 </footer>
 
+<button class="back-to-top" aria-label="Back to top">&uarr;</button>
+
 <script>
+/* Nav toggle */
+document.querySelector('.nav-toggle').addEventListener('click', function(){
+  this.classList.toggle('open');
+  this.setAttribute('aria-expanded', this.classList.contains('open'));
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+
+/* Filter */
 function filterSection(sec, btn) {
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
@@ -342,6 +345,11 @@ function filterSection(sec, btn) {
   });
   document.querySelector('.coming-block').style.display = (sec === 'all') ? '' : 'none';
 }
+
+/* Back to top */
+const btt = document.querySelector('.back-to-top');
+window.addEventListener('scroll', () => btt.classList.toggle('visible', window.scrollY > 600));
+btt.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
 </script>
 </body>
 </html>

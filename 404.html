@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found — Economic Democracy</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-home">Economic Democracy<span>economicdemocracy.co</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="framework.html">The Framework</a>
+      <a href="ED_ANT_Core_Anthology_250.html">250 Voices</a>
+      <a href="index.html#resources">Resources</a>
+      <a href="https://www.teacherspayteachers.com/Store/Economic-Democracy" target="_blank" class="nav-cta">Get Materials</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page" style="text-align:center;padding-top:5rem;padding-bottom:8rem;">
+  <p class="eyebrow">404</p>
+  <h1 style="font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:900;color:var(--black);line-height:1.1;margin-bottom:1rem;">Page not found.</h1>
+  <p style="font-size:1rem;font-weight:300;color:var(--mid);line-height:1.7;max-width:440px;margin:0 auto 2rem;">The page you're looking for doesn't exist yet — or has been moved. The curriculum is growing; check back soon.</p>
+  <a href="index.html" class="btn-primary">Back to Home</a>
+</div>
+
+<footer class="site-footer">
+  <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC &nbsp;&middot;&nbsp; economicdemocracy.co</span>
+  <span class="footer-right">AI Synthesis: Claude (Anthropic, claude-sonnet-4-6) &nbsp;&middot;&nbsp; Economic Democracy Curriculum</span>
+</footer>
+
+<script>
+document.querySelector('.nav-toggle').addEventListener('click', function(){
+  this.classList.toggle('open');
+  this.setAttribute('aria-expanded', this.classList.contains('open'));
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+</script>
+</body>
+</html>

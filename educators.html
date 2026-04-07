@@ -1,11 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="refresh" content="0;url=index.html#resources">
-<title>For Educators — Economic Democracy</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free teacher guides, facilitation scripts, and lesson structures for the Economic Democracy curriculum. Every paid student resource has a free teacher guide.">
+  <title>For Educators — Economic Democracy</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+  .resource-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin-bottom:2.5rem;}
+  .resource-card{background:var(--paper);padding:1.5rem;display:flex;flex-direction:column;gap:.5rem;}
+  .resource-card:nth-child(even){background:var(--cream);}
+  .resource-badge{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--white);background:var(--gold);display:inline-block;padding:.2rem .55rem;width:fit-content;}
+  .resource-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);line-height:1.25;}
+  .resource-desc{font-size:.82rem;font-weight:300;color:var(--mid);line-height:1.6;flex:1;}
+  .resource-link{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--charcoal);display:inline-block;border-bottom:1px solid var(--rule);padding-bottom:.1rem;margin-top:.25rem;width:fit-content;transition:color .15s,border-color .15s;}
+  .resource-link:hover{color:var(--black);border-color:var(--black);}
+  .resource-link::after{content:' \2192';}
+  .sec-label{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.75rem;margin-top:2.5rem;}
+  @media(max-width:600px){.resource-grid{grid-template-columns:1fr;}}
+  </style>
 </head>
 <body>
-<script>window.location.href="index.html#resources";</script>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-home">Economic Democracy<span>economicdemocracy.co</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="framework.html">The Framework</a>
+      <a href="ED_ANT_Core_Anthology_250.html">250 Voices</a>
+      <a href="index.html#resources">Resources</a>
+      <a href="https://www.teacherspayteachers.com/Store/Economic-Democracy" target="_blank" class="nav-cta">Get Materials</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page" id="main">
+
+  <div class="hero">
+    <p class="hero-eyebrow">For Educators</p>
+    <h1 class="hero-title">Free for teachers.<br>Built to use tomorrow.</h1>
+    <p class="hero-sub">Every paid student resource has a free teacher guide. Teacher resources are always free. Download, print, and use across every class, every year.</p>
+  </div>
+
+  <p class="sec-label">Teacher Guides &amp; Free Resources</p>
+  <div class="resource-grid">
+    <div class="resource-card">
+      <span class="resource-badge">Free</span>
+      <span class="resource-title">Civic Education Introduction</span>
+      <span class="resource-desc">Why this course exists and what it asks of students. Positions A, B, and C — all present simultaneously. The opening essay for the full curriculum.</span>
+      <a href="ED_CIV_Civic_Education_Introduction.html" class="resource-link">Read Introduction</a>
+    </div>
+    <div class="resource-card">
+      <span class="resource-badge">Free</span>
+      <span class="resource-title">Teacher Guide — The Framework</span>
+      <span class="resource-desc">Complete facilitation guide. Five-phase structure, teacher script, discussion question notes, three differentiation options. 60-90 minutes.</span>
+      <a href="ED_TG_Teacher_Guide.html" class="resource-link">View Teacher Guide</a>
+    </div>
+    <div class="resource-card">
+      <span class="resource-badge">Free</span>
+      <span class="resource-title">Teacher Guide — Revolution, Counterrevolution &amp; Reform</span>
+      <span class="resource-desc">Five phases, teacher script, discussion notes with "listen for" cues, matrix application guide. 60-90 minutes.</span>
+      <a href="ED_TG_Revolution_Counterrevolution_Reform.html" class="resource-link">View Teacher Guide</a>
+    </div>
+    <div class="resource-card">
+      <span class="resource-badge">Free</span>
+      <span class="resource-title">Teacher Guide — Civic Economy Role-Play Lab</span>
+      <span class="resource-desc">Role assignment logic, class size configurations, role-by-role facilitation notes, policy option guide. 90-120 minutes.</span>
+      <a href="ED_TG_Civic_Economy_Role_Play_Lab.html" class="resource-link">View Teacher Guide</a>
+    </div>
+    <div class="resource-card">
+      <span class="resource-badge">Free</span>
+      <span class="resource-title">Teacher Guide — 250 Voices Anthology</span>
+      <span class="resource-desc">Section-by-section guide, four lesson models, seven high-yield cross-section pairings, notes on handling difficult figures.</span>
+      <a href="ED_ANT_TeacherGuide.html" class="resource-link">View Teacher Guide</a>
+    </div>
+    <div class="resource-card">
+      <span class="resource-badge">Free</span>
+      <span class="resource-title">250 Voices — Core Anthology</span>
+      <span class="resource-desc">One voice per year of the republic — 1776 to 2026. Eight sections. The full map of how power argues with itself.</span>
+      <a href="ED_ANT_Core_Anthology_250.html" class="resource-link">Browse the Anthology</a>
+    </div>
+  </div>
+
+  <p class="sec-label">Curriculum Documents</p>
+  <div class="resource-grid">
+    <div class="resource-card">
+      <span class="resource-badge">Free</span>
+      <span class="resource-title">Framework Rationale</span>
+      <span class="resource-desc">The full rationale behind the two-axis framework — why a single left-right spectrum fails, and how this model captures the actual structure of disagreement.</span>
+      <a href="ED_FR_Framework_Rationale.html" class="resource-link">Read Rationale</a>
+    </div>
+    <div class="resource-card">
+      <span class="resource-badge">Free</span>
+      <span class="resource-title">Two-Year Sequence</span>
+      <span class="resource-desc">The full scope and sequence for both years of the curriculum — units, themes, and progression from the Founding to Artificial Intelligence.</span>
+      <a href="ED_SEQ_Two_Year_Sequence.html" class="resource-link">View Sequence</a>
+    </div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC &nbsp;&middot;&nbsp; economicdemocracy.co</span>
+  <span class="footer-right">AI Synthesis: Claude (Anthropic, claude-sonnet-4-6) &nbsp;&middot;&nbsp; Economic Democracy Curriculum</span>
+</footer>
+
+<script>
+document.querySelector('.nav-toggle').addEventListener('click', function(){
+  this.classList.toggle('open');
+  this.setAttribute('aria-expanded', this.classList.contains('open'));
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+</script>
 </body>
 </html>
