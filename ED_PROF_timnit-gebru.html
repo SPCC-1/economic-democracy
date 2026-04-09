@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Profile of Timnit Gebru — AI Ethics, Bias, and the Limits of Scale. Part of the Economic Democracy curriculum's 250 Voices anthology.">
+<title>Timnit Gebru — Economic Democracy</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+/* ── Profile page styles ── */
+.profile-masthead{border-bottom:3px solid var(--black);padding:3rem 0 2rem;margin-bottom:2.5rem;}
+.profile-section-label{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem;}
+.profile-section-label::before{content:'';display:block;width:1.5rem;height:1px;background:var(--rule);}
+.profile-name{font-family:'Playfair Display',serif;font-size:clamp(2rem,4.5vw,3.2rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.5rem;}
+.profile-subtitle{font-size:1.05rem;font-weight:300;font-style:italic;color:var(--mid);line-height:1.6;max-width:600px;margin-bottom:1rem;}
+.profile-meta{display:flex;gap:1.5rem;flex-wrap:wrap;font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+.profile-meta span{color:var(--charcoal);font-weight:500;}
+
+/* ── Body text ── */
+.profile-body p{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.profile-body p:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.4rem;font-weight:900;float:left;line-height:.82;margin:.05em .12em 0 0;color:var(--black);}
+.profile-body p strong{font-weight:600;color:var(--black);}
+
+/* ── Core claim callout ── */
+.core-claim{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.core-claim p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;font-weight:700;}
+
+/* ── Perspective sections ── */
+.perspective-header{background:var(--black);color:var(--white);padding:.55rem 1.1rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:.75rem;max-width:680px;}
+.perspective-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);}
+.perspective-title{font-family:'Playfair Display',serif;font-size:.88rem;font-weight:700;color:var(--white);}
+
+/* ── Closing questions ── */
+.closing-questions{background:var(--cream);border:1px solid var(--rule);padding:1.5rem;margin:2.5rem 0;max-width:680px;}
+.closing-questions p{font-size:.92rem;font-weight:300;color:var(--ink);line-height:1.75;margin-bottom:.75rem;}
+.closing-questions p:last-child{margin-bottom:0;font-style:italic;color:var(--charcoal);font-weight:400;}
+
+/* ── Navigation links ── */
+.profile-nav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding:1.5rem 0;border-top:1px solid var(--rule);margin-top:3rem;}
+.profile-nav a{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;color:var(--charcoal);transition:color .15s;}
+.profile-nav a:hover{color:var(--black);}
+
+@media(max-width:600px){
+  .page{padding:0 1rem 3rem;}
+  .profile-meta{gap:.75rem;}
+}
+@media print{
+  .site-nav,.profile-nav{display:none;}
+  body{background:white;}
+  .page{max-width:100%;padding:0;}
+}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-home">Economic Democracy<span>economicdemocracy.co</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="framework.html">The Framework</a>
+      <a href="ED_ANT_Core_Anthology_250.html">250 Voices</a>
+      <a href="index.html#resources">Resources</a>
+      <a href="https://www.teacherspayteachers.com/Store/Economic-Democracy" target="_blank" class="nav-cta">Get Materials</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page" id="main">
+
+  <div class="profile-masthead">
+    <p class="profile-section-label">Section IV &middot; The Digital Revolution &amp; Its Critics</p>
+    <h1 class="profile-name">Timnit Gebru</h1>
+    <p class="profile-subtitle">AI Ethics, Bias, and the Limits of Scale</p>
+    <div class="profile-meta">
+      <span>Suggested Quadrant: I</span>
+      <span>1983&ndash;present</span>
+      <span>AI Researcher &amp; Advocate</span>
+    </div>
+  </div>
+
+  <div class="profile-body">
+
+    <p>To understand Timnit Gebru, you have to begin with a reliability question: what happens when systems are scaled before they are fully understood?</p>
+
+    <p>As artificial intelligence systems expanded, performance benchmarks and scale became dominant measures of success. Larger models, more data, and faster deployment were treated as indicators of progress.</p>
+
+    <p>Gebru challenges that trajectory.</p>
+
+    <p>At the center of her worldview is a defining claim:</p>
+
+    <div class="core-claim">
+      <p>Scaling AI systems without addressing bias, data quality, and societal impact creates systemic risks.</p>
+    </div>
+
+    <p>Her work focuses on how training data, model design, and institutional incentives shape outcomes. Large-scale AI systems often rely on vast, uncurated datasets that can encode harmful biases and inaccuracies.</p>
+
+    <p>From this perspective, scale is not neutral. Increasing the size of models and datasets can amplify existing problems. Bias, misinformation, and environmental costs may grow alongside capability.</p>
+
+    <p>This creates a distinct form of risk:</p>
+
+    <div class="core-claim">
+      <p>Systems that appear advanced but produce unreliable or harmful outputs.</p>
+    </div>
+
+    <p>Gebru has also emphasized the environmental and labor dimensions of AI. Training large models requires significant energy and computational resources, and often depends on human labor for data labeling and moderation. These costs are frequently obscured in discussions of innovation.</p>
+
+    <p>This reflects a broader framework:</p>
+
+    <p><strong>Technological systems must be evaluated across technical, social, and environmental dimensions.</strong></p>
+
+  </div>
+
+  <!-- SUPPORTERS -->
+  <div class="perspective-header">
+    <span class="perspective-label">Perspective</span>
+    <span class="perspective-title">Supporters</span>
+  </div>
+  <div class="profile-body">
+    <p><strong>Supporters see Gebru as a leading voice in AI ethics.</strong></p>
+
+    <p>They argue that her work has brought critical attention to issues of bias, accountability, and transparency. By challenging dominant assumptions about scale, she has influenced research priorities and public discourse.</p>
+
+    <p>From this perspective, Gebru expands the analysis of economic systems to include the hidden costs and risks of AI development.</p>
+  </div>
+
+  <!-- CRITICS -->
+  <div class="perspective-header">
+    <span class="perspective-label">Perspective</span>
+    <span class="perspective-title">Critics</span>
+  </div>
+  <div class="profile-body">
+    <p><strong>Critics, however, raise counterpoints.</strong></p>
+
+    <p>Some argue that large-scale models have demonstrated significant benefits across domains, and that improvements can be made alongside continued scaling. Others suggest that critiques of scale may slow innovation.</p>
+
+    <p>There are also debates about how to balance openness with the risks of misuse.</p>
+
+    <p>A deeper tension lies in the relationship between capability and responsibility. How can systems become more powerful while also becoming more trustworthy? What standards should guide development and deployment?</p>
+
+    <p>Gebru&rsquo;s work highlights the need for governance. She calls for greater transparency, independent oversight, and more inclusive participation in AI development.</p>
+  </div>
+
+  <!-- CLOSING -->
+  <div class="closing-questions">
+    <p>Timnit Gebru does not build large-scale commercial platforms. But she has reshaped how they are evaluated &mdash; demonstrating that progress in AI must be measured not only by capability, but by its impacts on people and systems.</p>
+    <p>What are the limits of scaling as a strategy for technological progress? How should bias and harm be addressed in AI systems? And what forms of accountability are needed in the development of powerful technologies?</p>
+  </div>
+
+  <!-- PROFILE NAV -->
+  <nav class="profile-nav">
+    <a href="ED_ANT_Core_Anthology_250.html#sec-iv">&larr; Back to 250 Voices</a>
+    <a href="ED_PROF_joy-buolamwini.html">Next: Joy Buolamwini &rarr;</a>
+  </nav>
+
+</div>
+
+<footer class="site-footer">
+  <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC &nbsp;&middot;&nbsp; economicdemocracy.co</span>
+  <span class="footer-right">AI Synthesis: Claude (Anthropic, claude-sonnet-4-6) &nbsp;&middot;&nbsp; Economic Democracy Curriculum</span>
+</footer>
+
+<script>
+document.querySelector('.nav-toggle').addEventListener('click', function(){
+  this.classList.toggle('open');
+  this.setAttribute('aria-expanded', this.classList.contains('open'));
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+</script>
+</body>
+</html>
