@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Four ways to bring Economic Democracy into your classroom — use a unit, pilot a course, develop a partnership, or join the founding cohort.">
+  <title>Ways to Engage &mdash; Economic Democracy</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ways to Engage &mdash; Economic Democracy" />
+  <meta property="og:description" content="Four ways to bring Economic Democracy into your classroom — use a unit, pilot a course, develop a partnership, or join the founding cohort." />
+  <meta property="og:image" content="https://www.economicdemocracy.co/og-image.png" />
+  <meta property="og:url" content="https://www.economicdemocracy.co/ED_ENGAGE_Ways.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Economic Democracy" />
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+  /* ══════════════════════════════════════════════════
+     MASTHEAD
+  ══════════════════════════════════════════════════ */
+  .masthead {
+    border-bottom: 3px solid var(--black);
+    padding: 3.5rem 0 2.5rem;
+    margin-bottom: 0;
+  }
+  .masthead-eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .62rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: .75rem;
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+  }
+  .masthead-eyebrow::before {
+    content: '';
+    display: block;
+    width: 1.5rem;
+    height: 1px;
+    background: var(--rule);
+  }
+  .masthead-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    font-weight: 900;
+    color: var(--black);
+    line-height: 1.04;
+    letter-spacing: -.025em;
+    margin-bottom: .75rem;
+  }
+  .masthead-title em {
+    font-style: italic;
+    color: var(--mid);
+  }
+  .masthead-sub {
+    font-size: 1rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--mid);
+    max-width: 640px;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+  .masthead-meta {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .62rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .masthead-meta span { color: var(--charcoal); font-weight: 500; }
+
+  /* ══════════════════════════════════════════════════
+     SECTION HEADERS (black bar — site pattern)
+  ══════════════════════════════════════════════════ */
+  .sec-header {
+    background: var(--black);
+    padding: .6rem 1.1rem;
+    margin: 3rem 0 1.5rem;
+    display: flex;
+    align-items: baseline;
+    gap: .75rem;
+  }
+  .sec-roman {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .72rem;
+    letter-spacing: .12em;
+    color: var(--white);
+    text-transform: uppercase;
+  }
+  .sec-title {
+    font-family: 'Playfair Display', serif;
+    font-size: .92rem;
+    font-weight: 700;
+    color: var(--white);
+  }
+
+  /* ══════════════════════════════════════════════════
+     BODY TEXT
+  ══════════════════════════════════════════════════ */
+  .body-intro {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.85;
+    color: var(--ink);
+    margin-bottom: 1.25rem;
+    max-width: 680px;
+  }
+  .body-intro::first-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.4rem;
+    font-weight: 900;
+    float: left;
+    line-height: .82;
+    margin: .05em .12em 0 0;
+    color: var(--black);
+  }
+  .body-text {
+    font-size: .97rem;
+    font-weight: 300;
+    line-height: 1.82;
+    color: var(--ink);
+    margin-bottom: 1.1rem;
+    max-width: 680px;
+  }
+
+  /* ══════════════════════════════════════════════════
+     SUB-TITLE (Framework name etc.)
+  ══════════════════════════════════════════════════ */
+  .sub-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--black);
+    margin: .5rem 0 1.25rem;
+    letter-spacing: -.01em;
+  }
+
+  /* ══════════════════════════════════════════════════
+     AXES BOX (Matrix description)
+  ══════════════════════════════════════════════════ */
+  .axes-box {
+    background: var(--cream);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--gold);
+    padding: 1.25rem 1.4rem;
+    margin: 1.5rem 0 2rem;
+    max-width: 680px;
+  }
+  .axes-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .6rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: .65rem;
+    display: block;
+  }
+  .axes-list {
+    list-style: none;
+    margin: 0 0 .85rem;
+    padding: 0;
+  }
+  .axes-list li {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--black);
+    line-height: 1.6;
+    padding: .15rem 0;
+  }
+  .axes-list li strong {
+    font-style: normal;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-right: .35rem;
+  }
+  .axes-note {
+    font-size: .87rem;
+    font-weight: 300;
+    color: var(--mid);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* ══════════════════════════════════════════════════
+     WHAT IS BUILT — bulleted list (matches PDF)
+  ══════════════════════════════════════════════════ */
+  .built-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 2rem;
+    max-width: 720px;
+    border-top: 1px solid var(--rule);
+  }
+  .built-list li {
+    border-bottom: 1px solid var(--rule);
+    padding: 1.1rem 0 1.1rem 1.4rem;
+    position: relative;
+    font-size: .92rem;
+    font-weight: 300;
+    color: var(--ink);
+    line-height: 1.7;
+  }
+  .built-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    top: 1.05rem;
+    color: var(--gold);
+    font-weight: 600;
+  }
+  .built-list li strong {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--black);
+    margin-right: .35rem;
+  }
+
+  /* ══════════════════════════════════════════════════
+     WAYS TO ENGAGE — 2×2 grid of paths
+  ══════════════════════════════════════════════════ */
+  .engage-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin: 1.5rem 0 2rem;
+  }
+  .engage-card {
+    background: var(--paper);
+    padding: 1.75rem 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .engage-card:nth-child(even) { background: var(--cream); }
+  .engage-card.featured {
+    background: var(--cream);
+  }
+  .engage-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .58rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: .7rem;
+  }
+  .engage-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--black);
+    line-height: 1.2;
+    margin-bottom: .65rem;
+    letter-spacing: -.005em;
+  }
+  .engage-desc {
+    font-size: .87rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--mid);
+    margin-bottom: 1.25rem;
+    flex: 1;
+  }
+  .engage-cta {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .62rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--black);
+    padding: .65rem 0;
+    border-top: 1px solid var(--rule);
+    transition: color .15s;
+    text-align: left;
+    align-self: flex-start;
+  }
+  .engage-cta:hover { color: var(--gold); }
+  @media(max-width: 640px) { .engage-grid { grid-template-columns: 1fr; } }
+
+  /* ══════════════════════════════════════════════════
+     BUILT BY block
+  ══════════════════════════════════════════════════ */
+  .built-by-block {
+    background: var(--cream);
+    border: 1px solid var(--rule);
+    padding: 2rem 2.1rem;
+    margin: 1.5rem 0;
+    max-width: 720px;
+  }
+  .built-by-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .58rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: .35rem;
+    display: block;
+  }
+  .built-by-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: var(--black);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    letter-spacing: -.015em;
+  }
+  .built-by-bio {
+    font-size: .9rem;
+    font-weight: 300;
+    line-height: 1.78;
+    color: var(--ink);
+    margin: 0;
+  }
+  .built-by-bio em { font-style: italic; }
+
+  /* ══════════════════════════════════════════════════
+     CLOSING CTA
+  ══════════════════════════════════════════════════ */
+  .closing-cta {
+    background: var(--black);
+    padding: 2.5rem;
+    margin: 3rem 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .closing-cta-text p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.4;
+    margin-bottom: .6rem;
+    max-width: 580px;
+  }
+  .closing-cta-text span {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .72rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.6);
+    line-height: 1.5;
+    display: block;
+  }
+  .closing-cta-btn {
+    display: inline-block;
+    background: var(--white);
+    color: var(--black);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .82rem;
+    font-weight: 500;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 1.1rem 2rem;
+    white-space: nowrap;
+    transition: background .15s;
+  }
+  .closing-cta-btn:hover { background: var(--cream); }
+  </style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- NAV (unified site nav — Pre-Order replaced with Ways to Engage) -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-home">Economic Democracy<span>economicdemocracy.co</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="framework.html">The Framework</a>
+      <a href="ED_ANT_Core_Anthology_250.html">250 Voices</a>
+      <a href="index.html#resources">Resources</a>
+      <a href="ED_ENGAGE_Ways.html" class="nav-cta active">Ways to Engage</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page" id="main">
+
+  <!-- MASTHEAD -->
+  <div class="masthead">
+    <p class="masthead-eyebrow">Curriculum Overview &nbsp;&middot;&nbsp; 2026 &nbsp;&middot;&nbsp; For Grades 11&ndash;12 &amp; First-Year / Sophomore Higher Education</p>
+    <h1 class="masthead-title">Ways to <em>Engage.</em></h1>
+    <p class="masthead-sub">Economic Democracy &mdash; History, Power &amp; Participation. A framework for engaging the structural questions our generation must answer to survive and thrive.</p>
+  </div>
+
+  <!-- I — THE QUESTION BEHIND THE COURSE -->
+  <div class="sec-header">
+    <span class="sec-roman">I</span>
+    <span class="sec-title">The Question Behind the Course</span>
+  </div>
+
+  <p class="body-intro">America is an experiment &mdash; two and a half centuries of one endless argument about who holds power, who benefits, and what we owe one another. That argument has never been settled, and our generation is now inheriting its hardest version. How do we sustain Social Security in an aging society? How do we deliver health care without bankrupting families? How do we build ownership and wealth in an economy increasingly driven by AI and automation?</p>
+
+  <p class="body-text">Most students leave high school unprepared to participate in these conversations. They learn the mechanics of government but almost nothing about how the economy actually shapes their lives. <em>Economic Democracy</em> offers a different lens &mdash; a framework for recognizing the patterns that run through American history, and for using political economy as a tool for dialogue and problem-solving rather than as ammunition for winning arguments about the past.</p>
+
+  <!-- II — THE FRAMEWORK -->
+  <div class="sec-header">
+    <span class="sec-roman">II</span>
+    <span class="sec-title">The Framework</span>
+  </div>
+
+  <h2 class="sub-title">The Power, Democracy &amp; Economy Matrix</h2>
+
+  <p class="body-text">The course refuses the single left-right axis that organizes most political and economic discussion. In its place, a two-axis framework asks two independent questions: <em>where</em> does economic power sit, and <em>to whom</em> is that power accountable?</p>
+
+  <div class="axes-box">
+    <span class="axes-label">Two Axes &middot; Four Quadrants</span>
+    <ul class="axes-list">
+      <li><strong>X</strong> &mdash; Power Location: private &harr; public</li>
+      <li><strong>Y</strong> &mdash; Accountability: elite / expert &harr; democratic / popular</li>
+    </ul>
+    <p class="axes-note">All four quadrants hold genuine tension. None is declared correct. Students place every figure they study &mdash; from Hamilton to Andreessen &mdash; on the matrix, and then defend their own placement. The framework teaches interpretation, not sorting; it builds democratic habits of mind.</p>
+  </div>
+
+  <!-- III — WHAT IS BUILT -->
+  <div class="sec-header">
+    <span class="sec-roman">III</span>
+    <span class="sec-title">What Is Built</span>
+  </div>
+
+  <ul class="built-list">
+    <li><strong>Two-year scope &amp; sequence</strong> &mdash; ten units across U.S. History, Government, Economics, and CTE.</li>
+    <li><strong>The 250 Voices Anthology</strong> &mdash; one significant American thinker, builder, or actor per year, 1776&ndash;2026, each placed on the matrix.</li>
+    <li><strong>A live curriculum site</strong> at economicdemocracy.co &mdash; with educator portal, framework rationale, and free teacher guide.</li>
+    <li><strong>Model projects</strong> grounded in role play and public demonstrations of learning &mdash; AI-proof by design, because they require discernment and dialogue rather than content recall.</li>
+    <li><strong>Foundational anchors</strong> &mdash; the TEDx talk &amp; the white paper <em>Redefining the American Dream</em>.</li>
+  </ul>
+
+  <!-- IV — WAYS TO ENGAGE -->
+  <div class="sec-header">
+    <span class="sec-roman">IV</span>
+    <span class="sec-title">Ways to Engage</span>
+  </div>
+
+  <p class="body-text">Four paths in. The first three are open to any educator at any time. The fourth &mdash; the founding cohort &mdash; closes after the first 250 seats.</p>
+
+  <div class="engage-grid">
+
+    <div class="engage-card">
+      <span class="engage-num">01 &nbsp;&middot;&nbsp; Path One</span>
+      <h3 class="engage-title">Use a unit or project</h3>
+      <p class="engage-desc">Integrate a single lesson or unit into an existing course in U.S. History, Government, Economics, Theology, or a first-year seminar.</p>
+      <a href="ED_ANT_TeacherGuide.html" class="engage-cta">View the free teacher guide &rarr;</a>
+    </div>
+
+    <div class="engage-card">
+      <span class="engage-num">02 &nbsp;&middot;&nbsp; Path Two</span>
+      <h3 class="engage-title">Pilot a course</h3>
+      <p class="engage-desc">Run the framework as a one-semester course or a full two-year sequence at your school.</p>
+      <a href="mailto:alfredo@spcc.one?subject=Pilot%20a%20course%20—%20Economic%20Democracy" class="engage-cta">Email Alfredo to discuss &rarr;</a>
+    </div>
+
+    <div class="engage-card">
+      <span class="engage-num">03 &nbsp;&middot;&nbsp; Path Three</span>
+      <h3 class="engage-title">Develop a partnership</h3>
+      <p class="engage-desc">Co-design teacher training, professional development, or a school-network adoption pathway.</p>
+      <a href="mailto:alfredo@spcc.one?subject=Partnership%20—%20Economic%20Democracy" class="engage-cta">Start a conversation &rarr;</a>
+    </div>
+
+    <div class="engage-card featured">
+      <span class="engage-num">04 &nbsp;&middot;&nbsp; Path Four &nbsp;&middot;&nbsp; Limited to 250</span>
+      <h3 class="engage-title">Join the founding cohort</h3>
+      <p class="engage-desc">Help shape the curriculum as one of a small group of educators piloting it in 2026&ndash;27. Complete curriculum, monthly PD, Slack community, and founding-educator credit at $250 &mdash; locked permanently.</p>
+      <a href="ED_FOUNDING_Educator_Preorder.html" class="engage-cta">View the founding program &rarr;</a>
+    </div>
+
+  </div>
+
+  <!-- V — BUILT BY -->
+  <div class="sec-header">
+    <span class="sec-roman">V</span>
+    <span class="sec-title">Built By</span>
+  </div>
+
+  <div class="built-by-block">
+    <span class="built-by-label">The Architect</span>
+    <h3 class="built-by-name">Alfredo Mathew III</h3>
+    <p class="built-by-bio">Founding teacher at Mott Haven Village Prep in the South Bronx. AP and IB History teacher at Blair High School, Pasadena. Bay Area Director of the Network for Teaching Entrepreneurship. Co-founder of ESO Ventures, an entrepreneurial ecosystem that closed $24M in capital and supported 700+ businesses owned by founders historically left out of wealth-building. TEDx speaker (top 10 globally, 2025). Author of <em>Redefining the American Dream</em>. The curriculum is the synthesis of two careers &mdash; the classroom and the ecosystem &mdash; and the framework he wished he had been able to teach twenty years ago.</p>
+  </div>
+
+  <!-- CLOSING CTA — routes to Pre-Order page -->
+  <div class="closing-cta">
+    <div class="closing-cta-text">
+      <p>250 voices. 250 founding educators. $250.</p>
+      <span>The founding cohort closes after Seat 250.</span>
+    </div>
+    <a href="ED_FOUNDING_Educator_Preorder.html" class="closing-cta-btn">View Founding Program &rarr;</a>
+  </div>
+
+</div><!-- /page -->
+
+<footer class="site-footer">
+  <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC &nbsp;&middot;&nbsp; SPCC.1 &nbsp;&middot;&nbsp; economicdemocracy.co</span>
+  <span class="footer-right">AI Synthesis: Claude (Anthropic, claude-sonnet-4-6) &nbsp;&middot;&nbsp; Economic Democracy Curriculum</span>
+</footer>
+
+<script>
+// Nav toggle
+document.querySelector('.nav-toggle').addEventListener('click', function() {
+  this.classList.toggle('open');
+  this.setAttribute('aria-expanded', this.classList.contains('open'));
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+</script>
+
+</body>
+</html>
