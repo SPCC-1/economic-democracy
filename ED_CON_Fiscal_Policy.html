@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fiscal Policy — Concept Library — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+.concept-tag{display:inline-block;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .6rem;margin-bottom:.9rem;}
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+.defbox{border:1px solid var(--black);background:var(--white);padding:1.1rem 1.4rem;margin:1.5rem 0;}
+.defbox-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.defbox p{font-size:.92rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.defbox strong{font-weight:600;color:var(--black);}
+.four{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.four-cell{background:var(--paper);padding:1rem 1.2rem;}
+.four-cell:nth-child(even){background:var(--cream);}
+.four-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem;}
+.four-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.3rem;}
+.four-text{font-size:.8rem;font-weight:300;color:var(--ink);line-height:1.55;}
+.four-text strong{font-weight:600;color:var(--charcoal);}
+@media(max-width:600px){.four{grid-template-columns:1fr;}}
+.types{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.type-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.type-cell:nth-child(even){background:var(--cream);}
+.type-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.type-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.15;}
+.type-text{font-size:.81rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.types{grid-template-columns:1fr;}}
+.context{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.context-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.context-name{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.context-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.context-body p{margin-bottom:.5rem;}
+.context-body p:last-child{margin-bottom:0;}
+.context-q{font-size:.82rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.6rem;margin-top:.5rem;line-height:1.5;}
+.tbl-wrap{margin:1.25rem 0;overflow-x:auto;}
+.cmp{width:100%;border-collapse:collapse;font-size:.8rem;min-width:540px;}
+.cmp th,.cmp td{border:1px solid var(--rule);padding:.55rem .7rem;vertical-align:top;line-height:1.45;text-align:left;}
+.cmp th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.cmp td:first-child{background:var(--cream);font-weight:600;color:var(--charcoal);font-size:.76rem;}
+.cmp .fill{color:var(--muted);font-style:italic;}
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:9.8pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing,.cmp th,.concept-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .context,.task,.types,.four,.defbox,.inset,.tbl-wrap{break-inside:avoid;}
+  .sec-header{margin:1.6rem 0 .9rem;}
+  .context{margin:1rem 0;}
+  .four,.types,.defbox,.inset,.pullquote{margin-top:1.05rem;margin-bottom:1.05rem;}
+  .body{margin-bottom:1rem;}
+  .task{margin:1.15rem 0;}
+  .closing{margin:1.05rem 0 0;padding:.9rem 1.5rem;}
+  .doc-footer{margin-top:.5rem;}
+  .closing.tight-top{margin-top:.4rem;}
+  .dq-list.tight li{padding-top:.26rem;padding-bottom:.26rem;}
+  .sec-header.tight-top{margin-top:.8rem;margin-bottom:.7rem;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+.sec-header.tight-top{margin-top:1.5rem;}
+.closing.tight-top{margin-top:1.4rem;}
+.dq-list.tight li{padding-top:.45rem;padding-bottom:.45rem;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="concept-tag">Concept Library · Money &amp; Value</p>
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Concept Primer</p>
+    <h1 class="masthead-title">Fiscal Policy</h1>
+    <p class="masthead-sub">The government's two great levers — what it taxes and what it spends — used to steer the whole economy. The other hand on the wheel, and the one that runs straight through politics.</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">When an economy stalls — businesses cut back, people stop spending, the downturn feeds on itself — there is an obvious problem and a counterintuitive cure. The problem is that everyone is pulling back at once, so total spending collapses and the slump deepens. The counterintuitive cure is that <em>someone</em> has to spend <strong>into</strong> that fear, to replace the demand that vanished and break the spiral. The one actor large enough to do it, and able to spend even when its own revenues are falling, is the government. <strong>Fiscal policy</strong> is the government deliberately using its budget — <em>what it taxes and what it spends</em> — to steer the economy: pumping money in when private demand collapses, and ideally easing off when the economy runs hot. It is one of the two great levers a country has over its own economy. The other is monetary policy, run by the central bank. Fiscal policy is the one that runs through the legislature — and therefore through politics.</p>
+
+  <p class="body">For most of history, governments did the opposite of what helped. When tax revenues fell in a downturn, they slashed spending to match — pulling even more demand out of a shrinking economy and turning slumps into catastrophes. John Maynard Keynes named the trap and the way out: in a recession, the government should <em>run a deficit</em> — spend more than it collects, borrowing the difference — to fill the hole left by collapsed private spending, then pull back once recovery takes hold. This reshaped how every modern government manages a crisis, and the great interventions of 2008 and 2020 are its direct descendants. This primer teaches that machinery in full, because counter-cyclical fiscal policy is a genuine achievement that has kept downturns from becoming depressions. Then it turns to the two things that make fiscal policy more contested than the textbook admits: the deficit is a bet whose bill comes due, and the budget is written by politicians, not economists.</p>
+
+  <div class="defbox">
+    <p class="defbox-label">The tool, stated plainly</p>
+    <p><strong>Fiscal policy</strong> is the government's use of <strong>spending</strong> and <strong>taxation</strong> to influence the economy. In a downturn, <strong>expansionary</strong> policy — more spending, lower taxes — adds demand to revive activity, usually by running a <strong>deficit</strong> (spending beyond revenue, financed by borrowing, which adds to the national <strong>debt</strong>). In a boom, <strong>contractionary</strong> policy — less spending, higher taxes — cools an overheating economy and pays down debt. The guiding idea, from <strong>Keynes</strong>, is <strong>counter-cyclical</strong>: lean against the cycle, spending when the private economy won't and restraining when it overheats. It is distinct from <strong>monetary policy</strong> (the central bank's control of money and interest rates) — the budget, not the money supply, is the lever.</p>
+  </div>
+
+  <!-- SECTION I -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">The Tool — Leaning Against the Cycle</span></div>
+
+  <p class="body">Start with the core logic, because it is both simple and genuinely powerful. An economy can fall into a vicious circle: fear makes people and businesses stop spending; that lost spending is someone else's lost income; so they spend less too; and the economy spirals down — not because anything is physically broken, but because everyone pulled back at once. The Keynesian insight is that the government can break the circle by doing what no private actor will: spending <em>more</em> precisely when everyone else spends less. It builds the road, sends the check, funds the project — and that spending becomes income for workers and firms, who spend it in turn, and the spiral reverses. The government acts as the spender of last resort, filling the hole until private confidence returns.</p>
+
+  <p class="body">The lever has two directions, and the discipline of the idea is that it's supposed to work <em>both</em> ways:</p>
+
+  <div class="four">
+    <div class="four-cell">
+      <p class="four-label">In a downturn · expansionary</p>
+      <p class="four-name">Spend Into the Slump</p>
+      <p class="four-text">Cut taxes and increase spending — infrastructure, benefits, direct payments — to replace collapsed private demand. Run a <strong>deficit</strong> to do it, borrowing now to stop the spiral. The point is to put money where the fear took it out, and break the downward circle.</p>
+    </div>
+    <div class="four-cell">
+      <p class="four-label">In a boom · contractionary</p>
+      <p class="four-name">Ease Off the Gas</p>
+      <p class="four-text">When the economy runs hot and inflation threatens, raise taxes or trim spending to cool demand — and use the surplus to pay down the debt taken on in the bad years. This is the half that makes the whole idea balance over the cycle.</p>
+    </div>
+  </div>
+
+  <p class="body">Grant the achievement plainly, because it is real and historically hard-won. The instinct to balance the budget every single year sounds responsible, but applied in a recession it is exactly wrong — it amplifies the very collapse it should cushion, which is part of what turned the early 1930s into the Great Depression. Counter-cyclical fiscal policy replaced that instinct with a better one: treat the budget not as a household checkbook that must balance monthly, but as a stabilizer that leans against the economy's swings — deficit in the lean years, restraint in the fat ones, balanced across the cycle rather than within each year. When it works, it is the difference between a hard recession and a generational catastrophe; the rapid responses to 2008 and the 2020 pandemic almost certainly prevented far deeper collapses. Granted in full, fiscal policy is one of the most powerful stabilizing tools a society has. The complications come from two facts the clean theory understates: the borrowing is a real bet, and the budget is written in a political arena.</p>
+
+  <div class="pullquote">
+    <p>The household must balance its budget every year. The nation, Keynes saw, should not — it should spend into the storm and save in the sun. The genius is in the discipline of the second half, which is the half we rarely manage.</p>
+  </div>
+
+  <!-- SECTION II -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">Where the Steering Wheel Gets Complicated</span></div>
+
+  <p class="body">The tool is a real achievement, and counter-cyclical policy has prevented real catastrophes. But two features the textbook diagram glosses over make fiscal policy far harder in practice — not because the idea is wrong, but because deficits have consequences and budgets are political.</p>
+
+  <div class="types">
+    <div class="type-cell">
+      <p class="type-label">Lever 1</p>
+      <p class="type-name">The deficit is a bet, and the bill comes due</p>
+      <p class="type-text">Borrowing to spend today means debt to service tomorrow. That can be wise — if the spending funds something that makes the economy grow faster than the debt (infrastructure, an educated workforce, ending a depression), the bet pays for itself. But the theory's discipline depends on the <em>other</em> half: pulling back and paying down in the good years. In practice that half rarely happens — spending is easy to turn on and politically near-impossible to turn off, and "temporary" stimulus becomes permanent. So deficits tend to ratchet up regardless of the cycle, and the debt grows. Whether that accumulated debt is a sensible investment in the future or a burden quietly shifted onto the next generation is a genuine, unsettled argument — not a question economics has neatly answered.</p>
+    </div>
+    <div class="type-cell">
+      <p class="type-label">Lever 2</p>
+      <p class="type-name">The budget is written by politics, not economics</p>
+      <p class="type-text">Monetary policy is run by an insulated central bank; fiscal policy runs straight through the legislature — which means <em>what</em> gets spent and <em>whose</em> taxes change are decided by political power, not neutral analysis. The same deficit can fund infrastructure that lifts everyone or tax cuts aimed at the well-connected, and both get called "stimulus." Timing bends to elections, not just to the cycle. So a tool that is supposed to lean cleanly against the economy's swings instead carries the fingerprints of whoever holds the votes — and reading any fiscal policy means asking not only "is this the right move for the economy?" but "who chose this spending, and who benefits from it?"</p>
+    </div>
+  </div>
+
+  <div class="inset">
+    <strong>The questions to carry everywhere:</strong> when the government spends or taxes to steer the economy, ask — <em>is this borrowing a wise investment that will pay for itself, or a cost shifted onto people who can't yet vote?</em> And — <em>this counter-cyclical logic is real and has prevented catastrophes, but who actually chose this spending and these tax changes, and whose interests do they serve?</em> Fiscal policy is one of the great stabilizing achievements of modern government. Reading it well means seeing both the genuine power to steer — and the bet in the borrowing and the politics in the budget.</p>
+  </div>
+
+  <!-- SECTION III -->
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">The Same Lever, Three Moments</span></div>
+
+  <p class="body">Watch fiscal policy work in three real moments — a textbook rescue, the deficit that never gets repaid, and the hard case where "stimulus" is both real and political at once.</p>
+
+  <div class="context">
+    <p class="context-meta">Moment One · The lever at its best</p>
+    <p class="context-name">Spending into a collapse to stop the spiral</p>
+    <div class="context-body">
+      <p>A sudden shock freezes the economy — spending halts, layoffs cascade, and a self-feeding collapse looms. The government responds fast: direct payments to households, support for businesses, funding to keep people employed. That spending replaces the demand that vanished; the money becomes income, gets spent again, and the downward spiral breaks before it becomes a depression. Years later the recovery is well underway. This is counter-cyclical fiscal policy doing exactly what Keynes described — the government spending into the fear when no one else would, and cushioning a fall that could have been catastrophic. Grant it plainly: this is the tool working, and it has genuinely saved economies.</p>
+      <p class="context-q">Why could only the government do this — and what would have happened if it had tried to balance its budget instead?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Moment Two · The half that doesn't happen</p>
+    <p class="context-name">The deficit that outlives the emergency</p>
+    <div class="context-body">
+      <p>The theory says: deficit in the downturn, then restraint in the boom to pay it back. Watch the second half fail. The emergency passes, the economy recovers — but the spending programs launched in the crisis are popular, and cutting them or raising taxes to pay down debt is politically painful, so it doesn't happen. The "temporary" deficit becomes permanent, and when the next downturn arrives the debt is already high. Nothing here is villainous — each choice to keep a popular program is understandable — but the discipline the whole theory depends on quietly erodes, and the bill keeps being passed forward.</p>
+      <p class="context-q">If each decision to keep spending is reasonable on its own, why does the pattern still pose a problem — and for whom?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Moment Three · The hard case</p>
+    <p class="context-name">A stimulus bill that is both medicine and politics</p>
+    <div class="context-body">
+      <p>A downturn calls for stimulus, and a large spending bill is passed. By the numbers it does real counter-cyclical work — it adds demand when the economy needs it, exactly as the theory prescribes. <em>And</em> the same bill is packed with provisions that favor particular industries, regions, and donors, timed with an eye on the next election. Both things are true: it is genuine economic medicine <em>and</em> a vehicle for political power, and you cannot cleanly separate the two because the budget is the one tool that is inescapably both. Defenders point to the real demand it added; critics point to who got the contracts. The honest task is to hold both — neither pretending stimulus is pure economics nor pretending it does no economic good.</p>
+      <p class="context-q">If a bill is both sound counter-cyclical policy and a political payout, how should you judge it — and can the two ever be separated?</p>
+    </div>
+  </div>
+
+  <!-- ACTIVITY -->
+  <div class="sec-header tight-top"><span class="sec-roman">IV</span><span class="sec-title">Activity — Read the Budget</span></div>
+
+  <p class="body">For each, say whether it's expansionary or contractionary, whether it fits the cycle (counter-cyclical) or fights it, and who benefits or bears the cost.</p>
+
+  <div class="tbl-wrap">
+    <table class="cmp">
+      <thead>
+        <tr><th>The situation</th><th>Expansionary / contractionary? Counter-cyclical?</th><th>Who benefits / who pays?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Direct payments to households during a recession</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Big spending increase while the economy is already booming</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Raising taxes and trimming budgets in a strong year</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Cutting public spending in the middle of a slump</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A "stimulus" bill heavy with favored-industry tax breaks</td><td class="fill">…</td><td class="fill">…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Write</p>
+    <p class="task-title">Defend the lever — then count the cost</p>
+    <p class="task-body">First, make the strongest case that counter-cyclical fiscal policy is a genuine achievement: what does a government spending into a downturn accomplish that nothing else can, and why is balancing the budget every year sometimes the worst thing to do? Then complicate it honestly: explain why the deficit half is a real bet, and why the budget being written by politicians changes what "stimulus" ends up meaning. Finally, take a position: knowing fiscal policy is both powerful and political, what is the smallest guardrail — if any — you'd put on the spending or borrowing, without disabling the government's ability to fight a downturn?</p>
+    <div class="writelines"><div class="writeline"></div><div class="writeline"></div><div class="writeline"></div></div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="sec-header tight-top"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list tight">
+    <li>Balancing a household budget every year is sensible; balancing the national budget every year can deepen a recession. Why does what's prudent for a family become harmful for a government in a downturn?</li>
+    <li>The theory works only if deficits in bad years are matched by restraint in good ones — but the restraint rarely comes. Is that a flaw in the idea, or in the politics that carries it out?</li>
+    <li>Fiscal policy runs through the legislature, so it's inevitably political. Is that a weakness to minimize, or the right place for democratic choice about spending and taxes?</li>
+    <li>What's the smallest guardrail on deficits or stimulus that would curb the ratchet and the political payouts — without taking away the power to spend into a genuine crisis?</li>
+  </ol>
+
+  <div class="closing tight-top">
+    <p>A government can do what no household can: spend most when it earns least, to break a downward spiral.<br>Used well, it is the difference between a hard year and a lost decade.<br>But the borrowing is a bet on a future that cannot yet vote, and the budget is written where power is counted.<br>So read both the steadying hand on the wheel — and whose hand it is, and who pays for the turn.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

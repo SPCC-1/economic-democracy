@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data — Concept Library — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+.concept-tag{display:inline-block;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .6rem;margin-bottom:.9rem;}
+
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+
+.defbox{border:1px solid var(--black);background:var(--white);padding:1.1rem 1.4rem;margin:1.5rem 0;}
+.defbox-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.defbox p{font-size:.92rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.defbox strong{font-weight:600;color:var(--black);}
+
+/* create vs extract two-column */
+.four{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.four-cell{background:var(--paper);padding:1rem 1.2rem;}
+.four-cell:nth-child(even){background:var(--cream);}
+.four-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem;}
+.four-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.3rem;}
+.four-text{font-size:.8rem;font-weight:300;color:var(--ink);line-height:1.55;}
+.four-text strong{font-weight:600;color:var(--charcoal);}
+@media(max-width:600px){.four{grid-template-columns:1fr;}}
+
+.types{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.type-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.type-cell:nth-child(even){background:var(--cream);}
+.type-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.type-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.15;}
+.type-text{font-size:.81rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.types{grid-template-columns:1fr;}}
+
+.context{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.context-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.context-name{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.context-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.context-body p{margin-bottom:.5rem;}
+.context-body p:last-child{margin-bottom:0;}
+.context-q{font-size:.82rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.6rem;margin-top:.5rem;line-height:1.5;}
+
+.tbl-wrap{margin:1.25rem 0;overflow-x:auto;}
+.cmp{width:100%;border-collapse:collapse;font-size:.8rem;min-width:540px;}
+.cmp th,.cmp td{border:1px solid var(--rule);padding:.55rem .7rem;vertical-align:top;line-height:1.45;text-align:left;}
+.cmp th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.cmp td:first-child{background:var(--cream);font-weight:600;color:var(--charcoal);font-size:.76rem;}
+.cmp .fill{color:var(--muted);font-style:italic;}
+
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing,.cmp th,.concept-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .context,.task,.types,.four,.defbox,.inset,.tbl-wrap{break-inside:avoid;}
+  .sec-header{margin:1.9rem 0 1rem;}
+  .context{margin:1.1rem 0;}
+  .four,.types,.defbox,.inset,.pullquote{margin-top:1.2rem;margin-bottom:1.2rem;}
+  .task{margin:1.3rem 0;}
+  .closing{margin:1.2rem 0 0;}
+  .doc-footer{margin-top:1.2rem;}
+  .closing.tight-top{margin-top:.8rem;}
+  .dq-list.tight li{padding-top:.34rem;padding-bottom:.34rem;}
+  .sec-header.tight-top{margin-top:1rem;margin-bottom:.85rem;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+.sec-header.tight-top{margin-top:1.5rem;}
+.closing.tight-top{margin-top:1.4rem;}
+.dq-list.tight li{padding-top:.45rem;padding-bottom:.45rem;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="concept-tag">Concept Library · Money &amp; Value</p>
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Concept Primer</p>
+    <h1 class="masthead-title">Data</h1>
+    <p class="masthead-sub">The strange new asset that powers the digital economy — worth almost nothing alone, immensely valuable in bulk, and generated by the very people who rarely own it.</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">Every time you tap, scroll, search, buy, or simply move through the day with a phone in your pocket, you leave a trail: what you looked at and for how long, where you went, who you talked to, what you almost bought and then didn't. On its own, any single trace is trivial — that you paused on one video tells almost no one anything. But gathered by the billions and sorted by machines, those traces become one of the most valuable assets of the modern economy. Some of the largest companies on earth are built almost entirely on it. That asset is <strong>data</strong>, and learning to think about it clearly means treating it as what it has become: a new <em>form of wealth</em>, with its own strange rules.</p>
+
+  <p class="body">People reach for metaphors to make sense of it — data is "the new oil," the raw material refined into fuel for the digital age. The comparison captures something real: like oil, raw data is extracted, processed, and sold; like oil, it powers an entire economy and has made enormous fortunes. But the metaphor also misleads, because data behaves unlike any physical asset we've ever priced. This primer treats data as an <strong>asset</strong> — a thing that is owned, valued, bought, and sold — and then asks the questions that follow once you take that seriously. What kind of asset is it, exactly? Who creates its value, and who ends up owning it? Because the answers turn out to be far stranger, and far more contested, than the comfortable "new oil" line suggests.</p>
+
+  <div class="defbox">
+    <p class="defbox-label">The tool, stated plainly</p>
+    <p><strong>Data</strong>, in economic terms, is recorded information about the world — and increasingly about people's behavior — that can be collected, combined, and used to create value. As an <strong>asset</strong>, it is owned and traded like other valuable things. But it has two unusual properties: it is <strong>non-rival</strong> (one person using it doesn't use it up, so the same data can serve many at once), and it is worth little in isolation but immensely valuable <strong>in aggregate</strong> — its value comes from being combined at scale.</p>
+  </div>
+
+  <!-- SECTION I -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">The Tool — Data as a Genuine New Form of Wealth</span></div>
+
+  <p class="body">Grant the idea its full weight, because it is genuinely one of the most important economic developments of our time. For most of history, wealth meant physical things — land, gold, machines, buildings — or the money that stood for them. Data is something new: wealth made of <em>information</em>. And it is real wealth, not an illusion. Combined and analyzed at scale, data lets a company know what people want before they ask, route deliveries efficiently, detect fraud, diagnose disease from patterns no human could see, and train the artificial intelligence reshaping the economy. The value is not imaginary — it shows up in better services, lower costs, genuine discoveries, and some of the largest fortunes ever assembled.</p>
+
+  <p class="body">What makes data a genuinely new <em>kind</em> of asset is two properties no physical good shares — and they're worth holding side by side, because almost everything strange about data flows from them:</p>
+
+  <div class="four">
+    <div class="four-cell">
+      <p class="four-label">Property one</p>
+      <p class="four-name">Non-Rival</p>
+      <p class="four-text">If I use a barrel of oil, it's gone — you can't also use it. But if I use a piece of data, it's still fully there for you. The same information can be copied endlessly and used by many at once, at almost no cost. Data is never "used up." This makes it unlike nearly every asset we know how to price.</p>
+    </div>
+    <div class="four-cell">
+      <p class="four-label">Property two</p>
+      <p class="four-name">Valuable in Aggregate</p>
+      <p class="four-text">One person's data is nearly worthless. A billion people's data, combined, is worth a fortune — because patterns, predictions, and training power emerge only at scale. The value isn't in any single piece; it's in the <strong>combination</strong>. This is why whoever can gather the most holds something far greater than the sum of its parts.</p>
+    </div>
+  </div>
+
+  <p class="body">Granted fully, data is a true new form of wealth, and the ability to collect and use it has created enormous real value — conveniences and capabilities that genuinely improve life, alongside legitimate fortunes built by the firms that learned to refine it. That much is not in dispute, and a clear-eyed view should concede it without flinching. The trouble begins when you ask the two questions any asset raises — what is it really, and who owns it — because data answers both in ways that break the ordinary rules of property and value.</p>
+
+  <div class="pullquote">
+    <p>For all of history, wealth was something you could touch. Now one of the most valuable assets on earth is a record of how a billion strangers spent their attention.</p>
+  </div>
+
+  <!-- SECTION II -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">Where the "Asset" Story Breaks</span></div>
+
+  <p class="body">Treating data as just another asset feels natural — it's owned, priced, and sold. But two features make data behave unlike any ordinary property, and both decide who ends up holding this new wealth and who doesn't.</p>
+
+  <div class="types">
+    <div class="type-cell">
+      <p class="type-label">Lever 1</p>
+      <p class="type-name">The value is created by the people it's taken from</p>
+      <p class="type-text">Oil sits in the ground, made by no one. Data is different: it is <em>generated by people</em> — by your searches, purchases, movements, and choices. You produce the raw material simply by living your digital life. Yet the value almost always accrues to whoever <em>collects and combines</em> it, not to the people who generated it. The ones who made the asset valuable usually don't own it, are rarely paid for it, and often don't even know how much was taken. The wealth flows from the many who produce it to the few who aggregate it — and nothing about the technology decides that split. The rules do.</p>
+    </div>
+    <div class="type-cell">
+      <p class="type-label">Lever 2</p>
+      <p class="type-name">Aggregation concentrates power, not just value</p>
+      <p class="type-text">Because data is worth most in bulk, whoever already holds the most has a self-reinforcing edge: more data trains better systems, which attract more users, which generate still more data. The asset's defining property pushes relentlessly toward concentration — a few holders of vast pools, and everyone else dependent on them. And the same aggregated data that predicts what you'll buy can also be used to influence, sort, or surveil. Holding data at scale isn't only wealth; it's the power to shape the behavior of the people it describes. An asset that doubles as a lever over its own source is unlike anything in the old economy.</p>
+    </div>
+  </div>
+
+  <div class="inset">
+    <strong>The question to carry everywhere:</strong> when data creates value, ask — <em>who generated this raw material, and who ends up owning the asset built from it? Were the people it came from paid, asked, or even told? And does holding it at this scale give someone power over the very people who produced it?</em> "Data is the new oil" makes it sound like a resource lying around to be claimed. But the wells are people, the asset is built from their lives, and who owns the result is a choice a society makes — not a fact of nature.</p>
+  </div>
+
+  <!-- SECTION III — APPLY (break removed; long intro) -->
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">The Same Asset, Three Contexts</span></div>
+
+  <p class="body">Watch data create value that's genuinely shared, then value captured entirely by the collector, then the hard case where the same data does real good and concentrates real power at once.</p>
+
+  <div class="context">
+    <p class="context-meta">Context One · Value shared</p>
+    <p class="context-name">Pooled medical data that helps everyone it came from</p>
+    <div class="context-body">
+      <p>Patients' health records, stripped of names and combined, let researchers spot which treatments work and catch dangerous drug interactions no single doctor would see. The data was generated by many people — and the benefit flows back to people like them: better care, earlier diagnoses, saved lives. Non-rivalry works in everyone's favor here, since the same dataset can help countless researchers at once. When the value created from people's data returns to those who produced it, the asset's strange properties become a genuine public good.</p>
+      <p class="context-q">The data came from many — and did the value flow back to them, or away?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Two · Value captured</p>
+    <p class="context-name">Behavior harvested to sell ads, with nothing returned</p>
+    <div class="context-body">
+      <p>A free service records everything its users do and combines it into detailed profiles sold to advertisers. The users generated every bit of the raw material — yet they're paid nothing, the collection is barely disclosed, and the entire value of the asset accrues to the company. "Free" was never free: the price was the data, and the people who produced the wealth don't own a sliver of it. This is Lever 1 in its purest form — the value created by the many, captured by the one who aggregates. The asset is real; the question is who was allowed to keep it.</p>
+      <p class="context-q">If the users made the asset valuable, why do they own none of it?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Three · The hard case</p>
+    <p class="context-name">A vast dataset that improves a service and entrenches its owner</p>
+    <div class="context-body">
+      <p>A company's enormous trove of user data genuinely makes its product better — sharper recommendations, smarter features, real convenience people value. The same trove also makes the company nearly impossible to challenge: no rival can match a service trained on data no one else can gather, so the giant only grows. Both things are true at once — the data delivers real benefit <em>and</em> locks in dominance and the power to shape what users see. You can't fully separate the good from the concentration; they ride on the same asset. This is the case worth arguing over, because the honest answer isn't "good" or "bad" but "both — now what?"</p>
+      <p class="context-q">Is the better service worth the entrenchment it buys — and who should decide?</p>
+    </div>
+  </div>
+
+  <!-- ACTIVITY -->
+  <div class="sec-header tight-top"><span class="sec-roman">IV</span><span class="sec-title">Activity — Who Made It, Who Owns It?</span></div>
+
+  <p class="body">For each case, name who generated the data, who ends up owning the asset built from it, and whether the value flows back to the people it came from — or concentrates with whoever aggregated it.</p>
+
+  <div class="tbl-wrap">
+    <table class="cmp">
+      <thead>
+        <tr><th>How the data is created and used</th><th>Who generated it? Who owns it?</th><th>Value shared or captured?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>A loyalty card tracks your grocery purchases</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A city publishes open transit data anyone can use</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A free app sells your location to data brokers</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Users' posts train a company's AI model</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A hospital network shares anonymized data for research</td><td class="fill">…</td><td class="fill">…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Write</p>
+    <p class="task-title">Trace the data you generated today</p>
+    <p class="task-body">Pick one ordinary thing you did today with a phone or computer — a search, a purchase, a route, a scroll. What data did you generate, and who collected it? Were you paid, asked, or told? Now imagine the asset built from millions of people doing the same thing: who owns it, what's it worth, and does any of that value come back to you? If you could write one rule about who owns data like yours, what would it be — and what would it cost to enforce?</p>
+    <div class="writelines"><div class="writeline"></div><div class="writeline"></div><div class="writeline"></div></div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="sec-header tight-top"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list tight">
+    <li>"Data is the new oil." Having seen where the metaphor holds and where it breaks, is it a useful way to think about data — or a misleading one? What would you compare data to instead?</li>
+    <li>The value of data comes from the people it's collected from, but the ownership usually doesn't. Should the people who generate data own it, be paid for it, or have a say in its use — and how could that even work, given that one person's data is nearly worthless?</li>
+    <li>Because data is most valuable in bulk, it pushes toward a few giant holders. Is that concentration just the nature of the asset, or something rules could change — and would changing it cost us the benefits that scale provides?</li>
+    <li>What's the smallest change that would let data keep creating value — better services, real discoveries — while giving the people who generate it more ownership or say over the asset built from their lives?</li>
+  </ol>
+
+  <div class="closing tight-top">
+    <p>Oil was found in the ground; data is made by people living their lives.<br>It is real wealth — but wealth refined from the trail each of us leaves,<br>and who comes to own it is settled not by nature but by rules.<br>To think clearly about data is to ask who made it, and who keeps it.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

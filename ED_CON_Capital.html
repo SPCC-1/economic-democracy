@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capital — Concept Library — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+.concept-tag{display:inline-block;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .6rem;margin-bottom:.9rem;}
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+.defbox{border:1px solid var(--black);background:var(--white);padding:1.1rem 1.4rem;margin:1.5rem 0;}
+.defbox-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.defbox p{font-size:.92rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.defbox strong{font-weight:600;color:var(--black);}
+.four{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.four-cell{background:var(--paper);padding:1rem 1.2rem;}
+.four-cell:nth-child(even){background:var(--cream);}
+.four-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem;}
+.four-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.3rem;}
+.four-text{font-size:.8rem;font-weight:300;color:var(--ink);line-height:1.55;}
+.four-text strong{font-weight:600;color:var(--charcoal);}
+@media(max-width:600px){.four{grid-template-columns:1fr;}}
+.types{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.type-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.type-cell:nth-child(even){background:var(--cream);}
+.type-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.type-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.15;}
+.type-text{font-size:.81rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.types{grid-template-columns:1fr;}}
+.context{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.context-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.context-name{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.context-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.context-body p{margin-bottom:.5rem;}
+.context-body p:last-child{margin-bottom:0;}
+.context-q{font-size:.82rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.6rem;margin-top:.5rem;line-height:1.5;}
+.tbl-wrap{margin:1.25rem 0;overflow-x:auto;}
+.cmp{width:100%;border-collapse:collapse;font-size:.8rem;min-width:540px;}
+.cmp th,.cmp td{border:1px solid var(--rule);padding:.55rem .7rem;vertical-align:top;line-height:1.45;text-align:left;}
+.cmp th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.cmp td:first-child{background:var(--cream);font-weight:600;color:var(--charcoal);font-size:.76rem;}
+.cmp .fill{color:var(--muted);font-style:italic;}
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing,.cmp th,.concept-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .context,.task,.types,.four,.defbox,.inset,.tbl-wrap{break-inside:avoid;}
+  .sec-header{margin:1.9rem 0 1rem;}
+  .context{margin:1.1rem 0;}
+  .four,.types,.defbox,.inset,.pullquote{margin-top:1.2rem;margin-bottom:1.2rem;}
+  .task{margin:1.3rem 0;}
+  .closing{margin:1.2rem 0 0;}
+  .doc-footer{margin-top:1.2rem;}
+  .closing.tight-top{margin-top:.8rem;}
+  .dq-list.tight li{padding-top:.34rem;padding-bottom:.34rem;}
+  .sec-header.tight-top{margin-top:1rem;margin-bottom:.85rem;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+.sec-header.tight-top{margin-top:1.5rem;}
+.closing.tight-top{margin-top:1.4rem;}
+.dq-list.tight li{padding-top:.45rem;padding-bottom:.45rem;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="concept-tag">Concept Library · Money &amp; Value</p>
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Concept Primer</p>
+    <h1 class="masthead-title">Capital</h1>
+    <p class="masthead-sub">Not money in a drawer, but any asset put to work to make more — the thing that compounds and produces, and so quietly decides who pulls ahead and who runs in place.</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">Two people each have ten thousand dollars. The first spends it on a year of rent and groceries — necessary, but at the end of the year it is gone. The second buys a delivery van and starts hauling freight; at the end of the year the van has earned its cost back and keeps earning, and is itself still worth something. Same ten thousand dollars, two completely different fates — and the difference has a name. The second person turned money into <strong>capital</strong>: an asset put to work to produce more value. That is the whole idea, and it is bigger than money. A tool, a machine, a building, a patent, a skill, a dataset, a stake in a business — anything that can be deployed to generate more value than it cost is capital. The defining feature is not what it's made of but what it does: capital <em>works</em>, and in working it produces a return, and that return can be reinvested to produce still more. It compounds. A wage does not.</p>
+
+  <p class="body">That last contrast is the one to hold onto, because it quietly organizes the whole economy. A <strong>wage</strong> is earned once, for work done, and then spent. <strong>Capital</strong> is owned, and keeps producing as long as you hold it. Someone who only earns wages must work for every dollar; someone who owns capital has dollars that work for them. This is not a moral distinction — both are legitimate, and most people live on some mix — but it is a structural one, and over a lifetime it compounds into enormous differences in security and wealth. Economist Hernando de Soto put the deeper point sharply: capital's real magic is that it turns a static, "dead" asset — land you merely live on, a skill you merely have — into something that can be leveraged, invested, and made to generate future income. This primer grants capital its full power as the engine of productivity and prosperity, and then turns to the two things that engine does which complicate any simple story about it: it concentrates, and it can extract as easily as it can build.</p>
+
+  <div class="defbox">
+    <p class="defbox-label">The tool, stated plainly</p>
+    <p><strong>Capital</strong> is any asset put to work to produce more value than it cost — tools, machines, buildings, money invested, intellectual property, even skills (<em>human capital</em>) and data. Its defining feature is that it is <em>productive</em> and can <em>compound</em>: the return it generates can be reinvested to generate more. This sets it apart from a <strong>wage</strong>, which is earned once for labor and then consumed. Wealth from capital grows on what you <em>own</em>; income from wages depends on what you <em>do</em>. Both are legitimate sources of livelihood — but only one works while you sleep.</p>
+  </div>
+
+  <!-- SECTION I -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">The Tool — The Asset That Works</span></div>
+
+  <p class="body">Grant capital its real power, because it is one of the most productive ideas civilization ever stumbled onto. The reason a modern worker produces vastly more than one a century ago is not that people work harder — it's <em>capital</em>: the machines, tools, software, and infrastructure that multiply what a pair of hands can do. A farmer with a tractor feeds a hundred times what a farmer with a hoe could; the tractor is capital, and it is the difference. Every productive economy runs on the steady accumulation and deployment of capital — savings turned into tools, tools into greater output, greater output into more savings. Strip the capital away and you don't have a simpler economy; you have a poorer one. This is worth stating plainly because capital is sometimes treated as a synonym for greed: it isn't. It is the accumulated, productive wealth that makes high living standards possible at all.</p>
+
+  <p class="body">And here is what makes it more than just useful — what makes it the quiet engine under everything. Watch the difference between consuming and capitalizing the same resource:</p>
+
+  <div class="four">
+    <div class="four-cell">
+      <p class="four-label">Consumed</p>
+      <p class="four-name">Spent and Gone</p>
+      <p class="four-text">A resource used up for present needs — rent, food, a night out — does its job and disappears. Necessary and good, but it leaves nothing behind that keeps working. Next year you need the resource again, from scratch.</p>
+    </div>
+    <div class="four-cell">
+      <p class="four-label">Capitalized</p>
+      <p class="four-name">Put to Work</p>
+      <p class="four-text">The same resource turned into a productive asset — the van, the tool, the stake, the training — keeps generating value after the initial outlay. It pays back its cost and then keeps paying. The return can buy more capital. It <strong>compounds</strong>.</p>
+    </div>
+  </div>
+
+  <p class="body">That compounding is why capital is the great wealth engine — and why <em>who owns it</em> is one of the most consequential facts about any economy. A person, a company, or a nation that accumulates productive capital and reinvests its returns grows wealthier almost automatically, because the assets do the work; a person or place with only labor to sell must earn every gain afresh. Broadly held, capital is how ordinary families build security across generations — a home, a retirement account, a small business are all capital. This is the genuinely hopeful side of the idea: capital is not a fixed pie reserved for the few; it can be built, and it can be spread. Granted in full, capital is the engine of all durable prosperity. The complications come from two things that same engine does, no matter how good the intentions of whoever runs it.</p>
+
+  <div class="pullquote">
+    <p>A wage is what you earn for your time. Capital is what earns for you while your time is your own. The first feeds a life; the second compounds into a legacy — which is why who owns it matters so much.</p>
+  </div>
+
+  <!-- SECTION II -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">What the Engine Does on Its Own</span></div>
+
+  <p class="body">The engine is real and its power is a genuine good. But two things follow from how capital works — not from anyone's villainy — that complicate any simple "anyone can build wealth" story.</p>
+
+  <div class="types">
+    <div class="type-cell">
+      <p class="type-label">Lever 1</p>
+      <p class="type-name">Because it compounds, capital concentrates</p>
+      <p class="type-text">The very feature that makes capital powerful — that its returns can be reinvested to make more — also means those who already own it tend to pull steadily ahead of those who don't. Returns to capital have, over long stretches, outpaced the growth of wages, so wealth built on owning compounds faster than wealth built on working. The result, left alone, is concentration: capital flows toward capital. This isn't a claim that owners are bad people; it's arithmetic. The engine that builds wealth for those who hold it also widens the distance between them and those who hold only their labor — which is why "anyone can build wealth through ownership" is true in principle and uneven in practice, since it takes a cushion to start.</p>
+    </div>
+    <div class="type-cell">
+      <p class="type-label">Lever 2</p>
+      <p class="type-name">The same asset can build or extract</p>
+      <p class="type-text">Capital is morally neutral machinery, and it can be pointed two ways. Pointed at <em>building</em>, it funds the factory, the new product, the hired worker — it creates value that didn't exist. Pointed at <em>extracting</em>, the same dollars buy up an essential asset to raise its price, strip a working company for parts, or engineer financial returns that move wealth around without making anything new. Both are "capital at work," and they can look similar on a balance sheet, but one grows the pie and the other just takes a bigger slice. The tool doesn't decide which; people do. So "is capital good?" is the wrong question — the real one is always <em>what is this particular capital actually doing?</em></p>
+    </div>
+  </div>
+
+  <div class="inset">
+    <strong>The questions to carry everywhere:</strong> when you see capital at work, ask — <em>is this building something new, or just capturing value someone else created?</em> And — <em>is its compounding lifting many people into ownership, or concentrating wealth in fewer hands?</em> Capital is the engine of all durable prosperity, and broadly held it is how ordinary people build security. Reading it well means seeing both what it makes possible and what it does on its own: it compounds toward concentration, and it can extract as readily as it can build.</p>
+  </div>
+
+  <!-- SECTION III -->
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">The Same Engine, Three Uses</span></div>
+
+  <p class="body">Watch capital work in three real situations — at its clearest good, compounding quietly into concentration, and the hard case where the same dollars could build or strip.</p>
+
+  <div class="context">
+    <p class="context-meta">Use One · Capital at its clearest</p>
+    <p class="context-name">A tool that multiplies a worker's output</p>
+    <div class="context-body">
+      <p>A seamstress sewing by hand can make a few garments a day. Give her a sewing machine — a piece of capital — and she makes ten times as many, earns more, and the garments cost less for everyone. The machine paid for itself and keeps producing; it didn't replace her, it multiplied her. This is capital at its most unambiguous: an asset that makes human effort dramatically more productive, raising the worker's output, the owner's return, and the buyer's access all at once. Granting this plainly matters — most of the gap between a poor economy and a rich one is exactly this kind of accumulated, productive capital, quietly multiplying what people can do.</p>
+      <p class="context-q">Who gained from the machine — and what made it capital rather than just an expense?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Use Two · The engine running alone</p>
+    <p class="context-name">Two families over thirty years</p>
+    <div class="context-body">
+      <p>Two families earn similar wages. One rents and spends what it earns; the other buys a home and invests a little each year. Thirty years on, the first has the same wage and little else, while the second owns a paid-off house and a portfolio that now generates income on its own. Neither family was smarter or worked harder — but one owned compounding capital and the other didn't, and the gap between them widened every year automatically. Scale that across a whole society and you have Lever 1 in plain sight: capital compounding toward concentration, not through anyone's wrongdoing, but because that is simply what the engine does when some own it and some don't.</p>
+      <p class="context-q">If neither family did anything wrong, why did the gap grow — and is that a problem, or just how capital works?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Use Three · The hard case</p>
+    <p class="context-name">A buyout that could revive or gut</p>
+    <div class="context-body">
+      <p>An investment firm buys a struggling company with a large pool of capital. It could point that capital at <em>building</em> — invest in new equipment, retrain the workforce, turn the company around, and sell it later as a thriving business. Or it could point it at <em>extracting</em> — sell off the company's valuable assets, load it with debt, cut to the bone, take the cash out, and leave a hollowed shell. The same capital, the same firm, two opposite outcomes — and on the spreadsheet, in the early months, they can look almost identical. Defenders of buyouts point to the genuine turnarounds; critics point to the strip-and-flips. Both are real, which is exactly why "is private capital good for companies?" has no general answer — it depends entirely on which way the capital is pointed.</p>
+      <p class="context-q">Same dollars, same firm — what determines whether this capital builds or extracts, and how would you tell early on?</p>
+    </div>
+  </div>
+
+  <!-- ACTIVITY -->
+  <div class="sec-header tight-top"><span class="sec-roman">IV</span><span class="sec-title">Activity — Is It Capital, and What's It Doing?</span></div>
+
+  <p class="body">For each, decide whether it's capital or consumption, and if capital, whether it's mainly <em>building</em> or <em>extracting</em> — and who gains.</p>
+
+  <div class="tbl-wrap">
+    <table class="cmp">
+      <thead>
+        <tr><th>The situation</th><th>Capital or consumption? Building or extracting?</th><th>Who gains / who's left behind?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>A bakery buys a bigger oven to make more bread</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A family spends its savings on a vacation</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A firm buys the only water utility and raises rates</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A worker pays for training in a high-demand skill</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>An investor reinvests dividends for thirty years</td><td class="fill">…</td><td class="fill">…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Write</p>
+    <p class="task-title">Defend capital — then read what it does on its own</p>
+    <p class="task-body">First, make the strongest case that capital is a force for good: what does putting assets to work make possible that a wage-only economy never could, and why is accumulated capital the difference between a poor society and a rich one? Then complicate it honestly: explain why capital tends to concentrate even when no one cheats, and how the same capital can extract rather than build. Finally, take a position: knowing capital is both the engine of prosperity and a force that concentrates, what is the smallest thing — if anything — you'd do to spread its benefits or curb its extraction, without breaking the engine that creates the wealth?</p>
+    <div class="writelines"><div class="writeline"></div><div class="writeline"></div><div class="writeline"></div></div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="sec-header tight-top"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list tight">
+    <li>Capital works while you sleep; a wage stops when you do. Is the distinction between owning and earning fair, unfair, or simply a fact to build around — and does it change how you think about your own future?</li>
+    <li>Because capital compounds, it tends to concentrate even with no wrongdoing. Is concentration a problem to address, or the natural and acceptable result of some people saving and investing while others don't?</li>
+    <li>The same capital can build a company or strip it. How would you tell the difference in the real world — and should the law treat building and extracting differently?</li>
+    <li>What's the smallest change that would help more people come to own compounding capital — without weakening the incentive to build and accumulate it in the first place?</li>
+  </ol>
+
+  <div class="closing tight-top">
+    <p>Capital is just an asset put to work — but in working, it compounds, and in compounding, it decides who rises.<br>It is the engine of every prosperous society, and broadly held, the surest path ordinary people have to security.<br>Yet left alone it gathers toward those who already hold it, and it can strip as easily as it can build.<br>So never ask only whether capital is good — ask what this capital is doing, and for whom.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

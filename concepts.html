@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The Economic Democracy Concept Library — 36 primers that grant each tool its full strength, then press it where it stops being simple. Five clusters: Allocation, Engines, Power, Distribution, Money & Value.">
+<title>The Concept Library — Economic Democracy</title>
+
+<!-- Open Graph -->
+<meta property="og:title" content="The Concept Library — Economic Democracy" />
+<meta property="og:description" content="36 economic primers — one idea at a time, granted its full strength, then pressed on exactly where it stops being simple." />
+<meta property="og:image" content="https://www.economicdemocracy.co/og-image.png" />
+<meta property="og:url" content="https://www.economicdemocracy.co/concepts.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Economic Democracy" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="The Concept Library — Economic Democracy" />
+<meta name="twitter:description" content="36 economic primers — one idea at a time, granted its full strength, then pressed on exactly where it stops being simple." />
+<meta name="twitter:image" content="https://www.economicdemocracy.co/og-image.png" />
+
+<link rel="stylesheet" href="styles.css">
+
+<style>
+
+/* ── PAGE HEADER ── */
+.page-header{
+  max-width:960px;
+  margin:0 auto;
+  padding:5rem 2rem 3rem;
+  border-bottom:3px solid var(--black);
+}
+.page-eyebrow{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:.62rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:1rem;
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+}
+.page-eyebrow::before{
+  content:'';
+  display:block;
+  width:1.5rem;
+  height:1px;
+  background:var(--rule);
+}
+.page-title{
+  font-family:'Playfair Display', serif;
+  font-size:clamp(2.6rem, 5.2vw, 4rem);
+  font-weight:900;
+  color:var(--black);
+  line-height:1.04;
+  letter-spacing:-.025em;
+  margin-bottom:1rem;
+}
+.page-title em{
+  font-style:italic;
+  color:var(--mid);
+  font-weight:400;
+}
+.page-sub{
+  font-size:1rem;
+  font-weight:300;
+  font-style:italic;
+  color:var(--mid);
+  max-width:640px;
+  line-height:1.7;
+}
+
+/* ── INTRO BLOCK ── */
+.intro-block{
+  max-width:960px;
+  margin:0 auto;
+  padding:3rem 2rem 1rem;
+}
+.intro-body{
+  font-size:1rem;
+  font-weight:300;
+  line-height:1.85;
+  color:var(--ink);
+  margin-bottom:1.5rem;
+  max-width:680px;
+}
+.intro-body::first-letter{
+  font-family:'Playfair Display', serif;
+  font-size:3.4rem;
+  font-weight:900;
+  float:left;
+  line-height:.82;
+  margin:.05em .12em 0 0;
+  color:var(--black);
+}
+.intro-body + .intro-body::first-letter{ all: unset; }
+
+/* ── CLUSTER SECTIONS ── */
+.cluster{
+  max-width:960px;
+  margin:0 auto;
+  padding:3.5rem 2rem;
+  border-top:1px solid var(--rule);
+}
+.cluster-label{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:.62rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:.75rem;
+  display:block;
+}
+.cluster-name{
+  font-family:'Playfair Display', serif;
+  font-size:clamp(1.9rem, 3.2vw, 2.6rem);
+  font-weight:900;
+  color:var(--black);
+  line-height:1.05;
+  letter-spacing:-.02em;
+  margin-bottom:.4rem;
+}
+.cluster-tagline{
+  font-family:'Playfair Display', serif;
+  font-style:italic;
+  font-size:1.15rem;
+  font-weight:400;
+  color:var(--mid);
+  margin-bottom:1.5rem;
+  line-height:1.4;
+}
+.cluster-body{
+  font-size:.95rem;
+  font-weight:300;
+  line-height:1.8;
+  color:var(--ink);
+  max-width:680px;
+  margin-bottom:2rem;
+}
+
+/* ── CONCEPT GRID ── */
+.concept-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:1px;
+  background:var(--rule);
+  border:1px solid var(--rule);
+  margin-top:1.5rem;
+}
+.concept-card{
+  background:var(--paper);
+  padding:1.1rem 1.25rem;
+  display:flex;
+  flex-direction:column;
+  gap:.25rem;
+  transition:background .15s ease;
+  text-decoration:none;
+  color:inherit;
+}
+.concept-card:nth-child(even){ background:var(--cream); }
+.concept-card:hover{
+  background:var(--black);
+  color:var(--white);
+}
+.concept-card:hover .concept-name{ color:var(--white); }
+.concept-card:hover .concept-arrow{ color:var(--white); }
+
+.concept-name{
+  font-family:'Playfair Display', serif;
+  font-size:1rem;
+  font-weight:700;
+  color:var(--black);
+  line-height:1.25;
+  letter-spacing:-.005em;
+}
+.concept-arrow{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:.6rem;
+  letter-spacing:.1em;
+  color:var(--muted);
+  margin-top:auto;
+  padding-top:.4rem;
+}
+
+.concept-card.disabled{
+  background:var(--paper);
+  cursor:default;
+  opacity:.55;
+}
+.concept-card.disabled:nth-child(even){ background:var(--cream); }
+.concept-card.disabled:hover{
+  background:var(--paper);
+  color:inherit;
+}
+.concept-card.disabled:nth-child(even):hover{ background:var(--cream); }
+.concept-card.disabled .concept-name{ color:var(--ink); }
+.concept-card.disabled .concept-arrow{
+  color:var(--muted);
+  font-style:italic;
+}
+
+@media(max-width:740px){
+  .concept-grid{ grid-template-columns:repeat(2, 1fr); }
+}
+@media(max-width:460px){
+  .concept-grid{ grid-template-columns:1fr; }
+}
+
+/* ── CLOSING ── */
+.closing{
+  max-width:960px;
+  margin:0 auto;
+  padding:4rem 2rem 6rem;
+  border-top:3px solid var(--black);
+}
+.closing-text{
+  font-family:'Playfair Display', serif;
+  font-style:italic;
+  font-size:1.25rem;
+  font-weight:400;
+  color:var(--mid);
+  line-height:1.55;
+  max-width:680px;
+}
+
+@media(max-width:600px){
+  .page-header{ padding:3rem 1.5rem 2rem; }
+  .intro-block, .cluster, .closing{ padding-left:1.5rem; padding-right:1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-home">Economic Democracy<span>economicdemocracy.co</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="framework.html">The Framework</a>
+      <a href="concepts.html" class="active">Concepts</a>
+      <a href="ED_ANT_Core_Anthology_250.html">250 Voices</a>
+      <a href="resources.html">Resources</a>
+      <a href="ED_ENGAGE_Ways.html" class="nav-cta">Ways to Engage</a>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header" id="main">
+  <p class="page-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Concept Library</p>
+  <h1 class="page-title">The <em>Concept</em> Library</h1>
+  <p class="page-sub">Thirty-six economic concepts, each its own primer. This is not a glossary and not a textbook. It is a set of thinking tools — one idea at a time, granted its full strength, then pressed on exactly where it stops being simple.</p>
+</div>
+
+<!-- INTRO BLOCK -->
+<div class="intro-block">
+  <p class="intro-body">This is not a list of definitions to memorize. It is a toolkit for argument. Every concept here is taught the same way the whole course teaches: the tool is granted its genuine power first — markets, ownership, enterprise, trade are given their real due — and then examined honestly at the two points where intelligent people, looking at the same facts, reach different conclusions. A monopoly is efficient and it is power. A price is a signal and it is blind to need. Capital builds and it concentrates. The primers don't resolve those tensions for you. They hand you the language to resolve them yourself.</p>
+  <p class="intro-body">Five clusters organize the thirty-six. They are not airtight categories &mdash; Rent-Seeking lives in Power but speaks to Distribution &mdash; but they map the terrain: how scarce things are allocated, what drives growth, how advantage concentrates, who ends up with what, and the money-and-value machinery running underneath it all.</p>
+</div>
+
+<!-- ALLOCATION -->
+<section class="cluster" id="allocation">
+  <span class="cluster-label">Cluster I &nbsp;·&nbsp; Allocation</span>
+  <h2 class="cluster-name">Allocation</h2>
+  <p class="cluster-tagline">How scarce things get divided.</p>
+  <p class="cluster-body">Economics begins with a hard fact: there is never enough of everything for everyone, so every choice is a trade-off. This cluster is the foundation &mdash; scarcity, the true cost of a choice, the way incentives shape behavior, and the price mechanism that divides scarce things without anyone in charge.</p>
+
+  <div class="concept-grid">
+    <a class="concept-card" href="ED_CON_Scarcity.html">
+      <span class="concept-name">Scarcity</span>
+      <span class="concept-arrow">Primer &rarr;</span>
+    </a>
+    <a class="concept-card" href="ED_CON_Opportunity_Cost.html">
+      <span class="concept-name">Opportunity Cost</span>
+      <span class="concept-arrow">Primer &rarr;</span>
+    </a>
+    <a class="concept-card" href="ED_CON_Incentives.html">
+      <span class="concept-name">Incentives</span>
+      <span class="concept-arrow">Primer &rarr;</span>
+    </a>
+    <a class="concept-card" href="ED_CON_Supply_And_Demand.html">
+      <span class="concept-name">Supply &amp; Demand</span>
+      <span class="concept-arrow">Primer &rarr;</span>
+    </a>
+  </div>
+</section>
+
+<!-- ENGINES -->
+<section class="cluster" id="engines">
+  <span class="cluster-label">Cluster II &nbsp;·&nbsp; Engines</span>
+  <h2 class="cluster-name">Engines</h2>
+  <p class="cluster-tagline">What drives growth.</p>
+  <p class="cluster-body">Economies don't sit still &mdash; they grow, churn, and renew themselves. This cluster is the forces that drive that motion: the profit motive, the quiet power of compounding, competition, productivity, the constant destruction of the old by the new, the boom-and-bust rhythm of the business cycle, and the risk-taking founder who builds what didn't exist.</p>
+
+  <div class="concept-grid">
+    <a class="concept-card" href="ED_CON_Profit_Motive.html">
+      <span class="concept-name">Profit Motive</span>
+      <span class="concept-arrow">Primer &rarr;</span>
+    </a>
+    <a class="concept-card" href="ED_CON_Compounding.html">
+      <span class="concept-name">Compounding</span>
+      <span class="concept-arrow">Primer &rarr;</span>
+    </a>
+    <a class="concept-card" href="ED_CON_Competition.html">
+      <span class="concept-name">Competition</span>
+      <span class="concept-arrow">Primer &rarr;</span>
+    </a>
+    <a class="concept-card" href="ED_CON_Productivity.html">
+      <span class="concept-name">Productivity</span>
+      <span class="concept-arrow">Primer &rarr;</span>
+    </a>
+    <a class="concept-card" href="ED_CON_Creative_Destruction.html">
+      <span class="concept-name">Creative Destruction</span>
+      <span class="concept-arrow">Primer &rarr;</span>
+    </a>
+    <a class="concept-card" href="ED_CON_Business_Cycles.html">
+      <span class="concept-name">Business Cycles</span>
+      <span class="concept-arrow">Primer &rarr;</span>
+    </a>
+    <a class="concept-card" href="ED_CON_Entrepreneur.html">
+      <span class="concept-name">The Entrepreneur</span>
+      <span class="concept-arrow">Primer &rarr;</span>
+    </a>
+  </div>
+</section>
+
+<!-- POWER -->
+<section class="cluster" id="power">
+  <span class="cluster-label">Cluster III &nbsp;·&nbsp; Power</span>
+  <h2 class="cluster-name">Power</h2>
+  <p class="cluster-tagline">How advantage concentrates.</p>
+  <p class="cluster-body">Markets are supposed to be level, but advantage compounds and power gathers. This cluster examines how: the lone seller, the network that tips to one winner, the efficiencies of sheer size, the art of getting rich by capturing value instead of creating it, control over what others depend on, the structure that splits control from benefit, and the way power crosses borders faster than democracy can follow.</p>
+
+  <div class="concept-grid">
+    <a class="concept-card" href="ED_CON_Monopoly.html">
+      <span class="concept-name">Monopoly</span>
+      <span class="concept-arrow">Primer &rarr;</span>
+    </a>
+    <a class="concept-card" href="ED_CON_Network_Effects.html">
+      <span class="concept-name">Network Effects</span>
+      <span class="concept-arrow">Primer &rarr;</span>
+    </a>
+    <a class="concept-card" href="ED_CON_Economies_Of_Scale.html">
+      <span class="concept-name">Economies of Scale</span>
+      <span class="concept-arrow">Primer &rarr;</span>
+    </a>
+    <a class="concept-card" href="ED_CON_Rent_Seeking.html">
+      <span class="concept-name">Rent-Seeking</span>
+      <span class="concept-arrow">Primer &rarr;</span>
+    </a>
+    <a class="concept-card" href="ED_CON_Sovereignty.html">
+      <span class="concept-name">Sovereignty</span>
+      <span class="concept-arrow">Primer &rarr;</span>
+    </a>
+    <a class="concept-card" href="ED_CON_The_Trust.html">
+      <span class="concept-name">The Trust</span>
+      <span class="concept-arrow">Primer &rarr;</span>
+    </a>
+    <a class="concept-card" href="ED_CON_Globalization.html">
+      <span class="concept-name">Globalization</span>
+      <span class="concept-arrow">Primer &rarr;</span>
+    </a>
+  </div>
+</section>
+
+<!-- DISTRIBUTION -->
+<section class="cluster" id="distribution">
+  <span class="cluster-label">Cluster IV &nbsp;·&nbsp; Distribution</span>
+  <h2 class="cluster-name">Distribution</h2>
+  <p class="cluster-tagline">Who ends up with what.</p>
+  <p class="cluster-body">Growth produces wealth, but it doesn't divide it evenly &mdash; and every society moves resources around by collective rule, whether it admits it or not. This cluster is about who gets what, and why: the resources we share and no one owns; the central reform debate between broadening ownership before wealth compounds (predistribution) and moving resources after the fact (redistribution); the labor nearly everyone sells; and the small business that is ownership's most accessible on-ramp.</p>
+
+  <div class="concept-grid">
+    <a class="concept-card" href="ED_CON_The_Commons.html">
+      <span class="concept-name">The Commons</span>
+      <span class="concept-arrow">Primer &rarr;</span>
+    </a>
+    <a class="concept-card" href="ED_CON_Predistribution.html">
+      <span class="concept-name">Predistribution</span>
+      <span class="concept-arrow">Primer &rarr;</span>
+    </a>
+    <a class="concept-card" href="ED_CON_Redistribution.html">
+      <span class="concept-name">Redistribution</span>
+      <span class="concept-arrow">Primer &rarr;</span>
+    </a>
+    <a class="concept-card" href="ED_CON_Labor.html">
+      <span class="concept-name">Labor</span>
+      <span class="concept-arrow">Primer &rarr;</span>
+    </a>
+    <a class="concept-card" href="ED_CON_Small_Business_Owner.html">
+      <span class="concept-name">The Small Business Owner</span>
+      <span class="concept-arrow">Primer &rarr;</span>
+    </a>
+  </div>
+</section>
+
+<!-- MONEY & VALUE -->
+<section class="cluster" id="money-and-value">
+  <span class="cluster-label">Cluster V &nbsp;·&nbsp; Money &amp; Value</span>
+  <h2 class="cluster-name">Money &amp; Value</h2>
+  <p class="cluster-tagline">The machinery underneath.</p>
+  <p class="cluster-body">Underneath every transaction runs the machinery of money, ownership, and value. This is the deepest cluster: what it means to own, how prices rise and quietly redistribute, the asset that compounds while a wage is spent once, how money is created and governed, what the government does with the budget and the tax code, how a company can be profitable and broke at once, and what makes a nation &mdash; or a currency, or a dataset &mdash; actually worth anything.</p>
+
+  <div class="concept-grid">
+    <a class="concept-card" href="ED_CON_Ownership_Equity.html">
+      <span class="concept-name">Ownership &amp; Equity</span>
+      <span class="concept-arrow">Primer &rarr;</span>
+    </a>
+    <a class="concept-card" href="ED_CON_Inflation.html">
+      <span class="concept-name">Inflation</span>
+      <span class="concept-arrow">Primer &rarr;</span>
+    </a>
+    <a class="concept-card" href="ED_CON_Capital.html">
+      <span class="concept-name">Capital</span>
+      <span class="concept-arrow">Primer &rarr;</span>
+    </a>
+    <a class="concept-card" href="ED_CON_Wages_And_Assets.html">
+      <span class="concept-name">Wages &amp; Assets</span>
+      <span class="concept-arrow">Primer &rarr;</span>
+    </a>
+    <span class="concept-card disabled">
+      <span class="concept-name">Credit</span>
+      <span class="concept-arrow">Primer coming soon</span>
+    </span>
+    <a class="concept-card" href="ED_CON_Debt.html">
+      <span class="concept-name">Debt</span>
+      <span class="concept-arrow">Primer &rarr;</span>
+    </a>
+    <span class="concept-card disabled">
+      <span class="concept-name">The Corporation</span>
+      <span class="concept-arrow">Primer coming soon</span>
+    </span>
+    <span class="concept-card disabled">
+      <span class="concept-name">P&amp;L vs. Balance Sheet</span>
+      <span class="concept-arrow">Primer coming soon</span>
+    </span>
+    <span class="concept-card disabled">
+      <span class="concept-name">Banking &amp; Central Banks</span>
+      <span class="concept-arrow">Primer coming soon</span>
+    </span>
+    <a class="concept-card" href="ED_CON_Fiscal_Policy.html">
+      <span class="concept-name">Fiscal Policy</span>
+      <span class="concept-arrow">Primer &rarr;</span>
+    </a>
+    <a class="concept-card" href="ED_CON_Taxation.html">
+      <span class="concept-name">Taxation</span>
+      <span class="concept-arrow">Primer &rarr;</span>
+    </a>
+    <a class="concept-card" href="ED_CON_Cryptocurrency.html">
+      <span class="concept-name">Cryptocurrency</span>
+      <span class="concept-arrow">Primer &rarr;</span>
+    </a>
+    <a class="concept-card" href="ED_CON_Data.html">
+      <span class="concept-name">Data</span>
+      <span class="concept-arrow">Primer &rarr;</span>
+    </a>
+    <a class="concept-card" href="ED_CON_Wealth_Of_Nations.html">
+      <span class="concept-name">The Wealth of Nations</span>
+      <span class="concept-arrow">Primer &rarr;</span>
+    </a>
+    <a class="concept-card" href="ED_CON_Wealth_Of_The_Nation.html">
+      <span class="concept-name">The Wealth of the Nation</span>
+      <span class="concept-arrow">Primer &rarr;</span>
+    </a>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<div class="closing">
+  <p class="closing-text">Each primer stands alone &mdash; teach one, teach ten, teach all thirty-six. Together they are the toolkit a student needs to look at how the economy distributes power and say, with evidence, what they think should change.</p>
+</div>
+
+<footer class="site-footer">
+  <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC &nbsp;&middot;&nbsp; SPCC.1 &nbsp;&middot;&nbsp; economicdemocracy.co</span>
+  <span class="footer-right">AI Synthesis: Claude (Anthropic, claude-opus-4-7) &nbsp;&middot;&nbsp; Economic Democracy Curriculum</span>
+</footer>
+
+<button class="back-to-top" aria-label="Back to top">&uarr;</button>
+
+<script>
+/* Nav toggle */
+document.querySelector('.nav-toggle').addEventListener('click', function(){
+  this.classList.toggle('open');
+  this.setAttribute('aria-expanded', this.classList.contains('open'));
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+
+/* Back to top */
+const btt = document.querySelector('.back-to-top');
+window.addEventListener('scroll', () => {
+  btt.classList.toggle('visible', window.scrollY > 600);
+});
+btt.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+</script>
+
+</body>
+</html>

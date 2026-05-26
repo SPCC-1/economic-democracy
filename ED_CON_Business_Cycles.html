@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Cycles — Concept Library — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+.concept-tag{display:inline-block;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .6rem;margin-bottom:.9rem;}
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+.defbox{border:1px solid var(--black);background:var(--white);padding:1.1rem 1.4rem;margin:1.5rem 0;}
+.defbox-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.defbox p{font-size:.92rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.defbox strong{font-weight:600;color:var(--black);}
+.four{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.four-cell{background:var(--paper);padding:1rem 1.2rem;}
+.four-cell:nth-child(even){background:var(--cream);}
+.four-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem;}
+.four-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.3rem;}
+.four-text{font-size:.8rem;font-weight:300;color:var(--ink);line-height:1.55;}
+.four-text strong{font-weight:600;color:var(--charcoal);}
+@media(max-width:600px){.four{grid-template-columns:1fr;}}
+.types{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.type-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.type-cell:nth-child(even){background:var(--cream);}
+.type-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.type-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.15;}
+.type-text{font-size:.81rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.types{grid-template-columns:1fr;}}
+.context{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.context-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.context-name{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.context-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.context-body p{margin-bottom:.5rem;}
+.context-body p:last-child{margin-bottom:0;}
+.context-q{font-size:.82rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.6rem;margin-top:.5rem;line-height:1.5;}
+.tbl-wrap{margin:1.25rem 0;overflow-x:auto;}
+.cmp{width:100%;border-collapse:collapse;font-size:.8rem;min-width:540px;}
+.cmp th,.cmp td{border:1px solid var(--rule);padding:.55rem .7rem;vertical-align:top;line-height:1.45;text-align:left;}
+.cmp th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.cmp td:first-child{background:var(--cream);font-weight:600;color:var(--charcoal);font-size:.76rem;}
+.cmp .fill{color:var(--muted);font-style:italic;}
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing,.cmp th,.concept-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .context,.task,.types,.four,.defbox,.inset,.tbl-wrap{break-inside:avoid;}
+  .sec-header{margin:1.9rem 0 1rem;}
+  .context{margin:1.1rem 0;}
+  .four,.types,.defbox,.inset,.pullquote{margin-top:1.2rem;margin-bottom:1.2rem;}
+  .task{margin:1.3rem 0;}
+  .closing{margin:1.2rem 0 0;}
+  .doc-footer{margin-top:1.2rem;}
+  .closing.tight-top{margin-top:.35rem;}
+  .dq-list.tight li{padding-top:.24rem;padding-bottom:.24rem;}
+  .sec-header.tight-top{margin-top:.8rem;margin-bottom:.7rem;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+.sec-header.tight-top{margin-top:1.5rem;}
+.closing.tight-top{margin-top:1.4rem;}
+.dq-list.tight li{padding-top:.45rem;padding-bottom:.45rem;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="concept-tag">Concept Library · Engines</p>
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Concept Primer</p>
+    <h1 class="masthead-title">Business Cycles</h1>
+    <p class="masthead-sub">Why economies grow in waves rather than straight lines — the recurring rhythm of boom and bust that is not a flaw in the system, but the pulse of a living one.</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">Draw a line of the American economy over the last century and you will not get a smooth upward slope. You will get a climbing line that <em>jags</em> — long stretches of growth interrupted by sharp drops, again and again, a saw-tooth marching upward. Those teeth have names: the boom of the 1920s and the crash that followed, the long postwar expansion, the recessions of the 1970s and early '80s, the dot-com bust, the 2008 financial crisis, the recovery after. The economy expands, peaks, contracts, bottoms out, and expands again — over and over, on no fixed schedule but with unmistakable regularity. This recurring rhythm of expansion and contraction is the <strong>business cycle</strong>, and learning to see it is one of the most practical things economics offers: it tells you that a boom will not last forever, that a bust is a phase and not the end of the world, and that the swing itself is normal.</p>
+
+  <p class="body">It is tempting to treat downturns as failures — someone blundered, something broke, the system malfunctioned. Sometimes that's part of it. But the deeper truth is that the cycle is a <em>feature</em> of how a dynamic market economy works, not a bug in it. An economy is millions of people and firms making independent decisions to spend, hire, build, and invest, all reading an uncertain future. When the future looks bright, they all lean in at once — and the economy races. When it darkens, they all pull back at once — and it stalls. The same flexibility that lets a market economy grow, adapt, and reinvent itself faster than any other system ever devised is what makes it move in waves rather than a straight line. This primer teaches the mechanics of that wave — the phases, the drivers, the signals — and then looks honestly at the two places where the clean picture gets complicated.</p>
+
+  <div class="defbox">
+    <p class="defbox-label">The tool, stated plainly</p>
+    <p>The <strong>business cycle</strong> is the recurring pattern of expansion and contraction in overall economic activity. It moves through four phases: <strong>expansion</strong> (output, employment, and spending rise), <strong>peak</strong> (the high point, often with strain like rising prices), <strong>contraction</strong> or <strong>recession</strong> (activity falls, unemployment rises), and <strong>trough</strong> (the low point, before recovery begins). Cycles vary in length and depth and follow no fixed timetable, but the sequence repeats. The long-run trend still climbs; the cycle is the wave riding on top of that rising tide.</p>
+  </div>
+
+  <!-- SECTION I -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">The Tool — The Anatomy of a Wave</span></div>
+
+  <p class="body">Start with the mechanics, because they are genuinely useful and not hard to see once named. An <strong>expansion</strong> builds on itself: businesses see demand rising, so they hire and invest; newly hired workers earn and spend; that spending raises demand further, prompting still more hiring. Optimism and activity reinforce each other, and the economy gathers speed. Eventually it hits a <strong>peak</strong> — the top of the wave — often showing signs of strain: labor and materials grow scarce, prices and wages climb, credit gets stretched. Then something turns. Demand softens, or borrowing costs rise, or confidence cracks, and the motion reverses.</p>
+
+  <p class="body">The <strong>contraction</strong> runs the expansion in reverse: firms facing weaker sales cut back, lay off workers, and delay investment; those workers spend less, weakening demand further, prompting more cuts. The economy slows, and if the slide is deep and long enough we call it a <strong>recession</strong>. At the <strong>trough</strong>, the bottom of the wave, the contraction exhausts itself — inventories clear, weak firms close, costs fall, and the conditions for renewal quietly assemble. Then expansion begins again. Watch the two engines that drive the whole motion:</p>
+
+  <div class="four">
+    <div class="four-cell">
+      <p class="four-label">What drives the upswing</p>
+      <p class="four-name">Reinforcing Optimism</p>
+      <p class="four-text">Rising demand justifies hiring and investment, which create income, which fund more demand. Confidence, easy credit, and real opportunity compound — each turn of the wheel makes the next turn easier. Growth begets growth, until the economy runs hot.</p>
+    </div>
+    <div class="four-cell">
+      <p class="four-label">What drives the downswing</p>
+      <p class="four-name">Reinforcing Caution</p>
+      <p class="four-text">Falling demand justifies cuts and layoffs, which reduce income, which weakens demand further. Caution, tightening credit, and real losses compound the other way. The same self-reinforcing logic that built the boom now manufactures the bust.</p>
+    </div>
+  </div>
+
+  <p class="body">Here is the part worth grasping firmly, because it reframes how you read a downturn: the contraction is not only destruction. It is also <em>correction</em>. Booms breed excess — overbuilding, bad bets, businesses that only made sense when money was cheap and everyone was euphoric. The bust clears that out. It frees up workers, capital, and attention that were locked in failing ventures and makes them available for the next, better wave. This is the engine working, not breaking — the economy pruning itself so it can grow again. A market system's genius is precisely this restlessness: it does not preserve the status quo, it constantly tears down and rebuilds, and the cycle is the rhythm of that renewal. Granted fully, the business cycle is the heartbeat of a living, adapting economy. The complications come from two things the clean wave-diagram leaves out.</p>
+
+  <div class="pullquote">
+    <p>A recession is not the economy failing. It is the economy correcting — clearing the excess of the last boom to make room for the next. The wave is not a malfunction. It is the pulse.</p>
+  </div>
+
+  <!-- SECTION II -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">Where the Clean Wave Gets Complicated</span></div>
+
+  <p class="body">The mechanics are real and the cycle is healthy. But two things the tidy diagram omits matter enormously — not because they make the cycle bad, but because they shape how violent it gets and who absorbs the shock.</p>
+
+  <div class="types">
+    <div class="type-cell">
+      <p class="type-label">Lever 1</p>
+      <p class="type-name">The wave runs partly on mood, not just on math</p>
+      <p class="type-text">A cycle isn't driven only by real conditions; it's driven by what people <em>believe</em> conditions will be. Confidence and fear are contagious, and expectations are self-fulfilling: if enough people believe boom times will continue, they spend and invest in ways that <em>make</em> the boom continue — until belief outruns reality and the correction is brutal. Economist Keynes called this the "animal spirits" of markets. It's not irrationality so much as the unavoidable fact that everyone is betting on an unknowable future, and bets cluster. The same herd psychology that powers a roaring expansion is what turns a normal slowdown into a panic. The wave is real; the mood amplifies it, in both directions.</p>
+    </div>
+    <div class="type-cell">
+      <p class="type-label">Lever 2</p>
+      <p class="type-name">The bust is not shared equally</p>
+      <p class="type-text">A recession is an average — and averages hide who actually pays. When the economy contracts, the losses don't fall evenly: the worker laid off loses income and sometimes a home, while a diversified asset-holder may simply wait out the dip and buy in cheaply at the bottom. Downturns tend to hit hardest exactly those with the least cushion to absorb them, and the recovery doesn't always reach everyone at the same speed. None of this means the cycle shouldn't happen — corrections are necessary. It means that <em>who bears the cost of the correction</em> is a real question, and "the economy is recovering" can be true on average while large numbers of people are still under water.</p>
+    </div>
+  </div>
+
+  <div class="inset">
+    <strong>The questions to carry everywhere:</strong> when you see a boom, ask — <em>how much of this is real growth, and how much is mood and easy credit that the next correction will undo?</em> And when you see a bust, ask — <em>this is the economy clearing excess and renewing itself, yes — but who is absorbing the cost of that correction, and are they the ones who enjoyed the boom?</em> The cycle is healthy and necessary. Reading it well means seeing both the renewal it performs and the uneven way its pain lands.</p>
+  </div>
+
+  <!-- SECTION III -->
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">The Same Wave, Three Moments</span></div>
+
+  <p class="body">Watch the cycle in three real moments — a self-reinforcing boom, a fear-driven bust, and the hard case of a recession that renews the economy while landing unevenly on the people in it.</p>
+
+  <div class="context">
+    <p class="context-meta">Moment One · The upswing</p>
+    <p class="context-name">A boom that feeds on its own optimism</p>
+    <div class="context-body">
+      <p>A region's economy catches fire — a new industry takes off, jobs multiply, wages rise, home prices climb. Success draws investment, which creates more jobs, which draws more people and more money. For a while everything works, and it feels permanent. But notice what's happening underneath: some of the growth is real (a genuinely valuable new industry) and some is mood (people paying more for homes simply because prices keep rising, lenders extending credit because nothing has gone wrong <em>yet</em>). The expansion is real and good — and it is also accumulating the excess that the next contraction will have to clear. Both things are true at once.</p>
+      <p class="context-q">How would you tell the part of this boom that's real growth from the part that's just momentum and mood?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Moment Two · The downswing</p>
+    <p class="context-name">A slowdown that fear turns into a crash</p>
+    <div class="context-body">
+      <p>Conditions soften — a normal, manageable cooling after a long expansion. But then confidence cracks. Worried consumers stop spending; nervous businesses freeze hiring and cut staff; lenders pull back credit just when it's needed; everyone races to protect themselves at once. The collective rush to safety makes the very downturn everyone feared deeper than the underlying conditions warranted. This is Lever 1 in full force: a self-fulfilling panic, where fear becomes the cause and not just the response. The economy would have slowed regardless — but mood turned a dip into a plunge.</p>
+      <p class="context-q">If the slowdown was real but mild, what turned it into a crash — and could anything have broken the spiral?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Moment Three · The hard case</p>
+    <p class="context-name">A recession that renews the economy — unevenly</p>
+    <div class="context-body">
+      <p>A downturn does its necessary work: bloated firms fail, bad bets are cleared, capital and talent are freed for stronger uses, and within a couple of years the economy emerges leaner and growing again. By the numbers, the correction worked exactly as it should — this is the cycle's genius, not its failure. But look closer at the same period: the workers laid off from the failed firms lost years of earnings, some lost homes, and not all of them found their footing in the recovery, while those who held assets through the dip came out ahead. The recession was both genuinely healthy <em>for the economy</em> and genuinely costly <em>for specific people</em> — and both facts are real at the same time. That's the case worth thinking hard about, because pretending either half away gets the cycle wrong.</p>
+      <p class="context-q">If the correction was necessary and the recovery real, does it matter that the cost fell mostly on those least able to bear it — and what, if anything, follows?</p>
+    </div>
+  </div>
+
+  <!-- ACTIVITY -->
+  <div class="sec-header tight-top"><span class="sec-roman">IV</span><span class="sec-title">Activity — Read the Wave</span></div>
+
+  <p class="body">For each situation, name the phase of the cycle, identify whether real conditions or mood is driving it (Lever 1), and note who would gain or bear the cost (Lever 2).</p>
+
+  <div class="tbl-wrap">
+    <table class="cmp">
+      <thead>
+        <tr><th>The situation</th><th>Which phase? Real or mood-driven?</th><th>Who gains or bears the cost?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Hiring and wages are rising; everyone expects more</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Home prices climb because buyers expect them to keep climbing</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A wave of layoffs as firms cut back all at once</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Weak firms close and capital shifts to stronger ones</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Output is recovering, but unemployment is still high</td><td class="fill">…</td><td class="fill">…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Write</p>
+    <p class="task-title">Defend the cycle — then complicate it</p>
+    <p class="task-body">First, make the strongest case that the business cycle is healthy and necessary: why is a market economy's tendency to boom and bust a sign of its strength, and what does the bust accomplish that a perfectly steady economy couldn't? Then complicate your own case: where does the clean picture break — how does mood amplify the swings, and who absorbs the cost of a "necessary" correction? Finally, take a position: knowing the cycle is both necessary and uneven, what is the smallest thing — if anything — you'd do about the unevenness, without killing the renewal the cycle provides?</p>
+    <div class="writelines"><div class="writeline"></div><div class="writeline"></div><div class="writeline"></div></div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="sec-header tight-top"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list tight">
+    <li>A recession clears out the excess of the previous boom — weak firms close, bad bets end, resources free up for better uses. In what sense is that destruction actually productive, and why might trying to prevent all downturns do more harm than good?</li>
+    <li>Expectations are self-fulfilling: belief that good times will continue helps continue them, and panic deepens a slump. Does that make confidence itself an economic force worth taking as seriously as interest rates or output?</li>
+    <li>A correction can be genuinely healthy for the economy and genuinely devastating for specific people at the same time. How do you hold both truths at once without dismissing either?</li>
+    <li>What's the smallest change that would cushion the people hit hardest by a downturn — without blunting the cycle's real work of clearing excess and renewing the economy?</li>
+  </ol>
+
+  <div class="closing tight-top">
+    <p>An economy that never fell would be an economy that never cleared its mistakes.<br>The wave is not the system breaking — it is the system breathing, tearing down to build again.<br>But a wave lifts and drops different boats differently,<br>so read both the renewal it brings and the shore it leaves behind.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

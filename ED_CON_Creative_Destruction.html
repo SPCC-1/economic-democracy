@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creative Destruction — Concept Library — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+.concept-tag{display:inline-block;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .6rem;margin-bottom:.9rem;}
+
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+
+.defbox{border:1px solid var(--black);background:var(--white);padding:1.1rem 1.4rem;margin:1.5rem 0;}
+.defbox-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.defbox p{font-size:.92rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.defbox strong{font-weight:600;color:var(--black);}
+
+/* create vs extract two-column */
+.four{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.four-cell{background:var(--paper);padding:1rem 1.2rem;}
+.four-cell:nth-child(even){background:var(--cream);}
+.four-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem;}
+.four-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.3rem;}
+.four-text{font-size:.8rem;font-weight:300;color:var(--ink);line-height:1.55;}
+.four-text strong{font-weight:600;color:var(--charcoal);}
+@media(max-width:600px){.four{grid-template-columns:1fr;}}
+
+.types{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.type-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.type-cell:nth-child(even){background:var(--cream);}
+.type-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.type-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.15;}
+.type-text{font-size:.81rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.types{grid-template-columns:1fr;}}
+
+.context{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.context-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.context-name{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.context-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.context-body p{margin-bottom:.5rem;}
+.context-body p:last-child{margin-bottom:0;}
+.context-q{font-size:.82rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.6rem;margin-top:.5rem;line-height:1.5;}
+
+.tbl-wrap{margin:1.25rem 0;overflow-x:auto;}
+.cmp{width:100%;border-collapse:collapse;font-size:.8rem;min-width:540px;}
+.cmp th,.cmp td{border:1px solid var(--rule);padding:.55rem .7rem;vertical-align:top;line-height:1.45;text-align:left;}
+.cmp th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.cmp td:first-child{background:var(--cream);font-weight:600;color:var(--charcoal);font-size:.76rem;}
+.cmp .fill{color:var(--muted);font-style:italic;}
+
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing,.cmp th,.concept-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .context,.task,.types,.four,.defbox,.inset,.tbl-wrap{break-inside:avoid;}
+  .closing{margin:1.4rem 0 0;}
+  .doc-footer{margin-top:1.4rem;}
+  .closing.tight-top{margin-top:1.1rem;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+.sec-header.tight-top{margin-top:1.5rem;}
+.closing.tight-top{margin-top:1.4rem;}
+.dq-list.tight li{padding-top:.45rem;padding-bottom:.45rem;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="concept-tag">Concept Library · Engines</p>
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Concept Primer</p>
+    <h1 class="masthead-title">Creative Destruction</h1>
+    <p class="masthead-sub">The way new things rise by killing off the old ones — the same storm that builds the future and wrecks the present, often in the same stroke.</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">Once, almost everyone made light by burning something — candles, then whale oil, then kerosene lamps that a whole industry was built to supply. Then the electric bulb arrived, and within a generation that industry was gone. Not shrunk. Gone. The people who cut the wicks, refined the oil, sold the lamps — their work simply stopped existing. And yet almost no one would trade the bulb back for the lamp. Something better had arrived, and the price of its arrival was the destruction of everything it replaced. That double motion — <strong>new thing rises, old thing dies, and the two are the same event</strong> — is what the economist Joseph Schumpeter named <strong>creative destruction</strong>.</p>
+
+  <p class="body">It is one of the most important ideas for understanding why market economies grow so fast and feel so unstable at the same time. The growth and the instability are not two separate facts to be balanced against each other — they are the <em>same</em> fact, seen from two sides. The engine that delivers the new invention is the same engine that demolishes the old livelihood. You cannot have the smartphone without ending the world of the payphone, the camera-film factory, the road atlas, and the corner travel agent. This primer is about holding both halves of that truth at once — because the temptation is always to celebrate only the creation, or to mourn only the destruction, when the honest view requires seeing that they arrive together.</p>
+
+  <div class="defbox">
+    <p class="defbox-label">The tool, stated plainly</p>
+    <p><strong>Creative destruction</strong> is the process by which new products, technologies, and ways of working replace and destroy the old ones they improve upon. The "creation" of the new and the "destruction" of the old are a single linked process: innovation makes the economy richer over time precisely <em>by</em> rendering existing products, firms, skills, and jobs obsolete. Growth and disruption are two faces of one engine.</p>
+  </div>
+
+  <!-- SECTION I -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">The Tool — Why the Engine of Progress Is Also an Engine of Loss</span></div>
+
+  <p class="body">Start by granting the idea its full power, because it explains something genuinely remarkable. For almost all of human history, the way people lived barely changed across centuries — your great-grandparents' tools were your tools. Then, in the last few hundred years, living standards exploded: longer lives, cheaper food, light at the flip of a switch, knowledge in your pocket. The mechanism behind that explosion is exactly this restless churn. In a market economy, anyone with a better mousetrap can challenge the people selling the old one, and if they win, the old one dies. That constant threat is what keeps the whole system improving — nothing is safe, so nothing stands still.</p>
+
+  <p class="body">Hold the two halves side by side, because the concept lives in their being inseparable:</p>
+
+  <div class="four">
+    <div class="four-cell">
+      <p class="four-label">The creation</p>
+      <p class="four-name">The New Rises</p>
+      <p class="four-text">A better, cheaper, or faster way of doing something appears — the bulb, the car, the computer, the streaming service. People are made richer: they get more, for less, than before. Living standards climb. This is the half everyone loves to celebrate, and it is real.</p>
+    </div>
+    <div class="four-cell">
+      <p class="four-label">The destruction</p>
+      <p class="four-name">The Old Dies</p>
+      <p class="four-text">Whatever the new thing replaced is wiped out — the lamp-makers, the film factory, the video store, the typing pool. Real firms close; real skills become worthless; real people lose the work they built a life around. This is the half that gets forgotten, and it is just as real.</p>
+    </div>
+  </div>
+
+  <p class="body">The crucial move — the thing that makes this a <em>tool</em> and not just a slogan — is to see that you cannot keep one half without the other. An economy that protected every old industry from being replaced would also block every new one from arriving; it would be stable and stagnant, frozen at whatever level it had reached. The dynamism that makes a market economy the most powerful wealth-creating arrangement humans have ever built is <em>the same dynamism</em> that throws people out of work and erases ways of life. Granted fully, creative destruction is the engine of nearly all material progress. The trouble is who pays for that progress, and whether the gain and the cost land on the same people.</p>
+
+  <div class="pullquote">
+    <p>The storm that builds the future is the same storm that wrecks the present. You cannot order the wind to do one without the other.</p>
+  </div>
+
+  <!-- SECTION II -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">Where the Engine's Neutrality Breaks</span></div>
+
+  <p class="body">As an account of how economies grow, creative destruction is close to neutral — a description of a force, not a verdict. But two features turn that neutral force into something with sharp human stakes, and noticing them is what separates understanding the idea from merely repeating it.</p>
+
+  <div class="types">
+    <div class="type-cell">
+      <p class="type-label">Lever 1</p>
+      <p class="type-name">The gains and the losses land on different people</p>
+      <p class="type-text">"The economy is richer overall" can be perfectly true while specific people are devastated. The gains from a new technology spread thinly across millions of consumers who pay a little less; the losses concentrate brutally on the few thousand whose jobs and town vanished. "On average we're better off" is cold comfort to the person who <em>is</em> the average's downside. Whether creative destruction feels like progress or catastrophe depends almost entirely on which side of it you happen to stand — and nothing in the process itself ensures the winners ever compensate the losers.</p>
+    </div>
+    <div class="type-cell">
+      <p class="type-label">Lever 2</p>
+      <p class="type-name">The powerful can block the destruction aimed at them</p>
+      <p class="type-text">Creative destruction only works if the old can actually be replaced. But established firms hate being the "destroyed" half, and the bigger they are, the more power they have to prevent it — lobbying for protective rules, buying up or starving the upstarts, lobbying to make their position permanent. When incumbents succeed in shielding themselves, you get the worst of both worlds: the disruption is blocked for the powerful but not the weak, and the engine of progress stalls exactly where it would have done the most good. The force is only as fair as the rules deciding who's allowed to be replaced.</p>
+    </div>
+  </div>
+
+  <div class="inset">
+    <strong>The question to carry everywhere:</strong> when something new sweeps an old thing away, ask — <em>who reaps the creation, and who absorbs the destruction? Are they the same people, or does the gain flow to one group while the loss falls on another? And could the people being destroyed have protected themselves — or could the powerful ones?</em> The total may well be a gain. But "a gain on the whole" hides everything that matters about how it was distributed, and who had the power to dodge the cost.</p>
+  </div>
+
+  <!-- SECTION III — APPLY (break removed; long intro) -->
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">The Same Engine, Three Contexts</span></div>
+
+  <p class="body">Watch creative destruction deliver a clear and widely shared gain, then a gain whose costs fell hard on a few, then a case where the destruction was fought off by those with the power to resist it.</p>
+
+  <div class="context">
+    <p class="context-meta">Context One · Shared gain</p>
+    <p class="context-name">The light bulb ends the lamp-oil industry</p>
+    <div class="context-body">
+      <p>Electric light replaced an entire economy of candles, oil, and lamps — and almost no one regrets it. The new thing was so much better and cheaper that the gain spread to nearly everyone, fast: safer homes, longer days, reading and work after dark for people who could never have afforded it. The destruction was real — those trades vanished — but the creation was enormous, broadly shared, and the displaced work was absorbed as the whole economy grew around the new technology. This is creative destruction near its best: the pie grew so much that nearly everyone got a bigger slice.</p>
+      <p class="context-q">Did the gain spread widely enough, and slowly enough, that most could share it?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Two · Concentrated cost</p>
+    <p class="context-name">Automation empties a factory town</p>
+    <div class="context-body">
+      <p>A new manufacturing technology makes goods cheaper for everyone who buys them — a small, invisible gain shared by millions. But it does so by replacing the workers of a single town, all at once, in a place built around that one plant. The consumers' gain is spread thin and barely felt; the workers' loss is total and concentrated. The economy "grew," and yet a community was hollowed out, with skills suddenly worth nothing and no comparable work nearby. Same engine as the light bulb — but here Lever 1 is on full display: the creation and the destruction landed on entirely different people, and nothing automatic sent any of the gain back to those who bore the cost.</p>
+      <p class="context-q">Who got the cheaper goods — and who got the empty factory? Were they ever the same people?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Three · Destruction blocked</p>
+    <p class="context-name">An entrenched industry stops its own replacement</p>
+    <div class="context-body">
+      <p>A genuinely better and cheaper alternative appears — but the established industry it threatens uses its size and influence to keep it out: lobbying for rules the newcomer can't meet, tying it up, or simply buying it to bury it. The creation that would have benefited everyone never arrives, because the people it would have "destroyed" had the power to refuse. Here the engine doesn't run too hot, it stalls — and notice that the same word, "protection," can mean shielding vulnerable workers (Context Two's missing remedy) or shielding powerful incumbents from competition (this case). Telling those two apart is the hard, necessary work. This is Lever 2: when the destruction can be dodged by the strong, progress is rationed by power, not merit.</p>
+      <p class="context-q">Is this protecting people who'd be wrecked — or protecting power that fears being replaced?</p>
+    </div>
+  </div>
+
+  <!-- ACTIVITY -->
+  <div class="sec-header tight-top"><span class="sec-roman">IV</span><span class="sec-title">Activity — Who Creates, Who's Destroyed?</span></div>
+
+  <p class="body">For each innovation, name the creation (who gains, how widely) and the destruction (who loses, how concentrated) — then judge whether the two landed on the same people, and whether anyone had the power to block it.</p>
+
+  <div class="tbl-wrap">
+    <table class="cmp">
+      <thead>
+        <tr><th>The new thing that arrived</th><th>Who gains? (how widely shared)</th><th>Who's destroyed? (how concentrated)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Streaming replaces the video-rental store</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Online maps replace the printed road atlas</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Self-checkout replaces cashier jobs</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A cheaper rival is bought and shut down by the leader</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Digital cameras end the photo-film industry</td><td class="fill">…</td><td class="fill">…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Write</p>
+    <p class="task-title">Name a destruction you've lived near</p>
+    <p class="task-body">Think of something replaced in your lifetime, or your family's — a job, a store, a skill, a whole way of doing something. What was created in its place, and who got that gain? Who paid the price of the old thing dying — and were they the same people who got the benefit? Knowing what you know now, would you have wanted anyone to slow it or soften it — and if so, how, without freezing the new thing out?</p>
+    <div class="writelines"><div class="writeline"></div><div class="writeline"></div><div class="writeline"></div></div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="sec-header tight-top"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list tight">
+    <li>If creation and destruction are one event, not two things to balance, what do we owe — if anything — to the people who land on the destruction side of a change that enriches everyone else?</li>
+    <li>"On average, the economy is better off." When is that sentence genuinely meaningful, and when is it a way of hiding who actually won and who lost?</li>
+    <li>The same word — <em>protection</em> — can mean shielding vulnerable workers or shielding powerful incumbents. How would you tell the two apart in a real case?</li>
+    <li>What's the smallest change that keeps the engine running — fast growth, real disruption — while easing the cost on the people it displaces?</li>
+  </ol>
+
+  <div class="closing tight-top">
+    <p>Every new thing arrives standing on the grave of an old one.<br>The creation and the destruction are not opposites to be weighed —<br>they are one motion, seen from the winner's side and the loser's.<br>To judge progress honestly is to look at both faces at once.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

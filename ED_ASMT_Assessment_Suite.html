@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assessment Suite — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0d0d0d;--ink:#1a1a1a;--charcoal:#2d2d2d;--mid:#5a5a5a;--muted:#8a8a8a;
+  --rule:#d0ccc6;--paper:#f7f5f0;--cream:#efede7;--warm:#e8e4db;--white:#fff;--gold:#8a6f3e;
+  --ex:#1f6f43;--dev:#9a7a1e;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased;font-size:13.5px;}
+.page{max-width:980px;margin:0 auto;padding:0 2rem 4rem;}
+
+.masthead{border-bottom:3px solid var(--black);padding:2rem 0 1.4rem;margin-bottom:1.5rem;}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.7rem;}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;color:var(--black);line-height:1.04;letter-spacing:-.02em;margin-bottom:.5rem;}
+.lede{font-size:.96rem;font-style:italic;color:var(--mid);max-width:720px;line-height:1.6;}
+
+.howto{background:var(--cream);border-left:3px solid var(--gold);padding:.85rem 1.15rem;margin:1.25rem 0;font-size:.85rem;line-height:1.6;}
+.howto strong{color:var(--black);}
+
+.sec-head{display:flex;align-items:baseline;gap:1rem;border-bottom:2px solid var(--black);padding-bottom:.5rem;margin:2.5rem 0 .3rem;}
+.sec-num{font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--gold);font-weight:500;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--black);}
+.sec-note{font-size:.85rem;font-style:italic;color:var(--mid);margin:.5rem 0 1rem;max-width:740px;line-height:1.6;}
+
+table{border-collapse:collapse;width:100%;margin:.8rem 0 1.2rem;font-size:.76rem;}
+th,td{border:1px solid var(--rule);padding:.5rem .6rem;vertical-align:top;text-align:left;line-height:1.45;}
+th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.55rem;letter-spacing:.05em;text-transform:uppercase;font-weight:500;}
+td.crit{width:20%;background:var(--cream);font-weight:600;color:var(--charcoal);font-family:'Playfair Display',serif;font-size:.82rem;}
+td.crit span{display:block;font-family:'Source Serif 4',serif;font-weight:300;font-size:.72rem;font-style:italic;color:var(--mid);margin-top:.25rem;}
+.lv{font-family:'IBM Plex Mono',monospace;font-size:.52rem;letter-spacing:.04em;text-transform:uppercase;display:block;margin-bottom:.2rem;}
+.lv.ex{color:var(--ex);}
+.lv.dev{color:var(--dev);}
+
+.sample{border:1px solid var(--black);background:var(--white);margin:1.25rem 0;}
+.sample-head{background:var(--black);color:var(--white);padding:.75rem 1.2rem;}
+.sample-tag{font-family:'IBM Plex Mono',monospace;font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.2rem;}
+.sample-name{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--white);}
+.sample-body{padding:1rem 1.25rem;font-size:.85rem;line-height:1.6;}
+.sample-body p{margin-bottom:.6rem;}
+.sample-body .lbl{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin:.8rem 0 .3rem;}
+.sample-body .prompt{background:var(--cream);border-left:3px solid var(--black);padding:.7rem .95rem;font-style:italic;}
+.sample-body ul{margin:.3rem 0 .6rem 1.1rem;}
+.sample-body li{margin-bottom:.3rem;}
+.sample-body b{font-weight:600;color:var(--black);}
+
+.foot{border-top:2px solid var(--black);margin-top:3rem;padding-top:1rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;}
+.foot-l{font-size:.72rem;color:var(--charcoal);font-weight:600;}
+.foot-r{font-family:'IBM Plex Mono',monospace;font-size:.6rem;color:var(--muted);letter-spacing:.05em;}
+@media print{body{font-size:9pt;-webkit-print-color-adjust:exact;print-color-adjust:exact;}.page{max-width:100%;padding:0;}th,.sec-head,.sample-head,.howto,td.crit{-webkit-print-color-adjust:exact;print-color-adjust:exact;}table,.sample{break-inside:auto;}tr{break-inside:avoid;}.sec-head{margin:1.5rem 0 .25rem;}.masthead{padding:1.2rem 0 1rem;margin-bottom:1rem;}}
+@media(max-width:760px){.page{padding:0 1.1rem 3rem;}table{font-size:.68rem;}}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Assessment Suite</p>
+    <h1 class="title">How to Grade the Thinking</h1>
+    <p class="lede">Three rubrics and a worked sample, built to assess the one skill this course is really teaching: to grant the strongest version of the other side, take a defended stance of your own, and count the cost of holding it. These reward reasoning, not agreement — a student can earn top marks for any well-argued position.</p>
+  </div>
+
+  <div class="howto">
+    <strong>The principle behind every rubric here.</strong> This course teaches <em>how</em> to think, not <em>what</em> to think — so these rubrics never grade which side a student lands on. They grade whether the student steelmanned the opposing view fairly, used the analytical tools, took a clear position, and honestly named what their position costs. A student who argues <em>against</em> the teacher's view, or against the curriculum's own framing, can and should score Exemplary if the reasoning is sound. Grading agreement would betray the whole method.
+  </div>
+
+  <!-- ============ RUBRIC 1 ============ -->
+  <div class="sec-head"><span class="sec-num">01</span><span class="sec-title">The Defended-Argument Rubric</span></div>
+  <p class="sec-note">The flagship — for the primer write tasks, essays, and the Define &amp; Defend capstone. Use it anywhere a student must take and defend a position. The first two criteria carry the most weight: steelmanning and counting the cost are the habits the whole course is built to instill.</p>
+
+  <table>
+    <thead><tr><th>Criterion</th><th>Exemplary</th><th>Proficient</th><th>Developing</th><th>Beginning</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="crit">Steelmans the opposing view<span>Grants the other side its real strength</span></td>
+        <td><span class="lv ex">4</span>States the strongest version of the opposing view so well its own defenders would approve; treats it as genuinely tempting.</td>
+        <td><span class="lv">3</span>Represents the opposing view fairly and accurately, without distortion.</td>
+        <td><span class="lv dev">2</span>Mentions the opposing view but weakly, or only its easiest-to-defeat form.</td>
+        <td><span class="lv">1</span>Ignores or strawmans the opposing view.</td>
+      </tr>
+      <tr>
+        <td class="crit">Counts the cost<span>Names the tradeoff of their own stance</span></td>
+        <td><span class="lv ex">4</span>Names precisely what their own position sacrifices or risks, and argues it's worth it anyway — eyes open.</td>
+        <td><span class="lv">3</span>Acknowledges a real cost or downside to their own position.</td>
+        <td><span class="lv dev">2</span>Gestures at a downside but treats their position as nearly cost-free.</td>
+        <td><span class="lv">1</span>Presents their position as having no costs or tradeoffs at all.</td>
+      </tr>
+      <tr>
+        <td class="crit">Takes a clear stance<span>Commits to a defensible position</span></td>
+        <td><span class="lv ex">4</span>Stakes out a precise, non-obvious position and holds it consistently throughout.</td>
+        <td><span class="lv">3</span>Takes a clear position and defends it.</td>
+        <td><span class="lv dev">2</span>Position is vague, hedged, or drifts.</td>
+        <td><span class="lv">1</span>No discernible position; summary without a stance.</td>
+      </tr>
+      <tr>
+        <td class="crit">Uses the tools<span>Applies the analytical concepts</span></td>
+        <td><span class="lv ex">4</span>Deploys the relevant concepts and levers precisely and correctly to drive the argument.</td>
+        <td><span class="lv">3</span>Uses relevant concepts correctly to support the argument.</td>
+        <td><span class="lv dev">2</span>References concepts loosely or with minor errors.</td>
+        <td><span class="lv">1</span>Few or no concepts used; argues from opinion alone.</td>
+      </tr>
+      <tr>
+        <td class="crit">Evidence &amp; reasoning<span>Backs claims, reasons clearly</span></td>
+        <td><span class="lv ex">4</span>Marshals specific, relevant evidence; reasoning is tight and each step earns the next.</td>
+        <td><span class="lv">3</span>Supports claims with evidence; reasoning mostly holds.</td>
+        <td><span class="lv dev">2</span>Some evidence, but thin or loosely connected to claims.</td>
+        <td><span class="lv">1</span>Assertion without support.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ============ RUBRIC 2 ============ -->
+  <div class="sec-head"><span class="sec-num">02</span><span class="sec-title">The Deliberation &amp; Discussion Rubric</span></div>
+  <p class="sec-note">For Socratic seminars, structured discussion, and ongoing participation. Assesses whether a student can think <em>with</em> others, not just perform an opinion — the collaborative half of the course's habits of mind. Use it formatively across a unit rather than for a single day.</p>
+
+  <table>
+    <thead><tr><th>Criterion</th><th>Exemplary</th><th>Proficient</th><th>Developing</th><th>Beginning</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="crit">Builds on others<span>Listens and responds</span></td>
+        <td><span class="lv ex">4</span>Listens closely and advances the conversation by building on, refining, or respectfully challenging others' points by name.</td>
+        <td><span class="lv">3</span>Responds to others and connects their contributions to the discussion.</td>
+        <td><span class="lv dev">2</span>Contributes, but mostly in parallel — doesn't engage what others said.</td>
+        <td><span class="lv">1</span>Waits to talk; ignores the thread of discussion.</td>
+      </tr>
+      <tr>
+        <td class="crit">Argues from evidence<span>Reasons, not just reacts</span></td>
+        <td><span class="lv ex">4</span>Grounds points in concepts and evidence; distinguishes what they know from what they suspect.</td>
+        <td><span class="lv">3</span>Supports points with reasons and some evidence.</td>
+        <td><span class="lv dev">2</span>Offers opinions with little support.</td>
+        <td><span class="lv">1</span>Asserts feelings as facts.</td>
+      </tr>
+      <tr>
+        <td class="crit">Holds both sides<span>Can argue what they don't believe</span></td>
+        <td><span class="lv ex">4</span>Voices the strongest case for a view they don't hold, and helps the room see it fairly.</td>
+        <td><span class="lv">3</span>Can acknowledge and articulate opposing views.</td>
+        <td><span class="lv dev">2</span>Acknowledges other views exist but won't engage them.</td>
+        <td><span class="lv">1</span>Treats their own view as the only reasonable one.</td>
+      </tr>
+      <tr>
+        <td class="crit">Intellectual courage &amp; humility<span>Holds or changes with reasons</span></td>
+        <td><span class="lv ex">4</span>Changes position when the argument warrants — or holds firm with reasons — and says so openly.</td>
+        <td><span class="lv">3</span>Open to other views; gives reasons for holding or shifting.</td>
+        <td><span class="lv dev">2</span>Rarely reconsiders; or shifts with no reason given.</td>
+        <td><span class="lv">1</span>Rigid regardless of argument, or agrees with whoever spoke last.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ============ RUBRIC 3 ============ -->
+  <div class="sec-head"><span class="sec-num">03</span><span class="sec-title">The Role-Play &amp; Deliberation-Lab Rubric</span></div>
+  <p class="sec-note">For the Civic Economy Role-Play Lab and any simulation where students argue an assigned role. The signature criterion is <em>separating role from self</em>: the ability to argue a position you personally reject is the deepest form of the course's "steelman" skill, performed live.</p>
+
+  <table>
+    <thead><tr><th>Criterion</th><th>Exemplary</th><th>Proficient</th><th>Developing</th><th>Beginning</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="crit">Inhabits the role<span>Argues the role's real interests</span></td>
+        <td><span class="lv ex">4</span>Represents the assigned stakeholder's genuine interests and best arguments convincingly, as they would themselves.</td>
+        <td><span class="lv">3</span>Represents the role's interests accurately.</td>
+        <td><span class="lv dev">2</span>Plays the role thinly or slips into caricature.</td>
+        <td><span class="lv">1</span>Doesn't engage the assigned role.</td>
+      </tr>
+      <tr>
+        <td class="crit">Separates role from self<span>Argues a view they may reject</span></td>
+        <td><span class="lv ex">4</span>Argues the assigned position with full force even when it conflicts with personal views; never breaks to editorialize.</td>
+        <td><span class="lv">3</span>Maintains the assigned position throughout.</td>
+        <td><span class="lv dev">2</span>Wavers, or lets personal views leak into the role.</td>
+        <td><span class="lv">1</span>Abandons the role to argue their own opinion.</td>
+      </tr>
+      <tr>
+        <td class="crit">Negotiates with the tools<span>Uses concepts in real time</span></td>
+        <td><span class="lv ex">4</span>Wields the relevant economic concepts to make and counter arguments live, adapting to others' moves.</td>
+        <td><span class="lv">3</span>Uses relevant concepts to support the role's case.</td>
+        <td><span class="lv dev">2</span>Argues mostly from position, with few concepts.</td>
+        <td><span class="lv">1</span>Argues from assertion alone.</td>
+      </tr>
+      <tr>
+        <td class="crit">Toward a workable outcome<span>Builds, not just blocks</span></td>
+        <td><span class="lv ex">4</span>Pushes for the role's interests while helping the group reach a real, defensible decision; finds tradeoffs others miss.</td>
+        <td><span class="lv">3</span>Advances the role's interests and engages in genuine negotiation.</td>
+        <td><span class="lv dev">2</span>Holds a position but won't move toward resolution.</td>
+        <td><span class="lv">1</span>Disengaged or purely obstructive.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ============ SAMPLE ============ -->
+  <div class="sec-head"><span class="sec-num">04</span><span class="sec-title">Worked Sample — The Data Center Decision</span></div>
+  <p class="sec-note">One complete performance assessment, anchored on the Platforms &amp; Power unit and its Role-Play Lab, showing the rubrics in action. It pairs a live role-play (Rubric 3) with an individual defended argument written afterward (Rubric 1) — the standard two-part shape for a unit assessment in this course.</p>
+
+  <div class="sample">
+    <div class="sample-head">
+      <p class="sample-tag">Performance Assessment · Platforms &amp; Power</p>
+      <p class="sample-name">Should the town approve the data center?</p>
+    </div>
+    <div class="sample-body">
+      <p class="lbl">The scenario</p>
+      <p class="prompt">A major tech company proposes building a large AI data center in a mid-sized town. It promises jobs and tax revenue, but will consume enormous amounts of water and electricity, raise local utility costs, and hand the company significant power over the town's infrastructure. The town council must decide. Students are assigned roles — company representative, town council member, local resident, utility worker, environmental advocate, small business owner — and deliberate to a decision.</p>
+
+      <p class="lbl">Part 1 · The role-play <span style="color:var(--muted);font-style:normal;">(assessed with Rubric 3)</span></p>
+      <p>Students argue their assigned role's genuine interests in a live council deliberation, using the unit's concepts — network effects, monopoly power, the commons, who captures the value of shared resources. The assessment is <b>not</b> whether their side "wins," but how well they inhabit the role, hold it under pressure, and negotiate with the tools toward a real decision.</p>
+
+      <p class="lbl">Part 2 · The defended argument <span style="color:var(--muted);font-style:normal;">(assessed with Rubric 1)</span></p>
+      <p>Afterward, each student writes individually, in their <em>own</em> voice this time: <em>Should the town approve the data center? Take a position and defend it.</em> This is where role-play becomes personal judgment — and where the defended-argument rubric applies.</p>
+
+      <p class="lbl">What strong work looks like here</p>
+      <ul>
+        <li><b>Exemplary:</b> "The town should approve it, <em>with binding conditions.</em>" Grants the opponents' strongest point fully — that the company gains lasting leverage over a captured community and the water cost may be irreversible (steelman). Argues approval anyway, because the jobs and revenue are real and the conditions can bound the risk — while naming exactly what's being gambled: if the company leaves, the town is stuck with the costs (counts the cost). Uses network effects and the commons precisely to explain <em>why</em> the leverage forms. Lands a reform-test answer: the smallest conditions that capture the benefit while limiting the town's exposure.</li>
+        <li><b>Proficient:</b> Takes a clear position, represents the other side fairly, names a real downside, and uses the concepts correctly — but the steelman is competent rather than compelling, or the cost is acknowledged without being fully reckoned with.</li>
+        <li><b>Developing:</b> Picks a side and gives reasons, but the opposing view is thin, the position reads as cost-free, and concepts are loose.</li>
+        <li><b>Beginning:</b> "Data centers are good/bad." Asserts a side with no engagement of the other, no named cost, and no tools.</li>
+      </ul>
+
+      <p class="lbl">Why this shape</p>
+      <p>The two parts assess different things the course cares about: the role-play tests whether a student can argue a view <em>not their own</em> (Rubric 3); the essay tests whether they can then reach and defend a view <em>that is</em> theirs (Rubric 1). A student might argue fiercely <em>for</em> the company in the role-play and conclude <em>against</em> approval in the essay — and score Exemplary on both. That gap between role and conviction is exactly the intellectual capacity the course exists to build.</p>
+    </div>
+  </div>
+
+  <div class="howto" style="margin-top:1.5rem;">
+    <strong>Adapting these.</strong> All three rubrics are concept-agnostic — swap the Data Center scenario for any unit (the Wealth Divide, Boom &amp; Bust, the Founding Argument) and the criteria still apply, because they grade reasoning, not topic. The two-part shape (role-play + individual defended argument) is the recommended template for any unit assessment; for shorter checks, the defended-argument rubric alone works on any primer write task.
+  </div>
+
+  <div class="foot">
+    <span class="foot-l">&copy; 2026 &nbsp;·&nbsp; Alfredo Mathew III &nbsp;·&nbsp; AM3 LLC &nbsp;·&nbsp; Working World LLC</span>
+    <span class="foot-r">Assessment Suite &nbsp;·&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

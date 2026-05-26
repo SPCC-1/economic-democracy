@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Debt — Concept Library — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+.concept-tag{display:inline-block;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .6rem;margin-bottom:.9rem;}
+
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+
+.defbox{border:1px solid var(--black);background:var(--white);padding:1.1rem 1.4rem;margin:1.5rem 0;}
+.defbox-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.defbox p{font-size:.92rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.defbox strong{font-weight:600;color:var(--black);}
+
+/* create vs extract two-column */
+.four{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.four-cell{background:var(--paper);padding:1rem 1.2rem;}
+.four-cell:nth-child(even){background:var(--cream);}
+.four-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem;}
+.four-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.3rem;}
+.four-text{font-size:.8rem;font-weight:300;color:var(--ink);line-height:1.55;}
+.four-text strong{font-weight:600;color:var(--charcoal);}
+@media(max-width:600px){.four{grid-template-columns:1fr;}}
+
+.types{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.type-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.type-cell:nth-child(even){background:var(--cream);}
+.type-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.type-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.15;}
+.type-text{font-size:.81rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.types{grid-template-columns:1fr;}}
+
+.context{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.context-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.context-name{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.context-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.context-body p{margin-bottom:.5rem;}
+.context-body p:last-child{margin-bottom:0;}
+.context-q{font-size:.82rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.6rem;margin-top:.5rem;line-height:1.5;}
+
+.tbl-wrap{margin:1.25rem 0;overflow-x:auto;}
+.cmp{width:100%;border-collapse:collapse;font-size:.8rem;min-width:540px;}
+.cmp th,.cmp td{border:1px solid var(--rule);padding:.55rem .7rem;vertical-align:top;line-height:1.45;text-align:left;}
+.cmp th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.cmp td:first-child{background:var(--cream);font-weight:600;color:var(--charcoal);font-size:.76rem;}
+.cmp .fill{color:var(--muted);font-style:italic;}
+
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing,.cmp th,.concept-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .context,.task,.types,.four,.defbox,.inset,.tbl-wrap{break-inside:avoid;}
+  .sec-header{margin:1.9rem 0 1rem;}
+  .context{margin:1.1rem 0;}
+  .four,.types,.defbox,.inset,.pullquote{margin-top:1.2rem;margin-bottom:1.2rem;}
+  .task{margin:1.3rem 0;}
+  .closing{margin:1.2rem 0 0;}
+  .doc-footer{margin-top:1.2rem;}
+  .closing.tight-top{margin-top:.8rem;}
+  .dq-list.tight li{padding-top:.34rem;padding-bottom:.34rem;}
+  .sec-header.tight-top{margin-top:1rem;margin-bottom:.85rem;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+.sec-header.tight-top{margin-top:1.5rem;}
+.closing.tight-top{margin-top:1.4rem;}
+.dq-list.tight li{padding-top:.45rem;padding-bottom:.45rem;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="concept-tag">Concept Library · Money &amp; Value</p>
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Concept Primer</p>
+    <h1 class="masthead-title">Debt</h1>
+    <p class="masthead-sub">A promise that doesn't bend — fixed while the world keeps changing, and enforceable in a way that quietly turns owing into being owned.</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">A debt has a strange and powerful quality that sets it apart from almost every other arrangement in economic life: it <em>does not change</em>. Once you owe a fixed sum, that number stays exactly what it is, no matter what happens to you. Your income can double or vanish, your business can boom or burn, the whole economy can soar or crash — the debt sits there, unmoved, demanding the same payment on the same date. That fixedness is the entire personality of debt, and it is the source of both its enormous usefulness and its capacity to destroy. This primer is not about the decision to borrow; it is about the <strong>obligation that exists once you have</strong> — what a fixed, enforceable promise to pay <em>does</em>, to the person who owes it and the one who is owed.</p>
+
+  <p class="body">Two features make debt unlike a casual promise. First, it is <strong>fixed</strong>: the amount owed is set, indifferent to how your fortunes turn. Second, it is <strong>enforceable</strong>: unlike a broken dinner invitation, a debt the law recognizes can be collected — through seized property, garnished wages, courts, and consequences that follow you. Those two features are exactly what make debt so valuable: because the obligation is fixed and enforceable, strangers can rely on it, fortunes can be built on it, and the entire machinery of finance can function. But the same two features are what give debt its dark side — because a claim that doesn't bend can crush you when your world bends, and a promise that can be enforced is a form of power one person holds over another. This primer grants debt's real value fully, then follows those two features to where they bite.</p>
+
+  <div class="defbox">
+    <p class="defbox-label">The tool, stated plainly</p>
+    <p><strong>Debt</strong> is a fixed, enforceable obligation to pay a set amount, regardless of how the debtor's circumstances change. Its defining traits are <strong>fixedness</strong> (the sum owed does not flex with your fortunes) and <strong>enforceability</strong> (it can be collected through legal claims on your property, income, or assets). One crucial consequence: every debt is also someone else's <strong>asset</strong> — what the debtor owes, the creditor owns — so a debt is a two-sided link binding a borrower and a lender together.</p>
+  </div>
+
+  <!-- SECTION I -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">The Tool — Why a Promise That Doesn't Bend Is So Useful</span></div>
+
+  <p class="body">Grant the value of debt's fixedness, because it is easy to see debt as simply a burden and miss why it is one of the foundations of a functioning economy. The reason a fixed, enforceable obligation is so powerful is precisely that it is <em>reliable</em>. A lender can hand over a fortune to a stranger because the claim to be repaid is fixed in amount and backed by law — not dependent on goodwill, memory, or the borrower's mood. That reliability is what lets capital move at all: no one would lend serious money on a vague "I'll pay you back when I can." The fixed, enforceable debt converts trust into something solid enough to build on.</p>
+
+  <p class="body">And fixedness cuts in the borrower's favor too, in ways worth granting. Hold the two faces of the fixed obligation side by side:</p>
+
+  <div class="four">
+    <div class="four-cell">
+      <p class="four-label">Why fixedness helps</p>
+      <p class="four-name">Reliability &amp; Predictability</p>
+      <p class="four-text">A set amount, on a set schedule, that both sides can count on. The lender knows exactly what they're owed; the borrower knows exactly what they must pay and can plan around it. If your income later soars, the debt doesn't rise to claim the windfall — you keep the upside. Fixedness makes the future <strong>plannable</strong>.</p>
+    </div>
+    <div class="four-cell">
+      <p class="four-label">Why enforceability helps</p>
+      <p class="four-name">It Makes Lending Possible</p>
+      <p class="four-text">Because the claim can actually be collected, lenders dare to extend it — to people they don't know, at scale, across a whole economy. Enforceability is the reason credit exists at all beyond family and friends. The bindingness is a <strong>feature</strong>: it's what makes the whole system trustworthy enough to function.</p>
+    </div>
+  </div>
+
+  <p class="body">So debt, properly seen, is not a flaw in the economy but part of its scaffolding: a fixed, enforceable obligation is the device that lets near-strangers commit to one another across time, reliably enough to build homes, businesses, and whole nations. Granted fully, the bindingness of debt is exactly what makes it useful — a promise you <em>can't</em> casually wriggle out of is a promise worth lending against. The trouble is that the very same two features — the fixedness and the enforceability — are what give debt its capacity to trap and to dominate. The feature and the danger are one thing seen from two sides.</p>
+
+  <div class="pullquote">
+    <p>A debt is a promise built not to bend. That rigidity is its strength when your world holds steady — and its cruelty when your world gives way.</p>
+  </div>
+
+  <!-- SECTION II -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">Where Fixed and Enforceable Turn Dangerous</span></div>
+
+  <p class="body">The two features that make debt useful are the same two that make it dangerous. Each is a lever where the neutral tool tips into something with sharp human stakes.</p>
+
+  <div class="types">
+    <div class="type-cell">
+      <p class="type-label">Lever 1</p>
+      <p class="type-name">Fixed debt in a variable world transfers the risk to you</p>
+      <p class="type-text">Because the payment never flexes, <em>all</em> the risk of a changing world lands on the debtor. When times are good, this is fine — even great: a fixed debt means borrowing to control something large while putting up little, so gains are magnified. That's <strong>leverage</strong>. But leverage cuts both ways with brutal symmetry. If your income falls, the asset you bought loses value, or hard times hit, the debt doesn't shrink to match — it stays whole while everything around it collapses, and can wipe you out. Fixedness means the borrower keeps the upside <em>and</em> absorbs the downside; debt quietly converts a variable world into a fixed claim that magnifies both your fortune and your ruin.</p>
+    </div>
+    <div class="type-cell">
+      <p class="type-label">Lever 2</p>
+      <p class="type-name">Enforceability is power — and your debt is someone's asset</p>
+      <p class="type-text">A promise that can be enforced is a lever one party holds over another. The creditor can seize collateral, garnish wages, or use the threat of all that to extract terms — owing money becomes a real loss of freedom, sometimes close to being owned. And because every debt is someone else's asset, the two sides have <em>opposed</em> interests: relief for the debtor is loss for the creditor, so forgiving, restructuring, or writing down debt is never neutral — it's a fight over who absorbs the loss. Whether debts can be escaped (through bankruptcy, relief, or jubilee) or must be paid whatever the human cost is one of the oldest and most charged questions in economic life.</p>
+    </div>
+  </div>
+
+  <div class="inset">
+    <strong>The questions to carry everywhere:</strong> when you see a debt, ask — <em>what happens to this fixed obligation if the debtor's world changes for the worse: does the risk fall entirely on them? And who holds the enforceable claim — what power does being owed give one party over the other, and who would bear the loss if the debt were forgiven?</em> Debt looks like a simple number owed. It is really a fixed claim that transfers risk onto the borrower and a lever of power placed in the lender's hand — and seeing both is the difference between reading a balance and reading a relationship.</p>
+  </div>
+
+  <!-- SECTION III — APPLY (break removed; long intro) -->
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">The Same Obligation, Three Scales</span></div>
+
+  <p class="body">Watch the fixed, enforceable obligation play out at three scales — a person, a business, and a nation — the same rigidity transferring risk and creating power, told three sizes large.</p>
+
+  <div class="context">
+    <p class="context-meta">Scale One · The person</p>
+    <p class="context-name">A household whose income drops but whose payments don't</p>
+    <div class="context-body">
+      <p>A family takes on a mortgage and loans sized to their income. While that income holds, the fixed payments are manageable and even advantageous — they control a home worth far more than they put down (leverage in their favor). Then a job is lost. The income falls; the payments do not. The debt sits unmoved, demanding the same sum from a household that now has less, and the lender's enforceable claim means the home itself can be taken. Nothing about the debt changed — that's exactly the problem. The fixed obligation transferred the entire risk of a job loss onto the family, and the enforceable claim turned hardship into the threat of losing everything.</p>
+      <p class="context-q">When their world changed, why didn't the debt change with it — and who held the power then?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Scale Two · The business</p>
+    <p class="context-name">Leverage that magnifies the boom and the bust</p>
+    <div class="context-body">
+      <p>A company borrows heavily to expand — using debt as leverage. In good times this is brilliant: it controls far more than its own money could buy, and profits soar relative to what the owners put in. But the debt is fixed, so when sales dip, the payments don't. A firm that would merely have had a lean year if it owned everything outright instead faces fixed obligations it can't meet, and creditors with enforceable claims who can force it into bankruptcy and seize what's left. The leverage that multiplied the upside multiplies the downside just as hard — and decides, in the bust, who ends up owning the company: often the creditors.</p>
+      <p class="context-q">Did the borrowing magnify only the gains — or the losses just as much, and hand control to the lenders?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Scale Three · The nation</p>
+    <p class="context-name">A country, its creditors, and the fight over who pays</p>
+    <div class="context-body">
+      <p>Nations carry debt too, and here the power dimension is starkest. A country's debt is fixed and owed to creditors — other governments, banks, investors — who hold an enforceable-enough claim that they can demand harsh terms when the country struggles: austerity, asset sales, conditions on its policies. Because the nation's debt is the creditors' asset, restructuring it is a raw fight over who eats the loss — and the creditors often hold the leverage. Whether a struggling nation must pay in full whatever the human cost, or can restructure and write down what it owes, is the same debtor-creditor power question as the household's — now between a country and the world.</p>
+      <p class="context-q">When a nation can't pay, who holds the power — and who decides whether the debt must be paid in full?</p>
+    </div>
+  </div>
+
+  <!-- ACTIVITY -->
+  <div class="sec-header tight-top"><span class="sec-roman">IV</span><span class="sec-title">Activity — Read the Obligation</span></div>
+
+  <p class="body">For each, name who bears the risk if circumstances worsen (Lever 1 — the fixedness) and what power the creditor holds over the debtor (Lever 2 — the enforceability and the opposed interests).</p>
+
+  <div class="tbl-wrap">
+    <table class="cmp">
+      <thead>
+        <tr><th>The debt</th><th>If things worsen, who bears it?</th><th>What power does the creditor hold?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>A mortgage on a family's only home</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A company that borrowed heavily to expand</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A student whose loans can't be erased in bankruptcy</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A nation owing more than it can easily repay</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A payday loan secured against a paycheck</td><td class="fill">…</td><td class="fill">…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Write</p>
+    <p class="task-title">Find the rigidity and the power</p>
+    <p class="task-body">Think of a debt — yours, your family's, or one you've read about, at any scale. First, the fixedness: what would happen to that fixed obligation if the debtor's circumstances suddenly got worse — whose problem does it become? Then, the power: who holds the enforceable claim, and what can they do to collect? Finally, the hardest question: if the debtor genuinely couldn't pay, should the debt be forgiven or restructured — and who would bear the loss if it were? Argue your answer, knowing someone is on the other side of it.</p>
+    <div class="writelines"><div class="writeline"></div><div class="writeline"></div><div class="writeline"></div></div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="sec-header tight-top"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list tight">
+    <li>The fixedness of debt is both its strength (predictability) and its danger (it doesn't shrink when your world does). Should some debts flex with the borrower's circumstances — and what would be gained and lost if they did?</li>
+    <li>Every debt is also someone's asset, so debtor and creditor have opposed interests. When a debtor truly can't pay, how should a society decide who absorbs the loss — and does the answer change with the scale (a person, a firm, a nation)?</li>
+    <li>Enforceability is what makes lending possible, but it also hands the creditor power over the debtor. Where would you draw the line between a fair claim and one that has become domination?</li>
+    <li>What's the smallest change to how debt works — bankruptcy rules, relief, limits on collection — that would protect debtors from being crushed by a fixed obligation in a bad turn, without making lending so risky it dries up?</li>
+  </ol>
+
+  <div class="closing tight-top">
+    <p>A debt is a number that refuses to change in a world that never stops changing.<br>That refusal is its genius and its cruelty: it lets strangers build on one another,<br>and it lets a fixed claim outlast the fortunes of the one who owes.<br>To read a debt is to see both the risk it shifts and the power it grants — and to ask who should bear each.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

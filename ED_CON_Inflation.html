@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inflation — Concept Library — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+.concept-tag{display:inline-block;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .6rem;margin-bottom:.9rem;}
+
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+
+.defbox{border:1px solid var(--black);background:var(--white);padding:1.1rem 1.4rem;margin:1.5rem 0;}
+.defbox-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.defbox p{font-size:.92rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.defbox strong{font-weight:600;color:var(--black);}
+
+/* winners/losers two-col */
+.four{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.four-cell{background:var(--paper);padding:1rem 1.2rem;}
+.four-cell:nth-child(even){background:var(--cream);}
+.four-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem;}
+.four-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.3rem;}
+.four-text{font-size:.8rem;font-weight:300;color:var(--ink);line-height:1.55;}
+.four-text strong{font-weight:600;color:var(--charcoal);}
+@media(max-width:600px){.four{grid-template-columns:1fr;}}
+
+.types{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.type-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.type-cell:nth-child(even){background:var(--cream);}
+.type-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.type-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.15;}
+.type-text{font-size:.81rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.types{grid-template-columns:1fr;}}
+
+.context{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.context-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.context-name{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.context-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.context-body p{margin-bottom:.5rem;}
+.context-body p:last-child{margin-bottom:0;}
+.context-q{font-size:.82rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.6rem;margin-top:.5rem;line-height:1.5;}
+
+.tbl-wrap{margin:1.25rem 0;overflow-x:auto;}
+.cmp{width:100%;border-collapse:collapse;font-size:.8rem;min-width:540px;}
+.cmp th,.cmp td{border:1px solid var(--rule);padding:.55rem .7rem;vertical-align:top;line-height:1.45;text-align:left;}
+.cmp th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.cmp td:first-child{background:var(--cream);font-weight:600;color:var(--charcoal);font-size:.76rem;}
+.cmp .fill{color:var(--muted);font-style:italic;}
+
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing,.cmp th,.concept-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .context,.task,.types,.four,.defbox,.inset,.tbl-wrap{break-inside:avoid;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="concept-tag">Concept Library · Money &amp; Value</p>
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Concept Primer</p>
+    <h1 class="masthead-title">Inflation</h1>
+    <p class="masthead-sub">Everyone feels it and almost everyone misreads it. Inflation isn't really things getting more expensive — it's money losing value, and quietly moving wealth from some hands to others.</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">Your grandparent tells you a soda once cost a nickel. A movie was a quarter. It's tempting to think things have simply gotten "expensive" since then — but that's the wrong way to see it. The soda didn't become more valuable; the nickel became <em>less</em> valuable. The same five cents that once bought a drink now buys almost nothing, because over the decades each unit of money came to be worth less. That steady loss in the buying power of money, showing up as rising prices across the board, is <strong>inflation</strong>.</p>
+
+  <p class="body">This flip — from "prices went up" to "money's value went down" — is the key that unlocks the whole concept, because it reveals what inflation actually is: a change in the <em>measuring stick itself</em>. And here is what almost everyone misses, and what makes inflation matter for power and fairness, not just for shopping: when the value of money changes, it doesn't change equally for everyone. It quietly helps some people and hurts others, depending entirely on what they hold — cash or debt, a fixed wage or a rising asset. Inflation is real pain for many, but it is also, underneath, a vast and silent <em>transfer</em> of wealth. Learning to see who it moves wealth toward, and away from, is the difference between feeling inflation and understanding it.</p>
+
+  <div class="defbox">
+    <p class="defbox-label">The tool, stated plainly</p>
+    <p><strong>Inflation</strong> is a sustained rise in the general level of prices, which is the same thing as a fall in the purchasing power of money — each dollar buys less than it did. A little is normal in a growing economy; a lot, or a sudden burst, is disruptive. The opposite, falling prices, is <strong>deflation</strong>, which carries its own dangers.</p>
+  </div>
+
+  <!-- SECTION I -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">The Tool — When the Measuring Stick Shrinks</span></div>
+
+  <p class="body">Start with what's really moving. Prices are just how we measure the value of things in money. If <em>one</em> price rises — say, oranges after a frost — that's about oranges. But when <em>nearly all</em> prices rise together, the thing they have in common isn't the goods; it's the money. The dollar is the ruler we measure value with, and inflation is the ruler getting shorter: the same dollar covers less. That's why inflation is measured across a whole basket of goods at once — you're trying to detect a change in the money, not in any single product.</p>
+
+  <p class="body">Where does it come from? Broadly, two sources. Sometimes there's simply <em>more money chasing the same amount of goods</em> — if the supply of money grows faster than the supply of real things to buy, each unit of money is worth less, like watering down a drink. Other times costs surge or demand outruns what the economy can produce, and prices climb to catch up. A small, steady amount of inflation is normal and even useful — it greases a growing economy and keeps people from hoarding cash. The trouble comes when it runs fast or unpredictably, because then it stops being a quiet background hum and starts scrambling everyone's plans — and, crucially, moving their wealth around.</p>
+
+  <div class="pullquote">
+    <p>Inflation isn't the price of bread rising. It's the value of your dollar falling — the measuring stick itself shrinking while you're trying to use it.</p>
+  </div>
+
+  <!-- SECTION II -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">Why Inflation Is a Hidden Transfer</span></div>
+
+  <p class="body">A falling money-value sounds like it hits everyone the same. It doesn't — and that's the part that turns a dry statistic into a question of fairness and power.</p>
+
+  <div class="types">
+    <div class="type-cell">
+      <p class="type-label">Lever 1</p>
+      <p class="type-name">It moves wealth between fixed and rising</p>
+      <p class="type-text">Inflation quietly helps whoever holds things that <em>rise</em> with prices and hurts whoever holds things that are <em>fixed</em>. A borrower repays a loan in cheaper dollars — inflation helps them; a saver with cash watches it lose value — inflation hurts them. A worker whose wage lags falls behind; an owner whose assets climb pulls ahead. Same inflation, opposite effects, decided by what you hold.</p>
+    </div>
+    <div class="type-cell">
+      <p class="type-label">Lever 2</p>
+      <p class="type-name">It's a political weapon because the pain is real</p>
+      <p class="type-text">Because inflation genuinely hurts — especially people on fixed incomes and wages that lag — its cause is fiercely contested and easily blamed on whoever one dislikes. Real suffering plus a murky cause makes it the perfect political cudgel. Seeing inflation clearly means separating the genuine pain from the convenient story about who caused it.</p>
+    </div>
+  </div>
+
+  <div class="inset">
+    <strong>The question to carry everywhere:</strong> when money loses value, ask — <em>who holds the things that rise with prices, and who holds the things that stay fixed? Who is this quietly moving wealth toward, and away from?</em> Inflation is felt as "everything costs more," but it works as a transfer: from cash to assets, from lenders to borrowers, from fixed wages to rising prices. The headline number tells you the average. It hides the winners and losers underneath.</p>
+  </div>
+
+  <!-- SECTION III — APPLY (break removed; long intro) -->
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">The Same Force, Three Contexts</span></div>
+
+  <p class="body">Watch the same fall in money's value land as a loss, a gain, and a catastrophe — depending on what each person holds.</p>
+
+  <div class="context">
+    <p class="context-meta">Context One · The loser</p>
+    <p class="context-name">The saver and the fixed-income retiree</p>
+    <div class="context-body">
+      <p>Someone who did everything "right" — saved cash, lives on a fixed pension — is quietly punished by inflation. Their savings buy less each year; their fixed monthly income shrinks in real terms even though the number on the check stays the same. They did nothing wrong and took no risk, yet inflation steadily erodes what they hold, because cash and fixed payments are exactly the things that <em>don't</em> rise with prices. This is the face of inflation most people picture — and it's real.</p>
+      <p class="context-q">What did they hold — and did it rise with prices, or stay fixed?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Two · The winner</p>
+    <p class="context-name">The borrower and the asset-holder</p>
+    <div class="context-body">
+      <p>Now the other side, which gets discussed far less. Someone who borrowed to buy a house repays that fixed loan with dollars that are worth less each year — inflation shrinks their real debt, a gift. And their house, a real asset, tends to rise with prices, so their wealth climbs while their debt melts. Borrowers and owners of real assets can come out <em>ahead</em> in inflation. Same economy, same year as the suffering retiree — opposite outcome, because they held rising things and owed in falling money.</p>
+      <p class="context-q">Did inflation erode what they held — or melt what they owed?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Three · The catastrophe</p>
+    <p class="context-name">When inflation runs out of control</p>
+    <div class="context-body">
+      <p>A little inflation is a hum; runaway inflation — "hyperinflation" — is a siren. When money loses value by the week, people rush to spend it before it shrinks further, prices spiral, savings evaporate overnight, and the basic trust that money will hold its worth collapses. Whole economies have been wrecked this way. It shows the deepest truth about money: it works only because we believe it will still be worth something tomorrow. Inflation, at the extreme, is the failure of that belief — which is why keeping it low and steady is treated as one of the most important jobs in an economy.</p>
+      <p class="context-q">What happens when no one trusts the measuring stick at all?</p>
+    </div>
+  </div>
+
+  <!-- ACTIVITY -->
+  <div class="sec-header"><span class="sec-roman">IV</span><span class="sec-title">Activity — Who Wins, Who Loses?</span></div>
+
+  <p class="body">For each person, decide whether a burst of inflation helps or hurts them — and name <em>why</em>, in terms of whether what they hold rises with prices or stays fixed.</p>
+
+  <div class="tbl-wrap">
+    <table class="cmp">
+      <thead>
+        <tr><th>The person</th><th>Helped or hurt by inflation?</th><th>Because they hold…</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>A retiree living on a fixed pension</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Someone with a large fixed-rate mortgage</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A worker whose wage is frozen for three years</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>An owner of real estate and stocks</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A family keeping its savings in cash</td><td class="fill">…</td><td class="fill">…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Write</p>
+    <p class="task-title">Trace inflation through your own life</p>
+    <p class="task-body">Think about your household during a time of rising prices. What did you hold that lost value (cash, a fixed allowance or wage)? What, if anything, rose with prices (a home, anything owned)? On balance, did inflation move wealth toward you or away from you — and who in your community do you think it hit hardest?</p>
+    <div class="writelines"><div class="writeline"></div><div class="writeline"></div><div class="writeline"></div></div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="sec-header"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list">
+    <li>"Inflation isn't prices rising, it's money's value falling." Why does that reframing change how you think about it? Does it change who you'd blame, or whether blame is even the right frame?</li>
+    <li>Inflation hurts savers and fixed-income people while helping borrowers and asset-holders. Given that, is inflation simply "bad," or does it depend entirely on who you are? Who benefits from calling it one or the other?</li>
+    <li>A small, steady amount of inflation is considered healthy; runaway inflation can destroy an economy. Why might a little of something be useful and a lot of it catastrophic? Where else does that pattern show up?</li>
+    <li>Inflation transfers wealth quietly, without anyone voting on it. Should that hidden transfer be treated as a kind of policy — something a society chooses and is accountable for — or just a force of nature? Who should answer for it?</li>
+  </ol>
+
+  <div class="closing">
+    <p>Inflation feels like everything getting more expensive.<br>It works like money quietly losing its worth —<br>and moving wealth, unvoted and unseen, from those who hold cash and fixed pay<br>to those who hold debt and rising things. Learn to see the transfer beneath the prices.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

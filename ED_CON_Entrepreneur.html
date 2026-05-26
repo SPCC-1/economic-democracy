@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Entrepreneur — Concept Library — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+.concept-tag{display:inline-block;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .6rem;margin-bottom:.9rem;}
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+.defbox{border:1px solid var(--black);background:var(--white);padding:1.1rem 1.4rem;margin:1.5rem 0;}
+.defbox-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.defbox p{font-size:.92rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.defbox strong{font-weight:600;color:var(--black);}
+.four{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.four-cell{background:var(--paper);padding:1rem 1.2rem;}
+.four-cell:nth-child(even){background:var(--cream);}
+.four-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem;}
+.four-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.3rem;}
+.four-text{font-size:.8rem;font-weight:300;color:var(--ink);line-height:1.55;}
+.four-text strong{font-weight:600;color:var(--charcoal);}
+@media(max-width:600px){.four{grid-template-columns:1fr;}}
+.types{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.type-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.type-cell:nth-child(even){background:var(--cream);}
+.type-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.type-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.15;}
+.type-text{font-size:.81rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.types{grid-template-columns:1fr;}}
+.context{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.context-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.context-name{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.context-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.context-body p{margin-bottom:.5rem;}
+.context-body p:last-child{margin-bottom:0;}
+.context-q{font-size:.82rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.6rem;margin-top:.5rem;line-height:1.5;}
+.tbl-wrap{margin:1.25rem 0;overflow-x:auto;}
+.cmp{width:100%;border-collapse:collapse;font-size:.8rem;min-width:540px;}
+.cmp th,.cmp td{border:1px solid var(--rule);padding:.55rem .7rem;vertical-align:top;line-height:1.45;text-align:left;}
+.cmp th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.cmp td:first-child{background:var(--cream);font-weight:600;color:var(--charcoal);font-size:.76rem;}
+.cmp .fill{color:var(--muted);font-style:italic;}
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing,.cmp th,.concept-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .context,.task,.types,.four,.defbox,.inset,.tbl-wrap{break-inside:avoid;}
+  .sec-header{margin:1.9rem 0 1rem;}
+  .context{margin:1.1rem 0;}
+  .four,.types,.defbox,.inset,.pullquote{margin-top:1.2rem;margin-bottom:1.2rem;}
+  .task{margin:1.3rem 0;}
+  .closing{margin:1.2rem 0 0;}
+  .doc-footer{margin-top:1.2rem;}
+  .closing.tight-top{margin-top:.8rem;}
+  .dq-list.tight li{padding-top:.34rem;padding-bottom:.34rem;}
+  .sec-header.tight-top{margin-top:1rem;margin-bottom:.85rem;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+.sec-header.tight-top{margin-top:1.5rem;}
+.closing.tight-top{margin-top:1.4rem;}
+.dq-list.tight li{padding-top:.45rem;padding-bottom:.45rem;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="concept-tag">Concept Library · Engines</p>
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Concept Primer</p>
+    <h1 class="masthead-title">The Entrepreneur</h1>
+    <p class="masthead-sub">Not the person with the idea, or the boss, or the investor — but the one who bears the risk of building something that does not yet exist, and lives or falls by the result.</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">Strip away the mythology — the garage, the hoodie, the billion-dollar exit — and ask what an entrepreneur actually <em>is</em>. Not simply someone with an idea; ideas are cheap and everyone has them. Not simply a boss; plenty of managers run things they didn't build and risk nothing of their own. Not simply an investor; an investor risks money but not their livelihood, and can spread that money across many bets. The entrepreneur is something more specific and more exposed: the person who <strong>bears the uncertainty of building something that does not yet exist</strong> — who stakes money, time, reputation, and often their own security on a venture that has no guarantee of working, and who is rewarded or ruined by how it turns out. The defining act is not having the vision. It is <em>shouldering the risk no one is obligated to take.</em> That is what separates the founder from everyone standing safely around them.</p>
+
+  <p class="body">This is why the entrepreneur sits at the center of how a market economy renews itself. Most people, sensibly, prefer a steady wage to a gamble — they trade the chance of a big payoff for the safety of a predictable paycheck, and that's a perfectly rational choice. But an economy that only ever played it safe would never get anything new: no new products, no new firms, no new industries, just the careful tending of what already exists. The entrepreneur is the one who breaks that stasis by betting on a future that isn't guaranteed — and when the bet pays off, the result is the thing that wasn't there before: a product people want, jobs that didn't exist, sometimes a whole new way of doing things. The economist Joseph Schumpeter saw the entrepreneur as the central agent of progress for exactly this reason — the restless force that disrupts the comfortable equilibrium and drives the economy forward. This primer grants that role its full due, and then looks honestly at the two things the heroic founder story leaves out: we only ever see the winners, and the bet is only survivable for some.</p>
+
+  <div class="defbox">
+    <p class="defbox-label">The tool, stated plainly</p>
+    <p>An <strong>entrepreneur</strong> is a person who organizes capital and labor into a new venture and <em>bears the risk</em> of its success or failure. The defining feature is <strong>risk-bearing under uncertainty</strong>: unlike an employee (who trades a steady wage for not carrying that risk) or a passive investor (who risks money but not their livelihood and can diversify), the entrepreneur stakes their own resources and security on an outcome no one can predict. In return they claim the <strong>profit</strong> if it works — and absorb the <strong>loss</strong> if it doesn't. Entrepreneurs are a primary source of new products, new firms, and new jobs, and a central engine of economic renewal.</p>
+  </div>
+
+  <!-- SECTION I -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">The Tool — The One Who Takes the Risk</span></div>
+
+  <p class="body">Grant the entrepreneur their genuine due, because the role is as valuable as the culture says — just not for the reasons the culture usually gives. The value isn't the idea (ideas are everywhere) or even the work (employees work hard too). It's the willingness to <em>bear the risk that makes everything new possible.</em> Every existing business was once an unproven bet that someone chose to make when they could have taken a safer path. Someone had to put their savings on the line, sign the lease before there were customers, hire the first worker before there was steady revenue. That person converted an uncertain idea into a real thing that now employs people and serves customers — and they did it by accepting a danger that most, reasonably, decline. The reward they claim if it works is the flip side of the ruin they accept if it doesn't.</p>
+
+  <p class="body">See clearly what the entrepreneur does that no one else in the economy is positioned to do:</p>
+
+  <div class="four">
+    <div class="four-cell">
+      <p class="four-label">The employee's bargain</p>
+      <p class="four-name">Safety for Ceiling</p>
+      <p class="four-text">An employee trades away the upside in exchange for security: a steady wage, paid whether the company soars or merely survives. It's a rational, often wise choice — but it means someone <strong>else</strong> carried the risk that created the job in the first place.</p>
+    </div>
+    <div class="four-cell">
+      <p class="four-label">The entrepreneur's bargain</p>
+      <p class="four-name">Risk for the Upside</p>
+      <p class="four-text">The entrepreneur takes the opposite trade: no guaranteed income, the real chance of losing everything staked — but the whole upside if it works, and the satisfaction of having built the thing. They carry the risk so the employee doesn't have to.</p>
+    </div>
+  </div>
+
+  <p class="body">This is the engine of renewal, and it deserves real respect. A society's prosperity depends on a steady supply of people willing to make these bets — to try the new restaurant, the new technology, the new way of organizing work — knowing most attempts are hard and many fail. When we celebrate entrepreneurs, at our best we are honoring something true: the courage to stake the secure present on an unproven future, for a reward that only comes if it works, while taking on a loss that lands whether or not luck cooperated. Granted in full, the entrepreneur is one of the most valuable figures in any economy — the renewer who turns "what if" into "what is." The complications begin the moment we ask <em>which</em> entrepreneurs we actually see, and <em>who</em> is positioned to take the bet at all.</p>
+
+  <div class="pullquote">
+    <p>The entrepreneur's defining act is not the idea or the work. It is shouldering a risk no one required them to take — and being rewarded, or ruined, by how it turns out.</p>
+  </div>
+
+  <!-- SECTION II -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">What the Founder Story Leaves Out</span></div>
+
+  <p class="body">The role is real and the courage is real. But the heroic founder narrative quietly omits two things — not to deceive, but because they're invisible by design — and both change how you should read any "anyone can do it" story.</p>
+
+  <div class="types">
+    <div class="type-cell">
+      <p class="type-label">Lever 1</p>
+      <p class="type-name">We only ever see the survivors</p>
+      <p class="type-text">Every famous founder we celebrate succeeded — that's why we've heard of them. But they are the survivors of a process that buries far more than it crowns: most new ventures fail, most founders who bet everything do not end up rich, and the ones who lost don't get magazine covers or commencement speeches. So the story we absorb — "take the leap, back yourself, anyone can make it" — is built entirely on the visible winners and silent about the invisible graveyard. This is <em>survivorship bias</em>, and it makes the entrepreneurial bet look far more favorable than the odds actually are. The courage is genuine; the implied success rate is a trick of who gets remembered.</p>
+    </div>
+    <div class="type-cell">
+      <p class="type-label">Lever 2</p>
+      <p class="type-name">The bet is only survivable with a cushion</p>
+      <p class="type-text">"Risk it all" quietly assumes you can afford to lose. The person with savings, a supportive family, a network, or a fallback job can make the entrepreneurial bet because failure means a setback, not catastrophe — they can try, fail, and try again. The person living paycheck to paycheck faces the same risk with no net: one failed venture means losing the home, not just the dream. So the <em>same</em> objective risk is a calculated bet for one person and reckless ruin for another, and "entrepreneurship is open to everyone" is true in law while deeply uneven in fact. Who gets to take the leap is shaped as much by who can afford to fall as by talent or grit.</p>
+    </div>
+  </div>
+
+  <div class="inset">
+    <strong>The questions to carry everywhere:</strong> when you hear a founder's success story, ask — <em>how many made the same bet and lost, and would I ever have heard their names?</em> And — <em>who could afford to take this risk, and who couldn't afford to lose?</em> The entrepreneur is a genuine engine of renewal and the courage is real. Reading the role honestly means seeing both the bet that creates everything new — and the graveyard of failures we never see, and the cushion that quietly decides who gets to bet at all.</p>
+  </div>
+
+  <!-- SECTION III -->
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">The Same Risk, Three Founders</span></div>
+
+  <p class="body">Watch the entrepreneurial bet in three real situations — the renewer at their best, the graveyard we never see, and the hard case where the same risk means utterly different things to two people.</p>
+
+  <div class="context">
+    <p class="context-meta">Founder One · The renewer</p>
+    <p class="context-name">The bet that built something real</p>
+    <div class="context-body">
+      <p>Someone notices a problem no existing business solves, stakes their savings, quits a stable job, and builds a product to fix it. For a year it's terrifying — no salary, long odds, savings draining. But it works: customers come, the venture grows, and within a few years it employs dozens of people whose jobs simply did not exist before. This is the entrepreneur at their most valuable — the renewer who took the risk no one required and turned an idea into real work for real people. Grant it plainly: nothing else in the economy reliably produces this, and the courage it took was real. The reward they earned is the other side of the ruin they were willing to face.</p>
+      <p class="context-q">What exactly did this founder create that wasn't there before — and what did it cost them to try?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Founder Two · The graveyard</p>
+    <p class="context-name">The bet that didn't pay — and the one we never hear about</p>
+    <div class="context-body">
+      <p>For every founder above, picture the others who made an equally reasonable bet and lost: the restaurant that was a little too early, the product undone by a competitor's deeper pockets, the venture killed by a downturn no one saw coming. These founders worked as hard, took the same leap, and showed the same courage — but luck, timing, or sheer odds went against them, and they ended up with drained savings and no magazine profile. They are the silent majority of the entrepreneurial story, and we almost never hear from them. Their absence from the story is exactly what makes the bet look safer than it is — and remembering them is not pessimism, it's accuracy.</p>
+      <p class="context-q">If these founders were just as brave and able, why don't we hear their stories — and what does their silence do to how we judge the odds?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Founder Three · The hard case</p>
+    <p class="context-name">Two people, the same risk, different stakes</p>
+    <div class="context-body">
+      <p>Two people have the same idea and the same ability. One has family wealth to fall back on; the other supports a household on a single paycheck. For the first, launching the venture is a calculated bet — if it fails, they regroup and try again. For the second, the identical venture is a bet against their family's housing and stability — failure isn't a setback, it's a catastrophe they may not recover from. Same risk on paper; completely different stakes in life. The first can take the leap and probably should; whether the second should is a genuinely hard question, and "just be an entrepreneur" is glib advice that ignores who can afford to fall. Both the opportunity and the danger are real — which is why this is the case worth thinking through rather than sloganeering about.</p>
+      <p class="context-q">Is it fair that the same opportunity is safe for one person and ruinous for another — and does anything follow from that?</p>
+    </div>
+  </div>
+
+  <!-- ACTIVITY -->
+  <div class="sec-header tight-top"><span class="sec-roman">IV</span><span class="sec-title">Activity — Read the Risk</span></div>
+
+  <p class="body">For each, identify what's being risked and by whom, whether the person is truly bearing entrepreneurial risk, and how their cushion (or lack of one) changes what the bet means.</p>
+
+  <div class="tbl-wrap">
+    <table class="cmp">
+      <thead>
+        <tr><th>The situation</th><th>Who bears the risk? Real entrepreneurial risk?</th><th>How does the cushion change the stakes?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>A college student starts an app with family backing</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A laid-off worker spends their last savings on a food truck</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A salaried manager runs a company they didn't found</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>An investor puts 2% of a large portfolio into a startup</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A successful founder we all know by name</td><td class="fill">…</td><td class="fill">…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Write</p>
+    <p class="task-title">Honor the founder — then count the unseen</p>
+    <p class="task-body">First, make the strongest case that the entrepreneur is one of the most valuable figures in an economy: what does bearing the risk of the new accomplish that no employee or investor does, and why does a prosperous society need a steady supply of people willing to take that bet? Then complicate it honestly: explain how survivorship bias distorts our sense of the odds, and why the same risk is a calculated bet for some and a catastrophe for others. Finally, take a position: knowing entrepreneurship is both a genuine engine of renewal and unevenly available, what is the smallest thing — if anything — you'd do to widen who can afford to take the bet, without dulling the incentive that drives people to take it?</p>
+    <div class="writelines"><div class="writeline"></div><div class="writeline"></div><div class="writeline"></div></div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="sec-header tight-top"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list tight">
+    <li>The entrepreneur's defining trait is bearing risk, not having ideas. Does that change who you'd count as a "real" entrepreneur — and does it make the role more admirable, or just riskier?</li>
+    <li>We celebrate the founders who won and never hear from those who lost. How much does that survivorship bias distort the advice young people get about "taking the leap"?</li>
+    <li>The same venture is a calculated bet for someone with a cushion and a catastrophe for someone without one. Is "anyone can be an entrepreneur" a fair statement, a hollow one, or both at once?</li>
+    <li>What's the smallest change that would let more people afford to take an entrepreneurial risk — without removing the reward and danger that make the bet meaningful in the first place?</li>
+  </ol>
+
+  <div class="closing tight-top">
+    <p>The entrepreneur carries the risk that no one is required to carry, so that something new can exist.<br>It is a genuine courage, and a genuine engine of renewal — the turning of "what if" into "what is."<br>But we crown only the survivors and never count the fallen, and the same leap is safe for some and ruinous for others.<br>So honor the bet — and remember the graveyard you cannot see, and who could never afford to wager at all.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

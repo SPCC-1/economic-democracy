@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compounding — Concept Library — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+.concept-tag{display:inline-block;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .6rem;margin-bottom:.9rem;}
+
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+
+.defbox{border:1px solid var(--black);background:var(--white);padding:1.1rem 1.4rem;margin:1.5rem 0;}
+.defbox-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.defbox p{font-size:.92rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.defbox strong{font-weight:600;color:var(--black);}
+
+/* growth table — visual doubling */
+.grow-wrap{margin:1.25rem 0;overflow-x:auto;}
+.grow{width:100%;border-collapse:collapse;font-size:.82rem;}
+.grow th,.grow td{border:1px solid var(--rule);padding:.5rem .7rem;text-align:left;line-height:1.4;}
+.grow th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.grow td:first-child{font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--muted);width:80px;}
+.grow .linear{color:var(--mid);}
+.grow .comp{font-weight:700;color:var(--black);}
+.grow tr:nth-child(even) td{background:var(--cream);}
+
+.types{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.type-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.type-cell:nth-child(even){background:var(--cream);}
+.type-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.type-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.15;}
+.type-text{font-size:.81rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.types{grid-template-columns:1fr;}}
+
+.context{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.context-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.context-name{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.context-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.context-body p{margin-bottom:.5rem;}
+.context-body p:last-child{margin-bottom:0;}
+.context-q{font-size:.82rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.6rem;margin-top:.5rem;line-height:1.5;}
+
+.tbl-wrap{margin:1.25rem 0;overflow-x:auto;}
+.cmp{width:100%;border-collapse:collapse;font-size:.8rem;min-width:540px;}
+.cmp th,.cmp td{border:1px solid var(--rule);padding:.55rem .7rem;vertical-align:top;line-height:1.45;text-align:left;}
+.cmp th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.cmp td:first-child{background:var(--cream);font-weight:600;color:var(--charcoal);font-size:.76rem;}
+.cmp .fill{color:var(--muted);font-style:italic;}
+
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing,.cmp th,.grow th,.concept-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .context,.task,.types,.defbox,.inset,.tbl-wrap,.grow-wrap{break-inside:avoid;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="concept-tag">Concept Library · Engines</p>
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Concept Primer</p>
+    <h1 class="masthead-title">Compounding</h1>
+    <p class="masthead-sub">Growth that feeds on itself — the quiet force that turns a small head start into an unbridgeable lead, and the reason you cannot out-work what out-multiplies you.</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">There is an old riddle. Would you rather have a million dollars today, or a single penny that doubles every day for a month? It feels obvious — take the million. But the penny that doubles reaches over five million dollars by day thirty. That is <strong>compounding</strong>: growth that earns more growth, so the gains pile on top of earlier gains and the whole thing accelerates. It is the most counterintuitive force in economics, because human minds expect things to add up in a straight line, and compounding does not add — it multiplies, again and again, on an ever-larger base.</p>
+
+  <p class="body">Once you see it, you see it everywhere: in savings, in debt, in the growth of companies, in the spread of anything that grows in proportion to its own size. And it is the hidden engine beneath one of the most important facts about the modern economy — that those who <em>own</em> things tend to pull steadily and permanently ahead of those who only <em>earn</em>. The arithmetic is perfectly neutral. But because compounding rewards whatever base you already have, it quietly turns small early advantages into enormous final gaps. Understanding it is understanding why effort alone often cannot catch what ownership has set in motion.</p>
+
+  <div class="defbox">
+    <p class="defbox-label">The tool, stated plainly</p>
+    <p><strong>Compounding</strong> is growth calculated on a base that already includes past growth. Instead of earning the same fixed amount each period (that's <em>linear</em> growth), a compounding thing earns a percentage of its current, larger size — so each period's gain is bigger than the last, and the total curves sharply upward over time.</p>
+  </div>
+
+  <!-- SECTION I -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">The Tool — Why Growth on Growth Explodes</span></div>
+
+  <p class="body">Start with the mechanism, because the math is the whole story. Imagine two ways your money can grow. The first adds a flat ten dollars every year — linear. The second grows ten percent every year — compounding — so it earns a slice of an ever-bigger total. For a while they look similar. Then the compounding one pulls away, slowly at first, then violently, because it is always earning on top of everything it already earned. Watch what happens to one hundred dollars over time:</p>
+
+  <div class="grow-wrap">
+    <table class="grow">
+      <thead>
+        <tr><th>Year</th><th>Linear (+$10/yr)</th><th>Compounding (+10%/yr)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Start</td><td class="linear">$100</td><td class="comp">$100</td></tr>
+        <tr><td>Year 5</td><td class="linear">$150</td><td class="comp">$161</td></tr>
+        <tr><td>Year 10</td><td class="linear">$200</td><td class="comp">$259</td></tr>
+        <tr><td>Year 25</td><td class="linear">$350</td><td class="comp">$1,083</td></tr>
+        <tr><td>Year 50</td><td class="linear">$600</td><td class="comp">$11,739</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="body">Same starting amount. After fifty years the compounding pile is nearly twenty times the linear one — and the gap is still widening, faster every year. Two things drive this: the <strong>rate</strong> of growth, and — even more powerfully — <strong>time</strong>. Compounding's real magic is in the late years, when the base is huge, which is why starting early matters so much more than it seems. The first decade looks unimpressive. The last decade is where fortunes are made. This is genuine, useful, and the friendliest fact in personal finance: start saving young and time does the heavy lifting.</p>
+
+  <div class="pullquote">
+    <p>Compounding doesn't add — it multiplies on everything it already built. Which means whoever starts with more, or starts earlier, doesn't just lead. The lead grows.</p>
+  </div>
+
+  <!-- SECTION II -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">Why Neutral Math Concentrates</span></div>
+
+  <p class="body">Nothing about compounding is unfair in itself — it's arithmetic. But two features of how it works turn it into one of the most powerful forces concentrating wealth and power, which is exactly where the neutral tool becomes a question.</p>
+
+  <div class="types">
+    <div class="type-cell">
+      <p class="type-label">Lever 1</p>
+      <p class="type-name">It rewards the base you already have</p>
+      <p class="type-text">Compounding grows a percentage of what you've <em>got</em>. Someone with a large asset earns a large gain on it; someone with nothing earns a percentage of nothing. The same rate makes the rich pull away from the poor automatically, with no extra effort, because the gain scales with the starting pile. Equal rates, unequal bases — the gap widens on its own.</p>
+    </div>
+    <div class="type-cell">
+      <p class="type-label">Lever 2</p>
+      <p class="type-name">It cuts both ways — debt compounds too</p>
+      <p class="type-text">The same engine runs in reverse on what you owe. Unpaid debt grows on its growing balance, so those who fall behind can be buried as fast as savers are lifted. Compounding lifts the owner and sinks the borrower with the identical math — which is why it tends to reward those who already have and punish those who already don't.</p>
+    </div>
+  </div>
+
+  <div class="inset">
+    <strong>The question to carry everywhere:</strong> when you see a gap growing — between savers and borrowers, owners and earners, big companies and small — ask: <em>is compounding doing this, and who had the base to put it to work?</em> You cannot out-work a force that multiplies. A wage adds; an asset compounds. That single difference, run over a lifetime or across generations, is why the question of <em>who gets to own</em> matters more than how hard anyone works.</p>
+  </div>
+
+  <!-- SECTION III — APPLY (no break-before; intro is long) -->
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">The Same Force, Three Contexts</span></div>
+
+  <p class="body">Watch the identical math lift, bury, and concentrate — depending only on who is standing on which side of it.</p>
+
+  <div class="context">
+    <p class="context-meta">Context One · It lifts</p>
+    <p class="context-name">A teenager who starts saving early</p>
+    <div class="context-body">
+      <p>Someone who invests a small amount in their teens and leaves it alone can end up with more than someone who saves far more but starts in their forties — because the early money had decades to compound. This is the genuinely empowering face of the tool: time is available to everyone, and starting young is the closest thing to free money that exists. The friendliest version of compounding, and worth teaching plainly.</p>
+      <p class="context-q">Who had time and a base to put to work — and who didn't?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Two · It buries</p>
+    <p class="context-name">A balance that grows faster than it can be paid</p>
+    <div class="context-body">
+      <p>The same engine in reverse: a debt at a high rate, with payments that barely cover the interest, grows on its own growing balance. The borrower runs hard and the balance still climbs, because compounding is working <em>against</em> them now. Many people who "can't get ahead despite working constantly" are not failing — they're standing on the wrong side of the exact force that lifts the saver. Same math, opposite life.</p>
+      <p class="context-q">Is effort losing a race against multiplication?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Three · It concentrates</p>
+    <p class="context-name">Why the gap between owners and earners keeps widening</p>
+    <div class="context-body">
+      <p>Wages add up in a straight line — you trade time for pay, and it stops when you stop. Owned assets compound — they grow on their growing value, working while you sleep. So even at the same effort, those who own pull steadily away from those who only earn, and the gap compounds across a lifetime and then across generations as wealth is passed down. This is the mathematical heart of why ownership, not income, increasingly decides who gets ahead — and why "just work harder" cannot close a gap that multiplication is opening.</p>
+      <p class="context-q">Is this a gap of effort — or of who held the compounding asset?</p>
+    </div>
+  </div>
+
+  <!-- ACTIVITY -->
+  <div class="sec-header"><span class="sec-roman">IV</span><span class="sec-title">Activity — Spot the Compounding</span></div>
+
+  <p class="body">For each situation, decide whether compounding is lifting, burying, or concentrating — and name who holds the base that the math is multiplying.</p>
+
+  <div class="tbl-wrap">
+    <table class="cmp">
+      <thead>
+        <tr><th>The situation</th><th>Lifting, burying, or concentrating?</th><th>Who holds the base being multiplied?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>A retirement account left untouched for 40 years</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A credit card balance paid only at the minimum</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A family that has owned land for three generations</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A platform that gains users, which draws more users</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A worker saving the same fixed amount in cash each year</td><td class="fill">…</td><td class="fill">…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Write</p>
+    <p class="task-title">The penny or the million — and your own clock</p>
+    <p class="task-body">Explain in your own words why the doubling penny beats the million. Then: compounding rewards time most of all. What is one thing you could start now — money, a skill, a habit — that would compound, and what does starting today rather than in ten years actually buy you?</p>
+    <div class="writelines"><div class="writeline"></div><div class="writeline"></div><div class="writeline"></div></div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="sec-header"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list">
+    <li>Why are human minds so bad at intuiting compounding? What kinds of mistakes — in money, in policy, in life — does that blind spot cause?</li>
+    <li>"You cannot out-work a force that multiplies." If that's true, what does it mean for the belief that hard work is the main path to getting ahead?</li>
+    <li>Compounding rewards whoever already has a base. Is that unfair, or just math? Does your answer change when the base was inherited rather than earned?</li>
+    <li>If ownership compounds and wages don't, what would it take for more people to own compounding assets — and is that something individuals do alone, or something a society builds on purpose?</li>
+  </ol>
+
+  <div class="closing">
+    <p>A wage adds. An asset multiplies.<br>Over a life, over generations, that single difference decides almost everything.<br>You cannot out-work multiplication —<br>which is why the question was never how hard you work, but what you own.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

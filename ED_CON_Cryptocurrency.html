@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cryptocurrency — Concept Library — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+.concept-tag{display:inline-block;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .6rem;margin-bottom:.9rem;}
+
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+
+.defbox{border:1px solid var(--black);background:var(--white);padding:1.1rem 1.4rem;margin:1.5rem 0;}
+.defbox-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.defbox p{font-size:.92rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.defbox strong{font-weight:600;color:var(--black);}
+
+/* create vs extract two-column */
+.four{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.four-cell{background:var(--paper);padding:1rem 1.2rem;}
+.four-cell:nth-child(even){background:var(--cream);}
+.four-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem;}
+.four-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.3rem;}
+.four-text{font-size:.8rem;font-weight:300;color:var(--ink);line-height:1.55;}
+.four-text strong{font-weight:600;color:var(--charcoal);}
+@media(max-width:600px){.four{grid-template-columns:1fr;}}
+
+.types{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.type-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.type-cell:nth-child(even){background:var(--cream);}
+.type-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.type-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.15;}
+.type-text{font-size:.81rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.types{grid-template-columns:1fr;}}
+
+.context{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.context-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.context-name{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.context-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.context-body p{margin-bottom:.5rem;}
+.context-body p:last-child{margin-bottom:0;}
+.context-q{font-size:.82rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.6rem;margin-top:.5rem;line-height:1.5;}
+
+.tbl-wrap{margin:1.25rem 0;overflow-x:auto;}
+.cmp{width:100%;border-collapse:collapse;font-size:.8rem;min-width:540px;}
+.cmp th,.cmp td{border:1px solid var(--rule);padding:.55rem .7rem;vertical-align:top;line-height:1.45;text-align:left;}
+.cmp th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.cmp td:first-child{background:var(--cream);font-weight:600;color:var(--charcoal);font-size:.76rem;}
+.cmp .fill{color:var(--muted);font-style:italic;}
+
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing,.cmp th,.concept-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .context,.task,.types,.four,.defbox,.inset,.tbl-wrap{break-inside:avoid;}
+  .sec-header{margin:1.9rem 0 1rem;}
+  .context{margin:1.1rem 0;}
+  .four,.types,.defbox,.inset,.pullquote{margin-top:1.2rem;margin-bottom:1.2rem;}
+  .task{margin:1.3rem 0;}
+  .closing{margin:1.2rem 0 0;}
+  .doc-footer{margin-top:1.2rem;}
+  .closing.tight-top{margin-top:.2rem;}
+  .dq-list.tight li{padding-top:.34rem;padding-bottom:.34rem;}
+  .sec-header.tight-top{margin-top:1rem;margin-bottom:.85rem;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+.sec-header.tight-top{margin-top:1.5rem;}
+.closing.tight-top{margin-top:1.4rem;}
+.dq-list.tight li{padding-top:.45rem;padding-bottom:.45rem;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="concept-tag">Concept Library · Money &amp; Value</p>
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Concept Primer</p>
+    <h1 class="masthead-title">Cryptocurrency</h1>
+    <p class="masthead-sub">A new answer to an ancient question — what makes anything money? — and what that answer reveals about the dollar in your pocket, too.</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">Pull a banknote out of your pocket and ask a strange question: why is it worth anything? It's a piece of paper — you can't eat it, wear it, or build with it. It has value for one reason: almost everyone agrees it does, and will take it in exchange for real things. Behind that agreement stands a government that issues it, taxes in it, and stands behind it. Now imagine money with <em>no</em> government and <em>no</em> bank behind it — existing only as entries in a shared digital ledger, kept in agreement by thousands of strangers' computers rather than any central authority. That is <strong>cryptocurrency</strong>, and whatever you make of it, it has done something clarifying: dragged the oldest question in economics back into daylight — <strong>what makes anything money in the first place?</strong></p>
+
+  <p class="body">That question is the spine of this primer. We tend never to ask it, because the money we use feels solid and obvious — until something like cryptocurrency appears and makes the ground visible. Crypto is many things at once: to some a revolution in freedom from banks, to others a speculative frenzy, to others a way to move payments across borders without permission. This primer doesn't sort it into "good" or "bad" — that's not its job. Its job is to use crypto as a lens on what money actually is: grant the real innovation underneath it, then watch the hard questions surface. If value rests on shared belief, what happens when belief is all there is? And if the point was to remove the powerful middlemen, where did the new ones come from?</p>
+
+  <div class="defbox">
+    <p class="defbox-label">The tool, stated plainly</p>
+    <p><strong>Cryptocurrency</strong> is digital money that runs on a <strong>blockchain</strong> — a shared, continuously updated ledger of every transaction, maintained across many independent computers rather than by a single bank or government. No central authority issues it or approves payments; the network itself agrees on what's true. Its supply is set by code, not a central bank. Like all money, its value rests ultimately on whether people <strong>accept and trust it</strong> — but unlike national money, nothing official stands behind that trust.</p>
+  </div>
+
+  <!-- SECTION I -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">The Tool — What Money Is, and What Crypto Actually Built</span></div>
+
+  <p class="body">Start with the question crypto forces, because answering it is the whole foundation. What makes something money? Economists give a functional answer: money is whatever serves as a <em>medium of exchange</em> (people accept it for goods), a <em>store of value</em> (it holds worth over time), and a <em>unit of account</em> (we price things in it). Notice what's <em>not</em> on that list: being made of anything valuable. Gold once backed money, but modern national money is backed by nothing physical — only by collective trust and the government that stands behind it. Money has always been, at bottom, a shared agreement. We just rarely notice, because the agreement is so widely held it feels like a law of nature.</p>
+
+  <p class="body">Crypto's genuine innovation was to ask: could you keep that shared agreement <em>without</em> the trusted central authority — no bank to hold the accounts, no government to issue the currency? Its answer was a real technical achievement worth granting fully:</p>
+
+  <div class="four">
+    <div class="four-cell">
+      <p class="four-label">The old way</p>
+      <p class="four-name">Trust a Central Authority</p>
+      <p class="four-text">A bank keeps the ledger of who owns what and approves each transfer; a government issues the currency and stands behind it. It works, but it means trusting — and depending on — powerful institutions that can freeze accounts, block payments, or print more money.</p>
+    </div>
+    <div class="four-cell">
+      <p class="four-label">The crypto way</p>
+      <p class="four-name">Trust a Shared Ledger</p>
+      <p class="four-text">Thousands of independent computers keep identical copies of the ledger and agree, by rules in code, on every transaction. No single party controls it; no one can quietly alter the record or be asked to freeze your funds. Strangers transact directly — value moves without a middleman's permission.</p>
+    </div>
+  </div>
+
+  <p class="body">Granted fully, this is a real and clever thing: a way for people who don't know or trust each other to agree on a shared record of value with no central institution in charge — solving a genuine computer-science problem many believed unsolvable, and enabling payments that ignore borders and bank hours. Whatever crypto's troubles, the underlying idea — a ledger no one owns, kept honest by math and many participants instead of one authority — is a real contribution. The hard questions come not from denying it, but from following the money question down: <em>if value rests on shared belief, what is crypto's resting on — and who really controls the ledger meant to be controlled by no one?</em></p>
+
+  <div class="pullquote">
+    <p>Money was always a shared story we agreed to believe. Crypto's gift, intended or not, was to make the story visible — and to ask whether we needed the old narrators at all.</p>
+  </div>
+
+  <!-- SECTION II -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">Where the Money Question Bites Back</span></div>
+
+  <p class="body">The innovation is real. But the same money question that reveals what crypto built also exposes two places where the neat story breaks — and both follow directly from the nature of money itself.</p>
+
+  <div class="types">
+    <div class="type-cell">
+      <p class="type-label">Lever 1</p>
+      <p class="type-name">If value is pure belief, belief can vanish</p>
+      <p class="type-text">All money rests on shared belief — but national money has anchors: a government that demands taxes in it, laws that require its acceptance, a central bank steering its value. Many cryptocurrencies have none of these. Their worth rests on belief and almost nothing else, which is exactly why prices can swing wildly: when the only thing holding value up is what the next buyer will pay, confidence alone moves the price, and confidence can evaporate overnight. The same property that frees crypto from central control — nothing official behind it — is what leaves it unanchored. "Backed by belief" is money's deepest truth and crypto's sharpest risk at once.</p>
+    </div>
+    <div class="type-cell">
+      <p class="type-label">Lever 2</p>
+      <p class="type-name">The middlemen come back — just new ones</p>
+      <p class="type-text">The promise was money without gatekeepers. In practice, most people don't run their own ledger node; they use exchanges, wallets, and platforms — new middlemen who can be hacked, fail, freeze funds, or vanish with the money. And control quietly re-concentrates: a handful of large miners or validators, early holders owning enormous shares, founders who shape the code. The system built to remove trusted powerful intermediaries often grows its own — with far less regulation than the banks it meant to replace. "Decentralized" describes the design more reliably than it describes who actually holds the power.</p>
+    </div>
+  </div>
+
+  <div class="inset">
+    <strong>The question to carry everywhere:</strong> when something claims to be money, ask — <em>what is its value actually resting on: a government and economy that stand behind it, real usefulness, or only the belief that someone else will want it later? And who truly controls it — no one, as promised, or a new set of intermediaries who quietly took the gatekeepers' place?</em> Crypto's lesson cuts both ways: all money is belief, so dismissing crypto as "not real" misses the point — but belief with no anchor, and decentralization that recentralizes, are exactly where the promise and the reality part.</p>
+  </div>
+
+  <!-- SECTION III — APPLY (break removed; long intro) -->
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">The Same Question, Three Contexts</span></div>
+
+  <p class="body">Watch the money question sort a case where crypto solves a real problem, a case where value was nothing but belief, and the hard case where genuine use and pure speculation are tangled in the same coin.</p>
+
+  <div class="context">
+    <p class="context-meta">Context One · A real problem solved</p>
+    <p class="context-name">Sending money across a border without a bank</p>
+    <div class="context-body">
+      <p>A worker abroad needs to send earnings home to family in a country with costly, slow, or unreliable banking. Traditional transfers take days and skim heavy fees; sometimes there's no access at all. Crypto lets the value move directly, in minutes, across any border, with no bank's permission. Here the innovation earns its keep: it serves money's core function — a medium of exchange — for people the old system served badly. The value is anchored in genuine use, not just speculation. This is crypto answering the money question well: it <em>is</em> working as money, for a real need.</p>
+      <p class="context-q">Is it being used as money — or only held in hope of selling higher?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Two · Belief with no anchor</p>
+    <p class="context-name">A "joke" coin that soars, then collapses</p>
+    <div class="context-body">
+      <p>A coin created as a joke, backed by nothing and useful for nothing, suddenly soars as buyers pile in expecting to sell to the next buyer at a higher price. For a while everyone's paper wealth climbs — then belief cracks, everyone tries to sell at once, and the price collapses to near zero. Nothing changed about the coin; only the belief did. This is Lever 1 laid bare: value that was <em>only</em> belief, with no government, no use, no anchor beneath it. It reveals the danger hiding inside money's deepest truth — that when belief is the sole support, its disappearance takes everything with it.</p>
+      <p class="context-q">When the price moved, did anything real change — or only what people believed?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Three · The hard case</p>
+    <p class="context-name">A currency with no central bank — for better and worse at once</p>
+    <div class="context-body">
+      <p>Having no government behind a currency is exactly what some people prize: no authority can freeze your funds, inflate the supply, or shut you out — a real refuge for people living under corrupt or oppressive regimes. But the <em>same</em> absence means no one can reverse a theft, recover a scam, cushion a crash, or protect the careless. The feature and the flaw are identical: freedom from control is also freedom from protection. Whether that trade is worth it depends entirely on whose hands the money is in and what they need from it — which is exactly why this is the case to argue over, not resolve.</p>
+      <p class="context-q">Is freedom from authority a liberation or an exposure — and for whom, in what situation?</p>
+    </div>
+  </div>
+
+  <!-- ACTIVITY -->
+  <div class="sec-header tight-top"><span class="sec-roman">IV</span><span class="sec-title">Activity — Is It Money? What Holds It Up?</span></div>
+
+  <p class="body">For each, test it against money's three jobs (medium of exchange, store of value, unit of account), then ask the spine question: what is its value resting on — a government, real use, or only belief — and who actually controls it?</p>
+
+  <div class="tbl-wrap">
+    <table class="cmp">
+      <thead>
+        <tr><th>The thing in question</th><th>Does it work as money? (the 3 jobs)</th><th>What holds its value up? Who controls it?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>A national currency like the dollar</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Crypto used daily to buy real goods</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A coin bought only to resell at a higher price</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Points or credits inside a single app</td><td class="fill">…</td><td class="fill">…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Write</p>
+    <p class="task-title">Make the case that the dollar and a crypto coin are the same kind of thing — then that they're not</p>
+    <p class="task-body">First, argue that national money and cryptocurrency are fundamentally alike: both are worth something only because people believe and accept them. Make that case as strongly as you can. Then argue the opposite — that they're crucially different, because of what stands behind each and who controls it. Which case is more convincing, and what does your answer reveal about what you think money really is?</p>
+    <div class="writelines"><div class="writeline"></div><div class="writeline"></div><div class="writeline"></div></div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="sec-header tight-top"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list tight">
+    <li>If all money — including the dollar — is ultimately backed by shared belief, what actually makes national money more stable than most crypto: a difference of kind, or only of degree?</li>
+    <li>Crypto set out to remove powerful middlemen, yet new ones appeared. Is decentralization without a central authority actually achievable, or does control always re-concentrate somewhere?</li>
+    <li>The same border-crossing freedom that helps a worker send money home also lets people evade rules and oversight. How would you weigh the freedom against what that freedom also enables?</li>
+    <li>What's the smallest rule or protection you'd want around cryptocurrency — enough to guard people from the belief-only collapse and the new middlemen, without crushing the genuine innovation underneath?</li>
+  </ol>
+
+  <div class="closing tight-top">
+    <p>Every form of money is a story a society agrees to believe.<br>Crypto's real gift was to make the story visible — to ask what holds value up,<br>and who stands behind the trust we usually never question.<br>Answer that, and you understand not just crypto, but money itself.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

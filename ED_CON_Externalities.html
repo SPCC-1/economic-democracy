@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Externalities — Concept Library — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+.concept-tag{display:inline-block;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .6rem;margin-bottom:.9rem;}
+
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+
+.defbox{border:1px solid var(--black);background:var(--white);padding:1.1rem 1.4rem;margin:1.5rem 0;}
+.defbox-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.defbox p{font-size:.92rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.defbox strong{font-weight:600;color:var(--black);}
+
+.types{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.type-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.type-cell:nth-child(even){background:var(--cream);}
+.type-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.type-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.15;}
+.type-text{font-size:.81rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.types{grid-template-columns:1fr;}}
+
+.context{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.context-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.context-name{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.context-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.context-body p{margin-bottom:.5rem;}
+.context-body p:last-child{margin-bottom:0;}
+.context-q{font-size:.82rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.6rem;margin-top:.5rem;line-height:1.5;}
+
+.tbl-wrap{margin:1.25rem 0;overflow-x:auto;}
+.cmp{width:100%;border-collapse:collapse;font-size:.8rem;min-width:540px;}
+.cmp th,.cmp td{border:1px solid var(--rule);padding:.55rem .7rem;vertical-align:top;line-height:1.45;text-align:left;}
+.cmp th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.cmp td:first-child{background:var(--cream);font-weight:600;color:var(--charcoal);font-size:.76rem;}
+.cmp .fill{color:var(--muted);font-style:italic;}
+
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing,.cmp th,.concept-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .context,.task,.types,.defbox,.inset,.tbl-wrap{break-inside:avoid;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="concept-tag">Concept Library · Distribution</p>
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Concept Primer</p>
+    <h1 class="masthead-title">Externalities</h1>
+    <p class="masthead-sub">When you make a deal, someone who never agreed to it can end up paying part of the bill — or pocketing part of the benefit. Economics has a name for the people who weren't at the table.</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">Picture a factory that makes something useful and sells it at a fair price. The buyer is happy, the seller is happy, the deal looks clean. But the factory also pours smoke into the air that the whole town breathes — people who never bought anything, never signed anything, and never agreed to anything. They pay, in coughing and doctor's bills, for a transaction they were never part of. That spillover cost, landing on someone outside the deal, is called an <strong>externality</strong>.</p>
+
+  <p class="body">It is one of the most important ideas in all of economics, because it explains a puzzle you see everywhere: how can a deal be good for everyone who made it and still leave the world worse off? The answer is that the people harmed weren't in the room. An externality is simply a cost — or sometimes a benefit — that falls on a third party who had no say. And here is why it matters so much for thinking about power: the costs almost always land on whoever has the least voice, while the people inside the deal keep the gains. Naming the externality is how you bring the people who weren't at the table back into the conversation.</p>
+
+  <div class="defbox">
+    <p class="defbox-label">The tool, stated plainly</p>
+    <p>An <strong>externality</strong> is a cost or benefit from an economic activity that falls on someone who was not part of the decision. A <strong>negative externality</strong> is a cost pushed onto a third party (pollution, noise, strain on shared resources). A <strong>positive externality</strong> is a benefit a third party gets for free (a neighbor's garden, a vaccinated population, publicly funded research).</p>
+  </div>
+
+  <!-- SECTION I -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">The Tool — The Cost That Lands on a Stranger</span></div>
+
+  <p class="body">Start with the clean version, because externalities run in both directions and both are real. A <em>negative</em> externality is a cost the people in a deal push onto others: the factory's smoke, the late-night noise from a business, the strain a huge new water user puts on everyone else's supply. The price of the product doesn't include those costs — so the buyer and seller get a bargain, and the bystanders quietly pick up the rest of the tab.</p>
+
+  <p class="body">A <em>positive</em> externality is the opposite: a benefit that spills over to people who didn't pay for it. When your neighbor keeps a beautiful garden, the whole street enjoys it. When a company or government funds basic research, inventions flow out that everyone builds on for free. When enough people get vaccinated, even those who didn't are safer. Positive externalities are why some genuinely valuable things — research, public health, education — tend to be <em>under</em>-produced by markets alone: the person who pays can't capture all the benefit, so no one wants to foot the bill for something everyone else enjoys.</p>
+
+  <div class="pullquote">
+    <p>An externality is the bill — or the gift — that goes to someone who never sat down at the table.</p>
+  </div>
+
+  <!-- SECTION II -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">Why Externalities Are a Question of Power</span></div>
+
+  <p class="body">The concept is neutral arithmetic — a cost is a cost no matter where it lands. But two features turn it into one of the sharpest tools for seeing how power works.</p>
+
+  <div class="types">
+    <div class="type-cell">
+      <p class="type-label">Lever 1</p>
+      <p class="type-name">Costs flow to the voiceless</p>
+      <p class="type-text">Negative externalities don't land randomly. They flow toward whoever has the least power to refuse them — the neighborhood without lawyers, the workers without options, the town that needs the money. The deal's gains stay with the powerful inside it; the costs drain toward those who weren't asked. An externality map is often a power map.</p>
+    </div>
+    <div class="type-cell">
+      <p class="type-label">Lever 2</p>
+      <p class="type-name">Naming it is contested</p>
+      <p class="type-text">An externality only enters the conversation once someone names it. The party causing it has every incentive to call it "not my problem," "the cost of progress," or simply nothing at all. Whether a spillover counts as a real cost — one that should be paid for — is itself a fight. To name an externality is to demand that someone start paying for it.</p>
+    </div>
+  </div>
+
+  <div class="inset">
+    <strong>The question to carry everywhere:</strong> for any deal, ask — <em>who is paying a cost, or missing a benefit, who never agreed to this? And do they have the power to make it count?</em> Markets price what's inside the transaction. Externalities are everything the price leaves out. Spotting them — and asking who got stuck with them — is how you see the full ledger instead of the convenient one.
+  </div>
+
+  <!-- SECTION III — APPLY -->
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">The Same Tool, Three Contexts</span></div>
+
+  <p class="body">Watch the same idea — a cost or benefit landing on someone outside the deal — show up in three very different places.</p>
+
+  <div class="context">
+    <p class="context-meta">Context One · A negative externality</p>
+    <p class="context-name">The data center's strain on the town</p>
+    <div class="context-body">
+      <p>A company builds a data center; it and its distant customers get the benefit. But the higher electric rates, the drawn-down water, the noise and heat land on residents who signed nothing and chose nothing. Those are negative externalities — costs pushed outside the deal onto the least powerful party. The company's bargain looks great precisely because the town is quietly paying part of its bill.</p>
+      <p class="context-q">Who's paying who never agreed — and can they make it count?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Two · A positive externality</p>
+    <p class="context-name">Publicly funded research</p>
+    <div class="context-body">
+      <p>A government lab funds basic science with no product in mind. Decades later, companies build trillion-dollar industries on top of that freely available knowledge — the internet, GPS, the foundations of modern computing. That's a positive externality on a massive scale: the public paid, and the benefit spilled out to everyone, including firms that never funded a dollar of it. It also explains why such research is usually public: no single company would pay for a benefit it can't keep to itself.</p>
+      <p class="context-q">Who's benefiting for free — and did the party who paid get credited?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Three · A contested externality</p>
+    <p class="context-name">A platform's effect on attention</p>
+    <div class="context-body">
+      <p>A platform connects people and runs on advertising — buyer and seller, both satisfied. But if its design floods a society with outrage and erodes a shared sense of truth, that damage lands on everyone, including people who never used it. Is that a real externality the company should answer for, or just culture changing? That fight — over whether a spillover even counts as a cost — is exactly Lever 2. Naming it is the first move toward making someone pay for it.</p>
+      <p class="context-q">Is this a real cost someone should pay for — and who's arguing it isn't?</p>
+    </div>
+  </div>
+
+  <!-- ACTIVITY -->
+  <div class="sec-header"><span class="sec-roman">IV</span><span class="sec-title">Activity — Find Who Wasn't at the Table</span></div>
+
+  <p class="body">For each activity below, name the externality — is it negative (a cost pushed out) or positive (a benefit spilling out)? — name who it lands on, and say whether that party has the power to make it count.</p>
+
+  <div class="tbl-wrap">
+    <table class="cmp">
+      <thead>
+        <tr><th>The activity</th><th>Externality (negative / positive) &amp; who it lands on</th><th>Can they make it count?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>A factory upstream from a fishing town</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A homeowner installs solar panels</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A company automates and lays off a town's main employer</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A university opens its research to the public</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>An airport expands its flight path over a neighborhood</td><td class="fill">…</td><td class="fill">…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Write</p>
+    <p class="task-title">An externality you live inside</p>
+    <p class="task-body">Name one externality — good or bad — that affects you or your community but that you had no say in. Who made the decision that created it? Who benefits, who pays, and does the party stuck with the cost have any power to change it?</p>
+    <div class="writelines"><div class="writeline"></div><div class="writeline"></div><div class="writeline"></div></div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="sec-header"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list">
+    <li>A deal can make everyone in it better off and still leave the world worse off. How is that possible — and what does it reveal about judging an economy only by whether its trades are "voluntary"?</li>
+    <li>Negative externalities tend to flow toward those with the least power to refuse them. Is that a coincidence of economics, or a feature of how power works? Can you think of an exception?</li>
+    <li>Positive externalities — research, public health, education — are often under-produced by markets because no one can capture the full benefit. Does that justify the public paying for them? Where's the limit?</li>
+    <li>Who should decide when a spillover "counts" as a real cost that someone has to pay for — the market, the government, the people harmed? What happens when the people harmed have no voice?</li>
+  </ol>
+
+  <div class="closing">
+    <p>Every price tells you what the deal cost the people who made it.<br>The externality is everything it cost the people who didn't.<br>Learning to find who wasn't at the table —<br>and who got stuck with the bill — is how you read the whole ledger.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>
