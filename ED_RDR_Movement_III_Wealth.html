@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movement III — Wealth and the Philanthropy Handoff — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+
+/* ── Masthead ── */
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+
+/* ── Body ── */
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+
+/* ── Pull quote ── */
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+
+/* ── Section header ── */
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+
+/* ── Beat label ── */
+.beat{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:1.5rem 0 .4rem;border-bottom:1px solid var(--rule);padding-bottom:.3rem;}
+
+/* ── Voice cards ── */
+.voice{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.voice-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;display:flex;gap:.75rem;flex-wrap:wrap;}
+.voice-name{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.voice-claim{font-size:.9rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.7rem;margin-bottom:.55rem;line-height:1.5;}
+.voice-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.voice-body p{margin-bottom:.5rem;}
+.voice-body p:last-child{margin-bottom:0;}
+
+/* ── Quadrant grid ── */
+.quad{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.quad-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.quad-cell:nth-child(even){background:var(--cream);}
+.quad-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.quad-name{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.2;}
+.quad-text{font-size:.8rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.quad{grid-template-columns:1fr;}}
+
+/* ── Inset note ── */
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+
+/* ── Task block ── */
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+
+/* ── Write lines ── */
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+
+/* ── Discussion questions ── */
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+
+/* ── Closing ── */
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+
+/* ── Footer ── */
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .voice,.task,.quad,.inset{break-inside:avoid;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Student Reader &nbsp;·&nbsp; Movement III</p>
+    <h1 class="masthead-title">Wealth and the Philanthropy Handoff</h1>
+    <p class="masthead-sub">When great fortunes flow back to society as gifts, is that democracy working — or democracy being quietly replaced? The last of three arguments about the forces shaping your life.</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">You have seen how the modern economy concentrates wealth: platforms and machines are assets, and assets compound, so the people who own them pull steadily ahead while most people live on wages that do not. Now follow that money one more step. When a fortune grows large enough — larger than most countries' budgets — its owner eventually faces a question the rest of us never will: what to do with more money than any person could spend. The most admired answer, for over a century, has been to give it away. To build the library, fund the cure, endow the school.</p>
+
+  <p class="body">This is the part of the unit most likely to make you uncomfortable, because it implicates people you may admire. The generosity is often real. The good it does is often real. And yet there is a question hiding inside the gift, and it is the sharpest question in the whole unit: <strong>when a billionaire decides what gets funded, who voted for that?</strong></p>
+
+  <!-- BEAT 1 -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">Start With What the Gifts Gave Us</span></div>
+
+  <p class="beat">Beat one · Embrace before you critique</p>
+
+  <p class="body">Begin with gratitude, because it is earned. American philanthropy built an astonishing amount of what you use and take for granted. Thousands of public libraries exist because one steel magnate decided to fund them. Universities, research institutes, hospitals, museums, scholarships — much of it was paid for by private fortunes given away. Diseases have been pushed toward extinction by foundation money. When a donor funds a cure, a school, or a library, real people's lives genuinely get better, often at a scale and speed government never matched.</p>
+
+  <p class="body">And there is a serious moral idea underneath it, not just generosity. More than a century ago, Andrew Carnegie argued in <em>The Gospel of Wealth</em> that a great fortune is not yours to keep or to hand to your heirs — it is a public trust you are obligated to give back in your lifetime, for the good of all. By that standard, the worst thing a rich person can do is die rich, having hoarded what should have circulated. That is a demanding ethic, and many of the gifts you benefit from flow from it. Any honest account of philanthropy has to start by granting how much good it has done.</p>
+
+  <div class="pullquote">
+    <p>The library, the cure, the scholarship — much of it was a gift from a private fortune. Start by being honest about that.</p>
+  </div>
+
+  <!-- BEAT 2 -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">Now Find the Frontier — the Handoff</span></div>
+
+  <p class="beat">Beat two · Where the gains meet their cost</p>
+
+  <p class="body">Here is the turn, and it is structural, not personal. For most of the last century, the things a society needs — schools, healthcare, roads, retirement, scientific research — were understood to be the public's job, paid for by taxes and decided through democratic government. But recall what you learned about wages and assets: the tax system was built to tax <em>wages</em>, and wealth has migrated to <em>assets</em>. As the wealth moves out of reach of the old tax base, the public's capacity to fund its own priorities shrinks — even as the economy grows.</p>
+
+  <p class="body">Into that shrinking space, private philanthropy steps. As government pulls back or runs short, the expectation grows that private giving will fill the gap — fund the school, save the program, back the research. This is the <strong>handoff</strong>: the responsibility for shaping society's priorities quietly passing from the public, who vote, to the donor, who does not have to. And that is where the deepest tension in this unit lives. Philanthropy is the substitution of <em>private agency</em> for <em>public capacity</em>. The billionaire's freedom to direct enormous resources expands; the public's shared power to decide what gets funded contracts.</p>
+
+  <p class="body">Notice what the gift is and is not. A gift is generous. But a gift is also a <em>choice made by one person</em> about what a society should prioritize — which disease, which school, which cause — with no vote, no debate, and no way for the public to say "we'd rather fund something else." When the library got built, no one chose it but the man who paid for it. That can be wonderful. It is also, structurally, a transfer of the power to decide — away from the many, toward the one who holds the fortune.</p>
+
+  <div class="inset">
+    <strong>This is not "philanthropy is bad."</strong> The giving is often genuine and the good often real. The tension is that the same act expands one person's freedom to shape society while it may weaken the public's shared capacity to shape it democratically — especially as private giving is increasingly expected to do the work that public budgets once did. Generosity and a loss of democratic control can be the very same gift.
+  </div>
+
+  <!-- BEAT 3 -->
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">The Live Argument</span></div>
+
+  <p class="beat">Beat three · The strongest voices, in their own terms</p>
+
+  <p class="body">Here is the argument, built around a deliberately hard case. Read each voice as the strongest version of itself.</p>
+
+  <div class="voice">
+    <p class="voice-meta"><span>The Giver's Creed</span><span>Quadrant IV</span></p>
+    <p class="voice-name">Andrew Carnegie — the Gospel of Wealth</p>
+    <p class="voice-claim">"The accumulation of great wealth carries a moral obligation to use it for the public good."</p>
+    <div class="voice-body">
+      <p>Carnegie's case is that the person who built the fortune is also the person best able to give it away well. He earned it through judgment and energy; that same judgment can direct it to public good more wisely and more boldly than a slow, timid government ever would. Private giving, guided by duty, can take risks and move fast where the state cannot. The rich are not entitled to keep their fortunes — they are obligated to return them — but they should do the returning themselves, as stewards, not hand it to bureaucrats. The library got built because one man decided, and acted.</p>
+      <p><strong>Where critics press:</strong> if the fortune came partly from paying workers as little as possible — Carnegie's own steel mills were sites of brutal labor conflict — is giving it back later the same as not having concentrated it in the first place? And who elected the steward?</p>
+    </div>
+  </div>
+
+  <div class="voice">
+    <p class="voice-meta"><span>The Hard Case</span><span>Quadrant I / II</span></p>
+    <p class="voice-name">MacKenzie Scott — giving without strings</p>
+    <p class="voice-claim">"Wealth should be redistributed quickly, directly, and with trust in the recipients."</p>
+    <div class="voice-body">
+      <p>Scott is the test case that makes this argument hard. She gave away billions — fast, with no strings, no foundation controlling the money, no demand that recipients dance to her agenda. She publicly named who got the money. She argued the people closest to a problem know best how to solve it, and deliberately gave up the control that donors usually keep. If the worry about philanthropy is that donors hoard power, Scott did the opposite: she gave the power away with the money. By almost every measure, she did it <em>better</em> than the traditional model.</p>
+      <p><strong>And yet the critique still lands:</strong> she still chose who received it. The decision about which communities and causes mattered remained hers alone, because the fortune was hers alone. That is the point worth sitting with — the objection to philanthropy was never mainly about <em>competence</em> or <em>control</em>. It was about <em>who chose</em>. Even done perfectly, a private gift is still a private choice about public priorities.</p>
+    </div>
+  </div>
+
+  <div class="voice">
+    <p class="voice-meta"><span>The Structural Critic</span><span>Quadrant I</span></p>
+    <p class="voice-name">The democratic objection — taxes, not gifts</p>
+    <p class="voice-claim">Philanthropy, however generous, cannot substitute for democratic decision-making.</p>
+    <div class="voice-body">
+      <p>This case grants everything good about the gifts and still objects. A gift, no matter how large or well-meant, is decided by one person; a budget is decided by many. When society's priorities are set by which billionaires care about which causes, the things no donor finds interesting go unfunded, and the public never gets a vote. The existence of fortunes large enough to substitute for public budgets is itself, on this view, a sign that something has gone wrong — that wealth was allowed to concentrate so far that a handful of people now privately decide questions a democracy should decide together. The answer is not better giving. It is a fair tax system and a public strong enough not to need the gift.</p>
+      <p><strong>Where critics press:</strong> government is slow, captured, and wasteful too — is "let the public decide" naive about how badly the public sometimes decides, and would taxing fortunes away lose the bold, fast good that private giving sometimes does?</p>
+    </div>
+  </div>
+
+  <!-- BEAT 4 -->
+  <div class="sec-header"><span class="sec-roman">IV</span><span class="sec-title">Place It, and Make the Move</span></div>
+
+  <p class="beat">Beat four · Where it sits, and what you would do</p>
+
+  <p class="body">Four ways of seeing the philanthropy handoff sit on the matrix. Each is a coherent answer to who should decide how concentrated wealth flows back to society. None wins by default.</p>
+
+  <div class="quad">
+    <div class="quad-cell">
+      <p class="quad-label">Quadrant I — Public power, democratic accountability</p>
+      <p class="quad-name">Tax it, don't wait for the gift</p>
+      <p class="quad-text">Society's priorities should be set by the public, not by which donors care about what. Tax large fortunes and fund shared needs through democratic budgets. A gift is no substitute for a vote. Don't rely on generosity for what justice should provide.</p>
+    </div>
+    <div class="quad-cell">
+      <p class="quad-label">Quadrant II — Private markets, democratic guardrails</p>
+      <p class="quad-name">Welcome the giving, set the rules</p>
+      <p class="quad-text">Keep private philanthropy — it does real good and moves fast — but put democratic guardrails around it: transparency, limits on using gifts for influence, a tax floor so the public's core needs don't depend on a donor's mood. The reform position.</p>
+    </div>
+    <div class="quad-cell">
+      <p class="quad-label">Quadrant III — Public power, expert control</p>
+      <p class="quad-name">Direct the resources through expertise</p>
+      <p class="quad-text">Whether public or private, large-scale giving should be guided by those who understand the problems — professional foundations, expert institutions, evidence about what works. The public sets broad goals; experts allocate. Get the targeting right.</p>
+    </div>
+    <div class="quad-cell">
+      <p class="quad-label">Quadrant IV — Private power, builder control</p>
+      <p class="quad-name">Thank the giver, leave them be</p>
+      <p class="quad-text">The person who built the fortune earned the right to direct it, and does it more boldly than government would. Taxing it away just hands it to a slow bureaucracy. Private giving is the best of both worlds — wealth returned, by the people best able to deploy it.</p>
+    </div>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Place it</p>
+    <p class="task-title">Where does the philanthropy handoff sit — and where do you?</p>
+    <p class="task-body">Mark where you think large-scale giving actually sits today. Then mark where you believe it should sit. The gap between those points is your argument — and notice whether MacKenzie Scott's example moved you.</p>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Make the move</p>
+    <p class="task-title">Name the smallest reform that grows the economy while expanding democracy — and its cost</p>
+    <p class="task-body">The unit's recurring test, applied to wealth. Propose one specific mechanism — not "tax the rich," but an actual design — that would keep the genuine good large fortunes can do (the engine) while restoring the public's democratic say over its own priorities (democracy). Then, honestly: what does it cost, and who pays?</p>
+    <div class="writelines">
+      <div class="writeline"></div>
+      <div class="writeline"></div>
+      <div class="writeline"></div>
+      <div class="writeline"></div>
+    </div>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Test your definition</p>
+    <p class="task-title">Back to flourishing</p>
+    <p class="task-body">Return to your definition of flourishing one last time. Does a society where private giving funds the common good help people flourish, or does it depend on whether you are someone a donor happens to care about? Does anything here make you want to revise your definition — the one you will defend in the capstone?</p>
+    <div class="writelines">
+      <div class="writeline"></div>
+      <div class="writeline"></div>
+    </div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="sec-header"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list">
+    <li>MacKenzie Scott gave more, faster, and with fewer strings than almost any donor in history — and critics still objected. Put the objection in your own words. Is it fair, or is it asking her to solve a problem that isn't hers?</li>
+    <li>Carnegie said the worst thing a rich person can do is die rich. Is that a demanding moral standard worth admiring — or a way of making concentration look noble after the fact?</li>
+    <li>"A gift is decided by one person; a budget is decided by many." Is that the heart of the objection to philanthropy? When, if ever, is one person deciding better than many?</li>
+    <li>If great fortunes were taxed enough to fund public needs directly, we might lose some of the bold, fast good that private giving does. Is that a trade worth making? Which quadrant's answer convinces you, and why?</li>
+  </ol>
+
+  <div class="closing">
+    <p>The gift built the library, and the library was real.<br>But someone chose the library, and no one chose the chooser.<br>Whether that is generosity or a quiet handoff of power<br>is the last question this unit asks you —<br>and the first one you'll have to answer for yourself.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

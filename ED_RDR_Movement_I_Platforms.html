@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movement I — Platforms — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+
+/* ── Masthead ── */
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+
+/* ── Body ── */
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+
+/* ── Pull quote ── */
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+
+/* ── Section header ── */
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+
+/* ── Beat label ── */
+.beat{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:1.5rem 0 .4rem;border-bottom:1px solid var(--rule);padding-bottom:.3rem;}
+
+/* ── Voice cards ── */
+.voice{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.voice-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;display:flex;gap:.75rem;flex-wrap:wrap;}
+.voice-name{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.voice-claim{font-size:.9rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.7rem;margin-bottom:.55rem;line-height:1.5;}
+.voice-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.voice-body p{margin-bottom:.5rem;}
+.voice-body p:last-child{margin-bottom:0;}
+
+/* ── Quadrant grid ── */
+.quad{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.quad-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.quad-cell:nth-child(even){background:var(--cream);}
+.quad-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.quad-name{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.2;}
+.quad-text{font-size:.8rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.quad{grid-template-columns:1fr;}}
+
+/* ── Inset note ── */
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+
+/* ── Task block ── */
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+
+/* ── Write lines ── */
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+
+/* ── Discussion questions ── */
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+
+/* ── Closing ── */
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+
+/* ── Footer ── */
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .voice,.task,.quad,.inset{break-inside:avoid;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Student Reader &nbsp;·&nbsp; Movement I</p>
+    <h1 class="masthead-title">Platforms</h1>
+    <p class="masthead-sub">Does this technology help people flourish — or capture the attention that flourishing requires? The first of three arguments about the forces shaping your life.</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">You already know what a platform is: an owned thing that profits from the connection other people need, the ancient structure of the market square running at the speed of software. And you already know that a platform is an asset — something its owners hold that earns from the activity of millions, most of whom are paid in wages, attention, or nothing at all. Now comes the harder question, the one this whole unit is built to ask: do these platforms help human beings <em>flourish</em>?</p>
+
+  <p class="body">Hold off on your answer. The honest thing — and the difficult thing — is to begin by admitting how much these platforms have given us, before saying a word against them. This is not a document that will tell you platforms are good or bad. It is a document that will put the strongest people on each side in front of you, in their own words, and then ask you to decide and defend it.</p>
+
+  <!-- BEAT 1 -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">Start With What They Gave Us</span></div>
+
+  <p class="beat">Beat one · Embrace before you critique</p>
+
+  <p class="body">Be specific and be generous, because all of it is true. You carry, for free, a device that connects you to nearly every other human being on earth and to most of the knowledge our species has ever recorded. A teenager with no money and no connections can reach an audience of millions. Families separated by oceans see each other's faces daily. A protest can be organized in an afternoon. A small business can find its first thousand customers without a storefront, a loan, or permission from anyone. People who were once voiceless — because the old gatekeepers, the newspapers and networks and record labels, never chose them — can now simply publish, and be found.</p>
+
+  <p class="body">This is not a small thing, and it is not a trick. It is one of the largest expansions of <strong>individual agency</strong> in human history. Measured against the world of fifty years ago, billions of people can now do things — learn, connect, organize, create, sell — that were once reserved for the wealthy, the credentialed, or the lucky. Any honest account of platforms has to start here. If your critique cannot survive a fair statement of these gains, it is not yet a serious critique.</p>
+
+  <div class="pullquote">
+    <p>Before you ask what a platform costs, you have to be honest about what it gave — to you, and to people who never had a voice before.</p>
+  </div>
+
+  <!-- BEAT 2 -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">Now Find the Frontier</span></div>
+
+  <p class="beat">Beat two · Where the gains meet their cost</p>
+
+  <p class="body">Here is the turn. The same design that gives you all that reach has a second face. Recall the third difference between a digital platform and an old marketplace: most of these platforms are free to you because <em>you are not the customer</em>. The customer is the advertiser, and the product being sold is your attention — and the detailed record of everything you do. The platform earns more the longer it holds your eyes. So it is built, with enormous skill, to hold them.</p>
+
+  <p class="body">That is where individual agency and a second value begin to pull against each other. When millions of people get their understanding of the world from systems engineered to maximize <em>engagement</em> rather than <em>accuracy</em>, something happens to the thing a democracy depends on: a shared sense of what is true. Content that enrages travels faster than content that informs, because rage holds attention. The result can be a society that is more connected than ever and less able to agree on basic facts — or to talk across its divisions at all.</p>
+
+  <p class="body">This is the cost to <strong>public capacity</strong> — our shared ability to deliberate, to trust common information, to govern ourselves. And notice the shape of the problem, because it is the shape of this whole unit: the platform <em>expands</em> your individual agency (your reach, your voice, your access) while it may <em>erode</em> the public capacity that a free society needs to function. Both things are happening at once. That is the frontier. That is what makes this hard.</p>
+
+  <div class="inset">
+    <strong>This is not "platforms are bad."</strong> It is something more uncomfortable: the very features that make a platform so good for you as an individual may be the same features that strain us as a public. You cannot fix the second without touching the first. That is the tension every voice below is trying to resolve — and they resolve it in genuinely different ways.
+  </div>
+
+  <!-- BEAT 3 -->
+  <div class="sec-header break-before"><span class="sec-roman">III</span><span class="sec-title">The Live Argument</span></div>
+
+  <p class="beat">Beat three · The strongest voices, in their own terms</p>
+
+  <p class="body">Here are three people who have looked at exactly this and reached different conclusions. Read each as the strongest version of itself. You are not being asked to agree — you are being asked to understand each well enough that its holder would say, "yes, that is what I believe."</p>
+
+  <div class="voice">
+    <p class="voice-meta"><span>The Builder</span><span>Quadrant IV</span></p>
+    <p class="voice-name">Mark Zuckerberg — connection as the good itself</p>
+    <p class="voice-claim">"Connecting people at scale creates powerful networks that can be organized, analyzed, and monetized."</p>
+    <div class="voice-body">
+      <p>The builder's case is that connection is not a side effect — it is the point, and it is good. More people able to reach each other is more human freedom, more community, more opportunity. The advertising model is what makes it <em>free</em>, which is what makes it available to billions rather than only those who can pay. Yes, the system can be misused, but the answer to a tool's misuse is to improve the tool, not to break the thing that connected the world. A private company built this because no government or nonprofit did. Judge it by what it enabled.</p>
+      <p><strong>Where his critics press:</strong> if a single private company shapes what billions of people see and believe, is "improve the tool" enough — when the company's profit depends on holding attention, not on telling the truth?</p>
+    </div>
+  </div>
+
+  <div class="voice">
+    <p class="voice-meta"><span>The Regulator</span><span>Quadrant I</span></p>
+    <p class="voice-name">Lina Khan — the question is power, not price</p>
+    <p class="voice-claim">"Markets are structured through law, and those structures determine how power is distributed."</p>
+    <div class="voice-body">
+      <p>Khan's case is that a free service can still be dangerous. The old way of judging a company asked one question: are prices going up? But a platform that charges you nothing can still hold enormous power — over who gets seen, who can sell, who can compete, what information spreads. That power is cumulative: network effects and control of data let a dominant platform lock in its position so no rival can challenge it. A democracy, she argues, cannot let private power over a shared public space grow beyond the reach of public rules. Markets are designed by law; we can design them better.</p>
+      <p><strong>Where her critics press:</strong> can government regulators move fast enough, and understand the technology well enough, to shape these markets without slowing the innovation that produced the gains in the first place?</p>
+    </div>
+  </div>
+
+  <div class="voice">
+    <p class="voice-meta"><span>The Critic</span><span>Quadrant I edge</span></p>
+    <p class="voice-name">Shoshana Zuboff — the business model is the problem</p>
+    <p class="voice-claim">The real product is the prediction and shaping of your behavior — sold to whoever will pay.</p>
+    <div class="voice-body">
+      <p>Zuboff's case goes deeper than any single company. She argues that the dominant platforms run on a model she calls surveillance capitalism: they watch what you do, build a detailed model of you, and sell the ability to predict — and quietly nudge — your behavior. The danger is not just lost privacy. It is that a system designed to modify what billions of people do, for profit, sits underneath public life without anyone having voted for it. The harm is structural, built into how the money is made, which means tweaking features will not fix it.</p>
+      <p><strong>Where her critics press:</strong> if people freely choose to use these services and value them, is calling it "surveillance" too dark — and what exactly would a better model look like without losing what people love?</p>
+    </div>
+  </div>
+
+  <!-- BEAT 4 — PLACE IT -->
+  <div class="sec-header"><span class="sec-roman">IV</span><span class="sec-title">Place It, and Make the Move</span></div>
+
+  <p class="beat">Beat four · Where it sits, and what you would do</p>
+
+  <p class="body">Now the work becomes yours. Four ways of seeing the platform sit on the matrix you have used all year. Each is a coherent answer to how individual agency and public capacity should be balanced. None wins by default.</p>
+
+  <div class="quad">
+    <div class="quad-cell">
+      <p class="quad-label">Quadrant I — Public power, democratic accountability</p>
+      <p class="quad-name">Treat the platform as a public concern</p>
+      <p class="quad-text">A platform billions depend on is a public square, not just a private product. Public rules — on data, competition, transparency — are how we protect the shared capacity it threatens. Agency is real, but it has to answer to the public.</p>
+    </div>
+    <div class="quad-cell">
+      <p class="quad-label">Quadrant II — Private markets, democratic guardrails</p>
+      <p class="quad-name">Keep it private, add guardrails</p>
+      <p class="quad-text">The market built these gains; don't nationalize them. But add targeted limits — privacy rules, competition enforcement, disclosure — so the public square is protected without killing the engine. The reform position.</p>
+    </div>
+    <div class="quad-cell">
+      <p class="quad-label">Quadrant III — Public power, expert control</p>
+      <p class="quad-name">Let experts manage it</p>
+      <p class="quad-text">These systems are too complex for the public or its politicians to govern directly. Trust specialized regulators and technologists to set the rules and adjust them. Get the management right; democracy works through delegation.</p>
+    </div>
+    <div class="quad-cell">
+      <p class="quad-label">Quadrant IV — Private power, builder control</p>
+      <p class="quad-name">Leave the builders alone</p>
+      <p class="quad-text">The builders created enormous value precisely because they were free to move fast. Regulation will slow them and protect no one. The market and user choice are the real accountability — if people dislike a platform, they leave.</p>
+    </div>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Place it</p>
+    <p class="task-title">Where does the platform economy sit — and where do you?</p>
+    <p class="task-body">Mark where you think today's major platforms actually sit on the matrix right now. Then mark where <em>you</em> believe they should sit. Are those the same point? If not, the gap between them is your argument.</p>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Make the move</p>
+    <p class="task-title">Name the smallest reform that grows the economy while expanding democracy — and its cost</p>
+    <p class="task-body">This is the unit's recurring test, applied to platforms. Propose one specific change — not "regulate them," but an actual mechanism — that would keep the gains these platforms created (the engine) while strengthening the public's ability to govern the shared space they run (democracy). Then, honestly: what does your reform cost, and who pays it?</p>
+    <div class="writelines">
+      <div class="writeline"></div>
+      <div class="writeline"></div>
+      <div class="writeline"></div>
+      <div class="writeline"></div>
+    </div>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Test your definition</p>
+    <p class="task-title">Back to flourishing</p>
+    <p class="task-body">Return to the definition of flourishing you wrote at the start of this unit. Does the platform economy serve it, threaten it, or both? Does anything you've read here make you want to revise your definition? If so, what — and why?</p>
+    <div class="writelines">
+      <div class="writeline"></div>
+      <div class="writeline"></div>
+    </div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="sec-header"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list">
+    <li>The builder says the answer to a tool's misuse is to improve the tool. The critic says the harm is in how the money is made, so improving features won't fix it. Who is more persuasive — and what evidence would change your mind?</li>
+    <li>"More connected than ever, less able to agree on what's true." Is that a fair description of the world platforms built? Have you felt it in your own life?</li>
+    <li>A railroad was eventually forced to serve everyone fairly because the public depended on it. Should a platform that billions depend on carry the same kind of public obligation — or is leaving a platform easy enough that it stays a private choice?</li>
+    <li>Of the four quadrant positions, which best protects human flourishing as you define it? State the strongest case for the one you reject most.</li>
+  </ol>
+
+  <div class="closing">
+    <p>The platform gave you a voice the world never offered your grandparents.<br>It may also be quietly reshaping what all of us can know together.<br>Both are true. Your job is not to choose a side to belong to —<br>it is to weigh them honestly, take a position, and defend it.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

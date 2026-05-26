@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Standards Crosswalk — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0d0d0d;--ink:#1a1a1a;--charcoal:#2d2d2d;--mid:#5a5a5a;--muted:#8a8a8a;
+  --rule:#d0ccc6;--paper:#f7f5f0;--cream:#efede7;--warm:#e8e4db;--white:#fff;--gold:#8a6f3e;
+  --full:#1f6f43;--partial:#9a7a1e;--gap:#9a3b2e;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;font-size:14px;}
+.page{max-width:980px;margin:0 auto;padding:0 2rem 4rem;}
+
+.masthead{border-bottom:3px solid var(--black);padding:2rem 0 1.4rem;margin-bottom:1.5rem;}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.7rem;}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;color:var(--black);line-height:1.04;letter-spacing:-.02em;margin-bottom:.5rem;}
+.lede{font-size:.98rem;font-style:italic;color:var(--mid);max-width:680px;line-height:1.6;}
+
+.note{background:var(--cream);border-left:3px solid var(--gold);padding:.8rem 1.1rem;margin:1.25rem 0;font-size:.85rem;line-height:1.6;color:var(--charcoal);}
+.note strong{color:var(--black);}
+
+.legend{display:flex;flex-wrap:wrap;gap:1.25rem;margin:1.25rem 0;padding:.85rem 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);font-size:.8rem;}
+.legend-item{display:flex;align-items:center;gap:.45rem;}
+.dot{width:.7rem;height:.7rem;border-radius:50%;flex-shrink:0;}
+.dot.full{background:var(--full);}
+.dot.partial{background:var(--partial);}
+.dot.gap{background:var(--gap);}
+.legend-item b{font-weight:600;}
+
+.sec-head{display:flex;align-items:baseline;gap:1rem;border-bottom:2px solid var(--black);padding-bottom:.5rem;margin:2.5rem 0 .3rem;}
+.sec-num{font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--gold);font-weight:500;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;color:var(--black);}
+.sec-note{font-size:.85rem;font-style:italic;color:var(--mid);margin:.5rem 0 1.1rem;max-width:720px;}
+
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.8rem;}
+th,td{border:1px solid var(--rule);padding:.5rem .6rem;vertical-align:top;text-align:left;line-height:1.45;}
+th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+tbody tr:nth-child(even){background:var(--cream);}
+.pillar{font-weight:600;color:var(--charcoal);width:20%;}
+.cov{width:1%;white-space:nowrap;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:.62rem;font-weight:500;}
+.cov .dot{display:inline-block;margin:0 auto;}
+.maps{width:42%;}
+.maps b{font-weight:600;color:var(--black);}
+.gapcell{color:var(--gap);font-style:italic;}
+
+.cdim{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin:1rem 0;}
+.cdim-cell{background:var(--white);padding:.85rem 1.1rem;}
+.cdim-cell:nth-child(even){background:var(--cream);}
+.cdim-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:.25rem;}
+.cdim-name{font-family:'Playfair Display',serif;font-size:.98rem;font-weight:700;color:var(--black);margin-bottom:.3rem;}
+.cdim-text{font-size:.8rem;font-weight:300;color:var(--ink);line-height:1.55;}
+@media(max-width:680px){.cdim{grid-template-columns:1fr;}}
+
+.summary{border:1px solid var(--black);background:var(--white);padding:1.1rem 1.35rem;margin:1.25rem 0;}
+.summary p{font-size:.88rem;line-height:1.7;margin-bottom:.6rem;}
+.summary p:last-child{margin-bottom:0;}
+.summary strong{font-weight:600;color:var(--black);}
+
+.foot{border-top:2px solid var(--black);margin-top:3rem;padding-top:1rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;}
+.foot-l{font-size:.72rem;color:var(--charcoal);font-weight:600;}
+.foot-r{font-family:'IBM Plex Mono',monospace;font-size:.6rem;color:var(--muted);letter-spacing:.05em;}
+@media print{body{font-size:9.5pt;-webkit-print-color-adjust:exact;print-color-adjust:exact;}.page{max-width:100%;padding:0;}th,.dot,.sec-head{-webkit-print-color-adjust:exact;print-color-adjust:exact;}table,.cdim,.summary{break-inside:avoid;}}
+@media(max-width:680px){.page{padding:0 1.1rem 3rem;}}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Adoption Resource</p>
+    <h1 class="title">Standards Crosswalk</h1>
+    <p class="lede">How the Economic Democracy concept library and teaching units map to the standards schools already recognize — the Council for Economic Education's economics pillars and the C3 inquiry dimensions. Built to be standards-completing, not standards-rejecting: it shows where the course covers the existing economics canon, and is honest about where it does not.</p>
+  </div>
+
+  <div class="note">
+    <strong>How to read this.</strong> Coverage is marked at the <strong>pillar level</strong> — the grain at which a course actually aligns — not by individual sub-benchmark code. CEE distributes its full numbered benchmark text as a published volume; exact sub-benchmark numbering should be confirmed against that document before any formal submission. Pillar <em>themes</em> below reflect the CEE 2025 third edition (18 pillars, ~260 benchmarks, Technology new this edition), verified against current CEE/EconEdLink sources, May 2026.
+  </div>
+
+  <div class="legend">
+    <div class="legend-item"><span class="dot full"></span><b>Full</b> — a primer or unit centers this pillar</div>
+    <div class="legend-item"><span class="dot partial"></span><b>Partial</b> — touched within other materials; not its own primer</div>
+    <div class="legend-item"><span class="dot gap"></span><b>Gap</b> — not yet built <span style="color:var(--mid);">(none remain among the CEE pillars; shown for reference)</span></div>
+  </div>
+
+  <!-- ============ CEE CROSSWALK ============ -->
+  <div class="sec-head"><span class="sec-num">01</span><span class="sec-title">CEE Economics Pillars → Built Materials</span></div>
+  <p class="sec-note">Each row maps a CEE 2025 economics pillar (by verified theme) to the concept primers and units that cover it. The course is strongest on the microeconomic foundations, market structure, and the money/ownership material — its distinctive territory — and, with the policy and labor primers now in place, also covers the macro-stabilization pillars a traditional sequence centers. The result is broad pillar coverage <em>plus</em> the power/ownership depth a conventional course lacks.</p>
+
+  <table>
+    <thead>
+      <tr><th class="pillar">CEE pillar (theme)</th><th class="cov">Cov.</th><th class="maps">Mapped primers / units</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="pillar">Scarcity &amp; choice</td><td class="cov"><span class="dot full"></span></td><td class="maps"><b>Scarcity</b>; <b>Opportunity Cost</b></td><td>The foundational pair; directly on-pillar.</td></tr>
+      <tr><td class="pillar">Decision-making &amp; incentives</td><td class="cov"><span class="dot full"></span></td><td class="maps"><b>Incentives</b>; <b>Opportunity Cost</b></td><td>Incentives primer centers predictable response to rewards/penalties.</td></tr>
+      <tr><td class="pillar">Productivity &amp; growth</td><td class="cov"><span class="dot full"></span></td><td class="maps"><b>Productivity</b>; <b>Compounding</b>; <b>Creative Destruction</b></td><td>Output-per-hour, compounding growth, and the disruption mechanism.</td></tr>
+      <tr><td class="pillar">Markets &amp; prices (exchange)</td><td class="cov"><span class="dot full"></span></td><td class="maps"><b>Supply &amp; Demand</b>; <b>Competition</b>; <b>Profit Motive</b>; <b>Incentives</b></td><td>The price-as-signal mechanism is now its own primer; voluntary exchange and the profit signal build on it.</td></tr>
+      <tr><td class="pillar">Competition &amp; market structure</td><td class="cov"><span class="dot full"></span></td><td class="maps"><b>Competition</b>; <b>Monopoly</b>; <b>Network Effects</b>; <b>Economies of Scale</b></td><td>A notably deep area — the whole Power cluster lives here.</td></tr>
+      <tr><td class="pillar">Market failure &amp; externalities</td><td class="cov"><span class="dot full"></span></td><td class="maps"><b>The Commons</b>; <b>Rent-Seeking</b>; <b>Monopoly</b></td><td>Tragedy/governance, value-capture, and concentration as failures.</td></tr>
+      <tr><td class="pillar">Role of government &amp; market failure</td><td class="cov"><span class="dot full"></span></td><td class="maps"><b>Fiscal Policy</b>; <b>Taxation</b>; <b>Redistribution</b>; <b>The Commons</b> (governance); <b>Rent-Seeking</b>; <b>Predistribution</b></td><td>Fiscal Policy, Taxation, and Redistribution center government's economic role and the moving of resources by collective rule; the corrective role also runs through the others.</td></tr>
+      <tr><td class="pillar">Labor &amp; income</td><td class="cov"><span class="dot full"></span></td><td class="maps"><b>Labor</b>; <b>Wages &amp; Assets</b>; <b>Taxation</b>; <b>Small Business Owner</b>; <b>Predistribution</b>; <b>Redistribution</b></td><td>Labor centers the factor market and the three kinds of unemployment; wage-vs-asset income, how taxation falls on it, and the predistribution-vs-redistribution debate are central threads.</td></tr>
+      <tr><td class="pillar">Economic institutions</td><td class="cov"><span class="dot full"></span></td><td class="maps"><b>The Corporation</b>; <b>The Trust</b>; <b>Ownership &amp; Equity</b>; <b>Capital</b>; <b>The Entrepreneur</b></td><td>Legal-person, trustee/beneficiary, ownership, the asset that compounds, and the risk-bearing founder.</td></tr>
+      <tr><td class="pillar">Money &amp; its functions</td><td class="cov"><span class="dot full"></span></td><td class="maps"><b>Banking &amp; Central Banks</b>; <b>Cryptocurrency</b>; <b>Credit</b>; <b>Debt</b></td><td>How money is created and governed; what makes anything money; credit/debt as trust and obligation.</td></tr>
+      <tr><td class="pillar">Interest, credit &amp; saving</td><td class="cov"><span class="dot full"></span></td><td class="maps"><b>Credit</b>; <b>Debt</b>; <b>Compounding</b></td><td>Borrowing the future; the fixed obligation; interest both directions.</td></tr>
+      <tr><td class="pillar">Money &amp; inflation</td><td class="cov"><span class="dot full"></span></td><td class="maps"><b>Inflation</b>; <b>Banking &amp; Central Banks</b></td><td>General price rise and its silent redistribution, plus how money creation and central-bank policy drive it.</td></tr>
+      <tr><td class="pillar">Income, employment &amp; output (GDP)</td><td class="cov"><span class="dot full"></span></td><td class="maps"><b>The Wealth of Nations</b>; <b>The Wealth of the Nation</b>; <b>Business Cycles</b>; <b>Fiscal Policy</b>; <b>P&amp;L vs. Balance Sheet</b></td><td>National output, employment, and the flow-vs-stock distinction now well covered; formal GDP-accounting mechanics remain light.</td></tr>
+      <tr><td class="pillar">Unemployment</td><td class="cov"><span class="dot full"></span></td><td class="maps"><b>Labor</b></td><td>Labor primer treats the three kinds of unemployment — frictional, structural, cyclical — directly.</td></tr>
+      <tr><td class="pillar">Economic fluctuations (business cycle)</td><td class="cov"><span class="dot full"></span></td><td class="maps"><b>Business Cycles</b></td><td>The four-phase cycle as the economy's rhythm — its own primer, mechanics-led.</td></tr>
+      <tr><td class="pillar">Trade &amp; interdependence</td><td class="cov"><span class="dot full"></span></td><td class="maps"><b>Globalization</b>; <b>Sovereignty</b>; <b>The Wealth of Nations</b></td><td>Globalization now centers comparative advantage and cross-border integration directly; interdependence and chokepoints run through Sovereignty.</td></tr>
+      <tr><td class="pillar">Fiscal &amp; monetary policy</td><td class="cov"><span class="dot full"></span></td><td class="maps"><b>Fiscal Policy</b>; <b>Taxation</b>; <b>Banking &amp; Central Banks</b></td><td>Both hands on the wheel now have dedicated primers — the budget and tax levers, and the money/credit lever.</td></tr>
+      <tr><td class="pillar">Technology <span style="font-family:'IBM Plex Mono',monospace;font-size:.52rem;color:var(--gold);">(new 2025)</span></td><td class="cov"><span class="dot full"></span></td><td class="maps"><b>Data</b>; <b>Network Effects</b>; <b>Creative Destruction</b>; <b>Predistribution</b></td><td>The course's strongest differentiator — squarely meets CEE's newest pillar.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="summary">
+    <p><strong>What the pattern shows.</strong> The course covers the conceptual economics spine with notable depth in <strong>market structure, institutions, money/ownership, and technology</strong> — the last being CEE's newest pillar and the course's sharpest point of differentiation. With the addition of dedicated <strong>Supply &amp; Demand, Labor, Business Cycles, Banking &amp; Central Banks, Fiscal Policy,</strong> and <strong>Globalization</strong> primers, the macro-stabilization, price-mechanism, and trade pillars that were formerly partial or absent are now directly covered. Coverage is now full or near-full across the canon; only formal GDP-accounting mechanics remain lighter, appearing inside other primers rather than as a standalone procedural treatment.</p>
+    <p><strong>What remains lighter — honestly.</strong> The macro-stabilization pillars that were once genuine gaps — <strong>unemployment, the business cycle, and fiscal/monetary policy</strong> — are now each covered by a dedicated primer (Labor, Business Cycles, and Fiscal Policy plus Banking &amp; Central Banks), and <strong>comparative-advantage trade theory</strong> is now centered by the Globalization primer rather than merely touched. What stays lighter is narrower and procedural: formal <strong>GDP-accounting mechanics</strong> — the course teaches what national output is and how it's divided, but not the line-by-line measurement conventions. That is not a conceptual hole; it is procedural depth a teacher can supplement, and naming it is what keeps the rest of the crosswalk credible.</p>
+  </div>
+
+  <!-- ============ C3 CROSSWALK ============ -->
+  <div class="sec-head"><span class="sec-num">02</span><span class="sec-title">C3 Inquiry Dimensions → Course Design</span></div>
+  <p class="sec-note">Where CEE supplies the content spine, the C3 Framework supplies the inquiry and rigor axis. The course's pedagogy — structured argument, source analysis, role-play, and a defended-stance capstone — maps cleanly onto all four C3 dimensions, which is the part a social-studies department will check.</p>
+
+  <div class="cdim">
+    <div class="cdim-cell">
+      <p class="cdim-label">Dimension 1</p>
+      <p class="cdim-name">Developing Questions &amp; Planning Inquiries</p>
+      <p class="cdim-text">Every primer is built on a compelling question ("what makes anything money?", "who is a corporation for?") and ends with discussion questions that drive further inquiry. The reform test ("the smallest change that…") is itself a planning prompt.</p>
+    </div>
+    <div class="cdim-cell">
+      <p class="cdim-label">Dimension 2</p>
+      <p class="cdim-name">Applying Disciplinary Concepts &amp; Tools</p>
+      <p class="cdim-text">This is the concept library's core function: 36 economic tools (scarcity, supply &amp; demand, competition, compounding, market failure, capital, ownership, taxation, redistribution, globalization) taught to be applied, then applied across real contexts in each primer's Section III.</p>
+    </div>
+    <div class="cdim-cell">
+      <p class="cdim-label">Dimension 3</p>
+      <p class="cdim-name">Evaluating Sources &amp; Using Evidence</p>
+      <p class="cdim-text">The activity tables and "argue it both ways" write tasks require students to weigh competing claims and marshal evidence for a position. The Core Anthology (250 voices) supplies primary-source range.</p>
+    </div>
+    <div class="cdim-cell">
+      <p class="cdim-label">Dimension 4</p>
+      <p class="cdim-name">Communicating Conclusions &amp; Taking Informed Action</p>
+      <p class="cdim-text">Every primer closes with a defended-stance write task; the Human Flourishing capstone ("Define &amp; Defend") and the Role-Play Lab are sustained Dimension-4 performance tasks built around deliberation and civic decision.</p>
+    </div>
+  </div>
+
+  <div class="summary">
+    <p><strong>C3 fit is strong across all four dimensions</strong> — and notably, the course leans into exactly the inquiry-and-action pedagogies (structured discussion, simulation, source analysis, performance tasks) that the evidence base favors and that a textbook can't easily supply. This is the course's pedagogical differentiator, not just a compliance checkbox.</p>
+  </div>
+
+  <!-- ============ SECONDARY ============ -->
+  <div class="sec-head"><span class="sec-num">03</span><span class="sec-title">Secondary Alignments &amp; Notes</span></div>
+  <p class="sec-note">Beyond the two core frameworks, the course touches the other standards schools weigh. These are noted rather than fully mapped, to keep the crosswalk legible.</p>
+  <table>
+    <thead><tr><th class="pillar">Framework</th><th class="cov">Fit</th><th>Note</th></tr></thead>
+    <tbody>
+      <tr><td class="pillar">AP Microeconomics</td><td class="cov"><span class="dot partial"></span></td><td>Strong overlap on market structure, competition, market failure, factor (labor) markets, and the role of government including taxation and its incidence. Lighter on formal cost-curve / perfect-competition graphing.</td></tr>
+      <tr><td class="pillar">AP Macroeconomics</td><td class="cov"><span class="dot partial"></span></td><td>Partial overlap, now meaningfully improved — <b>Business Cycles, Banking &amp; Central Banks, Fiscal Policy, Labor</b> (unemployment), and <b>Inflation</b> cover the core stabilization concepts. Lighter on formal AD/AS graphing and GDP-accounting mechanics; a strong conceptual complement, not a full exam-prep substitute.</td></tr>
+      <tr><td class="pillar">Jump$tart / CEE Personal Finance</td><td class="cov"><span class="dot partial"></span></td><td>Credit, Debt, Ownership &amp; Equity, Compounding, and Inflation carry real personal-finance content, framed structurally rather than as money-management how-to. Complements an NGPF-style PF course; does not replace it.</td></tr>
+      <tr><td class="pillar">C3 (full)</td><td class="cov"><span class="dot full"></span></td><td>See §02 — all four dimensions covered.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note">
+    <strong>The adoption case in one line.</strong> Against the verified CEE 2025 pillars, the course now delivers full or near-full coverage on all 18 — including the newest (Technology) — with only formal GDP-accounting mechanics remaining as a procedural (not conceptual) light spot a teacher can supplement. On C3, it covers all four inquiry dimensions and leans into the evidence-favored pedagogies. That is the literal meaning of <em>standards-completing, not standards-rejecting</em>: it unifies the power/ownership/institutions inquiry the traditional frameworks underdeliver, while mapping onto essentially the entire economics canon they already require.
+  </div>
+
+  <div class="foot">
+    <span class="foot-l">&copy; 2026 &nbsp;·&nbsp; Alfredo Mathew III &nbsp;·&nbsp; AM3 LLC &nbsp;·&nbsp; Working World LLC</span>
+    <span class="foot-r">Standards Crosswalk &nbsp;·&nbsp; Standards verified May 2026 &nbsp;·&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Warm-Ups &amp; Exit Tickets — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0d0d0d;--ink:#1a1a1a;--charcoal:#2d2d2d;--mid:#5a5a5a;--muted:#8a8a8a;
+  --rule:#d0ccc6;--paper:#f7f5f0;--cream:#efede7;--warm:#e8e4db;--white:#fff;--gold:#8a6f3e;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased;font-size:14px;}
+.page{max-width:920px;margin:0 auto;padding:0 2rem 4rem;}
+
+.masthead{border-bottom:3px solid var(--black);padding:2rem 0 1.4rem;margin-bottom:1.5rem;}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.7rem;}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;color:var(--black);line-height:1.04;letter-spacing:-.02em;margin-bottom:.5rem;}
+.lede{font-size:.98rem;font-style:italic;color:var(--mid);max-width:680px;line-height:1.6;}
+
+.howto{background:var(--cream);border-left:3px solid var(--gold);padding:.9rem 1.15rem;margin:1.25rem 0;font-size:.85rem;line-height:1.6;}
+.howto strong{color:var(--black);}
+.howto .rt{font-family:'IBM Plex Mono',monospace;font-size:.7rem;}
+
+.sec-head{display:flex;align-items:baseline;gap:1rem;border-bottom:2px solid var(--black);padding-bottom:.5rem;margin:2.5rem 0 .3rem;}
+.sec-num{font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--gold);font-weight:500;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;color:var(--black);}
+.sec-note{font-size:.85rem;font-style:italic;color:var(--mid);margin:.5rem 0 1.1rem;max-width:720px;}
+
+.routines{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin:1rem 0;}
+.routine{background:var(--white);padding:.85rem 1.1rem;}
+.routine:nth-child(4n+2),.routine:nth-child(4n+3){background:var(--cream);}
+.r-tag{font-family:'IBM Plex Mono',monospace;font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem;}
+.r-name{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--black);margin-bottom:.25rem;}
+.r-text{font-size:.82rem;font-weight:300;color:var(--ink);line-height:1.5;}
+@media(max-width:680px){.routines{grid-template-columns:1fr;}}
+
+.cluster-tag{display:inline-block;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;padding:.25rem .6rem;margin:1.5rem 0 .5rem;}
+
+table{border-collapse:collapse;width:100%;margin:.5rem 0 1rem;font-size:.8rem;}
+th,td{border:1px solid var(--rule);padding:.5rem .65rem;vertical-align:top;text-align:left;line-height:1.5;}
+th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.56rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+tbody tr:nth-child(even){background:var(--cream);}
+td.concept{width:18%;font-weight:600;color:var(--charcoal);font-family:'Playfair Display',serif;font-size:.85rem;}
+td.warmup{width:41%;}
+td.exit{width:41%;}
+.fc{font-family:'IBM Plex Mono',monospace;font-size:.54rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.15rem;}
+
+.foot{border-top:2px solid var(--black);margin-top:3rem;padding-top:1rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;}
+.foot-l{font-size:.72rem;color:var(--charcoal);font-weight:600;}
+.foot-r{font-family:'IBM Plex Mono',monospace;font-size:.6rem;color:var(--muted);letter-spacing:.05em;}
+@media print{body{font-size:9.5pt;-webkit-print-color-adjust:exact;print-color-adjust:exact;}.page{max-width:100%;padding:0;}th,.cluster-tag,.sec-head,.routine{-webkit-print-color-adjust:exact;print-color-adjust:exact;}table,.routines{break-inside:auto;}tr{break-inside:avoid;}}
+@media(max-width:680px){.page{padding:0 1.1rem 3rem;}}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Teacher Routines</p>
+    <h1 class="title">Warm-Ups &amp; Exit Tickets</h1>
+    <p class="lede">Every class opens with a quick-write or forced choice that pulls out what students already think, and closes with an exit ticket that checks what landed and takes the room's temperature. A zero-prep set of universal routines, plus a tuned warm-up and exit ticket for every concept in the library.</p>
+  </div>
+
+  <div class="howto">
+    <strong>How to use this.</strong> <span class="rt">OPEN →</span> Project or read a warm-up in the first 3&ndash;5 minutes. Students write or pick before any teaching — the goal is to surface prior belief, not to be right. Don't correct answers; collect the thinking. <span class="rt">CLOSE →</span> In the last 3&ndash;5 minutes, project an exit ticket. Students answer on a slip, a card, or a shared doc. Read a handful aloud or scan them after class as a temperature check. <strong>Universal routines (§01) work with any lesson, no prep.</strong> The concept bank (§02&ndash;06) gives a tuned pair for each primer. Forced-choice prompts are marked <span class="fc" style="display:inline;">FORCED CHOICE</span>; the rest are quick-writes.
+  </div>
+
+  <!-- ============ UNIVERSAL ROUTINES ============ -->
+  <div class="sec-head"><span class="sec-num">01</span><span class="sec-title">Universal Routines — Any Lesson, No Prep</span></div>
+  <p class="sec-note">Drop these onto any concept on any day. Print them once and keep them by the projector. The reform-test closer (bottom right) is the curriculum's signature exit ticket — it works after almost any lesson.</p>
+
+  <p class="cluster-tag">Warm-Ups · open the class</p>
+  <div class="routines">
+    <div class="routine"><p class="r-tag">Forced Choice</p><p class="r-name">More good or more harmful?</p><p class="r-text">"Today's idea is [X]. On balance, is it more good or more harmful for ordinary people?" Pick a side, write one sentence of defense. Reveal the split, then teach into the disagreement.</p></div>
+    <div class="routine"><p class="r-tag">Quick-Write</p><p class="r-name">What do you already know?</p><p class="r-text">"Write everything you think you know about [X] in 2 minutes — even guesses." Surfaces prior knowledge and misconceptions you can build on or correct.</p></div>
+    <div class="routine"><p class="r-tag">Quick-Write</p><p class="r-name">Where have you seen it?</p><p class="r-text">"Where have you run into [X] in your own life, the news, or online?" Anchors an abstract idea to something concrete before you name it.</p></div>
+    <div class="routine"><p class="r-tag">Forced Choice</p><p class="r-name">Agree or disagree</p><p class="r-text">Offer a provocative one-sentence claim about today's concept. "Agree or disagree, and why?" Take a quick standing vote, then begin.</p></div>
+    <div class="routine"><p class="r-tag">Quick-Write</p><p class="r-name">Who benefits, who pays?</p><p class="r-text">"When you hear the phrase [X], who do you imagine benefits, and who pays?" Primes the distribution lens the curriculum returns to constantly.</p></div>
+    <div class="routine"><p class="r-tag">Forced Choice</p><p class="r-name">Gut call</p><p class="r-text">Pose the lesson's central tension as a binary before students have the tools. They'll revisit their gut answer at the exit ticket — and see if learning moved them.</p></div>
+  </div>
+
+  <p class="cluster-tag">Exit Tickets · close the class</p>
+  <div class="routines">
+    <div class="routine"><p class="r-tag">Temperature Check</p><p class="r-name">One thing + one question</p><p class="r-text">"Name one thing you understand now that you didn't at the start — and one question you still have." Fast read of what landed and what's foggy.</p></div>
+    <div class="routine"><p class="r-tag">Reform Test</p><p class="r-name">The smallest reform</p><p class="r-text">"What's the smallest change you'd make to what we studied that would grow the economy while expanding democracy — and what would it cost?" The signature closer; works after nearly any lesson.</p></div>
+    <div class="routine"><p class="r-tag">Temperature Check</p><p class="r-name">Confidence dial (1&ndash;5)</p><p class="r-text">"Rate 1&ndash;5 how well you could explain [X] to a friend, and write the one part you'd stumble on." A number plus a target for tomorrow.</p></div>
+    <div class="routine"><p class="r-tag">Quick-Write</p><p class="r-name">Did your mind move?</p><p class="r-text">"You took a side at the start. Are you in the same place now? What, if anything, moved you?" Pairs with any forced-choice warm-up.</p></div>
+    <div class="routine"><p class="r-tag">Quick-Write</p><p class="r-name">Explain it to a 10-year-old</p><p class="r-text">"In two sentences, no jargon, explain today's concept to a 10-year-old." Forces real understanding into plain language.</p></div>
+    <div class="routine"><p class="r-tag">Quick-Write</p><p class="r-name">Steelman the other side</p><p class="r-text">"Give the single best argument for the view you <em>disagree</em> with." Checks whether students can hold both sides — the core habit of the course.</p></div>
+  </div>
+
+  <!-- ============ CONCEPT BANK ============ -->
+  <div class="sec-head"><span class="sec-num">02</span><span class="sec-title">Concept Bank — Allocation</span></div>
+  <p class="sec-note">A tuned warm-up and exit ticket for each primer. Find your concept, grab the pair. Forced-choice openers are marked; the rest are quick-writes.</p>
+  <table>
+    <thead><tr><th>Concept</th><th>Warm-up (open)</th><th>Exit ticket (close)</th></tr></thead>
+    <tbody>
+      <tr><td class="concept">Scarcity</td><td class="warmup"><span class="fc">Quick-write</span>Name something you wanted this week but couldn't have. What had to be given up to get something else?</td><td class="exit">If everything were free and unlimited, would we still need economics? Explain in two sentences.</td></tr>
+      <tr><td class="concept">Opportunity Cost</td><td class="warmup"><span class="fc">Forced choice</span>You have a free hour: earn $15, or study for a test. Pick one — then name exactly what you gave up.</td><td class="exit">Describe one real choice you made today and the true cost of it (what you gave up, not what you paid).</td></tr>
+      <tr><td class="concept">Incentives</td><td class="warmup"><span class="fc">Quick-write</span>Describe a time a reward or punishment changed your behavior. Did it work the way it was meant to?</td><td class="exit">Give one example of an incentive that backfired — produced the opposite of what was intended. Why?</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sec-head"><span class="sec-num">03</span><span class="sec-title">Concept Bank — Engines</span></div>
+  <table>
+    <thead><tr><th>Concept</th><th>Warm-up (open)</th><th>Exit ticket (close)</th></tr></thead>
+    <tbody>
+      <tr><td class="concept">Profit Motive</td><td class="warmup"><span class="fc">Forced choice</span>Is the desire for profit mostly a force for good or for harm in society? Pick one, defend in a sentence.</td><td class="exit">Name one thing the profit motive does well and one thing it does badly. Did your opening view hold?</td></tr>
+      <tr><td class="concept">Compounding</td><td class="warmup"><span class="fc">Forced choice</span>A penny doubled daily for 30 days, or $1 million today? Pick — then we'll check.</td><td class="exit">Explain in one sentence why compounding is called the most powerful force in finance — for wealth <em>and</em> debt.</td></tr>
+      <tr><td class="concept">Competition</td><td class="warmup"><span class="fc">Quick-write</span>Name a business you love. Who are its competitors — and how does that rivalry affect you?</td><td class="exit">When does competition help the customer, and when can it stop helping? Give one example of each.</td></tr>
+      <tr><td class="concept">Productivity</td><td class="warmup"><span class="fc">Quick-write</span>If a worker produces twice as much per hour as last year, who should get the gains? Write your gut answer.</td><td class="exit">Productivity rose for decades but typical wages lagged. Who got the difference — and is that a problem?</td></tr>
+      <tr><td class="concept">Creative Destruction</td><td class="warmup"><span class="fc">Quick-write</span>Name a product or job that barely exists anymore. What replaced it, and who won and lost?</td><td class="exit">Is the constant destruction of old industries a price worth paying for progress? Defend your view.</td></tr>
+      <tr><td class="concept">Business Cycles</td><td class="warmup"><span class="fc">Forced choice</span>A recession is: (a) the system failing, or (b) the system correcting. Pick one before we start.</td><td class="exit">If a downturn clears out excess and renews the economy, why does it still matter who bears the cost?</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sec-head"><span class="sec-num">04</span><span class="sec-title">Concept Bank — Power</span></div>
+  <table>
+    <thead><tr><th>Concept</th><th>Warm-up (open)</th><th>Exit ticket (close)</th></tr></thead>
+    <tbody>
+      <tr><td class="concept">Monopoly</td><td class="warmup"><span class="fc">Forced choice</span>One company controls a thing you need. Good (it's efficient) or bad (it's powerful)? Pick.</td><td class="exit">Name one way a monopoly can help customers and one way it can harm them. Which usually wins?</td></tr>
+      <tr><td class="concept">Network Effects</td><td class="warmup"><span class="fc">Quick-write</span>Why do you use the apps you use? How much is it because everyone else does?</td><td class="exit">Explain why "the best product" and "the one everyone uses" aren't always the same thing.</td></tr>
+      <tr><td class="concept">Economies of Scale</td><td class="warmup"><span class="fc">Quick-write</span>Why can a giant store sell cheaper than a corner shop? List every reason you can think of.</td><td class="exit">If bigger means cheaper, what's the danger of letting the biggest firms keep getting bigger?</td></tr>
+      <tr><td class="concept">Rent-Seeking</td><td class="warmup"><span class="fc">Forced choice</span>Two ways to get rich: build something valuable, or capture value others made. Which describes most fortunes?</td><td class="exit">Give one example of creating value and one of capturing it. How would you tell them apart in the news?</td></tr>
+      <tr><td class="concept">Sovereignty</td><td class="warmup"><span class="fc">Quick-write</span>Name something you depend on that you don't control. What power does that give whoever provides it?</td><td class="exit">"More self-sufficient" usually means "poorer but freer." Where would you set that dial, and why?</td></tr>
+      <tr><td class="concept">The Trust</td><td class="warmup"><span class="fc">Quick-write</span>Should someone be able to control money they don't own, on behalf of someone else? When is that good?</td><td class="exit">The same structure protects a child and entrenches a dynasty. What real difference could the law key on?</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sec-head"><span class="sec-num">05</span><span class="sec-title">Concept Bank — Distribution</span></div>
+  <table>
+    <thead><tr><th>Concept</th><th>Warm-up (open)</th><th>Exit ticket (close)</th></tr></thead>
+    <tbody>
+      <tr><td class="concept">The Commons</td><td class="warmup"><span class="fc">Quick-write</span>Name something everyone shares and no one owns. What keeps it from being wrecked — or doesn't?</td><td class="exit">Is a shared resource doomed without private owners, or can a community govern it? Give your reasoning.</td></tr>
+      <tr><td class="concept">Predistribution</td><td class="warmup"><span class="fc">Forced choice</span>To fix inequality: broaden who <em>owns</em> assets, or tax-and-transfer after? Pick one before we start.</td><td class="exit">Making people owners gives a stake but hands them risk. When is that better than a cash transfer?</td></tr>
+      <tr><td class="concept">Labor</td><td class="warmup"><span class="fc">Quick-write</span>Is your labor "just a commodity" like anything else bought and sold? Write your first reaction.</td><td class="exit">One unemployment number hides three kinds (frictional, structural, cyclical). Why does telling them apart matter?</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sec-head"><span class="sec-num">06</span><span class="sec-title">Concept Bank — Money &amp; Value</span></div>
+  <table>
+    <thead><tr><th>Concept</th><th>Warm-up (open)</th><th>Exit ticket (close)</th></tr></thead>
+    <tbody>
+      <tr><td class="concept">Ownership &amp; Equity</td><td class="warmup"><span class="fc">Quick-write</span>What's the difference between using something and owning it? Why might owning matter more over time?</td><td class="exit">Explain why two people earning the same wage can end up with very different wealth.</td></tr>
+      <tr><td class="concept">Inflation</td><td class="warmup"><span class="fc">Quick-write</span>If prices and your pay both doubled, are you better off, worse off, or the same? Think it through.</td><td class="exit">Inflation quietly moves wealth between people. Who tends to win from it, and who loses?</td></tr>
+      <tr><td class="concept">Wages &amp; Assets</td><td class="warmup"><span class="fc">Forced choice</span>Which builds more wealth over a life: a high salary, or owning appreciating assets? Pick.</td><td class="exit">Why has "work hard and earn a good wage" stopped guaranteeing wealth the way it once did?</td></tr>
+      <tr><td class="concept">Wealth of Nations</td><td class="warmup"><span class="fc">Quick-write</span>What actually makes one country richer than another? List your best guesses.</td><td class="exit">Name one thing that genuinely grows a nation's wealth — and one thing that just moves it around.</td></tr>
+      <tr><td class="concept">Wealth of the Nation</td><td class="warmup"><span class="fc">Quick-write</span>If a country's total wealth grew, would you assume everyone got richer? Why or why not?</td><td class="exit">A rising national total can hide who actually gained. What would you want to look at underneath it?</td></tr>
+      <tr><td class="concept">Data</td><td class="warmup"><span class="fc">Forced choice</span>The data you generate online: yours, or the platform's? Pick a side and defend it.</td><td class="exit">Your data is nearly worthless alone but immensely valuable in bulk. Who should capture that value?</td></tr>
+      <tr><td class="concept">Cryptocurrency</td><td class="warmup"><span class="fc">Quick-write</span>What makes a dollar in your pocket actually worth anything? Write your honest theory.</td><td class="exit">If all money runs on shared belief, what makes a national currency more stable than most crypto?</td></tr>
+      <tr><td class="concept">The Corporation</td><td class="warmup"><span class="fc">Quick-write</span>The law treats a company as a "person." What's useful about that — and what's strange?</td><td class="exit">A corporation can be built for shareholders, members, or a mission. Who do you think it should serve?</td></tr>
+      <tr><td class="concept">P&amp;L vs. Balance Sheet</td><td class="warmup"><span class="fc">Forced choice</span>Friend A earns a lot but owns nothing; Friend B earns little but owns a home. Who's "doing fine"?</td><td class="exit">Explain how a company can be profitable and going bankrupt at the same time.</td></tr>
+      <tr><td class="concept">Credit</td><td class="warmup"><span class="fc">Quick-write</span>Is borrowing money smart or dangerous? Write the case for your gut answer.</td><td class="exit">The same loan can build wealth or bury someone. What decides which it does?</td></tr>
+      <tr><td class="concept">Debt</td><td class="warmup"><span class="fc">Quick-write</span>When someone can't repay a debt, who should bear the loss — and does the scale change your answer?</td><td class="exit">A debt is fixed while the world changes. Explain how that shifts risk onto the borrower.</td></tr>
+      <tr><td class="concept">Banking &amp; Central Banks</td><td class="warmup"><span class="fc">Forced choice</span>Where does most money come from: (a) the government prints it, or (b) banks create it by lending? Guess.</td><td class="exit">If banks create money when they lend, who benefits from being closest to that new money?</td></tr>
+    </tbody>
+  </table>
+
+  <div class="foot">
+    <span class="foot-l">&copy; 2026 &nbsp;·&nbsp; Alfredo Mathew III &nbsp;·&nbsp; AM3 LLC &nbsp;·&nbsp; Working World LLC</span>
+    <span class="foot-r">Teacher Routines &nbsp;·&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

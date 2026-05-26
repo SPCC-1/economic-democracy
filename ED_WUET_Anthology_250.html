@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Warm-Ups &amp; Exit Tickets · 250 Voices Anthology — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0d0d0d;--ink:#1a1a1a;--charcoal:#2d2d2d;--mid:#5a5a5a;--muted:#8a8a8a;
+  --rule:#d0ccc6;--paper:#f7f5f0;--cream:#efede7;--warm:#e8e4db;--white:#fff;--gold:#8a6f3e;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased;font-size:14px;}
+.page{max-width:920px;margin:0 auto;padding:0 2rem 4rem;}
+.masthead{border-bottom:3px solid var(--black);padding:2rem 0 1.4rem;margin-bottom:1.5rem;}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.7rem;}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;color:var(--black);line-height:1.04;letter-spacing:-.02em;margin-bottom:.5rem;}
+.lede{font-size:.98rem;font-style:italic;color:var(--mid);max-width:700px;line-height:1.6;}
+.howto{background:var(--cream);border-left:3px solid var(--gold);padding:.9rem 1.15rem;margin:1.25rem 0;font-size:.85rem;line-height:1.6;}
+.howto strong{color:var(--black);}
+.howto .rt{font-family:'IBM Plex Mono',monospace;font-size:.7rem;}
+.axisbox{border:1px solid var(--black);background:var(--white);padding:.85rem 1.15rem;margin:1rem 0;font-size:.83rem;line-height:1.6;}
+.axisbox b{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);}
+.sec-head{display:flex;align-items:baseline;gap:1rem;border-bottom:2px solid var(--black);padding-bottom:.5rem;margin:2.5rem 0 .3rem;}
+.sec-num{font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--gold);font-weight:500;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;color:var(--black);}
+.sec-note{font-size:.85rem;font-style:italic;color:var(--mid);margin:.5rem 0 1.1rem;max-width:730px;}
+.routines{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin:1rem 0;}
+.routine{background:var(--white);padding:.85rem 1.1rem;}
+.routine:nth-child(4n+2),.routine:nth-child(4n+3){background:var(--cream);}
+.r-tag{font-family:'IBM Plex Mono',monospace;font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem;}
+.r-name{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--black);margin-bottom:.25rem;}
+.r-text{font-size:.82rem;font-weight:300;color:var(--ink);line-height:1.5;}
+@media(max-width:680px){.routines{grid-template-columns:1fr;}}
+.cluster-tag{display:inline-block;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;padding:.25rem .6rem;margin:1.5rem 0 .5rem;}
+table{border-collapse:collapse;width:100%;margin:.5rem 0 1rem;font-size:.8rem;}
+th,td{border:1px solid var(--rule);padding:.5rem .65rem;vertical-align:top;text-align:left;line-height:1.5;}
+th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.56rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+tbody tr:nth-child(even){background:var(--cream);}
+td.sect{width:20%;font-weight:600;color:var(--charcoal);font-family:'Playfair Display',serif;font-size:.84rem;}
+td.sect span{display:block;font-family:'IBM Plex Mono',monospace;font-size:.54rem;font-weight:400;color:var(--muted);letter-spacing:.05em;margin-top:.2rem;}
+td.warmup{width:40%;}
+td.exit{width:40%;}
+.fc{font-family:'IBM Plex Mono',monospace;font-size:.54rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.15rem;}
+.foot{border-top:2px solid var(--black);margin-top:3rem;padding-top:1rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;}
+.foot-l{font-size:.72rem;color:var(--charcoal);font-weight:600;}
+.foot-r{font-family:'IBM Plex Mono',monospace;font-size:.6rem;color:var(--muted);letter-spacing:.05em;}
+@media print{
+  body{font-size:9pt;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .page{max-width:100%;padding:0;}
+  th,.cluster-tag,.sec-head,.routine,.axisbox{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  table,.routines{break-inside:auto;}tr{break-inside:avoid;}
+  .masthead{padding:1rem 0 .9rem;margin-bottom:.8rem;}
+  .title{font-size:2rem;margin-bottom:.35rem;}
+  .lede{font-size:.9rem;line-height:1.45;}
+  .howto{padding:.6rem .9rem;margin:.7rem 0;line-height:1.45;}
+  .axisbox{padding:.55rem .9rem;margin:.7rem 0;line-height:1.45;}
+  .sec-head{margin:1.1rem 0 .25rem;padding-bottom:.35rem;}
+  .sec-note{margin:.4rem 0 .7rem;line-height:1.4;}
+  .cluster-tag{margin:.8rem 0 .4rem;}
+  .routine{padding:.6rem .85rem;}
+  .r-text{line-height:1.4;}
+  .routines{margin:.6rem 0;}
+  th,td{padding:.4rem .55rem;line-height:1.4;}
+  table{margin:.4rem 0 .7rem;}
+  .foot{margin-top:1.1rem;padding-top:.7rem;}
+}
+@media(max-width:680px){.page{padding:0 1.1rem 3rem;}}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Teacher Routines · 250 Voices Anthology</p>
+    <h1 class="title">Warm-Ups &amp; Exit Tickets</h1>
+    <p class="lede">For teaching with the 250 Voices Anthology — the map of how America has argued, for 250 years, over a single question: who holds economic power, and to whom is it accountable? Open every class by surfacing what students already believe about power; close by checking whether they can place a figure, hear the argument, and take a side.</p>
+  </div>
+
+  <div class="howto">
+    <strong>How to use this.</strong> <span class="rt">OPEN →</span> Project a warm-up in the first 3&ndash;5 minutes. Students write or pick <em>before</em> meeting the day's figures — the goal is to surface their own theory of power, not to be right. <span class="rt">CLOSE →</span> In the last 3&ndash;5 minutes, project an exit ticket. The anthology's pedagogy is that <strong>placement is the argument</strong>, so most closers ask students to place a figure, pair two, or name the tension — not to recall facts. <strong>Universal routines (§01) work with any figure or section.</strong> The section bank (§02) gives a tuned pair for each of the 8 sections. Forced-choice prompts are marked <span class="fc" style="display:inline;">FORCED CHOICE</span>; the rest are quick-writes.
+  </div>
+
+  <div class="axisbox">
+    <b>The two axes, for reference.</b> &nbsp;Every figure can be placed on a grid. <strong>Axis 1 — Where does power sit?</strong> Private ←→ Public. <strong>Axis 2 — Who does power answer to?</strong> Elite/Expert ←→ Democratic/Popular. There is no answer key; the placement <em>is</em> the learning. Many warm-ups and exit tickets below use these axes.
+  </div>
+
+  <!-- ============ UNIVERSAL ROUTINES ============ -->
+  <div class="sec-head"><span class="sec-num">01</span><span class="sec-title">Universal Routines — Any Figure, Any Section</span></div>
+  <p class="sec-note">Drop these onto any voice or section on any day. Print them once and keep them by the projector. The central question and the placement matrix do most of the work — these routines just point students at them.</p>
+
+  <p class="cluster-tag">Warm-Ups · open the class</p>
+  <div class="routines">
+    <div class="routine"><p class="r-tag">Forced Choice</p><p class="r-name">Where should power sit?</p><p class="r-text">"Before we meet today's voices: should economic power sit mostly with private individuals and markets, or with public and collective bodies?" Pick a side, one sentence why. Revisit at the exit.</p></div>
+    <div class="routine"><p class="r-tag">Quick-Write</p><p class="r-name">Who do you already know?</p><p class="r-text">"Have you heard of any of today's figures? Write what you think you know — even a vague impression or a guess." Surfaces prior knowledge and the myths attached to famous names.</p></div>
+    <div class="routine"><p class="r-tag">Forced Choice</p><p class="r-name">Builder or critic?</p><p class="r-text">Name the day's figure. "Gut call: were they someone who <em>built</em> economic power, or someone who <em>challenged</em> it?" Pick before reading — then test it. (Some are both.)</p></div>
+    <div class="routine"><p class="r-tag">Quick-Write</p><p class="r-name">The question, in your words</p><p class="r-text">"Rewrite the anthology's central question — <em>who holds economic power, and to whom is it accountable?</em> — as if explaining it to a friend." Primes the lens before any figure appears.</p></div>
+    <div class="routine"><p class="r-tag">Quick-Write</p><p class="r-name">A voice from now</p><p class="r-text">"Name one person alive today who is arguing about economic power — in politics, tech, music, anywhere. What are they saying?" Anchors a historical section to the present argument.</p></div>
+    <div class="routine"><p class="r-tag">Forced Choice</p><p class="r-name">Whose century was it?</p><p class="r-text">For a time-period section: "In this era, was power moving <em>toward</em> ordinary people or <em>away</em> from them?" Take a quick vote, then read the figures who fought over exactly that.</p></div>
+  </div>
+
+  <p class="cluster-tag">Exit Tickets · close the class</p>
+  <div class="routines">
+    <div class="routine"><p class="r-tag">Placement</p><p class="r-name">Put them on the grid</p><p class="r-text">"Place today's figure on the two axes (Private↔Public, Elite↔Democratic) and defend the placement in one sentence." The core anthology move — placement is the argument.</p></div>
+    <div class="routine"><p class="r-tag">Reform Test</p><p class="r-name">The smallest reform</p><p class="r-text">"Based on what this figure argued, what's the smallest change that would grow the economy while expanding democracy — and what would it cost?" The curriculum's signature closer.</p></div>
+    <div class="routine"><p class="r-tag">Pairing</p><p class="r-name">Put two in a room</p><p class="r-text">"Pick two figures from today. What would they argue about, and where would they actually agree?" Checks whether students hear the argument <em>between</em> voices, not just within one.</p></div>
+    <div class="routine"><p class="r-tag">Temperature Check</p><p class="r-name">One voice that moved you</p><p class="r-text">"Which voice today did you find most convincing — and did it move you from where your warm-up answer started?" Fast read of engagement and of mind-changing.</p></div>
+    <div class="routine"><p class="r-tag">Quick-Write</p><p class="r-name">Steelman the one you reject</p><p class="r-text">"Take the figure you most disagree with and give their single strongest argument — fairly." The course's core habit: hold the view you don't hold.</p></div>
+    <div class="routine"><p class="r-tag">Temperature Check</p><p class="r-name">Still foggy</p><p class="r-text">"Name one figure or idea from today you couldn't yet explain to someone else." A direct map of what to revisit tomorrow.</p></div>
+  </div>
+
+  <!-- ============ SECTION BANK ============ -->
+  <div class="sec-head"><span class="sec-num">02</span><span class="sec-title">Section Bank — A Tuned Pair for Each of the 8 Sections</span></div>
+  <p class="sec-note">Each section of the anthology holds its own tension. Find the section you're teaching, grab the warm-up and exit ticket built for it. Forced-choice openers are marked; the rest are quick-writes. Each exit ticket leans on placement, pairing, or the central question.</p>
+
+  <table>
+    <thead><tr><th>Section</th><th>Warm-up (open)</th><th>Exit ticket (close)</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="sect">Architects of the Experiment<span>I · founding–reform era</span></td>
+        <td class="warmup"><span class="fc">Forced choice</span>Hamilton wanted strong central financial power; Jefferson feared it. Before reading — whose instinct do you trust more?</td>
+        <td class="exit"><span class="fc">Pairing</span>The founders disagreed from the first Congress. Name the argument between two of them that we are <em>still</em> having today.</td>
+      </tr>
+      <tr>
+        <td class="sect">Ideas That Built the World<span>II · the economic theorists</span></td>
+        <td class="warmup"><span class="fc">Quick-write</span>Where do your ideas about how the economy "should" work come from? Name one belief and guess who you got it from.</td>
+        <td class="exit"><span class="fc">Placement</span>Place today's thinker on both axes — then name one real economy or policy that ran on their idea, and how it turned out.</td>
+      </tr>
+      <tr>
+        <td class="sect">Scale, Labor &amp; the Machine<span>III · industrial power</span></td>
+        <td class="warmup"><span class="fc">Forced choice</span>The great industrialists: builders of national wealth, or robber barons? Pick a side before you meet them.</td>
+        <td class="exit">Industrialization created enormous wealth <em>and</em> enormous exploitation. Who captured the gains, and who paid the cost?</td>
+      </tr>
+      <tr>
+        <td class="sect">The Digital Revolution &amp; Its Critics<span>IV · the platform age</span></td>
+        <td class="warmup"><span class="fc">Quick-write</span>Name the tech platforms that shape your day. Who owns them — and what do they get from you?</td>
+        <td class="exit"><span class="fc">Pairing</span>Pair a platform builder with one of their critics. Whose account of the digital economy do you find truer, and why?</td>
+      </tr>
+      <tr>
+        <td class="sect">Money, Wealth &amp; Who Controls It<span>V · finance &amp; capital</span></td>
+        <td class="warmup"><span class="fc">Forced choice</span>Who should control the money supply: elected governments, independent experts, or markets? First instinct.</td>
+        <td class="exit"><span class="fc">Placement</span>Place today's figure on the axes. Does controlling money belong with experts, the public, or private hands — and to whom should it answer?</td>
+      </tr>
+      <tr>
+        <td class="sect">Power, Accountability &amp; Democratic Renewal<span>VI · reform &amp; renewal</span></td>
+        <td class="warmup"><span class="fc">Quick-write</span>When economic power gets too concentrated, what actually brings it back to account? List every check you can think of.</td>
+        <td class="exit"><span class="fc">Reform test</span>From today's reformers, name the smallest change that would expand democratic accountability over the economy — and its cost.</td>
+      </tr>
+      <tr>
+        <td class="sect">Economic Anger, Identity &amp; Mobilization<span>VII · movements &amp; protest</span></td>
+        <td class="warmup"><span class="fc">Quick-write</span>What's one economic injustice that would make people you know take to the streets? Why that one?</td>
+        <td class="exit">These voices turned economic anger into organized power. What made some movements build lasting change and others fade?</td>
+      </tr>
+      <tr>
+        <td class="sect">Who Tells the Story of the Economy<span>VIII · narrative &amp; meaning</span></td>
+        <td class="warmup"><span class="fc">Forced choice</span>Is "the economy" a neutral set of facts, or a story someone is telling for a reason? Pick before we read.</td>
+        <td class="exit">Whoever frames the economy shapes what feels possible. Whose story of the economy do you live inside — and who wrote it?</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="howto" style="margin-top:1.5rem;">
+    <strong>One more move that works anywhere in the anthology.</strong> Because every section holds <em>both</em> the architects of concentrated power and the people who challenged it, a reliable closer for any lesson is: <span class="rt">"Name one builder and one challenger from today, place both on the grid, and say which one you'd have stood with — and what it would have cost you."</span> It forces placement, pairing, and a defended stance in a single ticket.
+  </div>
+
+  <div class="foot">
+    <span class="foot-l">&copy; 2026 &nbsp;·&nbsp; Alfredo Mathew III &nbsp;·&nbsp; AM3 LLC &nbsp;·&nbsp; Working World LLC</span>
+    <span class="foot-r">Teacher Routines · 250 Voices &nbsp;·&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

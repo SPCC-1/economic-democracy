@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>On-Ramp — What Does It Mean to Flourish? — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+
+/* ── Masthead ── */
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+.masthead-meta{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.08em;margin-top:.5rem;}
+
+/* ── Body ── */
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+
+/* ── Pull quote ── */
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+
+/* ── Section header ── */
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+
+/* ── Voice cards ── */
+.voice{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.voice-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;display:flex;gap:.75rem;flex-wrap:wrap;}
+.voice-name{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.voice-claim{font-size:.9rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.7rem;margin-bottom:.55rem;line-height:1.5;}
+.voice-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.voice-body p{margin-bottom:.5rem;}
+.voice-body p:last-child{margin-bottom:0;}
+
+/* ── Tension grid (two tools) ── */
+.positions{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.pos-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.pos-cell:nth-child(even){background:var(--cream);}
+.pos-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem;}
+.pos-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.3rem;}
+.pos-text{font-size:.82rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.positions{grid-template-columns:1fr;}}
+
+/* ── Inset note ── */
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+
+/* ── Task block ── */
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+
+/* ── Write lines ── */
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+
+/* ── Discussion questions ── */
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+
+/* ── Closing ── */
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+
+/* ── Footer ── */
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .voice,.task,.positions{break-inside:avoid;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Student Reader &nbsp;·&nbsp; Unit On-Ramp</p>
+    <h1 class="masthead-title">What Does It Mean to Flourish?</h1>
+    <p class="masthead-sub">The opening of the unit on platforms, automation, and exponential growth. Before we judge any of them, we have to ask what they are supposed to serve — a good human life. Americans have never agreed on what that is.</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">You are about to spend several weeks arguing about three of the most powerful forces in your life: the platforms in your pocket, the machines learning to do your future job, and the largest private fortunes in human history. To argue well about any of them, you need a standard — something to measure them against. The standard this unit uses is an old word: <em>flourishing</em>. Does a thing help human beings flourish, or not?</p>
+
+  <p class="body">That sounds simple until you try to define it. What does it actually mean for a person to flourish — to live well, fully, as a human being should? More money? More freedom? More security? More connection? The chance to build something? The time to rest? A community that holds you? The answer is not obvious, and it never has been. Americans have been arguing about it since before there was an America.</p>
+
+  <p class="body">This reader will not give you the answer. That is deliberate. A definition handed to you is a definition you never had to think through — and you would spend the rest of the unit defending someone else's idea instead of your own. Instead, you are going to meet some of the ways Americans have defined flourishing, see that serious and intelligent people define it in genuinely opposite ways, and then <strong>build your own working definition</strong> — one you will test, and probably revise, as the unit goes on.</p>
+
+  <div class="pullquote">
+    <p>Independence is freedom <em>from</em> something. Freedom requires something more: agency, ownership, the capacity to build.</p>
+  </div>
+
+  <p class="body">That line comes from this curriculum's own argument — and it is already one answer among many. Hold onto it, but do not assume it is right. By the end of this reader, you will have your own.</p>
+
+  <!-- SECTION I -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">How America Has Defined the Good Life</span></div>
+
+  <p class="body">Start at the beginning. In 1776, the Declaration of Independence named three things every human being is owed: <strong>life, liberty, and the pursuit of happiness.</strong> Not happiness — the <em>pursuit</em> of it. The founders did not promise a good life. They promised the freedom to chase one. That single word, "pursuit," has shaped how Americans think about flourishing ever since: less a guaranteed destination than an open road.</p>
+
+  <p class="body">But a promise of pursuit raises an immediate question — pursuit requires a starting line, and not everyone in 1776 was allowed to stand on it. The people held in bondage, the women excluded from property and the vote, the poor without land: the road was not open to them. So from the very first day, America carried two ideas of flourishing at once — the promise, and the argument over who it actually reached. The voices below are not a tour of agreement. They are that argument, still going.</p>
+
+  <!-- SECTION II — THE VOICES -->
+  <div class="sec-header break-before"><span class="sec-roman">II</span><span class="sec-title">Five Ways to Define Flourishing — Voices in Disagreement</span></div>
+
+  <p class="body">Each voice below comes from the curriculum's anthology of 250 Americans. Each had a clear, defensible idea of what it means for a person to flourish. Read them as rivals. Notice that you can find something true in more than one — and that they cannot all be fully right at the same time. That tension is the point.</p>
+
+  <div class="voice">
+    <p class="voice-meta"><span>Voice 1</span><span>Quadrant IV</span><span>Writer &amp; Philosopher</span></p>
+    <p class="voice-name">Ayn Rand — Flourishing as the freedom to create</p>
+    <p class="voice-claim">"The individual has a moral right to pursue their own rational self-interest."</p>
+    <div class="voice-body">
+      <p>For Rand, a person flourishes when they are free to produce, create, and trade without anyone forcing them. The highest human activity is building something of value by your own effort and judgment. Flourishing is individual achievement, and the system that protects it is one that leaves people alone to pursue it. To take the fruits of one person's work by force — even for a good cause — is to violate the thing that makes a life fully human.</p>
+      <p><strong>The hard question her critics ask:</strong> if your success depended on roads, schools, laws, and knowledge that other people built, do you owe anything back to the system that made it possible?</p>
+    </div>
+  </div>
+
+  <div class="voice">
+    <p class="voice-meta"><span>Voice 2</span><span>Quadrant I</span><span>Economist &amp; Philosopher</span></p>
+    <p class="voice-name">Amartya Sen — Flourishing as capability</p>
+    <p class="voice-claim">"Development should be measured by the expansion of human capabilities, not just income."</p>
+    <div class="voice-body">
+      <p>Sen argues that what matters is not what you <em>have</em> but what you are actually able to <em>do and be</em>. A person flourishes when they have the real freedoms to live a life they have reason to value — to be healthy, educated, and able to take part in society. Money is only a means. A society can be wealthy and still leave people unable to flourish, and a modest society can do better by investing in the things that expand what its people can actually do.</p>
+      <p><strong>The hard question his critics ask:</strong> who decides which capabilities count — and does focusing on what government can provide risk underrating what individuals build for themselves?</p>
+    </div>
+  </div>
+
+  <div class="voice">
+    <p class="voice-meta"><span>Voice 3</span><span>Quadrant I</span><span>Activist &amp; Minister</span></p>
+    <p class="voice-name">Malcolm X — Flourishing as self-determination</p>
+    <p class="voice-claim">"Freedom requires control over one's own political, economic, and social life."</p>
+    <div class="voice-body">
+      <p>For Malcolm X, you cannot flourish if someone else controls the conditions of your life. Real freedom means a community's power to own its institutions, build its own economy, and determine its own future — not depend on the goodwill of those who hold power over it. Rights on paper are not enough; flourishing requires actual control. Independence without power is just a nicer-sounding dependence.</p>
+      <p><strong>The hard question his critics ask:</strong> can self-determination be pushed so far that it cuts a community off from the shared institutions and broader cooperation that also create opportunity?</p>
+    </div>
+  </div>
+
+  <div class="voice">
+    <p class="voice-meta"><span>Voice 4</span><span>Quadrant III</span><span>Statesman &amp; Treasury Secretary</span></p>
+    <p class="voice-name">Alexander Hamilton — Flourishing as shared capacity</p>
+    <p class="voice-claim">"Capital is not just wealth — it is a mechanism for organizing society."</p>
+    <div class="voice-body">
+      <p>Hamilton's answer is the least personal and the most structural. Individuals cannot flourish in a weak or chaotic society. A people flourishes when it builds strong institutions — credit, banks, industry, infrastructure — that make large things possible and let the whole nation grow. The ability to <em>act</em> at scale, to invest and respond to crises and build for the long term, is itself a kind of freedom. Flourishing is downstream of the capacity a society builds together.</p>
+      <p><strong>The hard question his critics ask:</strong> when power is concentrated in expert institutions for the sake of capacity, who holds those institutions accountable to ordinary people?</p>
+    </div>
+  </div>
+
+  <div class="voice">
+    <p class="voice-meta"><span>Voice 5</span><span>Quadrant I</span><span>Poet</span></p>
+    <p class="voice-name">Langston Hughes — Flourishing as a promise kept</p>
+    <p class="voice-claim">"The American Dream is not a shared achievement — it is a promise unevenly fulfilled."</p>
+    <div class="voice-body">
+      <p>Hughes does not reject the American idea of flourishing. He measures the country against it. The dream of opportunity is real — and it has been delayed, blocked, or denied for whole groups of people. To ask what flourishing means, for Hughes, is to ask a second question immediately: <em>flourishing for whom?</em> A definition that works only for some is not yet a definition of human flourishing. It is a promise still waiting to be kept.</p>
+      <p><strong>The hard question his critics ask:</strong> if naming the gap between promise and reality is necessary, is it enough — or does flourishing require building new institutions, not just exposing broken ones?</p>
+    </div>
+  </div>
+
+  <div class="inset">
+    <strong>Notice what just happened.</strong> Five serious people. Five different answers. Rand says flourishing is individual creation; Sen says it is real capability; Malcolm X says it is self-determination; Hamilton says it is shared capacity; Hughes asks who gets to flourish at all. You probably agreed with more than one. They cannot all be the whole truth at once — and choosing between them, or combining them honestly, is the work this unit asks of you.
+  </div>
+
+  <!-- SECTION III — THE TWO TOOLS -->
+  <div class="sec-header break-before"><span class="sec-roman">III</span><span class="sec-title">The Two Tools You'll Reason With</span></div>
+
+  <p class="body">You will define flourishing for yourself. But to argue about it clearly — and to compare your definition with someone else's — you need shared tools. Across this whole unit, every case is examined using the same two:</p>
+
+  <div class="positions">
+    <div class="pos-cell">
+      <p class="pos-label">Tool 1</p>
+      <p class="pos-name">Individual Agency</p>
+      <p class="pos-text">The opportunity, freedom, and self-determination of a person to choose and build according to their values. The power to act on your own life.</p>
+    </div>
+    <div class="pos-cell">
+      <p class="pos-label">Tool 2</p>
+      <p class="pos-name">Public Capacity</p>
+      <p class="pos-text">Our shared ability to set fair rules, hold power accountable, and do together what no individual can do alone. The power to act in concert.</p>
+    </div>
+  </div>
+
+  <p class="body">Look back at the five voices and you will see these two tools pulling against each other. Rand's flourishing leans almost entirely on agency. Hamilton's leans on capacity. Sen, Malcolm X, and Hughes each weigh the two differently. <strong>Most real disagreements about flourishing are disagreements about how to balance agency and capacity</strong> — and the cases ahead (platforms, automation, wealth) are hard precisely because they tend to expand one while threatening the other.</p>
+
+  <div class="inset">
+    <strong>Important:</strong> agency and capacity are the tools you reason <em>with</em> — they are fixed for the unit. <em>Flourishing</em> is the goal you define for yourself, and it stays open. You are even allowed to argue that flourishing requires something these two tools miss — belonging, meaning, rootedness, faith. If you do, say so, and say why.
+  </div>
+
+  <!-- SECTION IV — YOUR DEFINITION -->
+  <div class="sec-header"><span class="sec-roman">IV</span><span class="sec-title">Your Turn — Build a Working Definition</span></div>
+
+  <p class="body">Now you take a swing. This is your <strong>v1 definition</strong> — version one. It does not have to be final or perfect. It has to be <em>yours</em>, and specific enough that you can test it against a real case and notice when it needs to change.</p>
+
+  <div class="task">
+    <p class="task-label">Write — Version 1</p>
+    <p class="task-title">Complete this sentence in your own words</p>
+    <p class="task-body">"A human being flourishes when…"</p>
+    <div class="writelines">
+      <div class="writeline"></div>
+      <div class="writeline"></div>
+      <div class="writeline"></div>
+      <div class="writeline"></div>
+    </div>
+    <p class="task-body">Then answer: which of the five voices is your definition closest to, and where does it break from that voice?</p>
+    <div class="writelines">
+      <div class="writeline"></div>
+      <div class="writeline"></div>
+    </div>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Place yourself</p>
+    <p class="task-title">Baseline matrix placement</p>
+    <p class="task-body">On the Power–Democracy–Economy matrix you have used all year, mark where your definition currently sits. Does your idea of flourishing lean more on individual agency, or on public capacity? There is no correct placement. You will return to this at the end of the unit to see whether — and why — you moved.</p>
+  </div>
+
+  <!-- SECTION V — DISCUSSION -->
+  <div class="sec-header"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list">
+    <li>Can a person flourish while the community around them does not? Can a community flourish while many of its people do not? Which of the five voices would say yes to each?</li>
+    <li>The founders promised the <em>pursuit</em> of happiness, not happiness itself. Is the freedom to chase a good life enough — or does flourishing require some guarantee that the chase is fair?</li>
+    <li>Pick the voice you disagree with most. State their definition of flourishing so well that they would accept your description. Why is this harder, and more useful, than arguing against them?</li>
+    <li>Where in your own life do individual agency and public capacity already pull against each other? Name one concrete example before the unit gives you platforms, automation, and wealth.</li>
+  </ol>
+
+  <div class="closing">
+    <p>You now have a definition of flourishing — yours, written down.<br>For the rest of this unit, three of the most powerful forces of our age<br>will test it. Watch what holds. Watch what you change.<br><br>The revision is the learning.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

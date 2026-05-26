@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Handbook — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0d0d0d;--ink:#1a1a1a;--charcoal:#2d2d2d;--mid:#5a5a5a;--muted:#8a8a8a;
+  --rule:#d0ccc6;--paper:#f7f5f0;--cream:#efede7;--warm:#e8e4db;--white:#fff;--gold:#8a6f3e;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:820px;margin:0 auto;padding:0 2rem 4rem;}
+
+.masthead{border-bottom:3px solid var(--black);padding:2.5rem 0 1.6rem;margin-bottom:2rem;}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.8rem;}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5.5vw,3.4rem);font-weight:900;color:var(--black);line-height:1.02;letter-spacing:-.02em;margin-bottom:.6rem;}
+.subtitle{font-size:1.05rem;font-style:italic;color:var(--mid);max-width:640px;line-height:1.6;}
+
+.lead{font-size:1.08rem;font-weight:300;line-height:1.85;color:var(--ink);margin:1.5rem 0 1.2rem;max-width:660px;}
+.lead:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.8rem;font-weight:900;float:left;line-height:.82;margin:.05em .12em 0 0;color:var(--black);}
+
+.sec-head{display:flex;align-items:baseline;gap:1rem;border-bottom:2px solid var(--black);padding-bottom:.5rem;margin:2.6rem 0 1rem;}
+.sec-num{font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--gold);font-weight:500;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--black);}
+
+p.body{font-size:.96rem;font-weight:300;line-height:1.8;color:var(--ink);margin-bottom:1.1rem;max-width:660px;}
+p.body strong{font-weight:600;color:var(--charcoal);}
+p.body em{font-style:italic;}
+
+.bigq{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.3rem 0;margin:1.8rem 0;max-width:600px;}
+.bigq p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.3rem;color:var(--black);line-height:1.45;}
+
+.steps{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin:1.3rem 0;}
+.step{background:var(--white);padding:1rem 1.1rem;}
+.step:nth-child(2){background:var(--cream);}
+.step-n{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.35rem;}
+.step-name{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.3rem;}
+.step-text{font-size:.82rem;font-weight:300;color:var(--ink);line-height:1.55;}
+@media(max-width:680px){.steps{grid-template-columns:1fr;}}
+
+.callout{background:var(--cream);border-left:3px solid var(--gold);padding:1rem 1.25rem;margin:1.4rem 0;font-size:.92rem;line-height:1.7;max-width:660px;}
+.callout strong{color:var(--black);}
+
+.pieces{margin:1.2rem 0;}
+.piece{display:grid;grid-template-columns:8rem 1fr;gap:1rem;padding:.7rem 0;border-bottom:1px solid var(--rule);align-items:baseline;}
+.piece-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);}
+.piece-text{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:680px){.piece{grid-template-columns:1fr;gap:.2rem;}}
+
+.assess{border:1px solid var(--black);background:var(--white);padding:1.1rem 1.4rem;margin:1.3rem 0;}
+.assess p{font-size:.9rem;line-height:1.7;margin-bottom:.6rem;}
+.assess p:last-child{margin-bottom:0;}
+.assess strong{font-weight:600;color:var(--black);}
+
+.gloss-cluster{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;background:var(--black);color:var(--white);padding:.25rem .6rem;display:inline-block;margin:1.3rem 0 .6rem;}
+.gloss{margin:0 0 .5rem;}
+.gitem{padding:.4rem 0;border-bottom:1px solid var(--rule);font-size:.86rem;line-height:1.55;}
+.gitem b{font-weight:600;color:var(--black);font-family:'Playfair Display',serif;}
+.gcols{column-count:2;column-gap:2rem;}
+.gcols .gitem{break-inside:avoid;}
+@media(max-width:680px){.gcols{column-count:1;}}
+
+.signoff{font-family:'Playfair Display',serif;font-style:italic;font-size:1.05rem;color:var(--charcoal);line-height:1.6;margin:1.5rem 0;max-width:620px;}
+
+.foot{border-top:2px solid var(--black);margin-top:2.5rem;padding-top:1rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;}
+.foot-l{font-size:.72rem;color:var(--charcoal);font-weight:600;}
+.foot-r{font-family:'IBM Plex Mono',monospace;font-size:.6rem;color:var(--muted);letter-spacing:.05em;}
+@media print{body{font-size:9.7pt;-webkit-print-color-adjust:exact;print-color-adjust:exact;}.page{max-width:100%;padding:0;}.sec-head,.gloss-cluster,.step,.callout,.bigq,.assess{-webkit-print-color-adjust:exact;print-color-adjust:exact;}.steps,.assess,.callout,.bigq{break-inside:avoid;}.gitem{break-inside:avoid;}.sec-head{margin:1.3rem 0 .7rem;}.masthead{padding:1.2rem 0 1rem;margin-bottom:1.2rem;}p.body{margin-bottom:.85rem;}.lead{margin:1rem 0 .9rem;}.callout{margin:1rem 0;padding:.8rem 1.1rem;}.bigq{margin:1.3rem 0;padding:1rem 0;}.gloss-cluster{margin:1rem 0 .5rem;}.gitem{padding:.32rem 0;}.signoff{margin:1.1rem 0;}.foot{margin-top:1.6rem;}}
+@media(max-width:680px){.page{padding:0 1.1rem 3rem;}}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="eyebrow">Economic Democracy &nbsp;·&nbsp; Student Handbook</p>
+    <h1 class="title">You Are Entering<br>an Argument</h1>
+    <p class="subtitle">What this course is, how it works, and what it will ask of you. Keep this — you'll come back to it.</p>
+  </div>
+
+  <p class="lead">Most courses hand you answers. This one hands you an argument — one that started in 1776 and has never been settled — and asks you to learn to think your way through it. The argument is about the economy, but not the way you might expect. It isn't really about graphs or stock prices. It's about <strong>power</strong>: who gets to own things, who decides how the economy works, and who it actually works for. Two hundred and fifty years of Americans — founders and abolitionists, factory owners and union organizers, economists and poets, platform billionaires and the people who built their fortunes for them — have fought over a single question. By the end of this course, you'll be able to fight over it too — with evidence, with fairness, and with a position you can actually defend.</p>
+
+  <div class="bigq">
+    <p>Who should hold economic power — and to whom should it answer?</p>
+  </div>
+
+  <p class="body">That's the question under everything you'll study. Hold onto it. Every concept you learn, every voice you read, every debate you have is a way of getting sharper about some piece of it. You are not being asked to memorize the answer, because there isn't one — there are serious, intelligent people on every side, and part of growing up intellectually is learning to take them all seriously before you decide where you stand.</p>
+
+  <!-- WHY THIS MATTERS -->
+  <div class="sec-head"><span class="sec-num">01</span><span class="sec-title">Why This Matters — and Why It Matters to You</span></div>
+
+  <p class="body">You are a citizen of the wealthiest and most powerful republic in human history. That's not a boast — it's a responsibility you were handed without being asked. The decisions this country makes about its economy ripple across the whole planet, and you are, in principle, one of the people who gets to make them. And yet the economy can feel like the one part of public life you're quietly told to leave to someone else — to the experts, the economists, the people with the charts. It's vast, it's technical, it seems to run on its own, and against it a single person can feel very small.</p>
+
+  <p class="body">This course is built on the conviction that <strong>that hand-off is a mistake</strong> — for you and for the country. The economy is not a force of nature you're stuck living inside; it is a set of human choices, and in a democracy those choices are supposed to be yours to weigh in on. You will make economic decisions your whole life — what work to do, what to buy, whether and how to <em>own</em> something, what to vote for and why. Every one of those is easier and wiser when you actually understand how the system works instead of taking someone's word for it. The goal here is to <strong>demystify the economy</strong> — to pull it out of the experts' hands just enough that you can participate in it, and in the democracy that's supposed to govern it, as a full citizen rather than a spectator.</p>
+
+  <p class="body">And ownership is part of that. It's hard to have a real say in an economy you don't own a piece of — a stake is part of what turns you from someone the economy happens <em>to</em> into someone who helps shape it. One quiet aim of this course is to help you think clearly about ownership, because participation without a stake is thin.</p>
+
+  <p class="body">Why does this matter beyond your own life? Because our hardest, most enduring problems are economic — and we are not solving them. <strong>Social Security</strong> is on a path that doesn't add up. The <strong>national debt</strong> climbs while both parties look away. And <strong>artificial intelligence</strong> is arriving fast enough to either unlock a new era of prosperity or, if we handle it badly, to concentrate wealth and power in ways that could threaten the experiment itself. These are not problems for experts alone; they are choices about the kind of future we want — and right now, <strong>partisanship and polarization</strong> have us so busy fighting that we can't actually solve them. A republic this powerful, frozen on its biggest questions, is a republic that will not survive.</p>
+
+  <p class="body">The way out isn't more shouting, and it isn't voting once a year and going home. It's <strong>more citizens who actually understand how the economy works</strong> — who can tell a real argument from a talking point, who make informed decisions about their own stake in the system, and who engage actively in shaping it. Civic engagement, the kind that solves hard problems, is built from informed people, not louder ones. That's what this course is trying to make you: not a believer in any particular answer, but a citizen equipped to help decide. The economy is too important, and you are too consequential, to leave it to anyone else.</p>
+
+  <!-- THE PROMISE -->
+  <div class="sec-head"><span class="sec-num">02</span><span class="sec-title">The Promise: How to Think, Not What to Think</span></div>
+
+  <p class="body">Here is the deal this course makes with you, and it's an unusual one: <strong>we will never tell you what to conclude.</strong> Not about capitalism, not about inequality, not about any of it. Your teacher won't grade you on agreeing with them, with this curriculum, or with anyone else. What you'll be graded on is the <em>quality of your thinking</em> — and that means something specific and demanding.</p>
+
+  <p class="body">It means that before you argue your own position, you have to be able to argue the <em>other</em> side — its strongest version, the one its smartest defenders would actually recognize, not a cartoon you set up to knock down. This is called <strong>steelmanning</strong> (the opposite of strawmanning), and it is the single most important skill this course will teach you. Anyone can dismiss an idea they don't understand. It takes real intellectual strength to state an opposing view so well that the people who hold it would say "yes — that's exactly what I mean," and <em>then</em> explain why you still disagree. If you can do that, you can think.</p>
+
+  <div class="callout">
+    <strong>Why bother arguing the side you reject?</strong> Because a position you've only ever defended against weak objections is a position you don't really understand — you've just never been tested. When you can make the best case for the view you oppose and still hold your own, your own view stops being an opinion you inherited and becomes a conclusion you earned. That's the difference this course is after.
+  </div>
+
+  <!-- THE METHOD -->
+  <div class="sec-head"><span class="sec-num">03</span><span class="sec-title">How a Unit Works: Tool, Argument, Stance</span></div>
+
+  <p class="body">The course moves in a rhythm. You won't just absorb information and give it back — you'll learn a tool, hear the people who fought over it, and then take a stand of your own. Three beats, over and over:</p>
+
+  <div class="steps">
+    <div class="step"><p class="step-n">First · the tool</p><p class="step-name">Learn the Concept</p><p class="step-text">You'll read a short primer on an economic idea — how it works, and where it stops being simple. This gives you precise language instead of vague impressions.</p></div>
+    <div class="step"><p class="step-n">Then · the argument</p><p class="step-name">Hear the Voices</p><p class="step-text">You'll meet real people from the 250 Voices who fought over that idea, and place them on a map of where power sits and who it answers to. The idea becomes contested, alive.</p></div>
+    <div class="step"><p class="step-n">Finally · the stance</p><p class="step-name">Take a Position</p><p class="step-text">In a debate, a role-play, or an essay, you decide — and defend your answer, having earned it by understanding every side first.</p></div>
+  </div>
+
+  <p class="body">One question will follow you through every unit, and you should start expecting it: <strong>what's the smallest change that would make the economy both more productive <em>and</em> more democratic — and what would it cost?</strong> We call it the reform test. Notice that it asks for the <em>smallest</em> change and demands you name the <em>cost</em> — because this course is allergic to easy answers and free lunches. Every real choice gives something up. Your job is to see clearly what.</p>
+
+  <!-- THE TOOLS -->
+  <div class="sec-head"><span class="sec-num">04</span><span class="sec-title">Two Things to Carry Everywhere</span></div>
+
+  <p class="body">As you study, you'll be handed a lot of concepts — but two simple questions are the lens you can point at almost anything, and they're worth memorizing now:</p>
+
+  <p class="body"><strong>Who has the power to act?</strong> — sometimes called individual <em>agency</em>: a person's, a family's, a community's real ability to shape their own economic life. And <strong>what can we build together?</strong> — sometimes called public <em>capacity</em>: what people can accomplish collectively that none could alone. Almost every economic argument you'll meet is, underneath, a disagreement about how to balance those two. Keep them in your pocket.</p>
+
+  <p class="body">And keep the open goal in view: this course never defines "a good economy" for you. It hands you the tools and asks <em>you</em> to define what an economy should be <em>for</em> — human flourishing, on whatever terms you can defend. That definition is yours to build and yours to argue. By June, you should have one.</p>
+
+  <!-- HOW YOU'RE GRADED -->
+  <div class="sec-head"><span class="sec-num">05</span><span class="sec-title">How You'll Be Graded</span></div>
+
+  <p class="body">Since the course grades thinking, not agreement, here's plainly what strong work looks like — so there are no mysteries:</p>
+
+  <div class="assess">
+    <p><strong>You'll score well when you:</strong> state the other side's best case so fairly its own believers would nod; take a clear position and hold it; use the course's concepts precisely; back your claims with evidence; and — crucially — name what your own position <em>costs</em> and argue it's worth it anyway.</p>
+    <p><strong>You will never be graded on which side you pick.</strong> You can argue against your teacher, against this curriculum's own framing, against the most popular view in the room — and earn top marks, if the reasoning is sound. The reverse is also true: agreeing with the "right" answer for weak reasons earns you little.</p>
+    <p><strong>Changing your mind is a strength, not a weakness</strong> — as long as you can say what changed it. So is holding your ground, if you can say why. What's never enough is an opinion you can't defend or a side you picked without understanding the other.</p>
+  </div>
+
+  <p class="body">In short: the easiest way to do poorly is to skip the steelman and pretend your position has no costs. The surest way to do well is to take the other side seriously and be honest about your own. That's not a trick — it's the whole point.</p>
+
+  <!-- THE PIECES -->
+  <div class="sec-head"><span class="sec-num">06</span><span class="sec-title">The Pieces You'll Use</span></div>
+
+  <div class="pieces">
+    <div class="piece"><span class="piece-name">Concept Primers</span><span class="piece-text">Short readings, each on one economic tool. They teach the idea, then show you exactly where it gets complicated — the two "levers" where reasonable people start to disagree. Your analytical vocabulary.</span></div>
+    <div class="piece"><span class="piece-name">250 Voices</span><span class="piece-text">A map of one American for every year since 1776 — the people who built, challenged, theorized, and resisted their way through the central question. Not a list to memorize; a cast of arguments to draw on.</span></div>
+    <div class="piece"><span class="piece-name">The Matrix</span><span class="piece-text">A grid you'll use constantly to place any thinker: does power sit <em>private</em> or <em>public</em>? Does it answer to <em>elites/experts</em> or to <em>ordinary people</em>? There's no correct spot — placing them <em>is</em> the thinking.</span></div>
+    <div class="piece"><span class="piece-name">Labs &amp; Role-Plays</span><span class="piece-text">You'll argue assigned roles in real economic decisions — sometimes a position you personally reject. Arguing a view that isn't yours, well, is the steelman skill performed live.</span></div>
+    <div class="piece"><span class="piece-name">The Capstone</span><span class="piece-text">Where it all lands: you define what a flourishing economy means, on your terms, and defend it with everything you've learned.</span></div>
+  </div>
+
+
+  <div class="signoff">
+    By the end, the goal isn't that you'll agree with us. It's that you'll be able to look at how the economy distributes power — and say, with evidence and a clear conscience, what you think should change, what it would cost, and why it's worth it. That's economic citizenship. Welcome to the argument.
+  </div>
+
+  <div class="foot">
+    <span class="foot-l">&copy; 2026 &nbsp;·&nbsp; Alfredo Mathew III &nbsp;·&nbsp; AM3 LLC &nbsp;·&nbsp; Working World LLC</span>
+    <span class="foot-r">Student Handbook &nbsp;·&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

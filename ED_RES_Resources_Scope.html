@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resources &amp; Scope — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0d0d0d;--ink:#1a1a1a;--charcoal:#2d2d2d;--mid:#5a5a5a;--muted:#8a8a8a;
+  --rule:#d0ccc6;--paper:#f7f5f0;--cream:#efede7;--warm:#e8e4db;--white:#fff;--gold:#8a6f3e;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:1000px;margin:0 auto;padding:0 2rem 5rem;}
+
+.masthead{border-bottom:3px solid var(--black);padding:2rem 0 1.4rem;margin-bottom:2rem;}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.7rem;}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;color:var(--black);line-height:1.04;letter-spacing:-.02em;margin-bottom:.5rem;}
+.lede{font-size:1rem;font-style:italic;color:var(--mid);max-width:640px;line-height:1.6;}
+
+.legend{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.5rem 0 .5rem;}
+.chip{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;padding:.25rem .55rem;border:1px solid var(--black);color:var(--charcoal);}
+
+.count-bar{display:flex;flex-wrap:wrap;gap:1.5rem;margin:1.25rem 0 .5rem;padding:.9rem 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);}
+.count{display:flex;flex-direction:column;}
+.count-n{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:var(--black);line-height:1;}
+.count-l{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:.3rem;}
+
+.sec{margin-top:2.75rem;}
+.sec-head{display:flex;align-items:baseline;gap:1rem;border-bottom:2px solid var(--black);padding-bottom:.5rem;margin-bottom:.3rem;}
+.sec-num{font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--gold);font-weight:500;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--black);}
+.sec-note{font-size:.85rem;font-style:italic;color:var(--mid);margin:.5rem 0 1.25rem;max-width:680px;}
+
+.cluster{margin:1.5rem 0;}
+.cluster-tag{display:inline-block;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;padding:.25rem .6rem;margin-bottom:.75rem;}
+
+.items{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);}
+.item{background:var(--white);padding:.7rem .95rem;}
+.item:nth-child(4n+2),.item:nth-child(4n+3){background:var(--cream);}
+.item-name{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--black);line-height:1.2;margin-bottom:.15rem;}
+.item-name .new{font-family:'IBM Plex Mono',monospace;font-size:.5rem;letter-spacing:.1em;color:var(--gold);vertical-align:super;margin-left:.3rem;}
+.item-desc{font-size:.78rem;font-weight:300;color:var(--mid);line-height:1.45;}
+@media(max-width:680px){.items{grid-template-columns:1fr;}}
+
+.flow{display:grid;grid-template-columns:1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin:1rem 0;}
+.flow-item{background:var(--white);padding:.75rem 1rem;display:flex;gap:.9rem;align-items:baseline;}
+.flow-item:nth-child(even){background:var(--cream);}
+.flow-step{font-family:'IBM Plex Mono',monospace;font-size:.6rem;color:var(--gold);letter-spacing:.08em;flex-shrink:0;width:4.5rem;}
+.flow-body{flex:1;}
+.flow-name{font-family:'Playfair Display',serif;font-size:.98rem;font-weight:700;color:var(--black);}
+.flow-desc{font-size:.8rem;font-weight:300;color:var(--mid);line-height:1.45;margin-top:.1rem;}
+
+.slot{border:1px solid var(--black);background:var(--white);padding:1rem 1.25rem;margin:.85rem 0;}
+.slot-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.25rem;}
+.slot-desc{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.55;}
+
+.foot{border-top:2px solid var(--black);margin-top:3.5rem;padding-top:1rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;}
+.foot-l{font-size:.72rem;color:var(--charcoal);font-weight:600;}
+.foot-r{font-family:'IBM Plex Mono',monospace;font-size:.6rem;color:var(--muted);letter-spacing:.05em;}
+@media(max-width:680px){.page{padding:0 1.1rem 3rem;}}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Teacher Resource Map</p>
+    <h1 class="title">Resources &amp; Scope</h1>
+    <p class="lede">Everything built so far, in one view — the Concept Library organized by cluster, the teaching unit and lab in teaching order, and where the course fits a school's existing slots.</p>
+  </div>
+
+  <div class="count-bar">
+    <div class="count"><span class="count-n">26</span><span class="count-l">Concept Primers</span></div>
+    <div class="count"><span class="count-n">5</span><span class="count-l">Clusters</span></div>
+    <div class="count"><span class="count-n">7</span><span class="count-l">Unit Readers</span></div>
+    <div class="count"><span class="count-n">2</span><span class="count-l">Role-Play Lab Docs</span></div>
+    <div class="count"><span class="count-n">5</span><span class="count-l">Teacher Guides</span></div>
+  </div>
+
+  <!-- ============ CONCEPT LIBRARY ============ -->
+  <div class="sec">
+    <div class="sec-head"><span class="sec-num">01</span><span class="sec-title">The Concept Library</span></div>
+    <p class="sec-note">Standalone economic-literacy primers (~5 pages each, same template). A teacher pulls one in whenever a lesson needs the underlying idea. Each teaches the tool, then breaks its neutrality across real contexts. Self-contained; no prerequisites.</p>
+
+    <div class="cluster">
+      <span class="cluster-tag">Allocation</span>
+      <div class="items">
+        <div class="item"><p class="item-name">Scarcity</p><p class="item-desc">Limited means against unlimited wants — the starting condition of all economics.</p></div>
+        <div class="item"><p class="item-name">Opportunity Cost</p><p class="item-desc">The real cost of any choice is the best thing given up to make it.</p></div>
+        <div class="item"><p class="item-name">Incentives</p><p class="item-desc">People respond to rewards and penalties — often in unintended ways.</p></div>
+      </div>
+    </div>
+
+    <div class="cluster">
+      <span class="cluster-tag">Engines</span>
+      <div class="items">
+        <div class="item"><p class="item-name">Profit Motive</p><p class="item-desc">The drive for gain as the engine that organizes production.</p></div>
+        <div class="item"><p class="item-name">Compounding</p><p class="item-desc">Growth on growth — the quiet force behind both wealth and debt.</p></div>
+        <div class="item"><p class="item-name">Competition</p><p class="item-desc">Rivalry that disciplines price and quality — until it doesn't.</p></div>
+        <div class="item"><p class="item-name">Productivity <span class="new">New</span></p><p class="item-desc">More output per hour — the engine of living standards, and the question of who gets the gains.</p></div>
+        <div class="item"><p class="item-name">Creative Destruction <span class="new">New</span></p><p class="item-desc">The new rises by destroying the old — growth and disruption as one motion.</p></div>
+      </div>
+    </div>
+
+    <div class="cluster">
+      <span class="cluster-tag">Power</span>
+      <div class="items">
+        <div class="item"><p class="item-name">Monopoly</p><p class="item-desc">One seller, no rivals — pricing power and its costs.</p></div>
+        <div class="item"><p class="item-name">Network Effects</p><p class="item-desc">Value that grows with users — and tips markets toward a single winner.</p></div>
+        <div class="item"><p class="item-name">Economies of Scale</p><p class="item-desc">Cheaper per unit as you grow bigger — an advantage that compounds.</p></div>
+        <div class="item"><p class="item-name">Rent-Seeking</p><p class="item-desc">Getting rich by capturing value rather than creating it.</p></div>
+        <div class="item"><p class="item-name">Sovereignty <span class="new">New</span></p><p class="item-desc">Control over your own economic fate — and the leverage dependence hands to others. Person to nation.</p></div>
+        <div class="item"><p class="item-name">The Trust <span class="new">New</span></p><p class="item-desc">A structure that splits control from benefit — protective for a child, dynastic for a fortune.</p></div>
+      </div>
+    </div>
+
+    <div class="cluster">
+      <span class="cluster-tag">Distribution</span>
+      <div class="items">
+        <div class="item"><p class="item-name">The Commons <span class="new">New</span></p><p class="item-desc">Resources owned by no one and used by all — ruined without rules, governable with them.</p></div>
+      </div>
+    </div>
+
+    <div class="cluster">
+      <span class="cluster-tag">Money &amp; Value</span>
+      <div class="items">
+        <div class="item"><p class="item-name">Ownership &amp; Equity</p><p class="item-desc">What it means to own a share of something, and why it matters.</p></div>
+        <div class="item"><p class="item-name">Inflation</p><p class="item-desc">A general rise in prices — and the silent redistribution it performs.</p></div>
+        <div class="item"><p class="item-name">Wages &amp; Assets</p><p class="item-desc">Income from work versus income from what you own. <em>(Reader-prefixed; functions as a primer.)</em></p></div>
+        <div class="item"><p class="item-name">The Wealth of Nations</p><p class="item-desc">The US vs. world private-wealth-creation engine.</p></div>
+        <div class="item"><p class="item-name">The Wealth of the Nation</p><p class="item-desc">The internal breakdown — distribution data, no moralizing.</p></div>
+        <div class="item"><p class="item-name">Data <span class="new">New</span></p><p class="item-desc">The strange new asset — worthless alone, immense in bulk, generated by the people who rarely own it.</p></div>
+        <div class="item"><p class="item-name">Cryptocurrency <span class="new">New</span></p><p class="item-desc">Money without a state behind it — and the question of what makes anything money at all.</p></div>
+        <div class="item"><p class="item-name">The Corporation <span class="new">New</span></p><p class="item-desc">The legal "person" — limited liability, and the buried question of who a company is for.</p></div>
+        <div class="item"><p class="item-name">P&amp;L vs. Balance Sheet <span class="new">New</span></p><p class="item-desc">Flow vs. stock — "are you making money?" against "what are you worth?" Paycheck to national debt.</p></div>
+        <div class="item"><p class="item-name">Credit <span class="new">New</span></p><p class="item-desc">Spending the future on a promise — and the trust that decides who gets to.</p></div>
+        <div class="item"><p class="item-name">Debt <span class="new">New</span></p><p class="item-desc">A fixed, enforceable obligation — risk shifted to the borrower, power handed to the lender.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ TEACHING UNIT ============ -->
+  <div class="sec">
+    <div class="sec-head"><span class="sec-num">02</span><span class="sec-title">Teaching Unit — Human Flourishing</span></div>
+    <p class="sec-note">A full unit, "Human Flourishing in the Age of Platforms, Automation, and Exponential Growth," in teaching order. Pull Concept Library primers alongside the movements as the underlying ideas come up.</p>
+    <div class="flow">
+      <div class="flow-item"><span class="flow-step">Guide</span><div class="flow-body"><p class="flow-name">Teacher Guide — Human Flourishing</p><p class="flow-desc">Unit overview, framing, pacing, and paired-resource guidance for the whole arc.</p></div></div>
+      <div class="flow-item"><span class="flow-step">On-Ramp</span><div class="flow-body"><p class="flow-name">On-Ramp Reader</p><p class="flow-desc">Sets the central question of flourishing and the two analytical tools (individual agency, public capacity).</p></div></div>
+      <div class="flow-item"><span class="flow-step">Support</span><div class="flow-body"><p class="flow-name">What Is a Platform? &nbsp;·&nbsp; Wages &amp; Assets</p><p class="flow-desc">Two supporting readers that supply ideas the movements lean on.</p></div></div>
+      <div class="flow-item"><span class="flow-step">Mvt. I</span><div class="flow-body"><p class="flow-name">Movement I — Platforms</p><p class="flow-desc">How platforms reshape work, value, and power. <em>Pairs with: Network Effects, Data, Monopoly.</em></p></div></div>
+      <div class="flow-item"><span class="flow-step">Mvt. II</span><div class="flow-body"><p class="flow-name">Movement II — Automation</p><p class="flow-desc">Machines, labor, and displacement. <em>Pairs with: Creative Destruction, Productivity.</em></p></div></div>
+      <div class="flow-item"><span class="flow-step">Mvt. III</span><div class="flow-body"><p class="flow-name">Movement III — Wealth</p><p class="flow-desc">Concentration, ownership, and distribution. <em>Pairs with: Ownership &amp; Equity, the Wealth primers, Rent-Seeking.</em></p></div></div>
+      <div class="flow-item"><span class="flow-step">Capstone</span><div class="flow-body"><p class="flow-name">Capstone — Define &amp; Defend</p><p class="flow-desc">Students define flourishing on their own terms and defend a reform stance.</p></div></div>
+    </div>
+  </div>
+
+  <!-- ============ ROLE-PLAY LAB ============ -->
+  <div class="sec">
+    <div class="sec-head"><span class="sec-num">03</span><span class="sec-title">Role-Play Lab — The Data Center Decision</span></div>
+    <p class="sec-note">A simulation/deliberation lab where students negotiate a real economic-civic decision. One of the evidence-favored pedagogies (role-play, structured discussion).</p>
+    <div class="flow">
+      <div class="flow-item"><span class="flow-step">Student</span><div class="flow-body"><p class="flow-name">Civic Economy Role-Play Lab — Student Lab</p><p class="flow-desc">Roles, briefing materials, and the deliberation structure students work through.</p></div></div>
+      <div class="flow-item"><span class="flow-step">Teacher</span><div class="flow-body"><p class="flow-name">Civic Economy Role-Play Lab — Teacher Guide</p><p class="flow-desc">Facilitation, timing, debrief prompts, and assessment guidance.</p></div></div>
+    </div>
+  </div>
+
+  <!-- ============ FRAMEWORK & FRONT MATTER ============ -->
+  <div class="sec">
+    <div class="sec-head"><span class="sec-num">04</span><span class="sec-title">Framework &amp; Front Matter</span></div>
+    <p class="sec-note">The documents that establish the course's rationale, sequence, and intellectual scaffolding.</p>
+    <div class="items">
+      <div class="item"><p class="item-name">Framework &amp; Rationale</p><p class="item-desc">The pedagogical spine: how to think, embrace before critique, the reform test.</p></div>
+      <div class="item"><p class="item-name">Two-Year Sequence</p><p class="item-desc">The longer course map this resource page complements.</p></div>
+      <div class="item"><p class="item-name">Civic Education — Introduction</p><p class="item-desc">Framing for the civic dimension of the course.</p></div>
+      <div class="item"><p class="item-name">Core Anthology 250</p><p class="item-desc">Anthology, introduction/argument, and teacher guide — the 250-voice reader set.</p></div>
+      <div class="item"><p class="item-name">Revolution, Counterrevolution, Reform</p><p class="item-desc">Reader and teacher guide on the arc of economic change.</p></div>
+      <div class="item"><p class="item-name">About / Architect</p><p class="item-desc">The course's origin and design statement.</p></div>
+    </div>
+  </div>
+
+  <!-- ============ SLOT FIT ============ -->
+  <div class="sec">
+    <div class="sec-head"><span class="sec-num">05</span><span class="sec-title">Where It Fits a School's Schedule</span></div>
+    <p class="sec-note">The three openings where a semester Economic Democracy course is most plausible. The materials above are designed to be standards-completing, not standards-rejecting.</p>
+    <div class="slot"><p class="slot-name">A senior Economics course</p><p class="slot-desc">The Concept Library supplies the conceptual-economics backbone; the unit and lab supply the inquiry, simulation, and performance tasks that a textbook can't.</p></div>
+    <div class="slot"><p class="slot-name">A combined Government / Economics graduation slot</p><p class="slot-desc">The power/institutions/ownership framing unifies what Gov and Econ usually teach as adjacent subjects.</p></div>
+    <div class="slot"><p class="slot-name">An interdisciplinary social-studies elective</p><p class="slot-desc">Contemporary relevance — platforms, automation, data, AI — inside a durable structural frame.</p></div>
+  </div>
+
+  <div class="foot">
+    <span class="foot-l">&copy; 2026 &nbsp;·&nbsp; Alfredo Mathew III &nbsp;·&nbsp; AM3 LLC &nbsp;·&nbsp; Working World LLC</span>
+    <span class="foot-r">Teacher Resource Map &nbsp;·&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

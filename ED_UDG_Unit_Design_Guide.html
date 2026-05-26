@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit Design Guide — Weaving Concepts, Voices &amp; Projects — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0d0d0d;--ink:#1a1a1a;--charcoal:#2d2d2d;--mid:#5a5a5a;--muted:#8a8a8a;
+  --rule:#d0ccc6;--paper:#f7f5f0;--cream:#efede7;--warm:#e8e4db;--white:#fff;--gold:#8a6f3e;
+  --tool:#2f5e8a;--arg:#8a6f3e;--stance:#1f6f43;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased;font-size:14px;}
+.page{max-width:940px;margin:0 auto;padding:0 2rem 4rem;}
+
+.masthead{border-bottom:3px solid var(--black);padding:2rem 0 1.4rem;margin-bottom:1.5rem;}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.7rem;}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;color:var(--black);line-height:1.04;letter-spacing:-.02em;margin-bottom:.5rem;}
+.lede{font-size:.98rem;font-style:italic;color:var(--mid);max-width:720px;line-height:1.6;}
+
+.sec-head{display:flex;align-items:baseline;gap:1rem;border-bottom:2px solid var(--black);padding-bottom:.5rem;margin:2.5rem 0 .3rem;}
+.sec-num{font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--gold);font-weight:500;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--black);}
+.sec-note{font-size:.88rem;color:var(--mid);margin:.6rem 0 1.1rem;max-width:740px;line-height:1.6;}
+.sec-note em{font-style:italic;}
+
+.rhythm{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin:1.25rem 0;}
+.beat{background:var(--white);padding:1rem 1.15rem;}
+.beat-n{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.4rem;font-weight:500;}
+.beat.tool .beat-n{color:var(--tool);}
+.beat.arg .beat-n{color:var(--arg);}
+.beat.stance .beat-n{color:var(--stance);}
+.beat-name{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.15;}
+.beat-text{font-size:.82rem;font-weight:300;color:var(--ink);line-height:1.55;}
+.beat-text b{font-weight:600;color:var(--charcoal);}
+@media(max-width:680px){.rhythm{grid-template-columns:1fr;}}
+
+.steps{list-style:none;counter-reset:st;margin:1rem 0;}
+.steps li{counter-increment:st;position:relative;padding:.5rem 0 .5rem 2.2rem;border-bottom:1px solid var(--rule);font-size:.88rem;line-height:1.55;font-weight:300;}
+.steps li::before{content:counter(st);position:absolute;left:0;top:.55rem;font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--gold);font-weight:500;border:1px solid var(--rule);width:1.5rem;height:1.5rem;display:flex;align-items:center;justify-content:center;}
+.steps li b{font-weight:600;color:var(--black);}
+
+.unit{border:1px solid var(--black);background:var(--white);margin:1.5rem 0;break-inside:avoid;}
+.unit-head{background:var(--black);color:var(--white);padding:.8rem 1.2rem;}
+.unit-tag{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.25rem;}
+.unit-name{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:var(--white);line-height:1.1;}
+.unit-q{font-size:.83rem;font-style:italic;color:rgba(255,255,255,.8);margin-top:.3rem;}
+.unit-body{padding:1.1rem 1.3rem;}
+.unit-row{display:grid;grid-template-columns:5.5rem 1fr;gap:.9rem;padding:.55rem 0;border-bottom:1px solid var(--rule);align-items:start;}
+.unit-row:last-child{border-bottom:none;}
+.row-label{font-family:'IBM Plex Mono',monospace;font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;font-weight:500;padding-top:.15rem;}
+.row-label.tool{color:var(--tool);}
+.row-label.arg{color:var(--arg);}
+.row-label.stance{color:var(--stance);}
+.row-label.misc{color:var(--muted);}
+.row-body{font-size:.85rem;line-height:1.55;font-weight:300;}
+.row-body b{font-weight:600;color:var(--black);}
+.row-body .pill{font-family:'IBM Plex Mono',monospace;font-size:.6rem;background:var(--cream);padding:.1rem .4rem;border:1px solid var(--rule);white-space:nowrap;}
+
+.callout{background:var(--cream);border-left:3px solid var(--gold);padding:.85rem 1.15rem;margin:1.25rem 0;font-size:.85rem;line-height:1.6;}
+.callout strong{color:var(--black);}
+
+.foot{border-top:2px solid var(--black);margin-top:2.5rem;padding-top:1rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;}
+.foot-l{font-size:.72rem;color:var(--charcoal);font-weight:600;}
+.foot-r{font-family:'IBM Plex Mono',monospace;font-size:.6rem;color:var(--muted);letter-spacing:.05em;}
+@media print{
+  body{font-size:9.5pt;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .page{max-width:100%;padding:0;}
+  th,.sec-head,.beat,.unit-head,.callout,.rhythm{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .unit,.rhythm{break-inside:avoid;}
+  .sec-head{margin:1.4rem 0 .25rem;}
+  .masthead{padding:1.2rem 0 1rem;margin-bottom:1rem;}
+}
+@media(max-width:680px){.page{padding:0 1.1rem 3rem;}.unit-row{grid-template-columns:1fr;gap:.2rem;}}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Unit Design Guide</p>
+    <h1 class="title">Weaving the Three Strands</h1>
+    <p class="lede">How to build a unit that braids the concept primers, the 250 Voices anthology, and the projects and labs into one arc — so students learn an economic tool, hear the real people who fought over it, and then take a defended stance of their own. A reusable method, plus four units built and ready to teach.</p>
+  </div>
+
+  <!-- ============ THE RHYTHM ============ -->
+  <div class="sec-head"><span class="sec-num">01</span><span class="sec-title">The Rhythm — Tool, Argument, Stance</span></div>
+  <p class="sec-note">The three strands of this curriculum are not three subjects to cover separately. They are three <em>moves</em> in a single thinking process, and a strong unit runs them in order. The concept teaches the tool; the voices stage the argument that tool has always provoked; the project makes the student decide. This is also the C3 inquiry arc — apply disciplinary concepts, evaluate competing evidence, take informed action — in the curriculum's own language.</p>
+
+  <div class="rhythm">
+    <div class="beat tool">
+      <p class="beat-n">Beat 1 · The Tool</p>
+      <p class="beat-name">Learn the Concept</p>
+      <p class="beat-text">Open with a <b>concept primer</b>. Students learn how the tool works — what a monopoly is, how compounding runs, why labor isn't an ordinary commodity — and where its neutrality breaks. They now have precise language. <em>Pair with that concept's warm-up.</em></p>
+    </div>
+    <div class="beat arg">
+      <p class="beat-n">Beat 2 · The Argument</p>
+      <p class="beat-name">Hear the Voices</p>
+      <p class="beat-text">Bring in <b>2&ndash;4 figures from the 250 Voices</b> who fought over exactly that tool. Students place them on the matrix (Private↔Public, Elite↔Democratic) and hear the argument run between them. The tool stops being abstract and becomes contested.</p>
+    </div>
+    <div class="beat stance">
+      <p class="beat-n">Beat 3 · The Stance</p>
+      <p class="beat-name">Take a Position</p>
+      <p class="beat-text">Close with a <b>project, lab, or capstone</b> that forces a decision. Having learned the tool and weighed the arguments, the student now defends their own answer to the unit's question. <em>Pair with the reform-test exit ticket.</em></p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>Why this order matters.</strong> Lead with voices and the economics stays vague; lead with the project and students argue without tools. The tool first gives them language, the voices give them the range of serious positions, and only then is a defended stance more than an opinion. The rhythm can repeat within a long unit — tool, voices, tool, voices, then one culminating stance — but the order within each loop holds.
+  </div>
+
+  <!-- ============ THE TEMPLATE ============ -->
+  <div class="sec-head"><span class="sec-num">02</span><span class="sec-title">The Template — Build Your Own Unit</span></div>
+  <p class="sec-note">Six steps to assemble any unit from the three strands. The whole method fits on an index card: pick a question, gather the tools, stage the argument, end on a stance.</p>
+
+  <ol class="steps">
+    <li><b>Name the question.</b> Start with one contested question worth a unit — phrased so a thoughtful person could answer it more than one way. (e.g., "Who should own the value that platforms create?") The anthology's central question — <em>who holds economic power, and to whom is it accountable?</em> — is the parent of them all.</li>
+    <li><b>Gather the tools (1&ndash;3 primers).</b> Which concepts does a student <em>need</em> to reason about this question well? Pull those primers. Two or three is plenty; more buries the argument.</li>
+    <li><b>Stage the argument (2&ndash;4 voices).</b> From the 250, choose figures who genuinely disagreed about this — ideally one builder of power and one challenger, so the matrix has real spread. Placement is the activity, not decoration.</li>
+    <li><b>Choose the stance (1 project).</b> Pick the lab, role-play, or capstone that makes students decide. If none fits exactly, the Define &amp; Defend capstone adapts to any unit question.</li>
+    <li><b>Bookend with routines.</b> Open each class with a warm-up (surface prior belief), close with an exit ticket (check learning). The reform-test closer fits almost any unit's final day.</li>
+    <li><b>Sequence the loops.</b> Short unit: one pass through the rhythm. Long unit: alternate tool and voices two or three times, then one culminating stance. Keep tool-before-voices within every loop.</li>
+  </ol>
+
+  <!-- ============ SAMPLE UNITS ============ -->
+  <div class="sec-head"><span class="sec-num">03</span><span class="sec-title">Four Units, Built and Ready</span></div>
+  <p class="sec-note">Each is a worked example of the rhythm. Teach as-is, or reverse-engineer one to build your own. Every primer, voice section, and project named below is a real piece of this curriculum.</p>
+
+  <!-- UNIT 1 -->
+  <div class="unit">
+    <div class="unit-head">
+      <p class="unit-tag">Unit A · ~2&ndash;3 weeks</p>
+      <p class="unit-name">Platforms &amp; Power</p>
+      <p class="unit-q">Who should own the value that digital platforms create?</p>
+    </div>
+    <div class="unit-body">
+      <div class="unit-row"><span class="row-label tool">Tools</span><span class="row-body"><b>Network Effects</b>, <b>Monopoly</b>, and <b>Data</b> primers — why platforms tip toward winners-take-all, and who owns the data that makes them valuable. <span class="pill">+ What Is a Platform? reader</span></span></div>
+      <div class="unit-row"><span class="row-label arg">Voices</span><span class="row-body">Section IV — <b>The Digital Revolution &amp; Its Critics</b>. Pair a platform builder with a critic; place both on Private↔Public and Elite↔Democratic. Where does platform power actually sit, and to whom does it answer?</span></div>
+      <div class="unit-row"><span class="row-label stance">Stance</span><span class="row-body">The <b>Civic Economy Role-Play Lab (the Data Center Decision)</b> — students negotiate a real platform-economy decision and defend an outcome.</span></div>
+      <div class="unit-row"><span class="row-label misc">Routines</span><span class="row-body">Open with the <b>Data</b> forced-choice ("your data — yours or the platform's?"); close with the reform test on platform ownership.</span></div>
+    </div>
+  </div>
+
+  <!-- UNIT 2 -->
+  <div class="unit">
+    <div class="unit-head">
+      <p class="unit-tag">Unit B · ~3 weeks</p>
+      <p class="unit-name">The Wealth Divide</p>
+      <p class="unit-q">Why do owners pull ahead of earners — and what, if anything, should be done?</p>
+    </div>
+    <div class="unit-body">
+      <div class="unit-row"><span class="row-label tool">Tools</span><span class="row-body"><b>Wages &amp; Assets</b>, <b>Ownership &amp; Equity</b>, and <b>Compounding</b> teach the mechanism; <b>Predistribution</b> stages the central reform debate (broaden ownership vs. tax-and-transfer). <span class="pill">+ Movement III: Wealth reader</span></span></div>
+      <div class="unit-row"><span class="row-label arg">Voices</span><span class="row-body">Sections V (<b>Money, Wealth &amp; Who Controls It</b>) and VII (<b>Economic Anger, Identity &amp; Mobilization</b>) — those who built fortunes beside those who organized against concentration. The matrix spread here is wide.</span></div>
+      <div class="unit-row"><span class="row-label stance">Stance</span><span class="row-body"><b>Define &amp; Defend capstone</b> — students argue the smallest reform that would broaden prosperity without breaking the engine that creates wealth.</span></div>
+      <div class="unit-row"><span class="row-label misc">Routines</span><span class="row-body">Open with the <b>Predistribution</b> forced-choice (broaden ownership or transfer?); close with "did your mind move?"</span></div>
+    </div>
+  </div>
+
+  <!-- UNIT 3 -->
+  <div class="unit">
+    <div class="unit-head">
+      <p class="unit-tag">Unit C · ~2&ndash;3 weeks</p>
+      <p class="unit-name">Boom, Bust &amp; Who Pays</p>
+      <p class="unit-q">If downturns renew the economy, why does it matter who absorbs the cost?</p>
+    </div>
+    <div class="unit-body">
+      <div class="unit-row"><span class="row-label tool">Tools</span><span class="row-body"><b>Business Cycles</b> (why economies swing), <b>Banking &amp; Central Banks</b> (who governs money and credit), and <b>Labor</b> (the three kinds of unemployment, and who bears them).</span></div>
+      <div class="unit-row"><span class="row-label arg">Voices</span><span class="row-body">Sections III (<b>Scale, Labor &amp; the Machine</b>) and VI (<b>Power, Accountability &amp; Democratic Renewal</b>) — the industrialists and the reformers who fought over crashes, money, and who the system protects in a panic.</span></div>
+      <div class="unit-row"><span class="row-label stance">Stance</span><span class="row-body"><b>Define &amp; Defend capstone</b>, adapted — students design the smallest cushion for those hit hardest by a downturn that doesn't blunt the cycle's renewing work.</span></div>
+      <div class="unit-row"><span class="row-label misc">Routines</span><span class="row-body">Open with the <b>Business Cycles</b> forced-choice ("recession: system failing or correcting?"); close with the reform test.</span></div>
+    </div>
+  </div>
+
+  <!-- UNIT 4 -->
+  <div class="unit">
+    <div class="unit-head">
+      <p class="unit-tag">Unit D · ~2 weeks · course opener</p>
+      <p class="unit-name">The Founding Argument</p>
+      <p class="unit-q">Where should economic power sit — and to whom should it answer?</p>
+    </div>
+    <div class="unit-body">
+      <div class="unit-row"><span class="row-label tool">Tools</span><span class="row-body">The matrix itself is the tool here: <b>Ownership &amp; Equity</b> and <b>Sovereignty</b> give students the language of power and control before they meet the people who fought over it. <span class="pill">+ Human Flourishing On-Ramp reader</span></span></div>
+      <div class="unit-row"><span class="row-label arg">Voices</span><span class="row-body">Section I — <b>Architects of the Experiment</b>. Hamilton vs. Jefferson as the origin of every later fight; the abolitionists and suffragists who demanded the experiment deliver. Place them all; find the argument that never ended.</span></div>
+      <div class="unit-row"><span class="row-label stance">Stance</span><span class="row-body">Students write their own placement on the matrix and defend it — establishing the personal stake they'll carry through every later unit. <em>This unit sets up the whole course.</em></span></div>
+      <div class="unit-row"><span class="row-label misc">Routines</span><span class="row-body">Open with "where should power sit?"; close by having students rewrite the central question in their own words.</span></div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>Sequencing the four.</strong> <b>The Founding Argument</b> works as the course opener — it installs the matrix and the central question every other unit returns to. <b>Platforms &amp; Power</b>, <b>The Wealth Divide</b>, and <b>Boom, Bust &amp; Who Pays</b> can run in any order after it, each a self-contained loop of the rhythm. Together they trace the argument from 1776 to the present without ever being merely chronological — because the founding question is still the one being fought over in the platform economy.
+  </div>
+
+  <div class="foot">
+    <span class="foot-l">&copy; 2026 &nbsp;·&nbsp; Alfredo Mathew III &nbsp;·&nbsp; AM3 LLC &nbsp;·&nbsp; Working World LLC</span>
+    <span class="foot-r">Unit Design Guide &nbsp;·&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

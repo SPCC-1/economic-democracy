@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teacher Guide — Human Flourishing in the Age of Platforms, Automation, and Exponential Growth — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+
+/* ── Masthead ── */
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.5rem;}
+.masthead-sub{font-size:.9rem;font-weight:300;color:var(--mid);line-height:1.6;max-width:600px;}
+.masthead-meta{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.08em;margin-top:.75rem;}
+
+/* ── Section headers ── */
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+
+/* ── Body text ── */
+.body-intro{font-size:1rem;font-weight:300;line-height:1.8;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.4rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.8;color:var(--ink);margin-bottom:1.1rem;max-width:680px;}
+
+/* ── At-a-glance ── */
+.glance{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin:1.75rem 0;}
+.glance-cell{background:var(--cream);padding:1rem 1.1rem;}
+.glance-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem;}
+.glance-val{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);line-height:1.2;}
+@media(max-width:600px){.glance{grid-template-columns:1fr 1fr;}}
+
+/* ── Paired resource bar ── */
+.pair-bar{background:var(--black);color:var(--white);padding:.6rem 1.25rem;margin:2rem 0 .5rem;display:flex;align-items:center;gap:1rem;}
+.pair-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.4);}
+.pair-title{font-family:'Source Serif 4',serif;font-size:.85rem;font-weight:600;color:var(--white);}
+
+/* ── Objectives ── */
+.obj-list{list-style:none;margin:.75rem 0 1.25rem;}
+.obj-list li{font-size:.88rem;font-weight:300;color:var(--ink);padding:.4rem 0 .4rem 1.5rem;position:relative;line-height:1.6;border-bottom:1px solid var(--cream);}
+.obj-list li::before{content:'→';position:absolute;left:0;color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:.7rem;top:.45rem;}
+
+/* ── Phase blocks ── */
+.phase{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.5rem 0;background:var(--cream);}
+.phase-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem;display:flex;gap:1rem;}
+.phase-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.phase-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.phase-body p{margin-bottom:.6rem;}
+.phase-body p:last-child{margin-bottom:0;}
+
+/* ── Teacher script ── */
+.script{border:1px solid var(--rule);padding:1rem 1.25rem;margin:1rem 0;background:var(--white);}
+.script-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem;}
+.script-text{font-size:.88rem;font-style:italic;color:var(--charcoal);line-height:1.75;}
+
+/* ── Movement cards ── */
+.move-grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin:1.5rem 0;}
+.move-card{background:var(--paper);padding:1.25rem 1.4rem;}
+.move-card:nth-child(even){background:var(--cream);}
+.mv-num{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem;}
+.mv-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.3rem;}
+.mv-question{font-size:.82rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.6rem;margin-bottom:.6rem;line-height:1.5;}
+.mv-beats{list-style:none;}
+.mv-beats li{font-size:.8rem;font-weight:300;color:var(--mid);line-height:1.55;padding:.18rem 0 .18rem 1.1rem;position:relative;}
+.mv-beats li::before{content:'·';position:absolute;left:.3rem;color:var(--black);font-weight:700;}
+.mv-beats li strong{color:var(--charcoal);font-weight:600;}
+.mv-friction{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);margin-top:.5rem;border-top:1px solid var(--rule);padding-top:.4rem;letter-spacing:.02em;}
+
+/* ── Quadrant voice table ── */
+.policy-guide{width:100%;border-collapse:collapse;margin:1.25rem 0;font-size:.83rem;}
+.policy-guide tr{border-bottom:1px solid var(--rule);}
+.policy-guide tr:nth-child(odd){background:var(--cream);}
+.policy-guide td{padding:.65rem .85rem;vertical-align:top;line-height:1.5;}
+.pg-num{font-family:'IBM Plex Mono',monospace;font-size:.6rem;color:var(--muted);width:2.5rem;}
+.pg-name{font-weight:700;color:var(--black);width:150px;}
+.pg-quadrant{color:var(--charcoal);font-style:italic;width:130px;}
+.pg-tension{color:var(--mid);font-weight:300;}
+
+/* ── Sequence tracker ── */
+.neg-track{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.neg-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.75rem;}
+.neg-row{display:grid;grid-template-columns:170px 1fr;gap:.5rem 1.25rem;padding:.5rem 0;border-bottom:1px solid var(--rule);}
+.neg-row:last-child{border-bottom:none;}
+.neg-step{font-size:.82rem;font-weight:700;color:var(--charcoal);}
+.neg-desc{font-size:.82rem;font-weight:300;color:var(--mid);line-height:1.55;}
+@media(max-width:600px){.neg-row{grid-template-columns:1fr;}}
+
+/* ── Inset ── */
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+
+/* ── Differentiation ── */
+.diff-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin:1.5rem 0;}
+.diff-cell{background:var(--paper);padding:1.1rem;}
+.diff-cell:nth-child(even){background:var(--cream);}
+.diff-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem;}
+.diff-title{font-family:'Playfair Display',serif;font-size:.9rem;font-weight:700;color:var(--black);margin-bottom:.3rem;}
+.diff-body{font-size:.8rem;font-weight:300;color:var(--mid);line-height:1.6;}
+@media(max-width:600px){.diff-grid{grid-template-columns:1fr;}}
+
+/* ── Assessment ── */
+.assess{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.assess-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.65rem;}
+.assess-row{display:grid;grid-template-columns:1fr 2fr;gap:.5rem 1.5rem;margin-bottom:.5rem;padding-bottom:.5rem;border-bottom:1px solid var(--rule);}
+.assess-row:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.assess-criterion{font-size:.82rem;font-weight:700;color:var(--charcoal);}
+.assess-desc{font-size:.82rem;font-weight:300;color:var(--mid);line-height:1.55;}
+@media(max-width:600px){.assess-row{grid-template-columns:1fr;}}
+
+/* ── Definition box ── */
+.defbox{border:1px solid var(--black);background:var(--white);padding:1.25rem 1.5rem;margin:1.5rem 0;}
+.defbox-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.defbox p{font-size:.9rem;font-weight:300;color:var(--ink);line-height:1.75;margin-bottom:.6rem;}
+.defbox p:last-child{margin-bottom:0;}
+.defbox strong{font-weight:600;color:var(--black);}
+
+/* ── Closing ── */
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin-top:2.5rem;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;line-height:1.75;color:var(--white);}
+
+/* ── Footer ── */
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:9pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing,.pair-bar{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .move-card,.phase,.defbox{break-inside:avoid;}
+  .sec-header,.move-card{break-inside:avoid;}
+  .break-before{break-before:page;}
+}
+/* screen + print: force major sections to begin a fresh page */
+.break-before{break-before:page;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Teacher Guide</p>
+    <h1 class="masthead-title">Human Flourishing in the Age of Platforms, Automation, and Exponential Growth</h1>
+    <p class="masthead-sub">Teacher facilitation guide for the Year Two inquiry unit. One open question — what does it take for people to flourish, and who is responsible for making it possible — carried across three movements: platforms, automation, and the concentration of wealth.</p>
+  </div>
+
+  <!-- AT A GLANCE -->
+  <div class="glance">
+    <div class="glance-cell">
+      <p class="glance-label">Duration</p>
+      <p class="glance-val">3–5 weeks</p>
+    </div>
+    <div class="glance-cell">
+      <p class="glance-label">Structure</p>
+      <p class="glance-val">On-Ramp · Three Movements · Capstone</p>
+    </div>
+    <div class="glance-cell">
+      <p class="glance-label">Anchor Lens</p>
+      <p class="glance-val">Individual Agency · Public Capacity</p>
+    </div>
+    <div class="glance-cell">
+      <p class="glance-label">Prerequisites</p>
+      <p class="glance-val">Framework unit + Year One sequence</p>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <p class="body-intro">This unit takes the curriculum out of settled history and into the arguments students are living inside right now. Platforms, automation, and the concentration of wealth are not finished stories with agreed-upon lessons. They are open questions that serious, intelligent people answer in opposite directions. The unit does not resolve them. It teaches students to reason through them.</p>
+
+  <p class="body">The governing posture matters as much as the content. This is not an anti-capitalist unit, and it is not a unit about the dangers of technology. America is the economic engine of the world; the platforms, machines, and fortunes examined here are products of the most agency-generating system in human history. The unit embraces that before it critiques anything. The discipline is to hold the benefit and the cost in the same hand — to ask not "is this good or bad" but "does this help people flourish, and at what cost to our shared capacity to govern ourselves." Reform over revolution. Every movement keeps the full ideological range at the table.</p>
+
+  <div class="inset">
+    <strong>Teacher framing note:</strong> The most common failure in this unit is collapsing it into a familiar left/right fight — "tech is exploitative" versus "regulation kills innovation." Your job is to hold the harder framing: every one of these innovations expands individual agency while testing public capacity, and reasonable people weigh that trade differently. Keep returning to the tradeoff, not the team.
+  </div>
+
+  <!-- THE MEASURING STICK -->
+  <div class="sec-header break-before"><span class="sec-roman">I</span><span class="sec-title">The Measuring Stick — How the Unit Reasons</span></div>
+
+  <p class="body">The unit's central word is <em>flourishing</em> — and the curriculum does not define it for students. That is deliberate. A pre-written definition, however balanced, still hands students the answer and asks them to live inside it. Instead, flourishing is held open as the unit's live question: students encounter how America and different groups of Americans have defined it, then build, test, and revise their own definition across the three movements.</p>
+
+  <p class="body">What the unit <em>does</em> fix is the analytical grammar — the two tools students reason <em>with</em>, even as the goal stays theirs to define:</p>
+
+  <div class="defbox">
+    <p class="defbox-label">The two tools — fixed grammar, open goal</p>
+    <p><strong>Individual agency.</strong> The opportunity, freedom, and self-determination of a person to choose and build according to their values. The power to act on one's own life.</p>
+    <p><strong>Public capacity.</strong> Our shared ability to set fair rules, hold power accountable, and do together what no individual can do alone. The power to act in concert.</p>
+    <p>The hard cases in this unit are hard precisely because they expand one while threatening the other. A platform can enlarge a person's reach while eroding the shared reality a democracy needs. Automation can multiply abundance while concentrating who controls it. A great fortune given away can build real public goods while moving the power to choose them from the voting public to a single donor. <strong>Flourishing is the end students argue toward. Agency and capacity are how they argue.</strong></p>
+    <p>And every movement ends on the same test, applied to the reform a student proposes: <strong>does it grow the economy while expanding democracy — and what does it cost?</strong> That double demand is the discipline of reform over revolution. A proposal that grows the economy but narrows democracy fails the test; so does one that expands democracy but stalls the engine. The work is to find the move that does both, and to be honest about its price.</p>
+  </div>
+
+  <!-- LEARNING OBJECTIVES -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">Learning Objectives</span></div>
+
+  <ul class="obj-list">
+    <li>Articulate how America — and different groups of Americans — have defined human flourishing, and build a defensible working definition of their own</li>
+    <li>Apply the agency/capacity lens to a contemporary case before reaching for a political label</li>
+    <li>Reconstruct the strongest version of a worldview they disagree with — builder, critic, technocrat, and reformer alike</li>
+    <li>Place platforms, automation, and concentrated wealth on the Power–Democracy–Economy matrix and defend the placement</li>
+    <li>Name a specific reform that preserves the engine while widening the door — and identify what it costs</li>
+    <li>Take a defended stance under genuine uncertainty, then revise it in light of evidence and counterargument</li>
+  </ul>
+
+  <!-- UNIT ARC -->
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">The Unit Arc</span></div>
+
+  <p class="body">The unit moves from an open question, through three test cases, to a defended synthesis. Each movement repeats the same four-beat rhythm so students internalize a method, not just a set of opinions.</p>
+
+  <div class="neg-track">
+    <p class="neg-label">The recurring four-beat rhythm — every movement</p>
+    <div class="neg-row">
+      <p class="neg-step">1 · Embrace first</p>
+      <p class="neg-desc">Name the genuine benefit as the student's own lived reality. Not a strawman set up to knock down — the real gain, stated generously, before any critique.</p>
+    </div>
+    <div class="neg-row">
+      <p class="neg-step">2 · Find the frontier</p>
+      <p class="neg-desc">Locate where the gains stop reaching people, or where individual agency grows even as public capacity shrinks. The tension, not the indictment.</p>
+    </div>
+    <div class="neg-row">
+      <p class="neg-step">3 · Hold the live argument</p>
+      <p class="neg-desc">Put the strongest voices on each side in genuine conflict. All four quadrants get a coherent articulation. No position wins by default.</p>
+    </div>
+    <div class="neg-row">
+      <p class="neg-step">4 · Place it & make the move</p>
+      <p class="neg-desc">Students place the case on the matrix, test it against their flourishing definition, and name the smallest reform that grows the economy while expanding democracy — and identify what it costs.</p>
+    </div>
+  </div>
+
+  <!-- ON-RAMP -->
+  <div class="sec-header"><span class="sec-roman">IV</span><span class="sec-title">On-Ramp — What Does It Mean to Flourish?</span></div>
+
+  <p class="body">Before the three movements, a short opening sequence surfaces what students already believe flourishing is — rather than supplying it. They encounter how America has defined the good life across its history, and how different groups of Americans have defined it differently and in tension with one another.</p>
+
+  <div class="phase">
+    <p class="phase-meta"><span>On-Ramp</span><span>Sets up everything downstream</span></p>
+    <p class="phase-title">Surface the definitions, then build one</p>
+    <div class="phase-body">
+      <p><strong>Encounter the range.</strong> Use anthology voices as raw material for how flourishing has been defined: the pursuit of happiness, the self-made citizen, freedom from want, the capabilities to live a life one has reason to value, belonging and rootedness, the freedom to create and build. The goal is for students to see that respected, serious people genuinely disagree — which gives them permission to take their own swing.</p>
+      <p><strong>Build a v1 definition.</strong> Each student writes a working definition of flourishing they will carry through the unit. It does not need to be final. It needs to be theirs, and specific enough to be tested.</p>
+      <p><strong>Baseline matrix placement.</strong> Students mark where they currently sit on the agency/capacity grid. Revisited at the capstone — the unit measures movement, not arrival.</p>
+    </div>
+  </div>
+
+  <div class="script">
+    <p class="script-label">Teacher script — opening the unit</p>
+    <p class="script-text">"For the next few weeks we are going to argue about three things you use, depend on, and will inherit: the platforms in your pocket, the machines learning to do your future job, and the largest private fortunes in human history. I am not going to tell you what to think about any of them. I am going to make sure you understand how the smartest people who disagree with each other see them — and then you are going to decide, and defend it. But first: what does it even mean for a human being to flourish? Write it down. We will come back to what you wrote."</p>
+  </div>
+
+  <!-- THE THREE MOVEMENTS -->
+  <div class="sec-header"><span class="sec-roman">V</span><span class="sec-title">The Three Movements</span></div>
+
+  <p class="body">Each movement is a self-contained inquiry that runs the four-beat rhythm. They are sequenced deliberately: students begin with the case they live inside (platforms), move to the case that shapes their future (automation), and end with the case that implicates the people they admire (wealth).</p>
+
+  <div class="move-grid">
+    <div class="move-card">
+      <p class="mv-num">Movement I</p>
+      <p class="mv-title">Platforms</p>
+      <p class="mv-question">Does this technology help people flourish — or capture the attention that flourishing requires?</p>
+      <ul class="mv-beats">
+        <li><strong>Embrace:</strong> the supercomputer in every pocket, global reach for anyone, tools that were once elite now free.</li>
+        <li><strong>Frontier:</strong> attention as the product; the shared factual reality a democracy needs as the public-capacity cost.</li>
+        <li><strong>Live argument:</strong> connection as flourishing vs. concentration as the threat — the platform builder against the antitrust reformer, with the surveillance-economy critic naming the mechanism.</li>
+        <li><strong>The move:</strong> four quadrants read the same feed; name the smallest reform that grows the economy while expanding democracy, and identify what it costs.</li>
+      </ul>
+      <p class="mv-friction">Anchor voices to draw from: Zuckerberg · Lina Khan · Shoshana Zuboff · Marc Andreessen · Jaron Lanier · Tristan Harris</p>
+    </div>
+    <div class="move-card">
+      <p class="mv-num">Movement II</p>
+      <p class="mv-title">Automation</p>
+      <p class="mv-question">When machines do the work, does flourishing expand for everyone — or does it depend on who you are?</p>
+      <ul class="mv-beats">
+        <li><strong>Embrace:</strong> automation made us materially richer; historically, work was transformed and multiplied, not simply destroyed.</li>
+        <li><strong>Frontier:</strong> who captures the gains, who absorbs the losses, and the concentrating of who controls it — and whether that distribution is chosen or simply happens.</li>
+        <li><strong>Live argument:</strong> the public foundations of the technology vs. the builders who made it useful — with the AI-ethics critic asking whose values get encoded and who decides.</li>
+        <li><strong>The move:</strong> name the smallest reform that grows the economy while expanding democracy, and identify what it costs.</li>
+      </ul>
+      <p class="mv-friction">Anchor voices to draw from: Mariana Mazzucato · Timnit Gebru · Sam Altman · Jensen Huang · Joseph Schumpeter · Kate Crawford</p>
+    </div>
+    <div class="move-card">
+      <p class="mv-num">Movement III</p>
+      <p class="mv-title">Exponential Growth, Wealth &amp; the Philanthropy Handoff</p>
+      <p class="mv-question">As the state pulls back and private giving steps in, who decides what society funds — and does flourishing widen when wealth flows back, on whose terms?</p>
+      <ul class="mv-beats">
+        <li><strong>Embrace:</strong> American philanthropy built the library, funded the science, endowed the scholarship. The fortune did real public good.</li>
+        <li><strong>Frontier:</strong> the handoff — as public capacity contracts, private agency expands to fill it, and the donor, not the voter, sets the agenda.</li>
+        <li><strong>Live argument:</strong> the Gospel of Wealth vs. the modern critique — with the hard case of the donor who gives more, faster, with fewer strings, where the objection still applies because it was never about competence but about who chose.</li>
+        <li><strong>The move:</strong> name the smallest reform that grows the economy while expanding democracy, and identify what it costs.</li>
+      </ul>
+      <p class="mv-friction">Anchor voices to draw from: Andrew Carnegie · MacKenzie Scott · Anand Giridharadas tradition · Darren Walker · Chuck Collins · Mariana Mazzucato</p>
+    </div>
+  </div>
+
+  <!-- THE FOUR QUADRANTS IN THIS UNIT -->
+  <div class="sec-header break-before"><span class="sec-roman">VI</span><span class="sec-title">The Four Quadrants, Tuned to This Terrain</span></div>
+
+  <p class="body">The matrix is the same one students have used all year. Here is how each quadrant reads the unit's terrain — each a different, internally coherent answer to how individual agency and public capacity should be weighed. Use these to make sure no position goes unvoiced. None is correct.</p>
+
+  <table class="policy-guide">
+    <tr>
+      <td class="pg-num">Q I</td>
+      <td class="pg-name">Public Power, Democratic Accountability</td>
+      <td class="pg-quadrant">Capacity-first</td>
+      <td class="pg-tension">Agency without shared capacity is freedom for whoever already has it. Treat platforms as utilities, govern the automation dividend collectively, tax fortunes rather than rely on giving. Core tension: how much public control protects flourishing without stifling the engine?</td>
+    </tr>
+    <tr>
+      <td class="pg-num">Q II</td>
+      <td class="pg-name">Private Markets, Democratic Guardrails</td>
+      <td class="pg-quadrant">Reform home</td>
+      <td class="pg-tension">Markets generate the agency; democracy sets the guardrails so it doesn't eat the capacity. Keep the engine private — add disclosure, antitrust, a safety net. The reform-over-revolution quadrant. Core tension: which guardrails preserve the engine, and which quietly choke it?</td>
+    </tr>
+    <tr>
+      <td class="pg-num">Q III</td>
+      <td class="pg-name">Public Power, Expert Control</td>
+      <td class="pg-quadrant">Technocratic</td>
+      <td class="pg-tension">These systems are too complex for direct democracy — trust the people who understand the algorithm, the macroeconomics, the science. Agency is preserved by getting the management right, not by voting on it. Core tension: who guards legitimacy when the public can't follow the reasoning?</td>
+    </tr>
+    <tr>
+      <td class="pg-num">Q IV</td>
+      <td class="pg-name">Private Power, Builder Control</td>
+      <td class="pg-quadrant">Builder-first</td>
+      <td class="pg-tension">Agency is the point; capacity is what builders create and bureaucracies only spend. The fortune and the platform are the public goods — only concentration and speed could have built them. Don't tax the engine, thank it. Core tension: what holds builder power accountable when it outruns the institutions meant to check it?</td>
+    </tr>
+  </table>
+
+  <div class="inset">
+    <strong>Facilitation rule:</strong> Quadrant placement is an anchor for argument, not a verdict. Before any student critiques a position, require them to state it in a form its own holder would recognize and accept. The discipline of steelmanning the view you reject is the civic skill this unit exists to build.
+  </div>
+
+  <!-- CAPSTONE -->
+  <div class="sec-header break-before"><span class="sec-roman">VII</span><span class="sec-title">Capstone — Define It, Defend It</span></div>
+
+  <p class="body">The three movements were one question in three forms. The capstone fuses them and returns students to where they started.</p>
+
+  <div class="phase">
+    <p class="phase-meta"><span>Capstone</span><span>Synthesis under constraint</span></p>
+    <p class="phase-title">Return, revise, and take a stance</p>
+    <div class="phase-body">
+      <p><strong>Return to the v1 definition.</strong> Students reread the definition of flourishing they wrote at the on-ramp. Does it still hold after platforms, automation, and the philanthropy handoff? What did they revise, and why? The revision <em>is</em> the learning.</p>
+      <p><strong>Take a defended stance.</strong> Students make a hard call on one of the three domains under genuine uncertainty — choosing among difficult options with incomplete information — and defend it against the strongest counterargument, including a fair statement of the view they rejected.</p>
+      <p><strong>Feed the course capstone.</strong> This connects directly to the existing final-task options: a reform proposal, a community worldview-mapping project, or a public guide. The worldview-mapping option doubles as fieldwork — students gather <em>other Americans'</em> definitions of flourishing, making the unit's central question a genuine dialogue rather than a closed exercise.</p>
+    </div>
+  </div>
+
+  <!-- DIFFERENTIATION -->
+  <div class="sec-header"><span class="sec-roman">VIII</span><span class="sec-title">Differentiation &amp; Pacing</span></div>
+
+  <div class="diff-grid">
+    <div class="diff-cell">
+      <p class="diff-label">Option A — ~3 weeks</p>
+      <p class="diff-title">Core Unit</p>
+      <p class="diff-body">On-ramp, all three movements at one case each, capstone stance. Movements run as paired-voice discussions. Fastest path that still completes the arc.</p>
+    </div>
+    <div class="diff-cell">
+      <p class="diff-label">Option B — ~5 weeks</p>
+      <p class="diff-title">Full Inquiry</p>
+      <p class="diff-body">Each movement gets multiple cases and a full four-quadrant articulation. Capstone runs as one of the course final-task options with community fieldwork.</p>
+    </div>
+    <div class="diff-cell">
+      <p class="diff-label">Option C — Modular</p>
+      <p class="diff-title">Single Movement</p>
+      <p class="diff-body">Run any one movement as a standalone week tied to a current event. Platforms pairs naturally with a news cycle; wealth pairs with a major gift or tax debate.</p>
+    </div>
+  </div>
+
+  <!-- ASSESSMENT -->
+  <div class="sec-header"><span class="sec-roman">IX</span><span class="sec-title">Assessment Guidance</span></div>
+
+  <p class="body">Assess the quality of reasoning — not the position a student lands on. A student who defends a builder-first stance with specificity, fairly states the strongest objection, and names what their position costs is demonstrating stronger civic skill than one who reaches a comfortable conclusion without examining its price. The unit teaches how to think; the grade should reward that and nothing else.</p>
+
+  <div class="assess">
+    <p class="assess-label">What to assess</p>
+    <div class="assess-row">
+      <p class="assess-criterion">Definition &amp; revision</p>
+      <p class="assess-desc">Did the student build a coherent definition of flourishing, test it against the cases, and revise it honestly? Is the revision reasoned, not arbitrary?</p>
+    </div>
+    <div class="assess-row">
+      <p class="assess-criterion">Embrace before critique</p>
+      <p class="assess-desc">Can the student state the genuine benefit of a platform, a technology, or a fortune before naming its cost — generously, not as a setup?</p>
+    </div>
+    <div class="assess-row">
+      <p class="assess-criterion">Steelman fidelity</p>
+      <p class="assess-desc">Can the student state the view they reject in a form its holder would accept? Or do they argue against a caricature?</p>
+    </div>
+    <div class="assess-row">
+      <p class="assess-criterion">Agency/capacity analysis</p>
+      <p class="assess-desc">Can the student name concretely what a case does to individual agency and to public capacity — and identify which it trades for which?</p>
+    </div>
+    <div class="assess-row">
+      <p class="assess-criterion">Reform specificity</p>
+      <p class="assess-desc">Is the proposed reform specific and costed? "Regulate platforms" is general. A named mechanism, with who pays and what is risked, is concrete.</p>
+    </div>
+    <div class="assess-row">
+      <p class="assess-criterion">Stance under uncertainty</p>
+      <p class="assess-desc">Did the student take a clear position with incomplete information and defend it — rather than retreating to "both sides have a point"?</p>
+    </div>
+  </div>
+
+  <div class="closing">
+    <p>"What it means to flourish is the oldest question, asked in a new age.<br>The platforms, the machines, the great fortunes — none of them answer it for us.<br>They only raise the stakes of getting the answer right.<br><br>Teaching students to define flourishing for themselves,<br>weigh what each new power gives and what it costs,<br>and still take a stance — that is economic democracy."</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movement II — Automation — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+
+/* ── Masthead ── */
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+
+/* ── Body ── */
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+
+/* ── Pull quote ── */
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+
+/* ── Section header ── */
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+
+/* ── Beat label ── */
+.beat{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:1.5rem 0 .4rem;border-bottom:1px solid var(--rule);padding-bottom:.3rem;}
+
+/* ── Voice cards ── */
+.voice{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.voice-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;display:flex;gap:.75rem;flex-wrap:wrap;}
+.voice-name{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.voice-claim{font-size:.9rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.7rem;margin-bottom:.55rem;line-height:1.5;}
+.voice-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.voice-body p{margin-bottom:.5rem;}
+.voice-body p:last-child{margin-bottom:0;}
+
+/* ── Quadrant grid ── */
+.quad{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.quad-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.quad-cell:nth-child(even){background:var(--cream);}
+.quad-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.quad-name{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.2;}
+.quad-text{font-size:.8rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.quad{grid-template-columns:1fr;}}
+
+/* ── Data point ── */
+.datum{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.4rem 0;}
+.datum-num{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:var(--black);line-height:1;margin-bottom:.35rem;}
+.datum-text{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.65;}
+
+/* ── Inset note ── */
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+
+/* ── Task block ── */
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+
+/* ── Write lines ── */
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+
+/* ── Discussion questions ── */
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+
+/* ── Closing ── */
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+
+/* ── Footer ── */
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .voice,.task,.quad,.inset,.datum{break-inside:avoid;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Student Reader &nbsp;·&nbsp; Movement II</p>
+    <h1 class="masthead-title">Automation</h1>
+    <p class="masthead-sub">When machines do the work, does flourishing expand for everyone — or does it depend on who you are? The second of three arguments about the forces shaping your life.</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">There is a question people love to ask about automation, and it is the wrong one. The question is: "Will the robots take our jobs?" It feels urgent, but it is really a guess about the future, and no one can answer it honestly. The better question — the one a citizen can actually reason about — is this: when a machine does work a person used to do, the value that work created does not disappear. Someone still captures it. So <strong>who gets the gains, who absorbs the losses, and who decides?</strong></p>
+
+  <p class="body">You already have the tool to see this clearly. A machine is an <em>asset</em> — something owned, that earns whether anyone is working or not. A worker earns a <em>wage</em> — paid for time, stopping when the work stops. Automation is the moment an owned, compounding asset takes over work that used to be paid as a linear wage. So automation is not really a story about robots. It is the wage-and-asset divide, happening to a job. Whoever owns the machine captures what the worker used to earn. That is the whole structure underneath this argument.</p>
+
+  <!-- BEAT 1 -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">Start With What Machines Gave Us</span></div>
+
+  <p class="beat">Beat one · Embrace before you critique</p>
+
+  <p class="body">Be honest about the gains first, because they are enormous and they are real. Almost everything that makes your life longer, safer, and more comfortable than your great-grandparents' exists because machines did work humans used to do by hand. Farm machinery means a tiny fraction of people can feed everyone, freeing the rest to do other things. Machines made cloth, then cars, then computers cheap enough that ordinary people could own what was once unimaginable luxury. Vaccines and medical devices, manufactured at scale, added decades to the human lifespan.</p>
+
+  <p class="body">And the deepest fear about automation — that it permanently destroys work — has, so far, been wrong. For two hundred years, machines eliminated specific jobs and the economy produced new ones, often better ones, that no one could have predicted. The people who once predicted mass permanent unemployment from machines were, repeatedly, mistaken. Automation made humanity, in total, vastly richer. Any serious argument has to begin by granting that. The machine is one of the great agency-expanding forces in history: it freed human beings from drudgery that once consumed whole lives.</p>
+
+  <div class="pullquote">
+    <p>For two centuries the machine destroyed jobs and the economy made new ones. The fear of permanent unemployment was wrong before. The honest question is whether anything is different now.</p>
+  </div>
+
+  <!-- BEAT 2 -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">Now Find the Frontier</span></div>
+
+  <p class="beat">Beat two · Where the gains meet their cost</p>
+
+  <p class="body">Here is the turn, and it is not "the robots are coming." It is about <em>where the gains land</em>. When a machine takes over a task, the wealth that task produced doesn't vanish — it flows to whoever <strong>owns the machine</strong>. The worker who did that task is paid a wage that stops. The owner holds an asset that keeps earning. So automation, by its nature, moves value from the wage side of the economy to the asset side — exactly the shift you studied. It concentrates the gains among owners and asks workers to absorb the disruption.</p>
+
+  <p class="body">That doesn't make automation bad. It makes the <em>distribution</em> the question. And here is what may be genuinely new this time: earlier machines mostly replaced physical labor, and displaced workers moved into thinking work. Today's automation — artificial intelligence — is starting to do the thinking work too: writing, analyzing, diagnosing, designing. When machines climb into both the physical and the cognitive work at once, the path displaced workers used to take — "learn a new, higher skill" — gets narrower. No one knows how far this goes. But the open question is real in a way the old fear was not.</p>
+
+  <p class="body">And notice the second cost, the one to <strong>public capacity</strong>. The whole social safety net — schools, retirement, public services — is funded mostly by taxes on <em>wages</em>. If the economy keeps producing wealth but that wealth increasingly shows up as returns to owned machines rather than wages to workers, then the thing we tax to fund our shared life shrinks even as the economy grows. A society can get richer in total while its public capacity to take care of its people gets weaker. That is the frontier.</p>
+
+  <div class="datum">
+    <p class="datum-num">Both ends</p>
+    <p class="datum-text">Earlier automation pressed on physical labor and people moved to cognitive work. AI presses on cognitive labor too — compressing the wage base from both directions at once. Whether the economy opens new paths as fast as it closes old ones is the unanswered question of your generation.</p>
+  </div>
+
+  <div class="inset">
+    <strong>This is not "automation is bad" or "automation is good."</strong> The machine expands what humanity can do — real, enormous individual and collective agency. It also tends to send the gains to whoever owns it, while the public systems funded by wages strain. The same force expands abundance and concentrates who controls it. Holding both at once is the work.
+  </div>
+
+  <!-- BEAT 3 -->
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">The Live Argument</span></div>
+
+  <p class="beat">Beat three · The strongest voices, in their own terms</p>
+
+  <p class="body">Three people look at automation and the wealth it creates, and reach different conclusions about who has a rightful claim on it. Read each as the strongest version of itself.</p>
+
+  <div class="voice">
+    <p class="voice-meta"><span>The Builder</span><span>Quadrant IV</span></p>
+    <p class="voice-name">The technologist — we built it, we earned it</p>
+    <p class="voice-claim">The breakthroughs that change the world come from those willing to take the risk and do the work to build them.</p>
+    <div class="voice-body">
+      <p>The builder's case is that automation's gains belong, first, to the people who created the machines — who took the risk, raised the capital, and did the staggeringly hard work of making the technology real when it might have failed. The gains aren't stolen from workers; they're created by builders, and they flow to everyone as cheaper goods, new industries, and tools that make ordinary people more capable. Slow the builders down to protect old jobs and you get neither the old jobs nor the new abundance. The right response to disruption is to build faster, not to hold the future back.</p>
+      <p><strong>Where critics press:</strong> if the machine was built on knowledge, infrastructure, and data the public paid for and produced, is "we built it, we earned it" the whole story — and what is owed to the workers whose lives the disruption upends?</p>
+    </div>
+  </div>
+
+  <div class="voice">
+    <p class="voice-meta"><span>The Economist</span><span>Quadrant I</span></p>
+    <p class="voice-name">Mariana Mazzucato — the public built the foundation</p>
+    <p class="voice-claim">"The state is not just a fixer of markets — it is a creator and shaper of them."</p>
+    <div class="voice-body">
+      <p>Mazzucato's case is that the builder's story leaves out who took the <em>first</em> risk. The foundational technologies behind modern automation — the internet, GPS, the core research behind computing and AI — came substantially from public investment: government labs, public universities, taxpayer-funded research that private investors were unwilling to fund. The public created the value; private companies captured it. She distinguishes <em>value creation</em> from <em>value extraction</em>. So when automation's rewards flow entirely to private owners, the public that funded the groundwork is being written out of a story it helped begin. The gains should be shared because the risks were.</p>
+      <p><strong>Where critics press:</strong> can government actually direct innovation and share its rewards without slowing it, picking losers, or being captured by politics — and who decides how the shared gains get used?</p>
+    </div>
+  </div>
+
+  <div class="voice">
+    <p class="voice-meta"><span>The Critic</span><span>Quadrant I edge</span></p>
+    <p class="voice-name">Timnit Gebru — whose values get built in, and who decides</p>
+    <p class="voice-claim">The question is not only who gets the money — it is whose values the machine encodes, and who was in the room.</p>
+    <div class="voice-body">
+      <p>Gebru's case is the one both other voices skip. The argument over automation usually fights about <em>money</em> — who captures the wealth. But a machine that makes decisions about people — who gets hired, who gets a loan, who gets flagged — also encodes <em>values</em>: whose data it learned from, whose errors it repeats, whose interests it serves. If a narrow group builds these systems, the systems carry that group's blind spots into millions of lives, invisibly. So the real questions are: who is in the room when the machine is built, whose values does it carry, and who is accountable when it harms people? Distribution of money is not enough if the distribution of <em>power to decide</em> stays narrow.</p>
+      <p><strong>Where critics press:</strong> is it possible to build powerful systems with broad input without paralyzing the work — and who gets to say whose values are the right ones to encode?</p>
+    </div>
+  </div>
+
+  <!-- BEAT 4 -->
+  <div class="sec-header"><span class="sec-roman">IV</span><span class="sec-title">Place It, and Make the Move</span></div>
+
+  <p class="beat">Beat four · Where it sits, and what you would do</p>
+
+  <p class="body">Four ways of seeing automation sit on the matrix. Each is a coherent answer to how the gains and losses of the machine should be handled. None wins by default.</p>
+
+  <div class="quad">
+    <div class="quad-cell">
+      <p class="quad-label">Quadrant I — Public power, democratic accountability</p>
+      <p class="quad-name">Share the dividend by public design</p>
+      <p class="quad-text">The public funded the foundation and absorbs the disruption, so the public should hold a stake in the gains — through public ownership stakes, shared funds, or taxing assets rather than only wages. Govern the machine's rewards collectively.</p>
+    </div>
+    <div class="quad-cell">
+      <p class="quad-label">Quadrant II — Private markets, democratic guardrails</p>
+      <p class="quad-name">Keep building, cushion the fall</p>
+      <p class="quad-text">Let private builders drive the innovation, but soften the disruption — retraining, wage insurance, a stronger safety net funded where the wealth actually is. Keep the engine; widen who it reaches. The reform position.</p>
+    </div>
+    <div class="quad-cell">
+      <p class="quad-label">Quadrant III — Public power, expert control</p>
+      <p class="quad-name">Let experts steer the transition</p>
+      <p class="quad-text">The technology and the economics are too complex for direct democracy. Trust skilled institutions — central banks, agencies, technical regulators — to manage the transition, fund the displaced, and govern the systems. Get the management right.</p>
+    </div>
+    <div class="quad-cell">
+      <p class="quad-label">Quadrant IV — Private power, builder control</p>
+      <p class="quad-name">Don't slow the engine</p>
+      <p class="quad-text">The builders create the abundance; interfering with them protects no one and forfeits the future. Markets and new industries will absorb displaced workers as they always have. The gains are earned, and speed is the advantage.</p>
+    </div>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Place it</p>
+    <p class="task-title">Where does automation sit — and where do you?</p>
+    <p class="task-body">Mark where you think the gains of automation are actually being distributed today. Then mark where you believe they should be. The gap between those points is your argument.</p>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Make the move</p>
+    <p class="task-title">Name the smallest reform that grows the economy while expanding democracy — and its cost</p>
+    <p class="task-body">The unit's recurring test, applied to automation. Propose one specific mechanism — not "tax the robots," but an actual design — that keeps the abundance machines create (the engine) while making sure the gains and the power to decide are shared more broadly (democracy). Then, honestly: what does it cost, and who pays?</p>
+    <div class="writelines">
+      <div class="writeline"></div>
+      <div class="writeline"></div>
+      <div class="writeline"></div>
+      <div class="writeline"></div>
+    </div>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Test your definition</p>
+    <p class="task-title">Back to flourishing</p>
+    <p class="task-body">Return to your definition of flourishing. If machines do more and more of the work, does that serve flourishing — more freedom from drudgery — or threaten it — fewer ways to contribute and provide? Does it depend on who you are? Does anything here make you want to revise your definition?</p>
+    <div class="writelines">
+      <div class="writeline"></div>
+      <div class="writeline"></div>
+    </div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="sec-header"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list">
+    <li>For two hundred years, the fear that machines would cause permanent unemployment was wrong. What, if anything, is different about AI doing cognitive work — or is this just the same old fear in new clothes?</li>
+    <li>The builder says automation's gains are earned by those who built the machines. The economist says the public funded the foundation. Whose claim is stronger — and does it change depending on the technology?</li>
+    <li>Gebru asks not just who gets the money but whose values the machine encodes. Why might that question matter as much as the economic one? Can you think of a decision you would not want a machine to make?</li>
+    <li>If wages shrink as machines do more work, the taxes that fund schools and retirement shrink too. Is that a problem markets solve on their own, or one a society has to address on purpose? Which quadrant's answer convinces you?</li>
+  </ol>
+
+  <div class="closing">
+    <p>The machine freed humanity from drudgery that once swallowed whole lives.<br>It also sends its rewards to whoever owns it.<br>Whether the next wave lifts everyone or only the owners<br>is not a prophecy to wait for — it is a choice someone will make.<br>The only question is who is in the room.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

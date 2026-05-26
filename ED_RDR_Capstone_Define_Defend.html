@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capstone — Define It, Defend It — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+
+/* ── Masthead ── */
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+
+/* ── Body ── */
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+
+/* ── Pull quote ── */
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+
+/* ── Section header ── */
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+
+/* ── Step / phase blocks ── */
+.step{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.step-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.step-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.step-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.72;}
+.step-body p{margin-bottom:.55rem;}
+.step-body p:last-child{margin-bottom:0;}
+
+/* ── Three movements recap ── */
+.recap{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.recap-cell{background:var(--paper);padding:1rem 1.1rem;}
+.recap-cell:nth-child(even){background:var(--cream);}
+.recap-num{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem;}
+.recap-name{font-family:'Playfair Display',serif;font-size:.92rem;font-weight:700;color:var(--black);margin-bottom:.3rem;}
+.recap-q{font-size:.78rem;font-style:italic;color:var(--charcoal);line-height:1.5;}
+@media(max-width:600px){.recap{grid-template-columns:1fr;}}
+
+/* ── Path options ── */
+.path{border:1px solid var(--rule);padding:1.1rem 1.3rem;margin:1.25rem 0;background:var(--white);border-left:3px solid var(--black);}
+.path-tag{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.path-name{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.path-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.path-body strong{font-weight:600;color:var(--charcoal);}
+
+/* ── Inset note ── */
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+
+/* ── Task block ── */
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+
+/* ── Write lines ── */
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+
+/* ── Rubric table ── */
+.rubric{width:100%;border-collapse:collapse;margin:1.25rem 0;font-size:.82rem;}
+.rubric th,.rubric td{border:1px solid var(--rule);padding:.6rem .8rem;vertical-align:top;line-height:1.5;text-align:left;}
+.rubric th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.rubric td:first-child{background:var(--cream);font-weight:700;color:var(--charcoal);width:180px;}
+
+/* ── Closing ── */
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+
+/* ── Footer ── */
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing,.rubric th{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .step,.task,.recap,.path,.inset,.rubric{break-inside:avoid;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Student Reader &nbsp;·&nbsp; Capstone</p>
+    <h1 class="masthead-title">Define It, Defend It</h1>
+    <p class="masthead-sub">The three movements were one question in three forms. Now you answer it — for yourself, in your own words, and you defend that answer against the strongest case on the other side.</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">At the start of this unit, before you had read anything, you wrote down what you thought it meant for a human being to flourish. You did not know yet how platforms work, or what automation does to wages, or who decides when a fortune flows back to society. You have those tools now. The capstone asks you to do two things with them: return to that first definition and be honest about how it has changed, and then take a real position on one of the hard cases and defend it against someone who disagrees.</p>
+
+  <p class="body">This is not a test of whether you reached the "right" answer. There is no right answer — that was the whole point. It is a test of whether you can think: define a goal clearly, weigh real tradeoffs, take a stance under uncertainty, and hold your ground against a serious objection without pretending the objection is stupid. That is the skill of a citizen in an economic democracy, and it is the skill this whole unit was built to give you.</p>
+
+  <div class="pullquote">
+    <p>You are not being graded on what you believe. You are being graded on how well you can think about what you believe.</p>
+  </div>
+
+  <!-- THE THREE MOVEMENTS, RECALLED -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">One Question, Three Forms</span></div>
+
+  <p class="body">Before you write, recall the ground you covered. Three forces, one question running through all of them: does this help human beings flourish — and who is responsible for making it possible? Each pulled individual agency and public capacity against each other in a different way.</p>
+
+  <div class="recap">
+    <div class="recap-cell">
+      <p class="recap-num">Movement I</p>
+      <p class="recap-name">Platforms</p>
+      <p class="recap-q">Does the technology that serves me also steer me — and what does that do to the truth we share?</p>
+    </div>
+    <div class="recap-cell">
+      <p class="recap-num">Movement II</p>
+      <p class="recap-name">Automation</p>
+      <p class="recap-q">When machines do the work, do the gains reach everyone — or only whoever owns the machine?</p>
+    </div>
+    <div class="recap-cell">
+      <p class="recap-num">Movement III</p>
+      <p class="recap-name">Wealth</p>
+      <p class="recap-q">When fortunes flow back as gifts, is that democracy working — or one person choosing for everyone?</p>
+    </div>
+  </div>
+
+  <p class="body">Each was a different face of the same thing: the most powerful, agency-expanding economy in history keeps producing new forms of concentrated power that the rest of us do not fully control. Your job was never to be for or against that economy. It was to weigh, in each case, what it gives and what it costs — and to ask how we keep the engine running while widening who it serves.</p>
+
+  <!-- PART A — RETURN TO THE DEFINITION -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">Part A — Return to Your Definition</span></div>
+
+  <p class="body">Find what you wrote at the very beginning: "A human being flourishes when…" Read it as if a stranger wrote it. Then do the honest work below.</p>
+
+  <div class="task">
+    <p class="task-label">Write — the revision</p>
+    <p class="task-title">What held, and what changed</p>
+    <p class="task-body">Write your definition of flourishing again, now — your v2. Then answer directly: What did you keep from your first version? What did you change, drop, or add? And which of the three movements — platforms, automation, or wealth — pushed on your definition the hardest, and why?</p>
+    <div class="writelines">
+      <div class="writeline"></div>
+      <div class="writeline"></div>
+      <div class="writeline"></div>
+      <div class="writeline"></div>
+      <div class="writeline"></div>
+    </div>
+    <p class="task-body">If your definition did <em>not</em> change at all, that is allowed — but defend it. Explain how it survived all three movements intact. An unchanged definition you can defend is strong. An unchanged definition you never tested is just a guess you never examined.</p>
+  </div>
+
+  <div class="inset">
+    <strong>The revision is the learning.</strong> A definition you revised after testing it against real, hard cases is worth more than one you happened to get "right" on the first try. Honesty about what changed your mind is exactly the intellectual skill this asks for. Do not pretend you always thought what you think now.
+  </div>
+
+  <!-- PART B — TAKE A STANCE -->
+  <div class="sec-header break-before"><span class="sec-roman">III</span><span class="sec-title">Part B — Take a Defended Stance</span></div>
+
+  <p class="body">Now choose one of the three movements and take a real position on it — the kind of position a citizen has to take when a vote, a policy, or a decision is actually on the table, with incomplete information and no perfect option. You will defend it against the strongest objection, not the weakest.</p>
+
+  <div class="step">
+    <p class="step-meta">Step 1</p>
+    <p class="step-title">Pick your ground and stake your claim</p>
+    <div class="step-body">
+      <p>Choose platforms, automation, or wealth. State your position as a clear claim someone could disagree with — not "platforms are complicated," but something with a spine: a stance on where this should sit on the matrix, and what should be done. Tie it explicitly to your definition of flourishing: <em>this serves human flourishing as I define it because…</em></p>
+    </div>
+  </div>
+
+  <div class="step">
+    <p class="step-meta">Step 2</p>
+    <p class="step-title">Name the reform — and its cost</p>
+    <div class="step-body">
+      <p>Apply the unit's recurring test. Propose one specific change — an actual mechanism, not a slogan — that would grow the economy while expanding democracy in your chosen case. Then state plainly what it costs and who pays. A reform with no cost is a fantasy; naming the cost is what makes your position serious.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <p class="step-meta">Step 3</p>
+    <p class="step-title">Steelman the other side</p>
+    <div class="step-body">
+      <p>State the strongest argument <em>against</em> your position — in a form its holder would actually accept and recognize as fair. Not a cartoon, not a strawman you can easily knock down. The real, best version. Then respond to it: why do you still hold your position, knowing the other side's best case? This is the hardest part and the most important.</p>
+    </div>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Write — the defended stance</p>
+    <p class="task-title">Your position, your reform, your answer to the other side</p>
+    <div class="writelines">
+      <div class="writeline"></div>
+      <div class="writeline"></div>
+      <div class="writeline"></div>
+      <div class="writeline"></div>
+      <div class="writeline"></div>
+      <div class="writeline"></div>
+    </div>
+  </div>
+
+  <!-- PART C — THE PROJECT -->
+  <div class="sec-header"><span class="sec-roman">IV</span><span class="sec-title">Part C — Build It Into a Project</span></div>
+
+  <p class="body">Your definition and your defended stance become the foundation of one culminating project. Choose the path that fits how you think best. Each carries your flourishing definition and your matrix reasoning into a real piece of work.</p>
+
+  <div class="path">
+    <p class="path-tag">Path 1 · The Builder</p>
+    <p class="path-name">Design an economic reform proposal</p>
+    <p class="path-body">Take the reform you named in Part B and build it out fully: <strong>financially plausible, politically defensible, historically grounded.</strong> Who pays, who benefits, what it costs, why it could actually pass, and how it grows the economy while expanding democracy. Make the case to someone who would have to vote for it.</p>
+  </div>
+
+  <div class="path">
+    <p class="path-tag">Path 2 · The Listener</p>
+    <p class="path-name">Map your community's worldviews</p>
+    <p class="path-body">Interview people in your community — family, neighbors, workers, owners — about one of the three forces and about what <em>they</em> think it means to flourish. Map their economic worldviews on the Power–Democracy–Economy matrix. Where do real people sit? What did you hear that no reading predicted? This path gathers <strong>other Americans' definitions of flourishing</strong> — making the unit's central question a living dialogue, not a closed exercise.</p>
+  </div>
+
+  <div class="path">
+    <p class="path-tag">Path 3 · The Explainer</p>
+    <p class="path-name">Write a public guide: "How the Economy Actually Works"</p>
+    <p class="path-body">Write for a general audience — someone who has never taken this course. Explain how platforms, automation, and wealth concentration actually function, using what you learned about assets and wages, and help your reader see the agency-and-capacity tradeoff for themselves. Teaching it clearly is the proof that you understand it.</p>
+  </div>
+
+  <!-- ASSESSMENT -->
+  <div class="sec-header"><span class="sec-roman">V</span><span class="sec-title">How You'll Be Assessed</span></div>
+
+  <p class="body">You are graded on the quality of your reasoning — not on the position you land on. A defended builder's stance and a defended critic's stance can earn exactly the same top marks. What matters is the thinking. Here is what your teacher is looking for.</p>
+
+  <table class="rubric">
+    <thead>
+      <tr><th>What's assessed</th><th>What strong work looks like</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Definition &amp; revision</td><td>A clear, coherent definition of flourishing, honestly revised after testing it against the cases — not arbitrary, but reasoned. You can say what changed your mind and why.</td></tr>
+      <tr><td>Embrace before critique</td><td>You state the genuine good of a platform, a technology, or a fortune generously — before naming its cost. No strawmen.</td></tr>
+      <tr><td>Agency &amp; capacity</td><td>You name concretely what your case does to individual agency and to public capacity — and which it trades for which.</td></tr>
+      <tr><td>Reform &amp; its cost</td><td>Your reform is a specific mechanism, not a slogan, and you name honestly what it costs and who pays.</td></tr>
+      <tr><td>Steelman fidelity</td><td>You state the opposing view in a form its holder would accept as fair — then answer it, rather than dodging it.</td></tr>
+      <tr><td>Stance under uncertainty</td><td>You take a clear position with incomplete information and defend it — instead of retreating to "both sides have a point."</td></tr>
+    </tbody>
+  </table>
+
+  <div class="inset">
+    <strong>The honest standard:</strong> a student who defends a position your teacher personally disagrees with — clearly, fairly, with the costs named and the other side steelmanned — is doing better work than a student who reaches the "approved" answer without examining it. That is what it means to be graded on how you think, not what you think.
+  </div>
+
+  <!-- FINAL REFLECTION -->
+  <div class="sec-header"><span class="sec-roman">VI</span><span class="sec-title">Final Reflection</span></div>
+
+  <div class="task">
+    <p class="task-label">Write — the last question</p>
+    <p class="task-title">Where do you sit in this system — and how do you want to participate?</p>
+    <p class="task-body">You have spent this unit learning how power moves through the economy you are about to inherit. The last question is not analytical. It is personal. Knowing what you now know about platforms, automation, and wealth — where do you sit in this system, and how do you want to participate in it? Not as a test-taker. As a person who is about to be one of the people who decides.</p>
+    <div class="writelines">
+      <div class="writeline"></div>
+      <div class="writeline"></div>
+      <div class="writeline"></div>
+    </div>
+  </div>
+
+  <div class="closing">
+    <p>You began by defining what it means to flourish.<br>You tested it against the three great forces of your age.<br>You took a stance and defended it under fire.<br><br>That is not the end of the argument. It is your entry into it.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>
