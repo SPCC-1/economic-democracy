@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Every Economic Democracy resource in one place — course units, the concept library, teaching toolkit, 250 voices anthology, and administrator documents. All materials are free and directly accessible. The cohort is what you join when you want community.">
+<title>Resources — Economic Democracy</title>
+
+<!-- Open Graph -->
+<meta property="og:title" content="Resources — Economic Democracy" />
+<meta property="og:description" content="Every Economic Democracy resource in one place — course units, the concept library, teaching toolkit, 250 voices anthology, and administrator documents." />
+<meta property="og:image" content="https://www.economicdemocracy.co/og-image.png" />
+<meta property="og:url" content="https://www.economicdemocracy.co/resources.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Economic Democracy" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Resources — Economic Democracy" />
+<meta name="twitter:description" content="Every Economic Democracy resource in one place." />
+<meta name="twitter:image" content="https://www.economicdemocracy.co/og-image.png" />
+
+<link rel="stylesheet" href="styles.css">
+
+<style>
+/* ── PAGE HEADER ── */
+.page-header{
+  max-width:960px;
+  margin:0 auto;
+  padding:5rem 2rem 3rem;
+  border-bottom:3px solid var(--black);
+}
+.page-eyebrow{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:.62rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:1rem;
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+}
+.page-eyebrow::before{
+  content:'';
+  display:block;
+  width:1.5rem;
+  height:1px;
+  background:var(--rule);
+}
+.page-title{
+  font-family:'Playfair Display', serif;
+  font-size:clamp(2.6rem, 5.2vw, 4rem);
+  font-weight:900;
+  color:var(--black);
+  line-height:1.04;
+  letter-spacing:-.025em;
+  margin-bottom:1rem;
+}
+.page-title em{
+  font-style:italic;
+  color:var(--mid);
+  font-weight:400;
+}
+.page-sub{
+  font-size:1rem;
+  font-weight:300;
+  font-style:italic;
+  color:var(--mid);
+  max-width:680px;
+  line-height:1.7;
+}
+
+/* ── STICKY IN-PAGE NAV ── */
+.page-toc{
+  position:sticky;
+  top:48px;
+  z-index:80;
+  background:var(--white);
+  border-bottom:1px solid var(--rule);
+  padding:0;
+  max-width:none;
+}
+.page-toc-inner{
+  max-width:960px;
+  margin:0 auto;
+  padding:0 2rem;
+  display:flex;
+  gap:0;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+}
+.page-toc-inner a{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:.6rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--mid);
+  text-decoration:none;
+  padding:.95rem 1rem;
+  white-space:nowrap;
+  border-bottom:2px solid transparent;
+  transition:color .15s, border-color .15s;
+}
+.page-toc-inner a:hover{
+  color:var(--black);
+  border-bottom-color:var(--black);
+}
+.page-toc-inner a:first-child{padding-left:0;}
+
+/* ── RES SECTIONS ── */
+.res-section{
+  max-width:960px;
+  margin:0 auto;
+  padding:4rem 2rem;
+  border-top:1px solid var(--rule);
+}
+.res-section:first-of-type{border-top:none;}
+.res-section-label{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:.62rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:.75rem;
+  display:block;
+}
+.res-section-title{
+  font-family:'Playfair Display', serif;
+  font-size:clamp(1.8rem, 3.2vw, 2.4rem);
+  font-weight:900;
+  color:var(--black);
+  line-height:1.08;
+  letter-spacing:-.02em;
+  margin-bottom:.6rem;
+}
+.res-section-sub{
+  font-size:.95rem;
+  font-weight:300;
+  line-height:1.75;
+  color:var(--mid);
+  max-width:680px;
+  margin-bottom:2rem;
+}
+
+/* ── UNIT PAIRS (carried from previous resources block) ── */
+.resource-pair{margin-bottom:1px;}
+.pair-header{
+  background:var(--black);
+  color:var(--white);
+  padding:.55rem 1.25rem;
+  display:flex;
+  align-items:center;
+  gap:1rem;
+}
+.pair-num{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:.58rem;
+  letter-spacing:.12em;
+  color:rgba(255,255,255,.3);
+}
+.pair-name{
+  font-family:'Playfair Display',serif;
+  font-size:.85rem;
+  font-weight:700;
+  color:var(--white);
+}
+.pair-cards{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1px;
+  background:var(--rule);
+  margin-bottom:1.25rem;
+}
+@media(max-width:580px){.pair-cards{grid-template-columns:1fr;}}
+
+.resource-card{
+  background:var(--paper);
+  padding:1.25rem 1.25rem 1rem;
+  display:flex;
+  flex-direction:column;
+  gap:.4rem;
+}
+.resource-card:nth-child(even){background:var(--cream);}
+.resource-badge{
+  align-self:flex-start;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:.55rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--muted);
+  padding:.18rem .5rem;
+  border:1px solid var(--rule);
+}
+.resource-badge.free{
+  color:var(--white);
+  background:var(--black);
+  border-color:var(--black);
+}
+.resource-badge.cohort{
+  color:var(--white);
+  background:var(--gold);
+  border-color:var(--gold);
+  font-weight:600;
+}
+.resource-title{
+  font-family:'Playfair Display',serif;
+  font-size:1rem;
+  font-weight:700;
+  color:var(--black);
+  line-height:1.2;
+}
+.resource-desc{
+  font-size:.84rem;
+  font-weight:300;
+  color:var(--mid);
+  line-height:1.65;
+  flex:1;
+}
+.resource-link{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:.6rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--black);
+  text-decoration:none;
+  padding:.5rem 0 0;
+  border-top:1px solid var(--rule);
+  margin-top:.4rem;
+  align-self:flex-start;
+}
+.resource-link:hover{color:var(--mid);}
+
+/* ── CONCEPT LIBRARY TEASER ── */
+.concept-jump{
+  background:var(--cream);
+  border:1px solid var(--rule);
+  padding:2rem 2.25rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:2rem;
+  flex-wrap:wrap;
+  margin-bottom:1rem;
+}
+.concept-jump-text strong{
+  display:block;
+  font-family:'Playfair Display',serif;
+  font-size:1.15rem;
+  color:var(--black);
+  margin-bottom:.3rem;
+}
+.concept-jump-text span{
+  font-size:.88rem;
+  font-weight:300;
+  color:var(--mid);
+  line-height:1.6;
+}
+.concept-jump-btn{
+  background:var(--black);
+  color:var(--white);
+  font-family:'IBM Plex Mono',monospace;
+  font-size:.7rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  padding:.85rem 1.5rem;
+  text-decoration:none;
+  white-space:nowrap;
+  transition:background .15s;
+}
+.concept-jump-btn:hover{background:var(--mid);}
+
+.cluster-row{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:1px;
+  background:var(--rule);
+  border:1px solid var(--rule);
+  margin:0 0 1.25rem;
+}
+.cluster-row-cell{
+  background:var(--paper);
+  padding:.95rem .9rem;
+  display:flex;
+  flex-direction:column;
+  gap:.25rem;
+}
+.cluster-row-cell:nth-child(even){background:var(--cream);}
+.cluster-row-label{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:.55rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+.cluster-row-name{
+  font-family:'Playfair Display',serif;
+  font-size:.92rem;
+  font-weight:700;
+  color:var(--black);
+}
+.cluster-row-tagline{
+  font-size:.72rem;
+  font-weight:300;
+  color:var(--mid);
+  line-height:1.45;
+}
+@media(max-width:900px){.cluster-row{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:540px){.cluster-row{grid-template-columns:1fr 1fr;}}
+
+/* ── TOOLKIT GRID ── */
+.toolkit-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1px;
+  background:var(--rule);
+  border:1px solid var(--rule);
+}
+.toolkit-card{
+  background:var(--paper);
+  padding:1.5rem 1.4rem 1.25rem;
+  display:flex;
+  flex-direction:column;
+  gap:.4rem;
+}
+.toolkit-card:nth-child(even){background:var(--cream);}
+.toolkit-badge{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:.56rem;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  color:var(--muted);
+  align-self:flex-start;
+}
+.toolkit-title{
+  font-family:'Playfair Display',serif;
+  font-size:1rem;
+  font-weight:700;
+  color:var(--black);
+  line-height:1.2;
+}
+.toolkit-desc{
+  font-size:.84rem;
+  font-weight:300;
+  color:var(--mid);
+  line-height:1.65;
+  flex:1;
+}
+.toolkit-link{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:.6rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--black);
+  text-decoration:none;
+  padding:.55rem 0 0;
+  border-top:1px solid var(--rule);
+  margin-top:.5rem;
+  align-self:flex-start;
+}
+.toolkit-link:hover{color:var(--mid);}
+@media(max-width:680px){.toolkit-grid{grid-template-columns:1fr;}}
+
+/* ── ADMIN BLOCK ── */
+.admin-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1px;
+  background:var(--rule);
+  border:1px solid var(--rule);
+  max-width:760px;
+}
+.admin-card{
+  background:var(--paper);
+  padding:1.4rem 1.4rem 1.2rem;
+  display:flex;
+  flex-direction:column;
+  gap:.3rem;
+  text-decoration:none;
+  color:inherit;
+  transition:background .15s;
+}
+.admin-card:nth-child(even){background:var(--cream);}
+.admin-card:hover{background:var(--black);color:var(--white);}
+.admin-card:hover .admin-name{color:var(--white);}
+.admin-card:hover .admin-arrow{color:rgba(255,255,255,.55);}
+.admin-label{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:.56rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+.admin-name{
+  font-family:'Playfair Display',serif;
+  font-size:1rem;
+  font-weight:700;
+  color:var(--black);
+  line-height:1.2;
+}
+.admin-desc{
+  font-size:.82rem;
+  font-weight:300;
+  color:var(--mid);
+  line-height:1.55;
+  margin-top:.1rem;
+}
+.admin-card:hover .admin-desc{color:rgba(255,255,255,.65);}
+.admin-arrow{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:.6rem;
+  letter-spacing:.1em;
+  color:var(--muted);
+  margin-top:auto;
+  padding-top:.4rem;
+}
+@media(max-width:540px){.admin-grid{grid-template-columns:1fr;}}
+
+/* ── READERS ── */
+.readers-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:var(--rule);
+  border:1px solid var(--rule);
+}
+.reader-card{
+  background:var(--paper);
+  padding:1.25rem 1.2rem 1rem;
+  display:flex;
+  flex-direction:column;
+  gap:.3rem;
+  text-decoration:none;
+  color:inherit;
+  transition:background .15s;
+}
+.reader-card:nth-child(even){background:var(--cream);}
+.reader-card:hover{background:var(--black);color:var(--white);}
+.reader-card:hover .reader-name{color:var(--white);}
+.reader-card:hover .reader-arrow{color:rgba(255,255,255,.55);}
+.reader-label{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:.56rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+.reader-name{
+  font-family:'Playfair Display',serif;
+  font-size:.95rem;
+  font-weight:700;
+  color:var(--black);
+  line-height:1.2;
+}
+.reader-arrow{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:.6rem;
+  letter-spacing:.1em;
+  color:var(--muted);
+  margin-top:auto;
+  padding-top:.4rem;
+}
+@media(max-width:740px){.readers-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:460px){.readers-grid{grid-template-columns:1fr;}}
+
+@media(max-width:600px){
+  .page-header{padding:3rem 1.5rem 2rem;}
+  .res-section{padding-left:1.5rem;padding-right:1.5rem;}
+}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-home">Economic Democracy<span>economicdemocracy.co</span></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="framework.html">The Framework</a>
+      <a href="concepts.html">Concepts</a>
+      <a href="ED_ANT_Core_Anthology_250.html">250 Voices</a>
+      <a href="resources.html" class="active">Resources</a>
+      <a href="ED_ENGAGE_Ways.html" class="nav-cta">Ways to Engage</a>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header" id="main">
+  <p class="page-eyebrow">Economic Democracy Curriculum &nbsp;&middot;&nbsp; Resources</p>
+  <h1 class="page-title">All the <em>Resources</em>,<br>In One Place.</h1>
+  <p class="page-sub">Everything is here. Every teacher guide, every student handout, every primer, the full anthology, and the documents to share with your department &mdash; all directly accessible, all free. The work will keep growing as educators bring back what they learn in their classrooms. The three tiers below are about <em>community</em> &mdash; if you want to use these resources alongside other teachers and have access to the creators and facilitators, that's what the cohort is for.</p>
+</div>
+
+
+<!-- I. COURSE UNITS -->
+<section class="res-section" id="units">
+  <span class="res-section-label">Section I &nbsp;&middot;&nbsp; Course Units</span>
+  <h2 class="res-section-title">Five Units. Each One Ready to Run.</h2>
+  <p class="res-section-sub">Every unit pairs a free teacher guide with the student materials it supports. Both are directly accessible. Download, adapt, teach &mdash; no gate, no purchase. The curriculum keeps evolving as educators bring it back into their classrooms; everything new lands here.</p>
+
+  <!-- PAIR 1 — Course Introduction -->
+  <div class="resource-pair">
+    <div class="pair-header"><span class="pair-num">Unit 1</span><span class="pair-name">Course Introduction</span></div>
+    <div class="pair-cards">
+      <div class="resource-card">
+        <span class="resource-badge free">Free</span>
+        <span class="resource-title">Civic Education Introduction</span>
+        <span class="resource-desc">Why this course exists and what it asks of students. Positions A, B, and C — all present simultaneously. The opening essay for the full curriculum.</span>
+        <a href="ED_CIV_Civic_Education_Introduction.html" class="resource-link">Read Introduction &rarr;</a>
+      </div>
+      <div class="resource-card">
+        <span class="resource-badge free">Free</span>
+        <span class="resource-title">Educator Overview</span>
+        <span class="resource-desc">The rationale, scope, and teaching philosophy behind the full two-year curriculum. Four pages. Print and share with your department before the first day.</span>
+        <a href="educators.html" class="resource-link">View Educator Overview &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAIR 2 — Framework -->
+  <div class="resource-pair">
+    <div class="pair-header"><span class="pair-num">Unit 2</span><span class="pair-name">The Framework &mdash; Mapping Power, Democracy &amp; the Economy</span></div>
+    <div class="pair-cards">
+      <div class="resource-card">
+        <span class="resource-badge free">Free</span>
+        <span class="resource-title">Teacher Guide — Mapping Power</span>
+        <span class="resource-desc">Complete facilitation guide. Five-phase structure, teacher script, discussion question notes, three differentiation options. 60–90 minutes.</span>
+        <a href="educators.html" class="resource-link">View Teacher Guide &rarr;</a>
+      </div>
+      <div class="resource-card">
+        <span class="resource-badge free">Free</span>
+        <span class="resource-title">Framework Handout</span>
+        <span class="resource-desc">The matrix, four quadrant descriptions, placement activity, sentence frames, and reflection prompts. Five pages, photocopier-friendly.</span>
+        <a href="Framework_Handout_Economic_Democracy.pdf" target="_blank" rel="noopener" class="resource-link">Download Handout (PDF) &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAIR 3 — Revolution/Reform -->
+  <div class="resource-pair">
+    <div class="pair-header"><span class="pair-num">Unit 3</span><span class="pair-name">Revolution, Counterrevolution, and Reform</span></div>
+    <div class="pair-cards">
+      <div class="resource-card">
+        <span class="resource-badge free">Free</span>
+        <span class="resource-title">Teacher Guide — Revolution/Reform</span>
+        <span class="resource-desc">Five phases, teacher script, discussion question notes with "listen for" cues, matrix application guide for all three decision points, three differentiation options. 60–90 minutes.</span>
+        <a href="ED_TG_Revolution_Counterrevolution_Reform.html" class="resource-link">View Teacher Guide &rarr;</a>
+      </div>
+      <div class="resource-card">
+        <span class="resource-badge free">Free</span>
+        <span class="resource-title">Revolution, Counterrevolution, and Reform</span>
+        <span class="resource-desc">Student conceptual essay on the cyclical decision point in American history. Three historical decision points, five discussion questions, matrix application activity.</span>
+        <a href="ED_RCR_Revolution_Counterrevolution_Reform.html" class="resource-link">Read the Student Essay &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAIR 4 — Role-Play Lab -->
+  <div class="resource-pair">
+    <div class="pair-header"><span class="pair-num">Unit 4</span><span class="pair-name">Civic Economy Role-Play Lab</span></div>
+    <div class="pair-cards">
+      <div class="resource-card">
+        <span class="resource-badge free">Free</span>
+        <span class="resource-title">Teacher Guide — Role-Play Lab</span>
+        <span class="resource-desc">Role assignment logic, class size configurations, role-by-role facilitation notes, policy option guide, negotiation failure modes and interventions. 90–120 minutes.</span>
+        <a href="ED_TG_Civic_Economy_Role_Play_Lab.html" class="resource-link">View Teacher Guide &rarr;</a>
+      </div>
+      <div class="resource-card">
+        <span class="resource-badge free">Free</span>
+        <span class="resource-title">Civic Economy Role-Play Lab</span>
+        <span class="resource-desc">Seven roles. Six policy options. One governing dilemma. Students negotiate a real reform package under genuine constraint. The full democratic experience. 90&ndash;120 minutes.</span>
+        <a href="ED_RPL_Civic_Economy_Role_Play_Lab.html" class="resource-link">Open the Role-Play Lab &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- II. CONCEPT LIBRARY -->
+<section class="res-section" id="concepts">
+  <span class="res-section-label">Section II &nbsp;&middot;&nbsp; Concept Library</span>
+  <h2 class="res-section-title">36 Primers. Five Clusters.</h2>
+  <p class="res-section-sub">The economic toolkit, one tool at a time. Each primer grants the concept its full strength, then presses on the two points where reasonable people start to disagree. Markets, ownership, capital, monopoly, taxation, globalization — every primer follows the same arc.</p>
+
+  <div class="concept-jump">
+    <div class="concept-jump-text">
+      <strong>Browse all 36 primers</strong>
+      <span>Organized into Allocation · Engines · Power · Distribution · Money &amp; Value — five clusters that map the terrain.</span>
+    </div>
+    <a href="concepts.html" class="concept-jump-btn">Open the Library &rarr;</a>
+  </div>
+
+  <div class="cluster-row">
+    <div class="cluster-row-cell">
+      <span class="cluster-row-label">I</span>
+      <span class="cluster-row-name">Allocation</span>
+      <span class="cluster-row-tagline">How scarce things get divided.</span>
+    </div>
+    <div class="cluster-row-cell">
+      <span class="cluster-row-label">II</span>
+      <span class="cluster-row-name">Engines</span>
+      <span class="cluster-row-tagline">What drives growth.</span>
+    </div>
+    <div class="cluster-row-cell">
+      <span class="cluster-row-label">III</span>
+      <span class="cluster-row-name">Power</span>
+      <span class="cluster-row-tagline">How advantage concentrates.</span>
+    </div>
+    <div class="cluster-row-cell">
+      <span class="cluster-row-label">IV</span>
+      <span class="cluster-row-name">Distribution</span>
+      <span class="cluster-row-tagline">Who ends up with what.</span>
+    </div>
+    <div class="cluster-row-cell">
+      <span class="cluster-row-label">V</span>
+      <span class="cluster-row-name">Money &amp; Value</span>
+      <span class="cluster-row-tagline">The machinery underneath.</span>
+    </div>
+  </div>
+</section>
+
+<!-- III. TEACHING TOOLKIT -->
+<section class="res-section" id="toolkit">
+  <span class="res-section-label">Section III &nbsp;&middot;&nbsp; Teaching Toolkit</span>
+  <h2 class="res-section-title">Built to Use Tomorrow.</h2>
+  <p class="res-section-sub">Beyond the readings, a full layer of teaching support &mdash; the connective tissue that turns a library of materials into a course you can run Monday morning.</p>
+
+  <div class="toolkit-grid">
+    <div class="toolkit-card">
+      <span class="toolkit-badge">01 &middot; Method</span>
+      <span class="toolkit-title">Unit Design Guide</span>
+      <span class="toolkit-desc">How to weave the three strands into one arc: learn the tool (a primer), hear the argument (the voices), take a stance (a project). A reusable method plus four units built and ready.</span>
+      <a href="ED_UDG_Unit_Design_Guide.html" class="toolkit-link">View the Guide &rarr;</a>
+    </div>
+    <div class="toolkit-card">
+      <span class="toolkit-badge">02 &middot; Routine</span>
+      <span class="toolkit-title">Warm-Ups &amp; Exit Tickets &mdash; Concepts</span>
+      <span class="toolkit-desc">A bookend routine for any concept: open by surfacing what students already believe, close by checking what landed. Universal prompts plus a tuned pair for every primer.</span>
+      <a href="ED_WUET_WarmUps_ExitTickets.html" class="toolkit-link">View the Routine &rarr;</a>
+    </div>
+    <div class="toolkit-card">
+      <span class="toolkit-badge">03 &middot; Routine</span>
+      <span class="toolkit-title">Warm-Ups &amp; Exit Tickets &mdash; 250 Voices</span>
+      <span class="toolkit-desc">The same routine, built for the anthology: placement, pairing, and the central question, section by section.</span>
+      <a href="ED_WUET_Anthology_250.html" class="toolkit-link">View the Routine &rarr;</a>
+    </div>
+    <div class="toolkit-card">
+      <span class="toolkit-badge">04 &middot; Assessment</span>
+      <span class="toolkit-title">Assessment Suite</span>
+      <span class="toolkit-desc">Three rubrics and a worked sample, built to grade the thinking, not the agreement. A student can argue any side and earn top marks &mdash; if the reasoning is sound.</span>
+      <a href="ED_ASMT_Assessment_Suite.html" class="toolkit-link">View the Suite &rarr;</a>
+    </div>
+    <div class="toolkit-card">
+      <span class="toolkit-badge">05 &middot; For Students</span>
+      <span class="toolkit-title">Student Handbook</span>
+      <span class="toolkit-desc">You Are Entering an Argument. The student-facing guide: why economic understanding is citizenship, how the course works, and how it's graded. The one piece written for the student to keep.</span>
+      <a href="ED_SH_Student_Handbook.html" class="toolkit-link">Read the Handbook &rarr;</a>
+    </div>
+    <div class="toolkit-card">
+      <span class="toolkit-badge">06 &middot; Scope</span>
+      <span class="toolkit-title">Resources &amp; Scope</span>
+      <span class="toolkit-desc">The complete inventory of what's built and what's coming &mdash; readings, projects, assessments, and the planned expansions into lower grades and additional units.</span>
+      <a href="ED_RES_Resources_Scope.html" class="toolkit-link">View the Scope &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- IV. 250 VOICES ANTHOLOGY -->
+<section class="res-section" id="anthology">
+  <span class="res-section-label">Section IV &nbsp;&middot;&nbsp; The Anthology</span>
+  <h2 class="res-section-title">250 Voices. One Per Year.</h2>
+  <p class="res-section-sub">From 1776 to 2026. The founders and the abolitionists. The economists who built the system and the poets who named what it cost. The platform builders and the critics who saw what was being built before most people noticed.</p>
+
+  <div class="pair-cards">
+    <div class="resource-card">
+      <span class="resource-badge free">Free</span>
+      <span class="resource-title">Teacher Guide &mdash; 250 Voices</span>
+      <span class="resource-desc">Section-by-section guide, four lesson models, seven high-yield cross-section pairings, notes on handling difficult figures. Use across the full curriculum.</span>
+      <a href="ED_ANT_TeacherGuide.html" class="resource-link">View Teacher Guide &rarr;</a>
+    </div>
+    <div class="resource-card">
+      <span class="resource-badge free">Free</span>
+      <span class="resource-title">250 Voices &mdash; Core Anthology</span>
+      <span class="resource-desc">One voice per year of the republic &mdash; 1776 to 2026. Eight sections. Founders and abolitionists, economists and poets, platform builders and critics. The full map.</span>
+      <a href="ED_ANT_Core_Anthology_250.html" class="resource-link">Browse the Anthology &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- V. READERS -->
+<section class="res-section" id="readers">
+  <span class="res-section-label">Section V &nbsp;&middot;&nbsp; Readers</span>
+  <h2 class="res-section-title">Standalone Readers.</h2>
+  <p class="res-section-sub">Short companion readings &mdash; on-ramps, movements, and the capstone &mdash; that work as standalone units or as supplements alongside the core curriculum.</p>
+
+  <div class="readers-grid">
+    <a href="ED_RDR_Human_Flourishing_OnRamp.html" class="reader-card">
+      <span class="reader-label">On-Ramp</span>
+      <span class="reader-name">Human Flourishing</span>
+      <span class="reader-arrow">Read &rarr;</span>
+    </a>
+    <a href="ED_RDR_Movement_I_Platforms.html" class="reader-card">
+      <span class="reader-label">Movement I</span>
+      <span class="reader-name">Platforms</span>
+      <span class="reader-arrow">Read &rarr;</span>
+    </a>
+    <a href="ED_RDR_Movement_II_Automation.html" class="reader-card">
+      <span class="reader-label">Movement II</span>
+      <span class="reader-name">Automation</span>
+      <span class="reader-arrow">Read &rarr;</span>
+    </a>
+    <a href="ED_RDR_Movement_III_Wealth.html" class="reader-card">
+      <span class="reader-label">Movement III</span>
+      <span class="reader-name">Wealth</span>
+      <span class="reader-arrow">Read &rarr;</span>
+    </a>
+    <a href="ED_RDR_Capstone_Define_Defend.html" class="reader-card">
+      <span class="reader-label">Capstone</span>
+      <span class="reader-name">Define &amp; Defend</span>
+      <span class="reader-arrow">Read &rarr;</span>
+    </a>
+  </div>
+</section>
+
+<!-- VI. FOR ADMINISTRATORS -->
+<section class="res-section" id="admins">
+  <span class="res-section-label">Section VI &nbsp;&middot;&nbsp; For Administrators</span>
+  <h2 class="res-section-title">For Department Heads &amp; Administrators.</h2>
+  <p class="res-section-sub">Economic Democracy is standards-completing, not standards-rejecting. The Standards Crosswalk maps all thirty-six concepts and the teaching units against the Council for Economic Education's 2025 economics pillars and the C3 inquiry framework &mdash; full or near-full coverage across all eighteen pillars, including CEE's newest (Technology), with a single honest, supplementable light spot (formal GDP-accounting mechanics). The Educator Overview lays out the rationale, scope, and philosophy in four pages to share with your department before the first day.</p>
+
+  <div class="admin-grid">
+    <a href="ED_XWALK_Standards_Crosswalk.html" class="admin-card">
+      <span class="admin-label">Document</span>
+      <span class="admin-name">Standards Crosswalk</span>
+      <span class="admin-desc">All 36 concepts and the teaching units mapped against the CEE 2025 economics pillars and the C3 inquiry framework.</span>
+      <span class="admin-arrow">View &rarr;</span>
+    </a>
+    <a href="educators.html" class="admin-card">
+      <span class="admin-label">Document</span>
+      <span class="admin-name">Educator Overview</span>
+      <span class="admin-desc">The rationale, scope, and philosophy of the full two-year curriculum. Four pages, written for department review.</span>
+      <span class="admin-arrow">View &rarr;</span>
+    </a>
+  </div>
+</section>
+
+<!-- WAYS TO ENGAGE — CLOSING CTA -->
+<section class="res-section" id="engage-cta" style="border-top:3px solid var(--black);">
+  <span class="res-section-label">Want Community Around This Work?</span>
+  <h2 class="res-section-title">Use the Materials Together.</h2>
+  <p class="res-section-sub">Everything above is yours to use &mdash; freely, today. If you want to use these resources alongside other educators and have direct access to the creators and facilitators, that's what the cohort is for. Three options to join the community: as an individual educator, as a school, or as a network.</p>
+
+  <style>
+    .engage-cta-block{
+      background:var(--black);
+      color:var(--white);
+      padding:2.25rem 2.5rem;
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:2rem;
+      align-items:center;
+      margin-top:1rem;
+    }
+    @media(max-width:680px){
+      .engage-cta-block{grid-template-columns:1fr;}
+    }
+    .engage-cta-block .engage-tiers{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1.25rem;
+    }
+    @media(max-width:680px){
+      .engage-cta-block .engage-tiers{grid-template-columns:1fr;gap:.85rem;}
+    }
+    .engage-tier-cell strong{
+      display:block;
+      font-family:'Playfair Display',serif;
+      font-size:1.15rem;
+      font-weight:700;
+      color:var(--white);
+      margin-bottom:.35rem;
+      line-height:1.2;
+    }
+    .engage-tier-cell span{
+      font-family:'IBM Plex Mono',monospace;
+      font-size:.72rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:#ffd068;
+      display:block;
+      line-height:1.5;
+      font-weight:500;
+    }
+    .engage-cta-btn{
+      background:var(--white);
+      color:var(--black);
+      font-family:'IBM Plex Mono',monospace;
+      font-size:.75rem;
+      font-weight:500;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      padding:1.05rem 1.7rem;
+      white-space:nowrap;
+      text-decoration:none;
+      transition:background .15s;
+      align-self:center;
+    }
+    .engage-cta-btn:hover{background:var(--cream);}
+  </style>
+
+  <div class="engage-cta-block">
+    <div class="engage-tiers">
+      <div class="engage-tier-cell">
+        <strong>Educator Pilot</strong>
+        <span>$500 &middot; per teacher / semester</span>
+      </div>
+      <div class="engage-tier-cell">
+        <strong>School Adoption</strong>
+        <span>$5,000 &middot; per school / year</span>
+      </div>
+      <div class="engage-tier-cell">
+        <strong>Network Partnership</strong>
+        <span>$25,000 &middot; per network / year</span>
+      </div>
+    </div>
+    <a href="ED_ENGAGE_Ways.html" class="engage-cta-btn">See All Three Tiers &rarr;</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <style>
+    .footer-utility{
+      width:100%;
+      display:flex;
+      flex-wrap:wrap;
+      gap:1.25rem;
+      justify-content:center;
+      padding:0 0 .75rem;
+      margin-bottom:.5rem;
+      border-bottom:1px solid var(--rule);
+    }
+    .footer-utility a{
+      font-family:'IBM Plex Mono',monospace;
+      font-size:.62rem;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      color:var(--black);
+      text-decoration:none;
+      transition:color .15s;
+    }
+    .footer-utility a:hover{color:var(--mid);}
+  </style>
+  <div class="footer-utility">
+    <a href="ED_SH_Student_Handbook.html">For Students &middot; Start with the Student Handbook &rarr;</a>
+    <a href="resources.html#admins">For Administrators &middot; Standards Crosswalk &amp; Educator Overview &rarr;</a>
+  </div>
+  <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC &nbsp;&middot;&nbsp; SPCC.1 &nbsp;&middot;&nbsp; economicdemocracy.co</span>
+  <span class="footer-right">AI Synthesis: Claude (Anthropic, claude-opus-4-7) &nbsp;&middot;&nbsp; Economic Democracy Curriculum</span>
+</footer>
+
+<button class="back-to-top" aria-label="Back to top">&uarr;</button>
+
+<script>
+document.querySelector('.nav-toggle').addEventListener('click', function(){
+  this.classList.toggle('open');
+  this.setAttribute('aria-expanded', this.classList.contains('open'));
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+const btt = document.querySelector('.back-to-top');
+window.addEventListener('scroll', () => {
+  btt.classList.toggle('visible', window.scrollY > 600);
+});
+btt.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+</script>
+
+</body>
+</html>
