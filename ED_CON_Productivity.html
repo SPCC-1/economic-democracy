@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Productivity — Concept Library — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+.concept-tag{display:inline-block;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .6rem;margin-bottom:.9rem;}
+
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+
+.defbox{border:1px solid var(--black);background:var(--white);padding:1.1rem 1.4rem;margin:1.5rem 0;}
+.defbox-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.defbox p{font-size:.92rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.defbox strong{font-weight:600;color:var(--black);}
+
+/* create vs extract two-column */
+.four{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.four-cell{background:var(--paper);padding:1rem 1.2rem;}
+.four-cell:nth-child(even){background:var(--cream);}
+.four-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem;}
+.four-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.3rem;}
+.four-text{font-size:.8rem;font-weight:300;color:var(--ink);line-height:1.55;}
+.four-text strong{font-weight:600;color:var(--charcoal);}
+@media(max-width:600px){.four{grid-template-columns:1fr;}}
+
+.types{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.type-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.type-cell:nth-child(even){background:var(--cream);}
+.type-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.type-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.15;}
+.type-text{font-size:.81rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.types{grid-template-columns:1fr;}}
+
+.context{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.context-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.context-name{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.context-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.context-body p{margin-bottom:.5rem;}
+.context-body p:last-child{margin-bottom:0;}
+.context-q{font-size:.82rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.6rem;margin-top:.5rem;line-height:1.5;}
+
+.tbl-wrap{margin:1.25rem 0;overflow-x:auto;}
+.cmp{width:100%;border-collapse:collapse;font-size:.8rem;min-width:540px;}
+.cmp th,.cmp td{border:1px solid var(--rule);padding:.55rem .7rem;vertical-align:top;line-height:1.45;text-align:left;}
+.cmp th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.cmp td:first-child{background:var(--cream);font-weight:600;color:var(--charcoal);font-size:.76rem;}
+.cmp .fill{color:var(--muted);font-style:italic;}
+
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing,.cmp th,.concept-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .context,.task,.types,.four,.defbox,.inset,.tbl-wrap{break-inside:avoid;}
+  .sec-header{margin:1.9rem 0 1rem;}
+  .context{margin:1.1rem 0;}
+  .four,.types,.defbox,.inset,.pullquote{margin-top:1.2rem;margin-bottom:1.2rem;}
+  .task{margin:1.3rem 0;}
+  .closing{margin:1.2rem 0 0;}
+  .doc-footer{margin-top:1.2rem;}
+  .closing.tight-top{margin-top:.8rem;}
+  .dq-list.tight li{padding-top:.34rem;padding-bottom:.34rem;}
+  .sec-header.tight-top{margin-top:1rem;margin-bottom:.85rem;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+.sec-header.tight-top{margin-top:1.5rem;}
+.closing.tight-top{margin-top:1.4rem;}
+.dq-list.tight li{padding-top:.45rem;padding-bottom:.45rem;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="concept-tag">Concept Library · Engines</p>
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Concept Primer</p>
+    <h1 class="masthead-title">Productivity</h1>
+    <p class="masthead-sub">Getting more out of the same effort — the quiet engine behind nearly every rise in living standards, and the slippery question of who actually gets the "more."</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">Two hundred years ago, feeding a single family took the work of most of a family. Today a tiny fraction of people grow the food for everyone, and the rest are freed to do something else entirely — build, heal, teach, invent. Nothing about human beings changed; what changed is how much each hour of work can produce. A farmer with a tractor grows in a day what once took a season by hand. That ratio — <strong>how much output you get from a given amount of input</strong> — is <strong>productivity</strong>, and its slow, compounding rise is the single most important reason your life is materially richer than your great-great-grandparents'. Almost everything we mean by "the economy growing" comes down, in the end, to this.</p>
+
+  <p class="body">It is the most universally praised idea in all of economics, and for good reason: rising productivity is, in the long run, the only way a society as a whole gets more without simply working more or taking from someone else. There are only so many hours; you can't make everyone richer by everyone working harder forever. The way past that ceiling is to make each hour count for more — better tools, methods, knowledge. This primer grants productivity its enormous due, then asks the two questions the cheerful headline number always hides. First: when productivity rises, <em>who gets the gain?</em> And second: the number counts only what can be measured — so what does it quietly leave out?</p>
+
+  <div class="defbox">
+    <p class="defbox-label">The tool, stated plainly</p>
+    <p><strong>Productivity</strong> is the amount of output produced per unit of input — most often, the value of goods and services produced per hour of work. When productivity rises, the same effort yields more, which is what makes it possible for living standards to climb over time without simply working longer hours. It is the long-run engine of economic growth — but it measures only <em>how much</em> is produced per hour, not <em>who receives it</em> or <em>what gets left out of the count</em>.</p>
+  </div>
+
+  <!-- SECTION I -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">The Tool — The Only Real Path to Lasting Abundance</span></div>
+
+  <p class="body">Grant the idea fully, because its power is hard to overstate. Imagine two ways a society could try to get richer. The first is to work more — more hours, more people, more land brought under the plow. But this hits a wall fast: there are only twenty-four hours in a day, and a person worked to exhaustion produces a tired hour, not a richer life. The second way is to get <em>more from each hour</em> — and this has no obvious ceiling. A worker with a better tool, a smarter process, or new knowledge can produce two, ten, a thousand times what they could before, without working a minute longer. That second path is productivity, and it is essentially the entire story of how humanity climbed out of universal poverty.</p>
+
+  <p class="body">Hold the two side by side, because confusing them is one of the most common mistakes in thinking about the economy:</p>
+
+  <div class="four">
+    <div class="four-cell">
+      <p class="four-label">Working more</p>
+      <p class="four-name">More Input</p>
+      <p class="four-text">Longer hours, more workers, more raw material. Output rises, but so does the effort — you're not getting more <strong>per</strong> hour, just buying more total output with more total work. This path runs out: you cannot work your way past the limits of time and human endurance.</p>
+    </div>
+    <div class="four-cell">
+      <p class="four-label">Working smarter</p>
+      <p class="four-name">More Productivity</p>
+      <p class="four-text">A better tool, method, or idea means each hour produces more than it used to. The gain comes <strong>free of extra effort</strong> — the same work yields a larger result. This is the path with no natural ceiling, the one that turns scarcity into abundance over generations.</p>
+    </div>
+  </div>
+
+  <p class="body">This is why economists treat productivity growth as close to sacred: it is, genuinely, the closest thing the economy has to a free lunch. A society whose productivity rises steadily can give its people more of everything — more goods, more leisure, more security — without anyone having to lose for someone else to gain. The pie doesn't just get cut differently; it grows. Granted fully, rising productivity is the quiet engine beneath nearly every material improvement in human history. The trouble is not with the engine — it's with two things the single headline number cannot tell you, and that's where the tool's neutrality breaks.</p>
+
+  <div class="pullquote">
+    <p>Working harder runs into the wall of the clock. Working smarter has no such wall — which is why a small, steady rise in productivity, compounded over a lifetime, remakes the world.</p>
+  </div>
+
+  <!-- SECTION II -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">What the Headline Number Hides</span></div>
+
+  <p class="body">Productivity as a measure is clean and powerful. But a single rising line on a chart conceals two questions it was never built to answer — and both of them turn out to matter enormously for whether rising productivity actually improves people's lives.</p>
+
+  <div class="types">
+    <div class="type-cell">
+      <p class="type-label">Lever 1</p>
+      <p class="type-name">Productivity rising doesn't say who gets the gains</p>
+      <p class="type-text">"Output per hour went up" tells you the pie grew — not who got the extra slice. The gains from higher productivity can flow to workers as higher pay, to owners as higher profits, to consumers as lower prices, or to some mix. Nothing in the number itself guarantees the people whose work became more productive see any of it. For long stretches, productivity and the typical worker's pay rose together; in other stretches, output per hour kept climbing while wages flattened, and the gains went elsewhere. The engine ran — but the question of <em>who rode it</em> is decided by bargaining power, ownership, and policy, not by the productivity number.</p>
+    </div>
+    <div class="type-cell">
+      <p class="type-label">Lever 2</p>
+      <p class="type-name">It counts only what's measured — and misses the rest</p>
+      <p class="type-text">Productivity tracks measured output per measured hour. But enormous amounts of real value aren't in the count: raising a child, caring for a parent, the volunteer work that holds a community together — none of it registers, so a society can look "more productive" while the unpaid work that sustains it is invisible. Worse, the number can be pushed up by things that aren't real gains: cutting quality, burning out workers, or running down the future (depleting a resource, skipping maintenance). More output per hour <em>this</em> quarter can mean less of what people actually value over time.</p>
+    </div>
+  </div>
+
+  <div class="inset">
+    <strong>The question to carry everywhere:</strong> when you hear that productivity is rising, ask — <em>who is getting the extra output: the workers who produced it, the owners, the customers? And what isn't being counted — the unpaid work, the quality, the long-run cost — that might be quietly falling while the measured number climbs?</em> Productivity is a real and powerful good. But "more output per hour" is the beginning of the question, not the end of it: a rising line tells you the pie grew, and nothing at all about who's eating or what got left off the table.</p>
+  </div>
+
+  <!-- SECTION III — APPLY (break removed; long intro) -->
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">The Same Measure, Three Contexts</span></div>
+
+  <p class="body">Watch productivity rise in a way that lifts nearly everyone, then rise while the people who created the gain are left behind, then "rise" on paper while something real and uncounted is quietly destroyed.</p>
+
+  <div class="context">
+    <p class="context-meta">Context One · The gain shared</p>
+    <p class="context-name">A better tool that makes work easier and pay higher</p>
+    <div class="context-body">
+      <p>A workshop adopts a new machine that lets each worker produce far more per hour. Because workers are scarce and can bargain — or because competition forces the savings out — the gain is shared: prices fall for customers, profits rise for the owner, <em>and</em> wages rise for the workers, who now also go home less exhausted. This is productivity at its best, the textbook promise kept: the same effort yields more, and the "more" reaches nearly everyone who had a hand in it. The pie grew, and the slices grew with it.</p>
+      <p class="context-q">The output per hour rose — and did the people who produced it share in the gain?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Two · The gain captured</p>
+    <p class="context-name">Output per worker climbs, but the paycheck doesn't</p>
+    <div class="context-body">
+      <p>Over years, workers in an industry produce steadily more per hour — new tools, faster systems, harder-driven schedules. The productivity chart climbs handsomely. But their pay barely moves: the gains flow to owners and shareholders instead, because the workers have little bargaining power and don't own a share of what they helped build. The number rose exactly as promised — and the people who made it rise saw almost none of it. Lever 1 in plain view: productivity told you the pie grew, and said nothing about who got the extra slice. Same rising line, opposite human result from Context One.</p>
+      <p class="context-q">If output per worker doubled and pay stood still — where, exactly, did the gain go?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Three · The number that lies</p>
+    <p class="context-name">A company looks more productive by cutting what doesn't show</p>
+    <div class="context-body">
+      <p>A firm boosts its measured output per hour impressively — but does it by thinning quality, deferring every repair, pushing staff to burnout, and drawing down resources it won't replace. On the chart, productivity soared. In reality, it borrowed the gain from the future and from things the measure can't see: durability, safety, the health of its workers. A year later the costs come due. This is Lever 2 at its sharpest — the headline number rose while real value fell, because the number counts only what's easy to count.</p>
+      <p class="context-q">Did the firm get genuinely more efficient — or just stop counting what it was destroying?</p>
+    </div>
+  </div>
+
+  <!-- ACTIVITY -->
+  <div class="sec-header tight-top"><span class="sec-roman">IV</span><span class="sec-title">Activity — Real Gain, or Just a Rising Number?</span></div>
+
+  <p class="body">For each case, decide whether productivity genuinely rose, then ask the two hidden questions: who would get the gain, and is anything real being left out of the count or borrowed from the future?</p>
+
+  <div class="tbl-wrap">
+    <table class="cmp">
+      <thead>
+        <tr><th>What happened</th><th>Real productivity gain?</th><th>Who gains? / What's uncounted?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>A new tool lets a worker make twice as much per hour</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Output per worker rises but wages stay flat for years</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A factory speeds up by skipping safety maintenance</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A parent leaves paid work to care for a child full-time</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A team does the same job in fewer hours, same quality</td><td class="fill">…</td><td class="fill">…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Write</p>
+    <p class="task-title">Trace a productivity gain to where it landed</p>
+    <p class="task-body">Think of a place where work clearly got more productive — a job you know, a tool that changed how something is done, an industry you've read about. Where did the extra output actually go: to lower prices, higher pay, bigger profits, more free time? Did the people who made the work more productive share in the gain — and was anything real (quality, health, unpaid work, the long-run base) quietly traded away to make the number rise?</p>
+    <div class="writelines"><div class="writeline"></div><div class="writeline"></div><div class="writeline"></div></div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="sec-header tight-top"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list tight">
+    <li>Productivity growth is often called the closest thing to a "free lunch" the economy has. In what sense is that true — and what does the phrase leave out about who actually eats?</li>
+    <li>For a long period, productivity and typical wages rose together; later, output per hour climbed while pay flattened. What might decide which happens — and can a society choose?</li>
+    <li>Huge amounts of real work — caregiving, volunteering, raising children — don't show up in productivity at all. What goes wrong when a society steers by a number blind to its own foundations?</li>
+    <li>What's the smallest change that would let productivity keep rising <em>and</em> make sure the people who produce the gains actually share in them — without choking off the engine that creates the gains in the first place?</li>
+  </ol>
+
+  <div class="closing tight-top">
+    <p>A rising line on a chart is a beginning, not an answer.<br>It tells you the same hour now makes more —<br>but never, on its own, who receives the more, or what was quietly spent to get it.<br>To read productivity honestly is to ask the questions the number cannot.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

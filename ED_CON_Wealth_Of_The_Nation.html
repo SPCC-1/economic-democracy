@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Wealth of the Nation — Concept Library — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+.concept-tag{display:inline-block;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .6rem;margin-bottom:.9rem;}
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+.defbox{border:1px solid var(--black);background:var(--white);padding:1.1rem 1.4rem;margin:1.5rem 0;}
+.defbox-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.defbox p{font-size:.92rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.defbox strong{font-weight:600;color:var(--black);}
+.grow-wrap{margin:1.25rem 0;overflow-x:auto;}
+.grow{width:100%;border-collapse:collapse;font-size:.82rem;}
+.grow th,.grow td{border:1px solid var(--rule);padding:.5rem .7rem;text-align:left;line-height:1.4;}
+.grow th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.grow td:first-child{font-weight:600;color:var(--charcoal);}
+.grow .num{font-family:'IBM Plex Mono',monospace;font-size:.76rem;color:var(--black);}
+.grow tr:nth-child(even) td{background:var(--cream);}
+.grow .lead td{background:var(--black);color:var(--white);}
+.grow .lead td .num{color:var(--white);}
+.types{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.type-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.type-cell:nth-child(even){background:var(--cream);}
+.type-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.type-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.15;}
+.type-text{font-size:.81rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.types{grid-template-columns:1fr;}}
+.context{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.context-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.context-name{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.context-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.context-body p{margin-bottom:.5rem;}
+.context-body p:last-child{margin-bottom:0;}
+.context-q{font-size:.82rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.6rem;margin-top:.5rem;line-height:1.5;}
+.tbl-wrap{margin:1.25rem 0;overflow-x:auto;}
+.cmp{width:100%;border-collapse:collapse;font-size:.8rem;min-width:540px;}
+.cmp th,.cmp td{border:1px solid var(--rule);padding:.55rem .7rem;vertical-align:top;line-height:1.45;text-align:left;}
+.cmp th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.cmp td:first-child{background:var(--cream);font-weight:600;color:var(--charcoal);font-size:.76rem;}
+.cmp .fill{color:var(--muted);font-style:italic;}
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+.fnote{font-family:'IBM Plex Mono',monospace;font-size:.58rem;color:var(--muted);line-height:1.5;margin-top:.4rem;max-width:680px;}
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing,.cmp th,.grow th,.grow .lead td,.concept-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .context,.task,.types,.defbox,.inset,.tbl-wrap,.grow-wrap{break-inside:avoid;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="concept-tag">Concept Library · Money &amp; Value</p>
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Concept Primer</p>
+    <h1 class="masthead-title">The Wealth of the Nation</h1>
+    <p class="masthead-sub">A companion to <em>The Wealth of Nations</em>. That primer measured the United States against the world. This one looks inside — how the nation's wealth breaks down among its people. Just the data.</p>
+  </div>
+
+  <p class="body-intro">The companion primer established the first fact: the United States is the wealthiest nation in human history, the world's great engine of private wealth creation. This primer asks an entirely different question — not how the country compares to other nations, but how its wealth is held <em>within</em> its own borders. If you could add up everything every American owns and see how it's distributed across the population, what would the breakdown look like? This is not a question about whether that distribution is good or bad, fair or unfair. It is simply a question of <em>what the numbers are</em> — and learning to read them accurately is a skill in itself.</p>
+
+  <p class="body">That skill matters because wealth distribution is one of the easiest things in economics to describe misleadingly, in any direction. A single statistic can make a country sound like a land of universal prosperity or universal hardship, depending on which number is chosen and how it's framed. So the goal here is narrow and disciplined: present the actual breakdown of how wealth is held in the United States, give you the tools to read such breakdowns correctly, and let you draw your own conclusions. No argument about <em>why</em> the distribution looks the way it does, and no verdict about what should follow. Just the structure, read carefully.</p>
+
+  <div class="defbox">
+    <p class="defbox-label">The frame, stated plainly</p>
+    <p>This primer looks <strong>inward</strong>: the wealth <em>in</em> the nation — how the total wealth of the United States is distributed among its households. It presents the breakdown as data and teaches how to read it accurately. It does not argue why the distribution exists or what, if anything, should change — those are questions you are equipped to take up elsewhere.</p>
+  </div>
+
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">First, How to Read a Distribution</span></div>
+
+  <p class="body">Before any numbers, three tools — because a distribution read with the wrong tool tells you the wrong thing.</p>
+
+  <div class="types">
+    <div class="type-cell">
+      <p class="type-label">Tool 1</p>
+      <p class="type-name">Mean vs. median</p>
+      <p class="type-text">The <em>mean</em> (average) divides total wealth by the number of people — but a few very large holdings pull it far above what most people have. The <em>median</em> is the middle: half hold more, half hold less. When wealth is concentrated, the mean can be many times the median. To know what a "typical" person holds, you want the <strong>median</strong>; the mean tells you the total spread over heads, not the middle.</p>
+    </div>
+    <div class="type-cell">
+      <p class="type-label">Tool 2</p>
+      <p class="type-name">Shares by group</p>
+      <p class="type-text">Instead of one summary number, you can split the population into groups — the top 10%, the next 40%, the bottom 50% — and ask what share of total wealth each holds. This shows the <em>shape</em> of the distribution directly, rather than collapsing it into a single figure that can hide the spread. It answers: of all the wealth, how much does each slice of the population hold?</p>
+    </div>
+  </div>
+
+  <p class="body">A third tool, the <strong>Gini coefficient</strong>, compresses an entire distribution into one number between 0 and 1: zero would mean everyone holds exactly the same, one would mean a single person holds everything. It's useful for comparing countries or tracking change over time, but because it's a single number it hides the shape — two very different distributions can share a Gini. Used together, these tools let you read a distribution honestly: the median for the typical person, the group shares for the shape, the Gini for comparison. Use only one, and you can be misled — or mislead.</p>
+
+  <div class="pullquote">
+    <p>The same distribution can be described ten ways. Reading it honestly means knowing which number answers which question — and noticing which one someone left out.</p>
+  </div>
+
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">The Breakdown — How US Wealth Is Held</span></div>
+
+  <p class="body">Now the data. Household wealth in the United States, divided by population group, breaks down approximately as follows — the share of all household wealth held by each slice of households:<sup>1</sup></p>
+
+  <div class="grow-wrap">
+    <table class="grow">
+      <thead>
+        <tr><th>Group of households</th><th>Approx. share of all household wealth</th></tr>
+      </thead>
+      <tbody>
+        <tr class="lead"><td>Top 10%</td><td class="num">~67% (about two-thirds)</td></tr>
+        <tr><td>&nbsp;&nbsp;of which, top 1%</td><td class="num">~30%</td></tr>
+        <tr><td>Upper-middle (50th–90th percentile)</td><td class="num">~30%</td></tr>
+        <tr><td>Bottom 50%</td><td class="num">~3%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="body">Read with the tools from Section I, the breakdown shows a few clear facts. The wealth held by US households is heavily concentrated toward the top: the wealthiest tenth of households hold roughly two-thirds of all household wealth, and the top one percent alone hold close to a third.<sup>1</sup> The upper-middle group — the 40% of households below the top tenth — holds most of the remaining third. The bottom half of households, by contrast, holds only a small share of the national total, on the order of a few percent.<sup>2</sup></p>
+
+  <p class="body">Two more figures complete the picture without editorializing. First, this is why mean and median diverge so sharply for the US: average household wealth is far higher than median household wealth, because the large holdings at the top pull the average up — the typical (median) household holds a small fraction of the average.<sup>3</sup> Second, by the single-number comparison, the United States has a higher wealth-concentration reading than most other wealthy democracies; among large advanced economies its distribution sits toward the more-concentrated end.<sup>4</sup> Those are the numbers. What they mean, and what if anything should follow, is precisely what this primer leaves to you.</p>
+
+  <div class="inset">
+    <strong>What this primer does not do:</strong> it does not say whether this distribution is good or bad, just or unjust, nor why some households hold much and others little — those involve values and arguments beyond the data, and you'll meet them in other parts of this curriculum. Here the discipline is to see the breakdown clearly and read it with the right tools. A clear-eyed look at the numbers, without a verdict attached, is the foundation every honest argument about them has to start from.</p>
+  </div>
+
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">Reading the Numbers Three Ways</span></div>
+
+  <p class="body">The same breakdown, read with each tool — to see how the choice of number shapes the picture.</p>
+
+  <div class="context">
+    <p class="context-meta">Reading One · The typical household</p>
+    <p class="context-name">What the median tells you</p>
+    <div class="context-body">
+      <p>If you want to know what a household "in the middle" of America holds, you use the median — and the median household holds far less than the average household, because the average is lifted by the large holdings at the top. Reading the distribution this way centers the typical family: it tells you where the middle of the country actually sits, which the average alone would overstate. The median is the honest answer to "what does a normal household have?"</p>
+      <p class="context-q">Which number tells you about the typical person? The median.</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Reading Two · The shape</p>
+    <p class="context-name">What the group shares tell you</p>
+    <div class="context-body">
+      <p>If you want to see the <em>shape</em> of the distribution — how the whole is divided — you use the group shares: top 10%, the middle, the bottom 50%. This reading shows the concentration directly, without collapsing it into a single figure. It answers a different question than the median: not "what does the middle hold?" but "of all the wealth, how is it split among the groups?" Both are true; they simply describe different features of the same breakdown.</p>
+      <p class="context-q">Which number shows the shape? The shares by group.</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Reading Three · The comparison</p>
+    <p class="context-name">What a single concentration number tells you</p>
+    <div class="context-body">
+      <p>If you want to compare the US distribution to another country's, or to its own past, you use a single summary number like the Gini — useful precisely because one figure can be lined up against another. Its cost is that it hides the shape: it tells you "more or less concentrated than X" but not where the concentration sits. It's the right tool for comparison and the wrong tool for understanding the internal structure — which is why you pair it with the other two, never use it alone.</p>
+      <p class="context-q">Which number is for comparing? The single concentration figure — used with care.</p>
+    </div>
+  </div>
+
+  <div class="sec-header"><span class="sec-roman">IV</span><span class="sec-title">Activity — Read It Yourself</span></div>
+
+  <p class="body">Using the breakdown and the three tools, answer each with the data — accurately, without adding judgment about whether the numbers are good or bad.</p>
+
+  <div class="tbl-wrap">
+    <table class="cmp">
+      <thead>
+        <tr><th>The question</th><th>Which tool answers it?</th><th>What the data shows</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>What does a typical (middle) household hold?</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>What share does the top 10% hold?</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Why is average wealth higher than median wealth?</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Is the US more or less concentrated than peers?</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>What share does the bottom 50% hold?</td><td class="fill">…</td><td class="fill">…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Write</p>
+    <p class="task-title">Describe the breakdown — accurately and neutrally</p>
+    <p class="task-body">In a short paragraph, describe how wealth is distributed in the United States using the correct tools — median for the typical household, shares for the shape. Your only job is accuracy: describe the breakdown so precisely that someone who wanted to argue <em>either</em> side would agree your description is fair. Resist adding what you think about it — just get the numbers right.</p>
+    <div class="writelines"><div class="writeline"></div><div class="writeline"></div><div class="writeline"></div></div>
+  </div>
+
+  <div class="sec-header"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list">
+    <li>Why can the mean (average) and the median (middle) wealth of a country differ so much? Which one would you want if you were trying to understand a typical household — and which might someone choose to make a point?</li>
+    <li>Group shares show the shape of a distribution; a single number like the Gini hides it. When is each the right tool, and how could using only one mislead — in either direction?</li>
+    <li>This primer deliberately presents the breakdown without saying whether it's good or bad. Why might it be valuable to be able to describe a distribution accurately <em>before</em> arguing about it? What goes wrong when people skip that step?</li>
+    <li>The companion primer showed the US is the wealthiest nation on Earth; this one shows how that wealth is held internally. What questions do the two primers together raise that neither raises alone — and where would you go to pursue them?</li>
+  </ol>
+
+  <div class="closing">
+    <p>A nation's total wealth is one fact. How that wealth is held among its people is another.<br>This primer only asked you to see the second one clearly —<br>with the right tools, and without a verdict attached.<br>What you make of the breakdown is yours to decide.</p>
+  </div>
+
+  <p class="fnote">1. Approximate shares of US household wealth: top 10% hold roughly two-thirds (~67%), top 1% roughly 30% (US Federal Reserve, Distributional Financial Accounts; OECD, Society at a Glance 2024, which reports the US top 10% wealth share near 79% on its measure — figures vary by source and method). 2. Bottom 50% hold on the order of low single-digit percent of household wealth (Federal Reserve DFA). 3. US mean household wealth substantially exceeds median household wealth (Federal Reserve, Survey of Consumer Finances). 4. US wealth concentration sits toward the higher end among large advanced economies (OECD, 2024; Pew Research). Figures are approximate, vary by source and method, and shift over time; the structural pattern is the durable point.</p>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

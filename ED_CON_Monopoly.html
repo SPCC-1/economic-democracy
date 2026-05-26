@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monopoly &amp; Market Power — Concept Library — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+.concept-tag{display:inline-block;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .6rem;margin-bottom:.9rem;}
+
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+
+.defbox{border:1px solid var(--black);background:var(--white);padding:1.1rem 1.4rem;margin:1.5rem 0;}
+.defbox-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.defbox p{font-size:.92rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.defbox strong{font-weight:600;color:var(--black);}
+
+.types{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.type-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.type-cell:nth-child(even){background:var(--cream);}
+.type-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.type-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.15;}
+.type-text{font-size:.81rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.types{grid-template-columns:1fr;}}
+
+.context{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.context-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.context-name{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.context-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.context-body p{margin-bottom:.5rem;}
+.context-body p:last-child{margin-bottom:0;}
+.context-q{font-size:.82rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.6rem;margin-top:.5rem;line-height:1.5;}
+
+.tbl-wrap{margin:1.25rem 0;overflow-x:auto;}
+.cmp{width:100%;border-collapse:collapse;font-size:.8rem;min-width:540px;}
+.cmp th,.cmp td{border:1px solid var(--rule);padding:.55rem .7rem;vertical-align:top;line-height:1.45;text-align:left;}
+.cmp th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.cmp td:first-child{background:var(--cream);font-weight:600;color:var(--charcoal);font-size:.76rem;}
+.cmp .fill{color:var(--muted);font-style:italic;}
+
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing,.cmp th,.concept-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .context,.task,.types,.defbox,.inset,.tbl-wrap{break-inside:avoid;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="concept-tag">Concept Library · Power</p>
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Concept Primer</p>
+    <h1 class="masthead-title">Monopoly &amp; Market Power</h1>
+    <p class="masthead-sub">What happens when the contest is over and one seller stands alone — and why the real question is never whether power exists, but how it was won and what it does next.</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">Competition keeps a seller honest by giving you somewhere else to go. Take that away — leave a buyer with only one real choice — and the relationship flips. The seller no longer has to win your business; you have to accept their terms. That condition, where one seller (or a few acting like one) controls a market and faces little or no real competition, is <strong>monopoly</strong>, and the power it confers is called <strong>market power</strong>: the ability to set prices and terms rather than having to take what competition would force.</p>
+
+  <p class="body">It's tempting to file "monopoly" under villain and move on, but that's the mistake this primer is built to prevent. Market power is not automatically evil, and how a company got it matters enormously. A company that dominates because it is genuinely the best, and could lose its lead tomorrow to someone better, is in a very different moral position from one that bought up every rival or rigged the field so no challenger can survive. The power can even be natural — sometimes one provider really is the most efficient way to do a thing. So the question is never simply "is this a monopoly?" It is: <em>how was the power won, and what is it being used for now?</em></p>
+
+  <div class="defbox">
+    <p class="defbox-label">The tool, stated plainly</p>
+    <p>A <strong>monopoly</strong> is a market controlled by a single seller (or a few acting together) with no close competitors. <strong>Market power</strong> is the resulting ability to set prices and terms instead of accepting what competition would dictate. The more market power a seller has, the less it must do to keep your business — and the more it can extract from you.</p>
+  </div>
+
+  <!-- SECTION I -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">The Tool — What Power Without Rivals Can Do</span></div>
+
+  <p class="body">Start with the mechanics, because they follow straight from losing competition. When a seller has no real rivals, the pressures that competition created vanish one by one. Prices can rise, because you can't go elsewhere. Quality can slip, because you'll buy anyway. Innovation can slow, because there's no one forcing the pace. Service can worsen, because where would you take your business? None of this requires malice — it's simply what becomes <em>possible</em> when the customer's ability to walk away disappears. Market power is, at bottom, the power that comes from your having nowhere else to go.</p>
+
+  <p class="body">And it compounds beyond price. A dominant seller often controls more than its own product — it can control the terms others must accept to reach customers, the rules of the marketplace it runs, the fate of smaller businesses that depend on it. This is why market power matters to a democracy and not just to a shopper: concentrated economic power becomes a kind of private government, setting rules for everyone who depends on it, with no vote and no appeal. That is the deeper stakes, and it's why the question of how the power is used can't be reduced to whether prices went up.</p>
+
+  <div class="pullquote">
+    <p>Market power is simply the power that comes from your having nowhere else to go. What a company does with that power is the whole question.</p>
+  </div>
+
+  <!-- SECTION II -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">The Two Questions That Decide Everything</span></div>
+
+  <p class="body">Market power itself is neutral — what matters is its origin and its use. Two questions separate a monopoly worth admiring from one worth fearing, and they're where judgment actually happens.</p>
+
+  <div class="types">
+    <div class="type-cell">
+      <p class="type-label">Question 1</p>
+      <p class="type-name">How was the power won?</p>
+      <p class="type-text">Earned by being genuinely best — a better product, a real breakthrough, true efficiency — is one thing; the lead is fair and stays only as long as it's deserved. Won by buying up rivals, locking in customers, or rigging the field so no challenger can survive is another. Same dominance, opposite legitimacy. Winning a race is not the same as removing the other runners.</p>
+    </div>
+    <div class="type-cell">
+      <p class="type-label">Question 2</p>
+      <p class="type-name">What is the power used for?</p>
+      <p class="type-text">A dominant firm can keep serving customers well, holding its lead by staying the best — or it can turn its power to <em>entrenchment</em>: raising prices, crushing upstarts, buying threats before they grow, lobbying for rules that protect it. The first keeps earning its position; the second uses power to make sure it never has to earn it again.</p>
+    </div>
+  </div>
+
+  <div class="inset">
+    <strong>The question to carry everywhere:</strong> when you see a dominant company, ask both — <em>how did it win this position, and is it now using its power to keep serving, or to make competition impossible?</em> "It's a monopoly" settles nothing by itself. A monopoly earned by excellence and still vulnerable to a better rival is a success story. A monopoly that won by removing rivals and now spends its power keeping them removed is a private government. Telling them apart is the entire skill.</p>
+  </div>
+
+  <!-- SECTION III — APPLY (break removed; long intro) -->
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">The Same Power, Three Contexts</span></div>
+
+  <p class="body">Watch market power look earned, natural, and predatory — three dominances that demand three different judgments.</p>
+
+  <div class="context">
+    <p class="context-meta">Context One · Earned</p>
+    <p class="context-name">A company dominates because it's simply the best</p>
+    <div class="context-body">
+      <p>A firm wins most of a market because its product is genuinely better and cheaper, and a sharper rival could topple it next year. It has market power, yes — but the power rests on staying excellent, and the threat of a challenger keeps it honest even without one present. This is dominance that still serves the customer, because it has to. The mere fact of a large market share isn't the problem; losing the discipline that comes with it is.</p>
+      <p class="context-q">How was it won, and could a better rival still take it?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Two · Natural</p>
+    <p class="context-name">The single set of water pipes under a town</p>
+    <div class="context-body">
+      <p>Some things are wasteful to duplicate: you don't want five competing companies each laying their own water pipes or power lines. One provider is genuinely the most efficient — a "natural monopoly." Here the market power is unavoidable, even sensible. But because there's no competition to discipline it, this is exactly the case where society usually steps in — regulating the price or owning the utility outright — because the customer can never simply walk away from water.</p>
+      <p class="context-q">Is single ownership efficient here — and what disciplines it if competition can't?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Three · Predatory</p>
+    <p class="context-name">A giant that buys or buries every rival before it grows</p>
+    <div class="context-body">
+      <p>A dominant company spots a promising upstart and buys it — or undercuts it at a loss until it dies — not to serve customers better, but to make sure no challenger ever forces it to. Its power now goes into <em>entrenchment</em>: protecting its position rather than earning it. This is the monopoly worth fearing, because the discipline of competition has been not just lost but deliberately destroyed, and the customer's "nowhere else to go" was engineered on purpose.</p>
+      <p class="context-q">Is the power being used to serve — or to make sure no one can compete?</p>
+    </div>
+  </div>
+
+  <!-- ACTIVITY -->
+  <div class="sec-header"><span class="sec-roman">IV</span><span class="sec-title">Activity — Judge the Power</span></div>
+
+  <p class="body">For each dominant position, ask the two questions: how was the power likely won (earned, natural, or predatory?), and is it being used to keep serving or to entrench? Name what, if anything, should be done about it.</p>
+
+  <div class="tbl-wrap">
+    <table class="cmp">
+      <thead>
+        <tr><th>The dominant position</th><th>How won? Used to serve or entrench?</th><th>What, if anything, should be done?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>A startup's app everyone suddenly loves</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>The only hospital within 100 miles</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A platform that buys every rival at the seed stage</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>The town's single electric utility</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A firm lobbying for rules only it can afford to meet</td><td class="fill">…</td><td class="fill">…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Write</p>
+    <p class="task-title">A company you can't avoid</p>
+    <p class="task-body">Name a company you use that has few or no real competitors. How do you think it won that position — earned, natural, or predatory? Do you feel it still serves you well, or that it can treat you however it likes because you have nowhere to go? What's your evidence?</p>
+    <div class="writelines"><div class="writeline"></div><div class="writeline"></div><div class="writeline"></div></div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="sec-header"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list">
+    <li>"Winning a race is not the same as removing the other runners." Why does <em>how</em> a company won its dominance matter as much as the dominance itself? Can you always tell the two apart from the outside?</li>
+    <li>A natural monopoly — like water pipes — can't be fixed by adding competition. So what should discipline it: government regulation, public ownership, something else? What does each option cost?</li>
+    <li>When a dominant company controls the rules others must follow to reach customers, it becomes a kind of "private government." Should that power answer to the public the way real government does? How?</li>
+    <li>Is a monopoly earned purely by being the best ever a problem — even if it never abuses its power? Or is the danger only in what the power makes <em>possible</em>?</li>
+  </ol>
+
+  <div class="closing">
+    <p>Market power is the power of your having nowhere else to go.<br>It can be earned by excellence or seized by removing every rival —<br>and the same dominance can serve you or rule you.<br>The question is never whether power exists. It's how it was won, and what it does.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

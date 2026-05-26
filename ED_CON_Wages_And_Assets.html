@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wages and Assets — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+
+/* ── Masthead ── */
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+.masthead-meta{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.08em;margin-top:.5rem;}
+
+/* ── Body ── */
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+
+/* ── Pull quote ── */
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+
+/* ── Section header ── */
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+
+/* ── Two-definition grid ── */
+.positions{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.pos-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.pos-cell:nth-child(even){background:var(--cream);}
+.pos-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem;}
+.pos-name{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.3rem;}
+.pos-text{font-size:.82rem;font-weight:300;color:var(--ink);line-height:1.6;}
+.pos-text strong{font-weight:600;color:var(--charcoal);}
+@media(max-width:600px){.positions{grid-template-columns:1fr;}}
+
+/* ── Activity / comparison table ── */
+.tbl-wrap{margin:1.25rem 0;overflow-x:auto;}
+.cmp{width:100%;border-collapse:collapse;font-size:.78rem;min-width:520px;}
+.cmp th,.cmp td{border:1px solid var(--rule);padding:.55rem .7rem;vertical-align:top;line-height:1.45;text-align:left;}
+.cmp th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.cmp td:first-child{background:var(--cream);font-weight:600;color:var(--charcoal);font-size:.74rem;width:170px;}
+.cmp .fill{color:var(--muted);font-style:italic;}
+
+/* ── Two-person scenario ── */
+.scenario{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.scen-cell{background:var(--white);padding:1.1rem 1.25rem;}
+.scen-cell:nth-child(2){background:var(--cream);}
+.scen-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.2rem;}
+.scen-tag{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.scen-body{font-size:.82rem;font-weight:300;color:var(--ink);line-height:1.65;}
+@media(max-width:600px){.scenario{grid-template-columns:1fr;}}
+
+/* ── Data point ── */
+.datum{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.4rem 0;}
+.datum-num{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:var(--black);line-height:1;margin-bottom:.35rem;}
+.datum-text{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.65;}
+
+/* ── Inset note ── */
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+
+/* ── Moment (historical) ── */
+.moment{border-left:3px solid var(--black);padding:.85rem 1.25rem;margin:1.4rem 0;background:var(--white);border-top:1px solid var(--rule);border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);}
+.moment-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.moment-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.moment-body{font-size:.84rem;font-weight:300;color:var(--ink);line-height:1.68;}
+
+/* ── Task block ── */
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+
+/* ── Write lines ── */
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+
+/* ── Discussion questions ── */
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+
+/* ── Closing ── */
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+
+/* ── Footer ── */
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing,.cmp th{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .positions,.scenario,.task,.datum,.moment,.tbl-wrap{break-inside:avoid;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Student Reader &nbsp;·&nbsp; Concept &amp; Activity</p>
+    <h1 class="masthead-title">Wages and Assets</h1>
+    <p class="masthead-sub">There are two completely different ways to get money in this country. Almost everything else about the modern economy — including the platforms in your pocket — follows from the difference between them.</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">Think about every dollar you have ever received. Where did it come from? For almost everyone your age, the answer is some version of the same thing: you did something, and someone paid you for it. You worked a shift, mowed a lawn, watched a kid, and money came back. That is one way to get money. It feels like the only way, because for most people, most of the time, it is the only way they have ever experienced.</p>
+
+  <p class="body">But there is a second way, and it works on a completely different principle. Some money does not come from doing something. It comes from <em>owning</em> something — and letting the thing you own earn for you, whether you are working, sleeping, or on vacation. The first kind of money is called a <strong>wage</strong>. The second kind comes from an <strong>asset</strong>. Understanding the difference between these two is one of the most important things you can learn about how the economy actually works — and about why some people pull steadily ahead while others run hard and stay in place.</p>
+
+  <div class="pullquote">
+    <p>A wage pays you for your time. An asset pays you for what you own. One stops when you stop. The other does not.</p>
+  </div>
+
+  <!-- SECTION I — THE BASICS -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">The Basics — Two Ways to Get Money</span></div>
+
+  <p class="body">Start as simply as possible. Here are the two, side by side.</p>
+
+  <div class="positions">
+    <div class="pos-cell">
+      <p class="pos-label">The first way</p>
+      <p class="pos-name">A Wage</p>
+      <p class="pos-text">Money you get in exchange for your <strong>time and effort</strong>. You do work; you get paid. The babysitter, the cashier, the surgeon, the teacher — all earn wages (or a salary, which is just a wage measured by the year). The defining feature: <strong>it stops the moment you stop.</strong> Stop showing up, and the money stops coming.</p>
+    </div>
+    <div class="pos-cell">
+      <p class="pos-label">The second way</p>
+      <p class="pos-name">An Asset</p>
+      <p class="pos-text">Something you <strong>own</strong> that has value and can earn money for you on its own — a house you rent out, a share of a company, a business that runs without you, land, a patent. The defining feature: <strong>it keeps working when you don't.</strong> An asset can earn while you sleep, and it can grow in value over time even if you never touch it.</p>
+    </div>
+  </div>
+
+  <p class="body">That single difference — <em>stops when you stop</em> versus <em>keeps going on its own</em> — is the whole foundation. A wage is linear: one hour of work, one hour of pay, and the line ends when you put down your tools. An asset compounds: it earns, and those earnings can buy more of the asset, which earns more, in a loop that builds on itself. Over a few weeks the two look similar. Over a lifetime they produce radically different outcomes — which is exactly what the next activity will let you see for yourself.</p>
+
+  <!-- SECTION II — ACTIVITY: TWO LIVES -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">Activity — Two Lives, Forty Years</span></div>
+
+  <p class="body">Meet two people. They are equally hardworking, equally smart, and start the same year. The only difference is <em>how</em> they get their money. Read both, then trace what happens to each over time. Don't take anyone's word for the outcome — work it out yourself in the table.</p>
+
+  <div class="scenario">
+    <div class="scen-cell">
+      <p class="scen-name">Dana</p>
+      <p class="scen-tag">Lives on wages</p>
+      <p class="scen-body">Dana works full-time for good pay and works hard for forty years. Every year Dana earns a solid wage and spends most of it on rent, food, and life. Dana's pay rises a little with experience, but the work itself never stops being required — the money depends entirely on Dana continuing to show up. Dana never buys anything that earns on its own.</p>
+    </div>
+    <div class="scen-cell">
+      <p class="scen-name">Reese</p>
+      <p class="scen-tag">Builds assets</p>
+      <p class="scen-body">Reese earns about the same wage as Dana — but each year Reese uses some of it to buy assets: shares of companies, eventually a small rental property. These assets earn money on their own, and Reese reinvests those earnings to buy more. The assets grow in value over the decades. Reese still works — but a second stream of money is building underneath the wage.</p>
+    </div>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Work it out</p>
+    <p class="task-title">Trace the two lives</p>
+    <p class="task-body">Fill in what you'd expect for each person at each stage. You don't need exact numbers — you need the <em>shape</em> of what happens.</p>
+    <div class="tbl-wrap">
+      <table class="cmp">
+        <thead>
+          <tr><th>At this point…</th><th>Dana (wages)</th><th>Reese (assets)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>After 5 years, who has more money right now?</td><td class="fill">…</td><td class="fill">…</td></tr>
+          <tr><td>After 40 years, whose total wealth is larger — and by a little or a lot?</td><td class="fill">…</td><td class="fill">…</td></tr>
+          <tr><td>What happens to each person's income if they stop working at 65?</td><td class="fill">…</td><td class="fill">…</td></tr>
+          <tr><td>What can each person pass on to their children?</td><td class="fill">…</td><td class="fill">…</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="task-body">Now write the lesson in one sentence: "Even though Dana and Reese earned almost the same wage, after forty years…"</p>
+    <div class="writelines">
+      <div class="writeline"></div>
+      <div class="writeline"></div>
+    </div>
+  </div>
+
+  <div class="inset">
+    <strong>This is not a story about Reese being smarter or working harder.</strong> They worked equally hard. The difference is structural: Reese owned things that compounded, and Dana didn't. That is the entire point. The gap between them did not open up because of effort. It opened up because of the <em>kind</em> of money each one had. Hold that thought — because something happened to the whole country that pushed more and more people into Dana's position.</p>
+  </div>
+
+  <!-- SECTION III — THE SHIFT -->
+  <div class="sec-header break-before"><span class="sec-roman">III</span><span class="sec-title">The Big Shift — What Changed in the 1970s</span></div>
+
+  <p class="body">For about thirty years after World War II, something unusual was true about the American economy: when the country produced more, ordinary workers' wages went up too. The two rose together. As the economy got more productive, the people doing the work got a steadily bigger paycheck for it. A factory worker could support a family, buy a home, and watch that home grow in value. For a wide slice of Americans, wages were enough to also become owners.</p>
+
+  <p class="body">Then, in the early 1970s, that link broke — and it never reconnected. The economy kept getting more productive. But wages stopped keeping up. Look at the numbers, and don't rush past them:</p>
+
+  <div class="datum">
+    <p class="datum-num">+62%</p>
+    <p class="datum-text">How much more productive American workers became between 1979 and 2018 — how much more value each hour of work produced.</p>
+  </div>
+
+  <div class="datum">
+    <p class="datum-num">+17%</p>
+    <p class="datum-text">How much the typical worker's actual pay rose over that same period. Productivity nearly tripled the raise that workers received.</p>
+  </div>
+
+  <p class="body">That is the gap. Workers produced far more, but their pay barely moved. So here is the question the activity prepared you to ask: <strong>if the extra value workers created did not go into their wages — where did it go?</strong> It did not vanish. Money never just vanishes. It went somewhere.</p>
+
+  <div class="inset">
+    It went into <strong>assets</strong>. The value workers produced still got created — but instead of flowing back to them as higher pay, it flowed upward, into profits, into the rising value of company shares, into the wealth of the people who <em>owned</em> those companies. The economy kept growing. The growth just changed form: it stopped showing up in paychecks and started showing up in the value of things owned by people who were already owners.
+  </div>
+
+  <p class="body">There is a clean way to see the same fact. Economists measure "labor's share" — the slice of everything the economy produces that goes to workers as pay, versus the slice that goes to owners as profit and returns. For decades that slice held steady at about <strong>two-thirds</strong> to workers. Then it slid, and today it sits closer to <strong>three-fifths</strong>. That ten-point drop sounds small. It is worth trillions of dollars a year, moving away from wages and toward the people who hold assets.</p>
+
+  <!-- SECTION IV — WHY IT MATTERS -->
+  <div class="sec-header"><span class="sec-roman">IV</span><span class="sec-title">Why This Is the Key to Everything Ahead</span></div>
+
+  <p class="body">Once you see the wage/asset divide, a lot of confusing things snap into focus. Why does the economy keep setting records while many people feel like they're falling behind? Because the records are showing up in <em>assets</em>, and most people live on <em>wages</em>. Why is it so hard to "catch up" by just working more? Because wages are linear and assets compound — you cannot out-work a system that compounds.</p>
+
+  <p class="body">And it sets up the rest of this unit directly. A digital platform is an <strong>asset</strong> — an owned thing that earns from the activity of millions of people. The drivers, the creators, the users whose attention is sold: most of them are paid in wages, or in nothing at all, while the people who <em>own</em> the platform hold an asset that compounds. The platform doesn't break the wage/asset divide. It is the wage/asset divide, running at the speed of software. When you reach the argument about who flourishes in the platform economy, this is the structure underneath it.</p>
+
+  <div class="inset">
+    <strong>One honest complication.</strong> None of this makes wages bad or assets unfair. Owning assets is how people build security, retire, and pass something on — it is a good thing, and the post-war goal was to help <em>more</em> people become owners, not fewer. The hard question is not "wages good, assets bad." It is: in an economy where assets pull ahead of wages, <em>who gets to own the assets</em> — and what happens to a democracy when most people only have wages while wealth and power compound among those who own?
+  </div>
+
+  <!-- SECTION V — DISCUSSION & WRITE -->
+  <div class="sec-header"><span class="sec-roman">V</span><span class="sec-title">For Discussion and Reflection</span></div>
+
+  <ol class="dq-list">
+    <li>In your own life or your family's, name one example of wage income and one example of an asset (or the absence of one). How does each behave differently?</li>
+    <li>After World War II, productivity and wages rose together; after the 1970s, they split apart. What might explain why a thing that held for thirty years could break — and stay broken for fifty?</li>
+    <li>"You cannot out-work a system that compounds." Do you agree? Is hard work still the path to getting ahead, or has the path changed?</li>
+    <li>If assets are now the main way wealth grows, what would it take for more people — not fewer — to own them? Is that something individuals do on their own, or something a society has to build on purpose?</li>
+  </ol>
+
+  <div class="task">
+    <p class="task-label">Write</p>
+    <p class="task-title">The difference, in your words</p>
+    <p class="task-body">Explain to someone younger than you, in three or four sentences, the difference between a wage and an asset — and why it matters which one you have. Use no jargon. Make them understand it the way you now do.</p>
+    <div class="writelines">
+      <div class="writeline"></div>
+      <div class="writeline"></div>
+      <div class="writeline"></div>
+      <div class="writeline"></div>
+    </div>
+  </div>
+
+  <div class="closing">
+    <p>A wage pays you for your time.<br>An asset pays you for what you own.<br>The story of the modern American economy is the story<br>of which one pulled ahead — and who was holding it.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

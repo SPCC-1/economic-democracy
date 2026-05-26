@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Redistribution — Concept Library — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+.concept-tag{display:inline-block;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .6rem;margin-bottom:.9rem;}
+
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+
+.defbox{border:1px solid var(--black);background:var(--white);padding:1.1rem 1.4rem;margin:1.5rem 0;}
+.defbox-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.defbox p{font-size:.92rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.defbox strong{font-weight:600;color:var(--black);}
+
+.types{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.type-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.type-cell:nth-child(even){background:var(--cream);}
+.type-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.type-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.15;}
+.type-text{font-size:.81rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.types{grid-template-columns:1fr;}}
+
+.context{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.context-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.context-name{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.context-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.context-body p{margin-bottom:.5rem;}
+.context-body p:last-child{margin-bottom:0;}
+.context-q{font-size:.82rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.6rem;margin-top:.5rem;line-height:1.5;}
+
+.tbl-wrap{margin:1.25rem 0;overflow-x:auto;}
+.cmp{width:100%;border-collapse:collapse;font-size:.8rem;min-width:540px;}
+.cmp th,.cmp td{border:1px solid var(--rule);padding:.55rem .7rem;vertical-align:top;line-height:1.45;text-align:left;}
+.cmp th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.cmp td:first-child{background:var(--cream);font-weight:600;color:var(--charcoal);font-size:.76rem;}
+.cmp .fill{color:var(--muted);font-style:italic;}
+
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing,.cmp th,.concept-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .context,.task,.types,.defbox,.inset,.tbl-wrap{break-inside:avoid;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="concept-tag">Concept Library · Distribution</p>
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Concept Primer</p>
+    <h1 class="masthead-title">Redistribution</h1>
+    <p class="masthead-sub">The most argued-over word in economics — and one most people misunderstand, because they think it's something a society chooses to do, rather than something every society is doing all the time.</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">Say the word "redistribution" and most people picture one thing: the government taking money from people who earned it and handing it to people who didn't. That picture is so strong it usually ends the conversation before it starts — half the room nods, half bristles, and no one examines what the word actually means. So set the loaded picture down for a moment and look at the plain mechanism. <strong>Redistribution</strong> is simply the movement of resources from some people to others through collective rules — taxes, benefits, subsidies, and the design of the economy itself. That's it. The fight is never really about whether it happens. It's about which direction, by what rule, and for whom.</p>
+
+  <p class="body">Here is the fact that reframes the whole debate: <em>every</em> economy redistributes, constantly, in every direction, and most of it is invisible. Taxes fund roads that businesses use. Patents move money toward inventors. Tariffs shift it toward some industries and away from consumers. A tax break for homeowners redistributes toward people who own homes; a subsidy for an industry redistributes toward its shareholders. Some redistribution flows downward to the poor, but enormous amounts flow upward, sideways, and toward the already-powerful — and that kind rarely gets called "redistribution" at all. The word, in practice, gets reserved for the transfers some people dislike, which is exactly why it's worth learning to see all of them.</p>
+
+  <div class="defbox">
+    <p class="defbox-label">The tool, stated plainly</p>
+    <p><strong>Redistribution</strong> is the movement of resources (money, wealth, or the things they buy) among members of a society through collective rules — taxation, spending, subsidies, regulation, and the structure of the economy. It can flow in any direction. Every society does it; the only questions are which way, by what rule, how visibly, and to what end.</p>
+  </div>
+
+  <!-- SECTION I -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">The Tool — Why All Economies Redistribute</span></div>
+
+  <p class="body">Start with why it's unavoidable. The moment a society has shared rules — taxes, property law, money itself — those rules determine who ends up with what. There is no neutral, rule-free economy sitting underneath, against which redistribution is a meddling add-on. The rules <em>are</em> the distribution. Choosing to tax income but not wealth is a choice about who pays. Choosing to enforce one kind of contract and not another moves resources toward some and away from others. Even "leaving the market alone" is a choice to keep whatever distribution the current rules produce. Doing nothing is itself a decision about who gets what.</p>
+
+  <p class="body">And redistribution does real, necessary work that most people across the spectrum actually want. It pools risk: everyone pays in so that anyone who gets sick, old, or unlucky is caught — insurance is redistribution, and so is a pension. It funds the shared things no individual can buy alone. It smooths the brutal edges of markets so that a bad year or an accident of birth isn't a life sentence. Almost no one truly wants <em>zero</em> redistribution — that would mean no roads, no courts, no safety net of any kind. The honest debate is never "redistribution: yes or no." It's always "which transfers, how much, and toward whom."</p>
+
+  <div class="pullquote">
+    <p>Every economy redistributes constantly, in every direction. "Redistribution" is just the name we give to the transfers we happen to notice — usually the ones we don't like.</p>
+  </div>
+
+  <!-- SECTION II -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">Why the Word Is a Weapon</span></div>
+
+  <p class="body">The mechanism is neutral. But two features make "redistribution" one of the most manipulated words in public life — and learning to see past them is the real skill.</p>
+
+  <div class="types">
+    <div class="type-cell">
+      <p class="type-label">Lever 1</p>
+      <p class="type-name">Only some transfers get the name</p>
+      <p class="type-text">Help to the poor is called "redistribution"; a tax break for the wealthy, a bailout for a bank, a subsidy for an industry is called "policy" or "growth." All four move resources by collective rule. Reserving the loaded word for transfers downward — while transfers upward pass unnamed — is how the upward flow stays invisible and unquestioned. Notice who never has to defend their redistribution.</p>
+    </div>
+    <div class="type-cell">
+      <p class="type-label">Lever 2</p>
+      <p class="type-name">"Earned" hides the rules that made it</p>
+      <p class="type-text">The objection "taking what people earned" assumes the pre-tax distribution is natural and just. But what you earn already depends on rules society chose — patents, property law, who got educated, who inherited. There's no rule-free "earned" amount that redistribution then disturbs. Every income is already shaped by collective choices; the only question is whether to reshape them again, and how.</p>
+    </div>
+  </div>
+
+  <div class="inset">
+    <strong>The question to carry everywhere:</strong> when you hear "redistribution," ask — <em>which transfers are being called by that name, which ones aren't, and who benefits from only some being noticed?</em> Then ask the real questions, the ones the loaded word hides: in which direction does this move resources, by what rule, and toward what end? Every economy redistributes. The honest debate is about the design — not about whether to have one.</p>
+  </div>
+
+  <!-- SECTION III — APPLY (break removed; long intro) -->
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">The Same Mechanism, Three Directions</span></div>
+
+  <p class="body">Watch the identical mechanism — resources moved by collective rule — flow downward, upward, and across, with only one of the three usually called "redistribution."</p>
+
+  <div class="context">
+    <p class="context-meta">Context One · Downward</p>
+    <p class="context-name">A safety net funded by taxes</p>
+    <div class="context-body">
+      <p>Taxes fund unemployment benefits, food assistance, public healthcare — resources moving from higher earners toward those with less. This is the transfer everyone calls "redistribution," and it's openly debated as such: its supporters defend it as shared risk and basic decency, its critics question its cost and its effect on incentives. Whatever you conclude, notice that this one is <em>visible</em> — it gets named, argued, and voted on. Hold that, because the next two often don't.</p>
+      <p class="context-q">Which direction, by what rule — and is it visible?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Two · Upward</p>
+    <p class="context-name">A tax break that mostly helps the wealthy</p>
+    <div class="context-body">
+      <p>A deduction or loophole that overwhelmingly benefits high earners and asset-holders moves enormous resources toward the already-wealthy — by collective rule, paid for by everyone else through forgone public revenue. By the plain definition, it is redistribution, upward. But it's almost never called that; it's called "tax relief" or "incentivizing investment." Same mechanism as the safety net, opposite direction, and it travels under a name that never has to defend itself. That's Lever 1 in the open.</p>
+      <p class="context-q">Is this redistribution too — and why isn't it called that?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Three · Built into the rules</p>
+    <p class="context-name">Who the system moves money toward before anyone "redistributes"</p>
+    <div class="context-body">
+      <p>The deepest redistribution happens before any tax or benefit: in the rules that decide who gets paid what in the first place. Who can patent an idea, who inherits, whose work is counted, how wages and asset-gains are taxed differently — these structural choices move vast resources toward some and away from others, invisibly, as "just how the economy works." This is why some argue the real lever is <em>predistribution</em> — shaping the rules so fairer outcomes happen first — rather than only correcting them afterward. That's Lever 2: the "earned" distribution was itself designed.</p>
+      <p class="context-q">Was this distribution natural — or built by rules someone chose?</p>
+    </div>
+  </div>
+
+  <!-- ACTIVITY -->
+  <div class="sec-header"><span class="sec-roman">IV</span><span class="sec-title">Activity — Name the Direction</span></div>
+
+  <p class="body">Each item below moves resources by collective rule. Name the direction (downward, upward, or sideways), and say whether it's usually <em>called</em> redistribution — and if not, why not.</p>
+
+  <div class="tbl-wrap">
+    <table class="cmp">
+      <thead>
+        <tr><th>The policy or rule</th><th>Which direction does it move resources?</th><th>Called "redistribution"? Why / why not?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Food assistance for low-income families</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>The mortgage-interest tax deduction</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A government bailout of a major bank</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Public schools funded by taxes</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Taxing wages higher than asset gains</td><td class="fill">…</td><td class="fill">…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Write</p>
+    <p class="task-title">A transfer no one calls redistribution</p>
+    <p class="task-body">Find a rule, tax break, or subsidy that moves resources toward a particular group but is never described as "redistribution." Who benefits? Why do you think it escapes the label? And does naming it honestly change how you'd judge it — for better or worse?</p>
+    <div class="writelines"><div class="writeline"></div><div class="writeline"></div><div class="writeline"></div></div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="sec-header"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list">
+    <li>"Every economy redistributes; the only question is which way." Does seeing it that way change the usual argument about redistribution — or is there still a real difference between moving resources up versus down?</li>
+    <li>Why does help to the poor get called "redistribution" while a tax break for the wealthy gets called "policy"? Who benefits from that difference in language?</li>
+    <li>The objection "you're taking what people earned" assumes earnings are natural. If what people earn already depends on rules society chose, does that weaken the objection — or not? Defend your view.</li>
+    <li>Is it better to redistribute after the fact (taxes and benefits) or to "predistribute" by changing the rules so fairer outcomes happen first? What does each approach cost, and which respects people's agency more?</li>
+  </ol>
+
+  <div class="closing">
+    <p>Every economy moves resources by rule — upward, downward, sideways, always.<br>"Redistribution" is just the name we give the transfers we notice.<br>The honest question was never whether to have it,<br>but which way it flows, by whose rule, and toward whom.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

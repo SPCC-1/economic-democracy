@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Four ways to bring Economic Democracy into your classroom — use a unit, pilot a course, develop a partnership, or join the founding cohort.">
+  <meta name="description" content="Three ways in, one community — the Economic Democracy curriculum delivered as a learning community with three entry points: Educator Pilot, School Adoption, and Network Partnership.">
   <title>Ways to Engage &mdash; Economic Democracy</title>
 
   <!-- Open Graph -->
   <meta property="og:title" content="Ways to Engage &mdash; Economic Democracy" />
-  <meta property="og:description" content="Four ways to bring Economic Democracy into your classroom — use a unit, pilot a course, develop a partnership, or join the founding cohort." />
+  <meta property="og:description" content="Three ways in, one community. Bring Economic Democracy into your classroom, your school, or your network." />
   <meta property="og:image" content="https://www.economicdemocracy.co/og-image.png" />
   <meta property="og:url" content="https://www.economicdemocracy.co/ED_ENGAGE_Ways.html" />
   <meta property="og:type" content="website" />
@@ -65,20 +65,9 @@
     line-height: 1.7;
     margin-bottom: 1.5rem;
   }
-  .masthead-meta {
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: .62rem;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-  .masthead-meta span { color: var(--charcoal); font-weight: 500; }
 
   /* ══════════════════════════════════════════════════
-     SECTION HEADERS (black bar — site pattern)
+     SECTION HEADERS
   ══════════════════════════════════════════════════ */
   .sec-header {
     background: var(--black);
@@ -130,10 +119,6 @@
     margin-bottom: 1.1rem;
     max-width: 680px;
   }
-
-  /* ══════════════════════════════════════════════════
-     SUB-TITLE (Framework name etc.)
-  ══════════════════════════════════════════════════ */
   .sub-title {
     font-family: 'Playfair Display', serif;
     font-size: 1.55rem;
@@ -144,7 +129,7 @@
   }
 
   /* ══════════════════════════════════════════════════
-     AXES BOX (Matrix description)
+     AXES BOX
   ══════════════════════════════════════════════════ */
   .axes-box {
     background: var(--cream);
@@ -191,7 +176,7 @@
   }
 
   /* ══════════════════════════════════════════════════
-     WHAT IS BUILT — bulleted list (matches PDF)
+     WHAT IS BUILT
   ══════════════════════════════════════════════════ */
   .built-list {
     list-style: none;
@@ -225,103 +210,218 @@
   }
 
   /* ══════════════════════════════════════════════════
-     WAYS TO ENGAGE — 2×2 grid of paths
+     THREE TIERS
   ══════════════════════════════════════════════════ */
-  .engage-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background: var(--rule);
+  .tier-intro {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--ink);
+    max-width: 720px;
+    margin-bottom: 2rem;
+  }
+  .tier-card {
     border: 1px solid var(--rule);
-    margin: 1.5rem 0 2rem;
-  }
-  .engage-card {
-    background: var(--paper);
-    padding: 1.75rem 1.5rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-  }
-  .engage-card:nth-child(even) { background: var(--cream); }
-  .engage-card.featured {
+    border-left: 4px solid var(--gold);
     background: var(--cream);
+    padding: 1.75rem 1.9rem 1.6rem;
+    margin-bottom: 1.25rem;
   }
-  .engage-num {
+  .tier-card.featured {
+    background: var(--black);
+    border-color: var(--black);
+    border-left-color: var(--gold);
+  }
+  .tier-grid {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    gap: 2rem;
+    align-items: start;
+  }
+  @media(max-width: 700px) {
+    .tier-grid { grid-template-columns: 1fr; gap: .75rem; }
+  }
+  .tier-meta-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .58rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: .25rem;
+    display: block;
+  }
+  .tier-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: .45rem;
+    line-height: 1.15;
+    letter-spacing: -.01em;
+  }
+  .tier-card.featured .tier-name { color: var(--white); }
+  .tier-tagline {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--mid);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+  .tier-card.featured .tier-tagline { color: rgba(255,255,255,.85); }
+  .tier-blurb {
+    font-size: .92rem;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--ink);
+    margin-bottom: 1.1rem;
+    max-width: 540px;
+  }
+  .tier-card.featured .tier-blurb {
+    color: rgba(255,255,255,.95);
+    font-weight: 400;
+  }
+  .tier-included-label {
     font-family: 'IBM Plex Mono', monospace;
     font-size: .58rem;
     letter-spacing: .14em;
     text-transform: uppercase;
     color: var(--muted);
-    margin-bottom: .7rem;
+    margin-bottom: .55rem;
+    display: block;
   }
-  .engage-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--black);
-    line-height: 1.2;
-    margin-bottom: .65rem;
-    letter-spacing: -.005em;
+  .tier-card.featured .tier-included-label {
+    color: var(--gold);
+    font-weight: 600;
   }
-  .engage-desc {
-    font-size: .87rem;
+  .tier-included {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .tier-included li {
+    font-size: .85rem;
     font-weight: 300;
-    line-height: 1.7;
-    color: var(--mid);
-    margin-bottom: 1.25rem;
-    flex: 1;
+    line-height: 1.65;
+    color: var(--ink);
+    padding: .25rem 0 .25rem 1rem;
+    position: relative;
   }
-  .engage-cta {
-    display: inline-block;
+  .tier-card.featured .tier-included li {
+    color: rgba(255,255,255,.95);
+    font-weight: 400;
+  }
+  .tier-included li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-weight: 700;
+  }
+  .tier-price-block {
+    text-align: right;
+    padding-top: .25rem;
+  }
+  @media(max-width: 700px) {
+    .tier-price-block { text-align: left; border-top: 1px solid var(--rule); padding-top: 1rem; margin-top: .25rem; }
+    .tier-card.featured .tier-price-block { border-top-color: rgba(255,255,255,.15); }
+  }
+  .tier-price-label {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: .62rem;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    color: var(--black);
-    padding: .65rem 0;
-    border-top: 1px solid var(--rule);
-    transition: color .15s;
-    text-align: left;
-    align-self: flex-start;
-  }
-  .engage-cta:hover { color: var(--gold); }
-  @media(max-width: 640px) { .engage-grid { grid-template-columns: 1fr; } }
-
-  /* ══════════════════════════════════════════════════
-     BUILT BY block
-  ══════════════════════════════════════════════════ */
-  .built-by-block {
-    background: var(--cream);
-    border: 1px solid var(--rule);
-    padding: 2rem 2.1rem;
-    margin: 1.5rem 0;
-    max-width: 720px;
-  }
-  .built-by-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: .58rem;
-    letter-spacing: .14em;
+    font-size: .56rem;
+    letter-spacing: .16em;
     text-transform: uppercase;
     color: var(--muted);
     margin-bottom: .35rem;
     display: block;
   }
-  .built-by-name {
+  .tier-card.featured .tier-price-label {
+    color: var(--gold);
+    font-weight: 600;
+  }
+  .tier-price {
     font-family: 'Playfair Display', serif;
-    font-size: 1.65rem;
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: .35rem;
+    letter-spacing: -.02em;
+  }
+  .tier-card.featured .tier-price { color: #ffd068; }
+  .tier-price-unit {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .7rem;
+    letter-spacing: .06em;
+    color: var(--mid);
+    line-height: 1.5;
+    display: block;
+  }
+  .tier-card.featured .tier-price-unit {
+    color: rgba(255,255,255,.85);
+    font-weight: 400;
+  }
+
+  /* ══════════════════════════════════════════════════
+     PEOPLE GRID
+  ══════════════════════════════════════════════════ */
+  .people-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+    margin: 1.5rem 0 1rem;
+  }
+  @media(max-width: 740px) { .people-grid { grid-template-columns: 1fr; } }
+  .person-card {
+    background: var(--cream);
+    border: 1px solid var(--rule);
+    padding: 1.75rem 1.85rem 1.5rem;
+  }
+  .person-role {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .58rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: .35rem;
+    display: block;
+  }
+  .person-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--black);
-    line-height: 1.1;
     margin-bottom: 1rem;
-    letter-spacing: -.015em;
+    line-height: 1.1;
+    letter-spacing: -.01em;
   }
-  .built-by-bio {
-    font-size: .9rem;
+  .person-bio {
+    font-size: .87rem;
     font-weight: 300;
-    line-height: 1.78;
+    line-height: 1.7;
     color: var(--ink);
     margin: 0;
   }
-  .built-by-bio em { font-style: italic; }
+  .person-bio em { font-style: italic; }
+
+  /* ══════════════════════════════════════════════════
+     COMMUNITY NOTES
+  ══════════════════════════════════════════════════ */
+  .community-notes {
+    background: var(--cream);
+    border-left: 3px solid var(--black);
+    padding: 1.25rem 1.5rem;
+    margin: 2rem 0 1.5rem;
+    max-width: 760px;
+    font-size: .87rem;
+    font-weight: 300;
+    color: var(--mid);
+    line-height: 1.75;
+  }
+  .community-notes strong {
+    color: var(--black);
+    font-weight: 700;
+  }
 
   /* ══════════════════════════════════════════════════
      CLOSING CTA
@@ -367,15 +467,31 @@
     padding: 1.1rem 2rem;
     white-space: nowrap;
     transition: background .15s;
+    text-decoration: none;
   }
   .closing-cta-btn:hover { background: var(--cream); }
+
+  .download-pdf {
+    margin: 1.5rem 0 2rem;
+  }
+  .download-pdf a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .68rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--black);
+    text-decoration: none;
+    border-bottom: 1px solid var(--gold);
+    padding: .25rem 0;
+    transition: color .15s;
+  }
+  .download-pdf a:hover { color: var(--gold); }
   </style>
 </head>
 <body>
 
 <a href="#main" class="skip-link">Skip to content</a>
 
-<!-- NAV (unified site nav — Pre-Order replaced with Ways to Engage) -->
 <nav class="site-nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-home">Economic Democracy<span>economicdemocracy.co</span></a>
@@ -384,8 +500,9 @@
     </button>
     <div class="nav-links">
       <a href="framework.html">The Framework</a>
+      <a href="concepts.html">Concepts</a>
       <a href="ED_ANT_Core_Anthology_250.html">250 Voices</a>
-      <a href="index.html#resources">Resources</a>
+      <a href="resources.html">Resources</a>
       <a href="ED_ENGAGE_Ways.html" class="nav-cta active">Ways to Engage</a>
     </div>
   </div>
@@ -396,8 +513,8 @@
   <!-- MASTHEAD -->
   <div class="masthead">
     <p class="masthead-eyebrow">Curriculum Overview &nbsp;&middot;&nbsp; 2026 &nbsp;&middot;&nbsp; For Grades 11&ndash;12 &amp; First-Year / Sophomore Higher Education</p>
-    <h1 class="masthead-title">Ways to <em>Engage.</em></h1>
-    <p class="masthead-sub">Economic Democracy &mdash; History, Power &amp; Participation. A framework for engaging the structural questions our generation must answer to survive and thrive.</p>
+    <h1 class="masthead-title">Three ways in, <em>one community.</em></h1>
+    <p class="masthead-sub">The curriculum is the content. The cohort is the learning experience. The relationships are the outcome.</p>
   </div>
 
   <!-- I — THE QUESTION BEHIND THE COURSE -->
@@ -406,7 +523,7 @@
     <span class="sec-title">The Question Behind the Course</span>
   </div>
 
-  <p class="body-intro">America is an experiment &mdash; two and a half centuries of one endless argument about who holds power, who benefits, and what we owe one another. That argument has never been settled, and our generation is now inheriting its hardest version. How do we sustain Social Security in an aging society? How do we deliver health care without bankrupting families? How do we build ownership and wealth in an economy increasingly driven by AI and automation?</p>
+  <p class="body-intro">America is an experiment. Two and a half centuries of one endless argument about who holds power, who benefits, and what we owe one another. That argument has never been settled, and our generation is now inheriting its hardest version. How do we sustain Social Security in an aging society? How do we deliver health care without bankrupting families? How do we build ownership and wealth in an economy increasingly driven by AI and automation? This is the 250th year of that experiment, and the questions are sharper than they have been in living memory.</p>
 
   <p class="body-text">Most students leave high school unprepared to participate in these conversations. They learn the mechanics of government but almost nothing about how the economy actually shapes their lives. <em>Economic Democracy</em> offers a different lens &mdash; a framework for recognizing the patterns that run through American history, and for using political economy as a tool for dialogue and problem-solving rather than as ammunition for winning arguments about the past.</p>
 
@@ -432,87 +549,176 @@
   <!-- III — WHAT IS BUILT -->
   <div class="sec-header">
     <span class="sec-roman">III</span>
-    <span class="sec-title">What Is Built</span>
+    <span class="sec-title">The Curriculum, Today</span>
   </div>
 
   <ul class="built-list">
     <li><strong>Two-year scope &amp; sequence</strong> &mdash; ten units across U.S. History, Government, Economics, and CTE.</li>
+    <li><strong>The Concept Library</strong> &mdash; 36 economic concept primers across five clusters, each taught as judgment rather than memorization.</li>
     <li><strong>The 250 Voices Anthology</strong> &mdash; one significant American thinker, builder, or actor per year, 1776&ndash;2026, each placed on the matrix.</li>
-    <li><strong>A live curriculum site</strong> at economicdemocracy.co &mdash; with educator portal, framework rationale, and free teacher guide.</li>
-    <li><strong>Model projects</strong> grounded in role play and public demonstrations of learning &mdash; AI-proof by design, because they require discernment and dialogue rather than content recall.</li>
-    <li><strong>Foundational anchors</strong> &mdash; the TEDx talk &amp; the white paper <em>Redefining the American Dream</em>.</li>
+    <li><strong>Model projects</strong> &mdash; the Civic Economy Role-Play Lab and the Define &amp; Defend capstone, AI-proof by design.</li>
+    <li><strong>The Teaching Toolkit</strong> &mdash; a unit-design guide, warm-up and exit-ticket routines, and rubrics built to grade reasoning, not agreement.</li>
+    <li><strong>Student &amp; adoption materials</strong> &mdash; a student handbook and a standards crosswalk to the 2025 CEE pillars and the C3 framework.</li>
+    <li><strong>A live curriculum site</strong> at <em>economicdemocracy.co</em> &mdash; educator portal, framework rationale, and free teacher guides.</li>
+    <li><strong>Monthly cohort sessions</strong> &mdash; four to five live sessions per semester, 15&ndash;18 educators per cohort, facilitated by Alfredo and Amy.</li>
   </ul>
 
-  <!-- IV — WAYS TO ENGAGE -->
+  <!-- IV — THREE TIERS -->
   <div class="sec-header">
     <span class="sec-roman">IV</span>
-    <span class="sec-title">Ways to Engage</span>
+    <span class="sec-title">Three Ways In</span>
   </div>
 
-  <p class="body-text">Four paths in. The first three are open to any educator at any time. The fourth &mdash; the founding cohort &mdash; closes after the first 250 seats.</p>
+  <p class="tier-intro">Economic Democracy is delivered as one learning community with multiple entry points. Gain access to the curriculum and monthly cohort sessions as an individual teacher, a school, or a network. What changes across the three tiers is the depth of the relationship.</p>
 
-  <div class="engage-grid">
-
-    <div class="engage-card">
-      <span class="engage-num">01 &nbsp;&middot;&nbsp; Path One</span>
-      <h3 class="engage-title">Use a unit or project</h3>
-      <p class="engage-desc">Integrate a single lesson or unit into an existing course in U.S. History, Government, Economics, Theology, or a first-year seminar.</p>
-      <a href="ED_ANT_TeacherGuide.html" class="engage-cta">View the free teacher guide &rarr;</a>
-    </div>
-
-    <div class="engage-card">
-      <span class="engage-num">02 &nbsp;&middot;&nbsp; Path Two</span>
-      <h3 class="engage-title">Pilot a course</h3>
-      <p class="engage-desc">Run the framework as a one-semester course or a full two-year sequence at your school.</p>
-      <a href="mailto:alfredo@spcc.one?subject=Pilot%20a%20course%20—%20Economic%20Democracy" class="engage-cta">Email Alfredo to discuss &rarr;</a>
-    </div>
-
-    <div class="engage-card">
-      <span class="engage-num">03 &nbsp;&middot;&nbsp; Path Three</span>
-      <h3 class="engage-title">Develop a partnership</h3>
-      <p class="engage-desc">Co-design teacher training, professional development, or a school-network adoption pathway.</p>
-      <a href="mailto:alfredo@spcc.one?subject=Partnership%20—%20Economic%20Democracy" class="engage-cta">Start a conversation &rarr;</a>
-    </div>
-
-    <div class="engage-card featured">
-      <span class="engage-num">04 &nbsp;&middot;&nbsp; Path Four &nbsp;&middot;&nbsp; Limited to 250</span>
-      <h3 class="engage-title">Join the founding cohort</h3>
-      <p class="engage-desc">Help shape the curriculum as one of a small group of educators piloting it in 2026&ndash;27. Complete curriculum, monthly PD, Slack community, and founding-educator credit at $250 &mdash; locked permanently.</p>
-      <a href="ED_FOUNDING_Educator_Preorder.html" class="engage-cta">View the founding program &rarr;</a>
-    </div>
-
+  <div class="download-pdf">
+    <a href="ED_OnePager_2page_V8.pdf" target="_blank" rel="noopener">Download the two-page overview (PDF) &darr;</a>
   </div>
 
-  <!-- V — BUILT BY -->
+  <!-- TIER 1 -->
+  <article class="tier-card">
+    <div class="tier-grid">
+      <div>
+        <span class="tier-meta-label">Tier 01 &middot; Individual Educator</span>
+        <h3 class="tier-name">Educator Pilot</h3>
+        <p class="tier-tagline">A single teacher, any subject, any school. The easiest way to enter the work.</p>
+        <p class="tier-blurb">Full access to the curriculum and a seat in the monthly cohort with Alfredo, Amy, and 15&ndash;18 other teachers from across the country. The community is the experience &mdash; teachers come for the curriculum and stay for the relationships they build with peers wrestling with the same questions.</p>
+        <span class="tier-included-label">What's Included</span>
+        <ul class="tier-included">
+          <li>Full curriculum site access &mdash; units, scope and sequence, model projects, assessment rubrics</li>
+          <li>The 250 Voices Anthology &mdash; one significant American thinker, builder, or actor per year, 1776&ndash;2026</li>
+          <li>Seat in the monthly cohort &mdash; four to five live sessions per semester, 15&ndash;18 educators per cohort</li>
+          <li>Direct facilitation by Alfredo and Amy in every session</li>
+          <li>Per-semester enrollment &mdash; teachers can re-enroll each term to remain in the community</li>
+        </ul>
+      </div>
+      <div class="tier-price-block">
+        <span class="tier-price-label">Investment</span>
+        <div class="tier-price">$500</div>
+        <span class="tier-price-unit">per teacher<br/>&middot; per semester</span>
+      </div>
+    </div>
+  </article>
+
+  <!-- TIER 2 -->
+  <article class="tier-card">
+    <div class="tier-grid">
+      <div>
+        <span class="tier-meta-label">Tier 02 &middot; School-Level Partnership</span>
+        <h3 class="tier-name">School Adoption</h3>
+        <p class="tier-tagline">A school running the curriculum across multiple classrooms and sections, full academic year.</p>
+        <p class="tier-blurb">Everything in the Educator Pilot, scaled across the school &mdash; and a partnership between the curriculum team and the school's teaching faculty across the academic year. The cohort calls remain shared with educators from other schools; what's added at this tier is the private relationship at the school level.</p>
+        <span class="tier-included-label">What's Included</span>
+        <ul class="tier-included">
+          <li>Site license &mdash; up to 5 teachers and unlimited students at the school</li>
+          <li>Teaching faculty join the same monthly cohort sessions with educators from across the country</li>
+          <li>Monthly check-ins with the school's teaching team across the year</li>
+          <li>Customized support aligned to the school's academic calendar</li>
+          <li>Year-end evaluation report for school administration</li>
+        </ul>
+      </div>
+      <div class="tier-price-block">
+        <span class="tier-price-label">Investment</span>
+        <div class="tier-price">$5,000</div>
+        <span class="tier-price-unit">per school<br/>&middot; per year</span>
+      </div>
+    </div>
+  </article>
+
+  <!-- TIER 3 -->
+  <article class="tier-card featured">
+    <div class="tier-grid">
+      <div>
+        <span class="tier-meta-label">Tier 03 &middot; Network-Level Partnership</span>
+        <h3 class="tier-name">Network Partnership</h3>
+        <p class="tier-tagline">A district, charter network, diocesan school system, or institutional network.</p>
+        <p class="tier-blurb">Everything in School Adoption, scaled across the network &mdash; and a cohort the network owns. Alfredo and Amy facilitate a dedicated cohort attended only by the network's educators, grounded in the network's specific context. The network shapes the curriculum's evolution as it grows.</p>
+        <span class="tier-included-label">What's Included</span>
+        <ul class="tier-included">
+          <li>The network's own dedicated cohort &mdash; Alfredo and/or Amy as facilitators</li>
+          <li>Train-the-trainer infrastructure for the network's own PD staff to carry the work forward</li>
+          <li>Ongoing curriculum development partnership &mdash; the network shapes the 250 Voices anthology</li>
+          <li>Custom PD modules and specific content scoped &agrave; la carte, priced separately</li>
+          <li>Direct facilitation access to Alfredo and/or Amy</li>
+        </ul>
+      </div>
+      <div class="tier-price-block">
+        <span class="tier-price-label">Investment</span>
+        <div class="tier-price">$25,000</div>
+        <span class="tier-price-unit">per network<br/>&middot; per year</span>
+      </div>
+    </div>
+  </article>
+
+  <div class="community-notes">
+    <strong>Workplace adaptation.</strong> The framework is also being adapted for employee-owned companies and worker cooperatives; workplace engagements are scoped individually. <strong>Founding Educators.</strong> Educators enrolled in 2026&ndash;27 are named on the curriculum site as co-development partners with standing voice in the framework's evolution.
+  </div>
+
+  <!-- V — THE PEOPLE -->
   <div class="sec-header">
     <span class="sec-roman">V</span>
-    <span class="sec-title">Built By</span>
+    <span class="sec-title">The People Behind the Work</span>
   </div>
 
-  <div class="built-by-block">
-    <span class="built-by-label">The Architect</span>
-    <h3 class="built-by-name">Alfredo Mathew III</h3>
-    <p class="built-by-bio">Founding teacher at Mott Haven Village Prep in the South Bronx. AP and IB History teacher at Blair High School, Pasadena. Bay Area Director of the Network for Teaching Entrepreneurship. Co-founder of ESO Ventures, an entrepreneurial ecosystem that closed $24M in capital and supported 700+ businesses owned by founders historically left out of wealth-building. TEDx speaker (top 10 globally, 2025). Author of <em>Redefining the American Dream</em>. The curriculum is the synthesis of two careers &mdash; the classroom and the ecosystem &mdash; and the framework he wished he had been able to teach twenty years ago.</p>
+  <div class="people-grid">
+
+    <div class="person-card">
+      <span class="person-role">Built By</span>
+      <h3 class="person-name">Alfredo Mathew III</h3>
+      <p class="person-bio">Twenty-five years building civic education through the classroom and the economic ecosystem. Founding teacher at Mott Haven Village Prep in the South Bronx and Teacher of the Year for the Bronx High Schools in 2002&ndash;03. AP and IB History teacher at Blair High School in Pasadena, and U.S. History teacher in Oakland public schools. Bay Area Director of the Network for Teaching Entrepreneurship, connecting thousands of high school students annually to the Silicon Valley innovation economy. Co-founder of ESO Ventures, which secured $24M in capital and incubated 700+ businesses owned by founders historically left out of wealth-building. TEDx speaker (top 10 globally, May 2025, 100,000+ views). Author of <em>Redefining the American Dream</em> and founder of SPCC.1.</p>
+    </div>
+
+    <div class="person-card">
+      <span class="person-role">Facilitation By</span>
+      <h3 class="person-name">Amy Chan</h3>
+      <p class="person-bio">Twenty-five years developing civic education and youth leadership programs. High school English teacher in Japan, middle school literacy teacher with KIPP in Oakland, and ran summer and after-school programs with Citizen Schools in Boston and the Coro Center for Civic Leadership in San Francisco. As Associate Dean and Director of the University Community Service Center &mdash; founded by Michelle Obama at the University of Chicago &mdash; oversaw 13 programs engaging over 3,000 students annually. Holds a master's in education and a certificate in civics education and youth participatory politics, both from Harvard. Principal at SPCC.1 and lead facilitator for the curriculum's monthly cohort sessions.</p>
+    </div>
+
   </div>
 
-  <!-- CLOSING CTA — routes to Pre-Order page -->
+  <!-- CLOSING CTA -->
   <div class="closing-cta">
     <div class="closing-cta-text">
-      <p>250 voices. 250 founding educators. $250.</p>
-      <span>The founding cohort closes after Seat 250.</span>
+      <p>Start the conversation.</p>
+      <span>alfredo@spcc.one &nbsp;&middot;&nbsp; economicdemocracy.co &nbsp;&middot;&nbsp; spcc.one</span>
     </div>
-    <a href="ED_FOUNDING_Educator_Preorder.html" class="closing-cta-btn">View Founding Program &rarr;</a>
+    <a href="mailto:alfredo@spcc.one?subject=Economic%20Democracy%20%E2%80%94%20Engagement%20Inquiry" class="closing-cta-btn">Email Alfredo &rarr;</a>
   </div>
 
 </div><!-- /page -->
 
 <footer class="site-footer">
+  <style>
+    .footer-utility{
+      width:100%;
+      display:flex;
+      flex-wrap:wrap;
+      gap:1.25rem;
+      justify-content:center;
+      padding:0 0 .75rem;
+      margin-bottom:.5rem;
+      border-bottom:1px solid var(--rule);
+    }
+    .footer-utility a{
+      font-family:'IBM Plex Mono',monospace;
+      font-size:.62rem;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      color:var(--black);
+      text-decoration:none;
+      transition:color .15s;
+    }
+    .footer-utility a:hover{color:var(--mid);}
+  </style>
+  <div class="footer-utility">
+    <a href="ED_SH_Student_Handbook.html">For Students &middot; Start with the Student Handbook &rarr;</a>
+    <a href="resources.html#admins">For Administrators &middot; Standards Crosswalk &amp; Educator Overview &rarr;</a>
+  </div>
   <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC &nbsp;&middot;&nbsp; SPCC.1 &nbsp;&middot;&nbsp; economicdemocracy.co</span>
-  <span class="footer-right">AI Synthesis: Claude (Anthropic, claude-sonnet-4-6) &nbsp;&middot;&nbsp; Economic Democracy Curriculum</span>
+  <span class="footer-right">AI Synthesis: Claude (Anthropic, claude-opus-4-7) &nbsp;&middot;&nbsp; Economic Democracy Curriculum</span>
 </footer>
 
 <script>
-// Nav toggle
 document.querySelector('.nav-toggle').addEventListener('click', function() {
   this.classList.toggle('open');
   this.setAttribute('aria-expanded', this.classList.contains('open'));

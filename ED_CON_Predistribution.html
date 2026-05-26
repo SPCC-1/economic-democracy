@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Predistribution — Concept Library — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+.concept-tag{display:inline-block;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .6rem;margin-bottom:.9rem;}
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+.defbox{border:1px solid var(--black);background:var(--white);padding:1.1rem 1.4rem;margin:1.5rem 0;}
+.defbox-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.defbox p{font-size:.92rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.defbox strong{font-weight:600;color:var(--black);}
+.four{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.four-cell{background:var(--paper);padding:1rem 1.2rem;}
+.four-cell:nth-child(even){background:var(--cream);}
+.four-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem;}
+.four-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.3rem;}
+.four-text{font-size:.8rem;font-weight:300;color:var(--ink);line-height:1.55;}
+.four-text strong{font-weight:600;color:var(--charcoal);}
+@media(max-width:600px){.four{grid-template-columns:1fr;}}
+.types{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.type-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.type-cell:nth-child(even){background:var(--cream);}
+.type-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.type-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.15;}
+.type-text{font-size:.81rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.types{grid-template-columns:1fr;}}
+.context{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.context-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.context-name{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.context-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.context-body p{margin-bottom:.5rem;}
+.context-body p:last-child{margin-bottom:0;}
+.context-q{font-size:.82rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.6rem;margin-top:.5rem;line-height:1.5;}
+.tbl-wrap{margin:1.25rem 0;overflow-x:auto;}
+.cmp{width:100%;border-collapse:collapse;font-size:.8rem;min-width:540px;}
+.cmp th,.cmp td{border:1px solid var(--rule);padding:.55rem .7rem;vertical-align:top;line-height:1.45;text-align:left;}
+.cmp th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.cmp td:first-child{background:var(--cream);font-weight:600;color:var(--charcoal);font-size:.76rem;}
+.cmp .fill{color:var(--muted);font-style:italic;}
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing,.cmp th,.concept-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .context,.task,.types,.four,.defbox,.inset,.tbl-wrap{break-inside:avoid;}
+  .sec-header{margin:1.9rem 0 1rem;}
+  .context{margin:1.1rem 0;}
+  .four,.types,.defbox,.inset,.pullquote{margin-top:1.2rem;margin-bottom:1.2rem;}
+  .task{margin:1.3rem 0;}
+  .closing{margin:1.2rem 0 0;}
+  .doc-footer{margin-top:1.2rem;}
+  .closing.tight-top{margin-top:.8rem;}
+  .dq-list.tight li{padding-top:.34rem;padding-bottom:.34rem;}
+  .sec-header.tight-top{margin-top:1rem;margin-bottom:.85rem;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+.sec-header.tight-top{margin-top:1.5rem;}
+.closing.tight-top{margin-top:1.4rem;}
+.dq-list.tight li{padding-top:.45rem;padding-bottom:.45rem;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="concept-tag">Concept Library · Distribution</p>
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Concept Primer</p>
+    <h1 class="masthead-title">Predistribution</h1>
+    <p class="masthead-sub">Broadening who <em>owns</em> productive assets before they compound — so that when capital outruns wages, the gains reach the many rather than the few. A serious idea, and a contested one.</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">Here is a fact that quietly reorganizes the modern economy: increasingly, wealth comes less from what you <em>earn</em> and more from what you <em>own</em>. Wages — income from work — have grown slowly for decades, while returns to assets like stock, real estate, and the platforms and infrastructure that power the digital economy have grown far faster. If that pattern holds, then over time the people who already own appreciating assets pull steadily ahead of the people who only have a paycheck, no matter how hard the second group works. That gap is the problem <strong>predistribution</strong> sets out to address — and it does so with a distinctive move: instead of letting the gap open and then taxing the winners to help the losers, it asks whether we could <em>broaden who owns the assets in the first place</em>, so that when those assets compound, far more people are on the winning side of the line.</p>
+
+  <p class="body">This is a different idea from the familiar one. The traditional tool for inequality is <strong>redistribution</strong>: let the market produce its winners and losers, then use taxes and transfers to move some money from the top toward the bottom, after the fact. Predistribution acts <em>earlier</em> and on a different lever — not income, but <em>ownership</em>. Its question is not "how much should we tax and transfer?" but "how could more people come to own a real stake in the productive economy — a share of the company, the platform, the asset — so the wealth flows to them directly as those things grow?" The intellectual roots run from Louis Kelso, the economist who invented the Employee Stock Ownership Plan (ESOP) and argued for a "universal capitalism" of broad ownership, down to present-day proposals to give the public a stake in the AI systems built on everyone's data. This primer grants that idea its full strength — and then asks, honestly, where it might fail.</p>
+
+  <div class="defbox">
+    <p class="defbox-label">The tool, stated plainly</p>
+    <p><strong>Predistribution</strong> is the broadening of <strong>asset ownership</strong> before returns are generated, so that the gains from growth and compounding are shared widely from the start — rather than concentrated and then partly corrected afterward. Its lever is <em>ownership</em> (a stake in companies, platforms, capital), not <em>income</em>. Its counterpart, <strong>redistribution</strong>, leaves ownership as it is and instead taxes income and wealth after the market produces them, transferring to those with less. Predistribution changes <em>who owns</em>; redistribution changes <em>who receives</em> after the fact.</p>
+  </div>
+
+  <!-- SECTION I -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">The Tool — Why Ownership, and Why Before</span></div>
+
+  <p class="body">Grant the core insight fully, because it rests on something genuinely true about how wealth now works. Assets <em>compound</em>: money invested in productive things tends to grow on itself, year after year, while a wage is earned once and spent. Over a lifetime — and across generations — that difference is enormous. Someone who owns a share of a growing business or a piece of appreciating property sees their wealth build on itself; someone who only draws a paycheck does not, however large the paycheck. So if you care about who ends up prosperous, the decisive question is not just how much people are paid, but <em>who owns the assets that compound</em>. Predistribution takes that seriously: rather than topping up the incomes of people who own nothing, it tries to make them owners, so the compounding works <em>for</em> them too.</p>
+
+  <p class="body">See the contrast clearly, because the whole concept lives in the difference between fixing the result and changing who shares in it from the start:</p>
+
+  <div class="four">
+    <div class="four-cell">
+      <p class="four-label">Predistribution · broaden ownership</p>
+      <p class="four-name">A Stake, From the Start</p>
+      <p class="four-text">Help more people <strong>own</strong> productive assets — employee shares in their company, a stake in the platforms they power, a public fund that holds capital on everyone's behalf. As those assets grow, the gains flow to the new owners <em>directly</em>, as earnings on what they own, not as a transfer.</p>
+    </div>
+    <div class="four-cell">
+      <p class="four-label">Redistribution · correct the result</p>
+      <p class="four-name">A Transfer, After</p>
+      <p class="four-text">Leave ownership concentrated, let the market produce its winners, then <strong>tax</strong> and <strong>transfer</strong> to those left behind. It can relieve hardship — but it must be repeated every year, and it casts the majority as recipients of help rather than owners of a stake.</p>
+    </div>
+  </div>
+
+  <p class="body">There is a real dignity argument folded into this, and it is worth granting honestly: a transfer makes you a beneficiary, while a stake makes you an owner — and owners have standing, security, and a say that recipients do not. Defenders also point to the AI economy as the urgent case. The most valuable systems being built today are trained on data and creativity produced by millions of ordinary people, yet the returns flow almost entirely to those who own the platforms. A predistributive response — say, a public stake in those systems, paying a dividend to the people whose collective data made them possible — would be framed not as charity but as a <em>return on something already contributed</em>: ownership earned, not granted. Granted fully, predistribution is a serious and coherent answer to an economy where ownership, not work, increasingly decides who prospers. The hard questions begin the moment you try to make it real.</p>
+
+  <div class="pullquote">
+    <p>A transfer asks the winners to share what they earned. Predistribution asks a prior question: who got to be an owner in the first place — and could that circle be drawn wider?</p>
+  </div>
+
+  <!-- SECTION II -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">The Argument — For, and Against</span></div>
+
+  <p class="body">Here the concept stops being neutral. Take the strongest case for broadening ownership before the fact, then the strongest case against — because predistribution is exactly the kind of idea that sounds obviously right or quietly naive depending on which half you've heard.</p>
+
+  <div class="types">
+    <div class="type-cell">
+      <p class="type-label">The case FOR</p>
+      <p class="type-name">Share the compounding, not just the crumbs</p>
+      <p class="type-text">If wealth increasingly comes from owning assets that compound, then redistribution is forever chasing the gap from behind — taxing this year's gains while next year's compounding widens it again. Predistribution's defenders argue it's better to put people <em>inside</em> the compounding: make workers part-owners of their firms, give the public a real stake in the platforms and AI built on their data, and the gains reach them automatically, as owners, with the security and standing ownership brings. It treats people as capable economic agents rather than permanent recipients — and, done right, may reduce the need for endless transfers because more people are building wealth on their own.</p>
+    </div>
+    <div class="type-cell">
+      <p class="type-label">The case AGAINST</p>
+      <p class="type-name">Ownership means risk — and may not fix concentration</p>
+      <p class="type-text">Critics warn that ownership is not a gift; it is <em>exposure to risk</em>. Assets fall as well as rise, and pushing people with little cushion to hold volatile stakes can wipe out those who can least afford a loss — a worker whose savings <em>and</em> job both ride on one company is doubly exposed. A clean cash transfer carries no such risk. They also doubt it works at scale: handing out small stakes may leave real control with the same concentrated owners, so the gap barely moves. And "an ownership stake earned through our data" raises hard questions — who decides what's owed, who administers it, and does it become a new dependency dressed up as ownership? Better, this view holds, an honest transfer than a risky stake that promises more than it delivers.</p>
+    </div>
+  </div>
+
+  <div class="inset">
+    <strong>The question to carry everywhere:</strong> when wealth concentrates because owners pull ahead of earners, ask — <em>should we broaden who owns the compounding assets (predistribution), or tax the gains and transfer them (redistribution) — and what does each cost?</em> Broadening ownership may put more people inside the growth and give them real standing, but it hands them risk and may not loosen real control. Transferring income avoids that risk but must be repeated forever and leaves ownership — and power — where it is. Neither is free, and neither is obviously right. The honest position is to see which costs you are willing to bear, for which problem, with open eyes.</p>
+  </div>
+
+  <!-- SECTION III -->
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">The Same Choice, Three Cases</span></div>
+
+  <p class="body">Watch the broaden-ownership-or-transfer choice play out in three situations — one where acting on ownership looks strong, one where it looks risky, and the hard case at the center of the AI economy.</p>
+
+  <div class="context">
+    <p class="context-meta">Case One · Where broadening ownership looks strong</p>
+    <p class="context-name">Workers who become owners of the company they run</p>
+    <div class="context-body">
+      <p>A retiring founder sells the business to its employees through an ESOP rather than to an outside buyer. The workers put in no cash; the ownership is structured so the company's own future earnings buy them their shares over time. Years later, those employees — many of them ordinary wage earners — have substantial retirement wealth built from the compounding value of the firm they already worked in. This is predistribution at its most concrete: the same people kept the same jobs, but now they <em>own</em> the asset, so its growth accrued to them directly. No transfer was needed; the stake did the work.</p>
+      <p class="context-q">What did these workers gain by owning rather than just earning — and what did it require to set up?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Case Two · Where it looks risky</p>
+    <p class="context-name">A family pushed to hold assets they can't afford to lose</p>
+    <div class="context-body">
+      <p>Now imagine a low-income family encouraged to put what little they have into owning a volatile asset, on the promise that ownership builds wealth. If it rises, they gain. But if it falls — or if the single company they're tied to fails — they lose savings they could not spare, and a simple cash transfer would have served them far better and more safely. Ownership exposed them to a risk they had no cushion to absorb. This is the critique's strongest ground: turning people into owners is not automatically a kindness, because owners bear losses, and the people predistribution most wants to help are often the least able to weather them.</p>
+      <p class="context-q">When does pushing ownership onto someone help them — and when does it hand them a risk they can't bear?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Case Three · The hard case</p>
+    <p class="context-name">A public stake in the AI built on everyone's data</p>
+    <div class="context-body">
+      <p>AI systems are trained on the collective data, writing, and creativity of millions of ordinary people, yet the enormous returns flow to the handful of firms that own the platforms. One predistributive proposal: give the public an ownership stake — a fund that holds a share of these systems and pays a dividend to the people whose data made them possible, framed as a return <em>earned</em> through contribution, not a handout. Supporters call it the fairest way to share AI's wealth at its root. Skeptics ask the hard questions: who decides the size of the stake, who controls the fund, does a small dividend actually shift power or just pacify, and could it entrench the very platforms it taxes? Both sides are pointing at something real — which is exactly why this is the case worth arguing over rather than settling.</p>
+      <p class="context-q">Is a public stake in AI a fair return on what we all contributed — or a risky promise that leaves real control untouched?</p>
+    </div>
+  </div>
+
+  <!-- ACTIVITY -->
+  <div class="sec-header tight-top"><span class="sec-roman">IV</span><span class="sec-title">Activity — Stake or Transfer?</span></div>
+
+  <p class="body">For each problem, sketch a predistribution approach (broaden ownership of an asset) and a redistribution approach (tax-and-transfer), then name the main risk or cost of each. The point is not to pick a side everywhere — it's to see that both exist and both cost.</p>
+
+  <div class="tbl-wrap">
+    <table class="cmp">
+      <thead>
+        <tr><th>The problem</th><th>An ownership approach (predistribution) &amp; its risk</th><th>A transfer approach (redistribution) &amp; its cost</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Workers share in a company's growth, not just its wages</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>The public benefits from AI built on its data</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Young people own no appreciating assets</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A neighborhood's wealth keeps flowing to outside owners</td><td class="fill">…</td><td class="fill">…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Write</p>
+    <p class="task-title">Argue it both ways, then decide</p>
+    <p class="task-body">Pick one real case where owners are pulling ahead of earners. First, make the strongest case for fixing it by <em>broadening ownership</em> — and name the specific stake you'd give people. Then make the strongest case for a <em>transfer</em> instead, and be honest about why that might be safer or simpler. Now take a side: which would you choose, what cost or risk are you accepting by choosing it, and what would change your mind? Remember that handing people risky assets and endlessly transferring income are both real dangers.</p>
+    <div class="writelines"><div class="writeline"></div><div class="writeline"></div><div class="writeline"></div></div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="sec-header tight-top"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list tight">
+    <li>Predistribution's core claim is that ownership, not wages, increasingly decides who prospers. If that's true, does it follow that we should broaden ownership — or could a generous transfer do the same work more safely?</li>
+    <li>Owning an asset means bearing its risk. When is making someone an owner genuinely better than giving them cash — and when is it handing risk to a person who can't afford to lose?</li>
+    <li>The AI economy runs on data and creativity contributed by nearly everyone. Is a public ownership stake in those systems a fair return on what we all gave — or a promise that sounds like ownership while leaving real control concentrated?</li>
+    <li>What's the smallest change — broadening ownership <em>or</em> transferring income — that would meaningfully help people share in a compounding economy, while exposing them to the least risk they can't afford?</li>
+  </ol>
+
+  <div class="closing tight-top">
+    <p>When wealth flows to owners faster than to earners, a society faces a choice.<br>It can tax the gains and share them after — safe, but endless, and the ownership stays where it was.<br>Or it can try to make more people owners before the fact — a real stake, real standing, and real risk.<br>The question is never "stake or transfer?" in the abstract, but which cost you will bear, for which problem, with open eyes.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

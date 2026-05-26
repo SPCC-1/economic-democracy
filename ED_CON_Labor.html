@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Labor — Concept Library — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+.concept-tag{display:inline-block;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .6rem;margin-bottom:.9rem;}
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+.defbox{border:1px solid var(--black);background:var(--white);padding:1.1rem 1.4rem;margin:1.5rem 0;}
+.defbox-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.defbox p{font-size:.92rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.defbox strong{font-weight:600;color:var(--black);}
+.four{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.four-cell{background:var(--paper);padding:1rem 1.2rem;}
+.four-cell:nth-child(even){background:var(--cream);}
+.four-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem;}
+.four-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.3rem;}
+.four-text{font-size:.8rem;font-weight:300;color:var(--ink);line-height:1.55;}
+.four-text strong{font-weight:600;color:var(--charcoal);}
+@media(max-width:600px){.four{grid-template-columns:1fr;}}
+.types{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.type-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.type-cell:nth-child(even){background:var(--cream);}
+.type-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.type-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.15;}
+.type-text{font-size:.81rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.types{grid-template-columns:1fr;}}
+.context{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.context-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.context-name{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.context-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.context-body p{margin-bottom:.5rem;}
+.context-body p:last-child{margin-bottom:0;}
+.context-q{font-size:.82rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.6rem;margin-top:.5rem;line-height:1.5;}
+.tbl-wrap{margin:1.25rem 0;overflow-x:auto;}
+.cmp{width:100%;border-collapse:collapse;font-size:.8rem;min-width:540px;}
+.cmp th,.cmp td{border:1px solid var(--rule);padding:.55rem .7rem;vertical-align:top;line-height:1.45;text-align:left;}
+.cmp th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.cmp td:first-child{background:var(--cream);font-weight:600;color:var(--charcoal);font-size:.76rem;}
+.cmp .fill{color:var(--muted);font-style:italic;}
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing,.cmp th,.concept-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .context,.task,.types,.four,.defbox,.inset,.tbl-wrap{break-inside:avoid;}
+  .sec-header{margin:1.9rem 0 1rem;}
+  .context{margin:1.1rem 0;}
+  .four,.types,.defbox,.inset,.pullquote{margin-top:1.2rem;margin-bottom:1.2rem;}
+  .task{margin:1.3rem 0;}
+  .closing{margin:1.2rem 0 0;}
+  .doc-footer{margin-top:1.2rem;}
+  .closing.tight-top{margin-top:.35rem;}
+  .dq-list.tight li{padding-top:.22rem;padding-bottom:.22rem;}
+  .sec-header.tight-top{margin-top:.75rem;margin-bottom:.65rem;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+.sec-header.tight-top{margin-top:1.5rem;}
+.closing.tight-top{margin-top:1.4rem;}
+.dq-list.tight li{padding-top:.45rem;padding-bottom:.45rem;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="concept-tag">Concept Library · Distribution</p>
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Concept Primer</p>
+    <h1 class="masthead-title">Labor</h1>
+    <p class="masthead-sub">The one thing nearly everyone has to sell — bought and priced like any other good, yet unlike any other good because it can never be separated from the person selling it.</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">Almost everyone who earns a living does so by selling the same thing: their labor — their time, effort, and skill, rented out to an employer in exchange for a wage. In that sense labor is a market like any other. There is a supply (people willing to work) and a demand (employers willing to hire), and where they meet sets a price: the wage. Economics can say a great deal about that market — why some work pays more than other work, why wages rise and fall, why there is almost always some unemployment even when the economy is booming. All of it is genuinely useful, and most of it is not complicated once you see it. But labor carries one feature no other commodity shares, and it changes everything: <strong>you cannot separate the labor from the laborer.</strong> When you sell wheat, the wheat leaves and you keep your life. When you sell your labor, you go with it — your hours, your body, your dignity, your day. That single fact is what makes the labor market the most consequential market there is.</p>
+
+  <p class="body">This primer teaches the real mechanics first, because they matter and they reward clear thinking: what sets a wage, what the different kinds of unemployment are, and why a flexible labor market is one of the great strengths of a dynamic economy rather than a problem to be solved. A market that lets people move toward where their work is most valued — and lets employers find the people they need — is part of why market economies adapt and grow as fast as they do. Then it turns to the two things the supply-and-demand diagram quietly leaves out: that the "commodity" being traded is a human being, and that the single number we call "the unemployment rate" hides several completely different situations that mean completely different things.</p>
+
+  <div class="defbox">
+    <p class="defbox-label">The tool, stated plainly</p>
+    <p><strong>Labor</strong> is human effort offered for pay; the <strong>labor market</strong> is where workers (supply) and employers (demand) meet, setting the <strong>wage</strong>. What a worker can earn is shaped largely by the value of what they produce and how scarce their skills are. <strong>Unemployment</strong> is the condition of wanting work and actively seeking it without finding it. Crucially, not all unemployment is alike: economists distinguish <strong>frictional</strong> (between jobs, searching), <strong>structural</strong> (skills no longer match available jobs), and <strong>cyclical</strong> (a downturn has shrunk the number of jobs) — three very different things that look identical in the headline number.</p>
+  </div>
+
+  <!-- SECTION I -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">The Tool — How the Labor Market Works</span></div>
+
+  <p class="body">Start with wages, because the logic is clean and powerful. In a market, what you can earn depends heavily on two things: how much value your work produces, and how scarce your ability to do it is. A worker whose effort generates a lot of value, and whose skills few others have, commands a high wage — employers compete for them. A worker whose tasks produce less, or whose skills are common, earns less, because employers have many alternatives. This is not a moral ranking; it's a market clearing. And it does real good: it signals to people where their effort is most needed, rewards the trouble of building rare and valuable skills, and steers talent toward what the economy actually wants done. A wage is, among other things, a piece of information.</p>
+
+  <p class="body">Now unemployment — and here the most important move is to see that it is not one thing. The single headline rate blends three completely different situations:</p>
+
+  <div class="four">
+    <div class="four-cell">
+      <p class="four-label">Often healthy</p>
+      <p class="four-name">Frictional &amp; Structural</p>
+      <p class="four-text"><strong>Frictional</strong>: people between jobs, searching for a better fit — a sign of a mobile, dynamic economy, not a broken one. <strong>Structural</strong>: skills no longer match available jobs (an industry died, technology moved on) — painful, and about <em>mismatch</em>, not laziness or a lack of jobs overall.</p>
+    </div>
+    <div class="four-cell">
+      <p class="four-label">A different problem</p>
+      <p class="four-name">Cyclical</p>
+      <p class="four-text"><strong>Cyclical</strong>: the economy has contracted and there simply aren't enough jobs to go around, no matter how hard people look or how well their skills match. This is the unemployment of a recession — not a matching problem but a shortage of demand. It rises and falls with the business cycle.</p>
+    </div>
+  </div>
+
+  <p class="body">Why does this matter so much? Because the <em>kind</em> of unemployment determines whether the problem is even a problem, and what — if anything — would help. Some unemployment is not only normal but healthy: an economy where no one ever changed jobs would be a stagnant one, and the constant churn of people leaving, searching, and landing somewhere better is part of how a market economy keeps reallocating effort toward what's valuable. Full employment has never meant <em>zero</em> unemployment; it means the absence of the cyclical kind, with only the healthy churn remaining. Granted fully, the labor market is a remarkable coordinating mechanism: it prices effort, rewards skill, and moves millions of people toward where they're most useful, mostly without anyone directing it. The complications come from the two things it treats as ordinary that are anything but.</p>
+
+  <div class="pullquote">
+    <p>Labor is the one good that walks home at night. Price it too low and a market clears; but the unsold inventory is a person, with a family and a Tuesday and a sense of worth.</p>
+  </div>
+
+  <!-- SECTION II -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">Where the Market Treats People as Commodities</span></div>
+
+  <p class="body">The mechanics are sound and the market does real good. But two features the clean diagram glosses over change how we should read any labor statistic — not because the market is the enemy, but because what it's trading is unlike anything else.</p>
+
+  <div class="types">
+    <div class="type-cell">
+      <p class="type-label">Lever 1</p>
+      <p class="type-name">Labor is attached to a human being — so adjustment costs are borne, not absorbed</p>
+      <p class="type-text">When the market for any other good adjusts — prices fall, supply sits unsold, demand shifts — the commodity doesn't suffer; it waits in a warehouse. Labor can't wait in a warehouse. An unemployed person's lost months are gone for good; their skills erode, their savings drain, their sense of worth takes a hit no balance sheet records. So "the labor market adjusted" can be economically accurate and humanly severe at the same time, because the cost of every adjustment is borne by a living person, not absorbed by an inventory. This doesn't make markets wrong — it means a labor statistic is never <em>only</em> a statistic, and reading it as if it were misses what's actually happening.</p>
+    </div>
+    <div class="type-cell">
+      <p class="type-label">Lever 2</p>
+      <p class="type-name">One unemployment rate hides three different stories</p>
+      <p class="type-text">Because frictional, structural, and cyclical unemployment look identical in the headline number, it's easy to assign the wrong cause — and the wrong blame. Tell a cyclically unemployed worker (no jobs exist right now) to "just retrain," and you've misread a demand shortage as a skills problem. Treat a structurally displaced worker (whose industry is gone) as if they're merely between jobs, and you miss that the old work isn't coming back. The danger runs both ways: blaming individuals for what are really structural or cyclical forces, <em>or</em> blaming "the system" for what is genuinely healthy churn. Naming the kind correctly is the difference between help that works and help that misses.</p>
+    </div>
+  </div>
+
+  <div class="inset">
+    <strong>The questions to carry everywhere:</strong> when you see a wage, ask — <em>does this reflect the value and scarcity of the work, and does the person earning it have any other options, or none?</em> When you see an unemployment number, ask — <em>which kind is this: the healthy churn of people moving up, a mismatch of skills and a changed economy, or a shortage of jobs no amount of searching can fix?</em> The labor market is a powerful and largely beneficial mechanism. Reading it well means remembering that the thing it prices is a person, and that one number can hide three different fates.</p>
+  </div>
+
+  <!-- SECTION III -->
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">The Same Market, Three Situations</span></div>
+
+  <p class="body">Watch the labor market work in three real situations — a wage set cleanly by skill and value, the three kinds of unemployment side by side, and the hard case where a healthy market and a human cost are both fully present.</p>
+
+  <div class="context">
+    <p class="context-meta">Situation One · The wage as signal</p>
+    <p class="context-name">Why a rare, valuable skill commands more</p>
+    <div class="context-body">
+      <p>Two people work equally hard. One has a skill that produces enormous value and that very few others have; the other does work that is genuinely useful but that many people can do. The first earns far more — not because they are a better person or even work harder, but because the market is signaling scarcity and value: employers compete for what is rare and productive. This is the labor market doing exactly what it does well — rewarding the effort of building a scarce, valuable skill, and telling everyone else where the rewards are. It's worth granting plainly: this signal is useful, it's mostly fair in its own terms, and it pulls talent toward what's needed.</p>
+      <p class="context-q">What is the high wage actually rewarding here — and what is it telling everyone watching?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Situation Two · Three kinds, one number</p>
+    <p class="context-name">Three unemployed people who are not in the same situation</p>
+    <div class="context-body">
+      <p>Three people are counted as "unemployed." The first left a job last month and is choosing among offers (frictional — they'll be fine, and the churn is healthy). The second spent twenty years in an industry that no longer exists, and their skills no longer match anything hiring (structural — retraining might help; "just look harder" won't). The third is a willing, skilled worker in the middle of a recession where their whole region has simply stopped hiring (cyclical — no amount of searching creates a job that isn't there). Same label, three different realities, three different answers. The headline rate counts them identically; understanding them requires pulling them apart.</p>
+      <p class="context-q">Which of the three would retraining help, which needs the economy itself to recover, and which just needs a little time?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Situation Three · The hard case</p>
+    <p class="context-name">A factory closes because a better way was found</p>
+    <div class="context-body">
+      <p>A company adopts a more efficient method — automation, a smarter process — and produces more with fewer workers. For the economy this is good and even necessary: it's a productivity gain, the kind that raises living standards over time and frees labor for new uses. The displaced workers are not victims of anyone's villainy; the market is working as it should. <em>And</em> those same workers, often mid-career with structural unemployment ahead of them, may face years of lost earnings, and not all will land on their feet. Both things are completely true: the change was genuinely good for the economy, and genuinely hard for specific people. The honest task is to hold both — neither pretending the progress is a crime nor pretending the human cost isn't real.</p>
+      <p class="context-q">If the efficiency gain is real and good, does the cost to the displaced workers create any claim — and on whom?</p>
+    </div>
+  </div>
+
+  <!-- ACTIVITY -->
+  <div class="sec-header tight-top"><span class="sec-roman">IV</span><span class="sec-title">Activity — Name the Wage, Name the Unemployment</span></div>
+
+  <p class="body">For each case, identify what's setting the wage or which kind of unemployment it is (frictional, structural, or cyclical), and note who bears the cost of the adjustment.</p>
+
+  <div class="tbl-wrap">
+    <table class="cmp">
+      <thead>
+        <tr><th>The situation</th><th>Wage driver / kind of unemployment</th><th>Who bears the adjustment?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>A specialized surgeon earns many times the median wage</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A recent graduate spends two months choosing among job offers</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Coal miners can't find work as the industry shrinks</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A whole town's workers are laid off during a recession</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A cashier's job is replaced by self-checkout machines</td><td class="fill">…</td><td class="fill">…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Write</p>
+    <p class="task-title">Defend the market — then remember the worker</p>
+    <p class="task-body">First, make the strongest case that a flexible labor market — one that sets wages by value and scarcity and lets jobs appear and disappear — is genuinely good: what does it accomplish that a rigid, guaranteed-jobs system couldn't? Then complicate it honestly: what does the supply-and-demand picture leave out when the "commodity" is a person, and how does lumping three kinds of unemployment into one number lead us astray? Finally, take a position: for the kind of unemployment you find most troubling, what is the smallest thing — if anything — you'd do to ease the human cost without freezing the flexibility that makes the market work?</p>
+    <div class="writelines"><div class="writeline"></div><div class="writeline"></div><div class="writeline"></div></div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="sec-header tight-top"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list tight">
+    <li>A wage largely reflects the value and scarcity of someone's work. In what ways is that a fair and useful signal — and where, if anywhere, does treating a person's pay as just a market price feel incomplete?</li>
+    <li>Some unemployment is genuinely healthy — the churn of people moving toward better fits. Why might an economy with <em>zero</em> unemployment actually be a worse, more stagnant one?</li>
+    <li>Frictional, structural, and cyclical unemployment look the same in one number but mean different things. What goes wrong when we treat them all the same — in policy, and in how we judge the people affected?</li>
+    <li>When a productivity gain is good for the economy but costly to displaced workers, what's the smallest thing that would ease their adjustment without discouraging the efficiency that raises living standards for everyone else?</li>
+  </ol>
+
+  <div class="closing tight-top">
+    <p>Labor is priced like any commodity, and that pricing does real and useful work.<br>But the commodity goes home at night, carries a name, and feels the adjustment in its own life.<br>One wage can be a fair signal; one unemployment number can hide three different fates.<br>To read the labor market is to see the mechanism clearly — and never forget whose hours it is counting.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

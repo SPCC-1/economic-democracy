@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Opportunity Cost — Concept Library — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+.concept-tag{display:inline-block;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .6rem;margin-bottom:.9rem;}
+
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+
+.defbox{border:1px solid var(--black);background:var(--white);padding:1.1rem 1.4rem;margin:1.5rem 0;}
+.defbox-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.defbox p{font-size:.92rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.defbox strong{font-weight:600;color:var(--black);}
+
+.types{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.type-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.type-cell:nth-child(even){background:var(--cream);}
+.type-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.type-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.15;}
+.type-text{font-size:.81rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.types{grid-template-columns:1fr;}}
+
+.context{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.context-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.context-name{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.context-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.context-body p{margin-bottom:.5rem;}
+.context-body p:last-child{margin-bottom:0;}
+.context-q{font-size:.82rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.6rem;margin-top:.5rem;line-height:1.5;}
+
+.tbl-wrap{margin:1.25rem 0;overflow-x:auto;}
+.cmp{width:100%;border-collapse:collapse;font-size:.8rem;min-width:520px;}
+.cmp th,.cmp td{border:1px solid var(--rule);padding:.55rem .7rem;vertical-align:top;line-height:1.45;text-align:left;}
+.cmp th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.cmp td:first-child{background:var(--cream);font-weight:600;color:var(--charcoal);font-size:.76rem;}
+.cmp .fill{color:var(--muted);font-style:italic;}
+
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing,.cmp th,.concept-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .context,.task,.types,.defbox,.inset,.tbl-wrap{break-inside:avoid;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="concept-tag">Concept Library · Allocation</p>
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Concept Primer</p>
+    <h1 class="masthead-title">Opportunity Cost</h1>
+    <p class="masthead-sub">The price of any choice is the best thing you gave up to make it — and the most important costs are the ones no one ever sends you a bill for.</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">Scarcity says you must choose. Opportunity cost tells you what the choice actually costs. And here is the surprising part: the real cost of anything is almost never the price on the tag. The true cost of a thing is <em>the best alternative you gave up to get it</em> — the thing you could have done instead, and now can't. Spend Saturday working a shift, and the cost isn't just the hours; it's the game you missed, the sleep you skipped, the studying you didn't do. You paid in roads not taken.</p>
+
+  <p class="body">That hidden price is called <strong>opportunity cost</strong>, and once you can see it, you cannot unsee it. Every choice — yours, a company's, a government's — quietly spends not just money but possibility. The reason this concept matters so much is that the most consequential costs are invisible. No one hands you an itemized receipt for the life you didn't live or the program a town didn't fund. The tool is simple arithmetic. What makes it powerful — and what makes it a lever someone can pull on you — is that opportunity costs are easy to hide.</p>
+
+  <div class="defbox">
+    <p class="defbox-label">The tool, stated plainly</p>
+    <p><strong>Opportunity cost</strong> is the value of the best alternative you give up when you make a choice. It is the real cost of any decision — not what you paid, but what you could have done instead and now cannot.</p>
+  </div>
+
+  <!-- SECTION I -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">The Tool — The Cost You Don't See on the Tag</span></div>
+
+  <p class="body">Start with the clean version. Money costs are obvious: a thing costs ten dollars, you hand over ten dollars. But opportunity cost asks a deeper question — what else could those ten dollars, or that hour, or that acre of land, have done? If you spend the money on one thing, you have lost the chance to spend it on the best other thing you wanted. That lost chance <em>is</em> the cost, every bit as real as the cash, even though no one records it.</p>
+
+  <p class="body">This is why "free" is one of the trickiest words in economics. A free two-hour movie still costs you the best thing you'd have done with those two hours. A "free" gift of land to a company still costs the public whatever else that land could have become. Nothing with a real alternative is ever truly free — it only looks free because the cost is the invisible road not taken. Learning to see that road, and to put a name to what's on it, is the entire skill.</p>
+
+  <div class="pullquote">
+    <p>The real cost of a choice is never on the price tag. It's the best thing you could have done instead — and it's invisible by default.</p>
+  </div>
+
+  <!-- SECTION II -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">Two Things That Make Opportunity Cost a Lever</span></div>
+
+  <p class="body">The arithmetic is neutral. But two features of opportunity cost make it something people can use to steer your thinking — which is exactly when you need to watch it closely.</p>
+
+  <div class="types">
+    <div class="type-cell">
+      <p class="type-label">Lever 1</p>
+      <p class="type-name">The hidden alternatives</p>
+      <p class="type-text">You can only weigh the costs of choices you can <em>see</em>. Whoever frames a decision controls which alternatives are on the table — and which stay invisible. "Should we approve this or get nothing?" hides every option in between. The unmentioned alternative is an opportunity cost no one let you count.</p>
+    </div>
+    <div class="type-cell">
+      <p class="type-label">Lever 2</p>
+      <p class="type-name">The sunk-cost trap</p>
+      <p class="type-text">Opportunity cost is always about the <em>future</em> — what you give up from here. But people cling to what they've already spent ("we've put so much in, we can't stop now"). Money already gone is gone; it shouldn't drive the next choice. Confusing past spending with future cost leads to throwing good resources after bad.</p>
+    </div>
+  </div>
+
+  <div class="inset">
+    <strong>The question to carry everywhere:</strong> when you're offered a choice, ask — <em>what are the alternatives I'm not being shown, and what does this option really cost in roads not taken?</em> A decision framed as "this or nothing" is almost always hiding the options in between. The arithmetic of opportunity cost is neutral. Who gets to decide which alternatives you see is not.
+  </div>
+
+  <!-- SECTION III — APPLY -->
+  <div class="sec-header break-before"><span class="sec-roman">III</span><span class="sec-title">The Same Tool, Three Contexts</span></div>
+
+  <p class="body">Watch the same simple idea — the best alternative given up — change weight as the stakes and the framing change.</p>
+
+  <div class="context">
+    <p class="context-meta">Context One · A personal choice</p>
+    <p class="context-name">"College is expensive."</p>
+    <div class="context-body">
+      <p>The tuition is the obvious cost. But the real opportunity cost of four years in college also includes the wages you didn't earn working those years — and, on the other side, the higher earnings you give up by <em>not</em> going. The honest comparison isn't "college vs. free." It's "the whole life with the degree vs. the whole life without it." Both roads have costs; only seeing both lets you choose well.</p>
+      <p class="context-q">What's the invisible alternative — and is the choice being framed to hide it?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Two · A public decision</p>
+    <p class="context-name">"The tax break costs the town nothing — it's money we weren't collecting anyway."</p>
+    <div class="context-body">
+      <p>A company is offered years of tax breaks to build locally, and it's pitched as free: the town wasn't getting that money before, so it loses nothing. But the opportunity cost is everything that revenue could have funded if collected — the school repair, the water system, the services. "It costs nothing" works only if you refuse to count the road not taken. The framing makes a real cost disappear.</p>
+      <p class="context-q">What's the invisible alternative — and is the choice being framed to hide it?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Three · A trap</p>
+    <p class="context-name">"We've already spent so much, we can't quit now."</p>
+    <div class="context-body">
+      <p>A project is over budget and failing, but the money already poured in feels like a reason to keep going. It isn't. That money is spent no matter what you do next — it's a sunk cost. The only real question is the <em>future</em> opportunity cost: what could the next dollar do here versus somewhere else? Honoring the past spending by wasting more is the most common way opportunity cost gets ignored.</p>
+      <p class="context-q">Is this about the future cost — or clinging to what's already gone?</p>
+    </div>
+  </div>
+
+  <!-- ACTIVITY -->
+  <div class="sec-header"><span class="sec-roman">IV</span><span class="sec-title">Activity — Name the Road Not Taken</span></div>
+
+  <p class="body">For each choice below, the obvious money cost is easy. Your job is the harder column: name the real opportunity cost — the best alternative given up — and then name any alternative the framing is hiding.</p>
+
+  <div class="tbl-wrap">
+    <table class="cmp">
+      <thead>
+        <tr><th>The choice</th><th>The real opportunity cost (best alternative given up)</th><th>A hidden alternative?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Spending Saturday gaming</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A town funds a stadium</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Keeping money in a no-interest account for ten years</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A company spends a year building one product</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>"Approve the deal as offered, or get nothing"</td><td class="fill">…</td><td class="fill">…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Write</p>
+    <p class="task-title">A choice framed to hide its cost</p>
+    <p class="task-body">Find one decision — in your life or in the news — that was pitched as "free" or as "this or nothing." What was the real opportunity cost? What alternative was left off the table, and who benefited from leaving it off?</p>
+    <div class="writelines"><div class="writeline"></div><div class="writeline"></div><div class="writeline"></div></div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="sec-header"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list">
+    <li>"Nothing with a real alternative is ever truly free." Do you agree? Name something that feels free but isn't, once you count the opportunity cost.</li>
+    <li>Why is "approve this or get nothing" such a powerful way to frame a decision? How would you reopen the alternatives someone is trying to hide?</li>
+    <li>The sunk-cost trap says money already spent shouldn't drive your next choice — yet people do it constantly, in relationships, projects, and policy. Why is it so hard to let go of what's already gone?</li>
+    <li>Whose job is it, in a democracy, to make the public's opportunity costs visible — the roads not taken when money is spent one way instead of another?</li>
+  </ol>
+
+  <div class="closing">
+    <p>Every choice spends more than money — it spends the choice you didn't make.<br>The hardest costs to see are the ones no one bills you for.<br>Learning to name the road not taken,<br>and to notice who hid it, is how you choose with your eyes open.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

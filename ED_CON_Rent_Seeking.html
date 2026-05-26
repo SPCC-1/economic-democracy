@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rent-Seeking — Concept Library — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+.concept-tag{display:inline-block;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .6rem;margin-bottom:.9rem;}
+
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+
+.defbox{border:1px solid var(--black);background:var(--white);padding:1.1rem 1.4rem;margin:1.5rem 0;}
+.defbox-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.defbox p{font-size:.92rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.defbox strong{font-weight:600;color:var(--black);}
+
+/* create vs extract two-column */
+.four{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.four-cell{background:var(--paper);padding:1rem 1.2rem;}
+.four-cell:nth-child(even){background:var(--cream);}
+.four-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem;}
+.four-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.3rem;}
+.four-text{font-size:.8rem;font-weight:300;color:var(--ink);line-height:1.55;}
+.four-text strong{font-weight:600;color:var(--charcoal);}
+@media(max-width:600px){.four{grid-template-columns:1fr;}}
+
+.types{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.type-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.type-cell:nth-child(even){background:var(--cream);}
+.type-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.type-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.15;}
+.type-text{font-size:.81rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.types{grid-template-columns:1fr;}}
+
+.context{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.context-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.context-name{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.context-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.context-body p{margin-bottom:.5rem;}
+.context-body p:last-child{margin-bottom:0;}
+.context-q{font-size:.82rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.6rem;margin-top:.5rem;line-height:1.5;}
+
+.tbl-wrap{margin:1.25rem 0;overflow-x:auto;}
+.cmp{width:100%;border-collapse:collapse;font-size:.8rem;min-width:540px;}
+.cmp th,.cmp td{border:1px solid var(--rule);padding:.55rem .7rem;vertical-align:top;line-height:1.45;text-align:left;}
+.cmp th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.cmp td:first-child{background:var(--cream);font-weight:600;color:var(--charcoal);font-size:.76rem;}
+.cmp .fill{color:var(--muted);font-style:italic;}
+
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing,.cmp th,.concept-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .context,.task,.types,.four,.defbox,.inset,.tbl-wrap{break-inside:avoid;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="concept-tag">Concept Library · Power</p>
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Concept Primer</p>
+    <h1 class="masthead-title">Rent-Seeking</h1>
+    <p class="masthead-sub">Getting richer by capturing a bigger slice of the pie instead of baking a bigger pie — and the disguise that makes grabbing look exactly like earning.</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">There are two fundamentally different ways to make money, and almost everything about whether an economy flourishes depends on which one it rewards. The first is to <em>create value</em>: make something people want, invent a better tool, do work that leaves the world richer than you found it. The pie gets bigger, and you take a slice of the value you added. The second is to <em>capture value</em> that already exists: position yourself so that wealth flows to you without your making anything or anyone better off. The pie doesn't grow — you just get a larger piece of it. That second move has a name: <strong>rent-seeking</strong>.</p>
+
+  <p class="body">The word "rent" here doesn't mean what you pay a landlord. It's an old term for income you collect simply because you control something others need — not because you produced anything. A rent-seeker gets rich by owning a chokepoint, securing a special privilege, or extracting a toll, rather than by adding to the total. This is one of the most clarifying ideas in all of economics, because it cuts underneath every argument about who "deserves" their wealth to a sharper question: <em>did this fortune come from making the pie bigger, or from grabbing more of it?</em> And the reason rent-seeking is so dangerous, and so hard to fight, is that it almost always disguises itself as value creation — the person extracting will always tell you they earned it.</p>
+
+  <div class="defbox">
+    <p class="defbox-label">The tool, stated plainly</p>
+    <p><strong>Rent-seeking</strong> is gaining wealth by capturing existing value rather than creating new value — getting richer without making the total larger. A "rent" is income earned from controlling something others need (a privilege, a chokepoint, a barrier) rather than from producing something. <strong>Value creation</strong> grows the pie; <strong>rent-seeking</strong> just redirects who holds it.</p>
+  </div>
+
+  <!-- SECTION I -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">The Tool — Baking the Pie vs. Grabbing the Slice</span></div>
+
+  <p class="body">Start with the distinction itself, because it's the whole concept. Hold the two side by side:</p>
+
+  <div class="four">
+    <div class="four-cell">
+      <p class="four-label">Makes the pie bigger</p>
+      <p class="four-name">Value Creation</p>
+      <p class="four-text">Inventing a cure, building a better tool, growing food, teaching a skill, starting a business that does something new. You profit, but society is richer too — your gain came <strong>with</strong> a gain for everyone. The total amount of useful stuff in the world went up.</p>
+    </div>
+    <div class="four-cell">
+      <p class="four-label">Grabs a bigger slice</p>
+      <p class="four-name">Rent-Seeking</p>
+      <p class="four-text">Buying up the only bridge and charging a toll, lobbying for a law that blocks competitors, patenting something obvious to sue others, cornering a resource everyone needs. You profit, but society is <strong>no richer</strong> — you just captured more of what already existed.</p>
+    </div>
+  </div>
+
+  <p class="body">Notice that both can make you equally wealthy — the rent-seeker and the creator might end up with identical fortunes. The difference isn't in the size of the reward; it's in whether anything was <em>added</em> to get it. And this matters enormously for a whole society, not just for moral bookkeeping: an economy that mostly rewards value creation grows, invents, and lifts living standards, because the way to get rich is to make everyone better off. An economy that mostly rewards rent-seeking stagnates, because the smartest, most ambitious people learn that the fastest path to wealth isn't building a better thing — it's grabbing control of something that already exists and charging for access. Where the rewards point, the talent follows.</p>
+
+  <div class="pullquote">
+    <p>Two people can make the same fortune — one by baking a bigger pie, one by seizing the knife. To the bank account they look identical. To the economy they are opposites.</p>
+  </div>
+
+  <!-- SECTION II -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">Why Rent-Seeking Is So Hard to See</span></div>
+
+  <p class="body">The distinction is clear in theory. In practice, two features make rent-seeking one of the most camouflaged forces in the economy — which is exactly why naming it is a skill worth having.</p>
+
+  <div class="types">
+    <div class="type-cell">
+      <p class="type-label">Lever 1</p>
+      <p class="type-name">Extraction wears the language of creation</p>
+      <p class="type-text">No one calls themselves a rent-seeker. The toll-collector says they "provide access," the lobbyist says they "protect the industry," the monopolist says they "earned their position." The vocabulary of value creation — "we built this," "we serve customers," "we earned it" — gets draped over pure extraction. The disguise is the default, which is why you have to look at what was actually <em>added</em>, not at what's claimed.</p>
+    </div>
+    <div class="type-cell">
+      <p class="type-label">Lever 2</p>
+      <p class="type-name">The best rents come from rules, not markets</p>
+      <p class="type-text">The most lucrative rent-seeking isn't done in the market — it's done to the <em>rules</em> of the market. Lobbying for a regulation only you can meet, a patent stretched past invention, a license that blocks rivals, a subsidy with your name on it. Capturing the rule-makers is cheaper than out-competing, and pays better. This is why concentrated wealth so often flows toward influencing government: the rules are where the richest rents are written.</p>
+    </div>
+  </div>
+
+  <div class="inset">
+    <strong>The question to carry everywhere:</strong> when someone grows wealthy, ask — <em>did they make the pie bigger, or just capture a larger slice? What, exactly, did they add — and would the world be poorer if they vanished, or only they would be?</em> The fortune alone tells you nothing; identical fortunes come from opposite sources. The skill is seeing past "we earned it" to whether anything was actually created — because an economy is healthy or sick depending on which one it pays the most.</p>
+  </div>
+
+  <!-- SECTION III — APPLY (break removed; long intro) -->
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">The Same Question, Three Contexts</span></div>
+
+  <p class="body">Watch the create-or-capture test sort a clear creator, a clear rent-seeker, and the hard case where the same act could be either.</p>
+
+  <div class="context">
+    <p class="context-meta">Context One · Creation</p>
+    <p class="context-name">An inventor builds something genuinely new</p>
+    <div class="context-body">
+      <p>Someone designs a cheaper, cleaner way to do something people need, and grows wealthy selling it. The world now has a thing it didn't have before; living standards rise; competitors are pushed to do better. This is value creation — the fortune came <em>with</em> a gain for everyone. Even a temporary monopoly here (a patent on a true invention) can be defended as the reward that motivated the creating. The pie is bigger, and the inventor's slice came from the growth.</p>
+      <p class="context-q">What was added? Something real — the world is richer for it.</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Two · Extraction</p>
+    <p class="context-name">Buying the only bridge and raising the toll</p>
+    <div class="context-body">
+      <p>Someone buys the single bridge into a town and charges everyone more to cross. They produced nothing, improved nothing, invented nothing — they simply seized a chokepoint others must use and collected a toll. The town is poorer; the owner is richer by exactly that amount. This is rent-seeking in its purest form: wealth from control, not creation. And notice the likely defense — "we're investing in vital infrastructure," "we provide essential access." The language of creation, draped over a toll booth. Lever 1, exactly.</p>
+      <p class="context-q">What was added? Nothing — only the toll changed hands.</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Three · The hard case</p>
+    <p class="context-name">A platform that connects buyers and sellers — and then raises its cut</p>
+    <div class="context-body">
+      <p>A marketplace platform genuinely creates value at first: it connects buyers and sellers who couldn't find each other, a real service worth paying for. But once everyone depends on it and rivals can't form (network effects, lock-in), it can keep raising the fee it takes from every sale — far beyond the cost of the service it provides. The early value was created; the later increase is extracted. Same company, same platform, and the line between creating and rent-seeking runs right through the middle of it. This is the case worth arguing over — and the reason the test must be applied continuously, not just once.</p>
+      <p class="context-q">Is today's cut paying for value created — or extracting because escape is impossible?</p>
+    </div>
+  </div>
+
+  <!-- ACTIVITY -->
+  <div class="sec-header"><span class="sec-roman">IV</span><span class="sec-title">Activity — Create or Capture?</span></div>
+
+  <p class="body">For each, decide whether the wealth comes mainly from creating value (bigger pie) or capturing it (rent-seeking) — and name what, if anything, was actually added to the world. Watch for the hard cases that are some of both.</p>
+
+  <div class="tbl-wrap">
+    <table class="cmp">
+      <thead>
+        <tr><th>How the money is made</th><th>Create or capture? What was added?</th><th>Disguised as creation?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>A farmer grows and sells more food</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A company lobbies for a law only it can comply with</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>An investor funds a new factory that hires hundreds</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Someone buys up patents only to sue others</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A firm corners the supply of a needed medicine</td><td class="fill">…</td><td class="fill">…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Write</p>
+    <p class="task-title">Find a toll booth dressed as a service</p>
+    <p class="task-body">Name a fee, charge, or fortune you suspect is more rent-seeking than value creation — where someone profits mainly from controlling access rather than from adding something. What's the "we earned it" story they tell? And what, honestly, would the world lose if they disappeared — the thing, or just their toll?</p>
+    <div class="writelines"><div class="writeline"></div><div class="writeline"></div><div class="writeline"></div></div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="sec-header"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list">
+    <li>"Two identical fortunes can come from opposite sources." Why does it matter to a whole society <em>how</em> wealth was made, not just how much — if the money spends the same either way?</li>
+    <li>The richest rent-seeking is done to the rules, not in the market — lobbying, patents, licenses. Does that change how you think about the relationship between concentrated wealth and government? What would limit it?</li>
+    <li>The platform case is genuinely hard: real value created early, extraction later, same company. How would you decide when a fair fee has crossed into a rent? Who should make that call?</li>
+    <li>If talented, ambitious people go where the rewards are, what happens to a society that pays rent-seeking better than value creation? How would you change where the rewards point?</li>
+  </ol>
+
+  <div class="closing">
+    <p>One person bakes a bigger pie. Another seizes the only knife.<br>Their fortunes can be identical; their effect on the world is opposite.<br>An economy becomes what it rewards —<br>so learning to tell creation from capture is learning to see its future.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

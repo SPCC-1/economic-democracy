@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Commons — Concept Library — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+.concept-tag{display:inline-block;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .6rem;margin-bottom:.9rem;}
+
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+
+.defbox{border:1px solid var(--black);background:var(--white);padding:1.1rem 1.4rem;margin:1.5rem 0;}
+.defbox-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.defbox p{font-size:.92rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.defbox strong{font-weight:600;color:var(--black);}
+
+/* create vs extract two-column */
+.four{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.four-cell{background:var(--paper);padding:1rem 1.2rem;}
+.four-cell:nth-child(even){background:var(--cream);}
+.four-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem;}
+.four-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.3rem;}
+.four-text{font-size:.8rem;font-weight:300;color:var(--ink);line-height:1.55;}
+.four-text strong{font-weight:600;color:var(--charcoal);}
+@media(max-width:600px){.four{grid-template-columns:1fr;}}
+
+.types{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.type-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.type-cell:nth-child(even){background:var(--cream);}
+.type-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.type-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.15;}
+.type-text{font-size:.81rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.types{grid-template-columns:1fr;}}
+
+.context{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.context-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.context-name{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.context-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.context-body p{margin-bottom:.5rem;}
+.context-body p:last-child{margin-bottom:0;}
+.context-q{font-size:.82rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.6rem;margin-top:.5rem;line-height:1.5;}
+
+.tbl-wrap{margin:1.25rem 0;overflow-x:auto;}
+.cmp{width:100%;border-collapse:collapse;font-size:.8rem;min-width:540px;}
+.cmp th,.cmp td{border:1px solid var(--rule);padding:.55rem .7rem;vertical-align:top;line-height:1.45;text-align:left;}
+.cmp th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.cmp td:first-child{background:var(--cream);font-weight:600;color:var(--charcoal);font-size:.76rem;}
+.cmp .fill{color:var(--muted);font-style:italic;}
+
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing,.cmp th,.concept-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .context,.task,.types,.four,.defbox,.inset,.tbl-wrap{break-inside:avoid;}
+  .closing{margin:1.4rem 0 0;}
+  .doc-footer{margin-top:1.4rem;}
+  .closing.tight-top{margin-top:1.1rem;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+.sec-header.tight-top{margin-top:1.5rem;}
+.closing.tight-top{margin-top:1.4rem;}
+.dq-list.tight li{padding-top:.45rem;padding-bottom:.45rem;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="concept-tag">Concept Library · Distribution</p>
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Concept Primer</p>
+    <h1 class="masthead-title">The Commons</h1>
+    <p class="masthead-sub">The things no one owns and everyone uses — and the puzzle of how shared resources get ruined, or get governed, depending on the rules around them.</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">Picture a village pasture open to everyone. Each family grazes its sheep there, and for a long time it works: the grass renews, the flocks are fed, no one owns the field but everyone shares it. Then one herder reasons that adding one more sheep costs the field a little but feeds the family a lot — so he adds it. Every other herder reasons the same way, because each one keeps the full gain of an extra animal while the cost of the worn grass is split among all. Soon there are too many sheep, the grass is gone, and the field that fed everyone now feeds no one. That field is a <strong>commons</strong>: a resource held in common, available to all, owned by none — and the story of how it can collapse is one of the oldest puzzles in economics.</p>
+
+  <p class="body">The puzzle matters far beyond sheep, because commons are everywhere. The fish in the ocean, the clean air, the groundwater under a valley, a public park, the quiet of a shared apartment building, even the trust that lets strangers do business — all are resources many people draw on and no single person owns. Some flourish for generations; others get used up, polluted, or wrecked. This primer is about the difference. The tool here is the logic of the commons — why shared resources are uniquely vulnerable to ruin — and the surprising, hopeful discovery that came later: that ruin is not destiny. Whether a commons collapses or thrives turns out to depend almost entirely on one thing — the <em>rules</em> the people sharing it agree to live by.</p>
+
+  <div class="defbox">
+    <p class="defbox-label">The tool, stated plainly</p>
+    <p>A <strong>commons</strong> is a resource shared by many people and owned by no one in particular — a pasture, a fishery, the air, a public space. The <strong>tragedy of the commons</strong> is the trap where each user, acting in their own interest, takes a little more than the resource can sustain, because each keeps the full benefit of their use while the cost is spread across everyone. Acting reasonably alone, all together ruin the thing they all depend on — <em>unless</em> rules govern how it's shared.</p>
+  </div>
+
+  <!-- SECTION I -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">The Tool — Why Sharing Without Rules Breaks Down</span></div>
+
+  <p class="body">Start with the clean logic, because it's genuinely powerful and explains an enormous range of problems. The trap doesn't require anyone to be greedy or stupid. It springs precisely when everyone behaves <em>reasonably</em>. Each individual faces the same arithmetic: the benefit of taking a bit more from the shared resource lands entirely on me, while the cost of the resource wearing down is shared by all the users together. So for each person, taking more is the sensible move — even though, if everyone makes that same sensible move, the resource collapses and everyone loses. The disaster is built from individually rational choices.</p>
+
+  <p class="body">Hold the two halves of the logic side by side, because the gap between them is the whole problem:</p>
+
+  <div class="four">
+    <div class="four-cell">
+      <p class="four-label">What's smart for me</p>
+      <p class="four-name">The Private Calculation</p>
+      <p class="four-text">I keep the <strong>full</strong> benefit of every fish I catch, every sheep I add, every drop I pump. The cost — a slightly emptier ocean, a more worn field — is split among everyone. So taking more always pays me more than it costs me. Each step is reasonable.</p>
+    </div>
+    <div class="four-cell">
+      <p class="four-label">What it does to us</p>
+      <p class="four-name">The Shared Result</p>
+      <p class="four-text">Everyone runs the same calculation at once. The fish vanish, the field is bare, the water runs dry. The resource that could have fed everyone forever is exhausted in a generation — not from malice, but from many sensible people each taking their reasonable share.</p>
+    </div>
+  </div>
+
+  <p class="body">This is why the idea is so clarifying: it shows that you can get a terrible collective outcome without a single villain, just from a structure where private gain and shared cost pull apart. It explains overfished seas, drained aquifers, polluted air, crowded roads, and a hundred other modern problems that look like failures of character but are really failures of <em>arrangement</em>. Granted fully, the tragedy of the commons is one of the sharpest tools in economics for seeing how good-faith individual behavior can add up to collective ruin. The trouble is the conclusion people too quickly draw from it.</p>
+
+  <div class="pullquote">
+    <p>No one set out to destroy the field. Each person simply took a reasonable share — and the sum of reasonable shares was ruin.</p>
+  </div>
+
+  <!-- SECTION II -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">Where the Neat Story Misleads</span></div>
+
+  <p class="body">The logic is real, but it is often pushed into conclusions it doesn't actually support. Two levers show where the tidy "tragedy" story breaks — and why what happens to a commons is far less fixed than the parable suggests.</p>
+
+  <div class="types">
+    <div class="type-cell">
+      <p class="type-label">Lever 1</p>
+      <p class="type-name">"Tragedy" is the outcome with no rules — not an iron law</p>
+      <p class="type-text">The parable quietly assumes the herders can't talk, can't agree, can't enforce anything — strangers acting alone. But real communities often <em>aren't</em> like that. The economist Elinor Ostrom won a Nobel Prize for showing that, all over the world, ordinary people have governed shared fisheries, forests, and water for centuries without collapse — by making their own rules, watching one another, and penalizing overuse. The tragedy isn't destiny; it's what happens specifically when no one can coordinate. Add the ability to agree and enforce, and the same commons can thrive indefinitely.</p>
+    </div>
+    <div class="type-cell">
+      <p class="type-label">Lever 2</p>
+      <p class="type-name">The "solution" you pick reshapes who has power</p>
+      <p class="type-text">Faced with the trap, people reach for one of two fixes — and the choice is never neutral. You can <strong>privatize</strong> the commons (give someone ownership, so they bear the full cost of overuse) or <strong>govern</strong> it collectively (rules, quotas, shared management). Each works in some cases, but each also decides <em>who ends up holding the resource and who gets shut out</em>. Privatizing a shared fishery may save the fish — and hand the sea to whoever could afford to buy it. "Solving" a commons is also dividing it, and the division has winners and losers.</p>
+    </div>
+  </div>
+
+  <div class="inset">
+    <strong>The question to carry everywhere:</strong> when a shared resource is in trouble, ask — <em>is this really doomed by human nature, or just ungoverned? Could the people who depend on it make and enforce their own rules? And whichever fix is proposed — private owner or collective rule — who gains control of the resource, and who loses access to it?</em> The word "tragedy" makes ruin sound inevitable. Usually it's a sign that the rules are missing, not that the people are hopeless — and the rules you choose decide far more than whether the fish survive.</p>
+  </div>
+
+  <!-- SECTION III — APPLY (break removed; long intro) -->
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">The Same Logic, Three Contexts</span></div>
+
+  <p class="body">Watch the commons logic produce a textbook collapse, then a community that governs its way out of the trap, then a "fix" that saves the resource while quietly redistributing who controls it.</p>
+
+  <div class="context">
+    <p class="context-meta">Context One · The trap, unmanaged</p>
+    <p class="context-name">A fishery with no limits empties out</p>
+    <div class="context-body">
+      <p>An open ocean fishery belongs to no one, so every boat catches all it can — because any fish you leave is simply caught by someone else. Each crew's choice is perfectly reasonable, yet together they take more than the fish can replace, and the stock crashes. Boats that fed whole towns now come back empty; the fishery that could have lasted forever is gone in a few decades. This is the pure tragedy: no villains, no rules, just private gain outrunning shared cost until the resource is destroyed.</p>
+      <p class="context-q">Is anyone here acting unreasonably — or is the <em>arrangement</em> itself the problem?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Two · Governed by its users</p>
+    <p class="context-name">Villagers who manage a shared forest for centuries</p>
+    <div class="context-body">
+      <p>The same setup — a shared resource, many users — but here the community can talk and agree. They set rules: how much wood each household may take, when, and what the penalty is for cheating; they watch one another and enforce it themselves. The forest doesn't collapse — it provides for generation after generation. This is Ostrom's discovery in action: given the power to coordinate, ordinary users solve the "tragedy" on their own, with no outside owner and no privatization. The difference from Context One isn't the people or the resource — it's the presence of rules the users made and keep.</p>
+      <p class="context-q">What did the rules add that the open fishery lacked — and who made them?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Three · Saved, but redistributed</p>
+    <p class="context-name">Selling fishing rights to end the free-for-all</p>
+    <div class="context-body">
+      <p>To stop the crash in Context One, a government creates a fixed number of fishing permits and sells them. It works: the catch is capped, the stock recovers, the fish are saved. But notice what else happened. The ocean that once belonged to everyone now effectively belongs to whoever could afford the permits — often the largest operators. The fish survive; the small independent fishers who can't afford a permit are shut out of waters their families worked for generations. The resource was rescued <em>and</em> handed to a narrower group at the same time. Both halves are true, which is exactly why this is the case worth arguing over.</p>
+      <p class="context-q">The fish were saved — but for whom? Who gained the sea, and who lost it?</p>
+    </div>
+  </div>
+
+  <!-- ACTIVITY -->
+  <div class="sec-header tight-top"><span class="sec-roman">IV</span><span class="sec-title">Activity — Is It a Commons? Will It Hold?</span></div>
+
+  <p class="body">For each shared resource, name what's at risk if no one coordinates, and then weigh the two fixes — private ownership vs. collective rules — asking who would gain control and who might be shut out under each.</p>
+
+  <div class="tbl-wrap">
+    <table class="cmp">
+      <thead>
+        <tr><th>The shared resource</th><th>What goes wrong with no rules?</th><th>A fix — and who gains / loses control?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Groundwater pumped by many farms</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Clean air over a city</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A public park everyone uses</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>The shared kitchen in a dorm or apartment</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A free online encyclopedia anyone can edit</td><td class="fill">…</td><td class="fill">…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Write</p>
+    <p class="task-title">Find a commons in your own life</p>
+    <p class="task-body">Name a shared resource you actually use — a family car, a group project, a shared space, a stretch of nature near you. Where does the "tragedy" logic threaten it: where does taking your reasonable share, multiplied by everyone, add up to ruin? Then design the smallest set of rules that would let the people sharing it keep it healthy — and be honest about who'd have to give something up for those rules to work.</p>
+    <div class="writelines"><div class="writeline"></div><div class="writeline"></div><div class="writeline"></div></div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="sec-header tight-top"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list tight">
+    <li>The tragedy of the commons is often told as proof that shared things are doomed and only private ownership works. Ostrom found communities that disprove that. Why might the gloomier version be the one people remember and repeat?</li>
+    <li>Privatizing a commons can save the resource while shutting people out; governing it collectively keeps it shared but needs everyone to follow rules. When would you reach for each — and what does the choice say about what you're trying to protect?</li>
+    <li>Some commons can't easily be privatized or fenced — the air, the climate, the ocean. What does that mean for how they have to be governed, and by whom?</li>
+    <li>What's the smallest set of rules that could keep a shared resource healthy while keeping it open to the most people — and who should get to write and enforce those rules?</li>
+  </ol>
+
+  <div class="closing tight-top">
+    <p>A commons is not doomed and not safe — it is unfinished.<br>The same field can feed a village for centuries or be stripped bare in a season,<br>and what decides between them is never the grass.<br>It is whether the people who share it can agree on how.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

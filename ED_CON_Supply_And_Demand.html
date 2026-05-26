@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Supply &amp; Demand — Concept Library — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+.concept-tag{display:inline-block;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .6rem;margin-bottom:.9rem;}
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+.defbox{border:1px solid var(--black);background:var(--white);padding:1.1rem 1.4rem;margin:1.5rem 0;}
+.defbox-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.defbox p{font-size:.92rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.defbox strong{font-weight:600;color:var(--black);}
+.four{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.four-cell{background:var(--paper);padding:1rem 1.2rem;}
+.four-cell:nth-child(even){background:var(--cream);}
+.four-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem;}
+.four-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.3rem;}
+.four-text{font-size:.8rem;font-weight:300;color:var(--ink);line-height:1.55;}
+.four-text strong{font-weight:600;color:var(--charcoal);}
+@media(max-width:600px){.four{grid-template-columns:1fr;}}
+.types{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.type-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.type-cell:nth-child(even){background:var(--cream);}
+.type-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.type-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.15;}
+.type-text{font-size:.81rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.types{grid-template-columns:1fr;}}
+.context{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.context-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.context-name{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.context-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.context-body p{margin-bottom:.5rem;}
+.context-body p:last-child{margin-bottom:0;}
+.context-q{font-size:.82rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.6rem;margin-top:.5rem;line-height:1.5;}
+.tbl-wrap{margin:1.25rem 0;overflow-x:auto;}
+.cmp{width:100%;border-collapse:collapse;font-size:.8rem;min-width:540px;}
+.cmp th,.cmp td{border:1px solid var(--rule);padding:.55rem .7rem;vertical-align:top;line-height:1.45;text-align:left;}
+.cmp th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.cmp td:first-child{background:var(--cream);font-weight:600;color:var(--charcoal);font-size:.76rem;}
+.cmp .fill{color:var(--muted);font-style:italic;}
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing,.cmp th,.concept-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .context,.task,.types,.four,.defbox,.inset,.tbl-wrap{break-inside:avoid;}
+  .sec-header{margin:1.9rem 0 1rem;}
+  .context{margin:1.1rem 0;}
+  .four,.types,.defbox,.inset,.pullquote{margin-top:1.2rem;margin-bottom:1.2rem;}
+  .task{margin:1.3rem 0;}
+  .closing{margin:1.2rem 0 0;}
+  .doc-footer{margin-top:1.2rem;}
+  .closing.tight-top{margin-top:.8rem;}
+  .dq-list.tight li{padding-top:.34rem;padding-bottom:.34rem;}
+  .sec-header.tight-top{margin-top:1rem;margin-bottom:.85rem;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+.sec-header.tight-top{margin-top:1.5rem;}
+.closing.tight-top{margin-top:1.4rem;}
+.dq-list.tight li{padding-top:.45rem;padding-bottom:.45rem;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="concept-tag">Concept Library · Allocation</p>
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Concept Primer</p>
+    <h1 class="masthead-title">Supply &amp; Demand</h1>
+    <p class="masthead-sub">The most basic engine in all of economics — how a price no one decides emerges from the tug-of-war between what sellers will offer and what buyers will pay.</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">No one sets the price of a cup of coffee. That sounds wrong — surely the café decides — but follow it through. If the café charges too much, customers walk away and it must come down. If it charges too little, it sells out by noon and lost money it could have made, so it nudges up. The café is not so much <em>setting</em> the price as <em>discovering</em> it — feeling for the number where the coffee it wants to sell and the coffee customers want to buy happen to match. Multiply that across every café, every product, every market, and you arrive at the most fundamental idea in economics: prices are not handed down by anyone. They <strong>emerge</strong> from a continuous tug-of-war between two forces — how much sellers are willing to supply, and how much buyers are willing to demand — and they settle, restlessly, at the point where the two balance. This is <strong>supply and demand</strong>, and almost everything else in economics is built on top of it.</p>
+
+  <p class="body">The idea is so familiar that its strangeness gets lost. There is no committee assigning the price of bread, no authority deciding how many should be baked — and yet bread is priced, and roughly the right amount appears, in cities of millions, every day. Supply and demand is the invisible coordinator that pulls this off: a <strong>price</strong> is really a <em>signal</em>, a single number that carries an enormous amount of information about how scarce something is and how badly people want it, and that signal silently tells producers what to make and buyers what they can afford. This primer teaches that mechanism in full, because it genuinely is one of the most elegant and powerful ideas humans have ever worked out. Then it turns to the two things the tidy diagram of crossing lines quietly assumes — assumptions that, when they fail, mean the "market price" is telling you something other than what it appears to.</p>
+
+  <div class="defbox">
+    <p class="defbox-label">The tool, stated plainly</p>
+    <p><strong>Demand</strong> is how much of something buyers will purchase at each price — generally, the lower the price, the more they'll buy. <strong>Supply</strong> is how much sellers will offer at each price — generally, the higher the price, the more they'll make. The <strong>price</strong> tends to settle at the <strong>equilibrium</strong>: the point where the quantity buyers want exactly equals the quantity sellers offer, so the market "clears" with no shortage or glut. When demand or supply shifts — a shortage, a new fashion, a bad harvest — the price moves to find a new balance. A price is thus a <em>signal</em>, compressing scarcity and desire into one number that coordinates millions of decisions no one is directing.</p>
+  </div>
+
+  <!-- SECTION I -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">The Tool — The Tug-of-War That Sets a Price</span></div>
+
+  <p class="body">Start with the two forces, because once you see them pulling against each other the whole mechanism falls into place. <strong>Demand</strong> slopes one way: as a price rises, buyers want less of a thing — they economize, substitute, or do without — and as it falls, they want more. <strong>Supply</strong> slopes the other: as a price rises, sellers want to provide more — it's worth their while — and as it falls, they provide less. Picture the two as opposing pulls on the same rope. Where they balance is the <strong>equilibrium price</strong>: the one number at which the amount offered exactly matches the amount wanted, so everything for sale finds a buyer and every willing buyer finds a good. Above that price, sellers have made too much and a glut forces the price down; below it, buyers compete for too little and a shortage drives the price up. The market is always groping toward that balance.</p>
+
+  <p class="body">Now see why this is genuinely remarkable, not just mechanical. Watch what a price does when something changes:</p>
+
+  <div class="four">
+    <div class="four-cell">
+      <p class="four-label">A shortage appears</p>
+      <p class="four-name">The Signal Rises</p>
+      <p class="four-text">A bad harvest cuts the supply of wheat. The price climbs — and that higher number does work: it tells buyers to economize, tells <strong>other</strong> farmers it's worth planting wheat, and rations the scarce supply to those who most need it. No one ordered any of this; the price organized it.</p>
+    </div>
+    <div class="four-cell">
+      <p class="four-label">Desire shifts</p>
+      <p class="four-name">The Signal Falls</p>
+      <p class="four-text">A product falls out of fashion; demand drops. The price falls — telling sellers to make less and shift resources elsewhere, and freeing those materials and workers for things people now want more. The signal redirects the economy without a single command.</p>
+    </div>
+  </div>
+
+  <p class="body">This is the quiet miracle worth granting fully: supply and demand coordinates a staggeringly complex economy <em>without anyone in charge of it.</em> A price gathers up information scattered across millions of minds — every buyer's need, every seller's cost — that no central planner could ever collect, and compresses it into a single number that tells everyone what to do. When the price of something rises, more of it gets made and less of it gets wasted, automatically. This is why market economies can supply a city with food and fuel and ten thousand other things, reliably, with no one directing the whole. Granted in full, supply and demand is one of the most powerful coordinating mechanisms ever discovered. The complications begin when you ask what, exactly, that elegant equilibrium price is measuring — and whether the tug-of-war was fair.</p>
+
+  <div class="pullquote">
+    <p>A price is a signal no one writes. It gathers what every buyer needs and every seller can bear, and compresses it into one number — coordinating millions of strangers who never meet.</p>
+  </div>
+
+  <!-- SECTION II -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">What the Crossing Lines Quietly Assume</span></div>
+
+  <p class="body">The mechanism is real and the coordination is genuine. But the clean diagram of two crossing lines rests on two assumptions that don't always hold — and when they fail, the "market price" is measuring something other than what it seems to.</p>
+
+  <div class="types">
+    <div class="type-cell">
+      <p class="type-label">Lever 1</p>
+      <p class="type-name">The price answers willingness to pay, not urgency of need</p>
+      <p class="type-text">Demand, in the model, means willingness <em>and ability</em> to pay — not need. So the equilibrium price clears the market beautifully while quietly ignoring anyone who needs the good badly but can't afford it. In a drought, the price of water rises until the quantity demanded matches the scarce supply — efficient, and exactly right by the model — yet the person priced out may need that water most of all. The market clears; it does not care who clears it. This isn't a flaw in the math; it's what the math is silent about. A price measures desire backed by dollars, and reads need and money as the same thing when they are not.</p>
+    </div>
+    <div class="type-cell">
+      <p class="type-label">Lever 2</p>
+      <p class="type-name">The tug-of-war assumes neither side has power</p>
+      <p class="type-text">The tidy model assumes many buyers and many sellers, all small, none able to bend the price — a fair tug-of-war. Real markets often aren't. A lone seller of something essential (a monopoly) can hold the price far above where competition would put it. A desperate buyer with no alternatives — someone who needs the only apartment, the only insulin — has no real bargaining power and pays whatever is asked. And when one side knows far more than the other, the better-informed party captures the gap. In all these cases the price still "emerges," but it reflects <em>who held the leverage</em> as much as what the thing is worth. The curves can be bent by power.</p>
+    </div>
+  </div>
+
+  <div class="inset">
+    <strong>The questions to carry everywhere:</strong> when you see a price, ask — <em>is this measuring how much people value the thing, or only how much money those who want it happen to have?</em> And — <em>was this set by a fair tug-of-war among many small players, or bent by someone with the power to hold it where they want?</em> Supply and demand is a genuine wonder of coordination, and most of the time the price it produces is doing real, honest work. Reading it well means knowing the two things it cannot see: the need of those without money, and the thumb of those with power.</p>
+  </div>
+
+  <!-- SECTION III -->
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">The Same Engine, Three Markets</span></div>
+
+  <p class="body">Watch supply and demand work in three real markets — one where the signal works beautifully, one where it clears the market but misses the need, and the hard case where power bends the price.</p>
+
+  <div class="context">
+    <p class="context-meta">Market One · The signal at its best</p>
+    <p class="context-name">A surge in demand for a popular gadget</p>
+    <div class="context-body">
+      <p>A new device becomes wildly popular. Demand jumps, the price rises, and that rising price does exactly the work it should: it signals manufacturers to ramp up production, draws competitors into the market, and over time the increased supply brings the price back down as more devices reach more people. No authority planned the expansion; the price signal coordinated the whole response — scarcity today, abundance tomorrow, all steered by a number. This is supply and demand at its most elegant, and it's worth admiring plainly: the mechanism turned a shortage into a wave of production that served millions, automatically.</p>
+      <p class="context-q">What did the rising price <em>do</em> here that no planner could have done as well?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Market Two · Clears the market, misses the need</p>
+    <p class="context-name">Housing in a city where everyone wants to live</p>
+    <div class="context-body">
+      <p>A city's housing is limited and many people want to live there. Demand far outstrips supply, so rents rise until the quantity of housing demanded matches what exists — the market clears, exactly as the model says it should. But notice what "clearing" meant: the people who could pay got the homes, and the people who needed them but couldn't were priced out and pushed to the margins. The price did its job perfectly and left real need unmet, because it was reading wallets, not need. Building more housing (raising supply) genuinely helps — but the episode shows the model working as designed and still producing an outcome many would call unjust.</p>
+      <p class="context-q">The market cleared efficiently — so why does the outcome still trouble us, and what was the price unable to see?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Market Three · The hard case</p>
+    <p class="context-name">A life-saving drug with a single maker</p>
+    <div class="context-body">
+      <p>A medicine that people need to live is made by only one company, which holds a patent. There is no competing seller, and buyers cannot do without it — so the fair tug-of-war the model assumes simply isn't there. The company can set the price far above its cost, and desperate buyers will pay because the alternative is unbearable. Defenders note the high price funds the research that produced the drug and will fund the next one — a real argument. Critics see raw pricing power exploiting people with no choice — also real. Both are pointing at the same fact: when one side holds all the leverage, the "market price" stops being a neutral signal of value and becomes a measure of power. This is the case worth arguing over, because neither "let the market decide" nor "ignore the cost of the cure" is a clean answer.</p>
+      <p class="context-q">Is this price a fair signal of value, or the product of leverage — and does the answer change what should be done?</p>
+    </div>
+  </div>
+
+  <!-- ACTIVITY -->
+  <div class="sec-header tight-top"><span class="sec-roman">IV</span><span class="sec-title">Activity — Read the Price</span></div>
+
+  <p class="body">For each case, say which way the price moves and why (which curve shifted), then ask the two questions: is it measuring need or money, and was the tug-of-war fair?</p>
+
+  <div class="tbl-wrap">
+    <table class="cmp">
+      <thead>
+        <tr><th>The situation</th><th>Which way does the price move? Why?</th><th>Fair signal — or bent by need/power?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>A frost destroys half the orange crop</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A new phone everyone wants just launched</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Bottled water during a city-wide emergency</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>The only landlord in a remote town raises rent</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A fad fades and the product stops selling</td><td class="fill">…</td><td class="fill">…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Write</p>
+    <p class="task-title">Defend the price — then read what it misses</p>
+    <p class="task-body">First, make the strongest case that letting prices emerge from supply and demand is genuinely good: what does the price signal accomplish that no planner or committee could do as well? Then complicate it honestly: pick a real market where the equilibrium price either ignored someone's need or reflected someone's power, and explain what the price was actually measuring there. Finally, take a position: for that case, what is the smallest intervention — if any — you'd make to address the need or the power, without breaking the signal that makes the whole system work?</p>
+    <div class="writelines"><div class="writeline"></div><div class="writeline"></div><div class="writeline"></div></div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="sec-header tight-top"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list tight">
+    <li>No one sets the market price, yet roughly the right amount of bread appears in a city of millions every day. Why is that genuinely remarkable — and what could no central planner replicate?</li>
+    <li>A price measures willingness <em>and ability</em> to pay, not need. When does that distinction matter most — and is there a fair way to honor need without destroying the signal?</li>
+    <li>The clean model assumes no one has the power to bend the price. Name a real market where one side clearly does. How can you tell when a price reflects value versus leverage?</li>
+    <li>What's the smallest intervention in a market that would address an unmet need or an abuse of pricing power — while doing the least damage to the signal that coordinates the whole economy?</li>
+  </ol>
+
+  <div class="closing tight-top">
+    <p>A price is the most ordinary thing in the world and one of the strangest:<br>a number no one writes, that tells everyone what to do, coordinating strangers who never meet.<br>Most of the time it works a quiet wonder no planner could match.<br>But it sees money, not need, and bends to power — so read what the price says, and what it cannot.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

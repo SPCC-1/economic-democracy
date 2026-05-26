@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Profit Motive — Concept Library — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+.concept-tag{display:inline-block;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .6rem;margin-bottom:.9rem;}
+
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+
+.defbox{border:1px solid var(--black);background:var(--white);padding:1.1rem 1.4rem;margin:1.5rem 0;}
+.defbox-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.defbox p{font-size:.92rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.defbox strong{font-weight:600;color:var(--black);}
+
+.types{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.type-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.type-cell:nth-child(even){background:var(--cream);}
+.type-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.type-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.15;}
+.type-text{font-size:.81rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.types{grid-template-columns:1fr;}}
+
+.context{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.context-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.context-name{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.context-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.context-body p{margin-bottom:.5rem;}
+.context-body p:last-child{margin-bottom:0;}
+.context-q{font-size:.82rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.6rem;margin-top:.5rem;line-height:1.5;}
+
+.tbl-wrap{margin:1.25rem 0;overflow-x:auto;}
+.cmp{width:100%;border-collapse:collapse;font-size:.8rem;min-width:540px;}
+.cmp th,.cmp td{border:1px solid var(--rule);padding:.55rem .7rem;vertical-align:top;line-height:1.45;text-align:left;}
+.cmp th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.cmp td:first-child{background:var(--cream);font-weight:600;color:var(--charcoal);font-size:.76rem;}
+.cmp .fill{color:var(--muted);font-style:italic;}
+
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing,.cmp th,.concept-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .context,.task,.types,.defbox,.inset,.tbl-wrap{break-inside:avoid;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="concept-tag">Concept Library · Engines</p>
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Concept Primer</p>
+    <h1 class="masthead-title">The Profit Motive</h1>
+    <p class="masthead-sub">The most powerful engine humans have ever built for getting things made — and a machine that pursues exactly what it's pointed at, whether or not that's what's good.</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">Almost everything around you exists because someone could make money making it. The phone in your pocket, the shoes on your feet, the food in the store, the apps you use for free — none of it was produced because a committee decided you needed it. It was produced because someone saw a chance to profit by giving you something you'd pay for. That drive — the pursuit of gain as the reason to produce, invent, and improve — is the <strong>profit motive</strong>, and it is the central engine of a market economy.</p>
+
+  <p class="body">People tend to have a loud opinion about it before they understand it, and that's the trap this primer is built to avoid. To one side, the profit motive is greed, the root of exploitation. To the other, it's the sacred source of all prosperity. Both are half right, and being only half right about this particular idea will mislead you constantly. The honest truth is stranger and more useful: the profit motive is an astonishingly powerful tool that does <em>exactly what it is pointed at</em> — and whether that serves human beings depends entirely on whether what pays lines up with what's good. Sometimes it does, beautifully. Sometimes it doesn't, and the same engine drives straight off a cliff with perfect efficiency.</p>
+
+  <div class="defbox">
+    <p class="defbox-label">The tool, stated plainly</p>
+    <p>The <strong>profit motive</strong> is the drive to produce and sell things in order to earn more than they cost to make. That gap between cost and price — profit — is the reward that motivates people to create goods, take risks, and improve on what exists. In a market economy, it is the primary force directing what gets made and how.</p>
+  </div>
+
+  <!-- SECTION I -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">The Tool — Why Profit Gets Things Made</span></div>
+
+  <p class="body">Start with the genuine power, because it is enormous and the curriculum takes it seriously. The profit motive solves a problem every society faces: how do you get millions of people to do the hard, uncertain work of producing what others need, without anyone ordering them to? Answer: let them keep the gain. A baker bakes before dawn not out of duty to strangers but because the bread sells. A company pours years into a new medicine because curing a disease can be profitable. The pursuit of private gain ends up producing a torrent of public benefit — food, tools, medicine, invention — that no central command has ever matched.</p>
+
+  <p class="body">It is also relentlessly efficient in a way that matters. Profit rewards doing more with less: a business that wastes less, serves customers better, or invents something genuinely useful earns more and grows. Over time this pressure drives the whole economy to improve — cheaper goods, better products, constant innovation. This is the real case for the profit motive, and it is strong. An economy that ignored it has never out-produced one that harnessed it. Grant all of that fully before turning the page on it.</p>
+
+  <div class="pullquote">
+    <p>The profit motive doesn't ask what's good. It asks what pays. When those are the same thing, it works miracles. The whole question is what happens when they're not.</p>
+  </div>
+
+  <!-- SECTION II -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">What the Engine Optimizes For</span></div>
+
+  <p class="body">The profit motive is neutral the way an engine is neutral — it drives powerfully toward wherever it's aimed. Two features determine whether that direction is good, and they're where the tool becomes a lever.</p>
+
+  <div class="types">
+    <div class="type-cell">
+      <p class="type-label">Lever 1</p>
+      <p class="type-name">It optimizes for what pays, not what's good</p>
+      <p class="type-text">Profit tracks what people will pay for — which usually overlaps with what's useful, but not always. Where harming others is profitable (pollution that's cheaper than cleanup, an addictive product, a cut corner no one sees), the same engine drives straight toward the harm, just as efficiently as it drives toward good. It has no built-in sense of "good." It has a sense of "pays."</p>
+    </div>
+    <div class="type-cell">
+      <p class="type-label">Lever 2</p>
+      <p class="type-name">It's blind to what isn't priced</p>
+      <p class="type-text">If something has no price — clean air, a stable climate, a worker's dignity, the truth — the profit motive can't see it. Costs pushed onto others (externalities) and benefits no one can charge for (basic research, public health) fall outside its vision. The engine isn't evil; it's blind to everything the market doesn't put a number on, and it runs right over it.</p>
+    </div>
+  </div>
+
+  <div class="inset">
+    <strong>The question to carry everywhere:</strong> for any activity driven by profit, ask — <em>does what pays here line up with what's good, or has the engine been pointed at something harmful or blind to something that isn't priced?</em> The profit motive is not the villain and not the savior. It is a tool of immense power that goes exactly where it's aimed. The real work — for markets, for law, for citizens — is aiming it, and catching it where it's pointed wrong.</p>
+  </div>
+
+  <!-- SECTION III — APPLY -->
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">The Same Engine, Three Contexts</span></div>
+
+  <p class="body">Watch the identical motive — earn more than it costs — produce a marvel, a harm, and a blind spot, depending only on what it's pointed at.</p>
+
+  <div class="context">
+    <p class="context-meta">Context One · Aligned</p>
+    <p class="context-name">A company races to build a better, cheaper product</p>
+    <div class="context-body">
+      <p>A firm wants profit, so it works to make something people genuinely want at a price they'll happily pay — faster, better, cheaper than its rivals. Here what pays and what's good line up almost perfectly: the company gets rich by making customers better off. This is the profit motive at its best, and it is responsible for a staggering share of human progress. Notice how clean it feels, so you can feel the difference in the next two.</p>
+      <p class="context-q">Does what pays line up with what's good? Here, yes.</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Two · Pointed at harm</p>
+    <p class="context-name">A product is engineered to be addictive</p>
+    <div class="context-body">
+      <p>A company discovers that making its product slightly more habit-forming — more sugar, more outrage, more compulsion to keep scrolling — increases what people pay or how long they stay. The profit motive drives straight toward that, because it pays, even though it harms the user. Same engine, same efficiency, opposite result. The firm isn't malfunctioning; it's working perfectly, aimed at a target where profit and human good have come apart.</p>
+      <p class="context-q">Does what pays line up with what's good? Here, no — and the engine doesn't notice.</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Three · Blind spot</p>
+    <p class="context-name">No one will fund the cure that isn't profitable</p>
+    <div class="context-body">
+      <p>A disease mostly affects poor people who can't pay much. Curing it would be enormously good — and barely profitable. So the profit motive, left alone, doesn't aim there; research dollars flow to profitable treatments for the wealthy instead. Nothing harmful is being done. The good simply isn't getting made, because it isn't priced high enough to attract the engine. This is the blindness of Lever 2 — and the reason some goods need a force other than profit to produce them.</p>
+      <p class="context-q">Is the good going unmade because it can't be priced?</p>
+    </div>
+  </div>
+
+  <!-- ACTIVITY -->
+  <div class="sec-header"><span class="sec-roman">IV</span><span class="sec-title">Activity — Aim the Engine</span></div>
+
+  <p class="body">For each case, decide: is the profit motive aligned (what pays = what's good), pointed at harm (profit comes from hurting someone), or blind (a good thing goes unmade because it isn't priced)? Then name what, if anything, could re-aim it.</p>
+
+  <div class="tbl-wrap">
+    <table class="cmp">
+      <thead>
+        <tr><th>The activity</th><th>Aligned, pointed at harm, or blind?</th><th>What could re-aim it?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>A startup invents a cheaper solar panel</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A factory dumps waste because cleanup costs more</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A social app maximizes time-on-screen</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>No firm researches a disease of the very poor</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A grocer competes by lowering prices</td><td class="fill">…</td><td class="fill">…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Write</p>
+    <p class="task-title">Where the engine is pointed in your life</p>
+    <p class="task-body">Name one thing you use or experience that exists because of the profit motive. Is what pays lined up with what's good for you — or has the engine been aimed somewhere that profits the maker at your expense? How can you tell the difference?</p>
+    <div class="writelines"><div class="writeline"></div><div class="writeline"></div><div class="writeline"></div></div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="sec-header"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list">
+    <li>"The profit motive is neither villain nor savior — it goes exactly where it's aimed." Do you buy that, or does the motive itself push toward harm more often than toward good? Defend your view.</li>
+    <li>When what pays and what's good line up, the profit motive works miracles. Whose job is it to notice when they come apart — the company, the government, the customer, all three?</li>
+    <li>Some genuinely good things — cures for the poor, basic research, clean air — aren't profitable. If the profit motive can't produce them, what should? And what does that alternative cost?</li>
+    <li>Is it possible to "aim" the profit motive at good outcomes without destroying the very thing that makes it powerful? Name one way someone has tried, and whether it worked.</li>
+  </ol>
+
+  <div class="closing">
+    <p>The profit motive is the strongest engine we have ever built.<br>It does not know good from harm — only what pays from what doesn't.<br>Pointed right, it lifts the world.<br>The work of a democracy is knowing when it's pointed wrong.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sovereignty — Concept Library — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+.concept-tag{display:inline-block;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .6rem;margin-bottom:.9rem;}
+
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+
+.defbox{border:1px solid var(--black);background:var(--white);padding:1.1rem 1.4rem;margin:1.5rem 0;}
+.defbox-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.defbox p{font-size:.92rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.defbox strong{font-weight:600;color:var(--black);}
+
+/* create vs extract two-column */
+.four{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.four-cell{background:var(--paper);padding:1rem 1.2rem;}
+.four-cell:nth-child(even){background:var(--cream);}
+.four-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem;}
+.four-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.3rem;}
+.four-text{font-size:.8rem;font-weight:300;color:var(--ink);line-height:1.55;}
+.four-text strong{font-weight:600;color:var(--charcoal);}
+@media(max-width:600px){.four{grid-template-columns:1fr;}}
+
+.types{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.type-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.type-cell:nth-child(even){background:var(--cream);}
+.type-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.type-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.15;}
+.type-text{font-size:.81rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.types{grid-template-columns:1fr;}}
+
+.context{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.context-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.context-name{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.context-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.context-body p{margin-bottom:.5rem;}
+.context-body p:last-child{margin-bottom:0;}
+.context-q{font-size:.82rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.6rem;margin-top:.5rem;line-height:1.5;}
+
+.tbl-wrap{margin:1.25rem 0;overflow-x:auto;}
+.cmp{width:100%;border-collapse:collapse;font-size:.8rem;min-width:540px;}
+.cmp th,.cmp td{border:1px solid var(--rule);padding:.55rem .7rem;vertical-align:top;line-height:1.45;text-align:left;}
+.cmp th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.cmp td:first-child{background:var(--cream);font-weight:600;color:var(--charcoal);font-size:.76rem;}
+.cmp .fill{color:var(--muted);font-style:italic;}
+
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing,.cmp th,.concept-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .context,.task,.types,.four,.defbox,.inset,.tbl-wrap{break-inside:avoid;}
+  .sec-header{margin:1.9rem 0 1rem;}
+  .context{margin:1.1rem 0;}
+  .four,.types,.defbox,.inset,.pullquote{margin-top:1.2rem;margin-bottom:1.2rem;}
+  .task{margin:1.3rem 0;}
+  .closing{margin:1.2rem 0 0;}
+  .doc-footer{margin-top:1.2rem;}
+  .closing.tight-top{margin-top:.8rem;}
+  .dq-list.tight li{padding-top:.34rem;padding-bottom:.34rem;}
+  .sec-header.tight-top{margin-top:1rem;margin-bottom:.85rem;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+.sec-header.tight-top{margin-top:1.5rem;}
+.closing.tight-top{margin-top:1.4rem;}
+.dq-list.tight li{padding-top:.45rem;padding-bottom:.45rem;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="concept-tag">Concept Library · Power</p>
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Concept Primer</p>
+    <h1 class="masthead-title">Sovereignty</h1>
+    <p class="masthead-sub">The power to control your own economic fate — and the hard truth that the same dependence which makes everyone richer also hands someone power over you.</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">Imagine someone who grows all their own food, makes their own clothes, builds their own shelter, and needs no one. They are completely <em>self-sufficient</em> — and almost certainly poor, exhausted, and fragile, because no one person can do all those things well. Now imagine the opposite: someone who buys everything and makes nothing, dependent on others for every necessity. They are richer and freer to specialize — and utterly exposed, because anyone they rely on can cut them off. Between those two poles lies one of the deepest questions in economics, and it scales from a single person all the way up to a nation: <strong>how much control do you have over your own economic fate, and what did you trade away to get the prosperity you enjoy?</strong> That question is the question of <strong>sovereignty</strong>.</p>
+
+  <p class="body">Economic sovereignty is the degree to which a person, a community, or a nation actually controls the things its survival and prosperity depend on — its food, its money, its energy, its essential supplies, its ability to set its own rules. The remarkable thing is that the logic is identical at every scale. A worker with one employer, a town with one factory, a country reliant on one foreign supplier of a critical good — all face the same structure: real benefits flow from the dependence, and real power flows <em>to</em> whoever they depend on. This primer grants the genuine value of sovereignty fully, and then examines the trade that always comes with it — because sovereignty is never free, and the people who tell you otherwise are usually selling one side of a bargain that has two.</p>
+
+  <div class="defbox">
+    <p class="defbox-label">The tool, stated plainly</p>
+    <p><strong>Economic sovereignty</strong> is the degree of control a person, community, or nation has over the resources and decisions its prosperity depends on — the capacity to act on its own terms rather than on terms set by those it relies on. Its opposite is not poverty but <strong>dependence</strong>: relying on others for essential things. Crucially, sovereignty is rarely all-or-nothing; it is a matter of degree, and it trades off against the <strong>gains of interdependence</strong> — the wealth that comes from specializing and relying on others.</p>
+  </div>
+
+  <!-- SECTION I -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">The Tool — Why Control Over Your Own Fate Matters</span></div>
+
+  <p class="body">Grant the value of sovereignty fully, because it is real and easy to undersell in a world that celebrates global trade. To have sovereignty is to be able to act on your own terms — to not be at the mercy of someone who can cut off the thing you can't live without. A person who can support themselves can walk away from a bad job or a bad relationship. A community that controls its own essentials can't be held hostage by a single outside owner. A nation that can feed itself, power itself, and issue its own money cannot be brought to its knees by another country simply turning off a tap. Sovereignty is, at bottom, the economic foundation of <em>freedom</em>: the room to make your own choices because no one else holds the lever over your survival.</p>
+
+  <p class="body">And the danger sovereignty guards against is not hypothetical. Dependence is leverage in someone else's hands, and history is full of that leverage being used — embargoes, supply cutoffs, a lone employer in a company town, a lender who can call the loan. Hold the two faces of the situation side by side, because the whole concept lives in their tension:</p>
+
+  <div class="four">
+    <div class="four-cell">
+      <p class="four-label">What sovereignty gives</p>
+      <p class="four-name">Control &amp; Security</p>
+      <p class="four-text">The power to act on your own terms; the security of knowing no single other party can cut off what you need to survive. You can refuse a bad deal, weather a cutoff, set your own rules. This is the foundation of real independence, at every scale.</p>
+    </div>
+    <div class="four-cell">
+      <p class="four-label">What sovereignty costs</p>
+      <p class="four-name">Lost Gains of Trade</p>
+      <p class="four-text">Doing it all yourself means doing much of it badly and expensively. The wealth of the modern world comes from <strong>specializing</strong> and trading — relying on others who do things better. Pure self-sufficiency is pure independence and almost always pure poverty.</p>
+    </div>
+  </div>
+
+  <p class="body">This is the heart of it: sovereignty and the gains of interdependence pull against each other. The more you rely on others, the richer you can become — and the more exposed you are to their power over you. The more self-sufficient you are, the freer from that power — and the poorer and less efficient you tend to be. No setting maximizes both at once. Granted fully, sovereignty is a genuine and vital good — the economic ground of freedom. The trouble is that it is never free, and pretending it is — on either side — is where clear thinking breaks down.</p>
+
+  <div class="pullquote">
+    <p>Self-sufficiency is freedom and poverty at once. Dependence is wealth and vulnerability at once. Sovereignty is the name for where, between them, you choose to stand.</p>
+  </div>
+
+  <!-- SECTION II -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">Where the Idea of Sovereignty Misleads</span></div>
+
+  <p class="body">Sovereignty is a real good, but it is constantly oversimplified — usually by someone who wants you to ignore one half of the trade. Two levers show where the clean idea breaks against reality.</p>
+
+  <div class="types">
+    <div class="type-cell">
+      <p class="type-label">Lever 1</p>
+      <p class="type-name">Sovereignty and prosperity trade off — there's no free version</p>
+      <p class="type-text">The cleanest mistake is treating sovereignty as a pure good with no cost. But every step toward self-sufficiency sacrifices the wealth that specialization and trade create, and every step toward those gains sacrifices some control. "Bring it all home and depend on no one" sounds strong, but it can mean making things slowly and expensively that others make better and cheaper — leaving everyone poorer. The honest question is never "sovereignty: yes or no?" but "<em>how much</em> control over <em>which</em> essentials is worth <em>how much</em> forgone prosperity?" Anyone selling sovereignty as costless, or trade as risk-free, is hiding half the ledger.</p>
+    </div>
+    <div class="type-cell">
+      <p class="type-label">Lever 2</p>
+      <p class="type-name">Formal independence can hide deep dependence</p>
+      <p class="type-text">A person, town, or nation can look fully independent on paper and be profoundly controlled in fact — because sovereignty is really about <em>leverage</em>, and leverage hides in the chokepoints. A country with its own flag and laws can still be at the mercy of whoever supplies its fuel, its medicine, or the one chip its economy runs on. The power isn't in who's formally in charge; it's in who controls the thing the other side can't do without. So "we're independent" can be a comforting story laid over a real and unequal dependence — and noticing the chokepoint matters far more than counting the flags.</p>
+    </div>
+  </div>
+
+  <div class="inset">
+    <strong>The question to carry everywhere:</strong> when someone claims independence — or urges you toward it — ask, <em>at every scale</em>: <em>what does this person, community, or nation actually depend on others for, and who controls that chokepoint? What prosperity would more self-sufficiency cost, and what vulnerability does the current dependence create?</em> Sovereignty is not a slogan to be for or against. It is a dial — set somewhere between fragile self-sufficiency and exposed dependence — and the only real questions are where to set it, for which essentials, and at what price.</p>
+  </div>
+
+  <!-- SECTION III — APPLY (break removed; long intro) -->
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">The Same Logic, Three Scales</span></div>
+
+  <p class="body">Watch the identical sovereignty trade play out at three scales — a single person, a community, and a nation — so you can see it is one logic, not three separate ones.</p>
+
+  <div class="context">
+    <p class="context-meta">Scale One · The person</p>
+    <p class="context-name">A worker who depends on a single employer</p>
+    <div class="context-body">
+      <p>Someone holds a good job at the only large employer in their area. The pay is real and the work is steady — genuine gains from depending on that employer. But because there's nowhere else to go, they can't easily push back on conditions, demand a raise, or quit a bad situation: the employer holds the lever. Their formal freedom to leave is real on paper and nearly empty in practice. To gain sovereignty — savings, a second skill, options elsewhere — would cost time, money, and maybe the comfort of the steady job. The dial is right there in a single life: more security, less control, and a chokepoint held by someone else.</p>
+      <p class="context-q">What does this person depend on, who holds the lever, and what would more independence cost them?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Scale Two · The community</p>
+    <p class="context-name">A town built around one industry or one owner</p>
+    <div class="context-body">
+      <p>A town thrives because one company built a plant there — jobs, tax revenue, a Main Street that fills up on payday. Real prosperity, all flowing from dependence on that single firm. But the town's fate now rests in a boardroom it doesn't control: if the company leaves, automates, or demands tax breaks "or else," the town has little leverage to refuse. Diversifying — courting other employers, building local enterprises — would buy sovereignty, but slowly and at the cost of the easy prosperity the one big firm provides. Same structure as the worker, one scale up: the gains are real, and so is the lever in someone else's hand.</p>
+      <p class="context-q">Is the town independent because it's prosperous — or quietly captive to the firm that made it so?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Scale Three · The nation</p>
+    <p class="context-name">A country reliant on one foreign source for a critical good</p>
+    <div class="context-body">
+      <p>A nation grows wealthy by importing a critical good — energy, medicine, advanced chips — cheaply from abroad rather than making it at home. The gains are enormous: lower prices, access to things it couldn't make as well itself. But it now depends on the supplier's goodwill, and if relations sour, that supplier can turn the tap — an embargo, a cutoff, a price shock — and bring real pain. Making the good domestically would restore sovereignty but cost more and waste the advantages of trade. The exact same dial as the worker and the town, now between nations — and notice that "bring it home" and "keep trading" are each half-right, which is precisely why it's the case worth arguing over.</p>
+      <p class="context-q">How much would self-reliance cost — and how much vulnerability does the cheap dependence buy?</p>
+    </div>
+  </div>
+
+  <!-- ACTIVITY -->
+  <div class="sec-header tight-top"><span class="sec-roman">IV</span><span class="sec-title">Activity — Spot the Dial</span></div>
+
+  <p class="body">For each situation, name what's depended on, who holds the chokepoint, and the trade: what would more sovereignty cost, and what vulnerability does the current dependence create?</p>
+
+  <div class="tbl-wrap">
+    <table class="cmp">
+      <thead>
+        <tr><th>The situation</th><th>Depends on what? Who holds the lever?</th><th>Cost of more sovereignty? / Vulnerability now?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>A student living entirely on an allowance from a parent</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A nation that imports nearly all its food</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A business reliant on one platform for all its customers</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A country that makes everything itself, trades little</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A region whose power grid depends on one supplier</td><td class="fill">…</td><td class="fill">…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Write</p>
+    <p class="task-title">Find the chokepoint in your own life</p>
+    <p class="task-body">Name something you depend on that you don't control — a person, a job, an app, a single source of something you need. What do you gain from that dependence, and what power does it hand to whoever holds the other end? What would it cost you — in money, time, or comfort — to become more sovereign over it? Then decide honestly: is the dependence worth it, or is the chokepoint too dangerous to leave in someone else's hands?</p>
+    <div class="writelines"><div class="writeline"></div><div class="writeline"></div><div class="writeline"></div></div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="sec-header tight-top"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list tight">
+    <li>The same sovereignty logic runs from a single worker to a whole nation. Does seeing it at all three scales change how you think about any one of them — your own dependence, or your country's?</li>
+    <li>"Bring it all home and depend on no one" and "trade freely and get rich" are each half-right. For a critical good like energy or medicine, how would you decide how much to make at home versus import?</li>
+    <li>A nation can have its own flag and laws yet be controlled through a chokepoint it doesn't hold. Is formal independence worth much without economic sovereignty — and which matters more?</li>
+    <li>What's the smallest step that would give a person, community, or nation more control over an essential it depends on — without throwing away the prosperity that dependence provides?</li>
+  </ol>
+
+  <div class="closing tight-top">
+    <p>No one is an island, and no one who is wishes to stay one.<br>Every gain from depending on others is also a lever placed in their hand;<br>every step toward standing alone is freedom bought with prosperity.<br>Sovereignty is not a wall or an open door — it is knowing which to build, and where.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

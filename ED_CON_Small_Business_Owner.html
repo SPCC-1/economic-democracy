@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Small Business Owner — Concept Library — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+.concept-tag{display:inline-block;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .6rem;margin-bottom:.9rem;}
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+.defbox{border:1px solid var(--black);background:var(--white);padding:1.1rem 1.4rem;margin:1.5rem 0;}
+.defbox-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.defbox p{font-size:.92rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.defbox strong{font-weight:600;color:var(--black);}
+.four{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.four-cell{background:var(--paper);padding:1rem 1.2rem;}
+.four-cell:nth-child(even){background:var(--cream);}
+.four-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem;}
+.four-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.3rem;}
+.four-text{font-size:.8rem;font-weight:300;color:var(--ink);line-height:1.55;}
+.four-text strong{font-weight:600;color:var(--charcoal);}
+@media(max-width:600px){.four{grid-template-columns:1fr;}}
+.types{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.type-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.type-cell:nth-child(even){background:var(--cream);}
+.type-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.type-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.15;}
+.type-text{font-size:.81rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.types{grid-template-columns:1fr;}}
+.context{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.context-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.context-name{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.context-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.context-body p{margin-bottom:.5rem;}
+.context-body p:last-child{margin-bottom:0;}
+.context-q{font-size:.82rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.6rem;margin-top:.5rem;line-height:1.5;}
+.tbl-wrap{margin:1.25rem 0;overflow-x:auto;}
+.cmp{width:100%;border-collapse:collapse;font-size:.8rem;min-width:540px;}
+.cmp th,.cmp td{border:1px solid var(--rule);padding:.55rem .7rem;vertical-align:top;line-height:1.45;text-align:left;}
+.cmp th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.cmp td:first-child{background:var(--cream);font-weight:600;color:var(--charcoal);font-size:.76rem;}
+.cmp .fill{color:var(--muted);font-style:italic;}
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing,.cmp th,.concept-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .context,.task,.types,.four,.defbox,.inset,.tbl-wrap{break-inside:avoid;}
+  .sec-header{margin:1.9rem 0 1rem;}
+  .context{margin:1.1rem 0;}
+  .four,.types,.defbox,.inset,.pullquote{margin-top:1.2rem;margin-bottom:1.2rem;}
+  .task{margin:1.3rem 0;}
+  .closing{margin:1.2rem 0 0;}
+  .doc-footer{margin-top:1.2rem;}
+  .closing.tight-top{margin-top:.8rem;}
+  .dq-list.tight li{padding-top:.34rem;padding-bottom:.34rem;}
+  .sec-header.tight-top{margin-top:1rem;margin-bottom:.85rem;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+.sec-header.tight-top{margin-top:1.5rem;}
+.closing.tight-top{margin-top:1.4rem;}
+.dq-list.tight li{padding-top:.45rem;padding-bottom:.45rem;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="concept-tag">Concept Library · Distribution</p>
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Concept Primer</p>
+    <h1 class="masthead-title">The Small Business Owner</h1>
+    <p class="masthead-sub">The most common form ownership actually takes — and the daily reality behind the romance: a life lived in the narrow gap between the revenue coming in and the debt going out.</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">The founder primer is about the leap. This one is about the morning after — and every morning after that. Because for most people who own a business, the defining experience is not a dramatic bet on a brilliant idea; it is the relentless, unglamorous management of <strong>money coming in against money going out.</strong> Will this week's sales cover payroll, rent, the supplier, and the loan payment? That question, asked over and over, is the actual texture of small-business ownership — and it reveals the concept's true spine: a small business survives only as long as its <strong>revenue</strong> (cash coming in) stays ahead of its <strong>obligations</strong> (the bills and debt going out). Fall behind for too long and the business closes, no matter how good the idea was. The small business owner lives on that knife-edge, and understanding them means understanding that gap, not the highlight reel.</p>
+
+  <p class="body">There are more than twenty-six million sole proprietors in the United States, and most are not the venture-backed founders of the popular imagination. They are the people who run the corner restaurant, the cleaning service, the repair shop, the one-person consultancy — and a great many of them operate in survival mode, where the business depends entirely on the owner's own labor and a slow month is a genuine threat. This primer grants small business its real and considerable honor: it is the most <em>accessible</em> form of ownership in the economy, the realest path most people have to working for themselves and building something of their own without needing wealth or a pedigree to start. And then it turns, honestly, to two things the bootstraps story tends to skip: for most owners the "business" is closer to a job they own than an asset that builds wealth, and the structural forces of debt and scale press hardest on exactly the smallest players.</p>
+
+  <div class="defbox">
+    <p class="defbox-label">The tool, stated plainly</p>
+    <p>A <strong>small business owner</strong> owns and operates a going concern — a business already running, as opposed to the entrepreneur's act of founding one. The defining daily reality is <strong>cash flow</strong>: the business lives only as long as <strong>revenue</strong> (money coming in) covers its <strong>obligations</strong> (wages, rent, supplies, and debt payments going out). Most small businesses run on <strong>thin margins</strong> and rely on <strong>debt</strong> to start and survive. Small business is the most accessible on-ramp to ownership in the economy — but a business becomes a genuine wealth-building <em>asset</em> only when it grows beyond the owner's own labor, and most never do.</p>
+  </div>
+
+  <!-- SECTION I -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">The Tool — Living on the Cash-Flow Knife-Edge</span></div>
+
+  <p class="body">Grant small business its genuine honor, because it is the most democratic form of ownership we have. You do not need family money, an elite network, or venture capital to open a food cart, start a landscaping business, or hang out a shingle as a tradesperson. For millions of people — immigrants, working families, anyone shut out of inherited wealth — a small business is the single most realistic way to stop renting their labor to someone else and start owning something. It is the on-ramp to economic agency that asks for grit and a small stake rather than a pedigree, and it is the backbone of neighborhoods: the businesses that employ locally, keep money circulating, and give a community its texture. When we honor small business owners, we are honoring something real — the people who took the accessible path to ownership and do the daily work of keeping it alive.</p>
+
+  <p class="body">And that daily work is, at its core, the management of one gap. Watch the two sides the owner must keep in balance every single week:</p>
+
+  <div class="four">
+    <div class="four-cell">
+      <p class="four-label">Coming in</p>
+      <p class="four-name">Revenue</p>
+      <p class="four-text">Sales — often unpredictable, seasonal, or lumpy. A good week and a slow week can look completely different, but the bills don't pause for a slow week. Revenue is the lifeblood, and its irregularity is a constant source of stress.</p>
+    </div>
+    <div class="four-cell">
+      <p class="four-label">Going out</p>
+      <p class="four-name">Obligations</p>
+      <p class="four-text">Payroll, rent, suppliers, taxes, and — crucially — <strong>debt payments</strong>, which are fixed and due regardless of how sales went. These don't flex with a bad month. When the gap closes or inverts, the owner is in danger.</p>
+    </div>
+  </div>
+
+  <p class="body">Everything else about small-business ownership flows from keeping that gap open. It's why owners work punishing hours, why a single large unpaid invoice can be a crisis, why the difference between thriving and closing can be one bad season. And it's worth granting plainly that managing this well is real skill and real grit — the owner who keeps a small business alive for years through lean times and good has accomplished something genuinely hard, and has built something many people would never dare attempt. The accessibility is real, the achievement is real, and the contribution to a community is real. The complications come not from doubting any of that, but from looking clearly at what that hard-won survival usually does — and does not — build.</p>
+
+  <div class="pullquote">
+    <p>The romance is the idea and the independence. The reality is a number: will this week's revenue cover this week's obligations? Owning a small business means living, every week, inside that question.</p>
+  </div>
+
+  <!-- SECTION II -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">What the Bootstraps Story Skips</span></div>
+
+  <p class="body">The accessibility and the grit are real. But two things the "be your own boss" story tends to skip change what small-business ownership usually amounts to — not because owners do anything wrong, but because of how the math and the structure work.</p>
+
+  <div class="types">
+    <div class="type-cell">
+      <p class="type-label">Lever 1</p>
+      <p class="type-name">For most owners, it's a job, not an asset</p>
+      <p class="type-text">Recall the Capital primer: an asset builds wealth because it keeps producing even when you stop. By that test, most small businesses aren't really assets — they're jobs the owner happens to own. The business earns only while the owner works it; the day they stop, the income stops, and there's often nothing left to sell, because the "business" <em>was</em> the owner's own labor. This matters enormously: it means the most common form of ownership frequently doesn't deliver ownership's central promise — a compounding, sellable asset that builds wealth across a life. A business becomes a true wealth-building asset only when it grows beyond the founder's own hands, and most, for entirely understandable reasons, never cross that line. So "owning a business" and "building wealth" are not the same thing, though the romance treats them as one.</p>
+    </div>
+    <div class="type-cell">
+      <p class="type-label">Lever 2</p>
+      <p class="type-name">Debt and scale press hardest on the small</p>
+      <p class="type-text">Small businesses survive on thin margins and borrowed money, which makes them acutely fragile: a slow season, a rent increase, a rise in interest rates, or one large customer paying late can be fatal, because there's little cushion to absorb the shock. And they're squeezed from above — the same economies of scale that make large firms efficient (cheaper supplies, lower borrowing costs, the power to undercut on price) systematically disadvantage the small. So "be your own boss" runs straight into structural forces that make <em>staying</em> small precarious: the owner can do everything right and still be ground down by a downturn or out-competed by a giant who can simply afford to lose money longer. The playing field the romance imagines is flat; the real one tilts against the small.</p>
+    </div>
+  </div>
+
+  <div class="inset">
+    <strong>The questions to carry everywhere:</strong> when you see a small business, ask — <em>is this building an asset the owner could one day sell or pass on, or is it a job they own that ends when they stop?</em> And — <em>how much of this owner's fate is in their hands, and how much is set by debt, thin margins, and competitors large enough to outlast them?</em> Small business is the most accessible ownership most people will ever have, and the grit it takes is real. Reading it honestly means seeing both the genuine on-ramp it offers — and how often the road it leads to is a job rather than wealth, on a field tilted toward the big.</p>
+  </div>
+
+  <!-- SECTION III -->
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">The Same Gap, Three Owners</span></div>
+
+  <p class="body">Watch the revenue-and-debt reality play out in three real situations — the on-ramp at its best, the job-that-isn't-an-asset, and the hard case where staying small means staying squeezed.</p>
+
+  <div class="context">
+    <p class="context-meta">Owner One · The on-ramp at its best</p>
+    <p class="context-name">A business that grew beyond its founder</p>
+    <div class="context-body">
+      <p>Someone opens a small bakery. For years it's all cash-flow grind — long hours, thin margins, every week a question. But it works, and crucially it <em>grows past the owner</em>: they hire and train staff, open a second location, build systems so the business runs without their hands on every loaf. Now it's a genuine asset — it produces income whether or not the owner is behind the counter, and one day it could be sold or passed to their children. This is small business delivering on its full promise: the accessible on-ramp that actually became the highway, turning grit and a small stake into real, compounding ownership. Grant it plainly — this is the dream, and it does happen.</p>
+      <p class="context-q">What was the threshold this business crossed that turned a job into an asset?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Owner Two · The job that isn't an asset</p>
+    <p class="context-name">Thirty years of ownership, nothing to sell</p>
+    <div class="context-body">
+      <p>Another owner runs a one-person business — a skilled tradesperson, say — for thirty years. They make a decent living, are proud of their independence, and serve their community well. But the business never grew beyond their own two hands: it earns only when they work, and when they retire, there is nothing to sell, because the business <em>was</em> them. They owned a job, not an asset. This is not a failure — a good living and real independence are worth a great deal — but it shows the gap between the romance and the reality: thirty years of ownership that delivered a livelihood but not the compounding wealth that ownership is supposed to promise. Most small businesses look more like this than like the bakery.</p>
+      <p class="context-q">Did this owner "build wealth through ownership"? What did they get, and what did the romance over-promise?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Owner Three · The hard case</p>
+    <p class="context-name">The shop a giant can simply outlast</p>
+    <div class="context-body">
+      <p>A capable owner runs a solid local store — well-run, fairly priced, beloved by regulars. Then a national chain opens nearby with prices the small store cannot match, because the chain buys cheaper, borrows cheaper, and can afford to lose money on the location for years to win the market. The small owner did nothing wrong; they're simply on the losing side of scale economics. Defenders say this is competition working — lower prices for customers, the efficient winning. Critics say it's the structural crushing of the small by the large, hollowing out local ownership. Both are describing something real: the customer may genuinely benefit while the community loses an owner, and the small business that "failed" may have been beaten by a field that was never level. This is the case worth arguing over, because "let competition decide" and "protect the small" are both incomplete answers.</p>
+      <p class="context-q">If the owner did everything right and still lost to scale, was that competition working — or a tilted field — and does it matter which?</p>
+    </div>
+  </div>
+
+  <!-- ACTIVITY -->
+  <div class="sec-header tight-top"><span class="sec-roman">IV</span><span class="sec-title">Activity — Job or Asset, Flat Field or Tilted?</span></div>
+
+  <p class="body">For each, decide whether the business is a job or a wealth-building asset, and whether the owner's main threat is their own cash flow or a structural force (debt, scale, a larger competitor).</p>
+
+  <div class="tbl-wrap">
+    <table class="cmp">
+      <thead>
+        <tr><th>The situation</th><th>Job or asset? Why?</th><th>Main threat: cash flow, debt, or scale?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>A freelancer who earns only when personally working</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A café that hires staff and opens a second location</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A shop carrying heavy debt through a slow season</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A hardware store next to a new big-box chain</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A family business handed down and sold at retirement</td><td class="fill">…</td><td class="fill">…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Write</p>
+    <p class="task-title">Honor the owner — then read the gap</p>
+    <p class="task-body">First, make the strongest case that small business is a vital and honorable thing: what does it offer that almost nothing else in the economy does, and why is its accessibility worth protecting? Then complicate it honestly: explain the difference between owning a job and owning an asset, and why debt and scale press hardest on the smallest players. Finally, take a position: knowing small business is both the most accessible on-ramp to ownership and often a precarious job rather than real wealth, what is the smallest thing — if any — you'd do to help small businesses cross from job to asset, without distorting honest competition?</p>
+    <div class="writelines"><div class="writeline"></div><div class="writeline"></div><div class="writeline"></div></div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="sec-header tight-top"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list tight">
+    <li>The defining reality of small-business ownership is the gap between revenue and obligations. Why does that daily cash-flow pressure shape so much of what an owner can and can't do?</li>
+    <li>A business becomes a real asset only when it grows beyond the owner's own labor — and most never do. Is owning a job you can't sell still "ownership" in the meaningful sense?</li>
+    <li>When a chain outcompetes a local store on price, the customer benefits and the community loses an owner. How should you weigh those against each other — and was the field fair?</li>
+    <li>What's the smallest change that would help small businesses cross from job to wealth-building asset, or weather the debt-and-scale squeeze, without protecting them from honest competition?</li>
+  </ol>
+
+  <div class="closing tight-top">
+    <p>Small business is the most accessible ownership most people will ever reach — grit and a small stake, no pedigree required.<br>The owner lives, every week, in the gap between the money coming in and the debt going out.<br>But survival is not the same as wealth: most own a job rather than an asset, on a field that tilts toward the big.<br>So honor the on-ramp fully — and ask, honestly, where the road actually leads, and who it lets through.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

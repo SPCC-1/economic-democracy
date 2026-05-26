@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Public Goods — Concept Library — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+.concept-tag{display:inline-block;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .6rem;margin-bottom:.9rem;}
+
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+
+.defbox{border:1px solid var(--black);background:var(--white);padding:1.1rem 1.4rem;margin:1.5rem 0;}
+.defbox-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.defbox p{font-size:.92rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.defbox strong{font-weight:600;color:var(--black);}
+
+/* 2x2 matrix for goods types */
+.matrix-wrap{margin:1.5rem 0;overflow-x:auto;}
+.gmatrix{width:100%;border-collapse:collapse;font-size:.8rem;min-width:540px;}
+.gmatrix th,.gmatrix td{border:1px solid var(--rule);padding:.7rem .8rem;vertical-align:top;line-height:1.5;text-align:left;}
+.gmatrix th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.05em;text-transform:uppercase;font-weight:500;}
+.gmatrix td:first-child{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.05em;text-transform:uppercase;font-weight:500;width:120px;vertical-align:middle;}
+.gmatrix .gname{font-family:'Playfair Display',serif;font-weight:700;color:var(--black);font-size:.92rem;display:block;margin-bottom:.2rem;}
+.gmatrix .gex{color:var(--mid);font-size:.78rem;}
+.gmatrix .highlight{background:var(--cream);}
+
+.types{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.type-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.type-cell:nth-child(even){background:var(--cream);}
+.type-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.type-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.15;}
+.type-text{font-size:.81rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.types{grid-template-columns:1fr;}}
+
+.context{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.context-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.context-name{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.context-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.context-body p{margin-bottom:.5rem;}
+.context-body p:last-child{margin-bottom:0;}
+.context-q{font-size:.82rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.6rem;margin-top:.5rem;line-height:1.5;}
+
+.tbl-wrap{margin:1.25rem 0;overflow-x:auto;}
+.cmp{width:100%;border-collapse:collapse;font-size:.8rem;min-width:540px;}
+.cmp th,.cmp td{border:1px solid var(--rule);padding:.55rem .7rem;vertical-align:top;line-height:1.45;text-align:left;}
+.cmp th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.cmp td:first-child{background:var(--cream);font-weight:600;color:var(--charcoal);font-size:.76rem;}
+.cmp .fill{color:var(--muted);font-style:italic;}
+
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing,.cmp th,.gmatrix th,.gmatrix td:first-child,.concept-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .context,.task,.types,.defbox,.inset,.tbl-wrap,.matrix-wrap{break-inside:avoid;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="concept-tag">Concept Library · Distribution</p>
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Concept Primer</p>
+    <h1 class="masthead-title">Public Goods</h1>
+    <p class="masthead-sub">Some of the most valuable things a society has cannot be sold for a profit — which is exactly why the market won't make them, and someone else must.</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">Imagine you build a lighthouse to keep ships off the rocks. Every ship that passes is safer for it — including ships whose owners never paid you a cent. You can't shine the light only on paying customers, and one ship using the light doesn't leave any less light for the next. So how do you make money selling lighthouse service? You can't, really. Everyone benefits, no one has to pay, and so no business will build the lighthouse — even though the lighthouse is obviously worth building. That gap is the puzzle of the <strong>public good</strong>.</p>
+
+  <p class="body">A public good has two unusual features: you can't easily stop non-payers from enjoying it, and one person's use doesn't use it up. National defense, clean air, basic scientific research, a system of laws, a lit and paved street — all share this shape. They're enormously valuable, but because no one can be charged for them and no one can be excluded, the profit motive simply won't produce them. This is one of the most important ideas in economics, because it marks the exact boundary where markets, for all their power, reliably fail — and where a society has to decide to provide something <em>together</em> or go without it entirely. And deciding <em>what</em> belongs on that list turns out to be one of the most consequential political questions there is.</p>
+
+  <div class="defbox">
+    <p class="defbox-label">The tool, stated plainly</p>
+    <p>A <strong>public good</strong> is something that is <em>non-excludable</em> (you can't easily prevent people who didn't pay from using it) and <em>non-rivalrous</em> (one person using it doesn't reduce what's available to others). Because no one can be charged or excluded, markets under-produce public goods — so they're usually provided collectively, through government or shared institutions, or not at all.</p>
+  </div>
+
+  <!-- SECTION I -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">The Tool — Why Markets Won't Build the Lighthouse</span></div>
+
+  <p class="body">Start with the two features, because together they explain the failure exactly. <em>Non-excludable</em> means you can't fence it off: once clean air exists, everyone breathes it; once a street is lit, everyone sees. <em>Non-rivalrous</em> means it isn't used up: my breathing the clean air leaves just as much for you; my listening to a radio broadcast doesn't shrink your reception. Most ordinary goods are the opposite — a sandwich is excludable (no pay, no sandwich) and rivalrous (I eat it, you can't). Those, markets handle beautifully. Public goods break both rules, and that's precisely why markets choke on them.</p>
+
+  <p class="body">The deep reason is the <strong>free-rider problem</strong>. If you'll get the benefit whether or not you pay, the rational move is to let someone else pay and enjoy it for free. But if everyone reasons that way, no one pays, and the good never gets made — even though everyone wanted it and everyone is worse off without it. This isn't people being bad; it's a trap built into the structure. It's why national defense, clean air, and basic research can't be left to the market: not because markets are evil, but because these goods are shaped so that profit can't reach them. The market isn't failing at its job here. This is simply outside what its job can do.</p>
+
+  <div class="matrix-wrap">
+    <table class="gmatrix">
+      <thead>
+        <tr><th></th><th>Used up by use (rivalrous)</th><th>Not used up (non-rivalrous)</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Can exclude non-payers</td>
+          <td><span class="gname">Private good</span><span class="gex">A sandwich, a phone, a haircut — markets handle these well.</span></td>
+          <td><span class="gname">Club good</span><span class="gex">Cable TV, a toll road, a streaming service — excludable, so sellable.</span></td>
+        </tr>
+        <tr>
+          <td>Can't exclude non-payers</td>
+          <td><span class="gname">Common resource</span><span class="gex">A fishery, groundwater — shared and depletable (see: the commons).</span></td>
+          <td class="highlight"><span class="gname">Public good</span><span class="gex">Defense, clean air, basic research, street lighting — the market won't build these.</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pullquote">
+    <p>If you get the benefit whether you pay or not, why pay? And if everyone thinks that, the thing everyone wants never gets built.</p>
+  </div>
+
+  <!-- SECTION II -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">Where the Tool Becomes a Question</span></div>
+
+  <p class="body">The definition is neutral economics. But two things turn "public good" from a category into one of the sharpest political fights there is.</p>
+
+  <div class="types">
+    <div class="type-cell">
+      <p class="type-label">Lever 1</p>
+      <p class="type-name">The boundary is a choice, not a fact</p>
+      <p class="type-text">Is education a public good or a private purchase? Healthcare? The internet? Many things <em>could</em> be provided either way, and societies disagree sharply about which belong on the "provide together" list. Calling something a public good is a claim that it should be funded collectively — which is why the label is fought over. The line isn't discovered; it's drawn, politically.</p>
+    </div>
+    <div class="type-cell">
+      <p class="type-label">Lever 2</p>
+      <p class="type-name">Technology keeps moving the line</p>
+      <p class="type-text">What's excludable changes over time. A road was once a near-public good; tolling tech made it sellable. Knowledge is naturally non-rivalrous — infinitely copyable — yet patents and paywalls make it excludable on purpose, turning a potential public good into a private one. Who gets to fence off what was once shared is itself a decision about power.</p>
+    </div>
+  </div>
+
+  <div class="inset">
+    <strong>The question to carry everywhere:</strong> when something valuable isn't being provided, or is being fenced off, ask — <em>is this a true public good the market structurally can't make, and who is deciding whether we provide it together or let it go unmade?</em> The economics tells you when markets will fail to deliver. It does not tell you what to do about it — that's a choice a society makes, and the list of what we build together is one of the most revealing things about who we are.</p>
+  </div>
+
+  <!-- SECTION III — APPLY (break removed; long intro) -->
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">The Same Idea, Three Contexts</span></div>
+
+  <p class="body">Watch the public-good logic explain a clear case, a contested one, and a thing deliberately fenced off.</p>
+
+  <div class="context">
+    <p class="context-meta">Context One · Clear</p>
+    <p class="context-name">National defense and clean air</p>
+    <div class="context-body">
+      <p>You cannot defend only the people who paid for the army, and one person's safety from invasion doesn't reduce anyone else's. Same with clean air: it can't be sold by the breath, and your breathing leaves plenty for me. These are textbook public goods — non-excludable, non-rivalrous — and essentially every society provides them collectively, because the market structurally cannot. Few people argue otherwise. The uncontroversial core of the concept.</p>
+      <p class="context-q">Can the market make this? Structurally, no — so we build it together.</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Two · Contested</p>
+    <p class="context-name">Is education a public good?</p>
+    <div class="context-body">
+      <p>Schooling can be sold (private schools exist) and a seat is rivalrous (a full classroom excludes the next child) — so by the strict definition it isn't a pure public good. Yet an educated population benefits everyone, including those without children, through a stronger economy and democracy. So is it a private purchase or something we provide together? Societies genuinely disagree, and the disagreement isn't about economics — it's about values. This is Lever 1: the boundary is being <em>drawn</em>, not discovered.</p>
+      <p class="context-q">Could this go either way — and who's deciding which?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Three · Fenced off</p>
+    <p class="context-name">Knowledge behind a paywall</p>
+    <div class="context-body">
+      <p>An idea, a piece of research, a song — once created, it's naturally non-rivalrous: a million people can use it without using it up, which would make it a perfect public good. But patents, copyrights, and paywalls deliberately make it <em>excludable</em>, converting a potential public good into a private, sellable one. Sometimes that's how we reward creators; sometimes it locks away knowledge everyone could have shared at no cost to anyone. That's Lever 2 — a choice about who gets to fence off what nature made shareable.</p>
+      <p class="context-q">Was this fenced off to reward creation — or to capture what could've been shared?</p>
+    </div>
+  </div>
+
+  <!-- ACTIVITY -->
+  <div class="sec-header"><span class="sec-roman">IV</span><span class="sec-title">Activity — Sort the Goods</span></div>
+
+  <p class="body">For each item, decide where it sits: private good, club good, common resource, or public good — using the two tests (can you exclude non-payers? is it used up by use?). Then, for the contested ones, say whether you think it <em>should</em> be provided together, and why.</p>
+
+  <div class="tbl-wrap">
+    <table class="cmp">
+      <thead>
+        <tr><th>The thing</th><th>Which kind of good? (excludable? rivalrous?)</th><th>Provide together? Why?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>A streetlight</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A vaccine (and the immunity it spreads)</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Basic scientific research</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Internet access</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A concert</td><td class="fill">…</td><td class="fill">…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Write</p>
+    <p class="task-title">Something you'd put on the list — or take off</p>
+    <p class="task-body">Name one thing your society currently provides together (or doesn't) that you'd argue belongs on the other side of the line. Is it a true public good the market can't make, or a values choice about what we owe each other? Make the case, and name what it would cost.</p>
+    <div class="writelines"><div class="writeline"></div><div class="writeline"></div><div class="writeline"></div></div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="sec-header"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list">
+    <li>The free-rider problem means a thing everyone wants can go unbuilt because each person waits for others to pay. Where, besides lighthouses, do you see this trap — and how do societies escape it?</li>
+    <li>Whether education or healthcare is a "public good" isn't really an economics question — it's a values question wearing economics clothes. Why does it matter to be clear about which kind of question you're answering?</li>
+    <li>Knowledge could be a perfect public good — infinitely shareable at no cost — yet we fence much of it off with patents and paywalls. When is that fencing fair reward, and when is it capturing what should be shared?</li>
+    <li>The list of things a society builds together reveals what it believes it owes its members. What's on your society's list — and what does that say about its values?</li>
+  </ol>
+
+  <div class="closing">
+    <p>Some of the most valuable things we have cannot be sold —<br>so the market, for all its power, will never make them.<br>What we choose to build together instead,<br>and what we leave unbuilt, is a portrait of who we are.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>
