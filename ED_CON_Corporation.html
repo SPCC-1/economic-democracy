@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Corporation — Concept Library — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+.concept-tag{display:inline-block;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .6rem;margin-bottom:.9rem;}
+
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+
+.defbox{border:1px solid var(--black);background:var(--white);padding:1.1rem 1.4rem;margin:1.5rem 0;}
+.defbox-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.defbox p{font-size:.92rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.defbox strong{font-weight:600;color:var(--black);}
+
+/* create vs extract two-column */
+.four{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.four-cell{background:var(--paper);padding:1rem 1.2rem;}
+.four-cell:nth-child(even){background:var(--cream);}
+.four-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem;}
+.four-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.3rem;}
+.four-text{font-size:.8rem;font-weight:300;color:var(--ink);line-height:1.55;}
+.four-text strong{font-weight:600;color:var(--charcoal);}
+@media(max-width:600px){.four{grid-template-columns:1fr;}}
+
+.types{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.type-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.type-cell:nth-child(even){background:var(--cream);}
+.type-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.type-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.15;}
+.type-text{font-size:.81rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.types{grid-template-columns:1fr;}}
+
+.context{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.context-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.context-name{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.context-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.context-body p{margin-bottom:.5rem;}
+.context-body p:last-child{margin-bottom:0;}
+.context-q{font-size:.82rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.6rem;margin-top:.5rem;line-height:1.5;}
+
+.tbl-wrap{margin:1.25rem 0;overflow-x:auto;}
+.cmp{width:100%;border-collapse:collapse;font-size:.8rem;min-width:540px;}
+.cmp th,.cmp td{border:1px solid var(--rule);padding:.55rem .7rem;vertical-align:top;line-height:1.45;text-align:left;}
+.cmp th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.cmp td:first-child{background:var(--cream);font-weight:600;color:var(--charcoal);font-size:.76rem;}
+.cmp .fill{color:var(--muted);font-style:italic;}
+
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing,.cmp th,.concept-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .context,.task,.types,.four,.defbox,.inset,.tbl-wrap{break-inside:avoid;}
+  .sec-header{margin:1.9rem 0 1rem;}
+  .context{margin:1.1rem 0;}
+  .four,.types,.defbox,.inset,.pullquote{margin-top:1.2rem;margin-bottom:1.2rem;}
+  .task{margin:1.3rem 0;}
+  .closing{margin:1.2rem 0 0;}
+  .doc-footer{margin-top:1.2rem;}
+  .closing.tight-top{margin-top:.8rem;}
+  .dq-list.tight li{padding-top:.34rem;padding-bottom:.34rem;}
+  .sec-header.tight-top{margin-top:1rem;margin-bottom:.85rem;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+.sec-header.tight-top{margin-top:1.5rem;}
+.closing.tight-top{margin-top:1.4rem;}
+.dq-list.tight li{padding-top:.45rem;padding-bottom:.45rem;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="concept-tag">Concept Library · Money &amp; Value</p>
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Concept Primer</p>
+    <h1 class="masthead-title">The Corporation</h1>
+    <p class="masthead-sub">A legal "person" invented to do what no individual could — and the buried question inside every company: who is it actually <em>for</em>?</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">Here is one of the strangest and most consequential ideas humans ever invented, hiding in plain sight behind every logo you see: the law lets you create a <em>person</em> that isn't a person. A corporation can own property, sign contracts, borrow money, sue and be sued, and keep doing all of it for centuries — long after everyone who founded it is dead. It is treated, in the eyes of the law, as a being separate from the actual humans who own and run it. That sounds like a legal trick, and in a sense it is — but it's a trick that reshaped the entire economic world, made possible nearly every large enterprise you can name, and quietly decides things that affect your life every day. To understand the modern economy, you have to understand what a <strong>corporation</strong> actually is.</p>
+
+  <p class="body">Strip away the jargon and a corporation is a tool for a specific job: letting many people pool their money to do something far bigger than any of them could do alone, while protecting each of them from losing everything if it fails. That tool required inventing the "legal person" — an entity the law treats as separate from its owners — and from that one move flow all the corporation's powers and all its problems. This primer grants the genuine brilliance of the invention fully, and then follows the two questions it forces open: when owners are shielded from the downside, <em>where does that risk actually go?</em> And since a corporation is legally tied to its owners, <em>whose interests is it really built to serve</em> — because, as you'll see, that last question has more than one possible answer, and the answer is a <em>choice</em>.</p>
+
+  <div class="defbox">
+    <p class="defbox-label">The tool, stated plainly</p>
+    <p>A <strong>corporation</strong> is a business that the law treats as a <strong>legal person</strong> — an entity separate from the people who own it. This separateness gives it three powers: it can <strong>pool capital</strong> from many investors at once; it grants those investors <strong>limited liability</strong> (if it fails, they lose only what they invested, not everything they own); and it has <strong>perpetual life</strong> (it continues regardless of who comes and goes). Owners hold <strong>shares</strong> — pieces of ownership — and the corporation is legally accountable to them.</p>
+  </div>
+
+  <!-- SECTION I -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">The Tool — The Genius of the Legal Person</span></div>
+
+  <p class="body">Grant the invention its full due, because it solved real problems that had genuinely held back human enterprise. Imagine trying to build a railroad, a factory, or a shipping line on your own. The cost is staggering — far beyond any single fortune — and the risk is ruinous: if it fails, you could lose not just your investment but your house, your savings, everything. Almost no one would dare. For most of history, that's exactly why large, risky, long-lived enterprises were so rare. The corporation dissolved all three obstacles at once, and it's worth seeing how cleanly:</p>
+
+  <div class="four">
+    <div class="four-cell">
+      <p class="four-label">The problem it solved</p>
+      <p class="four-name">Too Big, Too Risky, Too Brief</p>
+      <p class="four-text">No individual could fund a railroad. No sane person would risk total ruin on one venture. And any enterprise died with its founder. Capital was trapped, risk was unbearable, and nothing outlasted a lifetime — so the biggest, most useful projects mostly didn't happen.</p>
+    </div>
+    <div class="four-cell">
+      <p class="four-label">How the corporation answers</p>
+      <p class="four-name">Pool, Shield, Endure</p>
+      <p class="four-text">Thousands of strangers each chip in a little (<strong>pooled capital</strong>); each risks only that much and no more (<strong>limited liability</strong>); and the entity lives on through any change of owners (<strong>perpetual life</strong>). Suddenly the giant, long-term enterprise becomes financeable and survivable.</p>
+    </div>
+  </div>
+
+  <p class="body">The most powerful of the three is limited liability, and it's worth dwelling on, because it's the feature that truly unlocked the modern economy. By promising investors they could never lose more than they put in, the corporation made it rational for ordinary people — not just the fearless rich — to invest in enterprises they'd never run and barely understood. That drew in oceans of capital, which built the railroads, factories, power grids, and companies that lifted living standards across the world. Granted fully, the corporation is one of the most productive social inventions in history: a machine for turning scattered savings into enterprises no individual could ever attempt. The trouble is not that the machine fails. It's the two questions the machine quietly raises and never answers on its own.</p>
+
+  <div class="pullquote">
+    <p>The corporation's genius was to make a giant enterprise as safe to invest in as it was bold to attempt. But safety for the investor is never the whole story — only the visible half.</p>
+  </div>
+
+  <!-- SECTION II -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">The Two Questions the Machine Raises</span></div>
+
+  <p class="body">The corporation is a genuine good. But its two defining features — the shield and the bond to owners — each open a question the structure itself can't settle, and both decide who really benefits and who bears the cost.</p>
+
+  <div class="types">
+    <div class="type-cell">
+      <p class="type-label">Lever 1</p>
+      <p class="type-name">Limited liability moves risk — it doesn't erase it</p>
+      <p class="type-text">"Owners can't lose more than they invested" sounds like risk vanishing. It doesn't. The downside an owner is shielded from doesn't disappear — it lands on <em>someone</em>. If a corporation collapses owing money, the unpaid bills fall on creditors, suppliers, and workers. If it pollutes or harms and then folds, the cleanup and damage fall on the community or the public. The shield is real and valuable — it's what makes investing possible — but it works by <em>transferring</em> risk from owners to others, and those others rarely chose to carry it. The genius of the corporation and one of its deepest controversies are the very same feature.</p>
+    </div>
+    <div class="type-cell">
+      <p class="type-label">Lever 2</p>
+      <p class="type-name">"Who is it for?" has more than one answer</p>
+      <p class="type-text">A corporation is legally accountable to its <em>owners</em> — but who counts, and what they're owed, is not fixed by nature. The dominant modern answer is "the shareholders," whose interest is usually profit. But a corporation also depends on workers, customers, suppliers, and the community — people with a real stake who may have no say. Whether a company exists to maximize shareholder returns, to serve its workers and members, or to pursue a public mission is not dictated by what a corporation <em>is</em>. It's a <strong>choice</strong> — and, as the next section shows, it's a choice written directly into which <em>type</em> of corporation you create.</p>
+    </div>
+  </div>
+
+  <div class="inset">
+    <strong>The question to carry everywhere:</strong> when you look at any company, ask — <em>if this went wrong, who is shielded and who would actually bear the loss? And who is this corporation built to serve — its shareholders, its workers, its customers, the public — and who decided that?</em> The corporate form looks like a neutral container for "doing business," but it always answers those two questions in some particular way. Reading a corporation means seeing past the logo to where its risk is parked and whose interests its very structure is bound to serve.</p>
+  </div>
+
+  <!-- SECTION III — APPLY (break removed; long intro) -->
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">Same Tool, Three Answers to "Who Is It For?"</span></div>
+
+  <p class="body">The "type" of corporation is really an answer to Lever 2's question. Watch three common forms encode three different answers to <em>who the company is built to serve</em> — same legal-person tool, different purpose wired in.</p>
+
+  <div class="context">
+    <p class="context-meta">Type One · For the shareholders</p>
+    <p class="context-name">The standard corporation (the "C-corp")</p>
+    <div class="context-body">
+      <p>The familiar form behind most large companies. Ownership is divided into shares that can be bought and sold freely; the company is run to benefit those shareholders, most often by maximizing profit and share price. This is the engine that pools vast capital and builds enormous enterprises — its strength is precisely its single-minded focus on returns to owners. But that same focus is the structural reason a C-corp tends to treat workers, communities, and the environment as costs to manage rather than parties to serve: the form answers "who is it for?" with "the shareholders," and mostly means it.</p>
+      <p class="context-q">Whose interests does this structure put first by design — and whose does it leave out?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Type Two · For the members</p>
+    <p class="context-name">The cooperative (worker- or member-owned)</p>
+    <div class="context-body">
+      <p>A co-op uses the same legal-person tool but wires in a different answer: it is owned by the people who use it or work in it — its members — rather than by outside investors. A worker co-op is owned by its employees; a consumer co-op by its customers. Profits and decisions flow to members, often one-member-one-vote rather than one-share-one-vote. The trade is real and worth seeing clearly: co-ops bind the company to the people inside it, but they can find it harder to raise huge outside capital, precisely because they don't sell unlimited ownership to investors seeking maximum return. Same tool, the answer to "who is it for?" simply changed.</p>
+      <p class="context-q">What does this form gain by serving members — and what does it give up to do so?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Type Three · For a mission</p>
+    <p class="context-name">The nonprofit and the "benefit corporation"</p>
+    <div class="context-body">
+      <p>Some forms answer "who is it for?" with a purpose beyond owners. A <strong>nonprofit</strong> can earn revenue but has no shareholders to enrich — its surplus must serve its stated mission. A <strong>benefit corporation</strong> (B-corp) is a for-profit legally permitted to weigh a public mission alongside shareholder returns, freeing its managers to consider workers, community, or environment without betraying their legal duty. These forms are the clearest proof of the whole point: the corporation's purpose is not fixed by what a corporation is — it can be written, by choosing the form, to serve a mission, a public, or the shareholders alone.</p>
+      <p class="context-q">If a company's purpose can be chosen, why might most still choose the shareholder-first form?</p>
+    </div>
+  </div>
+
+  <!-- ACTIVITY -->
+  <div class="sec-header tight-top"><span class="sec-roman">IV</span><span class="sec-title">Activity — Read the Structure</span></div>
+
+  <p class="body">For each, name where the risk would land if things went wrong (Lever 1), and who the form is built to serve (Lever 2) — looking past what the company does to how it's structured.</p>
+
+  <div class="tbl-wrap">
+    <table class="cmp">
+      <thead>
+        <tr><th>The company</th><th>If it fails/harms, who bears it?</th><th>Who is it built to serve?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>A giant public company focused on share price</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A grocery store owned by the shoppers who use it</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A charity hospital with no shareholders</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A factory that pollutes, then declares bankruptcy</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A startup owned by its founders and employees</td><td class="fill">…</td><td class="fill">…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Write</p>
+    <p class="task-title">Design the company — and choose who it's for</p>
+    <p class="task-body">Imagine you're starting a real enterprise — pick one you'd actually want to build. Which corporate form would you choose, and what does that choice say about who you want it to serve: outside investors, the workers, the customers, a public mission? What would you gain from your choice, and what would you give up — especially in the ability to raise money or grow fast? Be honest about the trade you're making, because every form makes one.</p>
+    <div class="writelines"><div class="writeline"></div><div class="writeline"></div><div class="writeline"></div></div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="sec-header tight-top"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list tight">
+    <li>Limited liability made the modern economy possible by transferring risk away from investors. Is that transfer fair to the creditors, workers, and communities who can end up holding it — and should anything be done about it?</li>
+    <li>The law treats a corporation as a "person." In what ways is that useful, and in what ways might treating a company like a person distort how we think about its responsibilities?</li>
+    <li>If a company's purpose is a choice — shareholders, members, or mission — why do you think the shareholder-first form became so dominant? What would have to change for other forms to spread?</li>
+    <li>What's the smallest change to how corporations work that would better protect the people who bear their risks, or give a real say to those a company depends on — without destroying the pooling-of-capital that makes corporations so productive?</li>
+  </ol>
+
+  <div class="closing tight-top">
+    <p>A corporation is a person the law invented to do what no person could.<br>It pools our savings into engines of enormous power —<br>but every such engine parks its risk somewhere, and is built to serve someone.<br>To read a company is to ask, always: who is shielded, and who is it for?</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

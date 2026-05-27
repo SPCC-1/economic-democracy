@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Banking &amp; Central Banks — Concept Library — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+.concept-tag{display:inline-block;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .6rem;margin-bottom:.9rem;}
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+.defbox{border:1px solid var(--black);background:var(--white);padding:1.1rem 1.4rem;margin:1.5rem 0;}
+.defbox-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.defbox p{font-size:.92rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.defbox strong{font-weight:600;color:var(--black);}
+.four{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.four-cell{background:var(--paper);padding:1rem 1.2rem;}
+.four-cell:nth-child(even){background:var(--cream);}
+.four-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem;}
+.four-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.3rem;}
+.four-text{font-size:.8rem;font-weight:300;color:var(--ink);line-height:1.55;}
+.four-text strong{font-weight:600;color:var(--charcoal);}
+@media(max-width:600px){.four{grid-template-columns:1fr;}}
+.types{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.type-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.type-cell:nth-child(even){background:var(--cream);}
+.type-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.type-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.15;}
+.type-text{font-size:.81rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.types{grid-template-columns:1fr;}}
+.context{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.context-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.context-name{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.context-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.context-body p{margin-bottom:.5rem;}
+.context-body p:last-child{margin-bottom:0;}
+.context-q{font-size:.82rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.6rem;margin-top:.5rem;line-height:1.5;}
+.tbl-wrap{margin:1.25rem 0;overflow-x:auto;}
+.cmp{width:100%;border-collapse:collapse;font-size:.8rem;min-width:540px;}
+.cmp th,.cmp td{border:1px solid var(--rule);padding:.55rem .7rem;vertical-align:top;line-height:1.45;text-align:left;}
+.cmp th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.cmp td:first-child{background:var(--cream);font-weight:600;color:var(--charcoal);font-size:.76rem;}
+.cmp .fill{color:var(--muted);font-style:italic;}
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing,.cmp th,.concept-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .context,.task,.types,.four,.defbox,.inset,.tbl-wrap{break-inside:avoid;}
+  .sec-header{margin:1.9rem 0 1rem;}
+  .context{margin:1.1rem 0;}
+  .four,.types,.defbox,.inset,.pullquote{margin-top:1.2rem;margin-bottom:1.2rem;}
+  .task{margin:1.3rem 0;}
+  .closing{margin:1.2rem 0 0;}
+  .doc-footer{margin-top:1.2rem;}
+  .closing.tight-top{margin-top:.8rem;}
+  .dq-list.tight li{padding-top:.34rem;padding-bottom:.34rem;}
+  .sec-header.tight-top{margin-top:1rem;margin-bottom:.85rem;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+.sec-header.tight-top{margin-top:1.5rem;}
+.closing.tight-top{margin-top:1.4rem;}
+.dq-list.tight li{padding-top:.45rem;padding-bottom:.45rem;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="concept-tag">Concept Library · Money &amp; Value</p>
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Concept Primer</p>
+    <h1 class="masthead-title">Banking &amp; Central Banks</h1>
+    <p class="masthead-sub">Banks don't just keep money — they create it, every time they lend. And one institution above them all governs how much exists: the quiet engine room of the entire economy.</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">Here is something almost no one is taught, and it sounds impossible at first: <strong>banks create money.</strong> Not figuratively — literally. When a bank grants you a loan, it does not reach into a vault and hand you cash that some saver deposited earlier. It simply writes a new number into your account. That number is new money that did not exist a moment before, conjured into being by the act of lending. Most of the money in a modern economy was created this way — not printed by a government, but typed into existence by banks making loans. Once you see this, the financial system stops looking like a set of vaults where money is stored and starts looking like what it actually is: a vast engine that <em>manufactures</em> money by extending credit. And sitting above that engine, governing how fast it runs, is the most powerful economic institution in the country — the <strong>central bank</strong>.</p>
+
+  <p class="body">These are the two linked ideas this primer teaches. First, how ordinary banks create money through lending, expanding and contracting the money supply as they make and call in loans. Second, how the central bank — in the United States, the Federal Reserve — governs that whole system: it isn't a normal bank you can open an account at, but the bank <em>for</em> banks, the institution that sets the base interest rate rippling through every loan in the country, stands ready to rescue the system in a panic, and steers the economy by speeding up or slowing down the creation of money and credit. Grasp these two things and the daily news — rate hikes, inflation, bank bailouts, "the Fed" — stops being noise and becomes legible. This primer grants the real power and genuine achievement of this system fully, then examines the two places where running the engine becomes a question of power, not just plumbing.</p>
+
+  <div class="defbox">
+    <p class="defbox-label">The tool, stated plainly</p>
+    <p>A <strong>bank</strong> takes deposits and makes loans — and crucially, it <strong>creates new money</strong> when it lends, since it need only keep a fraction of deposits on hand (<strong>fractional-reserve banking</strong>). The banking system as a whole thus expands the <strong>money supply</strong> by lending and shrinks it as loans are repaid or called in. A <strong>central bank</strong> (the U.S. Federal Reserve, or "the Fed") is the bank for banks: it sets the benchmark <strong>interest rate</strong>, acts as <strong>lender of last resort</strong> in a crisis, and conducts <strong>monetary policy</strong> — loosening or tightening money and credit to manage inflation and employment.</p>
+  </div>
+
+  <!-- SECTION I -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">The Tool — The Engine That Manufactures Money</span></div>
+
+  <p class="body">Start with the bank itself, because the mechanism is genuinely clever and worth granting in full. A bank knows that not everyone who deposits money will want it back at the same time, so it keeps only a fraction on hand and lends the rest. But here's the subtle part: when it lends, it doesn't subtract that loan from anyone's account — it creates a brand-new deposit for the borrower. Now two people have claims on money where before there was one. Do this across thousands of banks and millions of loans, and the banking system manufactures the vast majority of the money circulating in the economy. This is not a scam or a glitch; it is one of the most productive inventions in economic history, because it means an economy can fund a factory, a home, or a business <em>now</em>, using money created against future repayment, instead of waiting decades for enough cash to physically pile up.</p>
+
+  <p class="body">Then comes the central bank, sitting above the whole system to govern it — and to fix the system's great weakness. See the two jobs it does:</p>
+
+  <div class="four">
+    <div class="four-cell">
+      <p class="four-label">Steering the economy</p>
+      <p class="four-name">The Throttle on Money</p>
+      <p class="four-text">By setting the benchmark <strong>interest rate</strong>, the central bank changes the cost of borrowing everywhere at once. Lower it, and lending and money creation speed up, warming a cold economy. Raise it, and they slow, cooling inflation. It is a throttle on the whole money engine — the single most powerful economic lever a country has.</p>
+    </div>
+    <div class="four-cell">
+      <p class="four-label">Stopping the panic</p>
+      <p class="four-name">Lender of Last Resort</p>
+      <p class="four-text">Because banks lend out most of what they hold, a sudden rush of depositors demanding cash at once — a <strong>bank run</strong> — can topple even a sound bank. The central bank stands behind the system, ready to lend in a crisis so panic doesn't cascade into collapse. This backstop is why modern banking is far more stable than the chaos that came before.</p>
+    </div>
+  </div>
+
+  <p class="body">Grant the achievement plainly, because it is real and easily taken for granted. Before central banking, economies lurched through brutal, recurring banking panics — runs, collapses, and depressions that wiped out savings and livelihoods with terrifying regularity. The creation of the Federal Reserve in 1913, and the deposit insurance and stewardship that followed, did not abolish the business cycle, but they tamed its most violent financial swings and turned a system prone to periodic collapse into one stable enough to build a life on. A central bank managing money and credit, backstopping panics, and steering between inflation and unemployment is one of the quiet triumphs of modern economic governance. The complications do not come from denying any of this. They come from a single unavoidable fact: <em>the power to create and govern money is power over everyone who uses it</em> — and that power is neither evenly felt nor fully accountable.</p>
+
+  <div class="pullquote">
+    <p>Money is not mostly minted by governments or dug from the ground. It is created by banks, with a keystroke, when they lend — and governed by an institution most people could not name. The engine room is real, and almost invisible.</p>
+  </div>
+
+  <!-- SECTION II -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">Where Running the Engine Becomes Power</span></div>
+
+  <p class="body">The system is a genuine achievement, and the central bank's stewardship has done real good. But two features turn the plumbing into a question of power — not because the system is corrupt, but because creating and governing money cannot help but advantage some people over others.</p>
+
+  <div class="types">
+    <div class="type-cell">
+      <p class="type-label">Lever 1</p>
+      <p class="type-name">New money doesn't reach everyone at once — and order is advantage</p>
+      <p class="type-text">When new money is created, it doesn't appear in everyone's pocket simultaneously; it enters at specific points and spreads outward. Whoever is <em>near</em> the source — banks, large borrowers, owners of assets like stocks and real estate that rise when credit is cheap — gets to spend or invest the new money <em>before</em> prices have adjusted. Whoever is <em>far</em> from it — wage earners, savers, people on fixed incomes — often sees higher prices arrive before any benefit does. The same act of money creation that funds productive growth can quietly transfer purchasing power from the far to the near. The system isn't rigged in any crude sense; it's that proximity to money creation is itself an advantage, and that advantage is unevenly distributed.</p>
+    </div>
+    <div class="type-cell">
+      <p class="type-label">Lever 2</p>
+      <p class="type-name">Immense power, limited accountability</p>
+      <p class="type-text">The central bank's decisions move every mortgage rate, job market, and price level in the country — yet its officials are appointed, not elected, and are deliberately insulated from day-to-day politics. There's a real case for that independence: money management shouldn't be hostage to the election cycle, and a central bank that prints to win votes destroys a currency. But independence is also a genuine democratic puzzle: unelected officials make decisions of enormous consequence, and <em>whose</em> interests they weigh — price stability vs. full employment, bondholders vs. borrowers, rescuing banks vs. helping homeowners in a crisis — are real choices with winners and losers, not neutral technical calculations. Who governs the governors of money is one of the hardest questions in a democracy.</p>
+    </div>
+  </div>
+
+  <div class="inset">
+    <strong>The questions to carry everywhere:</strong> when money is created or its price (the interest rate) is changed, ask — <em>who receives the new money or cheap credit first, and who feels the rising prices before any benefit reaches them?</em> And when the central bank acts, ask — <em>this stewardship is real and largely beneficial, but whose interests does this particular decision favor, and to whom is the decider actually accountable?</em> Banking and central banking are among the great achievements of economic governance. Reading them well means seeing both the engine's genuine power to build — and the fact that whoever runs it, and whoever it reaches first, holds power over everyone else.</p>
+  </div>
+
+  <!-- SECTION III -->
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">The Same Engine, Three Moments</span></div>
+
+  <p class="body">Watch the money engine work in three real moments — money created to build, the central bank steering the whole economy, and the hard case of a crisis where the backstop saves the system but raises the question of whom it saved.</p>
+
+  <div class="context">
+    <p class="context-meta">Moment One · Money created to build</p>
+    <p class="context-name">A loan that funds something real</p>
+    <div class="context-body">
+      <p>A family takes a mortgage to buy a home; a company borrows to build a factory. In each case the bank creates new money against the promise of repayment, and that money does real work immediately — a home is bought, a factory rises, workers are hired. Years later the loan is repaid and the created money is extinguished, but the house and the factory remain. This is the engine at its best: money conjured from a credible promise about the future, funding real things <em>now</em> that would otherwise have waited decades. Granting this plainly matters — most of the productive investment in a modern economy runs on exactly this mechanism, and it is a genuine wonder that it works.</p>
+      <p class="context-q">Where did the money for this come from — and what made it legitimate rather than mere invention?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Moment Two · The throttle in action</p>
+    <p class="context-name">The central bank raises rates to fight inflation</p>
+    <div class="context-body">
+      <p>Prices are rising too fast, so the central bank raises its benchmark interest rate. Borrowing gets more expensive everywhere at once; businesses and households pull back; money creation slows; demand cools; inflation eases. It works — but notice the distribution of the pain: the higher rates fall hardest on those who need to borrow (homebuyers, small businesses, people with variable-rate debt), while those holding cash and bonds may benefit. The central bank is doing its job, and taming inflation protects everyone, especially the poor whom inflation hurts most. Yet the tool it uses to do good has uneven effects — cooling the economy means someone's loan, someone's job, someone's plan.</p>
+      <p class="context-q">If the rate hike is necessary and helps everyone, why does it still matter who bears its immediate cost?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Moment Three · The hard case</p>
+    <p class="context-name">A financial crisis, and who gets rescued</p>
+    <div class="context-body">
+      <p>In a panic, the financial system teeters — banks are failing, credit is freezing, and a full collapse would devastate ordinary people most of all. The central bank acts as lender of last resort, flooding the system with money and rescuing major banks to stop the cascade. It works: catastrophe is averted, and that genuinely protects the whole economy. <em>And</em> the rescue often saves the very institutions whose risky bets caused the crisis, while homeowners and workers receive far less direct help — so the backstop that protects everyone can also look like it protects the powerful first. Both are true: the rescue was necessary and the asymmetry was real. This is the case worth arguing over, because "let it collapse" and "rescue without conditions" are both bad answers.</p>
+      <p class="context-q">If the rescue genuinely saved everyone from catastrophe, does it matter that it saved the powerful most directly — and what should follow?</p>
+    </div>
+  </div>
+
+  <!-- ACTIVITY -->
+  <div class="sec-header tight-top"><span class="sec-roman">IV</span><span class="sec-title">Activity — Trace the Money</span></div>
+
+  <p class="body">For each, identify whether money is being created or destroyed, what the central bank's role is, and who is nearest to (and farthest from) the new money or cheap credit.</p>
+
+  <div class="tbl-wrap">
+    <table class="cmp">
+      <thead>
+        <tr><th>The situation</th><th>Money created/destroyed? Fed's role?</th><th>Who's near the money / who's far?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>A bank approves a new business loan</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>The Fed cuts interest rates during a slowdown</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Borrowers across the country repay their loans</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>The Fed lends emergency cash to failing banks</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Cheap credit drives up stock and home prices</td><td class="fill">…</td><td class="fill">…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Write</p>
+    <p class="task-title">Defend the engine — then ask who runs it</p>
+    <p class="task-body">First, make the strongest case that money creation by banks and stewardship by a central bank is a genuine achievement: what does this system make possible, and why is it far better than the alternatives that came before it? Then complicate it honestly: how does new money reach some people before others, and what's troubling about decisions of such enormous consequence being made by officials no one elected? Finally, take a position: knowing the system is both genuinely beneficial and genuinely powerful, what is the smallest change — if any — you'd want in <em>who benefits first</em> or <em>who holds the power</em>, without breaking the stability the system provides?</p>
+    <div class="writelines"><div class="writeline"></div><div class="writeline"></div><div class="writeline"></div></div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="sec-header tight-top"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list tight">
+    <li>Most money is created by banks when they lend, not printed by the government. Does knowing that change how you think about money, debt, or who really controls the economy?</li>
+    <li>New money reaches some people before others, and those nearest the source can gain before prices adjust. Is that an unavoidable feature of any money system, or something that could be designed differently?</li>
+    <li>Central bank independence keeps money management out of short-term politics — a real benefit. But is it compatible with democracy for unelected officials to wield such power? Where would you set the balance?</li>
+    <li>In a crisis, the central bank can save the system but tends to rescue the powerful most directly. What's the smallest condition you'd attach to a rescue so it protects everyone without letting the system collapse?</li>
+  </ol>
+
+  <div class="closing tight-top">
+    <p>Most money is not minted or mined — it is created by a loan and erased by its repayment,<br>and governed by an institution working quietly in the engine room of the economy.<br>That engine built the modern world and steadied a system once prone to collapse.<br>But to create money is to hold power — so always ask who it reaches first, and who answers for the ones who run it.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

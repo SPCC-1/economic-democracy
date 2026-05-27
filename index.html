@@ -461,7 +461,7 @@
         <span class="stat-text"><strong>Voices</strong>One per year of the United States · 1776–2026</span>
       </div>
       <div class="stat-item">
-        <span class="stat-num">36</span>
+        <span class="stat-num">45</span>
         <span class="stat-text"><strong>Concept Primers</strong>The economic toolkit, in five clusters</span>
       </div>
       <div class="stat-item">
@@ -526,80 +526,155 @@
 <!-- CONCEPT LIBRARY TEASER -->
 <section class="section" id="concepts-teaser">
   <p class="section-eyebrow">The Concept Library</p>
-  <h2 class="section-heading">36 Primers.<br>The Economic Toolkit.</h2>
+  <h2 class="section-heading">45 Primers.<br>The Economic Toolkit.</h2>
   <p class="section-sub">The 250 Voices show you the argument. The concepts give you the language to join it. Each primer takes one economic idea &mdash; supply and demand, capital, monopoly, fiscal policy, globalization &mdash; and grants it its full strength before examining exactly where it breaks. Not what to think about the economy. How to think about it, one tool at a time.</p>
   <p style="font-size:.88rem;font-weight:300;color:var(--mid);line-height:1.7;margin-bottom:2rem;max-width:680px;">Every primer follows the same arc: the tool, granted its real power; the two levers where reasonable people start to disagree; the same tool at work in real situations; and a defended-stance write task that ends on the reform test &mdash; the smallest change that would make the economy both more productive and more democratic, and what it would cost.</p>
 
   <style>
-    .cluster-row{
-      display:grid;
-      grid-template-columns:repeat(5,1fr);
-      gap:1px;
-      background:var(--rule);
-      border:1px solid var(--rule);
-      margin:1.5rem 0 2rem;
+    .acc-trigger .acc-left.with-tagline{align-items:flex-start;}
+    .acc-text{display:flex;flex-direction:column;gap:.2rem;}
+    .acc-tagline{
+      font-size:.74rem;
+      font-weight:300;
+      color:var(--mid);
+      line-height:1.4;
     }
-    .cluster-row-cell{
-      background:var(--paper);
-      padding:1.1rem 1rem;
-      display:flex;
-      flex-direction:column;
-      gap:.35rem;
-    }
-    .cluster-row-cell:nth-child(even){background:var(--cream);}
-    .cluster-row-label{
-      font-family:'IBM Plex Mono',monospace;
-      font-size:.56rem;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      color:var(--muted);
-    }
-    .cluster-row-name{
+    .acc-trigger.has-tagline{padding-top:1rem;padding-bottom:1rem;}
+    .acc-name-lead{
       font-family:'Playfair Display',serif;
       font-size:1rem;
       font-weight:700;
       color:var(--black);
       line-height:1.2;
     }
-    .cluster-row-tagline{
-      font-size:.78rem;
-      font-weight:300;
-      color:var(--mid);
-      line-height:1.5;
-    }
-    @media(max-width:900px){
-      .cluster-row{grid-template-columns:repeat(3,1fr);}
-    }
-    @media(max-width:540px){
-      .cluster-row{grid-template-columns:1fr 1fr;}
-    }
   </style>
 
-  <div class="cluster-row">
-    <div class="cluster-row-cell">
-      <span class="cluster-row-label">I</span>
-      <span class="cluster-row-name">Allocation</span>
-      <span class="cluster-row-tagline">How scarce things get divided.</span>
+  <!-- CONCEPT CLUSTER DROPDOWNS -->
+  <div class="section-accordion" style="margin-top:1.5rem;max-width:760px;">
+    <div class="acc-row">
+      <button class="acc-trigger has-tagline" aria-expanded="false" onclick="toggleAcc(this)">
+        <span class="acc-left with-tagline">
+          <span class="acc-roman">I</span>
+          <span class="acc-text">
+            <span class="acc-name-lead">Allocation</span>
+            <span class="acc-tagline">How scarce things get divided.</span>
+          </span>
+        </span>
+        <span class="acc-arrow">›</span>
+      </button>
+      <div class="acc-panel">
+        <ul>
+          <li><a href="ED_CON_Scarcity.html">Scarcity</a></li>
+          <li><a href="ED_CON_Opportunity_Cost.html">Opportunity Cost</a></li>
+          <li><a href="ED_CON_Incentives.html">Incentives</a></li>
+          <li><a href="ED_CON_Supply_And_Demand.html">Supply &amp; Demand</a></li>
+          <li><a href="ED_CON_Externalities.html">Externalities</a></li>
+          <li><a href="ED_CON_Public_Goods.html">Public Goods</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="cluster-row-cell">
-      <span class="cluster-row-label">II</span>
-      <span class="cluster-row-name">Engines</span>
-      <span class="cluster-row-tagline">What drives growth.</span>
+    <div class="acc-row">
+      <button class="acc-trigger has-tagline" aria-expanded="false" onclick="toggleAcc(this)">
+        <span class="acc-left with-tagline">
+          <span class="acc-roman">II</span>
+          <span class="acc-text">
+            <span class="acc-name-lead">Engines</span>
+            <span class="acc-tagline">What drives growth.</span>
+          </span>
+        </span>
+        <span class="acc-arrow">›</span>
+      </button>
+      <div class="acc-panel">
+        <ul>
+          <li><a href="ED_CON_Profit_Motive.html">Profit Motive</a></li>
+          <li><a href="ED_CON_Compounding.html">Compounding</a></li>
+          <li><a href="ED_CON_Competition.html">Competition</a></li>
+          <li><a href="ED_CON_Productivity.html">Productivity</a></li>
+          <li><a href="ED_CON_Creative_Destruction.html">Creative Destruction</a></li>
+          <li><a href="ED_CON_Business_Cycles.html">Business Cycles</a></li>
+          <li><a href="ED_CON_Entrepreneur.html">The Entrepreneur</a></li>
+          <li><a href="ED_CON_Investment.html">Investment</a></li>
+          <li><a href="ED_CON_Specialization.html">Specialization</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="cluster-row-cell">
-      <span class="cluster-row-label">III</span>
-      <span class="cluster-row-name">Power</span>
-      <span class="cluster-row-tagline">How advantage concentrates.</span>
+    <div class="acc-row">
+      <button class="acc-trigger has-tagline" aria-expanded="false" onclick="toggleAcc(this)">
+        <span class="acc-left with-tagline">
+          <span class="acc-roman">III</span>
+          <span class="acc-text">
+            <span class="acc-name-lead">Power</span>
+            <span class="acc-tagline">How advantage concentrates.</span>
+          </span>
+        </span>
+        <span class="acc-arrow">›</span>
+      </button>
+      <div class="acc-panel">
+        <ul>
+          <li><a href="ED_CON_Monopoly.html">Monopoly</a></li>
+          <li><a href="ED_CON_Network_Effects.html">Network Effects</a></li>
+          <li><a href="ED_CON_Economies_Of_Scale.html">Economies of Scale</a></li>
+          <li><a href="ED_CON_Rent_Seeking.html">Rent-Seeking</a></li>
+          <li><a href="ED_CON_Sovereignty.html">Sovereignty</a></li>
+          <li><a href="ED_CON_The_Trust.html">The Trust</a></li>
+          <li><a href="ED_CON_Globalization.html">Globalization</a></li>
+          <li><a href="ED_CON_Consolidation.html">Consolidation</a></li>
+          <li><a href="ED_CON_What_Is_A_Platform.html">Platforms</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="cluster-row-cell">
-      <span class="cluster-row-label">IV</span>
-      <span class="cluster-row-name">Distribution</span>
-      <span class="cluster-row-tagline">Who ends up with what.</span>
+    <div class="acc-row">
+      <button class="acc-trigger has-tagline" aria-expanded="false" onclick="toggleAcc(this)">
+        <span class="acc-left with-tagline">
+          <span class="acc-roman">IV</span>
+          <span class="acc-text">
+            <span class="acc-name-lead">Distribution</span>
+            <span class="acc-tagline">Who ends up with what.</span>
+          </span>
+        </span>
+        <span class="acc-arrow">›</span>
+      </button>
+      <div class="acc-panel">
+        <ul>
+          <li><a href="ED_CON_The_Commons.html">The Commons</a></li>
+          <li><a href="ED_CON_Predistribution.html">Predistribution</a></li>
+          <li><a href="ED_CON_Redistribution.html">Redistribution</a></li>
+          <li><a href="ED_CON_Labor.html">Labor</a></li>
+          <li><a href="ED_CON_Small_Business_Owner.html">The Small Business Owner</a></li>
+          <li><a href="ED_CON_Inequality.html">Inequality</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="cluster-row-cell">
-      <span class="cluster-row-label">V</span>
-      <span class="cluster-row-name">Money &amp; Value</span>
-      <span class="cluster-row-tagline">The machinery underneath.</span>
+    <div class="acc-row">
+      <button class="acc-trigger has-tagline" aria-expanded="false" onclick="toggleAcc(this)">
+        <span class="acc-left with-tagline">
+          <span class="acc-roman">V</span>
+          <span class="acc-text">
+            <span class="acc-name-lead">Money &amp; Value</span>
+            <span class="acc-tagline">The machinery underneath.</span>
+          </span>
+        </span>
+        <span class="acc-arrow">›</span>
+      </button>
+      <div class="acc-panel">
+        <ul>
+          <li><a href="ED_CON_Ownership_Equity.html">Ownership &amp; Equity</a></li>
+          <li><a href="ED_CON_Inflation.html">Inflation</a></li>
+          <li><a href="ED_CON_Capital.html">Capital</a></li>
+          <li><a href="ED_CON_Wages_And_Assets.html">Wages &amp; Assets</a></li>
+          <li><a href="ED_CON_Credit.html">Credit</a></li>
+          <li><a href="ED_CON_Debt.html">Debt</a></li>
+          <li><a href="ED_CON_Corporation.html">The Corporation</a></li>
+          <li><a href="ED_CON_PL_vs_Balance_Sheet.html">P&amp;L vs. Balance Sheet</a></li>
+          <li><a href="ED_CON_Banking_Central_Banks.html">Banking &amp; Central Banks</a></li>
+          <li><a href="ED_CON_Fiscal_Policy.html">Fiscal Policy</a></li>
+          <li><a href="ED_CON_Taxation.html">Taxation</a></li>
+          <li><a href="ED_CON_Cryptocurrency.html">Cryptocurrency</a></li>
+          <li><a href="ED_CON_Data.html">Data</a></li>
+          <li><a href="ED_CON_Wealth_Of_Nations.html">The Wealth of Nations</a></li>
+          <li><a href="ED_CON_Wealth_Of_The_Nation.html">The Wealth of the Nation</a></li>
+        </ul>
+      </div>
     </div>
   </div>
 

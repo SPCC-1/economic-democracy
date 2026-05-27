@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inequality — Concept Library — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+.concept-tag{display:inline-block;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .6rem;margin-bottom:.9rem;}
+
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+
+.defbox{border:1px solid var(--black);background:var(--white);padding:1.1rem 1.4rem;margin:1.5rem 0;}
+.defbox-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.defbox p{font-size:.92rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.defbox strong{font-weight:600;color:var(--black);}
+
+.four{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.four-cell{background:var(--paper);padding:1rem 1.2rem;}
+.four-cell:nth-child(even){background:var(--cream);}
+.four-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem;}
+.four-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.3rem;}
+.four-text{font-size:.8rem;font-weight:300;color:var(--ink);line-height:1.55;}
+.four-text strong{font-weight:600;color:var(--charcoal);}
+@media(max-width:600px){.four{grid-template-columns:1fr;}}
+
+.types{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.type-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.type-cell:nth-child(even){background:var(--cream);}
+.type-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.type-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.15;}
+.type-text{font-size:.81rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.types{grid-template-columns:1fr;}}
+
+.context{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.context-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.context-name{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.context-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.context-body p{margin-bottom:.5rem;}
+.context-body p:last-child{margin-bottom:0;}
+.context-q{font-size:.82rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.6rem;margin-top:.5rem;line-height:1.5;}
+
+.tbl-wrap{margin:1.25rem 0;overflow-x:auto;}
+.cmp{width:100%;border-collapse:collapse;font-size:.8rem;min-width:540px;}
+.cmp th,.cmp td{border:1px solid var(--rule);padding:.55rem .7rem;vertical-align:top;line-height:1.45;text-align:left;}
+.cmp th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.cmp td:first-child{background:var(--cream);font-weight:600;color:var(--charcoal);font-size:.76rem;}
+.cmp .fill{color:var(--muted);font-style:italic;}
+
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;line-height:1.6;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing,.cmp th,.concept-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .context,.task,.types,.four,.defbox,.inset,.tbl-wrap{break-inside:avoid;}
+  .body-intro,.body{line-height:1.66;margin-bottom:.85rem;}
+  .sec-header{margin:1.45rem 0 .9rem;}
+  .context{margin:1rem 0;}
+  .four,.types,.defbox,.inset,.pullquote{margin-top:1.05rem;margin-bottom:1.05rem;}
+  .task{margin:1.15rem 0;}
+  .closing{margin:.7rem 0 0;padding:.85rem 1.2rem;}
+  .closing p{font-size:.88rem;line-height:1.5;}
+  .doc-footer{margin-top:.65rem;padding-top:.55rem;}
+  .closing.tight-top{margin-top:.55rem;}
+  .dq-list li{padding:.42rem 0 .42rem 1.85rem;line-height:1.5;}
+  .dq-list.tight li{padding-top:.28rem;padding-bottom:.28rem;}
+  .sec-header.tight-top{margin-top:.85rem;margin-bottom:.65rem;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+.sec-header.tight-top{margin-top:1.5rem;}
+.closing.tight-top{margin-top:1.4rem;}
+.dq-list.tight li{padding-top:.45rem;padding-bottom:.45rem;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="concept-tag">Concept Library · Distribution</p>
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Concept Primer</p>
+    <h1 class="masthead-title">Inequality</h1>
+    <p class="masthead-sub">The measurable gap between who has what &mdash; and the much harder question of which part of the gap reflects effort, which part reflects accumulation, and which part reflects something the next generation inherits before it ever earns anything.</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">Take any society at any moment and you can measure how its resources are distributed across its people. Some have more, some have less, and the size of that spread &mdash; the ratio of the top to the bottom, the share held by the richest tenth, the gap between the typical household and the household one step below &mdash; is a number. Not a slogan. A number. <strong>Inequality is what we call that gap when we look at it as a fact rather than as a feeling.</strong> Every economy on earth has some; no society has ever organized itself so that everyone ends up with exactly the same. The question isn't whether inequality exists. The question is how much of it there is, what's driving it, whether it's growing, and what part of it the society considers acceptable or even desirable as the price of an economy that works.</p>
+
+  <p class="body">This primer grants the basic point fully: <em>some inequality is unavoidable and some is actually useful.</em> Different people work harder, take more risks, develop scarcer skills, or build things others want to buy &mdash; and if the rewards for that effort were zero, the effort would mostly stop. An economy where everyone ends up the same regardless of what they do is an economy that has destroyed most of the incentive that makes it grow. So the goal of asking about inequality is not to wish it away. The goal is to look honestly at the two questions the headline number cannot answer on its own: <strong>what kind of gap is it &mdash; income or wealth &mdash; and what's driving the gap, effort and reward, or accumulation and inheritance and structural advantage that the next generation receives before it has done anything to earn it?</strong></p>
+
+  <div class="defbox">
+    <p class="defbox-label">The tool, stated plainly</p>
+    <p><strong>Inequality</strong> is the measured gap between who has what in an economy &mdash; expressed as the ratio of top to bottom, the share held by the richest fraction, or the distance between the typical household and the ones above and below. It is a fact, not a value judgment: every economy has some, and a modest amount is the predictable result of any system that rewards effort, risk, and skill. But the single number called &ldquo;inequality&rdquo; bundles two very different things &mdash; <em>income</em> (the flow of what people earn) and <em>wealth</em> (the stock of what they own) &mdash; and it does not tell you how much of the gap reflects what people did and how much reflects what they received before they did anything. Those two distinctions decide whether the inequality you're looking at is the engine of a working economy or the result of one quietly eating itself.</p>
+  </div>
+
+  <!-- SECTION I -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">The Tool &mdash; A Number That Names the Gap</span></div>
+
+  <p class="body">Grant the act of measuring inequality its full power, because without it the question disappears into rhetoric on both sides. Someone says &ldquo;the rich are getting richer&rdquo; and someone else says &ldquo;but everyone is better off than they used to be,&rdquo; and both might be true &mdash; or one might be hiding the other. The only way through the argument is to put the gap in numbers and look at what the numbers actually say. Economists have built several ways to do that &mdash; the Gini coefficient, the top-decile share, the ratio of the 90th percentile to the 10th, the median-to-mean spread &mdash; and each one is just a different way of asking the same simple question: <strong>how widely spread out are the people in this economy from each other?</strong></p>
+
+  <p class="body">The honest version of the conservative case for some inequality goes like this. People differ &mdash; in effort, in talent, in willingness to take risk, in choices about saving versus consuming. An economy that allows those differences to translate into different outcomes is harnessing real information: it is paying more to people who do the harder, scarcer, or more valued work, and that signal pulls effort toward where the economy needs it. Strip the signal out by leveling all outcomes and you also strip out the engine. Most serious left-of-center thinkers concede this; the disagreement is about <em>how much</em> and <em>what kind</em> of inequality is actually producing useful signals, and how much is producing nothing at all. That is the conversation this primer wants to make precise.</p>
+
+  <div class="four">
+    <div class="four-cell">
+      <p class="four-label">Inequality as engine</p>
+      <p class="four-name">The Useful Gap</p>
+      <p class="four-text">Different rewards for different efforts, skills, and risks pull people toward what the economy needs. The doctor earns more than the clerk; the founder who builds something millions buy earns more than someone who didn't. <strong>The gap is the signal &mdash; remove it and the effort goes with it.</strong> Some inequality is the price of a working economy.</p>
+    </div>
+    <div class="four-cell">
+      <p class="four-label">Inequality as inheritance</p>
+      <p class="four-name">The Inherited Gap</p>
+      <p class="four-text">The same measured gap can reflect almost nothing about effort or skill &mdash; just compounded advantage passing from one generation to the next, plus structural barriers some households face and others don't. <strong>The gap looks identical on the chart, but it is no longer a signal &mdash; it is a starting line.</strong> An economy can have a lot of one kind, a lot of the other, or a lot of both.</p>
+    </div>
+  </div>
+
+  <p class="body">Granted fully, inequality as a measurement is one of the most useful diagnostic tools the social sciences have. It lets us compare countries, compare eras within the same country, and track whether a society is converging or pulling apart. The trouble is that the number on its own is silent on two things that decide everything about what the number means. The first is what <em>kind</em> of inequality you're measuring &mdash; the flow of what people earn this year, or the stock of what they own from all prior years. The second is what's <em>driving</em> the gap &mdash; what people did, or what they were given by structures and inheritances that long predate them. Both questions are answerable; neither answers itself; and both have to be on the table before any honest conversation about what, if anything, to do about inequality can begin.</p>
+
+  <div class="pullquote">
+    <p>Inequality is a fact before it is an argument.<br>The argument starts when you ask which kind of gap you are looking at &mdash; and what put it there.</p>
+  </div>
+
+  <!-- SECTION II -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">Two Gaps Hiding Inside One Number</span></div>
+
+  <p class="body">A single headline number conceals two distinctions that turn out to matter enormously. Both are measurable; both are honestly contested; and reasonable people, looking at the same data, draw different conclusions about which one tells the deeper story about how a society is actually doing.</p>
+
+  <div class="types">
+    <div class="type-cell">
+      <p class="type-label">Lever 1</p>
+      <p class="type-name">Income inequality and wealth inequality are not the same number &mdash; and don't move together</p>
+      <p class="type-text">Income is the flow: what you earn this year from work, business, or returns on what you already own. Wealth is the stock: what you own, accumulated across every year that came before. A society can have moderate income inequality and enormous wealth inequality at the same time, because <strong>wealth compounds across years and generations while income mostly does not.</strong> Two doctors earning identical salaries land at radically different places by retirement if one of them inherited a paid-off house and the other inherited debt. Most public conversation focuses on income &mdash; it shows up on every paystub, gets taxed every year, and is the easier number to find. The bigger story over the long run is wealth, which is rarely measured directly, lightly taxed in most countries, and largely invisible until somebody dies. In the United States the top tenth holds roughly thirty percent of income in a typical year and roughly <em>seventy percent</em> of all wealth. That gap between the two gaps is itself one of the most important facts the headline number doesn't tell you.</p>
+    </div>
+    <div class="type-cell">
+      <p class="type-label">Lever 2</p>
+      <p class="type-name">Earned inequality and structural inequality look identical on the chart</p>
+      <p class="type-text">Inequality from effort, talent, and risk is one thing; inequality from inheritance, accumulated past power, and structures the current generation didn't build is another. They cannot be told apart from the wealth number alone. A meritocracy is supposed to produce the first kind and minimize the second; in practice, every meritocracy produces both, and <strong>the share that is structural rather than earned tends to grow over generations unless something interrupts it.</strong> When a family inherits a paid-off home in a high-appreciation neighborhood, accumulates assets over forty years of tax-advantaged growth, and passes them along again, that wealth is real but its origin is not effort &mdash; it is time plus compounding plus the structure of who got to start where. Multiply this across a society where some groups were systematically excluded from asset ownership for generations &mdash; through redlining, denied access to GI Bill benefits, or simple legal barriers &mdash; and what shows up on the chart as &ldquo;inequality&rdquo; is, in substantial part, the cumulative shadow of decisions made long before anyone now alive was born. None of which says effort doesn't matter. It says the gap you're measuring is mixed, and untangling the part that's earned from the part that's structural is one of the harder honest questions in economics.</p>
+    </div>
+  </div>
+
+  <div class="inset">
+    <strong>The question to carry everywhere:</strong> when you hear that &ldquo;inequality is rising&rdquo; or &ldquo;inequality is exaggerated,&rdquo; ask the two questions the headline cannot answer &mdash; <em>which gap is being measured (income or wealth?), and how much of the gap reflects what people did versus what compounded in the background while they were doing it?</em> An economy with rising income inequality and stable wealth inequality is one story. An economy with stable income inequality and exploding wealth inequality is a very different one. An economy where most of the wealth gap is structural inheritance is a third. All three can be summarized by the same word; none of them point to the same response.
+  </div>
+
+  <!-- SECTION III -->
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">The Same Word, Three Contexts</span></div>
+
+  <p class="body">Watch inequality function as the signal it is supposed to be; then watch the income gap stay roughly stable while the wealth gap explodes underneath it; then watch a country where the gap is mostly inherited from decisions no one in the current generation made.</p>
+
+  <div class="context">
+    <p class="context-meta">Context One &middot; Inequality doing its job</p>
+    <p class="context-name">A growing economy where the spread reflects what people do</p>
+    <div class="context-body">
+      <p>In a society with broad access to education, fluid labor markets, and a strong floor under everyone, the gap between top and bottom is real and visible &mdash; doctors and engineers earn more than retail clerks &mdash; but the gap tracks roughly with the skills, hours, and risks of the work. People who start at the bottom routinely reach the middle within a working lifetime. The next generation's outcomes are only loosely tied to where their parents started. Wealth inequality is moderate because inheritance is taxed honestly, the floor is high enough that most households can save, and the largest fortunes don't compound forever untouched. <strong>The number called &ldquo;inequality&rdquo; in this society is mostly the signal it's supposed to be:</strong> different rewards for different work, motivating effort, allocating talent.</p>
+      <p class="context-q">Is this what the United States currently looks like &mdash; or is it what it looked like sixty years ago, or what some other countries look like now, or what no real country has ever quite achieved?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Two &middot; Two different gaps moving in opposite directions</p>
+    <p class="context-name">When the paystub looks stable and the balance sheet pulls apart</p>
+    <div class="context-body">
+      <p>Over forty years, median household income in a country grows slowly but steadily. The income-inequality number rises somewhat but not dramatically. Meanwhile, asset prices &mdash; homes, stocks, businesses &mdash; rise much faster than wages, and the top decile, which owned most of those assets to begin with, captures the lion's share of the appreciation. Wealth inequality during the same period rises sharply. By the end, the income chart shows a manageable problem and the wealth chart shows a transformed society. <strong>Lever 1 in full view:</strong> the country told itself one story (about flat incomes) while a different and larger story (about diverging asset ownership) ran in the background. Households earning roughly what their parents earned own dramatically less of the country.</p>
+      <p class="context-q">If the headline most people focus on (income) shows one thing and the headline almost nobody tracks (wealth) shows another, which one tells you more about what kind of society the next generation will inherit?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Three &middot; The inequality that was already there</p>
+    <p class="context-name">A wealth gap built before anyone now alive was born</p>
+    <div class="context-body">
+      <p>A society measures the wealth gap between two groups of citizens and finds it large. Some of it is current effort, current choices, current skills &mdash; the part the textbook describes. But trace the gap backwards and most of it predates the current generation entirely: decades of legal exclusion from asset-building programs (mortgages, business loans, the GI Bill), the absence of inherited wealth from grandparents who were systematically prevented from accumulating any, the cumulative effect of school funding tied to property values in neighborhoods that one group could buy into and another could not. The current generation may be operating in a formally equal market &mdash; same laws, same opportunities on paper &mdash; but is starting from a position the prior generations created and that compounding made larger, not smaller, with every passing decade. <strong>Lever 2 at its sharpest:</strong> the chart shows &ldquo;inequality,&rdquo; but the meaningful share of what's on it is the inherited weight of decisions long since made, accumulating quietly while the formal rules were declared neutral. Whether that calls for any particular response is honestly contested; that the gap is significantly inherited rather than significantly earned is not.</p>
+      <p class="context-q">If a measured gap was largely created by past policy, does the current generation owe anything to that history &mdash; and if so, what, to whom, and from whom?</p>
+    </div>
+  </div>
+
+  <!-- ACTIVITY -->
+  <div class="sec-header tight-top"><span class="sec-roman">IV</span><span class="sec-title">Activity &mdash; What Kind of Gap Is It?</span></div>
+
+  <p class="body">For each case, name which kind of inequality is on display &mdash; income, wealth, or both &mdash; and then ask the second question the number can't answer alone: how much of the gap looks earned, and how much looks like accumulation or structural advantage the current generation inherited?</p>
+
+  <div class="tbl-wrap">
+    <table class="cmp">
+      <thead>
+        <tr><th>What happened</th><th>Income gap, wealth gap, or both?</th><th>How much earned / how much inherited or structural?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>A surgeon earns four times what a teacher earns</td><td class="fill">&hellip;</td><td class="fill">&hellip;</td></tr>
+        <tr><td>Two families earn identical salaries; one owns a paid-off home, the other rents</td><td class="fill">&hellip;</td><td class="fill">&hellip;</td></tr>
+        <tr><td>Median wages rise 10% over 30 years; stock prices rise 400%</td><td class="fill">&hellip;</td><td class="fill">&hellip;</td></tr>
+        <tr><td>Two college graduates start jobs the same day; one has $0 in student debt, one has $80,000</td><td class="fill">&hellip;</td><td class="fill">&hellip;</td></tr>
+        <tr><td>A founder sells a company for $200M after a decade of risk</td><td class="fill">&hellip;</td><td class="fill">&hellip;</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Write</p>
+    <p class="task-title">Trace a gap you can see</p>
+    <p class="task-body">Think of two households or two people you know whose economic situations are different. Don't focus on income alone &mdash; look at the full picture: housing (rent or own?), debt, savings, what they inherited or didn't, the schools they had access to, the neighborhood they grew up in. How much of the gap between them looks like the result of different effort, talent, or choices in their own lifetimes &mdash; and how much looks like accumulated advantage or disadvantage that arrived before they did? You don't have to resolve the question. Just describe the gap honestly, and name what kind it is.</p>
+    <div class="writelines"><div class="writeline"></div><div class="writeline"></div><div class="writeline"></div></div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="sec-header tight-top"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list tight">
+    <li>Some inequality is the signal that pulls effort toward where the economy needs it. How much is enough to do that work &mdash; and how would you know when there is more than is needed for the signal to function?</li>
+    <li>Public conversation focuses overwhelmingly on income inequality, even though wealth inequality is roughly twice as large and growing faster. What is it about wealth that makes it harder to talk about &mdash; and who benefits when the conversation stays on the smaller number?</li>
+    <li>The line between earned and inherited inequality is rarely clean &mdash; even &ldquo;self-made&rdquo; success usually rests on starting conditions someone else provided. Where, if anywhere, do you draw a line between accumulated advantage that's legitimate and accumulated advantage that isn't?</li>
+    <li>What's the smallest change that would let an economy keep enough inequality to motivate effort, risk, and skill &mdash; while preventing the structural and inherited share of the gap from compounding indefinitely across generations?</li>
+  </ol>
+
+  <div class="closing tight-top">
+    <p>Some gap is the price of an economy that works.<br>Some gap is what happens when accumulation runs unchecked across generations.<br>Both show up as the same word on the chart.<br>Reading inequality honestly is the work of telling them apart &mdash;<br>and any society that refuses to do that work ends up with whichever one the system produces by default.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

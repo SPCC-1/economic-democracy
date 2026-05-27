@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Credit — Concept Library — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+.concept-tag{display:inline-block;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .6rem;margin-bottom:.9rem;}
+
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+
+.defbox{border:1px solid var(--black);background:var(--white);padding:1.1rem 1.4rem;margin:1.5rem 0;}
+.defbox-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.defbox p{font-size:.92rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.defbox strong{font-weight:600;color:var(--black);}
+
+/* create vs extract two-column */
+.four{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.four-cell{background:var(--paper);padding:1rem 1.2rem;}
+.four-cell:nth-child(even){background:var(--cream);}
+.four-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem;}
+.four-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.3rem;}
+.four-text{font-size:.8rem;font-weight:300;color:var(--ink);line-height:1.55;}
+.four-text strong{font-weight:600;color:var(--charcoal);}
+@media(max-width:600px){.four{grid-template-columns:1fr;}}
+
+.types{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.type-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.type-cell:nth-child(even){background:var(--cream);}
+.type-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.type-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.15;}
+.type-text{font-size:.81rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.types{grid-template-columns:1fr;}}
+
+.context{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.context-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.context-name{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.context-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.context-body p{margin-bottom:.5rem;}
+.context-body p:last-child{margin-bottom:0;}
+.context-q{font-size:.82rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.6rem;margin-top:.5rem;line-height:1.5;}
+
+.tbl-wrap{margin:1.25rem 0;overflow-x:auto;}
+.cmp{width:100%;border-collapse:collapse;font-size:.8rem;min-width:540px;}
+.cmp th,.cmp td{border:1px solid var(--rule);padding:.55rem .7rem;vertical-align:top;line-height:1.45;text-align:left;}
+.cmp th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.cmp td:first-child{background:var(--cream);font-weight:600;color:var(--charcoal);font-size:.76rem;}
+.cmp .fill{color:var(--muted);font-style:italic;}
+
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing,.cmp th,.concept-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .context,.task,.types,.four,.defbox,.inset,.tbl-wrap{break-inside:avoid;}
+  .sec-header{margin:1.9rem 0 1rem;}
+  .context{margin:1.1rem 0;}
+  .four,.types,.defbox,.inset,.pullquote{margin-top:1.2rem;margin-bottom:1.2rem;}
+  .task{margin:1.3rem 0;}
+  .closing{margin:1.2rem 0 0;}
+  .doc-footer{margin-top:1.2rem;}
+  .closing.tight-top{margin-top:.8rem;}
+  .dq-list.tight li{padding-top:.34rem;padding-bottom:.34rem;}
+  .sec-header.tight-top{margin-top:1rem;margin-bottom:.85rem;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+.sec-header.tight-top{margin-top:1.5rem;}
+.closing.tight-top{margin-top:1.4rem;}
+.dq-list.tight li{padding-top:.45rem;padding-bottom:.45rem;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="concept-tag">Concept Library · Money &amp; Value</p>
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Concept Primer</p>
+    <h1 class="masthead-title">Credit</h1>
+    <p class="masthead-sub">Spending the future's money today on the strength of a promise — the engine that lets people build before they've saved, and the trust that decides who gets to.</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">The word tells you what it is. <strong>Credit</strong> comes from the Latin <em>credere</em> — <em>to believe</em>. When a bank extends you credit, it is, quite literally, expressing a belief: that you will keep a promise to repay. That is the whole concept in a single root. Credit is the ability to use money now in exchange for a promise to pay it back later — to reach into your own future and spend some of it today. It lets you buy a home before you've saved its full price, start a business before you've earned the capital, get an education before you can afford it. Almost nothing large in a modern economy — no house, no factory, no highway — gets built without someone, somewhere, believing a promise about the future. Credit is trust, turned into fuel.</p>
+
+  <p class="body">And it is one of the most powerful accelerants of prosperity humans have ever found, because it solves a problem that would otherwise freeze everything: the people with money to lend and the people with productive things to do are rarely the same people at the same time. Credit moves resources to where they can be used <em>now</em>, instead of forcing everyone to wait until they've personally saved enough. This primer grants that power fully — and then follows the two things the cheerful version leaves out. First: credit is a claim on your <em>future</em> self, and the future is uncertain — the same loan can build a life or bury one. Second: credit runs on <em>trust</em>, and trust is handed out unequally — so who gets credit, and on what terms, is quietly one of the most powerful forces deciding who gets to build a future at all.</p>
+
+  <div class="defbox">
+    <p class="defbox-label">The tool, stated plainly</p>
+    <p><strong>Credit</strong> is the use of money now in exchange for a promise to repay it later, usually with <strong>interest</strong> (a fee for the use of the money over time). The borrower converts a future promise into present spending power; the lender, believing the promise, earns interest for the wait and the risk. Its mirror image is <strong>debt</strong> — the same arrangement seen from the borrower's side: what is "credit" extended to you becomes "debt" you owe. At its root, credit is <em>trust</em> made into a transaction.</p>
+  </div>
+
+  <!-- SECTION I -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">The Tool — Reaching Into the Future</span></div>
+
+  <p class="body">Grant credit its full power, because a world without it would be far poorer and far more frozen than we imagine. Without credit, you could only ever buy what you had already saved for in full. No one could own a home until they'd saved its entire price in cash — most never would. No entrepreneur could start a business until they'd personally banked all the startup money first. A society could only build with wealth it had already piled up, never with wealth it expected to create. Credit shatters that limit: it lets a promising future <em>finance itself</em>, pulling tomorrow's resources into today's hands so they can be put to work now.</p>
+
+  <p class="body">See the two sides of the bargain, because credit only exists when both are satisfied — and the link between them is interest:</p>
+
+  <div class="four">
+    <div class="four-cell">
+      <p class="four-label">The borrower gains</p>
+      <p class="four-name">The Future, Now</p>
+      <p class="four-text">Access to money before you've earned it — to buy the home, start the venture, get the degree, bridge the gap. You trade a promise of future repayment for the power to act <strong>today</strong>, when the opportunity is in front of you rather than years away.</p>
+    </div>
+    <div class="four-cell">
+      <p class="four-label">The lender gains</p>
+      <p class="four-name">A Return on Trust</p>
+      <p class="four-text">Money sitting idle earns nothing. Lent out, it earns <strong>interest</strong> — payment for waiting, and for the risk the promise is broken. The lender believes in the borrower's future and is paid for that belief. Both sides can come out ahead — if the future cooperates.</p>
+    </div>
+  </div>
+
+  <p class="body">This is the genuine magic: credit can be a deal where <em>everyone</em> wins. The borrower builds something they couldn't have otherwise; the lender earns a return on money that would otherwise sit still; and society gets the house, the business, the bridge built years sooner than saving alone would allow. Granted fully, credit is one of the great engines of growth and opportunity — the mechanism that lets human potential act before it has saved up the right to. The trouble is contained in three small words from the definition: <em>"if the future cooperates."</em> Because the future is a promise, not a fact — and that is where the tool's neutrality breaks.</p>
+
+  <div class="pullquote">
+    <p>Credit is a bridge to your own future, built on the belief that the future will arrive as promised. The bridge is real. The belief is a bet.</p>
+  </div>
+
+  <!-- SECTION II -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">Where the Promise and the Trust Break</span></div>
+
+  <p class="body">Credit is a genuine good, but two features turn it dangerous — and both come straight from its nature as a trusted promise about an uncertain future.</p>
+
+  <div class="types">
+    <div class="type-cell">
+      <p class="type-label">Lever 1</p>
+      <p class="type-name">The same loan builds wealth or buries you — it depends what it funds</p>
+      <p class="type-text">Credit is a claim on your future self, and what matters is whether what you bought with it <em>grows</em>. Borrow to fund something productive — a skill, a home, a business that earns more than the loan costs — and credit multiplies your future; the thing you bought outruns the interest. Borrow to fund consumption that vanishes — and you've simply moved future money into the past, now owing interest on something already gone. The very same tool, at the very same interest rate, is an engine of wealth or a trap, depending entirely on what it funded and whether the future arrived. And interest <strong>compounds</strong> in both directions: it can grow a productive investment, or grow a debt faster than you can repay it.</p>
+    </div>
+    <div class="type-cell">
+      <p class="type-label">Lever 2</p>
+      <p class="type-name">Trust is extended unequally — so credit is power</p>
+      <p class="type-text">Because credit is belief in a promise, someone must decide whose promise to believe — and that decision is never neutral. The borrower who already has wealth is judged safe and offered low rates; the borrower who has little is judged risky and charged more, if offered credit at all. So the same loan costs the poor more than the rich, and those most in need of credit to build a future are the least likely to get it on fair terms. Credit can also be <em>withdrawn</em> exactly when it's needed most — lenders pull back in hard times, deepening the very trouble. Who gets believed, and at what price, quietly shapes who gets to build at all. "Creditworthiness" is a judgment about people, and judgments carry power.</p>
+    </div>
+  </div>
+
+  <div class="inset">
+    <strong>The questions to carry everywhere:</strong> when credit is offered or taken, ask — <em>what is the borrowed money funding: something that will grow and outrun the interest, or something that will vanish and leave only the debt? And who is being trusted here, on what terms — is this credit building a future, or is its price and its limits deciding who's allowed to have one?</em> Credit is neither good nor bad; it is a bet on the future made on someone's behalf. The whole skill is seeing what it funds, what it costs, and who got to make — or was denied — the bet.</p>
+  </div>
+
+  <!-- SECTION III — APPLY (break removed; long intro) -->
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">The Same Promise, Three Scales</span></div>
+
+  <p class="body">Watch credit work as a future-building engine and as a trap at three scales — a person, a business, and a nation — the same promise about the future, told three sizes large.</p>
+
+  <div class="context">
+    <p class="context-meta">Scale One · The person</p>
+    <p class="context-name">A student loan and a credit-card balance</p>
+    <div class="context-body">
+      <p>The same person takes on two debts. One funds a degree or a skill that raises their lifetime earnings — borrowed money invested in a future that grows, so the gain can outrun the interest: credit at its best. The other funds everyday spending on a high-interest card, where the things bought are long gone but the balance compounds month after month — borrowed money poured into a past that's vanished. Identical tool, opposite outcomes, decided entirely by what each loan <em>funded</em>. And notice Lever 2: the rate they're offered on both depends on how creditworthy lenders already judge them to be.</p>
+      <p class="context-q">For each debt, did the borrowed money buy something that grows — or something already gone?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Scale Two · The business</p>
+    <p class="context-name">Borrowing to grow — or borrowing to survive</p>
+    <div class="context-body">
+      <p>A company borrows. If it invests the loan in something that earns more than the interest costs — a machine that doubles output, a store that pays for itself — the credit is an accelerant, and the business grows faster than it could have by saving. But if it borrows merely to cover losses and keep the lights on, the debt piles up against a future that isn't improving, and the interest compounds toward a reckoning. The same borrowing is leverage that multiplies success or a noose that tightens with each missed turnaround — and lenders, sensing trouble, may yank the credit precisely when survival depends on it.</p>
+      <p class="context-q">Is this borrowing buying growth that outruns the interest — or just delaying a failure?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Scale Three · The nation</p>
+    <p class="context-name">A country borrowing on the strength of its promise</p>
+    <div class="context-body">
+      <p>Nations borrow too, and the same logic scales up. A government that borrows to build what makes its economy more productive — infrastructure, education, research — can grow its way out, the future revenue outpacing the interest. One that borrows only to paper over ongoing shortfalls accumulates debt against a future that isn't growing to match. And Lever 2 looms largest here: a trusted nation borrows cheaply, while one the lenders doubt pays punishing rates or is cut off entirely — sometimes triggering the very crisis the doubt anticipated. The same promise-about-the-future, now between a country and the world, with the terms set by how much it's believed.</p>
+      <p class="context-q">Is the nation borrowing to build a bigger future — and is it trusted enough to afford the bet?</p>
+    </div>
+  </div>
+
+  <!-- ACTIVITY -->
+  <div class="sec-header tight-top"><span class="sec-roman">IV</span><span class="sec-title">Activity — Build or Bury?</span></div>
+
+  <p class="body">For each use of credit, judge whether the borrowed money funds something that grows (likely to build) or something that vanishes (likely to bury) — and note how the borrower's "creditworthiness" would shape the terms.</p>
+
+  <div class="tbl-wrap">
+    <table class="cmp">
+      <thead>
+        <tr><th>The use of credit</th><th>Funds something that grows or vanishes?</th><th>How would trust shape the terms?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>A loan to buy tools for a trade</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A high-interest loan to cover a vacation</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A mortgage on a home that holds its value</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Payday borrowing to pay last month's bills</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A business loan for a machine that pays for itself</td><td class="fill">…</td><td class="fill">…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Write</p>
+    <p class="task-title">Trace a debt to its future</p>
+    <p class="task-body">Think of a real example of credit — yours, your family's, or one you've read about. What did the borrowed money fund: something that grew (a skill, an asset, a productive thing) or something that vanished (consumption now gone)? Did the future arrive as promised, and did the gain outrun the interest? Then consider the trust side: who decided to extend that credit, on what terms, and would someone with less wealth have gotten the same deal? What does the example tell you about when credit builds a future and when it forecloses one?</p>
+    <div class="writelines"><div class="writeline"></div><div class="writeline"></div><div class="writeline"></div></div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="sec-header tight-top"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list tight">
+    <li>Credit lets people act before they've saved — a genuine engine of opportunity. When does that power most clearly help, and when does it most clearly harm? Is the line about the loan, or about what it funds?</li>
+    <li>The same loan often costs a poor borrower more than a rich one, because the poor are judged riskier. Is that fair as a matter of risk, unfair as a matter of opportunity, or both at once — and could it be otherwise?</li>
+    <li>Interest compounds in both directions: it grows a sound investment and a runaway debt alike. Why might that make credit especially dangerous for someone who borrows for consumption rather than for something that grows?</li>
+    <li>What's the smallest change that would help more people use credit to build a future — fairer terms, better protection, wider access — without encouraging the kind of borrowing that buries them?</li>
+  </ol>
+
+  <div class="closing tight-top">
+    <p>Every loan is a belief: that a promise about the future will be kept.<br>That belief builds homes, businesses, and nations before they could otherwise rise —<br>and it buries those whose future failed to arrive, or who were never trusted to try.<br>Credit is trust made into fuel; the only questions are what it builds, and who is allowed to burn it.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

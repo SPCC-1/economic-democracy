@@ -269,43 +269,23 @@
 }
 .concept-jump-btn:hover{background:var(--mid);}
 
-.cluster-row{
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:1px;
-  background:var(--rule);
-  border:1px solid var(--rule);
-  margin:0 0 1.25rem;
-}
-.cluster-row-cell{
-  background:var(--paper);
-  padding:.95rem .9rem;
-  display:flex;
-  flex-direction:column;
-  gap:.25rem;
-}
-.cluster-row-cell:nth-child(even){background:var(--cream);}
-.cluster-row-label{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:.55rem;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:var(--muted);
-}
-.cluster-row-name{
+/* ── ACCORDION TAGLINE (concept clusters) ── */
+.acc-trigger .acc-left.with-tagline{align-items:flex-start;}
+.acc-text{display:flex;flex-direction:column;gap:.2rem;}
+.acc-name-lead{
   font-family:'Playfair Display',serif;
-  font-size:.92rem;
+  font-size:1rem;
   font-weight:700;
   color:var(--black);
+  line-height:1.2;
 }
-.cluster-row-tagline{
-  font-size:.72rem;
+.acc-tagline{
+  font-size:.74rem;
   font-weight:300;
   color:var(--mid);
-  line-height:1.45;
+  line-height:1.4;
 }
-@media(max-width:900px){.cluster-row{grid-template-columns:repeat(3,1fr);}}
-@media(max-width:540px){.cluster-row{grid-template-columns:1fr 1fr;}}
+.acc-trigger.has-tagline{padding-top:1rem;padding-bottom:1rem;}
 
 /* ── TOOLKIT GRID ── */
 .toolkit-grid{
@@ -466,6 +446,52 @@
   .page-header{padding:3rem 1.5rem 2rem;}
   .res-section{padding-left:1.5rem;padding-right:1.5rem;}
 }
+
+/* ── ACCORDION (concept clusters) ── */
+.section-accordion{
+  margin:1.5rem 0;
+  border:1px solid var(--rule);
+  max-width:760px;
+}
+.acc-row{border-bottom:1px solid var(--rule);}
+.acc-row:last-child{border-bottom:none;}
+.acc-trigger{
+  width:100%;background:none;border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.85rem 1.25rem;
+  font-family:'Source Serif 4',serif;
+  text-align:left;transition:background .15s;
+}
+.acc-trigger:hover{background:var(--cream);}
+.acc-trigger[aria-expanded="true"]{background:var(--cream);}
+.acc-left{display:flex;align-items:baseline;gap:.75rem;}
+.acc-roman{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:.6rem;color:var(--muted);
+  letter-spacing:.1em;flex-shrink:0;width:1.2rem;
+}
+.acc-name{font-size:.95rem;font-weight:500;color:var(--charcoal);}
+.acc-arrow{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:.65rem;color:var(--muted);
+  transition:transform .2s;flex-shrink:0;
+}
+.acc-trigger[aria-expanded="true"] .acc-arrow{transform:rotate(90deg);}
+.acc-panel{
+  display:none;
+  padding:.5rem 1.25rem 1rem 3rem;
+  background:var(--cream);
+  border-top:1px solid var(--rule);
+}
+.acc-panel.open{display:block;}
+.acc-panel ul{list-style:none;display:flex;flex-direction:column;gap:.35rem;padding:0;margin:0;}
+.acc-panel ul li{font-size:.85rem;font-weight:300;color:var(--mid);line-height:1.5;}
+.acc-panel ul li a{
+  color:var(--charcoal);border-bottom:1px solid var(--rule);
+  padding-bottom:1px;transition:color .15s,border-color .15s;
+  text-decoration:none;
+}
+.acc-panel ul li a:hover{color:var(--black);border-color:var(--black);}
 </style>
 </head>
 <body>
@@ -582,42 +608,143 @@
 <!-- II. CONCEPT LIBRARY -->
 <section class="res-section" id="concepts">
   <span class="res-section-label">Section II &nbsp;&middot;&nbsp; Concept Library</span>
-  <h2 class="res-section-title">36 Primers. Five Clusters.</h2>
+  <h2 class="res-section-title">45 Primers. Five Clusters.</h2>
   <p class="res-section-sub">The economic toolkit, one tool at a time. Each primer grants the concept its full strength, then presses on the two points where reasonable people start to disagree. Markets, ownership, capital, monopoly, taxation, globalization — every primer follows the same arc.</p>
 
   <div class="concept-jump">
     <div class="concept-jump-text">
-      <strong>Browse all 36 primers</strong>
+      <strong>Browse all 45 primers</strong>
       <span>Organized into Allocation · Engines · Power · Distribution · Money &amp; Value — five clusters that map the terrain.</span>
     </div>
     <a href="concepts.html" class="concept-jump-btn">Open the Library &rarr;</a>
   </div>
 
-  <div class="cluster-row">
-    <div class="cluster-row-cell">
-      <span class="cluster-row-label">I</span>
-      <span class="cluster-row-name">Allocation</span>
-      <span class="cluster-row-tagline">How scarce things get divided.</span>
+  <!-- CONCEPT CLUSTER DROPDOWNS -->
+  <div class="section-accordion">
+    <div class="acc-row">
+      <button class="acc-trigger has-tagline" aria-expanded="false" onclick="toggleAcc(this)">
+        <span class="acc-left with-tagline">
+          <span class="acc-roman">I</span>
+          <span class="acc-text">
+            <span class="acc-name-lead">Allocation</span>
+            <span class="acc-tagline">How scarce things get divided.</span>
+          </span>
+        </span>
+        <span class="acc-arrow">›</span>
+      </button>
+      <div class="acc-panel">
+        <ul>
+          <li><a href="ED_CON_Scarcity.html">Scarcity</a></li>
+          <li><a href="ED_CON_Opportunity_Cost.html">Opportunity Cost</a></li>
+          <li><a href="ED_CON_Incentives.html">Incentives</a></li>
+          <li><a href="ED_CON_Supply_And_Demand.html">Supply &amp; Demand</a></li>
+          <li><a href="ED_CON_Externalities.html">Externalities</a></li>
+          <li><a href="ED_CON_Public_Goods.html">Public Goods</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="cluster-row-cell">
-      <span class="cluster-row-label">II</span>
-      <span class="cluster-row-name">Engines</span>
-      <span class="cluster-row-tagline">What drives growth.</span>
+    <div class="acc-row">
+      <button class="acc-trigger has-tagline" aria-expanded="false" onclick="toggleAcc(this)">
+        <span class="acc-left with-tagline">
+          <span class="acc-roman">II</span>
+          <span class="acc-text">
+            <span class="acc-name-lead">Engines</span>
+            <span class="acc-tagline">What drives growth.</span>
+          </span>
+        </span>
+        <span class="acc-arrow">›</span>
+      </button>
+      <div class="acc-panel">
+        <ul>
+          <li><a href="ED_CON_Profit_Motive.html">Profit Motive</a></li>
+          <li><a href="ED_CON_Compounding.html">Compounding</a></li>
+          <li><a href="ED_CON_Competition.html">Competition</a></li>
+          <li><a href="ED_CON_Productivity.html">Productivity</a></li>
+          <li><a href="ED_CON_Creative_Destruction.html">Creative Destruction</a></li>
+          <li><a href="ED_CON_Business_Cycles.html">Business Cycles</a></li>
+          <li><a href="ED_CON_Entrepreneur.html">The Entrepreneur</a></li>
+          <li><a href="ED_CON_Investment.html">Investment</a></li>
+          <li><a href="ED_CON_Specialization.html">Specialization</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="cluster-row-cell">
-      <span class="cluster-row-label">III</span>
-      <span class="cluster-row-name">Power</span>
-      <span class="cluster-row-tagline">How advantage concentrates.</span>
+    <div class="acc-row">
+      <button class="acc-trigger has-tagline" aria-expanded="false" onclick="toggleAcc(this)">
+        <span class="acc-left with-tagline">
+          <span class="acc-roman">III</span>
+          <span class="acc-text">
+            <span class="acc-name-lead">Power</span>
+            <span class="acc-tagline">How advantage concentrates.</span>
+          </span>
+        </span>
+        <span class="acc-arrow">›</span>
+      </button>
+      <div class="acc-panel">
+        <ul>
+          <li><a href="ED_CON_Monopoly.html">Monopoly</a></li>
+          <li><a href="ED_CON_Network_Effects.html">Network Effects</a></li>
+          <li><a href="ED_CON_Economies_Of_Scale.html">Economies of Scale</a></li>
+          <li><a href="ED_CON_Rent_Seeking.html">Rent-Seeking</a></li>
+          <li><a href="ED_CON_Sovereignty.html">Sovereignty</a></li>
+          <li><a href="ED_CON_The_Trust.html">The Trust</a></li>
+          <li><a href="ED_CON_Globalization.html">Globalization</a></li>
+          <li><a href="ED_CON_Consolidation.html">Consolidation</a></li>
+          <li><a href="ED_CON_What_Is_A_Platform.html">Platforms</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="cluster-row-cell">
-      <span class="cluster-row-label">IV</span>
-      <span class="cluster-row-name">Distribution</span>
-      <span class="cluster-row-tagline">Who ends up with what.</span>
+    <div class="acc-row">
+      <button class="acc-trigger has-tagline" aria-expanded="false" onclick="toggleAcc(this)">
+        <span class="acc-left with-tagline">
+          <span class="acc-roman">IV</span>
+          <span class="acc-text">
+            <span class="acc-name-lead">Distribution</span>
+            <span class="acc-tagline">Who ends up with what.</span>
+          </span>
+        </span>
+        <span class="acc-arrow">›</span>
+      </button>
+      <div class="acc-panel">
+        <ul>
+          <li><a href="ED_CON_The_Commons.html">The Commons</a></li>
+          <li><a href="ED_CON_Predistribution.html">Predistribution</a></li>
+          <li><a href="ED_CON_Redistribution.html">Redistribution</a></li>
+          <li><a href="ED_CON_Labor.html">Labor</a></li>
+          <li><a href="ED_CON_Small_Business_Owner.html">The Small Business Owner</a></li>
+          <li><a href="ED_CON_Inequality.html">Inequality</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="cluster-row-cell">
-      <span class="cluster-row-label">V</span>
-      <span class="cluster-row-name">Money &amp; Value</span>
-      <span class="cluster-row-tagline">The machinery underneath.</span>
+    <div class="acc-row">
+      <button class="acc-trigger has-tagline" aria-expanded="false" onclick="toggleAcc(this)">
+        <span class="acc-left with-tagline">
+          <span class="acc-roman">V</span>
+          <span class="acc-text">
+            <span class="acc-name-lead">Money &amp; Value</span>
+            <span class="acc-tagline">The machinery underneath.</span>
+          </span>
+        </span>
+        <span class="acc-arrow">›</span>
+      </button>
+      <div class="acc-panel">
+        <ul>
+          <li><a href="ED_CON_Ownership_Equity.html">Ownership &amp; Equity</a></li>
+          <li><a href="ED_CON_Inflation.html">Inflation</a></li>
+          <li><a href="ED_CON_Capital.html">Capital</a></li>
+          <li><a href="ED_CON_Wages_And_Assets.html">Wages &amp; Assets</a></li>
+          <li><a href="ED_CON_Credit.html">Credit</a></li>
+          <li><a href="ED_CON_Debt.html">Debt</a></li>
+          <li><a href="ED_CON_Corporation.html">The Corporation</a></li>
+          <li><a href="ED_CON_PL_vs_Balance_Sheet.html">P&amp;L vs. Balance Sheet</a></li>
+          <li><a href="ED_CON_Banking_Central_Banks.html">Banking &amp; Central Banks</a></li>
+          <li><a href="ED_CON_Fiscal_Policy.html">Fiscal Policy</a></li>
+          <li><a href="ED_CON_Taxation.html">Taxation</a></li>
+          <li><a href="ED_CON_Cryptocurrency.html">Cryptocurrency</a></li>
+          <li><a href="ED_CON_Data.html">Data</a></li>
+          <li><a href="ED_CON_Wealth_Of_Nations.html">The Wealth of Nations</a></li>
+          <li><a href="ED_CON_Wealth_Of_The_Nation.html">The Wealth of the Nation</a></li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -729,13 +856,13 @@
 <section class="res-section" id="admins">
   <span class="res-section-label">Section VI &nbsp;&middot;&nbsp; For Administrators</span>
   <h2 class="res-section-title">For Department Heads &amp; Administrators.</h2>
-  <p class="res-section-sub">Economic Democracy is standards-completing, not standards-rejecting. The Standards Crosswalk maps all thirty-six concepts and the teaching units against the Council for Economic Education's 2025 economics pillars and the C3 inquiry framework &mdash; full or near-full coverage across all eighteen pillars, including CEE's newest (Technology), with a single honest, supplementable light spot (formal GDP-accounting mechanics). The Educator Overview lays out the rationale, scope, and philosophy in four pages to share with your department before the first day.</p>
+  <p class="res-section-sub">Economic Democracy is standards-completing, not standards-rejecting. The Standards Crosswalk maps all forty-five concepts and the teaching units against the Council for Economic Education's 2025 economics pillars and the C3 inquiry framework &mdash; full or near-full coverage across all eighteen pillars, including CEE's newest (Technology), with a single honest, supplementable light spot (formal GDP-accounting mechanics). The Educator Overview lays out the rationale, scope, and philosophy in four pages to share with your department before the first day.</p>
 
   <div class="admin-grid">
     <a href="ED_XWALK_Standards_Crosswalk.html" class="admin-card">
       <span class="admin-label">Document</span>
       <span class="admin-name">Standards Crosswalk</span>
-      <span class="admin-desc">All 36 concepts and the teaching units mapped against the CEE 2025 economics pillars and the C3 inquiry framework.</span>
+      <span class="admin-desc">All 45 concepts and the teaching units mapped against the CEE 2025 economics pillars and the C3 inquiry framework.</span>
       <span class="admin-arrow">View &rarr;</span>
     </a>
     <a href="educators.html" class="admin-card">
@@ -864,6 +991,13 @@
 <button class="back-to-top" aria-label="Back to top">&uarr;</button>
 
 <script>
+function toggleAcc(btn){
+  const panel = btn.nextElementSibling;
+  const expanded = btn.getAttribute('aria-expanded') === 'true';
+  btn.setAttribute('aria-expanded', !expanded);
+  panel.classList.toggle('open', !expanded);
+}
+
 document.querySelector('.nav-toggle').addEventListener('click', function(){
   this.classList.toggle('open');
   this.setAttribute('aria-expanded', this.classList.contains('open'));

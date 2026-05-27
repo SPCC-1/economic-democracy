@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Specialization &amp; Division of Labor — Concept Library — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+.concept-tag{display:inline-block;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .6rem;margin-bottom:.9rem;}
+
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+
+.defbox{border:1px solid var(--black);background:var(--white);padding:1.1rem 1.4rem;margin:1.5rem 0;}
+.defbox-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.defbox p{font-size:.92rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.defbox strong{font-weight:600;color:var(--black);}
+
+.four{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.four-cell{background:var(--paper);padding:1rem 1.2rem;}
+.four-cell:nth-child(even){background:var(--cream);}
+.four-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem;}
+.four-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.3rem;}
+.four-text{font-size:.8rem;font-weight:300;color:var(--ink);line-height:1.55;}
+.four-text strong{font-weight:600;color:var(--charcoal);}
+@media(max-width:600px){.four{grid-template-columns:1fr;}}
+
+.types{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.type-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.type-cell:nth-child(even){background:var(--cream);}
+.type-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.type-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.15;}
+.type-text{font-size:.81rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.types{grid-template-columns:1fr;}}
+
+.context{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.context-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.context-name{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.context-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.context-body p{margin-bottom:.5rem;}
+.context-body p:last-child{margin-bottom:0;}
+.context-q{font-size:.82rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.6rem;margin-top:.5rem;line-height:1.5;}
+
+.tbl-wrap{margin:1.25rem 0;overflow-x:auto;}
+.cmp{width:100%;border-collapse:collapse;font-size:.8rem;min-width:540px;}
+.cmp th,.cmp td{border:1px solid var(--rule);padding:.55rem .7rem;vertical-align:top;line-height:1.45;text-align:left;}
+.cmp th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.cmp td:first-child{background:var(--cream);font-weight:600;color:var(--charcoal);font-size:.76rem;}
+.cmp .fill{color:var(--muted);font-style:italic;}
+
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing,.cmp th,.concept-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .context,.task,.types,.four,.defbox,.inset,.tbl-wrap{break-inside:avoid;}
+  .sec-header{margin:1.9rem 0 1rem;}
+  .context{margin:1.1rem 0;}
+  .four,.types,.defbox,.inset,.pullquote{margin-top:1.2rem;margin-bottom:1.2rem;}
+  .task{margin:1.3rem 0;}
+  .closing{margin:1.2rem 0 0;}
+  .doc-footer{margin-top:1.2rem;}
+  .closing.tight-top{margin-top:.8rem;}
+  .dq-list.tight li{padding-top:.34rem;padding-bottom:.34rem;}
+  .sec-header.tight-top{margin-top:1rem;margin-bottom:.85rem;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+.sec-header.tight-top{margin-top:1.5rem;}
+.closing.tight-top{margin-top:1.4rem;}
+.dq-list.tight li{padding-top:.45rem;padding-bottom:.45rem;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="concept-tag">Concept Library · Engines</p>
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Concept Primer</p>
+    <h1 class="masthead-title">Specialization &amp; Division of Labor</h1>
+    <p class="masthead-sub">The mechanism behind nearly every productivity gain in human history &mdash; and the same mechanism that produces dependency, fragility, and the permanent need for someone in charge.</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">In 1776, Adam Smith walked into a pin factory and watched something that changed the way economists would think for the next two centuries. One worker, trying to make a pin from scratch &mdash; drawing the wire, straightening it, cutting it, sharpening one end, grinding the other, fitting the head &mdash; could barely make twenty pins in a day. But when ten workers split the job into eighteen separate steps, each one doing only their step over and over, the same ten people produced <strong>forty-eight thousand pins</strong>. Not double. Not ten times. <em>Two hundred and forty times</em> what each could do alone. Nothing about the workers had changed. What changed was that they had stopped trying to make pins and started doing one small piece of making pins. That is <strong>specialization</strong>, and it is the mechanism beneath almost every gain in productivity humanity has ever achieved.</p>
+
+  <p class="body">It is the engine inside the engine. When the Productivity primer talks about "more output per hour," specialization is the most common reason that ratio rises in the first place. Cars get cheaper because someone broke the work of building one into a hundred separate tasks on an assembly line. Surgery gets safer because someone trained a specialist who does one operation a thousand times a year instead of fifty different ones a few times each. Software gets built because someone writes the database while someone else writes the interface while someone else handles the security. The pattern is the same everywhere: <strong>break a complicated job into simpler pieces, and let people get extraordinarily good at the pieces.</strong> The output multiplies in ways that look almost like magic. This primer grants that magic its full due, then asks the two questions Adam Smith himself was honest enough to ask, even as he made the case for the factory floor.</p>
+
+  <div class="defbox">
+    <p class="defbox-label">The tool, stated plainly</p>
+    <p><strong>Specialization</strong> &mdash; also called the <strong>division of labor</strong> &mdash; is the practice of breaking a complex job into simpler tasks, with different people (or firms, or regions, or whole countries) becoming expert at one task instead of trying to do everything. It is the single most powerful mechanism the economy has for raising output without raising effort. But because the specialist becomes extraordinarily good at one thing and helpless at everything else, specialization also creates two structural consequences that the productivity number alone cannot see: it makes each specialist <em>dependent</em> on the rest of the system, and it makes someone who <em>coordinates</em> the specialists structurally indispensable.</p>
+  </div>
+
+  <!-- SECTION I -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">The Tool &mdash; How Twenty Pins Became Forty-Eight Thousand</span></div>
+
+  <p class="body">Grant the idea fully, because almost everything you have ever owned, eaten, worn, or driven exists because of it. Three things happen when a job gets divided into specialized parts, and each of them on its own would be remarkable. Stacked together, they explain why a modern economy can produce in a single hour what an unspecialized one couldn't produce in a year.</p>
+
+  <p class="body">The first is <strong>skill</strong>. A worker who does one task all day gets faster at it &mdash; vastly faster. Muscle memory, pattern recognition, small improvements compounding over thousands of repetitions. The second is <strong>setup time</strong>. The pin-maker who has to switch tools every few minutes loses an enormous fraction of the day to switching; the specialist never switches. The third, and biggest, is <strong>tools and machines</strong>. You cannot justify designing a machine to do one tiny step of making a pin unless somebody is doing that one step thousands of times a day. Specialization is the precondition for almost all mechanization &mdash; and through mechanization, for almost all the explosive productivity gains of the modern era.</p>
+
+  <div class="four">
+    <div class="four-cell">
+      <p class="four-label">Doing it all yourself</p>
+      <p class="four-name">The Generalist</p>
+      <p class="four-text">One person tries to do every step of a complex job. Slower at each step, constantly switching tools and contexts, and unable to justify investing in any single piece of equipment because no single step happens often enough. <strong>Resilient &mdash; can do everything &mdash; but unproductive.</strong></p>
+    </div>
+    <div class="four-cell">
+      <p class="four-label">Splitting the work</p>
+      <p class="four-name">The Specialist</p>
+      <p class="four-text">The job is broken into pieces; each person does one piece, over and over, with the right tool. Skill compounds, setup time vanishes, machinery becomes worth building. Output multiplies many times over &mdash; sometimes hundreds of times &mdash; <strong>without anyone working harder.</strong></p>
+    </div>
+  </div>
+
+  <p class="body">This is why specialization is not just <em>a</em> source of productivity but, in most cases, <em>the</em> source. It is also why it scales upward through every layer of the economy. People specialize within a firm: the accountant does not also do marketing. Firms specialize within an industry: the chip designer does not also make the phone. Regions specialize within a country: Silicon Valley does not also grow wheat. Countries specialize within the world: one country exports coffee, another exports software, and both end up with more of each than they could have made on their own. The same simple pattern &mdash; <strong>do one thing well, trade for the rest</strong> &mdash; is what makes a modern economy possible at every level. Granted fully, division of labor is the deepest engine of material progress humanity has ever found. The trouble is that the same mechanism that produces the abundance produces two other things along with it, and neither shows up on the productivity chart.</p>
+
+  <div class="pullquote">
+    <p>Ten people, working alone, made two hundred pins a day. The same ten, working in pieces of a single task, made forty-eight thousand. Nothing about them changed &mdash; only the way the work was cut.</p>
+  </div>
+
+  <!-- SECTION II -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">What the Pin Factory Couldn't See</span></div>
+
+  <p class="body">Specialization works exactly as advertised. The output is real, the gains are enormous, and most of what makes life materially comfortable today depends on it. But the same mechanism that makes the worker forty-eight-thousand-times-as-productive does two other things at the same time &mdash; and Smith himself, in a less-quoted passage of the same book, named both of them with a chill in the language. The first is what specialization does to the specialist. The second is what it does to the people who coordinate them.</p>
+
+  <div class="types">
+    <div class="type-cell">
+      <p class="type-label">Lever 1</p>
+      <p class="type-name">The specialist is extraordinarily productive &mdash; and helpless at everything else</p>
+      <p class="type-text">A worker who does one step of one task all day gets fast at that step and slowly loses, or never learns, almost everything else. They cannot grow their own food, fix their own roof, treat their own illness, or earn a living if the one thing they do becomes obsolete or moves elsewhere. The same is true at every level: a town that specializes in one industry collapses when that industry leaves; a country that specializes in one export is at the mercy of one global price. Smith called what specialization did to the individual worker a kind of dulling of the mind &mdash; the cost of becoming brilliant at a sliver. <strong>The gain in output is bought with a loss of self-sufficiency,</strong> and that loss does not show up in any productivity number. A society of specialists is rich and fragile; a society of generalists is poor and resilient. Most real economies live somewhere in between, and where they live is a choice.</p>
+    </div>
+    <div class="type-cell">
+      <p class="type-label">Lever 2</p>
+      <p class="type-name">Someone has to coordinate the specialists &mdash; and that someone becomes permanent</p>
+      <p class="type-text">Specialization only pays off if the pieces fit back together. Someone has to decide who does which step, in what order, with what tools, and what to do when one step breaks down. That coordinator &mdash; the foreman, the manager, the firm itself, the platform &mdash; is not optional; it is the thing that turns the specialists into a working whole. And because no individual specialist can do all the steps, the coordinator becomes <em>structurally indispensable</em> in a way no individual specialist can ever be. Workers can be replaced; the role that organizes them cannot. <strong>Specialization is the mechanism that creates "the boss" as a permanent category of the economy</strong> &mdash; whether the boss is a person, a corporation, an algorithm, or a platform &mdash; and that category, once created, tends to capture a disproportionate share of the gain the specialization produced. The pin factory made forty-eight thousand pins; the question of who owned the factory was always a separate question, and it was rarely the workers.</p>
+    </div>
+  </div>
+
+  <div class="inset">
+    <strong>The question to carry everywhere:</strong> when you hear about a remarkable gain in productivity from people specializing &mdash; in a factory, an industry, a region, a country &mdash; ask the two questions the gain alone cannot answer: <em>what has the specialist given up to become this productive, and who is now indispensable as the coordinator of the specialists?</em> The output is real. The dependency is real. The coordinator's leverage is real. All three travel together, and a society that takes the first without honestly accounting for the second and third ends up surprised by the kind of economy it has built.
+  </div>
+
+  <!-- SECTION III -->
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">The Same Mechanism, Three Contexts</span></div>
+
+  <p class="body">Watch specialization make people astonishingly productive together, then watch it leave them stranded when the work moves, then watch it concentrate power in the hands of whoever organizes them. The mechanism is the same in all three; the human result is not.</p>
+
+  <div class="context">
+    <p class="context-meta">Context One &middot; The gain made shared</p>
+    <p class="context-name">A factory town where specialization paid the workers, too</p>
+    <div class="context-body">
+      <p>An automobile plant in the mid-twentieth century divides the work of building a car into hundreds of specialized steps along an assembly line. The productivity gains are enormous &mdash; cars that once took weeks to build now take hours. But the workers are organized, the labor market is tight, and the firm pays high wages, offers pensions, and stays in the town. The coordinator (the firm) captures a large share, but a large share also flows to the specialists, who can afford homes, send children to college, and live a life that would have been impossible to a generalist farmer of two generations earlier. Specialization is doing exactly what Smith promised &mdash; and the dependency and the coordinator's leverage are both being kept inside human limits by countervailing power.</p>
+      <p class="context-q">The output was many times higher than any unspecialized worker could produce &mdash; and did the specialists themselves share in what their dependency made possible?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Two &middot; The specialist stranded</p>
+    <p class="context-name">When the one thing you know how to do moves elsewhere</p>
+    <div class="context-body">
+      <p>Decades later, the same town watches the work it specialized in move &mdash; first to a non-union state, then overseas, then partly to machines. The workers who spent thirty years becoming expert at one slice of building a car cannot easily become expert at something else; the skill that made them productive is also the skill that made them narrow. The town loses its tax base; the schools decline; the children leave. Lever 1 in full view &mdash; the gain in output came with a loss of self-sufficiency, and when the system that needed the specialists moved on, the specialists were left holding the half of the bargain that cannot be unwound. This is not a failure of the workers' character or effort; it is a structural feature of having specialized at all.</p>
+      <p class="context-q">If the productivity gains went to everyone over the decades, who bears the cost when the specialization stops paying &mdash; the specialists, the coordinators, or the society that took the cheap goods?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Three &middot; The coordinator's quiet power</p>
+    <p class="context-name">A platform that organizes a million specialists and owns the connections between them</p>
+    <div class="context-body">
+      <p>A digital platform takes a job that used to be done by a single person &mdash; a taxi driver who owned the car, knew the routes, took the fare &mdash; and divides it into pieces. The driver drives. The algorithm dispatches. The rating system disciplines. The payments system collects. The platform does not own the car, does not employ the driver, does not make the trip &mdash; but it sits at the seam where all the specialized pieces meet, and that seam is the part that cannot be replaced. The driver can quit; another driver will appear. The platform cannot be quit by any single driver. Lever 2 at full strength &mdash; specialization made the work radically more productive, and concentrated the gain at the one point in the system where the pieces are coordinated. The pin factory is still the pin factory; the coordinator is just running it from a server.</p>
+      <p class="context-q">When the gains from dividing a job land overwhelmingly with whoever owns the coordination layer, has the system grown more productive &mdash; or just more concentrated?</p>
+    </div>
+  </div>
+
+  <!-- ACTIVITY -->
+  <div class="sec-header tight-top"><span class="sec-roman">IV</span><span class="sec-title">Activity &mdash; Spot the Specialist and the Coordinator</span></div>
+
+  <p class="body">For each case, name the specialization &mdash; what got broken into pieces &mdash; then ask the two questions the productivity gain alone cannot answer: how dependent has the specialist become, and who is the coordinator that has grown structurally indispensable as a result?</p>
+
+  <div class="tbl-wrap">
+    <table class="cmp">
+      <thead>
+        <tr><th>What happened</th><th>What got specialized?</th><th>Who became dependent? Who became indispensable?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>An assembly line lets ten workers build a car in hours instead of weeks</td><td class="fill">&hellip;</td><td class="fill">&hellip;</td></tr>
+        <tr><td>A town that built one product for fifty years loses the factory to overseas</td><td class="fill">&hellip;</td><td class="fill">&hellip;</td></tr>
+        <tr><td>A surgeon performs one operation a thousand times a year; outcomes improve sharply</td><td class="fill">&hellip;</td><td class="fill">&hellip;</td></tr>
+        <tr><td>A rideshare app dispatches millions of drivers who own their own cars</td><td class="fill">&hellip;</td><td class="fill">&hellip;</td></tr>
+        <tr><td>A country exports one commodity; world prices for it collapse</td><td class="fill">&hellip;</td><td class="fill">&hellip;</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Write</p>
+    <p class="task-title">Trace a specialization &mdash; and find the coordinator</p>
+    <p class="task-body">Think of a job, an industry, a town, or an app you know where specialization clearly made things more productive. Name what got broken into pieces. Then name two things the productivity number cannot see on its own: what the specialist gave up to get good at the piece (how dependent are they on the rest of the system holding still?), and who sits at the coordination layer where the pieces come back together (and what happens to the gain when it gets there?).</p>
+    <div class="writelines"><div class="writeline"></div><div class="writeline"></div><div class="writeline"></div></div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="sec-header tight-top"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list tight">
+    <li>Adam Smith praised the pin factory and worried, in the same book, about what doing one tiny task all day did to the worker's mind. Can a society have the gains from specialization without the dependency it produces &mdash; or are they two sides of the same coin?</li>
+    <li>When a town or a region specializes deeply and then the work moves away, whose responsibility is it to help the specialists land somewhere new &mdash; the firm that hired them, the coordinator who profited from the system, the society that bought the cheap goods, or the specialists themselves?</li>
+    <li>Platforms argue they are <em>not</em> employers &mdash; they just connect specialists who happen to need each other. But the coordinator who owns the connecting layer captures a disproportionate share of the gain. Is that capture earned (someone had to build the layer) or extracted (the layer is the only thing not easily replaced)?</li>
+    <li>What's the smallest change that would let an economy keep the enormous productivity gains from specialization <em>and</em> reduce either the specialist's dependency or the coordinator's structural leverage &mdash; without breaking the mechanism that makes the gains possible in the first place?</li>
+  </ol>
+
+  <div class="closing tight-top">
+    <p>The pin factory produced forty-eight thousand pins.<br>It also produced a worker who could no longer make a pin alone,<br>and an owner whose role no specialist could replace.<br>The gain is real. So is the dependency. So is the coordinator's quiet power.<br>All three came in the same package &mdash; and any honest reading of the engine has to account for all three.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Investment &amp; Capital Formation — Concept Library — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+.concept-tag{display:inline-block;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .6rem;margin-bottom:.9rem;}
+
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+
+.defbox{border:1px solid var(--black);background:var(--white);padding:1.1rem 1.4rem;margin:1.5rem 0;}
+.defbox-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.defbox p{font-size:.92rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.defbox strong{font-weight:600;color:var(--black);}
+
+.four{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.four-cell{background:var(--paper);padding:1rem 1.2rem;}
+.four-cell:nth-child(even){background:var(--cream);}
+.four-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem;}
+.four-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.3rem;}
+.four-text{font-size:.8rem;font-weight:300;color:var(--ink);line-height:1.55;}
+.four-text strong{font-weight:600;color:var(--charcoal);}
+@media(max-width:600px){.four{grid-template-columns:1fr;}}
+
+.types{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.type-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.type-cell:nth-child(even){background:var(--cream);}
+.type-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.type-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.15;}
+.type-text{font-size:.81rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.types{grid-template-columns:1fr;}}
+
+.context{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.context-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.context-name{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.context-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.context-body p{margin-bottom:.5rem;}
+.context-body p:last-child{margin-bottom:0;}
+.context-q{font-size:.82rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.6rem;margin-top:.5rem;line-height:1.5;}
+
+.tbl-wrap{margin:1.25rem 0;overflow-x:auto;}
+.cmp{width:100%;border-collapse:collapse;font-size:.8rem;min-width:540px;}
+.cmp th,.cmp td{border:1px solid var(--rule);padding:.55rem .7rem;vertical-align:top;line-height:1.45;text-align:left;}
+.cmp th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.cmp td:first-child{background:var(--cream);font-weight:600;color:var(--charcoal);font-size:.76rem;}
+.cmp .fill{color:var(--muted);font-style:italic;}
+
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing,.cmp th,.concept-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .context,.task,.types,.four,.defbox,.inset,.tbl-wrap{break-inside:avoid;}
+  .sec-header{margin:1.9rem 0 1rem;}
+  .context{margin:1.1rem 0;}
+  .four,.types,.defbox,.inset,.pullquote{margin-top:1.2rem;margin-bottom:1.2rem;}
+  .task{margin:1.3rem 0;}
+  .closing{margin:1.2rem 0 0;}
+  .doc-footer{margin-top:1.2rem;}
+  .closing.tight-top{margin-top:.8rem;}
+  .dq-list.tight li{padding-top:.34rem;padding-bottom:.34rem;}
+  .sec-header.tight-top{margin-top:1rem;margin-bottom:.85rem;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+.sec-header.tight-top{margin-top:1.5rem;}
+.closing.tight-top{margin-top:1.4rem;}
+.dq-list.tight li{padding-top:.45rem;padding-bottom:.45rem;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="concept-tag">Concept Library · Engines</p>
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Concept Primer</p>
+    <h1 class="masthead-title">Investment &amp; Capital Formation</h1>
+    <p class="masthead-sub">The act of putting money behind productive capacity that doesn&rsquo;t yet exist &mdash; the only way the future gets built, and the most contested question of who builds it and on what time horizon.</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">Before the assembly line could turn out a car in hours, somebody had to spend years and a fortune building the assembly line. Before the smartphone in your pocket could be sold, somebody had to fund the chip foundries, the cell towers, the operating system, the apps. Before any of those, somebody had to fund the basic research &mdash; the transistor, the laser, the internet protocols &mdash; that none of the products existed without. Every productive thing in the modern economy traces back to the same simple, uncomfortable act: <strong>someone, somewhere, took money that could have been spent right now and put it behind something that didn't yet exist, hoping it would.</strong> That is <strong>investment</strong>. Without it, there is no productivity gain, no specialization, no compounding, no growth &mdash; only people eating what they grew this season and starting from scratch the next. With it, the entire material world we live in becomes possible.</p>
+
+  <p class="body">It is the engine behind the engines. Every other concept in this cluster &mdash; profit motive, compounding, productivity, creative destruction, the entrepreneur &mdash; presupposes that <em>someone is willing to defer consumption and put resources behind capacity that does not yet pay back.</em> This primer grants that act its full strength: it is genuinely brave, genuinely necessary, and the basic precondition for any economy more advanced than subsistence. Then it asks the two questions that decide what kind of economy investment actually builds: <em>who is willing to take the risk that makes breakthrough possible</em>, and <em>over what time horizon is the money actually willing to wait?</em> The answers to those two questions explain more about why some economies leap forward and others stagnate than almost anything else.</p>
+
+  <div class="defbox">
+    <p class="defbox-label">The tool, stated plainly</p>
+    <p><strong>Investment</strong> is the use of resources today to build productive capacity that will pay back tomorrow &mdash; the factory, the research lab, the training program, the road, the software platform that doesn't yet exist. <strong>Capital formation</strong> is the cumulative result: the stock of productive assets a society has built up over time. Both require the same thing: <em>someone willing to give up consumption now in exchange for an uncertain return later.</em> The act itself is essential, and uncontested. But who does it &mdash; private investors, public agencies, philanthropies, the state &mdash; and how long they are willing to wait for the return are not technical questions. They are political ones, and the answers determine what gets built and what doesn't.</p>
+  </div>
+
+  <!-- SECTION I -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">The Tool &mdash; The Only Way the Future Gets Built</span></div>
+
+  <p class="body">Grant the act fully, because the economy without it is bleak. An economy that consumes everything it produces stays exactly where it is. Each year's harvest feeds that year's eaters; nothing is left over to build the granary that would let next year's harvest be larger. The only way out of that loop is for somebody &mdash; some household, some firm, some state, some philanthropist &mdash; to decide that part of this year's production will not be consumed, and will instead be put behind something that doesn't yet exist: the granary, the irrigation canal, the school, the lab. That deferred consumption, organized into productive capacity, is what economists call <strong>capital formation</strong>, and it is the slow accumulation that lets a society become materially richer over generations.</p>
+
+  <p class="body">Investment is risky in a way consumption is not. If you eat the food, you get the calories. If you put the same food behind a project that might fail &mdash; the granary collapses, the canal silts up, the lab discovers nothing &mdash; you have lost it for nothing, and you eat less now besides. <strong>The investor accepts a real present cost for an uncertain future return.</strong> That willingness to absorb risk in exchange for the chance at a future gain is what separates economies that grow from economies that don't. It is also why the question of <em>who</em> can afford to take that risk matters so much: the household with no margin cannot defer consumption, however much it might want to. Investment is, in this sense, a luxury of having something left over &mdash; until somebody invents an institution that lets a society pool small savings into a large investment, which is most of what banks, governments, and stock markets actually do.</p>
+
+  <div class="four">
+    <div class="four-cell">
+      <p class="four-label">Consume the harvest</p>
+      <p class="four-name">No Investment</p>
+      <p class="four-text">Everything produced this year is eaten or used up. Next year starts in exactly the same place &mdash; same tools, same land, same skills. The economy may be stable, but it does not grow; living standards do not rise, because nothing is being built that didn't exist before. <strong>The future is the same size as the present.</strong></p>
+    </div>
+    <div class="four-cell">
+      <p class="four-label">Defer the harvest</p>
+      <p class="four-name">Capital Formation</p>
+      <p class="four-text">Part of what gets produced is not consumed but reinvested &mdash; into tools, training, infrastructure, research, organizations. Some of those investments fail; some pay back enormously. Over time, the stock of productive capacity grows, and so does what an hour of work can produce. <strong>The future becomes larger than the present.</strong></p>
+    </div>
+  </div>
+
+  <p class="body">Granted fully, investment is the precondition for everything else this cluster celebrates. Compounding cannot happen without it &mdash; there is nothing to compound. Productivity cannot rise without it &mdash; the better tool has to be built first. Entrepreneurs cannot build new firms without it &mdash; somebody has to fund the years before the business pays. Even labor's gains over the last century rest on it: a worker is more productive than a hundred years ago not mostly because they work harder, but because they work with capital that earlier generations chose to build instead of consume. That accumulated stock &mdash; the roads, the machines, the labs, the trained workforce &mdash; is the inheritance every generation receives and decides whether to add to or live off of. The trouble is not with investment itself. It is with two questions that the simple act conceals.</p>
+
+  <div class="pullquote">
+    <p>The economy without investment is the same economy, forever.<br>The economy with it can become anything at all &mdash; including, of course, something worse.</p>
+  </div>
+
+  <!-- SECTION II -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">Who Takes the Risk, and How Long Will the Money Wait?</span></div>
+
+  <p class="body">Investment is necessary. The two questions that decide what kind of economy it builds are <em>who is doing it</em> and <em>on what timescale.</em> Both are usually treated as technical &mdash; left to markets or to portfolios &mdash; but both are political, and both are contested at the highest level by serious thinkers in your own anthology.</p>
+
+  <div class="types">
+    <div class="type-cell">
+      <p class="type-label">Lever 1</p>
+      <p class="type-name">Who actually takes the risk that makes breakthrough possible</p>
+      <p class="type-text">The standard story is that private investors take risks the state cannot &mdash; venture capital funds the moonshots, the entrepreneur bets the farm, and that is why dynamic economies have private capital and stagnant ones don't. Most of that story is true. But look at where the genuinely transformative technologies of the last eighty years actually came from &mdash; the internet, GPS, the touchscreen, the technology behind every major vaccine &mdash; and a different pattern shows up underneath: the highest-risk, longest-horizon, most uncertain investments tended to come from public agencies (defense research, the National Institutes of Health, university labs) <em>before</em> any private investor would touch them. Private capital often arrives once the science is proven and the risk has been absorbed elsewhere &mdash; and then captures most of the return. <strong>The question isn't whether private investment matters: it does, enormously. The question is whether the public's role as the original risk-taker is recognized in how the gains get distributed</strong> &mdash; or whether it gets quietly written out of the story while the upside flows to whoever showed up at the commercialization stage. Mariana Mazzucato calls this the entrepreneurial state. Whether you find the framing compelling or overstated, the underlying fact &mdash; that a lot of foundational risk-taking has been public &mdash; is hard to ignore once you start looking for it.</p>
+    </div>
+    <div class="type-cell">
+      <p class="type-label">Lever 2</p>
+      <p class="type-name">How long is the money willing to wait for its return</p>
+      <p class="type-text">A dollar can be invested in a thirty-year railroad, a ten-year drug pipeline, a five-year factory, a one-year inventory expansion, or a ninety-day stock buyback. All of these are called "investment" by someone. They are not the same act. <strong>Patient capital</strong> &mdash; money willing to wait years or decades for an uncertain return &mdash; is what funds long-horizon productive capacity: research, infrastructure, training, the deep work that compounds. <strong>Impatient capital</strong> &mdash; money that needs to show a return next quarter &mdash; tends to fund things that move the share price quickly: buybacks, dividends, mergers, financial engineering, layoffs that lift this year's margin at the cost of next decade's capacity. Over the last forty years, an enormous share of American corporate cash has shifted from the first kind of use to the second. The economy still <em>looks</em> like it's investing &mdash; the financial statements say so &mdash; but a growing share of what gets called investment is moving paper around rather than building productive capacity. <strong>The headline number can rise while the underlying stock of real capacity quietly thins.</strong> Both forms exist, both are legitimate uses of money, and which one dominates is a choice the rules of the financial system make easier to push one way or the other.</p>
+    </div>
+  </div>
+
+  <div class="inset">
+    <strong>The question to carry everywhere:</strong> when you hear that "investment is up," ask the two questions the headline cannot answer &mdash; <em>who is taking the risk for the part that might not work, and on what timescale is the money willing to wait?</em> An economy where the public absorbs the foundational risk and private capital captures the upside is one economy. An economy where private capital takes the long-horizon risks itself is a different economy. An economy where most "investment" is corporate cash chasing this quarter's share price is a third. All three look the same on a chart that just says <em>investment, total, year over year.</em>
+  </div>
+
+  <!-- SECTION III -->
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">The Same Act, Three Contexts</span></div>
+
+  <p class="body">Watch investment do exactly what it's supposed to do; then watch the public take the foundational risk while the private upside lands elsewhere; then watch a company "invest" in a way that builds nothing at all.</p>
+
+  <div class="context">
+    <p class="context-meta">Context One &middot; Patient capital, productive capacity</p>
+    <p class="context-name">A long-horizon bet that built something real</p>
+    <div class="context-body">
+      <p>A firm spends a decade and several billion dollars building a new generation of factories, training a workforce that will operate them, and developing the proprietary processes that make them competitive. Most of that money is spent before any of it earns back; some of the early phases fail and have to be rebuilt. Years later, the firm has productive capacity that no competitor can quickly match, and the long investment compounds into a durable position in the industry. <strong>This is what capital formation is supposed to look like:</strong> patient money behind real capacity, taking the risk that the capacity won't pay off, and earning the return when it does. The economy is genuinely more productive for it &mdash; and the firm that took the risk is genuinely rewarded.</p>
+      <p class="context-q">Both questions cleanly answered &mdash; private capital took the risk, on a long horizon &mdash; and the result is more real productive capacity. Is this what most of what gets called "investment" today actually looks like?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Two &middot; The risk taken publicly, the gain captured privately</p>
+    <p class="context-name">When the foundational science was funded somewhere no one remembers</p>
+    <div class="context-body">
+      <p>A technology that becomes a trillion-dollar industry &mdash; the internet, say, or the components of the modern smartphone, or the platform underneath a major class of pharmaceuticals &mdash; traces back to thirty years of basic research funded by public agencies, in university labs, with money no private investor would have advanced because the payoff was too distant and uncertain. Once the science was proven and the early infrastructure built, private capital arrived, commercialized the breakthrough, and captured the overwhelming majority of the return. There is nothing nefarious about that &mdash; commercialization is real, valuable work. But Lever 1 in plain view: <strong>the foundational risk was taken in one place, the upside accrued in another, and the system that organizes investment did not recognize the first as a claim on the second.</strong> Whether that should be corrected, and how, is one of the central economic arguments of the moment.</p>
+      <p class="context-q">If the public took the longest-horizon, highest-uncertainty risk, what does it mean that almost none of the upside flowed back into the public balance sheet?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Three &middot; "Investment" that builds nothing</p>
+    <p class="context-name">A corporation that returns more cash to shareholders than it puts into capacity</p>
+    <div class="context-body">
+      <p>A profitable corporation has billions in cash. It could spend it on new factories, on R&amp;D for next decade's products, on training its workforce, on raising wages to attract harder-to-find talent. Instead it spends it buying back its own shares &mdash; reducing the number of shares outstanding, lifting the share price, and rewarding the shareholders (heavily including the executives) who hold the stock. The financial statements record the buyback as a use of capital. The headline economy is told that "investment" happened. But no factory was built, no research advanced, no worker trained, no productive capacity added. Lever 2 at its sharpest: <strong>the money found the shortest-horizon return available, the share price moved, and the underlying real economy got nothing.</strong> Done occasionally and prudently, buybacks are a reasonable way to return cash; done as the dominant use of corporate cash for forty years, they explain why the capital-formation chart can look healthy while real productive capacity quietly stagnates.</p>
+      <p class="context-q">If the same dollar can fund a new factory or a buyback, and the rules of the system make the buyback easier and faster &mdash; what is the system actually optimizing for?</p>
+    </div>
+  </div>
+
+  <!-- ACTIVITY -->
+  <div class="sec-header tight-top"><span class="sec-roman">IV</span><span class="sec-title">Activity &mdash; Real Investment, or Just the Word?</span></div>
+
+  <p class="body">For each case, decide whether what's happening is genuine capital formation, then ask the two questions the dollar amount cannot answer: who took the risk that made it possible, and on what time horizon is the money willing to wait?</p>
+
+  <div class="tbl-wrap">
+    <table class="cmp">
+      <thead>
+        <tr><th>What happened</th><th>Real capital formation?</th><th>Who took the risk? On what horizon?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>A firm spends $10B over a decade building a new generation of factories</td><td class="fill">&hellip;</td><td class="fill">&hellip;</td></tr>
+        <tr><td>A firm spends $10B buying back its own shares this quarter</td><td class="fill">&hellip;</td><td class="fill">&hellip;</td></tr>
+        <tr><td>A government agency funds 30 years of basic research before any product exists</td><td class="fill">&hellip;</td><td class="fill">&hellip;</td></tr>
+        <tr><td>A venture fund invests $100M in a company three years before its IPO</td><td class="fill">&hellip;</td><td class="fill">&hellip;</td></tr>
+        <tr><td>A family takes on debt to send a child through college</td><td class="fill">&hellip;</td><td class="fill">&hellip;</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Write</p>
+    <p class="task-title">Find the investment behind something you use every day</p>
+    <p class="task-body">Pick a technology, product, or piece of infrastructure you depend on. Trace it back to the investment that built it &mdash; not just the company that sold it to you, but the longer chain of risks taken to make it possible. Who funded the basic research? Who built the early infrastructure? Who waited longest for the return? And when the upside finally arrived, whose balance sheet did it land on? What does the trace tell you about who actually built the world you live in &mdash; and who got paid for it?</p>
+    <div class="writelines"><div class="writeline"></div><div class="writeline"></div><div class="writeline"></div></div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="sec-header tight-top"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list tight">
+    <li>If the public regularly funds the highest-risk, longest-horizon investments &mdash; the basic science, the early infrastructure &mdash; and private capital captures most of the upside once the technology works, is the public getting a fair deal? What would a fair deal even look like, without breaking the part of the system that does work?</li>
+    <li>A stock buyback and a new factory both count as "investment" in some accountings and neither in others. If you were writing the rules, which would you call investment, which would you not, and what would change about how companies behave once the definition was clear?</li>
+    <li>Patient capital has gotten scarcer over the last forty years, while quarterly capital has grown. What changed &mdash; in the rules, in the incentives, in the structure of ownership &mdash; that made impatient money the easier option? Could it be changed back?</li>
+    <li>What's the smallest change that would shift more of the economy's investment toward long-horizon, productive capacity &mdash; without choking off the risk-taking and the returns that make people willing to put capital at risk in the first place?</li>
+  </ol>
+
+  <div class="closing tight-top">
+    <p>Every productive thing was once an act of waiting.<br>Somebody gave up the meal today to plant the seed,<br>built the lab before the discovery,<br>funded the road before the city.<br>Investment is the name for that waiting &mdash;<br>and what an economy chooses to wait for, and who is allowed to wait for it,<br>is most of what decides the shape of the future it builds.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>
