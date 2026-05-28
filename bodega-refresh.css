@@ -1,0 +1,938 @@
+/* ════════════════════════════════════════════════════════════════════════════
+   CIVIC-STYLE REFRESH
+   Apply the calm Civic Labs hub aesthetic to all six nav-linked pages.
+   Newsreader serif + Inter sans · white background · burgundy accent.
+   No pill CTAs, no offset shadows, no drop caps, no color floods.
+   ════════════════════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600;700&display=swap');
+
+:root{
+  --cs-ink:#1A1C1E;
+  --cs-charcoal:#2C3036;
+  --cs-slate:#55606B;
+  --cs-mute:#7A848E;
+  --cs-line:#E2E0D8;
+  --cs-paper:#FFFFFF;
+  --cs-card:#FFFFFF;
+  --cs-wash:#F3F1E9;
+  --cs-accent:#7C2D2D;
+  --cs-accent-soft:#A84A3C;
+}
+
+/* Body — Newsreader serif, white background */
+body{
+  font-family:'Newsreader',Georgia,serif !important;
+  background:#FFFFFF !important;
+  color:var(--cs-ink) !important;
+  font-size:19px !important;
+  line-height:1.6 !important;
+}
+
+/* ── HEADLINES — Newsreader serif, weight 600 ────────────────────── */
+h1, h2, h3, h4, h5,
+.hero-title, .page-title, .masthead-title, .section-heading, .res-section-title,
+.cluster-name, .tier-name, .person-name, .toolkit-title, .resource-title, .reader-name,
+.conv-title, .pair-name, .admin-name, .profile-name, .lab-title, .lab-hub-title,
+.lab-coming-title, .cat-title, .count-num, .acc-name-lead, .closing-text{
+  font-family:'Newsreader',serif !important;
+  font-weight:600 !important;
+  letter-spacing:-.015em !important;
+  color:var(--cs-ink) !important;
+}
+h1 em, h2 em,
+.hero-title em, .page-title em, .masthead-title em, .section-heading em,
+.cluster-name em, .tier-name em, .res-section-title em{
+  font-style:italic !important;
+  font-weight:500 !important;
+  color:var(--cs-ink) !important;
+}
+
+/* ── EYEBROWS / LABELS — small burgundy uppercase Inter sans ─────── */
+.hero-kicker, .page-eyebrow, .masthead-eyebrow, .section-eyebrow,
+.res-section-label, .cluster-label, .toc-label, .cat-roman,
+.lab-no, .lab-live, .lab-strip-meta, .lab-mat-label, .tier-eyebrow,
+.conv-eyebrow, .person-role, .about-label, .reader-label, .reader-tag,
+.moment-label, .pair-num, .arg-label, .toolkit-badge, .resource-badge{
+  font-family:'Inter',sans-serif !important;
+  font-weight:600 !important;
+  font-size:.78rem !important;
+  letter-spacing:.08em !important;
+  text-transform:uppercase !important;
+  color:var(--cs-accent) !important;
+  background:transparent !important;
+  border:none !important;
+  padding:0 !important;
+  border-radius:0 !important;
+  display:inline-block !important;
+}
+.page-eyebrow::before, .masthead-eyebrow::before{ display:none !important; }
+.resource-badge.free, .resource-badge.cohort{ background:transparent !important; color:var(--cs-accent) !important; }
+
+/* ── HERO / PAGE HEADER / MASTHEAD ──────────────────────────────── */
+.hero, .page-header, .masthead, .herobleed{
+  background:#FFFFFF !important;
+  background-image:none !important;
+  border-bottom:1px solid var(--cs-line) !important;
+  padding:4.5rem 2rem 3rem !important;
+  margin:0 auto !important;
+}
+
+/* ── BODY / LEAD / DESCRIPTION TEXT — Newsreader serif ──────────── */
+.hero-body, .page-sub, .masthead-sub, .section-sub, .res-section-sub,
+.standfirst, .lede, .intro-body, .cluster-body, .tier-who, .person-bio,
+.toolkit-desc, .resource-desc, .lab-desc, .lab-hub-desc, .reader-desc,
+.tier-includes li, .quad-body, .quad-tension, .quad-tagline,
+.hero .lede, .moment-body, .skills-block, .pieces .piece-text,
+.reform-list li, .arg-text, .acc-tagline, .stat-text,
+.community-notes, .signoff, .lab-coming-desc, .lab-coming-q,
+.intro p, .conv-sub{
+  font-family:'Newsreader',serif !important;
+  font-style:normal !important;
+  color:var(--cs-slate) !important;
+  font-weight:400 !important;
+}
+
+/* ── NAV — calm, no pill CTAs, no red ──────────────────────────── */
+.site-nav{
+  background:#FFFFFF !important;
+  border-bottom:1px solid var(--cs-line) !important;
+  padding:.75rem 0 !important;
+}
+.nav-inner{
+  flex-wrap:nowrap !important;
+  max-width:1200px !important;
+  gap:1.25rem !important;
+  align-items:center !important;
+  padding:0 1.5rem !important;
+}
+@media(min-width:769px){
+  .nav-toggle{ display:none !important; }
+}
+.nav-home{
+  font-family:'Newsreader',serif !important;
+  font-weight:600 !important;
+  font-size:.95rem !important;
+  color:var(--cs-ink) !important;
+  letter-spacing:-.005em !important;
+  line-height:1.05 !important;
+  flex-shrink:0 !important;
+  white-space:nowrap !important;
+}
+.nav-home span{
+  font-family:'Inter',sans-serif !important;
+  font-weight:500 !important;
+  font-size:.58rem !important;
+  letter-spacing:.03em !important;
+  color:var(--cs-mute) !important;
+  text-transform:none !important;
+  display:block !important;
+  margin-top:1px !important;
+}
+.nav-links{
+  gap:1rem !important;
+  flex-shrink:0 !important;
+  align-items:center !important;
+}
+.nav-links a{
+  white-space:nowrap !important;
+  font-family:'Inter',sans-serif !important;
+  font-size:.78rem !important;
+  font-weight:500 !important;
+  letter-spacing:0 !important;
+  text-transform:none !important;
+  color:var(--cs-slate) !important;
+  border-bottom:none !important;
+  padding:0 !important;
+  background:transparent !important;
+  border-radius:0 !important;
+  transition:color .12s !important;
+}
+.nav-links a:hover{ color:var(--cs-ink) !important; }
+.nav-links a.active{
+  color:var(--cs-accent) !important;
+  font-weight:600 !important;
+  border-bottom:none !important;
+}
+/* Override the .nav-cta pill — make it match other nav links */
+.nav-cta, .nav-cta.active, a.nav-cta, a.nav-cta.active{
+  background:transparent !important;
+  color:var(--cs-slate) !important;
+  font-family:'Inter',sans-serif !important;
+  font-weight:500 !important;
+  font-size:.78rem !important;
+  letter-spacing:0 !important;
+  text-transform:none !important;
+  border:none !important;
+  border-radius:0 !important;
+  padding:0 !important;
+  box-shadow:none !important;
+}
+.nav-cta:hover{ color:var(--cs-ink) !important; background:transparent !important; }
+.nav-cta.active{ color:var(--cs-accent) !important; font-weight:600 !important; }
+.nav-toggle span{ background:var(--cs-ink) !important; }
+
+/* ── CARDS — simple white with thin border, no shadows ───────────── */
+.quad, .concept-card, .profile-card, .tier-card, .toolkit-card, .resource-card,
+.reader-card, .person-card, .stat-item, .lab-flagship, .lab-coming-card, .lab-hub-card,
+.lab-mat-card, .cluster-row-cell, .admin-card, .moment, .tcell, .pcell, .step,
+.principle, .handout, .ecard, .box{
+  background:#FFFFFF !important;
+  border:1px solid var(--cs-line) !important;
+  border-radius:6px !important;
+  box-shadow:none !important;
+  color:inherit !important;
+}
+.tier-card.featured{
+  background:var(--cs-wash) !important;
+  border:1px solid var(--cs-ink) !important;
+}
+.tier-card.featured::before{
+  background:var(--cs-accent) !important;
+  color:#fff !important;
+  font-family:'Inter',sans-serif !important;
+}
+.concept-card:hover, .profile-card:hover, .quad:hover, .toolkit-card:hover,
+.resource-card:hover, .reader-card:hover, .tier-card:hover, .lab-flagship:hover,
+.lab-coming-card:hover, .lab-hub-card:hover{
+  background:#FFFFFF !important;
+  color:inherit !important;
+  border-color:var(--cs-accent-soft) !important;
+  box-shadow:0 4px 16px rgba(26,28,30,.04) !important;
+  transform:none !important;
+}
+.concept-card:hover .concept-name, .concept-card:hover .concept-arrow{
+  color:var(--cs-ink) !important;
+}
+
+/* ── ARGUMENT STRIP (homepage) ─────────────────────────────────── */
+.argument-strip{
+  background:#FFFFFF !important;
+  border-top:1px solid var(--cs-line) !important;
+  border-bottom:1px solid var(--cs-line) !important;
+}
+.argument-strip .arg-label{
+  color:var(--cs-accent) !important;
+}
+.argument-strip .arg-text{
+  color:var(--cs-charcoal) !important;
+}
+.argument-strip .arg-text strong{
+  color:var(--cs-ink) !important;
+  font-weight:600 !important;
+}
+
+/* ── BUTTONS — calm dark pill, no shadows ────────────────────────── */
+.btn-primary, .btn-secondary, .resources-cta-btn, .tier-cta, .conv-btn,
+.section-link, .concept-jump-btn{
+  background:var(--cs-ink) !important;
+  color:#fff !important;
+  font-family:'Inter',sans-serif !important;
+  font-weight:600 !important;
+  font-size:.88rem !important;
+  letter-spacing:0 !important;
+  text-transform:none !important;
+  padding:.85rem 1.5rem !important;
+  border:none !important;
+  border-radius:4px !important;
+  box-shadow:none !important;
+  text-decoration:none !important;
+  transition:background .15s !important;
+  display:inline-block !important;
+}
+.btn-primary:hover, .resources-cta-btn:hover, .tier-cta:hover, .conv-btn:hover,
+.section-link:hover, .concept-jump-btn:hover{
+  background:var(--cs-charcoal) !important;
+  transform:none !important;
+  box-shadow:none !important;
+  color:#fff !important;
+}
+.btn-secondary{
+  background:transparent !important;
+  color:var(--cs-ink) !important;
+  border:1px solid var(--cs-ink) !important;
+}
+.btn-secondary:hover{ background:var(--cs-wash) !important; color:var(--cs-ink) !important; }
+.tier-card.featured .tier-cta{ background:var(--cs-accent) !important; }
+.tier-card.featured .tier-cta:hover{ background:var(--cs-accent-soft) !important; }
+
+/* ── ACCORDION — calm white card ───────────────────────────────── */
+.section-accordion{
+  border:1px solid var(--cs-line) !important;
+  border-radius:6px !important;
+  background:#FFFFFF !important;
+  box-shadow:none !important;
+  overflow:hidden !important;
+}
+.acc-row{ border-bottom:1px solid var(--cs-line) !important; }
+.acc-row:last-child{ border-bottom:none !important; }
+.acc-trigger{ font-family:'Inter',sans-serif !important; background:#FFFFFF !important; }
+.acc-trigger:hover, .acc-trigger[aria-expanded="true"]{ background:var(--cs-wash) !important; }
+.acc-roman{ font-family:'Inter',sans-serif !important; color:var(--cs-accent) !important; font-weight:600 !important; }
+.acc-name, .acc-name-lead{ font-family:'Newsreader',serif !important; font-weight:600 !important; color:var(--cs-ink) !important; }
+.acc-tagline{ color:var(--cs-slate) !important; font-family:'Newsreader',serif !important; }
+.acc-arrow{ color:var(--cs-slate) !important; font-weight:600 !important; }
+.acc-panel{ background:var(--cs-wash) !important; border-top:1px solid var(--cs-line) !important; }
+.acc-panel ul li a{
+  font-family:'Newsreader',serif !important;
+  color:var(--cs-ink) !important;
+  border-bottom-color:var(--cs-line) !important;
+}
+.acc-panel ul li a:hover{ color:var(--cs-accent) !important; }
+
+/* ── HOMEPAGE STAT STACK — simple bordered cards ───────────────── */
+.stat-stack{ background:transparent !important; border:none !important; gap:8px !important; }
+.stat-item{
+  background:#FFFFFF !important;
+  border:1px solid var(--cs-line) !important;
+  border-radius:6px !important;
+  box-shadow:none !important;
+  padding:1rem 1.1rem !important;
+}
+.stat-num{
+  font-family:'Newsreader',serif !important;
+  font-weight:600 !important;
+  color:var(--cs-ink) !important;
+  font-size:2.2rem !important;
+  line-height:.9 !important;
+  letter-spacing:-.02em !important;
+}
+.stat-text{ font-family:'Newsreader',serif !important; color:var(--cs-slate) !important; }
+.stat-text strong{
+  font-family:'Newsreader',serif !important;
+  color:var(--cs-ink) !important;
+  font-weight:600 !important;
+  display:block !important;
+}
+
+/* ── MATRIX QUADRANTS (homepage) ───────────────────────────────── */
+.matrix-grid{
+  background:transparent !important;
+  border:none !important;
+  gap:14px !important;
+}
+.matrix-grid .quad{
+  background:#FFFFFF !important;
+  border:1px solid var(--cs-line) !important;
+  border-radius:6px !important;
+  box-shadow:none !important;
+  padding:1.4rem 1.5rem !important;
+}
+.quad-num{
+  font-family:'Inter',sans-serif !important;
+  color:var(--cs-accent) !important;
+  font-weight:600 !important;
+  font-size:.78rem !important;
+  letter-spacing:.08em !important;
+  text-transform:uppercase !important;
+  background:transparent !important;
+  padding:0 !important;
+}
+.quad-name{
+  font-family:'Newsreader',serif !important;
+  font-weight:600 !important;
+  font-size:1.2rem !important;
+  color:var(--cs-ink) !important;
+}
+.quad-tagline{
+  font-family:'Newsreader',serif !important;
+  font-style:italic !important;
+  color:var(--cs-charcoal) !important;
+  font-weight:400 !important;
+}
+.quad-body, .quad-tension{
+  font-family:'Newsreader',serif !important;
+  color:var(--cs-slate) !important;
+  font-weight:400 !important;
+}
+
+/* ── CONCEPT LIBRARY teaser row (homepage) ─────────────────────── */
+.cluster-row{
+  background:transparent !important;
+  border:none !important;
+  gap:6px !important;
+}
+.cluster-row-cell{
+  background:#FFFFFF !important;
+  border:1px solid var(--cs-line) !important;
+  border-radius:6px !important;
+  box-shadow:none !important;
+}
+.cluster-row-label{ font-family:'Inter',sans-serif !important; color:var(--cs-accent) !important; font-weight:600 !important; }
+.cluster-row-name{ font-family:'Newsreader',serif !important; font-weight:600 !important; color:var(--cs-ink) !important; }
+.cluster-row-tagline{ font-family:'Newsreader',serif !important; color:var(--cs-slate) !important; }
+
+/* ── PROFILE PREVIEW (9 cards on homepage) ─────────────────────── */
+.profiles-preview{ background:transparent !important; border:none !important; gap:8px !important; }
+.profile-card{ background:#FFFFFF !important; border:1px solid var(--cs-line) !important; box-shadow:none !important; }
+
+/* ── ANTHOLOGY (250 Voices page) ───────────────────────────────── */
+.count-bar{ border-top:1px solid var(--cs-line) !important; border-bottom:1px solid var(--cs-line) !important; }
+.count-detail{ font-family:'Newsreader',serif !important; color:var(--cs-slate) !important; }
+.count-detail strong{ font-family:'Newsreader',serif !important; color:var(--cs-ink) !important; font-weight:600 !important; }
+.toc-block{
+  background:var(--cs-wash) !important;
+  border:1px solid var(--cs-line) !important;
+  border-radius:6px !important;
+  box-shadow:none !important;
+}
+.toc-label{
+  font-family:'Inter',sans-serif !important;
+  color:var(--cs-accent) !important;
+  background:transparent !important;
+  font-weight:600 !important;
+}
+.toc-grid a{ font-family:'Newsreader',serif !important; color:var(--cs-ink) !important; font-weight:400 !important; }
+.toc-grid a:hover{ color:var(--cs-accent) !important; }
+.toc-grid a span{ font-family:'Inter',sans-serif !important; color:var(--cs-mute) !important; font-weight:500 !important; }
+.cat-header{
+  background:var(--cs-ink) !important;
+  border-radius:6px !important;
+  padding:1rem 1.5rem !important;
+}
+.cat-roman{ font-family:'Inter',sans-serif !important; color:rgba(255,255,255,.6) !important; font-weight:500 !important; background:transparent !important; }
+.cat-title{ font-family:'Newsreader',serif !important; color:#fff !important; font-weight:600 !important; }
+.cat-intro{ font-family:'Newsreader',serif !important; color:var(--cs-slate) !important; border-left:3px solid var(--cs-accent) !important; font-style:italic !important; }
+.person-grid{ background:transparent !important; border:1px solid var(--cs-line) !important; border-radius:6px !important; overflow:hidden !important; gap:1px !important; }
+.person, a.person{ background:#FFFFFF !important; }
+.person:nth-child(odd), a.person:nth-child(odd){ background:var(--cs-wash) !important; }
+a.person:hover{ background:#F0EBDA !important; }
+.person-name{ font-family:'Newsreader',serif !important; font-weight:600 !important; color:var(--cs-ink) !important; }
+.person-desc{ font-family:'Newsreader',serif !important; color:var(--cs-slate) !important; }
+.person-tag{ font-family:'Inter',sans-serif !important; color:var(--cs-mute) !important; font-weight:500 !important; }
+
+/* ── RESOURCES CTA (homepage) ─────────────────────────────────── */
+.resources-cta{
+  background:var(--cs-wash) !important;
+  border:1px solid var(--cs-line) !important;
+  border-radius:6px !important;
+  box-shadow:none !important;
+}
+.resources-cta-text strong{
+  font-family:'Newsreader',serif !important;
+  font-weight:600 !important;
+  color:var(--cs-ink) !important;
+  font-style:normal !important;
+}
+.resources-cta-text span{
+  font-family:'Inter',sans-serif !important;
+  color:var(--cs-slate) !important;
+  letter-spacing:0 !important;
+  text-transform:none !important;
+  font-size:.85rem !important;
+}
+
+/* ── ABOUT STRIP (if still present) ─────────────────────────── */
+.about-strip{ background:var(--cs-wash) !important; border-top:1px solid var(--cs-line) !important; }
+.about-name{ font-family:'Newsreader',serif !important; font-weight:600 !important; color:var(--cs-ink) !important; }
+.about-bio p{ font-family:'Newsreader',serif !important; color:var(--cs-slate) !important; }
+.about-label{ font-family:'Inter',sans-serif !important; color:var(--cs-accent) !important; background:transparent !important; padding:0 !important; }
+
+/* ── CIVIC LABS TEASER (homepage) ──────────────────────────── */
+.lab-flagship{ background:#FFFFFF !important; border:1px solid var(--cs-line) !important; border-radius:6px !important; box-shadow:none !important; }
+.lab-flagship-strip{ background:var(--cs-wash) !important; border-radius:0 !important; border-bottom:1px solid var(--cs-line) !important; }
+.lab-live{ font-family:'Inter',sans-serif !important; color:var(--cs-accent) !important; font-weight:600 !important; }
+.lab-strip-meta{ font-family:'Inter',sans-serif !important; color:var(--cs-slate) !important; font-weight:500 !important; }
+.lab-title{ font-family:'Newsreader',serif !important; font-weight:600 !important; color:var(--cs-ink) !important; }
+.lab-no{ font-family:'Inter',sans-serif !important; color:var(--cs-accent) !important; font-weight:600 !important; }
+.lab-desc{ font-family:'Newsreader',serif !important; color:var(--cs-slate) !important; }
+.lab-go{
+  font-family:'Inter',sans-serif !important;
+  background:transparent !important;
+  color:var(--cs-accent) !important;
+  border:none !important;
+  padding:0 !important;
+  border-radius:0 !important;
+  font-weight:600 !important;
+}
+.lab-coming-card{ background:#FFFFFF !important; border:1px solid var(--cs-line) !important; }
+.lab-coming-badge{ background:transparent !important; color:var(--cs-accent) !important; font-family:'Inter',sans-serif !important; border:none !important; border-radius:0 !important; padding:0 !important; font-weight:600 !important; }
+.lab-coming-title{ font-family:'Newsreader',serif !important; font-weight:600 !important; color:var(--cs-ink) !important; }
+.lab-coming-desc{ font-family:'Newsreader',serif !important; color:var(--cs-slate) !important; }
+.lab-coming-q{ font-family:'Newsreader',serif !important; font-style:italic !important; color:var(--cs-charcoal) !important; border-top:1px solid var(--cs-line) !important; }
+
+/* ── REMOVE drop caps everywhere ─────────────────────────────── */
+.lead::first-letter, .body-intro::first-letter, .intro-body::first-letter,
+.intro p:first-of-type::first-letter, p.lead:first-of-type::first-letter,
+p.body-intro:first-of-type::first-letter, .intro-body + .intro-body::first-letter{
+  font-family:inherit !important;
+  font-size:inherit !important;
+  float:none !important;
+  margin:0 !important;
+  color:inherit !important;
+  font-weight:inherit !important;
+  line-height:inherit !important;
+}
+
+/* ── SECTION HEADING SIZES — calm, restrained ─────────────────── */
+.hero-title, .page-title, .masthead-title{
+  font-size:clamp(2.6rem, 5vw, 3.6rem) !important;
+  line-height:1.05 !important;
+}
+.section-heading, .res-section-title, .cluster-name{
+  font-size:clamp(2rem, 3.6vw, 2.6rem) !important;
+  line-height:1.08 !important;
+}
+
+/* ── RES-SECTION / SECTION dividers ─────────────────────────── */
+.res-section, .section{
+  border-top:1px solid var(--cs-line) !important;
+}
+.res-section:first-of-type, .section:first-of-type{ border-top:none !important; }
+
+/* ── FOOTER UTILITY (if present) ─────────────────────────────── */
+.footer-utility a{ font-family:'Inter',sans-serif !important; color:var(--cs-slate) !important; text-transform:none !important; letter-spacing:0 !important; }
+.footer-utility a:hover{ color:var(--cs-ink) !important; }
+.footer-left, .footer-right{ font-family:'Inter',sans-serif !important; color:var(--cs-mute) !important; letter-spacing:0 !important; }
+
+/* ── BACK TO TOP button ─────────────────────────────────────── */
+.back-to-top{ background:var(--cs-ink) !important; color:#fff !important; }
+
+/* ── CIVIC LABS HUB: Section IV "For Students" bridge block ─────
+   Original used dark .bridge with white text. My universal h2 ink
+   color was making the title invisible. Restore + enlarge.        */
+.bridge{
+  background:var(--cs-ink) !important;
+  color:#fff !important;
+  padding:30px 38px 34px !important;
+}
+.bridge .seclabel{
+  color:var(--cs-accent-soft) !important;
+  margin-bottom:18px !important;
+}
+.bridge h2, .bridge h2 em{
+  color:#fff !important;
+  font-family:'Newsreader',serif !important;
+  font-size:clamp(2.4rem, 4.4vw, 3.2rem) !important;
+  line-height:1.04 !important;
+  font-weight:600 !important;
+  margin-bottom:18px !important;
+  margin-top:0 !important;
+}
+.bridge h2 em{ font-style:italic !important; font-weight:500 !important; }
+.bridge p{
+  color:rgba(255,255,255,.82) !important;
+  font-family:'Newsreader',serif !important;
+}
+.bridge p strong{ color:#fff !important; font-weight:600 !important; }
+.bridge .go{
+  display:inline-block !important;
+  margin-top:14px !important;
+  font-family:'Inter',sans-serif !important;
+  font-weight:600 !important;
+  font-size:.85rem !important;
+  color:var(--cs-ink) !important;
+  background:#fff !important;
+  padding:.75rem 1.25rem !important;
+  border-radius:4px !important;
+  text-decoration:none !important;
+  letter-spacing:0 !important;
+  text-transform:none !important;
+}
+.bridge .go:hover{ background:var(--cs-wash) !important; }
+
+/* ════════════════════════════════════════════════════════════════════
+   FOR TEACHERS PAGE (resources.html) — page-specific overrides
+   Tame the dark bars, gold badges, and Playfair Display headlines that
+   were inline on this page so it matches the calm Civic Labs aesthetic.
+   ════════════════════════════════════════════════════════════════════ */
+
+/* Sticky in-page TOC — hide if present */
+.page-toc{ display:none !important; }
+
+/* Unit pair header — was solid black; make it wash + burgundy */
+.pair-header{
+  background:var(--cs-wash) !important;
+  color:var(--cs-ink) !important;
+  padding:.75rem 1.25rem !important;
+  border:1px solid var(--cs-line) !important;
+  border-bottom:none !important;
+  border-radius:6px 6px 0 0 !important;
+}
+.pair-num{
+  font-family:'Inter',sans-serif !important;
+  color:var(--cs-accent) !important;
+  font-weight:600 !important;
+  background:transparent !important;
+}
+.pair-name{
+  font-family:'Newsreader',serif !important;
+  color:var(--cs-ink) !important;
+  font-weight:600 !important;
+  font-size:1rem !important;
+}
+.pair-cards{
+  background:#FFFFFF !important;
+  border:1px solid var(--cs-line) !important;
+  border-radius:0 0 6px 6px !important;
+  gap:0 !important;
+  margin-bottom:1.25rem !important;
+}
+.pair-cards .resource-card{
+  border-radius:0 !important;
+  border:none !important;
+  border-right:1px solid var(--cs-line) !important;
+}
+.pair-cards .resource-card:last-child{ border-right:none !important; }
+@media(max-width:580px){
+  .pair-cards .resource-card{ border-right:none !important; border-bottom:1px solid var(--cs-line) !important; }
+  .pair-cards .resource-card:last-child{ border-bottom:none !important; }
+}
+
+/* Resource cards — white, calm */
+.resource-card, .resource-card:nth-child(even){
+  background:#FFFFFF !important;
+}
+.resource-title{
+  font-family:'Newsreader',serif !important;
+  color:var(--cs-ink) !important;
+  font-weight:600 !important;
+  font-size:1.05rem !important;
+}
+.resource-desc{
+  font-family:'Newsreader',serif !important;
+  color:var(--cs-slate) !important;
+  font-weight:400 !important;
+}
+.resource-link{
+  font-family:'Inter',sans-serif !important;
+  color:var(--cs-accent) !important;
+  font-weight:600 !important;
+  font-size:.78rem !important;
+  letter-spacing:.04em !important;
+  text-transform:none !important;
+  border-top:1px solid var(--cs-line) !important;
+  text-decoration:none !important;
+}
+.resource-link:hover{ color:var(--cs-accent-soft) !important; }
+
+/* Concept jump card */
+.concept-jump{
+  background:var(--cs-wash) !important;
+  border:1px solid var(--cs-line) !important;
+  border-radius:6px !important;
+}
+.concept-jump-text strong{
+  font-family:'Newsreader',serif !important;
+  color:var(--cs-ink) !important;
+  font-weight:600 !important;
+  font-style:normal !important;
+}
+.concept-jump-text span{
+  font-family:'Newsreader',serif !important;
+  color:var(--cs-slate) !important;
+}
+
+/* Toolkit grid + cards */
+.toolkit-grid{
+  background:transparent !important;
+  border:none !important;
+  gap:8px !important;
+}
+.toolkit-card, .toolkit-card:nth-child(even){
+  background:#FFFFFF !important;
+  border:1px solid var(--cs-line) !important;
+  border-radius:6px !important;
+  padding:1.4rem 1.5rem !important;
+}
+.toolkit-badge{
+  font-family:'Inter',sans-serif !important;
+  color:var(--cs-accent) !important;
+  background:transparent !important;
+  border:none !important;
+  padding:0 !important;
+  font-weight:600 !important;
+  font-size:.78rem !important;
+  letter-spacing:.08em !important;
+  text-transform:uppercase !important;
+}
+.toolkit-title{
+  font-family:'Newsreader',serif !important;
+  color:var(--cs-ink) !important;
+  font-weight:600 !important;
+  font-size:1.15rem !important;
+}
+.toolkit-desc{
+  font-family:'Newsreader',serif !important;
+  color:var(--cs-slate) !important;
+  font-weight:400 !important;
+}
+.toolkit-link{
+  font-family:'Inter',sans-serif !important;
+  color:var(--cs-accent) !important;
+  background:transparent !important;
+  font-weight:600 !important;
+  font-size:.78rem !important;
+  letter-spacing:.04em !important;
+  text-transform:none !important;
+  border:none !important;
+  padding:0 !important;
+  text-decoration:none !important;
+}
+.toolkit-link:hover{ color:var(--cs-accent-soft) !important; }
+
+/* Admin grid + cards */
+.admin-grid{
+  background:transparent !important;
+  border:none !important;
+  gap:8px !important;
+}
+.admin-card{
+  background:#FFFFFF !important;
+  border:1px solid var(--cs-line) !important;
+  border-radius:6px !important;
+  padding:1.4rem 1.5rem !important;
+  color:var(--cs-ink) !important;
+  text-decoration:none !important;
+}
+.admin-card:hover{
+  background:var(--cs-wash) !important;
+  color:var(--cs-ink) !important;
+  border-color:var(--cs-accent-soft) !important;
+}
+.admin-label{
+  font-family:'Inter',sans-serif !important;
+  color:var(--cs-accent) !important;
+  background:transparent !important;
+  font-weight:600 !important;
+  font-size:.78rem !important;
+  letter-spacing:.08em !important;
+  text-transform:uppercase !important;
+}
+.admin-name{
+  font-family:'Newsreader',serif !important;
+  color:var(--cs-ink) !important;
+  font-weight:600 !important;
+  font-size:1.15rem !important;
+}
+.admin-desc{
+  font-family:'Newsreader',serif !important;
+  color:var(--cs-slate) !important;
+  font-weight:400 !important;
+}
+.admin-arrow{
+  font-family:'Inter',sans-serif !important;
+  color:var(--cs-accent) !important;
+  font-weight:600 !important;
+  font-size:.85rem !important;
+  letter-spacing:0 !important;
+  text-transform:none !important;
+}
+.admin-card:hover .admin-name,
+.admin-card:hover .admin-label,
+.admin-card:hover .admin-desc,
+.admin-card:hover .admin-arrow{ color:var(--cs-ink) !important; }
+.admin-card:hover .admin-label, .admin-card:hover .admin-arrow{ color:var(--cs-accent) !important; }
+
+/* Readers grid + cards (on For Teachers Section VI) */
+.readers-grid{
+  background:transparent !important;
+  border:none !important;
+  gap:8px !important;
+}
+.reader-card{
+  background:#FFFFFF !important;
+  border:1px solid var(--cs-line) !important;
+  border-radius:6px !important;
+  padding:1.4rem 1.5rem !important;
+  color:var(--cs-ink) !important;
+  text-decoration:none !important;
+}
+.reader-card:hover{
+  background:var(--cs-wash) !important;
+  color:var(--cs-ink) !important;
+  border-color:var(--cs-accent-soft) !important;
+}
+.reader-card:hover .reader-label,
+.reader-card:hover .reader-name,
+.reader-card:hover .reader-arrow{ color:var(--cs-ink) !important; }
+.reader-card:hover .reader-label, .reader-card:hover .reader-arrow{ color:var(--cs-accent) !important; }
+.reader-label{
+  font-family:'Inter',sans-serif !important;
+  color:var(--cs-accent) !important;
+  background:transparent !important;
+  font-weight:600 !important;
+  font-size:.78rem !important;
+  letter-spacing:.08em !important;
+  text-transform:uppercase !important;
+}
+.reader-name{
+  font-family:'Newsreader',serif !important;
+  color:var(--cs-ink) !important;
+  font-weight:600 !important;
+  font-size:1.15rem !important;
+}
+.reader-arrow{
+  font-family:'Inter',sans-serif !important;
+  color:var(--cs-accent) !important;
+  font-weight:600 !important;
+  font-size:.85rem !important;
+  letter-spacing:0 !important;
+  text-transform:none !important;
+}
+
+/* Civic Labs flagship strip on For Teachers Section III */
+.lab-hub-card{
+  background:#FFFFFF !important;
+  border:1px solid var(--cs-line) !important;
+  border-radius:6px !important;
+  box-shadow:none !important;
+}
+.lab-hub-strip{
+  background:var(--cs-wash) !important;
+  color:var(--cs-ink) !important;
+  border-bottom:1px solid var(--cs-line) !important;
+  border-radius:0 !important;
+}
+.lab-hub-strip .live{
+  color:var(--cs-accent) !important;
+  font-family:'Inter',sans-serif !important;
+  font-weight:600 !important;
+  font-size:.78rem !important;
+  letter-spacing:.08em !important;
+  text-transform:uppercase !important;
+}
+.lab-hub-strip .live::before{ color:var(--cs-accent) !important; }
+.lab-hub-strip .meta{
+  color:var(--cs-slate) !important;
+  font-family:'Inter',sans-serif !important;
+  font-weight:500 !important;
+}
+.lab-hub-no{
+  font-family:'Inter',sans-serif !important;
+  color:var(--cs-accent) !important;
+  font-weight:600 !important;
+  font-size:.78rem !important;
+  letter-spacing:.08em !important;
+  text-transform:uppercase !important;
+}
+.lab-hub-title{
+  font-family:'Newsreader',serif !important;
+  color:var(--cs-ink) !important;
+  font-weight:600 !important;
+}
+.lab-hub-desc{
+  font-family:'Newsreader',serif !important;
+  color:var(--cs-slate) !important;
+  font-weight:400 !important;
+}
+.lab-hub-cta{
+  font-family:'Inter',sans-serif !important;
+  color:var(--cs-accent) !important;
+  font-weight:600 !important;
+  font-size:.85rem !important;
+  letter-spacing:0 !important;
+  text-transform:none !important;
+  border:none !important;
+}
+
+/* Civic Labs material grid (the 13 lab materials cards) */
+.lab-mat-grid{
+  background:transparent !important;
+  border:none !important;
+  gap:8px !important;
+}
+.lab-mat-card, .lab-mat-card:nth-child(even){
+  background:#FFFFFF !important;
+  border:1px solid var(--cs-line) !important;
+  border-radius:6px !important;
+  padding:1.3rem 1.4rem !important;
+}
+.lab-mat-badge, .lab-mat-badge.pdf{
+  background:transparent !important;
+  color:var(--cs-accent) !important;
+  font-family:'Inter',sans-serif !important;
+  border:none !important;
+  padding:0 !important;
+  font-weight:600 !important;
+  font-size:.72rem !important;
+  letter-spacing:.08em !important;
+  text-transform:uppercase !important;
+}
+.lab-mat-title{
+  font-family:'Newsreader',serif !important;
+  color:var(--cs-ink) !important;
+  font-weight:600 !important;
+  font-size:1.05rem !important;
+}
+.lab-mat-desc{
+  font-family:'Newsreader',serif !important;
+  color:var(--cs-slate) !important;
+  font-weight:400 !important;
+}
+.lab-mat-link{
+  font-family:'Inter',sans-serif !important;
+  color:var(--cs-accent) !important;
+  font-weight:600 !important;
+  font-size:.78rem !important;
+  letter-spacing:.04em !important;
+  text-transform:none !important;
+  border-top:1px solid var(--cs-line) !important;
+  text-decoration:none !important;
+}
+.lab-mat-link:hover{ color:var(--cs-accent-soft) !important; }
+.lab-mat-label{
+  font-family:'Inter',sans-serif !important;
+  color:var(--cs-accent) !important;
+  background:transparent !important;
+  font-weight:600 !important;
+  font-size:.78rem !important;
+  letter-spacing:.08em !important;
+  text-transform:uppercase !important;
+  margin:2rem 0 .85rem !important;
+}
+
+/* Resource badge — strip color, keep as small burgundy label */
+.resource-badge, .resource-badge.free, .resource-badge.cohort{
+  background:transparent !important;
+  color:var(--cs-accent) !important;
+  border:none !important;
+  padding:0 !important;
+}
+
+/* Community notes block */
+.community-notes{
+  background:var(--cs-wash) !important;
+  border:1px solid var(--cs-line) !important;
+  border-radius:6px !important;
+  font-family:'Newsreader',serif !important;
+  color:var(--cs-slate) !important;
+  font-weight:400 !important;
+}
+.community-notes strong{ color:var(--cs-ink) !important; font-weight:600 !important; }
+
+/* Membership tier cards on For Teachers closing CTA */
+.tier-card{ background:#FFFFFF !important; }
+.tier-card.featured{
+  background:var(--cs-wash) !important;
+  border:1px solid var(--cs-ink) !important;
+}
+.tier-card.featured::before{
+  background:var(--cs-accent) !important;
+  color:#fff !important;
+  font-family:'Inter',sans-serif !important;
+}
+.tier-price{
+  font-family:'Newsreader',serif !important;
+  color:var(--cs-ink) !important;
+  font-weight:600 !important;
+}
+.tier-unit{
+  font-family:'Inter',sans-serif !important;
+  color:var(--cs-slate) !important;
+  font-weight:500 !important;
+  font-size:.78rem !important;
+  letter-spacing:.04em !important;
+  text-transform:none !important;
+  border-bottom:1px solid var(--cs-line) !important;
+}
+.tier-includes li::before{ color:var(--cs-accent) !important; }
+.tier-footnote{
+  font-family:'Newsreader',serif !important;
+  color:var(--cs-slate) !important;
+}
+.tier-footnote a{
+  color:var(--cs-ink) !important;
+  border-bottom:1px solid var(--cs-line) !important;
+}
+.tier-footnote a:hover{ border-bottom-color:var(--cs-accent) !important; }
