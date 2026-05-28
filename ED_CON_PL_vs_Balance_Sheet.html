@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>P&amp;L vs. Balance Sheet — Concept Library — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+.concept-tag{display:inline-block;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .6rem;margin-bottom:.9rem;}
+
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+
+.defbox{border:1px solid var(--black);background:var(--white);padding:1.1rem 1.4rem;margin:1.5rem 0;}
+.defbox-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.defbox p{font-size:.92rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.defbox strong{font-weight:600;color:var(--black);}
+
+/* create vs extract two-column */
+.four{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.four-cell{background:var(--paper);padding:1rem 1.2rem;}
+.four-cell:nth-child(even){background:var(--cream);}
+.four-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem;}
+.four-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.3rem;}
+.four-text{font-size:.8rem;font-weight:300;color:var(--ink);line-height:1.55;}
+.four-text strong{font-weight:600;color:var(--charcoal);}
+@media(max-width:600px){.four{grid-template-columns:1fr;}}
+
+.types{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.type-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.type-cell:nth-child(even){background:var(--cream);}
+.type-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.type-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.15;}
+.type-text{font-size:.81rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.types{grid-template-columns:1fr;}}
+
+.context{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.context-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.context-name{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.context-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.context-body p{margin-bottom:.5rem;}
+.context-body p:last-child{margin-bottom:0;}
+.context-q{font-size:.82rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.6rem;margin-top:.5rem;line-height:1.5;}
+
+.tbl-wrap{margin:1.25rem 0;overflow-x:auto;}
+.cmp{width:100%;border-collapse:collapse;font-size:.8rem;min-width:540px;}
+.cmp th,.cmp td{border:1px solid var(--rule);padding:.55rem .7rem;vertical-align:top;line-height:1.45;text-align:left;}
+.cmp th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.cmp td:first-child{background:var(--cream);font-weight:600;color:var(--charcoal);font-size:.76rem;}
+.cmp .fill{color:var(--muted);font-style:italic;}
+
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing,.cmp th,.concept-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .context,.task,.types,.four,.defbox,.inset,.tbl-wrap{break-inside:avoid;}
+  .sec-header{margin:1.9rem 0 1rem;}
+  .context{margin:1.1rem 0;}
+  .four,.types,.defbox,.inset,.pullquote{margin-top:1.2rem;margin-bottom:1.2rem;}
+  .task{margin:1.3rem 0;}
+  .closing{margin:1.2rem 0 0;}
+  .doc-footer{margin-top:1.2rem;}
+  .closing.tight-top{margin-top:.8rem;}
+  .dq-list.tight li{padding-top:.34rem;padding-bottom:.34rem;}
+  .sec-header.tight-top{margin-top:1rem;margin-bottom:.85rem;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+.sec-header.tight-top{margin-top:1.5rem;}
+.closing.tight-top{margin-top:1.4rem;}
+.dq-list.tight li{padding-top:.45rem;padding-bottom:.45rem;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="concept-tag">Concept Library · Money &amp; Value</p>
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Concept Primer</p>
+    <h1 class="masthead-title">P&amp;L vs. Balance Sheet</h1>
+    <p class="masthead-sub">Two questions people constantly confuse — "are you making money?" and "what are you worth?" — and the flow-versus-stock distinction that runs from a paycheck to a national debt.</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">Two friends each tell you they're "doing fine." The first earns a high salary but spends every dollar, owns almost nothing, and owes a pile of debt. The second earns modestly but owns a paid-off house and has savings in the bank. Who's actually fine? The honest answer is that you can't tell from one fact — because "how much you earn" and "what you're worth" are two completely different questions, and confusing them is one of the most common and costly mistakes in all of economics. Businesses answer these two questions with two separate documents: the <strong>Profit &amp; Loss statement</strong> (the "P&amp;L," or income statement) and the <strong>balance sheet</strong>. Learning to read them apart — and together — is learning to see the difference between a flow and a stock.</p>
+
+  <p class="body">That distinction is the whole concept, and it's worth naming precisely. A <strong>flow</strong> is something measured <em>over a period of time</em> — money earned and spent across a month or a year. A <strong>stock</strong> is something measured <em>at a single moment</em> — everything you own and owe, right now. The P&amp;L tracks the flow: are you making money over a stretch of time? The balance sheet captures the stock: what are you worth at this instant? They are not rivals and not the same; they're two lenses on the same entity, each blind to what the other sees. And the remarkable thing is that the distinction scales perfectly — from a single person's paycheck-and-net-worth, to a company's profit-and-solvency, all the way up to a nation's deficit-and-debt. Master it once and you can read the financial health of almost anything.</p>
+
+  <div class="defbox">
+    <p class="defbox-label">The tool, stated plainly</p>
+    <p>The <strong>P&amp;L (Profit &amp; Loss / income statement)</strong> measures a <strong>flow</strong>: revenue minus expenses <em>over a period of time</em>, ending in profit or loss. It answers <em>"are you making money?"</em> The <strong>balance sheet</strong> measures a <strong>stock</strong>: everything owned (assets) minus everything owed (liabilities) <em>at a single moment</em>, leaving net worth (or "equity"). It answers <em>"what are you worth?"</em> One is a video of a stretch of time; the other is a photograph of an instant.</p>
+  </div>
+
+  <!-- SECTION I -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">The Tool — Two Lenses, Two Questions</span></div>
+
+  <p class="body">Grant the power of having both lenses, because together they tell you something neither could alone. Each answers a question you genuinely need answered, and they answer different ones. Hold them side by side:</p>
+
+  <div class="four">
+    <div class="four-cell">
+      <p class="four-label">The flow · over time</p>
+      <p class="four-name">The P&amp;L</p>
+      <p class="four-text">Money <strong>in</strong> minus money <strong>out</strong> across a period — a month, a quarter, a year. Revenue at the top, expenses subtracted, profit or loss at the bottom. It answers: <em>over this stretch of time, did you earn more than you spent?</em> Like a video of your finances running.</p>
+    </div>
+    <div class="four-cell">
+      <p class="four-label">The stock · at a moment</p>
+      <p class="four-name">The Balance Sheet</p>
+      <p class="four-text">Everything you <strong>own</strong> minus everything you <strong>owe</strong>, frozen at one instant. Assets on one side, liabilities on the other, net worth as the difference. It answers: <em>right now, what are you actually worth?</em> Like a photograph snapped at a single moment.</p>
+    </div>
+  </div>
+
+  <p class="body">The two are linked, which is part of the elegance: a year of profits on the P&amp;L (flow) builds up your net worth on the balance sheet (stock), the way water flowing in raises the level in a tank. Profit is the stream; net worth is the reservoir. But — and this is the key to everything that follows — they can also point in <em>opposite directions</em> at the same time, because a stream and a reservoir are genuinely different things. Granted fully, the pair is one of the most powerful diagnostic tools ever devised: between them, "are you making money?" and "what are you worth?" capture most of what financial health means. The trouble is what happens when people forget there are two questions and read only one.</p>
+
+  <div class="pullquote">
+    <p>Profit is a stream; net worth is the reservoir it fills. Watch only the stream and you'll miss the reservoir running dry — or overflowing.</p>
+  </div>
+
+  <!-- SECTION II -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">Where Reading One Lens Lies to You</span></div>
+
+  <p class="body">Each statement is honest about its own question and silent about the other's. Two levers show how relying on one — or trusting the numbers as objective — leads you badly astray.</p>
+
+  <div class="types">
+    <div class="type-cell">
+      <p class="type-label">Lever 1</p>
+      <p class="type-name">A healthy P&amp;L can hide a sick balance sheet — and vice versa</p>
+      <p class="type-text">The flow and the stock can disagree completely. A company can be <em>profitable and going bankrupt</em> at once — earning more than it spends on paper, yet unable to pay its bills because it's drowning in debt or out of cash (profit isn't the same as cash in hand). Just as easily, an entity can be <em>unprofitable but perfectly sound</em> — losing money this year but sitting on huge assets and little debt, able to weather it for ages. Read only the P&amp;L and you'll call a dying company healthy; read only the balance sheet and you'll panic over a temporary bad year. One lens alone reliably lies.</p>
+    </div>
+    <div class="type-cell">
+      <p class="type-label">Lever 2</p>
+      <p class="type-name">Both count only money — and both rest on judgment</p>
+      <p class="type-text">The numbers look hard and objective, but both statements are built on <em>choices</em>: what counts as an asset, how to value it, when to record a cost or call a debt. Reasonable people can produce very different statements for the same entity — and some produce misleading ones on purpose. Worse, both lenses are blind to everything not measured in money: the skill and morale of the workers, a brand's trust, the health of the environment, the unpaid work that holds a household together, looming future obligations not yet on the books. A spotless balance sheet can sit atop real rot the statements simply cannot see.</p>
+    </div>
+  </div>
+
+  <div class="inset">
+    <strong>The questions to carry everywhere:</strong> when someone says an entity is "doing well," ask — <em>well by which measure: the flow or the stock? Is it making money over time, what is it worth right now, and do those two agree or contradict?</em> And then: <em>what choices shaped these numbers, and what real things — people, trust, the future, the environment — do they leave out entirely?</em> Financial statements are powerful precisely because they're narrow. Their strength is their limit: they answer their own questions superbly and stay silent on everything else.</p>
+  </div>
+
+  <!-- SECTION III — APPLY (break removed; long intro) -->
+  <div class="sec-header"><span class="sec-roman">III</span><span class="sec-title">The Same Two Lenses, Three Scales</span></div>
+
+  <p class="body">Watch flow and stock pull apart at three scales — a person, a company, and a nation — so you see it is one distinction, not three. In each, the flow looks one way and the stock another.</p>
+
+  <div class="context">
+    <p class="context-meta">Scale One · The person</p>
+    <p class="context-name">High earner, low net worth — and the reverse</p>
+    <div class="context-body">
+      <p>Return to the two friends. The first has a strong <em>P&amp;L</em> — lots of income — but a weak <em>balance sheet</em>: no assets, heavy debt, nothing saved. Lose the job, and the flow stops while the debts remain. The second has a modest P&amp;L but a strong balance sheet — owns the house, holds savings — and could survive a long stretch of no income. "How much do you make?" (flow) and "what are you worth?" (stock) gave opposite readings of who's secure. The income statement answered one question; only the balance sheet answered the other.</p>
+      <p class="context-q">Which friend is "doing fine" — and which lens did you have to use to know?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Scale Two · The company</p>
+    <p class="context-name">Profitable on paper, out of cash in the bank</p>
+    <div class="context-body">
+      <p>A business shows a healthy profit on its P&amp;L — it has sold plenty for more than its costs. Yet its customers haven't paid yet, its own bills are due now, and it has borrowed heavily; its balance sheet is buried in debt and short of cash. It can be <em>profitable and insolvent at the same instant</em> — and companies do fail exactly this way, looking great on the income statement right up to the moment they can't make payroll. An investor reading only the P&amp;L sees a winner; one who also reads the balance sheet sees the cliff. Same firm, two stories, both true.</p>
+      <p class="context-q">If the profit is real, how can the company still be about to fail?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Scale Three · The nation</p>
+    <p class="context-name">The deficit (flow) versus the debt (stock)</p>
+    <div class="context-body">
+      <p>Now the same distinction at national scale — and it's the source of endless confusion in public debate. A government's <strong>deficit</strong> is a <em>flow</em>: how much more it spent than it took in over one year (its P&amp;L). Its <strong>debt</strong> is a <em>stock</em>: the total it owes at this moment, accumulated from all past deficits (its balance sheet). A country can shrink its yearly deficit while its total debt still grows; people argue past each other constantly because one side is talking about the stream and the other about the reservoir. This is the case worth arguing over — but you can't even have the argument honestly until you know which one each number is.</p>
+      <p class="context-q">Is the claim about the yearly flow or the accumulated stock — and would the speaker pass that test?</p>
+    </div>
+  </div>
+
+  <!-- ACTIVITY -->
+  <div class="sec-header tight-top"><span class="sec-roman">IV</span><span class="sec-title">Activity — Flow or Stock?</span></div>
+
+  <p class="body">For each, decide whether it belongs on a P&amp;L (a flow, over time) or a balance sheet (a stock, at a moment) — and note what the figure alone would <em>not</em> tell you about the entity's health.</p>
+
+  <div class="tbl-wrap">
+    <table class="cmp">
+      <thead>
+        <tr><th>The figure</th><th>Flow (P&amp;L) or stock (balance sheet)?</th><th>What it alone won't tell you</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>A worker's monthly salary</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>The total value of a family's home and savings</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A company's profit last quarter</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>The total amount a person owes on loans</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A government's spending shortfall this year</td><td class="fill">…</td><td class="fill">…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Write</p>
+    <p class="task-title">Sketch your own two statements</p>
+    <p class="task-body">Roughly sketch your own P&amp;L and balance sheet (use made-up but realistic numbers if you prefer). For the P&amp;L: what flows in and out over a month? For the balance sheet: what do you own and owe right now? Do the two tell the same story about your financial health, or different ones? Then name one important thing about your real wellbeing that <em>neither</em> statement captures — and explain why money-based measures miss it.</p>
+    <div class="writelines"><div class="writeline"></div><div class="writeline"></div><div class="writeline"></div></div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="sec-header tight-top"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list tight">
+    <li>"Profitable and going bankrupt" sounds like a contradiction, but it happens constantly. What does that reveal about the difference between making money (flow) and having money (stock)?</li>
+    <li>National debates often confuse the deficit (a flow) with the debt (a stock). Why might politicians or commentators blur the two — and how would knowing the difference change how you judge their claims?</li>
+    <li>Both statements rest on choices about what counts and how to value it. If the same entity can be shown different ways, how much should we trust a single "bottom line"? What questions would you ask behind it?</li>
+    <li>Both lenses see only what's measured in money. What's the smallest thing we could add to how we measure a company's or a country's health that would capture something important these statements miss — and what would it cost to track it?</li>
+  </ol>
+
+  <div class="closing tight-top">
+    <p>One number tells you the stream; the other tells you the reservoir.<br>Confuse them and a dying thing looks healthy, a sound thing looks doomed.<br>Both are honest only about their own question, and blind to all the rest —<br>so to read any economy, first ask: am I looking at the flow, or the stock?</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC &nbsp;&middot;&nbsp; SPCC.1 &nbsp;&middot;&nbsp; economicdemocracy.co</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

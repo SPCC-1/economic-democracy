@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Researcher's Toolkit — Economic Democracy in Action</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+:root{
+  /* La Bodega palette */
+  --marigold:#F5A623; --marigold-deep:#E8901A; --red:#D63B27; --red-deep:#B32D1C;
+  --cream:#FBF3E2; --ink:#1A1410; --navy:#1F3864; --teal:#5BB8C4;
+  --paper:#FEF8EC; --card:#FFFFFF; --rule:#EAD9B8; --wash:#FBEFD6;
+  --green:#3D6B43; --greenwash:#E6F0E2;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:780px;margin:0 auto;padding:0 24px;}
+
+/* Hero — full marigold bleed */
+.herobleed{background:var(--marigold);background-image:radial-gradient(circle at 85% 15%,rgba(214,59,39,.18),transparent 45%);}
+.hero{max-width:780px;margin:0 auto;padding:46px 24px 42px;}
+.kicker{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cream);background:var(--red);padding:7px 15px;border-radius:100px;margin-bottom:20px;}
+h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:52px;line-height:1;letter-spacing:-.025em;color:var(--ink);margin-bottom:18px;}
+.lede{font-size:21px;line-height:1.4;color:var(--ink);font-weight:500;max-width:38ch;}
+
+/* opening pullquote */
+.pullquote{background:var(--red);color:#fff;border-radius:18px;padding:26px 30px;margin:34px 0 22px;font-family:'Bricolage Grotesque',sans-serif;font-size:22px;line-height:1.3;font-weight:700;letter-spacing:-.01em;position:relative;overflow:hidden;}
+.pullquote::after{content:"";position:absolute;right:-30px;bottom:-30px;width:160px;height:160px;background:radial-gradient(circle,rgba(245,166,35,.4),transparent 70%);}
+.pullquote::before{content:"\201C";position:absolute;top:-10px;left:14px;font-family:'Bricolage Grotesque',sans-serif;font-size:90px;color:var(--marigold);font-weight:800;line-height:1;opacity:.55;}
+
+/* TOC card */
+.toc{background:var(--card);border:2px solid var(--ink);border-radius:16px;padding:26px 30px;margin:38px 0 48px;box-shadow:4px 4px 0 var(--marigold);}
+.toc h2{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;letter-spacing:.13em;text-transform:uppercase;color:var(--red);margin-bottom:16px;font-weight:700;border:0;padding:0;}
+.toc ol{list-style:none;counter-reset:toc;}
+.toc li{counter-increment:toc;padding:9px 0;border-bottom:1px dashed var(--rule);font-size:16px;display:flex;align-items:baseline;gap:14px;}
+.toc li:last-child{border-bottom:0;}
+.toc li::before{content:counter(toc,decimal-leading-zero);font-family:'Bricolage Grotesque',sans-serif;font-weight:800;color:var(--marigold-deep);font-size:15px;flex:0 0 auto;}
+.toc a{color:var(--ink);text-decoration:none;font-weight:500;}
+.toc a:hover{color:var(--red);}
+
+/* Sections */
+section{margin:54px 0;scroll-margin-top:24px;}
+.snum{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red);background:var(--wash);padding:5px 12px;border-radius:100px;margin-bottom:12px;}
+h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:34px;line-height:1.04;color:var(--ink);margin-bottom:14px;letter-spacing:-.02em;}
+h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:19px;color:var(--ink);margin:24px 0 8px;}
+p{margin-bottom:15px;}
+strong{color:var(--red-deep);font-weight:600;}
+em{color:#6b5d44;}
+a.inl{color:var(--red-deep);font-weight:600;border-bottom:1px solid var(--marigold);}
+a.inl:hover{color:var(--red);border-bottom-color:var(--red);}
+
+ul,ol.steps{margin:10px 0 20px;padding-left:0;list-style:none;}
+ul li,ol.steps li{position:relative;padding-left:28px;margin-bottom:10px;line-height:1.55;font-size:17px;}
+ul li::before{content:"";position:absolute;left:6px;top:11px;width:9px;height:9px;background:var(--marigold);border-radius:50%;}
+ol.steps{counter-reset:st;}
+ol.steps li{counter-increment:st;}
+ol.steps li::before{content:counter(st);position:absolute;left:0;top:1px;width:22px;height:22px;background:var(--ink);color:var(--marigold);border-radius:50%;font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;line-height:1;}
+
+/* good/bad question pair */
+.qpair{display:grid;grid-template-columns:1fr;gap:14px;margin:20px 0;}
+.q{padding:16px 20px;border-radius:14px;font-size:16px;line-height:1.45;border:2px solid var(--ink);}
+.q.bad{background:#FBE3DE;box-shadow:3px 3px 0 var(--red);}
+.q.good{background:var(--greenwash);box-shadow:3px 3px 0 var(--green);}
+.q .tag{font-family:'Bricolage Grotesque',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:5px;}
+.q.bad .tag{color:var(--red-deep);}
+.q.good .tag{color:var(--green);}
+
+/* callouts */
+.box{background:var(--card);border:2px solid var(--ink);border-radius:14px;padding:22px 26px;margin:24px 0;}
+.box.rule{background:var(--marigold);box-shadow:4px 4px 0 var(--red);}
+.box .lab{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--red);margin-bottom:10px;}
+.box.rule .lab{color:var(--red-deep);}
+.box.navy{background:var(--ink);border-color:var(--ink);}
+.box.navy,.box.navy *{color:var(--cream);}
+.box.navy .lab{color:var(--marigold) !important;}
+.box.navy strong{color:#fff !important;}
+.box.navy ol.steps li::before{background:var(--marigold);color:var(--ink);}
+.box.navy ul li::before{background:var(--marigold);}
+
+/* AI section accent */
+#ai{background:linear-gradient(180deg,var(--wash),transparent 240px);border-radius:18px;padding:30px 28px;margin-left:-28px;margin-right:-28px;border:2px solid transparent;}
+@media(max-width:780px){#ai{margin-left:-12px;margin-right:-12px;border-radius:14px;}}
+
+/* footer */
+footer{background:var(--ink);color:var(--cream);margin-top:60px;padding:34px 0 60px;}
+footer .wrap{padding:0 24px;}
+footer .big{font-family:'Bricolage Grotesque',sans-serif;font-size:17px;color:var(--marigold);font-weight:700;margin-bottom:6px;}
+footer .ft{font-size:14px;color:rgba(251,243,226,.78);letter-spacing:.01em;line-height:1.55;}
+footer .ft a.inl{color:var(--marigold);border-bottom-color:var(--marigold);}
+</style>
+</head>
+<body>
+
+<div class="herobleed">
+  <div class="hero">
+    <div class="kicker">Economic Democracy in Action · Shared Toolkit</div>
+    <h1>The Researcher's Toolkit</h1>
+    <p class="lede">How to investigate a real issue — by talking to real people, gathering real data, and weighing real evidence. Learn it once; use it in every project.</p>
+  </div>
+</div>
+
+<div class="wrap">
+
+<p class="pullquote">You are not writing a report from what you already know. You are finding out something true about a real issue in your community.</p>
+
+<p>Every Civic Lab asks you to investigate a live, contested economic decision — and to take a position you can actually defend. This toolkit gives you the methods to do that. Every skill here transfers: once you can run an interview about food prices, you can run one about anything.</p>
+
+<div class="toc">
+  <h2>What's Inside</h2>
+  <ol>
+    <li><a href="#interview">Conducting an Informational Interview</a></li>
+    <li><a href="#survey">Designing and Running a Survey</a></li>
+    <li><a href="#field">Doing a Field Study</a></li>
+    <li><a href="#data">Reading Public Data</a></li>
+    <li><a href="#source">Evaluating a Source</a></li>
+    <li><a href="#ai">Using AI in Your Research</a></li>
+    <li><a href="#synth">Synthesizing &amp; Taking a Position</a></li>
+  </ol>
+</div>
+
+<section id="interview">
+  <div class="snum">Skill One</div>
+  <h2>Conducting an Informational Interview</h2>
+  <p>An informational interview is a conversation where you learn from someone with direct experience. It's the single most powerful research tool you have, because it gets you something no article can: a real person's reasoning, in their own words.</p>
+
+  <h3>Before the interview</h3>
+  <ul>
+    <li><strong>Find the right person.</strong> Who has direct experience? A bodega owner knows margins; a resident knows what it's like to shop here; a food-pantry worker sees the need. Aim for a range of views, not just people who agree with you.</li>
+    <li><strong>Make the ask, honestly.</strong> Say who you are, what you're studying, and how long you'll need. Fifteen to twenty minutes is a respectful ask. <em>"I'm a student studying how food affordability works in our neighborhood. Could I ask you a few questions for about 15 minutes? I'd really value your perspective."</em></li>
+    <li><strong>Do your homework first</strong> so you don't spend their time on things you could have looked up.</li>
+  </ul>
+
+  <h3>Asking good questions</h3>
+  <p>The difference between a question that opens someone up and one that shuts them down is whether you're leading them to an answer:</p>
+  <div class="qpair">
+    <div class="q bad"><span class="tag">Leading</span>"Don't you think the city store will hurt your business?"</div>
+    <div class="q good"><span class="tag">Open</span>"How do you think the new city store will affect your business?"</div>
+  </div>
+  <ul>
+    <li><strong>Ask "how" and "why," not just "what."</strong> "Why do you think that?" is the most valuable follow-up you have.</li>
+    <li><strong>Ask for stories.</strong> "Can you tell me about a time…" gets you something real.</li>
+    <li><strong>Follow the thread.</strong> Your best questions are the ones you didn't plan — they come from really listening to the last answer.</li>
+  </ul>
+
+  <h3>During &amp; after</h3>
+  <ul>
+    <li><strong>Listen more than you talk.</strong> Silence is okay. Let them think.</li>
+    <li><strong>Take notes or record — with permission.</strong> "Is it okay if I take notes so I get your words right?"</li>
+    <li><strong>Don't argue.</strong> You're there to understand their view, not change it. Especially if you disagree — your job is to understand it well enough to restate it fairly.</li>
+    <li><strong>Write it up within a day,</strong> while it's fresh. Note what surprised you — the surprises are usually the most important findings. Then send a thank-you.</li>
+  </ul>
+
+  <div class="box rule"><div class="lab">Get the printable instrument</div>Use the <a class="inl" href="ED_LAB_Food_Field_Interview_Guide.pdf" target="_blank" rel="noopener">Interview Guide</a> — the question bank and protocol built for the Hunts Point food lab.</div>
+</section>
+
+<section id="survey">
+  <div class="snum">Skill Two</div>
+  <h2>Designing and Running a Survey</h2>
+  <p>A survey gathers information from <em>many</em> people, so you can see patterns a single interview can't.</p>
+
+  <h3>Writing good questions</h3>
+  <ul>
+    <li><strong>One thing at a time.</strong> "Is the store too far and too expensive?" is two questions. Split them.</li>
+    <li><strong>Neutral wording.</strong> "How would you describe grocery prices here?" — not "How bad are grocery prices?"</li>
+    <li><strong>Balanced options.</strong> If you offer "agree," you must offer "disagree," with a neutral middle.</li>
+    <li><strong>Mix the types.</strong> Some scale questions (1–5), some yes/no, a couple open-ended for richer answers.</li>
+  </ul>
+
+  <h3>Running it well</h3>
+  <ul>
+    <li><strong>Sample vs. population.</strong> You can't ask everyone (the population), so you ask a sample. The more varied your sample, the more trustworthy your findings.</li>
+    <li><strong>How many?</strong> More is better, but even 30–50 thoughtful responses can reveal a real pattern. Be honest about your number.</li>
+    <li><strong>Watch who's missing.</strong> If you only survey at 3pm, you miss people working day shifts — who may be exactly the people most affected. Push beyond your own circle.</li>
+  </ul>
+  <div class="box"><div class="lab">Report Honestly</div>Say how many people you asked and who they were. Report results you didn't expect. Never claim your sample speaks for everyone — say what it does and doesn't show.</div>
+
+  <div class="box rule"><div class="lab">Get the printable instrument</div>Use the <a class="inl" href="ED_LAB_Food_Field_Community_Survey.pdf" target="_blank" rel="noopener">Community Survey</a> — designed for residents of Hunts Point, ready to administer in the field.</div>
+</section>
+
+<section id="field">
+  <div class="snum">Skill Three</div>
+  <h2>Doing a Field Study</h2>
+  <p>A field study is hands-on observation and measurement in the real world. For economic issues, the most powerful one is a <strong>price-and-access study.</strong></p>
+
+  <h3>A price comparison</h3>
+  <ul>
+    <li>Pick a <strong>fixed basket</strong> of about ten common items — a dozen eggs, a gallon of milk, rice, beans, bread, apples, chicken — and keep it identical across stores.</li>
+    <li>Visit <strong>at least three</strong> stores of different types: a bodega, a supermarket, a discount store.</li>
+    <li>Record each item's price at each store <strong>on the same day.</strong> Total the basket per store and compare.</li>
+  </ul>
+
+  <h3>A neighborhood food-asset map</h3>
+  <ul>
+    <li>Map every place to buy food within a half-mile: supermarkets, bodegas, delis, pharmacies, farmers' markets.</li>
+    <li>Note what each actually sells — fresh produce, or only packaged food?</li>
+    <li>This shows you, concretely, what "food access" really looks like on the ground.</li>
+  </ul>
+  <p><strong>Record honestly.</strong> Photograph your data sheet, note the date and time, write down anything unusual. Your data is only as good as your honesty about how you got it.</p>
+
+  <div class="box rule"><div class="lab">Get the printable instruments</div>Use the <a class="inl" href="ED_LAB_Food_Field_Price_Comparison.pdf" target="_blank" rel="noopener">Price Comparison</a> data sheet and the <a class="inl" href="ED_LAB_Food_Field_Asset_Map.pdf" target="_blank" rel="noopener">Asset Map</a> worksheet — built for the South Bronx food lab.</div>
+</section>
+
+<section id="data">
+  <div class="snum">Skill Four</div>
+  <h2>Reading Public Data</h2>
+  <p>You don't need to be a statistician. You need to find a few real numbers and understand what they mean.</p>
+  <ul>
+    <li><strong>Where to look:</strong> the Census / American Community Survey (income, poverty, demographics), your city's open-data portal, the USDA Food Access Research Atlas, and the agency running the program you're studying.</li>
+    <li><strong>What a number means:</strong> a "36% poverty rate" means 36 of every 100 people live below a specific federal dollar threshold — not just "feeling poor." Know what a number measures before you use it.</li>
+    <li><strong>Always cite the source and the year.</strong> Data goes stale. A 2019 figure may not describe today.</li>
+    <li><strong>One number is a fact; two numbers can be an insight.</strong> "36% poverty here vs. 18% citywide" tells a story that "36%" alone doesn't.</li>
+  </ul>
+</section>
+
+<section id="source">
+  <div class="snum">Skill Five</div>
+  <h2>Evaluating a Source</h2>
+  <p>Not all sources are the same — and that's okay. You just have to know what you're holding.</p>
+  <ul>
+    <li><strong>What kind is it?</strong> News reports facts; analysis interprets; advocacy argues a position; opinion is one person's take. All four can be useful — you just cite them differently.</li>
+    <li><strong>Who made it, and who funded it?</strong> A report from a small-business association and one from the mayor's office will frame the same store differently — and <em>both</em> are worth reading for exactly that reason.</li>
+    <li><strong>You can use a biased source — if you name its lean.</strong> "The bodega owners' association argues…" is honest and useful. Hiding the lean is the only mistake.</li>
+  </ul>
+  <div class="box rule"><div class="lab">The Steelman Test</div>A truly strong investigation cites the <strong>best</strong> version of each side, not the weakest. Go find the smartest person who disagrees with you, and read them carefully.</div>
+</section>
+
+<section id="ai">
+  <div class="snum">Skill Six</div>
+  <h2>Using AI in Your Research</h2>
+  <p>You are living through a shift your grandparents can't imagine: <strong>getting information is now almost free.</strong> Ask an AI the right question and you'll get an answer in seconds. That's real, and you should use it.</p>
+  <p>But the shift reveals something. If everyone can get the information, the information isn't where the value is anymore. The hard parts — the parts that are now <em>more</em> valuable — are the human ones: knowing whether an answer is true, understanding what it means, and using it well. AI is great at the easy part and bad at the hard part.</p>
+
+  <h3>What AI is genuinely good for</h3>
+  <ul>
+    <li><strong>Getting oriented fast.</strong> "Explain how municipal grocery stores have worked in other US cities." A great starting point.</li>
+    <li><strong>Finding what to look for.</strong> "What are the main arguments against city-owned stores?" Use it to find the threads, then go pull the real sources yourself.</li>
+    <li><strong>Drafting your instruments.</strong> "Help me write five neutral survey questions about grocery access." A solid first draft you then sharpen.</li>
+    <li><strong>Being your steelman partner.</strong> "Here's my argument — what's the strongest objection?" AI is a tireless sparring partner.</li>
+  </ul>
+
+  <h3>What AI cannot be trusted to do</h3>
+  <ul>
+    <li><strong>Give you verified facts.</strong> AI confidently states things that are wrong — it will invent statistics, misremember dates, even make up sources. <strong>An AI answer is a lead, not a fact.</strong></li>
+    <li><strong>Know what's current.</strong> A live issue changes weekly; AI may be working from old information and won't always tell you.</li>
+    <li><strong>Tell you what's true in your neighborhood.</strong> No AI has walked your block. It can't tell you what the bodega on your corner charges for eggs. Only you can.</li>
+  </ul>
+
+  <div class="box"><div class="lab">The Rule: Verify Everything That Matters</div>
+  Treat every AI claim as something to <strong>check</strong>, not something to cite.
+  <ol class="steps" style="margin-top:12px;">
+    <li>Use AI to get oriented and find leads.</li>
+    <li>Ask it for its sources — then go read the actual sources. If it can't give a real, findable one, treat the claim as unconfirmed.</li>
+    <li>Confirm any number, date, name, or quote against a primary source before you use it.</li>
+    <li>Confirm anything local or current with your own fieldwork or recent news.</li>
+  </ol>
+  <p style="margin-top:6px;margin-bottom:0;">When AI gives you a fact, ask: <em>"How would I prove this to someone who didn't believe it?"</em> If your only answer is "the AI said so," you don't have it yet.</p>
+  </div>
+
+  <h3>Why this matters more than it looks</h3>
+  <p>Let's be honest about what AI is: <strong>a tool, like a calculator or a computer.</strong> It handles the mechanical layer — getting information, basic writing, organizing what's already known. Using it for that isn't cheating, any more than using a calculator for arithmetic is cheating. There's a lot of anxiety about AI right now because it's new, and that will fade the way it faded for the calculator and the spreadsheet. Let it. Use the tool.</p>
+  <p>But notice exactly where the tool stops being a tool.</p>
+  <p>Getting information is mechanical. <strong>Deciding what to do is not.</strong> Every real decision in this course — should the city build the store, what should we do about food access — involves <strong>tradeoffs with no right answer.</strong> Someone gains, someone loses, values collide, and a human has to weigh them. No calculation resolves it, because it isn't a math problem. It's a <em>judgment</em> — and a judgment is an expression of what you value.</p>
+  <p>Hold onto this for the rest of your life: <strong>decision-making is sovereign to humans.</strong> Not because machines aren't smart enough yet, but because a decision among tradeoffs is a values question, and your values are yours. Hand that to a machine — especially one owned by a distant company whose values you've never examined — and you haven't saved effort. You've given away your <strong>agency.</strong> You've let a platform you don't control decide what matters.</p>
+  <p>And that road has no prosperity at the end of it. A person — or a community — that surrenders its economic decisions to distant systems doesn't get richer or freer. It gets dependent. This entire course is about the opposite: building the judgment to make your own economic decisions, and the power to make them count.</p>
+
+  <div class="box navy"><div class="lab">The Heart of It</div>Use AI for everything it's good at. <strong>Guard your judgment like it's the most valuable thing you own — because it is.</strong> AI can carry the information. The deciding is yours, and keeping it yours is the whole point of this course.</div>
+</section>
+
+<section id="synth">
+  <div class="snum">Skill Seven</div>
+  <h2>Synthesizing &amp; Taking a Position</h2>
+  <p>This is where your research becomes a stance.</p>
+  <ol class="steps">
+    <li><strong>Lay out what you found</strong> — across interviews, survey, field study, and sources. Where do they agree? Where do they conflict?</li>
+    <li><strong>State the strongest case for the side you reject.</strong> If you can't do this fairly, you don't understand the issue yet.</li>
+    <li><strong>Take your position</strong> — and show how your evidence supports it.</li>
+    <li><strong>Name what it costs.</strong> Every real choice gives something up. Say what yours does, and argue it's worth it anyway.</li>
+    <li><strong>Surface what you still don't know.</strong> Naming the open questions is a sign of strength, not weakness.</li>
+  </ol>
+  <div class="box rule"><div class="lab">The Goal</div>The goal is not to be <em>certain.</em> It is to be <strong>defensible</strong> — to hold a position you earned by understanding every side, backed by evidence you gathered yourself.</div>
+
+  <div class="box rule"><div class="lab">Get the printable instrument</div>Use the <a class="inl" href="ED_LAB_Food_Field_Position_Reform_Test.pdf" target="_blank" rel="noopener">Position &amp; Reform Test</a> — the summative worksheet that walks you from evidence to a defended position to the reform test.</div>
+</section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="big">The Researcher's Toolkit · Economic Democracy in Action</div>
+    <div class="ft">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC &nbsp;&middot;&nbsp; SPCC.1 &nbsp;&middot;&nbsp; <a class="inl" href="index.html">economicdemocracy.co</a></div>
+  </div>
+</footer>
+
+</body>
+</html>

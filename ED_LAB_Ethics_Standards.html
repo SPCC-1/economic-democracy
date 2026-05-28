@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ethics &amp; Fieldwork Standards — Economic Democracy in Action</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+:root{
+  /* La Bodega palette */
+  --marigold:#F5A623; --marigold-deep:#E8901A; --red:#D63B27; --red-deep:#B32D1C;
+  --cream:#FBF3E2; --ink:#1A1410; --teal:#5BB8C4;
+  --paper:#FEF8EC; --card:#FFFFFF; --rule:#EAD9B8; --wash:#FBEFD6;
+  --green:#3D6B43; --greenwash:#E6F0E2;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+
+/* Hero — full marigold bleed */
+.herobleed{background:var(--marigold);background-image:radial-gradient(circle at 85% 15%,rgba(214,59,39,.18),transparent 45%);}
+.hero{max-width:760px;margin:0 auto;padding:46px 24px 42px;}
+.kicker{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cream);background:var(--red);padding:7px 15px;border-radius:100px;margin-bottom:20px;}
+h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:48px;line-height:1.02;letter-spacing:-.025em;color:var(--ink);margin-bottom:18px;}
+.lede{font-size:21px;line-height:1.4;color:var(--ink);font-weight:500;max-width:40ch;}
+
+p{margin-bottom:16px;font-size:17px;line-height:1.65;}
+strong{color:var(--red-deep);font-weight:600;}
+em{color:#6b5d44;}
+a.inl{color:var(--red-deep);font-weight:600;border-bottom:1px solid var(--marigold);}
+a.inl:hover{color:var(--red);border-bottom-color:var(--red);}
+
+section{margin:42px 0;}
+h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:30px;line-height:1.06;color:var(--ink);margin-bottom:18px;letter-spacing:-.02em;}
+
+/* opening pullquote */
+.opener{background:var(--card);border:2px solid var(--ink);border-radius:16px;padding:24px 28px;margin:34px 0 10px;box-shadow:4px 4px 0 var(--marigold);}
+.opener p{margin-bottom:0;font-family:'Bricolage Grotesque',sans-serif;font-size:19px;line-height:1.4;font-weight:600;color:var(--ink);}
+
+/* principles */
+.principles{display:flex;flex-direction:column;gap:14px;margin:24px 0;}
+.principle{display:flex;gap:18px;align-items:flex-start;background:var(--card);border:2px solid var(--ink);border-radius:14px;padding:20px 24px;box-shadow:3px 3px 0 var(--marigold);}
+.principle:nth-child(even){box-shadow:3px 3px 0 var(--red);}
+.pnum{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:42px;color:var(--marigold-deep);line-height:.85;flex:0 0 auto;width:48px;letter-spacing:-.04em;}
+.principle:nth-child(even) .pnum{color:var(--red-deep);}
+.principle .body h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:21px;color:var(--ink);margin-bottom:6px;}
+.principle .body p{margin-bottom:0;font-size:16px;line-height:1.55;}
+
+/* safety callout */
+.safety{background:var(--greenwash);border:2px solid var(--ink);border-radius:16px;padding:28px 32px;margin:36px 0;box-shadow:4px 4px 0 var(--green);}
+.safety .lab{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;color:var(--green);margin-bottom:14px;}
+.safety h3.shead{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;color:var(--ink);margin-bottom:14px;letter-spacing:-.01em;}
+.safety ul{list-style:none;padding:0;}
+.safety li{position:relative;padding-left:30px;margin-bottom:11px;line-height:1.5;font-size:16px;color:var(--ink);}
+.safety li::before{content:"\2713";position:absolute;left:0;top:0;color:#fff;background:var(--green);width:20px;height:20px;border-radius:50%;font-weight:700;font-family:'DM Sans',sans-serif;font-size:12px;display:flex;align-items:center;justify-content:center;}
+
+/* pledge */
+.pledge{background:var(--ink);border-radius:18px;padding:34px 34px;margin:38px 0;position:relative;overflow:hidden;}
+.pledge::after{content:"";position:absolute;right:-30px;bottom:-30px;width:160px;height:160px;background:radial-gradient(circle,rgba(245,166,35,.35),transparent 70%);}
+.pledge *{color:var(--cream);position:relative;}
+.pledge .lab{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;color:var(--marigold);margin-bottom:14px;}
+.pledge p{font-family:'Bricolage Grotesque',sans-serif;font-size:21px;line-height:1.4;font-style:italic;margin-bottom:0;font-weight:600;}
+
+/* footer */
+footer{background:var(--ink);color:var(--cream);margin-top:54px;padding:30px 0 60px;}
+footer .wrap{padding:0 24px;}
+footer .big{font-family:'Bricolage Grotesque',sans-serif;font-size:17px;color:var(--marigold);font-weight:700;margin-bottom:6px;}
+footer .ft{font-size:14px;color:rgba(251,243,226,.78);line-height:1.55;}
+footer .ft a.inl{color:var(--marigold);border-bottom-color:var(--marigold);}
+</style>
+</head>
+<body>
+
+<div class="herobleed">
+  <div class="hero">
+    <div class="kicker">Economic Democracy in Action · Shared Standards</div>
+    <h1>Ethics &amp; Fieldwork Standards</h1>
+    <p class="lede">You're studying real people in a real community — often your own. How you do that matters as much as what you find.</p>
+  </div>
+</div>
+
+<div class="wrap">
+
+<div class="opener">
+  <p>This work is different from most schoolwork. You'll talk to real people, collect real data, and represent a real community — one that includes your own families and neighbors. That's a privilege and a responsibility. These standards apply to every Civic Lab, every time you go into the field.</p>
+</div>
+
+<section>
+  <h2>Five Principles</h2>
+
+  <div class="principles">
+    <div class="principle">
+      <div class="pnum">1</div>
+      <div class="body">
+        <h3>Consent, always</h3>
+        <p>Before you interview, record, or survey anyone, tell them who you are, what it's for, and ask permission. "Is it okay if I ask you a few questions for a school project?" If they say no, thank them and move on. No one is required to talk to you.</p>
+      </div>
+    </div>
+
+    <div class="principle">
+      <div class="pnum">2</div>
+      <div class="body">
+        <h3>Respect, not extraction</h3>
+        <p>You are learning <em>from</em> people, not taking <em>from</em> them. Listen more than you talk. Represent what people say fairly and in context — never twist a quote to fit your argument. The community is not your raw material; it's your teacher.</p>
+      </div>
+    </div>
+
+    <div class="principle">
+      <div class="pnum">3</div>
+      <div class="body">
+        <h3>Honesty about your data</h3>
+        <p>Report what you actually found — including results you didn't expect or didn't want. Don't round a number in your favor, drop an inconvenient interview, or claim a small survey speaks for everyone. Your credibility is built on this.</p>
+      </div>
+    </div>
+
+    <div class="principle">
+      <div class="pnum">4</div>
+      <div class="body">
+        <h3>Privacy &amp; dignity</h3>
+        <p>Ask before using someone's name. Many people will share more if you offer to keep them anonymous — "a Hunts Point resident" is often enough. Never share someone's personal information, and never publish anything that could embarrass or expose a person who helped you.</p>
+      </div>
+    </div>
+
+    <div class="principle">
+      <div class="pnum">5</div>
+      <div class="body">
+        <h3>Fairness to every side</h3>
+        <p>Seek out people who disagree with you, and represent their view as fairly as the view you hold. The goal of this work is understanding, not winning. A study that only talked to one side isn't finished.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="safety">
+  <div class="lab">In The Field</div>
+  <h3 class="shead">Staying Safe</h3>
+  <ul>
+    <li><strong>Loop in your teacher or a trusted adult</strong> before any fieldwork — they should know where you're going and when.</li>
+    <li><strong>Never go alone.</strong> Do interviews and surveys in pairs or small groups, in public places, during daytime hours.</li>
+    <li><strong>You can always say no or leave.</strong> If a situation feels uncomfortable for any reason, you are never obligated to continue. Leave and tell your teacher.</li>
+    <li><strong>Approach businesses and public spaces, not private homes.</strong> A bodega, a farmers' market, or a community center is appropriate; knocking on doors is not.</li>
+    <li><strong>Get an adult's help for anything official</strong> — contacting an elected official's office, a city agency, or a business owner for a formal interview.</li>
+  </ul>
+</div>
+
+<div class="pledge">
+  <div class="lab">The Researcher's Pledge</div>
+  <p>I will tell the truth about what I find. I will treat the people who help me with respect. I will represent every side fairly — especially the one I disagree with. And I will remember that I am studying my own community, and owe it my honesty.</p>
+</div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="big">Ethics &amp; Fieldwork Standards · Economic Democracy in Action</div>
+    <div class="ft">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC &nbsp;&middot;&nbsp; SPCC.1 &nbsp;&middot;&nbsp; <a class="inl" href="index.html">economicdemocracy.co</a></div>
+  </div>
+</footer>
+
+</body>
+</html>

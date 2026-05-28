@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Civic Lab · Food Affordability in the South Bronx</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+:root{
+  /* La Bodega palette */
+  --marigold:#F5A623; --marigold-deep:#E8901A; --red:#D63B27; --red-deep:#B32D1C;
+  --cream:#FBF3E2; --ink:#1A1410; --navy:#1F3864; --teal:#5BB8C4;
+  --paper:#FEF8EC; --card:#FFFFFF; --rule:#EAD9B8; --wash:#FBEFD6;
+  --green:#3D6B43; --greenwash:#E6F0E2;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:780px;margin:0 auto;padding:0 24px;}
+
+/* Hero — full marigold bleed */
+.herobleed{background:var(--marigold);background-image:radial-gradient(circle at 85% 15%,rgba(214,59,39,.18),transparent 45%);margin-bottom:0;}
+.hero{max-width:780px;margin:0 auto;padding:46px 24px 40px;}
+.labtag{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cream);background:var(--red);padding:7px 15px;border-radius:100px;margin-bottom:22px;}
+.kicker{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red-deep);margin-bottom:12px;}
+h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:62px;line-height:.95;letter-spacing:-.025em;color:var(--ink);margin-bottom:20px;}
+.standfirst{font-size:22px;line-height:1.4;color:var(--ink);font-weight:500;max-width:34ch;}
+.live{display:inline-flex;align-items:center;gap:9px;margin-top:24px;font-family:'Bricolage Grotesque',sans-serif;font-size:13px;letter-spacing:.02em;color:var(--ink);font-weight:600;background:rgba(255,255,255,.4);padding:8px 16px;border-radius:100px;}
+.live .dot{width:9px;height:9px;background:var(--red);border-radius:50%;box-shadow:0 0 0 0 rgba(214,59,39,.6);animation:pulse 2s infinite;}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(214,59,39,.6);}70%{box-shadow:0 0 0 9px rgba(214,59,39,0);}100%{box-shadow:0 0 0 0 rgba(214,59,39,0);}}
+
+/* video slot */
+.video{margin:0 0 10px;background:var(--ink);border-radius:16px;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;position:relative;overflow:hidden;border:3px solid var(--ink);}
+.video::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 38%,rgba(245,166,35,.32),transparent 62%);}
+.video .play{width:66px;height:66px;border-radius:50%;background:var(--marigold);display:flex;align-items:center;justify-content:center;margin-bottom:14px;z-index:1;box-shadow:0 6px 20px rgba(0,0,0,.3);}
+.video .play::after{content:"";border-left:20px solid var(--ink);border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px;}
+.video .vlabel{font-family:'Bricolage Grotesque',sans-serif;font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--cream);z-index:1;}
+.video .vsub{font-size:13px;color:rgba(251,243,226,.65);margin-top:5px;z-index:1;}
+.video-wrap{padding-top:38px;}
+.caption{font-size:13.5px;color:#8a7a5e;margin:9px 0 0;font-style:italic;}
+
+/* beats */
+.beat{margin:48px 0;scroll-margin-top:20px;}
+.beatnum{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red);background:var(--wash);padding:5px 12px;border-radius:100px;margin-bottom:12px;}
+h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:34px;line-height:1.04;color:var(--ink);margin-bottom:14px;letter-spacing:-.02em;}
+h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:19px;color:var(--ink);margin:22px 0 6px;}
+p{margin-bottom:15px;}
+strong{color:var(--red-deep);font-weight:600;}
+em{color:#6b5d44;}
+
+/* the paradox highlight */
+.paradox{background:var(--red);color:#fff;border-radius:18px;padding:34px 34px;margin:30px 0;position:relative;overflow:hidden;}
+.paradox::after{content:"";position:absolute;right:-30px;bottom:-30px;width:160px;height:160px;background:radial-gradient(circle,rgba(245,166,35,.4),transparent 70%);}
+.paradox *{color:var(--cream);position:relative;}
+.paradox .big{font-family:'Bricolage Grotesque',sans-serif;font-size:27px;line-height:1.18;font-weight:800;color:#fff;margin-bottom:12px;letter-spacing:-.01em;}
+.paradox .sub{font-size:16px;line-height:1.55;color:rgba(251,243,226,.92);}
+.paradox strong{color:var(--marigold);font-weight:700;}
+
+/* players grid */
+.players{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0;}
+@media(max-width:600px){.players{grid-template-columns:1fr;}}
+.player{background:var(--card);border:2px solid var(--ink);border-radius:12px;padding:15px 17px;box-shadow:3px 3px 0 var(--marigold);}
+.player .who{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:16px;color:var(--ink);margin-bottom:3px;}
+.player .what{font-size:14px;line-height:1.4;color:#6b5d44;}
+
+/* data table */
+.data{width:100%;border-collapse:collapse;font-size:15px;margin:16px 0;background:var(--card);border-radius:12px;overflow:hidden;border:2px solid var(--ink);}
+.data th{background:var(--ink);color:var(--cream);font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.04em;text-transform:uppercase;padding:11px 15px;text-align:left;font-weight:700;}
+.data td{border-bottom:1px solid var(--rule);padding:11px 15px;vertical-align:top;line-height:1.4;}
+.data td.fig{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;color:var(--red);white-space:nowrap;}
+.data tr:last-child td{border-bottom:0;}
+.data .src{font-size:12px;color:#8a7a5e;font-style:italic;}
+
+/* two sides */
+.sides{display:grid;grid-template-columns:1fr;gap:14px;margin:18px 0;}
+.side{border-radius:14px;padding:19px 23px;border:2px solid var(--ink);}
+.side .h{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;letter-spacing:.04em;text-transform:uppercase;font-weight:700;margin-bottom:8px;}
+.side.for{background:var(--greenwash);box-shadow:3px 3px 0 var(--green);}
+.side.for .h{color:var(--green);}
+.side.against{background:#FBE3DE;box-shadow:3px 3px 0 var(--red);}
+.side.against .h{color:var(--red-deep);}
+.side.alt{background:var(--wash);box-shadow:3px 3px 0 var(--marigold-deep);}
+.side.alt .h{color:var(--marigold-deep);}
+.side p{font-size:16px;line-height:1.5;margin-bottom:0;color:var(--ink);}
+
+/* lens cards */
+.lens{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0;}
+@media(max-width:600px){.lens{grid-template-columns:1fr;}}
+.lenscard{background:var(--card);border:2px solid var(--ink);border-radius:14px;padding:19px 21px;box-shadow:3px 3px 0 var(--teal);}
+.lenscard .term{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:19px;color:var(--ink);margin-bottom:6px;}
+.lenscard .use{font-size:15px;line-height:1.45;color:var(--ink);}
+
+/* callouts */
+.box{background:var(--card);border:2px solid var(--ink);border-radius:14px;padding:21px 25px;margin:20px 0;}
+.box.rule{background:var(--wash);box-shadow:4px 4px 0 var(--marigold);}
+.box .lab{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--red);margin-bottom:8px;}
+.box.task{background:var(--ink);}
+.box.task *{color:var(--cream);}
+.box.task .lab{color:var(--marigold);}
+.box.task ul{margin:6px 0 0;padding:0;list-style:none;}
+.box.task li{position:relative;padding-left:24px;margin-bottom:9px;font-size:15px;line-height:1.45;color:var(--cream);}
+.box.task li::before{content:"→";position:absolute;left:0;color:var(--marigold);font-weight:700;}
+
+.reform{background:var(--marigold);border-radius:18px;padding:32px 34px;margin:24px 0;border:3px solid var(--ink);box-shadow:5px 5px 0 var(--red);}
+.reform .lab{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--red-deep);margin-bottom:10px;}
+.reform p{font-family:'Bricolage Grotesque',sans-serif;font-size:22px;line-height:1.3;color:var(--ink);font-weight:700;margin-bottom:0;letter-spacing:-.01em;}
+
+.tools{border-top:2px dashed var(--rule);margin-top:22px;padding-top:20px;display:flex;gap:14px;flex-wrap:wrap;}
+.tool{flex:1;min-width:200px;background:var(--card);border-radius:12px;padding:17px 19px;text-decoration:none;display:block;border:2px solid var(--ink);box-shadow:3px 3px 0 var(--teal);transition:transform .12s,box-shadow .12s;}
+.tool:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--teal);}
+.tool .tl{font-family:'Bricolage Grotesque',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:4px;}
+.tool .tn{font-family:'Bricolage Grotesque',sans-serif;font-size:17px;color:var(--ink);font-weight:700;}
+.tool .td{font-size:13px;color:#6b5d44;margin-top:3px;}
+
+footer{background:var(--ink);color:var(--cream);margin-top:54px;padding:30px 0 60px;}
+footer .wrap{padding:0 24px;}
+footer .big{font-family:'Bricolage Grotesque',sans-serif;font-size:17px;color:var(--marigold);font-weight:700;margin-bottom:6px;}
+footer .ft{font-size:13px;color:rgba(251,243,226,.7);letter-spacing:.02em;}
+.placeholder{font-size:13.5px;color:#6b5d44;background:var(--wash);border:2px dashed var(--marigold-deep);border-radius:12px;padding:17px 21px;margin:16px 0;}
+.placeholder strong{color:var(--red-deep);}
+</style>
+</head>
+<body>
+<div class="herobleed">
+<div class="hero">
+  <div class="labtag">Economic Democracy in Action · Civic Lab 01</div>
+  <div class="kicker">A Real Research Project · Hunts Point, The Bronx</div>
+  <h1>Who Gets to Eat Affordably?</h1>
+  <p class="standfirst">New York City is spending public money to build a grocery store in one of its poorest neighborhoods. Your job isn't to cheer or boo. It's to understand it well enough to take a position you can defend — and to know what it costs.</p>
+  <div class="live"><span class="dot"></span>This is a live decision. The facts on this page will change — part of your job is to update them.</div>
+</div>
+</div>
+
+<div class="wrap">
+
+<div class="video-wrap">
+<div class="video">
+  <div class="play"></div>
+  <div class="vlabel">Watch: The Hunts Point Paradox</div>
+  <div class="vsub">2–3 min framing video · to be produced</div>
+</div>
+<p class="caption">A short film introducing the neighborhood, the decision, and the question — before students take any side.</p>
+</div>
+
+<style>
+.readers{margin:38px 0 8px;}
+.readers-label{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red);background:var(--wash);padding:5px 12px;border-radius:100px;margin-bottom:12px;}
+.readers-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:28px;line-height:1.05;color:var(--ink);margin-bottom:8px;letter-spacing:-.02em;}
+.readers-sub{font-size:16px;color:#6b5d44;margin-bottom:18px;line-height:1.5;}
+.reader-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:440px){.reader-grid{grid-template-columns:1fr;}}
+.reader-cell{display:flex;flex-direction:column;gap:8px;}
+.reader-card{background:var(--card);border:2px solid var(--ink);border-radius:14px;padding:20px 22px;box-shadow:4px 4px 0 var(--marigold);text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:8px;flex:1;transition:transform .12s,box-shadow .12s;}
+.reader-card:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--marigold);}
+.reader-cell:nth-child(2) .reader-card{box-shadow:4px 4px 0 var(--red);}
+.reader-cell:nth-child(2) .reader-card:hover{box-shadow:5px 5px 0 var(--red);}
+.reader-tag{font-family:'Bricolage Grotesque',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--red);font-weight:700;}
+.reader-name{font-family:'Bricolage Grotesque',sans-serif;font-size:21px;font-weight:800;color:var(--ink);letter-spacing:-.01em;line-height:1.1;}
+.reader-desc{font-size:15px;line-height:1.5;color:#6b5d44;margin-bottom:4px;}
+.reader-card-cta{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;letter-spacing:.02em;color:var(--red-deep);margin-top:auto;padding-top:8px;border-top:1px dashed var(--rule);}
+.reader-card-cta::after{content:" \2192";}
+.reader-pdf{display:flex;align-items:center;gap:8px;text-decoration:none;font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);background:var(--cream);border:1.5px solid var(--ink);border-radius:100px;padding:8px 16px;align-self:flex-start;transition:background .12s;}
+.reader-pdf:hover{background:var(--marigold);}
+.reader-pdf::before{content:"\2913";font-size:14px;color:var(--red);}
+</style>
+
+<div class="readers">
+  <div class="readers-label">Background · Read These First</div>
+  <div class="readers-title">Two short readers before Beat 1</div>
+  <p class="readers-sub">The first gives you the bodega — what it is to a neighborhood like this, and what its place in the local economy actually is. The second gives you the economics — how food prices, supply chains, and retailer margins actually work, and what a city-owned store changes (and doesn't).</p>
+  <div class="reader-grid">
+    <div class="reader-cell">
+      <a class="reader-card" href="ED_LAB_Food_Reader_Bodega.html">
+        <span class="reader-tag">Reader 1 · The Bodega</span>
+        <span class="reader-name">What the bodega is — and what it carries</span>
+        <span class="reader-desc">How the bodega came to be, what it has meant to the South Bronx, and what its place in the neighborhood economy is right now.</span>
+        <span class="reader-card-cta">Read online</span>
+      </a>
+      <a class="reader-pdf" href="ED_LAB_Food_Reader_Bodega_PRINT.pdf" target="_blank" rel="noopener">Download PDF</a>
+    </div>
+    <div class="reader-cell">
+      <a class="reader-card" href="ED_LAB_Food_Reader_Economics.html">
+        <span class="reader-tag">Reader 2 · Food Economics</span>
+        <span class="reader-name">How food actually gets priced, sold, and subsidized</span>
+        <span class="reader-desc">Prices, supply chains, retailer margins, SNAP, and what a city-owned grocery store changes about the math — and what it doesn't.</span>
+        <span class="reader-card-cta">Read online</span>
+      </a>
+      <a class="reader-pdf" href="ED_LAB_Food_Reader_Economics_PRINT.pdf" target="_blank" rel="noopener">Download PDF</a>
+    </div>
+  </div>
+</div>
+
+<div class="beat">
+  <div class="beatnum">Beat 1 · The Issue</div>
+  <h2>A store, $10 million, and a neighborhood that feeds the city</h2>
+  <p>New York City is building its first <strong>publicly owned, privately operated</strong> grocery store at <strong>The Peninsula</strong> in Hunts Point, the Bronx. This is the structure that matters most to understand: the <strong>city owns the site and covers overhead</strong> (no rent, no property tax), then <strong>hires a private operator through a public competition (an RFP)</strong> who must run the store under city rules for <strong>pricing, labor, and reporting.</strong> It is not a city-staffed store, and it is not an ordinary private one. It's something in between — and that in-between is the whole question.</p>
+  <p>The facts, verified as of this writing:</p>
+  <div class="data">
+    <table style="width:100%;border-collapse:collapse;">
+      <tr><td class="fig">20,000 sq ft</td><td>Store size, inside The Peninsula (the redeveloped former Spofford juvenile detention site)</td></tr>
+      <tr><td class="fig">Opens 2027</td><td>Second site announced, but the <em>first</em> expected to open. La Marqueta in East Harlem (announced first) opens 2029.</td></tr>
+      <tr><td class="fig">$70 million</td><td>Total city capital for five stores — one per borough — by the end of the mayor's first term</td></tr>
+      <tr><td class="fig">Summer 2026</td><td>The city issues its RFP to select a private operator</td></tr>
+      <tr><td class="fig">May 29, 2026</td><td>City Council budget hearing on the plan (Economic Development & Finance)</td></tr>
+    </table>
+  </div>
+  <p class="caption">Sources: NYCEDC and NYC Mayor's Office announcements, May 2026; NYC Council Finance Division. Run by NYCEDC, led by Interim President & CEO Jeanny Pak.</p>
+</div>
+
+<div class="beat">
+  <div class="beatnum">Beat 2 · Why It's Hard</div>
+  <h2>The paradox that makes this worth studying</h2>
+  <div class="paradox">
+    <div class="big">Hunts Point feeds New York City. It just can't easily feed itself.</div>
+    <div class="sub">The neighborhood is home to the <strong>Hunts Point Food Distribution Center</strong> — the city's largest, moving roughly <strong>4.5 billion pounds of food a year</strong> and supplying about <strong>a quarter of all the fresh produce</strong> in New York. Yet residents next door face high poverty, heavy rent burden, and few full-service, affordable grocery stores. Abundance flows <em>through</em> the neighborhood without landing <em>in</em> it.</div>
+  </div>
+  <p>That contradiction is the heart of the lab. Food affordability is a genuinely hard problem — it won't be solved by one store, and serious people disagree about whether this is even the right move. Before you take a side, you have to be able to state each position so fairly that someone who holds it would say <em>"yes — that's exactly what I mean."</em></p>
+  <p>And part of your work is naming what nobody yet knows: <strong>the city has not published the price formula, the labor standards, the operating subsidy, or the operator.</strong> Surfacing the open questions is real economic thinking, not a gap in your research.</p>
+</div>
+
+<div class="beat">
+  <div class="beatnum">Beat 3 · Two Ways to Name the Problem</div>
+  <h2>Food desert, or food apartheid?</h2>
+  <p>How you name a problem shapes how you solve it. This issue comes with two competing terms, and a strong researcher learns to use both — one to <em>measure</em>, one to <em>understand</em>.</p>
+  <div class="lens">
+    <div class="lenscard">
+      <div class="term">Food desert</div>
+      <div class="use">The official term (USDA). Measures <strong>low income + low access</strong> — mainly distance to a full-service store. Useful for mapping and metrics. Blind spot: it can over-focus on distance and miss price, quality, the burden of the trip, and history.</div>
+    </div>
+    <div class="lenscard">
+      <div class="term">Food apartheid</div>
+      <div class="use">A term many organizers and scholars prefer. Names unequal food access as <strong>historically produced</strong> — by redlining, disinvestment, land use, and unequal power. Useful for understanding causes. Blind spot: harder to standardize and measure.</div>
+    </div>
+  </div>
+  <p>Use <strong>"food desert / low access"</strong> when you're analyzing the formal metrics. Use <strong>"food apartheid"</strong> when you're analyzing how the neighborhood got this way. The first teaches policy measurement; the second teaches political economy. You'll need both.</p>
+</div>
+
+<div class="beat">
+  <div class="beatnum">Beat 4 · The Players</div>
+  <h2>Who holds power, who's affected, who decides</h2>
+  <div class="players">
+    <div class="player"><div class="who">Mayor's Office</div><div class="what">Champions the plan; it was a central campaign promise.</div></div>
+    <div class="player"><div class="who">NYCEDC</div><div class="what">Executes it — site, RFP, operator selection. Led by Interim CEO Jeanny Pak.</div></div>
+    <div class="player"><div class="who">City Council</div><div class="what">Holds the budget; vets the plan. <em>Who is your council member?</em></div></div>
+    <div class="player"><div class="who">Bodega & small-grocery owners</div><div class="what">Fear subsidized competition using their own tax dollars.</div></div>
+    <div class="player"><div class="who">Local food advocates</div><div class="what">Some argue the money should strengthen existing sellers instead.</div></div>
+    <div class="player"><div class="who">The private operator</div><div class="what">To be chosen by RFP — must run the store under city rules.</div></div>
+    <div class="player"><div class="who">Hunts Point residents</div><div class="what">The people it's meant to serve. <em>What do they actually want?</em></div></div>
+    <div class="player"><div class="who">Hunts Point wholesalers</div><div class="what">The distribution hub next door — a possible supplier.</div></div>
+  </div>
+</div>
+
+<div class="beat">
+  <div class="beatnum">Beat 5 · The Resources & The Stakes</div>
+  <h2>The numbers — verified, and yours to expand</h2>
+  <p>These figures are confirmed from primary sources. But notice something a real researcher always checks: <strong>they describe slightly different geographies.</strong> "Hunts Point/Longwood" (Bronx Community District 2) is a larger area than "Hunts Point" alone. Always ask: <em>what boundary is this number actually describing?</em></p>
+  <div class="data">
+    <table style="width:100%;border-collapse:collapse;">
+      <thead><tr><th>Indicator</th><th>Figure</th><th>Geography</th></tr></thead>
+      <tbody>
+        <tr><td>Median household income</td><td class="fig">$35,230</td><td class="src">Hunts Point/Longwood, 2023 — ~56% below citywide ($79,480)</td></tr>
+        <tr><td>Poverty rate</td><td class="fig">35.6%</td><td class="src">vs. 18.2% citywide, 2023</td></tr>
+        <tr><td>Severe rent burden</td><td class="fig">35.4%</td><td class="src">renters paying &gt;50% of income on rent, 2023</td></tr>
+        <tr><td>Homeownership</td><td class="fig">5.7%</td><td class="src">vs. 32.5% citywide, 2023</td></tr>
+        <tr><td>Full-service supermarkets</td><td class="fig">~1</td><td class="src">within a quarter-mile of the site / "high need" on the city's index</td></tr>
+        <tr><td>Struggle to afford basics</td><td class="fig">77%</td><td class="src">of surrounding households (United Way True Cost of Living)</td></tr>
+        <tr><td>Food the hub moves</td><td class="fig">4.5B lbs</td><td class="src">per year through Hunts Point — ~25% of NYC's produce</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="caption">Sources: NYU Furman Center (Hunts Point/Longwood profile); NYCEDC; NYC Mayor's Office. Figures verified May 2026.</p>
+  <div class="box task">
+    <div class="lab">Your Research Task — Expand &amp; Verify</div>
+    Don't take even these numbers on faith — that's the whole discipline. Go further:
+    <ul>
+      <li>Re-confirm each figure at its primary source (Furman Center, NYC Open Data, USDA Food Access Atlas) and note the exact year and boundary.</li>
+      <li>Find three numbers this page <em>doesn't</em> have: health, environment, or SNAP/WIC enrollment for the area.</li>
+      <li>Watch the geography: does your source mean Hunts Point, Hunts Point/Longwood, or Hunts Point–Mott Haven? They're different.</li>
+      <li>Find what's changed since this page was written — especially after the May 29 hearing and the summer RFP.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="beat">
+  <div class="beatnum">Beat 6 · The Concepts in Play</div>
+  <h2>The economics hiding inside the decision</h2>
+  <p>You can't hold a real view on this store without understanding the concepts it runs on. Each links to the <strong>Concept Library</strong> — learn the tool as the issue demands it:</p>
+  <p><strong>Profit margins</strong> (why thin-margin bodegas are afraid) · <strong>subsidy vs. public ownership</strong> (the alternative vs. the plan) · <strong>taxation</strong> (whose money, and the rent/tax exemption) · <strong>assets &amp; ownership</strong> (who owns the store, who owns the corner shop) · <strong>food prices &amp; inflation</strong> (the pressure behind it all) · <strong>opportunity cost</strong> (what else could $70M do?) · <strong>market power</strong> (why small grocers can't buy as cheaply as chains) · <strong>where power sits</strong> (Mayor, Council, EDC, the budget).</p>
+</div>
+
+<div class="beat">
+  <div class="beatnum">Beat 7 · The Work — Three Honest Positions</div>
+  <h2>There is no answer key</h2>
+  <p>The neighborhood itself disagrees. Your job is to understand all three positions before you choose — and to steelman the one you reject.</p>
+  <div class="sides">
+    <div class="side for">
+      <div class="h">The case for the store</div>
+      <p>Poverty here is double the city's; 77% of households struggle for basics; there's barely a full-service supermarket nearby. The city owns the land — so it can lower fixed costs and set affordability rules a private market won't. If the market won't deliver affordable food here, government should.</p>
+    </div>
+    <div class="side against">
+      <div class="h">The case against (small business)</div>
+      <p>A rent-free, tax-exempt, city-subsidized store is <em>unfair competition</em> — paid for with the bodega owners' own taxes — that could undercut the small grocers who already serve this community and cost neighborhood jobs.</p>
+    </div>
+    <div class="side alt">
+      <div class="h">The case for a different fix</div>
+      <p>Five stores can't move citywide prices. The same money might do more good faster by <em>strengthening the sellers already there</em> — subsidizing bodegas, green delis, and produce vendors — or by tackling rent, benefits, and purchasing power directly.</p>
+    </div>
+  </div>
+  <div class="box rule">
+    <div class="lab">The Steelman Test</div>
+    Pick the position you <em>disagree</em> with most. Write its strongest case so well that someone who holds it would nod. Only then are you ready to argue your own.
+  </div>
+</div>
+
+<div class="beat">
+  <div class="beatnum">Beat 8 · The Reform Test</div>
+  <h2>Name the smallest change — and its cost</h2>
+  <div class="reform">
+    <div class="lab">Your Closing Challenge</div>
+    <p>What is the smallest change that would make food in Hunts Point both more affordable <em>and</em> more democratically controlled — and what would it cost? Name the cost. There are no free lunches.</p>
+  </div>
+</div>
+
+<div class="beat">
+  <h2>Before you go into the field</h2>
+  <p>This lab asks you to do real research with real people. Two shared guides give you the methods and the standards — read them first.</p>
+  <div class="tools">
+    <a class="tool" href="ED_LAB_Researchers_Toolkit.html">
+      <div class="tl">Shared Guide</div>
+      <div class="tn">The Researcher's Toolkit</div>
+      <div class="td">How to interview, survey, run a field study, read data, evaluate sources, and use AI well.</div>
+    </a>
+    <a class="tool" href="ED_LAB_Ethics_Standards.html">
+      <div class="tl">Shared Guide</div>
+      <div class="tn">Ethics &amp; Fieldwork Standards</div>
+      <div class="td">Consent, respect, honesty, and how to stay safe doing real fieldwork.</div>
+    </a>
+  </div>
+</div>
+
+<style>
+.handouts{margin:34px 0 16px;}
+.handouts-label{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red);background:var(--wash);padding:5px 12px;border-radius:100px;margin-bottom:12px;}
+.handouts-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:28px;line-height:1.05;color:var(--ink);margin-bottom:8px;letter-spacing:-.02em;}
+.handouts-sub{font-size:16px;color:#6b5d44;margin-bottom:18px;line-height:1.5;}
+.handout-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:600px){.handout-grid{grid-template-columns:1fr;}}
+.handout{background:var(--card);border:2px solid var(--ink);border-radius:12px;padding:18px 20px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px;box-shadow:3px 3px 0 var(--teal);transition:transform .12s,box-shadow .12s;}
+.handout:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--teal);}
+.handout-pill{display:inline-flex;align-items:center;gap:6px;font-family:'Bricolage Grotesque',sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:#fff;background:var(--red);padding:3px 9px;border-radius:100px;align-self:flex-start;}
+.handout-pill::before{content:"\2913";font-size:11px;}
+.handout-name{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:17px;color:var(--ink);line-height:1.15;letter-spacing:-.005em;}
+.handout-use{font-size:13.5px;line-height:1.45;color:#6b5d44;}
+</style>
+
+<div class="handouts">
+  <div class="handouts-label">The Field Kit · 5 Printable Instruments</div>
+  <div class="handouts-title">The handouts you'll actually use in Hunts Point</div>
+  <p class="handouts-sub">Print these. Take them with you. Each one is built for a different beat of the investigation — for mapping, asking, pricing, surveying, and finally for taking your position.</p>
+  <div class="handout-grid">
+    <a class="handout" href="ED_LAB_Food_Field_Asset_Map.pdf" target="_blank" rel="noopener">
+      <span class="handout-pill">Asset Map · PDF</span>
+      <span class="handout-name">Food Asset Map</span>
+      <span class="handout-use">Map every food source in the study area — bodegas, supermarkets, pantries, markets, and the proposed city store.</span>
+    </a>
+    <a class="handout" href="ED_LAB_Food_Field_Interview_Guide.pdf" target="_blank" rel="noopener">
+      <span class="handout-pill">Interview Guide · PDF</span>
+      <span class="handout-name">Interview Guide</span>
+      <span class="handout-use">Questions and protocol for informational interviews with bodega owners, supermarket managers, residents, and city officials.</span>
+    </a>
+    <a class="handout" href="ED_LAB_Food_Field_Community_Survey.pdf" target="_blank" rel="noopener">
+      <span class="handout-pill">Survey · PDF</span>
+      <span class="handout-name">Community Survey</span>
+      <span class="handout-use">A survey to administer in the neighborhood — to gather residents' real experience of food cost, access, and trust.</span>
+    </a>
+    <a class="handout" href="ED_LAB_Food_Field_Price_Comparison.pdf" target="_blank" rel="noopener">
+      <span class="handout-pill">Data Sheet · PDF</span>
+      <span class="handout-name">Price Comparison</span>
+      <span class="handout-use">The same basket of items priced at every food source on the map. The most honest piece of data you'll gather.</span>
+    </a>
+    <a class="handout" href="ED_LAB_Food_Field_Position_Reform_Test.pdf" target="_blank" rel="noopener" style="grid-column:span 2;box-shadow:3px 3px 0 var(--red);">
+      <span class="handout-pill" style="background:var(--marigold-deep);">Capstone · PDF</span>
+      <span class="handout-name">Position &amp; Reform Test</span>
+      <span class="handout-use">The summative worksheet. State your position, defend it against the strongest objection, and name the smallest reform that would make the system both more productive and more democratic — and what it would cost.</span>
+    </a>
+  </div>
+</div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="big">Civic Lab 01 · Food Affordability in the South Bronx</div>
+    <div class="ft">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC &nbsp;&middot;&nbsp; SPCC.1 &nbsp;&middot;&nbsp; <a href="index.html" style="color:var(--marigold);text-decoration:underline;">economicdemocracy.co</a></div>
+  </div>
+</footer>
+
+</body>
+</html>

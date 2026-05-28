@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Economics of the Corner Store vs. the Chain · Economic Democracy in Action</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+:root{
+  --marigold:#F5A623; --marigold-deep:#E8901A; --red:#D63B27; --red-deep:#B32D1C;
+  --cream:#FBF3E2; --ink:#1A1410; --teal:#2E8B96; --teal-deep:#236A73;
+  --paper:#FEF8EC; --card:#FFFFFF; --rule:#EAD9B8; --wash:#FBEFD6;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:18px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:740px;margin:0 auto;padding:0 24px;}
+
+/* hero */
+.herobleed{background:var(--teal);background-image:radial-gradient(circle at 85% 18%,rgba(245,166,35,.3),transparent 52%);}
+.hero{max-width:740px;margin:0 auto;padding:52px 24px 46px;}
+.labtag{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-deep);background:var(--marigold);padding:7px 15px;border-radius:100px;margin-bottom:22px;}
+.kicker{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cream);margin-bottom:12px;opacity:.9;}
+h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:56px;line-height:.97;letter-spacing:-.025em;color:#fff;margin-bottom:18px;}
+.standfirst{font-size:21px;line-height:1.42;color:var(--cream);font-weight:500;max-width:38ch;}
+
+.essay{padding-top:40px;}
+.essay p{margin-bottom:18px;font-size:18px;line-height:1.62;}
+.dropcap::first-letter{font-family:'Bricolage Grotesque',sans-serif;font-size:64px;font-weight:800;float:left;line-height:.78;margin:6px 12px 0 0;color:var(--teal);}
+.essay strong{color:var(--teal-deep);font-weight:600;}
+.essay em{font-style:italic;color:#6b5d44;}
+h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:30px;line-height:1.06;color:var(--ink);margin:44px 0 14px;letter-spacing:-.02em;}
+
+.pq{font-family:'Bricolage Grotesque',sans-serif;font-size:25px;line-height:1.25;font-weight:700;color:var(--teal);border-left:5px solid var(--marigold);padding:6px 0 6px 22px;margin:30px 0;letter-spacing:-.01em;}
+
+/* the margin stat band */
+.statband{background:var(--ink);border-radius:16px;padding:28px 30px;margin:30px 0;display:flex;gap:28px;flex-wrap:wrap;justify-content:space-around;text-align:center;}
+.statband .stat{flex:1;min-width:130px;}
+.statband .n{font-family:'Bricolage Grotesque',sans-serif;font-size:38px;font-weight:800;color:var(--marigold);line-height:1;letter-spacing:-.02em;}
+.statband .lab{font-size:13px;color:var(--cream);margin-top:8px;line-height:1.35;}
+
+/* side-by-side comparison */
+.versus{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0;}
+@media(max-width:600px){.versus{grid-template-columns:1fr;}}
+.col{border:3px solid var(--ink);border-radius:16px;overflow:hidden;}
+.col .head{padding:16px 20px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:19px;color:#fff;}
+.col.bodega .head{background:var(--red);}
+.col.chain .head{background:var(--teal);}
+.col .head .sub{display:block;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;opacity:.9;margin-top:3px;}
+.col ul{list-style:none;padding:16px 20px;}
+.col li{position:relative;padding-left:22px;margin-bottom:11px;font-size:15px;line-height:1.42;}
+.col li:last-child{margin-bottom:0;}
+.col li::before{content:"";position:absolute;left:4px;top:9px;width:7px;height:7px;border-radius:50%;}
+.col.bodega li::before{background:var(--red);}
+.col.chain li::before{background:var(--teal);}
+.col li b{font-weight:700;color:var(--ink);}
+
+/* cost-stack visual */
+.coststack{background:var(--card);border:3px solid var(--ink);border-radius:16px;padding:26px 28px;margin:28px 0;box-shadow:6px 6px 0 var(--marigold);}
+.coststack .csh{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--teal-deep);margin-bottom:6px;}
+.coststack .csintro{font-size:15px;color:#6b5d44;margin-bottom:18px;line-height:1.45;}
+.layer{margin-bottom:11px;}
+.layer .top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;}
+.layer .name{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:15px;}
+.layer .verdict{font-size:12.5px;font-weight:600;font-family:'Bricolage Grotesque',sans-serif;text-transform:uppercase;letter-spacing:.03em;}
+.layer .bar{height:14px;border-radius:7px;background:var(--wash);overflow:hidden;}
+.layer .fill{height:100%;border-radius:7px;}
+.layer.public .verdict{color:var(--teal);}
+.layer.public .fill{background:var(--teal);}
+.layer.hard .verdict{color:var(--red);}
+.layer.hard .fill{background:var(--red);}
+.layer .desc{font-size:13px;color:#6b5d44;margin-top:3px;line-height:1.4;}
+
+/* takeaway */
+.takeaway{background:var(--marigold);border:3px solid var(--ink);border-radius:16px;padding:26px 30px;margin:30px 0;box-shadow:5px 5px 0 var(--red);}
+.takeaway .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--red-deep);margin-bottom:8px;}
+.takeaway p{font-size:18px;line-height:1.5;margin-bottom:12px;color:var(--ink);}
+.takeaway p:last-child{margin-bottom:0;}
+.takeaway strong{color:var(--red-deep);}
+
+/* connects to positions */
+.connect{background:var(--ink);border-radius:16px;padding:26px 30px;margin:30px 0;}
+.connect *{color:var(--cream);}
+.connect .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--marigold);margin-bottom:10px;}
+.connect p{font-size:16.5px;line-height:1.5;margin-bottom:10px;}
+.connect p:last-child{margin-bottom:0;}
+.connect strong{color:var(--marigold);}
+
+.sources{font-size:13px;color:#8a7a5e;line-height:1.5;border-top:2px dashed var(--rule);padding-top:16px;margin-top:34px;}
+.sources strong{color:var(--ink);font-family:'Bricolage Grotesque',sans-serif;font-size:11px;letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:5px;}
+
+footer{background:var(--ink);color:var(--cream);margin-top:48px;padding:30px 0 56px;}
+footer .wrap{padding:0 24px;}
+footer .big{font-family:'Bricolage Grotesque',sans-serif;font-size:17px;color:var(--marigold);font-weight:700;margin-bottom:6px;}
+footer .ft{font-size:13px;color:rgba(251,243,226,.7);}
+</style>
+</head>
+<body>
+
+<div class="herobleed">
+<div class="hero">
+  <div class="labtag">Economic Democracy in Action · A Reader</div>
+  <div class="kicker">Civic Lab 01 · Food Affordability · The Money Behind the Shelf</div>
+  <h1>The Corner Store vs. the Chain</h1>
+  <p class="standfirst">Why can a big supermarket sell a can of beans for less than the bodega on your block? The answer isn't greed — it's economics. And understanding it is the only way to judge the city's grocery plan fairly.</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="essay">
+
+  <p class="dropcap">Here's a puzzle. The bodega owner and the supermarket manager buy the same can of beans from, more or less, the same suppliers. Yet the supermarket can sell it cheaper — sometimes a lot cheaper — and still make money, while the bodega charges more and barely gets by. Neither one is being unfair. They're playing the same game under completely different rules. To judge whether a city-owned store is a good idea, you first have to understand those rules.</p>
+
+  <p>Start with the single most surprising fact about the grocery business: <strong>almost nobody makes much money at it.</strong></p>
+
+  <div class="statband">
+    <div class="stat"><div class="n">1–3%</div><div class="lab">Typical grocery net profit margin — one of the lowest of any industry</div></div>
+    <div class="stat"><div class="n">1.6%</div><div class="lab">Average net profit after tax (Food Industry Association, 2023)</div></div>
+    <div class="stat"><div class="n">$1–3</div><div class="lab">Kept as profit on every $100 in sales, after all costs</div></div>
+  </div>
+
+  <p>Read those numbers again. A grocery store keeps <strong>one to three cents of profit on every dollar</strong> it takes in. Groceries are a <em>volume</em> business, not a markup business — you don't get rich on each can, you get by on selling an enormous number of cans. As the saying in the trade goes: what they lack in margin, they make up for in volume.</p>
+
+  <p class="pq">If everyone's margin is razor-thin, then the whole game comes down to one thing: who can buy for less.</p>
+
+  <h2>Why the chain buys cheaper</h2>
+  <p>This is the heart of it. A national chain and a corner bodega do not pay the same price for the same goods — not even close. The chain has <strong>buying power</strong>, and the bodega doesn't.</p>
+
+  <div class="versus">
+    <div class="col chain">
+      <div class="head">The Chain<span class="sub">Buys by the truckload</span></div>
+      <ul>
+        <li>Negotiates directly with manufacturers, ordering by the <b>truckload</b> across hundreds of stores</li>
+        <li>Pays <b>5–10% less</b> for the exact same products than a small store does</li>
+        <li>Centralized warehouses and delivery routes cut logistics costs <b>10–20%</b></li>
+        <li>Sells <b>private-label</b> goods at 50–60% margin — far above the 20–30% on national brands</li>
+        <li>Can run <b>loss leaders</b> — selling bananas or a rotisserie chicken below cost to pull you in</li>
+      </ul>
+    </div>
+    <div class="col bodega">
+      <div class="head">The Bodega<span class="sub">Buys by the case</span></div>
+      <ul>
+        <li>Orders small amounts from distributors, paying <b>more per unit</b> for identical goods</li>
+        <li>No leverage to negotiate — takes the price it's given</li>
+        <li>Pays for its own deliveries, with <b>no warehouse</b> to lower costs</li>
+        <li>Can't afford to lose money on any item, so <b>can't undercut</b> on price</li>
+        <li>Survives on <b>volume it doesn't have</b> — fewer customers, smaller orders</li>
+      </ul>
+    </div>
+  </div>
+
+  <p>So when you see a bodega charging more, you're not usually seeing greed. You're seeing a store that <em>paid more for the same can</em> and operates on a margin too thin to discount. The price difference is built into the structure of the business before the owner makes a single choice.</p>
+
+  <h2>So how does the bodega survive at all?</h2>
+  <p>If the chain wins on price, why isn't every bodega gone? Because price isn't the only thing a store sells. The bodega survives on the things a chain <em>can't</em> easily copy — and these are real economic value, not just sentiment.</p>
+
+  <div class="versus">
+    <div class="col bodega">
+      <div class="head">What the bodega has<span class="sub">That a chain can't copy</span></div>
+      <ul>
+        <li><b>Proximity</b> — it's on your corner; no bus, no long walk</li>
+        <li><b>Hours</b> — open early, late, weekends, holidays</li>
+        <li><b>Credit &amp; trust</b> — "pay me Friday"; the owner knows you</li>
+        <li><b>The right foods</b> — the specific ingredients your community actually cooks</li>
+        <li><b>Small quantities</b> — one onion, one roll, when that's all you need or can afford</li>
+      </ul>
+    </div>
+    <div class="col chain">
+      <div class="head">What it costs the bodega<span class="sub">To offer all that</span></div>
+      <ul>
+        <li>Long hours mean <b>more labor</b> — often unpaid family labor</li>
+        <li>Extending credit means <b>risk</b> the chain never takes</li>
+        <li>Small orders mean <b>higher prices</b> and more frequent restocking</li>
+        <li>Many survive only by adding <b>lottery, check-cashing,</b> or hot food</li>
+        <li>A single bad month of <b>spoilage</b> can wipe out the year's thin profit</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Now: where does the city store fit?</h2>
+  <p>Here's why all of this matters for the lab. The city's plan lowers cost in a very specific place — and that's exactly what makes it powerful <em>and</em> controversial.</p>
+
+  <div class="coststack">
+    <div class="csh">A grocery store's cost stack — and what the city store changes</div>
+    <div class="csintro">Every store carries these costs. The city-owned model can erase some of them — but not the hard operational ones that make groceries difficult in the first place.</div>
+
+    <div class="layer public">
+      <div class="top"><span class="name">Rent &amp; property tax</span><span class="verdict">City erases this</span></div>
+      <div class="bar"><div class="fill" style="width:100%"></div></div>
+      <div class="desc">The city owns the site and charges no rent or property tax. This is the whole advantage — and the reason small grocers cry foul.</div>
+    </div>
+    <div class="layer public">
+      <div class="top"><span class="name">Pricing rules</span><span class="verdict">City sets this</span></div>
+      <div class="bar"><div class="fill" style="width:72%"></div></div>
+      <div class="desc">The city can require the operator to keep a basket of staples cheap — something no private store is forced to do.</div>
+    </div>
+    <div class="layer hard">
+      <div class="top"><span class="name">Buying / wholesale cost</span><span class="verdict">Still hard</span></div>
+      <div class="bar"><div class="fill" style="width:80%"></div></div>
+      <div class="desc">One city store has little buying power — closer to a bodega than a chain, unless it taps the Hunts Point wholesale market next door.</div>
+    </div>
+    <div class="layer hard">
+      <div class="top"><span class="name">Labor</span><span class="verdict">Still hard</span></div>
+      <div class="bar"><div class="fill" style="width:74%"></div></div>
+      <div class="desc">Stocking, checkout, cleaning — groceries are labor-heavy, and the city has promised labor standards that cost money.</div>
+    </div>
+    <div class="layer hard">
+      <div class="top"><span class="name">Spoilage &amp; shrink</span><span class="verdict">Still hard</span></div>
+      <div class="bar"><div class="fill" style="width:60%"></div></div>
+      <div class="desc">Produce rots; inventory walks off. This hidden cost eats thin margins in any store, public or private.</div>
+    </div>
+  </div>
+
+  <p>See the pattern? The city store can <strong>wipe out rent and property tax</strong>, and it can <strong>force low prices by rule</strong>. Those are real powers a private store doesn't have. But it <em>can't</em> escape the hard middle of the stack — buying cost, labor, spoilage — which is exactly where groceries are won or lost. <strong>Public ownership lowers the easy costs, not the hard ones.</strong></p>
+
+  <div class="takeaway">
+    <div class="l">The honest takeaway</div>
+    <p>This is why the small-grocer's objection has real force: a rent-free, tax-free store <em>is</em> a genuine cost advantage the bodega can never match — and it's funded by everyone's taxes, including the bodega owner's. That's a fair thing to be angry about.</p>
+    <p>But it's also why the city's plan <em>might</em> work where a bodega can't: by erasing the costs no small store can erase. <strong>Both things are true at once.</strong> That's what makes this a real decision and not an easy one.</p>
+  </div>
+
+  <div class="connect">
+    <div class="l">Carry this into the lab</div>
+    <p>When you weigh the three positions in this lab, use this: the case <strong>for</strong> the store rests on the costs the city can erase (rent, tax) and the prices it can set. The case <strong>against</strong> rests on the costs it can't (buying power, labor, spoilage) — and on the unfairness to stores that get no such help.</p>
+    <p>And the third option — <strong>help the existing stores instead</strong> — is really an argument about <em>where</em> to spend the subsidy: on one new public store, or on lowering the hard costs for the bodegas already serving the block. Now you know enough to argue it for real.</p>
+  </div>
+
+  <div class="sources">
+    <strong>Sources &amp; further reading</strong>
+    Margin and buying-power figures: Food Industry Association (FMI) 2023 report (1.6% avg. net after tax); industry analyses via VantaInsights, BusinessDojo, and Toast (1–3% net margins; 5–10% chain COGS advantage; 10–20% logistics savings; 50–60% private-label margins). US grocery sector ~$953B / ~63,000 establishments (US Census). Loss-leader and survival-tactic context: Marketplace. Figures verified May 2026 — and like all facts in this course, worth re-checking at the source.
+  </div>
+
+</div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="big">The Corner Store vs. the Chain</div>
+    <div class="ft">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC &nbsp;&middot;&nbsp; SPCC.1 &nbsp;&middot;&nbsp; <a href="index.html" style="color:var(--marigold);text-decoration:underline;">economicdemocracy.co</a></div>
+  </div>
+</footer>
+
+</body>
+</html>

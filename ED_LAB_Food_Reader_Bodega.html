@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Bodega: History, People, Purpose · Economic Democracy in Action</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+:root{
+  --marigold:#F5A623; --marigold-deep:#E8901A; --red:#D63B27; --red-deep:#B32D1C;
+  --cream:#FBF3E2; --ink:#1A1410; --teal:#5BB8C4;
+  --paper:#FEF8EC; --card:#FFFFFF; --rule:#EAD9B8; --wash:#FBEFD6;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:18px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:720px;margin:0 auto;padding:0 24px;}
+
+/* hero */
+.herobleed{background:var(--red);background-image:radial-gradient(circle at 15% 20%,rgba(245,166,35,.32),transparent 50%);}
+.hero{max-width:720px;margin:0 auto;padding:52px 24px 46px;}
+.labtag{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red-deep);background:var(--marigold);padding:7px 15px;border-radius:100px;margin-bottom:22px;}
+.kicker{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cream);margin-bottom:12px;opacity:.85;}
+h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:60px;line-height:.96;letter-spacing:-.025em;color:#fff;margin-bottom:18px;}
+.standfirst{font-size:21px;line-height:1.42;color:var(--cream);font-weight:500;max-width:36ch;}
+
+/* body */
+.essay{padding-top:40px;}
+.essay p{margin-bottom:18px;font-size:18px;line-height:1.62;}
+.dropcap::first-letter{font-family:'Bricolage Grotesque',sans-serif;font-size:64px;font-weight:800;float:left;line-height:.78;margin:6px 12px 0 0;color:var(--red);}
+.essay strong{color:var(--red-deep);font-weight:600;}
+.essay em{font-style:italic;color:#6b5d44;}
+h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:30px;line-height:1.06;color:var(--ink);margin:42px 0 14px;letter-spacing:-.02em;}
+.spanish{font-style:italic;}
+
+/* pull quote */
+.pq{font-family:'Bricolage Grotesque',sans-serif;font-size:25px;line-height:1.25;font-weight:700;color:var(--red);border-left:5px solid var(--marigold);padding:6px 0 6px 22px;margin:30px 0;letter-spacing:-.01em;}
+
+/* marti callout */
+.marti{background:var(--ink);color:var(--cream);border-radius:16px;padding:30px 32px;margin:30px 0;position:relative;overflow:hidden;}
+.marti::after{content:"";position:absolute;right:-40px;top:-40px;width:170px;height:170px;background:radial-gradient(circle,rgba(245,166,35,.3),transparent 70%);}
+.marti *{position:relative;}
+.marti .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--marigold);margin-bottom:10px;}
+.marti p{color:var(--cream);font-size:16.5px;line-height:1.55;margin-bottom:12px;}
+.marti p:last-child{margin-bottom:0;}
+.marti .quote{font-family:'Bricolage Grotesque',sans-serif;font-size:21px;line-height:1.35;font-weight:600;color:#fff;font-style:italic;margin-bottom:12px;}
+.marti strong{color:var(--marigold);}
+
+/* timeline */
+.timeline{background:var(--card);border:3px solid var(--ink);border-radius:16px;padding:28px 30px 24px;margin:34px 0;box-shadow:6px 6px 0 var(--marigold);}
+.timeline .th{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--red);margin-bottom:18px;}
+.tline{position:relative;padding-left:74px;}
+.tline::before{content:"";position:absolute;left:54px;top:4px;bottom:4px;width:3px;background:var(--marigold-deep);}
+.tev{position:relative;margin-bottom:16px;}
+.tev:last-child{margin-bottom:0;}
+.tev .yr{position:absolute;left:-74px;width:48px;text-align:right;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;color:var(--red-deep);line-height:1.2;}
+.tev::before{content:"";position:absolute;left:-23px;top:5px;width:13px;height:13px;background:var(--red);border:3px solid var(--card);border-radius:50%;box-shadow:0 0 0 2px var(--red);}
+.tev .ev{font-size:15.5px;line-height:1.4;}
+.tev .ev b{color:var(--ink);font-weight:700;}
+
+/* connect to lab box */
+.connect{background:var(--marigold);border:3px solid var(--ink);border-radius:16px;padding:26px 30px;margin:34px 0;box-shadow:5px 5px 0 var(--red);}
+.connect .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--red-deep);margin-bottom:8px;}
+.connect p{font-size:18px;line-height:1.5;margin-bottom:0;color:var(--ink);}
+.connect strong{color:var(--red-deep);}
+
+/* source note */
+.sources{font-size:13px;color:#8a7a5e;line-height:1.5;border-top:2px dashed var(--rule);padding-top:16px;margin-top:34px;}
+.sources strong{color:var(--ink);font-family:'Bricolage Grotesque',sans-serif;font-size:11px;letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:5px;}
+
+footer{background:var(--ink);color:var(--cream);margin-top:48px;padding:30px 0 56px;}
+footer .wrap{padding:0 24px;}
+footer .big{font-family:'Bricolage Grotesque',sans-serif;font-size:17px;color:var(--marigold);font-weight:700;margin-bottom:6px;}
+footer .ft{font-size:13px;color:rgba(251,243,226,.7);}
+</style>
+</head>
+<body>
+
+<div class="herobleed">
+<div class="hero">
+  <div class="labtag">Economic Democracy in Action · A Reader</div>
+  <div class="kicker">Civic Lab 01 · Food Affordability · The Story Behind the Storefront</div>
+  <h1>The Bodega: History, People, Purpose</h1>
+  <p class="standfirst">Before you decide what should happen to the corner store, you should know what the corner store has meant. This is the story of an institution New York built — and the photographer who saved its picture.</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="essay">
+
+  <p class="dropcap">When the debate over New York's grocery stores calls something "the small grocer," it's easy to picture an abstraction — a business, a line on a budget. But the corner store in a Bronx or East Harlem neighborhood is rarely just a business. For the better part of a century, it has been one of the most important community institutions New York's immigrant neighborhoods ever built. It has a name in this city: the <strong>bodega</strong>.</p>
+
+  <p>The word is Spanish — <span class="spanish">bodega</span> means a storeroom, a warehouse, or a wine cellar. But in New York it became something specific: the small, owner-run neighborhood grocery, usually on a corner, that sold the food of home alongside American staples. To understand the grocery-store decision in Hunts Point, you have to understand what a bodega <em>is</em> — and who built it.</p>
+
+  <h2>An institution born of migration</h2>
+  <p>The bodega grew directly out of the Puerto Rican migration to New York. After the <strong>1917 Jones Act</strong> granted Puerto Ricans U.S. citizenship, movement to the mainland became easier, and Puerto Rican communities — which some historians called <span class="spanish">colonias</span>, and which residents called <span class="spanish">barrios</span> — took root in neighborhoods like East Harlem, Williamsburg, and the South Bronx. The earliest bodegas emerged in the 1920s to serve these enclaves: a place for factory workers to get lunch, and for families to find the foods they couldn't get anywhere else.</p>
+
+  <p>Then came the great wave. New York's Puerto Rican community grew roughly <strong>tenfold between 1940 and 1960</strong> — from about 60,000 people to more than 600,000. With that growth came the bodega boom. Families opened stores and named them after places on the island. The shops sold <span class="spanish">café</span>, plantains, rice and beans, and the specific ingredients of Puerto Rican cooking — but they sold something else, too.</p>
+
+  <p class="pq">A bodega was never only a store. It was a piece of home, a meeting place, and an anchor for a neighborhood finding its feet.</p>
+
+  <p>Bodegas extended credit when money was short. They were where you heard the news, found a job lead, spoke Spanish without translating yourself. The owner — the <span class="spanish">bodeguero</span> — knew your family. As the historian Carlos Sanabria, who grew up the son of a <span class="spanish">bodeguero</span>, put it, these corner stores were <strong>anchors for the social and cultural life of the neighborhood</strong>, not just places to buy groceries.</p>
+
+  <h2>The photographer who saved the picture</h2>
+  <p>Most of that world would have vanished without a trace — except that one man pointed a camera at it.</p>
+
+  <div class="marti">
+    <div class="l">Justo Ambrosio Martí · 1925–1985</div>
+    <p class="quote">"I was so happy to pass through Brooklyn — to see the bodegas along Atlantic Avenue, bananas hanging on the windows."</p>
+    <p>A <strong>Cuban photographer</strong>, Martí arrived in New York City by steamship in 1925 and spent his life documenting the daily working-class life of the city's Latino community — celebrations, protests, politics, family, and above all the bodegas that were becoming a NYC institution.</p>
+    <p>Here's the remarkable part: he photographed nearly <strong>200 Puerto Rican-owned bodegas</strong> not as an art project, but on behalf of the <strong>Puerto Rican Merchant Association</strong> — taking pictures of each store's interior and exterior to satisfy a requirement of the New York State <strong>liquor-license</strong> application. A piece of paperwork became one of the richest visual records of a community that history often ignored.</p>
+  </div>
+
+  <p>That Merchant Association, founded in <strong>1946</strong>, wasn't only about licenses. It organized small-business owners to defend themselves — against corrupt police searches, and against the urban-renewal "slum clearance" projects of the 1950s that bulldozed Latino storefronts, often without the owners' input. The bodega, in other words, was also a site of <em>economic organizing</em> — small owners banding together to hold their ground. That's a thread worth holding onto when you study who has power in a neighborhood's economy.</p>
+
+  <p>Martí's full collection — more than <strong>30,000 negatives</strong> and thousands of prints, spanning 1948 to 1985 — was donated to the <strong>Center for Puerto Rican Studies (CENTRO) at Hunter College</strong> in 1984. It now lives in the Archives of the Puerto Rican Diaspora, where the historian Carlos Sanabria drew on it for the book <em>The Bodega: A Cornerstone of Puerto Rican Barrios.</em> Without an archive like this, a community's memory simply disappears when the people who held it are gone — which is its own lesson about who gets to keep their history.</p>
+
+  <h2>A living, changing institution</h2>
+  <p>The bodega never stopped evolving. As the Puerto Rican population shifted, <strong>Dominican</strong> families took up the counter; by the 1970s and 80s, <strong>Yemeni</strong> and other immigrant owners brought their own traditions, opening halal bodegas and introducing the city to new foods. Today the word "bodega" no longer means a specifically Puerto Rican store — it means the owner-run corner store of <em>any</em> immigrant community, and there are an estimated <strong>13,000 of them across New York City</strong>.</p>
+
+  <p>And they're under pressure — from rising rents, from gentrification, and from exactly the kind of question this lab studies: what happens when a large, well-capitalized store moves into the neighborhood?</p>
+
+  <h2>The NYC bodega: a timeline</h2>
+  <div class="timeline">
+    <div class="th">From colonia corner store to NYC icon</div>
+    <div class="tline">
+      <div class="tev"><div class="yr">1917</div><div class="ev">The <b>Jones Act</b> grants Puerto Ricans U.S. citizenship, easing migration to the mainland.</div></div>
+      <div class="tev"><div class="yr">1920s</div><div class="ev">The first Puerto Rican bodegas appear in NYC <span class="spanish">barrios</span> — lunch spots for factory workers, lifelines for new arrivals.</div></div>
+      <div class="tev"><div class="yr">1925</div><div class="ev"><b>Justo Martí</b> arrives in New York by steamship and begins documenting Latino working-class life.</div></div>
+      <div class="tev"><div class="yr">1946</div><div class="ev">The <b>Puerto Rican Merchant Association</b> is founded — organizing owners against harassment and displacement.</div></div>
+      <div class="tev"><div class="yr">1940–60</div><div class="ev">NYC's Puerto Rican community grows <b>tenfold</b> (≈60,000 → 600,000+). Bodegas boom alongside it.</div></div>
+      <div class="tev"><div class="yr">1950s–60s</div><div class="ev">Martí photographs nearly <b>200 bodegas</b> for the Merchant Association's liquor-license filings.</div></div>
+      <div class="tev"><div class="yr">1960s+</div><div class="ev">Dominican families increasingly run the city's bodegas as the community changes.</div></div>
+      <div class="tev"><div class="yr">1970s–80s</div><div class="ev"><b>Yemeni</b> and other immigrant owners join the tradition, opening halal bodegas across the city.</div></div>
+      <div class="tev"><div class="yr">1984</div><div class="ev">Martí's collection is donated to <b>CENTRO</b> at Hunter College — preserving a community's memory.</div></div>
+      <div class="tev"><div class="yr">Today</div><div class="ev">An estimated <b>13,000 bodegas</b> across NYC — under pressure from rent, gentrification, and competition.</div></div>
+    </div>
+  </div>
+
+  <div class="connect">
+    <div class="l">Carry this into the lab</div>
+    <p>When the grocery-store debate talks about "the small grocer," remember who that is: an <strong>institution this city built over a century</strong>, run by families, anchoring blocks, passed from one immigrant community to the next. That doesn't tell you whether the city store is right or wrong. But it means the bodega owner's voice in this decision isn't just a business interest — it's the voice of one of the neighborhood's oldest pieces of itself. <strong>Study it with respect, not extraction.</strong></p>
+  </div>
+
+  <div class="sources">
+    <strong>Sources &amp; further reading</strong>
+    Center for Puerto Rican Studies (CENTRO), Hunter College — Justo A. Martí Photographic Collection, 1948–1985, and "The Legacy of the Puerto Rican Bodega." Carlos Sanabria, <em>The Bodega: A Cornerstone of Puerto Rican Barrios (The Justo Martí Collection)</em>, CENTRO Press. Pedro A. Regalado, "Storefront Archives: Looking Back with Justo Martí." Historical context: Untapped New York, Lower East Side History Project, NPR Code Switch. Figures verified May 2026 — and like all facts in this course, worth re-checking at the source.
+  </div>
+
+</div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="big">The Bodega: History, People, Purpose</div>
+    <div class="ft">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC &nbsp;&middot;&nbsp; SPCC.1 &nbsp;&middot;&nbsp; <a href="index.html" style="color:var(--marigold);text-decoration:underline;">economicdemocracy.co</a></div>
+  </div>
+</footer>
+
+</body>
+</html>

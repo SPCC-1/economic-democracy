@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Civic Labs — Economic Democracy</title>
+<meta name="description" content="Civic Labs — place-based research projects where students investigate a real, contested economic decision in their own community, gather data, steelman every side, and take a defensible position. The application layer of the Economic Democracy curriculum.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600;700&display=swap');
+:root{
+  --ink:#1A1C1E; --charcoal:#2C3036; --slate:#55606B; --mute:#7A848E;
+  --line:#E2E0D8; --paper:#FBFAF6; --card:#FFFFFF; --wash:#F3F1E9;
+  --accent:#7C2D2D; --accent-soft:#A84A3C;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Newsreader',Georgia,serif;color:var(--ink);background:var(--paper);font-size:19px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:860px;margin:0 auto;padding:0 32px;}
+a{color:inherit;text-decoration:none;}
+.sans{font-family:'Inter',system-ui,sans-serif;}
+
+/* nav — matches live site */
+.nav{border-bottom:1px solid var(--line);background:var(--paper);position:sticky;top:0;z-index:10;}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:18px;padding-bottom:18px;}
+.nav .brand{font-family:'Newsreader',serif;font-weight:600;font-size:19px;color:var(--ink);line-height:1.1;}
+.nav .brand small{display:block;font-family:'Inter',sans-serif;font-weight:500;font-size:11px;letter-spacing:.04em;color:var(--mute);margin-top:1px;}
+.nav .links{display:flex;gap:24px;font-family:'Inter',sans-serif;font-size:14px;font-weight:500;color:var(--slate);}
+.nav .links a:hover{color:var(--ink);}
+.nav .links a.active{color:var(--accent);font-weight:600;}
+@media(max-width:720px){.nav .links{display:none;}}
+
+/* hero */
+.hero{padding:72px 0 40px;border-bottom:1px solid var(--line);}
+.hero .eyebrow{font-family:'Inter',sans-serif;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;}
+.hero h1{font-family:'Newsreader',serif;font-weight:600;font-size:60px;line-height:1.02;letter-spacing:-.02em;color:var(--ink);margin-bottom:24px;}
+.hero h1 em{font-style:italic;font-weight:500;}
+.hero .lede{font-size:22px;line-height:1.45;color:var(--slate);max-width:46ch;font-weight:400;}
+
+/* argument block */
+.argument{padding:48px 0;border-bottom:1px solid var(--line);}
+.argument .tag{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-bottom:14px;}
+.argument p{font-size:21px;line-height:1.55;color:var(--charcoal);max-width:56ch;}
+.argument p strong{font-weight:600;color:var(--ink);}
+.argument p em{font-style:italic;}
+
+/* sections */
+.section{padding:54px 0;border-bottom:1px solid var(--line);}
+.section .seclabel{font-family:'Inter',sans-serif;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;}
+.section h2{font-family:'Newsreader',serif;font-weight:600;font-size:38px;line-height:1.06;letter-spacing:-.015em;color:var(--ink);margin-bottom:16px;}
+.section h2 em{font-style:italic;font-weight:500;}
+.section .intro{font-size:19px;line-height:1.55;color:var(--slate);max-width:58ch;margin-bottom:30px;}
+.section .intro a{color:var(--accent);border-bottom:1px solid var(--accent-soft);}
+
+/* flagship lab card */
+.flagship{display:block;border:1px solid var(--line);border-radius:6px;background:var(--card);overflow:hidden;transition:border-color .15s,box-shadow .15s;}
+.flagship:hover{border-color:var(--accent-soft);box-shadow:0 4px 24px rgba(26,28,30,.06);}
+.flagship .strip{display:flex;align-items:center;gap:12px;padding:14px 26px;border-bottom:1px solid var(--line);background:var(--wash);}
+.flagship .live{font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--accent);padding:4px 11px;border-radius:100px;}
+.flagship .stripmeta{font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--slate);}
+.flagship .body{padding:28px 26px;}
+.flagship .labno{font-family:'Inter',sans-serif;font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--mute);margin-bottom:8px;}
+.flagship h3{font-family:'Newsreader',serif;font-weight:600;font-size:30px;line-height:1.05;color:var(--ink);margin-bottom:12px;letter-spacing:-.01em;}
+.flagship p{font-size:18px;line-height:1.5;color:var(--slate);margin-bottom:18px;max-width:60ch;}
+.flagship .incl{font-family:'Inter',sans-serif;font-size:14px;line-height:1.55;color:var(--mute);margin-bottom:20px;}
+.flagship .incl b{color:var(--charcoal);font-weight:600;}
+.flagship .go{font-family:'Inter',sans-serif;font-weight:600;font-size:15px;color:var(--accent);}
+
+/* expanding grid */
+.expand{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+@media(max-width:680px){.expand{grid-template-columns:1fr;}}
+.ecard{border:1px solid var(--line);border-radius:6px;padding:24px 24px;background:var(--card);}
+.ecard .soon{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);border:1px solid var(--line);padding:3px 10px;border-radius:100px;display:inline-block;margin-bottom:14px;}
+.ecard h3{font-family:'Newsreader',serif;font-weight:600;font-size:23px;line-height:1.08;color:var(--ink);margin-bottom:10px;}
+.ecard p{font-size:16px;line-height:1.5;color:var(--slate);margin-bottom:14px;}
+.ecard .q{font-family:'Newsreader',serif;font-style:italic;font-size:16px;line-height:1.45;color:var(--accent);border-top:1px solid var(--line);padding-top:13px;}
+
+/* anatomy */
+.anatomy{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:6px;}
+@media(max-width:680px){.anatomy{grid-template-columns:1fr;}}
+.acol h4{font-family:'Newsreader',serif;font-weight:600;font-size:20px;color:var(--ink);margin-bottom:7px;}
+.acol .n{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--accent);margin-bottom:9px;}
+.acol p{font-size:16px;line-height:1.5;color:var(--slate);}
+
+/* student bridge */
+.bridge{background:var(--ink);color:#fff;border-radius:8px;padding:40px 38px;}
+.bridge .seclabel{color:var(--accent-soft);}
+.bridge h2{color:#fff;margin-bottom:14px;}
+.bridge h2 em{font-style:italic;}
+.bridge p{font-size:18px;line-height:1.55;color:rgba(255,255,255,.82);max-width:56ch;margin-bottom:14px;}
+.bridge p strong{color:#fff;font-weight:600;}
+.bridge .go{display:inline-block;margin-top:8px;font-family:'Inter',sans-serif;font-weight:600;font-size:15px;color:var(--ink);background:#fff;padding:13px 24px;border-radius:4px;}
+
+/* footer — matches live site */
+footer{background:var(--paper);padding:44px 0 64px;}
+footer .wrap{text-align:left;}
+footer .fnav{font-family:'Inter',sans-serif;font-size:14px;font-weight:500;color:var(--slate);margin-bottom:18px;display:flex;gap:20px;flex-wrap:wrap;}
+footer .fnav a:hover{color:var(--ink);}
+footer .copy{font-family:'Inter',sans-serif;font-size:13px;line-height:1.6;color:var(--mute);border-top:1px solid var(--line);padding-top:18px;}
+footer .copy .ai{display:block;margin-top:4px;color:#9aa3ab;}
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">Economic Democracy<small>economicdemocracy.co</small></a>
+    <div class="links">
+      <a href="ED_ANT_Core_Anthology_250.html">250 Voices</a>
+      <a href="concepts.html">Concepts</a>
+      <a class="active" href="ED_LAB_Civic_Labs.html">Civic Labs</a>
+      <a href="resources.html">For Teachers</a>
+      <a href="ED_ENGAGE_Ways.html">Ways to Engage</a>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="eyebrow">The Application · The Third Strand</div>
+    <h1>Civic Labs.<br><em>Real</em> decisions. Real research.</h1>
+    <p class="lede">The Framework shows students the argument. The Concepts give them the language. The Civic Labs are where they enter the argument themselves — by investigating a live economic decision in their own community and taking a position they can defend.</p>
+  </div>
+
+  <div class="argument">
+    <div class="tag sans">The Idea</div>
+    <p>Most economics is taught as settled fact. Real economic life is a sequence of contested decisions with no answer key. A Civic Lab hands students one such decision — <strong>a real one, unfolding now, in a real place</strong> — and asks them to do the work a citizen actually has to do: gather the data, talk to the people affected, state the strongest version of every side, and then decide. <em>Not what to think. How to think — on a question that matters.</em></p>
+  </div>
+
+  <div class="section">
+    <div class="seclabel sans">Section I · Live Now</div>
+    <h2>The Flagship: <em>Who Gets to Eat Affordably?</em></h2>
+    <p class="intro">The first Civic Lab is built around a decision happening right now in New York City — its plan to open a publicly owned grocery store in Hunts Point, one of the poorest neighborhoods in the country. It is complete, classroom-ready, and the template every future lab follows.</p>
+    <a class="flagship" href="ED_LAB_Food_Affordability.html">
+      <div class="strip">
+        <span class="live sans">● Live</span>
+        <span class="stripmeta sans">Civic Lab 01 · Food Affordability · Hunts Point, The Bronx</span>
+      </div>
+      <div class="body">
+        <div class="labno sans">Civic Lab 01</div>
+        <h3>Who Gets to Eat Affordably?</h3>
+        <p>Should a city build and own a grocery store? Students investigate the real players, the real money, and the genuine disagreement — steelmanning the case for the store, the small-grocer's objection, and the alternative of helping the stores already there.</p>
+        <div class="incl sans"><b>The lab includes:</b> verified neighborhood data · three steelmanned positions · two background readers (the history and the economics) · five printable field tools · the full eight-beat investigation.</div>
+        <span class="go sans">Open the lab →</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="section">
+    <div class="seclabel sans">Section II · Expanding</div>
+    <h2>More Labs, <em>In Development.</em></h2>
+    <p class="intro">The flagship proves the model. The next labs take on decisions that reach beyond any single city — the questions every community in the country is being asked to answer.</p>
+    <div class="expand">
+      <div class="ecard">
+        <span class="soon sans">In development</span>
+        <h3>The Cost of Growing Old</h3>
+        <p>Social Security — the hardest long-term economic decision a society makes, and one almost no one understands. Students investigate how it works, why it's strained, and what the real tradeoffs of fixing it are.</p>
+        <div class="q">Who pays, who benefits, and what do we owe each other across generations?</div>
+      </div>
+      <div class="ecard">
+        <span class="soon sans">In development</span>
+        <h3>The Machines Next Door</h3>
+        <p>Data centers — the physical backbone of the AI economy — are being built across the country. Students compare how three real communities weigh the jobs, the power and water costs, the tax deals, and who actually benefits.</p>
+        <div class="q">When a town trades its resources for growth, who gets the upside?</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="seclabel sans">Section III · Anatomy</div>
+    <h2>What's in <em>Every</em> Civic Lab.</h2>
+    <p class="intro">Each lab is a complete, ready-to-run package built on the same structure — so once a teacher has run one, they can run any of them. The shared research tools carry across every lab; only the issue changes.</p>
+    <div class="anatomy">
+      <div class="acol">
+        <div class="n sans">01 · The Framing</div>
+        <h4>A real decision</h4>
+        <p>An eight-beat investigation of a live, contested choice — with verified data, the players, and the genuine disagreement laid out fairly, every side steelmanned.</p>
+      </div>
+      <div class="acol">
+        <div class="n sans">02 · The Readers</div>
+        <h4>The background</h4>
+        <p>Short companion readings that give students the history and economics they need to understand what is actually at stake before they take a position.</p>
+      </div>
+      <div class="acol">
+        <div class="n sans">03 · The Field Tools</div>
+        <h4>The real work</h4>
+        <p>Printable, photocopier-ready instruments — interview guides, surveys, data sheets, a position worksheet — so students do genuine research, not worksheets.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" style="border-bottom:none;">
+    <div class="bridge">
+      <div class="seclabel sans">Section IV · For Students</div>
+      <h2>The lab they work in looks <em>different</em> — on purpose.</h2>
+      <p>A teacher evaluates the curriculum on a page like this one: calm, complete, rigorous. But the surface a <strong>student</strong> actually works in is built differently — brighter, bolder, rooted in the place the lab is about. The shift in feel is deliberate: it marks the move from <em>studying</em> a decision to <em>investigating</em> one.</p>
+      <p>Step into the student-facing version of the flagship lab to see what your class would actually use.</p>
+      <a class="go sans" href="ED_LAB_Food_Affordability.html">Enter the student lab →</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fnav sans">
+      <a href="ED_ANT_Core_Anthology_250.html">250 Voices</a>
+      <a href="concepts.html">Concepts</a>
+      <a href="ED_LAB_Civic_Labs.html">Civic Labs</a>
+      <a href="resources.html">For Teachers</a>
+      <a href="ED_ENGAGE_Ways.html">Ways to Engage</a>
+    </div>
+    <div class="copy sans">
+      © 2026 · Alfredo Mathew III · AM3 LLC · Working World LLC · SPCC.1 · economicdemocracy.co
+      <span class="ai">AI Synthesis: Claude (Anthropic, claude-opus-4-7) · Economic Democracy Curriculum</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
