@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Importance of Civic Education — Economic Democracy Curriculum</title>
+<style>
+/* B&W Student-Friendly Print Stylesheet — Economic Democracy */
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+
+@page{size:Letter;margin:.6in .65in;}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',system-ui,sans-serif;color:#000;background:#fff;font-size:10.5pt;line-height:1.5;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:100%;margin:0 auto;padding:0;}
+
+/* Hero — black border, white background, no marigold */
+.herobleed{background:#fff;border-bottom:3px solid #000;margin-bottom:.5em;}
+.hero{max-width:100%;margin:0;padding:.2in 0 .3in;}
+.kicker{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:8pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:#000;padding:4px 11px;border-radius:100px;margin-bottom:14pt;}
+h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:32pt;line-height:1;letter-spacing:-.025em;color:#000;margin-bottom:12pt;}
+.standfirst{font-size:13pt;line-height:1.35;color:#000;font-weight:500;max-width:42em;margin-bottom:10pt;}
+.meta{font-family:'Bricolage Grotesque',sans-serif;font-size:9pt;letter-spacing:.04em;color:#555;font-weight:600;}
+
+/* Body */
+p{margin-bottom:9pt;}
+strong{color:#000;font-weight:700;}
+em{color:#333;font-style:italic;}
+
+.lead{font-size:11.5pt;line-height:1.55;color:#000;font-weight:400;margin:14pt 0 9pt;}
+.lead:first-of-type::first-letter{font-family:'Bricolage Grotesque',sans-serif;font-size:42pt;font-weight:800;float:left;line-height:.82;margin:4pt 8pt 0 0;color:#000;}
+.body{font-size:10.5pt;line-height:1.6;color:#000;margin-bottom:9pt;}
+
+/* Section headers — black pill */
+.snum{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:8pt;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:#000;padding:3pt 9pt;border-radius:100px;margin-top:20pt;margin-bottom:8pt;}
+h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20pt;line-height:1.05;color:#000;margin-bottom:10pt;letter-spacing:-.02em;}
+h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:12pt;color:#000;margin:14pt 0 5pt;}
+
+/* All offset-shadow cards (triad/positions/steps/moments/handouts/readers) — black outline, no shadow */
+.triad,.positions,.steps,.handout-grid,.reader-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8pt;margin:14pt 0;page-break-inside:avoid;}
+.tcell,.pcell,.step,.handout,.reader-card{background:#fff;border:1.5pt solid #000;border-radius:6pt;padding:11pt 13pt;box-shadow:none !important;}
+.steps,.reader-grid{grid-template-columns:repeat(3,1fr);}
+.reader-grid{grid-template-columns:1fr 1fr;}
+
+.tnum,.plabel,.step-n,.reader-tag,.handout-pill,.moment-label,.reader-pill{font-family:'Bricolage Grotesque',sans-serif;font-size:8pt;letter-spacing:.12em;text-transform:uppercase;color:#000;font-weight:700;display:inline-block;margin-bottom:5pt;border:1pt solid #000;padding:2pt 7pt;border-radius:100px;background:#fff;}
+.moment-label{background:#000;color:#fff;border:none;}
+.handout-pill{background:#000;color:#fff;border:none;}
+.reader-tag{background:#000;color:#fff;border:none;}
+
+.tword,.step-name,.handout-name,.reader-name{font-family:'Bricolage Grotesque',sans-serif;font-size:13pt;font-weight:800;color:#000;line-height:1.05;letter-spacing:-.01em;margin-bottom:5pt;display:block;}
+.tdef,.ptext,.step-text,.handout-use,.reader-desc{font-size:9.5pt;line-height:1.5;color:#000;}
+.plabel{background:#000;color:#fff;border:none;}
+
+/* Moments (Revolution essay) */
+.moment{background:#fff;border:1.5pt solid #000;border-radius:6pt;padding:12pt 16pt;margin:10pt 0;box-shadow:none !important;page-break-inside:avoid;}
+.moment-title{font-family:'Bricolage Grotesque',sans-serif;font-size:13pt;font-weight:800;color:#000;line-height:1.1;margin-bottom:6pt;letter-spacing:-.01em;}
+.moment-body{font-size:10pt;line-height:1.55;color:#000;margin-bottom:0;}
+
+/* Insight / pullquote / bigq / closing / assess / pledge — inverse (black bg, white text) */
+.insight,.pullquote,.bigq,.closing,.assess,.pledge{background:#000 !important;color:#fff !important;border-radius:6pt;padding:14pt 18pt;margin:14pt 0;page-break-inside:avoid;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+.insight *,.pullquote *,.bigq *,.closing *,.assess *,.pledge *{color:#fff !important;}
+.insight p,.pullquote p,.bigq p{font-family:'Bricolage Grotesque',sans-serif;font-size:13pt;line-height:1.3;font-weight:700;margin-bottom:0;letter-spacing:-.01em;}
+.assess p{font-size:10pt;line-height:1.55;margin-bottom:7pt;font-weight:400;}
+.assess p:last-child{margin-bottom:0;}
+.assess p strong,.closing p strong{color:#fff !important;text-decoration:underline;}
+.closing p{font-family:'Bricolage Grotesque',sans-serif;font-size:11pt;line-height:1.45;font-weight:600;margin-bottom:0;text-align:center;}
+.pledge p{font-family:'Bricolage Grotesque',sans-serif;font-size:12pt;line-height:1.4;font-style:italic;font-weight:600;margin-bottom:0;}
+
+/* Callout — outline only */
+.callout{background:#fff;border:1.5pt solid #000;border-left:6pt solid #000;border-radius:0;padding:12pt 16pt;margin:12pt 0;page-break-inside:avoid;}
+.callout p{font-size:10pt;line-height:1.6;margin-bottom:0;}
+.callout strong{color:#000;font-weight:700;}
+
+/* Discussion questions — bordered list w/ inverse numerals */
+.dq{list-style:none;counter-reset:dq;margin:10pt 0;padding:0;}
+.dq li{counter-increment:dq;position:relative;padding:8pt 0 8pt 28pt;border-bottom:.5pt dashed #888;font-size:10.5pt;line-height:1.55;color:#000;page-break-inside:avoid;}
+.dq li:last-child{border-bottom:none;}
+.dq li::before{content:counter(dq);position:absolute;left:0;top:8pt;width:20pt;height:20pt;background:#000;color:#fff;border-radius:50%;font-family:'Bricolage Grotesque',sans-serif;font-size:10pt;font-weight:800;display:flex;align-items:center;justify-content:center;line-height:1;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+
+/* Write blocks — white w/ dashed lines */
+.write-block{background:#fff;border:1.5pt solid #000;border-radius:6pt;padding:12pt 16pt;margin:10pt 0;page-break-inside:avoid;}
+.write-prompt{font-family:'Bricolage Grotesque',sans-serif;font-size:10pt;font-weight:700;color:#000;margin-bottom:8pt;line-height:1.4;}
+.write-line{border-bottom:.7pt dashed #555;height:18pt;margin-bottom:4pt;}
+
+/* Skills block — outline only */
+.skills-block{background:#fff;border:1.5pt solid #000;border-radius:6pt;padding:14pt 18pt;margin:14pt 0;page-break-inside:avoid;}
+.skills-label{font-family:'Bricolage Grotesque',sans-serif;font-size:9pt;letter-spacing:.12em;text-transform:uppercase;color:#000;margin-bottom:9pt;font-weight:700;display:block;}
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:5pt 18pt;}
+.skill-item{position:relative;padding-left:16pt;font-size:10pt;line-height:1.5;color:#000;font-weight:500;}
+.skill-item::before{content:"\2192";position:absolute;left:0;top:0;color:#000;font-weight:800;font-family:'Bricolage Grotesque',sans-serif;}
+
+/* Reform list */
+.reform-list{list-style:none;margin:10pt 0;padding:0;border:1.5pt solid #000;border-radius:6pt;overflow:hidden;}
+.reform-list li{background:#fff;padding:10pt 16pt 10pt 40pt;border-bottom:.5pt solid #888;font-size:10.5pt;line-height:1.55;color:#000;position:relative;page-break-inside:avoid;}
+.reform-list li:last-child{border-bottom:none;}
+.reform-list li strong{font-family:'Bricolage Grotesque',sans-serif;color:#000;font-weight:800;font-size:10pt;letter-spacing:.02em;display:inline-block;margin-right:4pt;}
+.reform-list li::before{content:"\25CF";position:absolute;left:18pt;top:11pt;color:#000;font-size:12pt;}
+
+/* Pieces (Student Handbook) */
+.pieces{margin:12pt 0;border:1.5pt solid #000;border-radius:6pt;overflow:hidden;}
+.piece{display:grid;grid-template-columns:9rem 1fr;gap:14pt;padding:10pt 16pt;border-bottom:.5pt solid #888;align-items:start;background:#fff;page-break-inside:avoid;}
+.piece:last-child{border-bottom:none;}
+.piece-name{font-family:'Bricolage Grotesque',sans-serif;font-size:11pt;font-weight:800;color:#000;line-height:1.15;}
+.piece-text{font-size:10pt;line-height:1.5;color:#000;}
+
+/* Principles (Ethics) */
+.principles{display:flex;flex-direction:column;gap:8pt;margin:14pt 0;}
+.principle{display:flex;gap:14pt;align-items:flex-start;background:#fff;border:1.5pt solid #000;border-radius:6pt;padding:12pt 16pt;box-shadow:none !important;page-break-inside:avoid;}
+.pnum{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:26pt;color:#000;line-height:.85;flex:0 0 auto;width:32pt;}
+.principle .body{margin-bottom:0;}
+.principle .body h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:13pt;color:#000;margin-bottom:4pt;}
+.principle .body p{margin-bottom:0;font-size:10pt;line-height:1.5;}
+
+/* Safety */
+.safety{background:#fff;border:1.5pt solid #000;border-radius:6pt;padding:14pt 18pt;margin:14pt 0;page-break-inside:avoid;}
+.safety .lab{font-family:'Bricolage Grotesque',sans-serif;font-size:9pt;letter-spacing:.13em;text-transform:uppercase;font-weight:700;color:#000;margin-bottom:8pt;}
+.safety h3.shead{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:13pt;color:#000;margin-bottom:8pt;}
+.safety ul{list-style:none;padding:0;}
+.safety li{position:relative;padding-left:22pt;margin-bottom:6pt;line-height:1.45;font-size:10pt;color:#000;}
+.safety li::before{content:"\2713";position:absolute;left:0;top:1pt;color:#000;font-weight:700;font-family:'DM Sans',sans-serif;font-size:11pt;}
+
+/* Signoff */
+.signoff{font-family:'Bricolage Grotesque',sans-serif;font-style:italic;font-size:12pt;color:#000;line-height:1.45;margin:18pt 0 8pt;font-weight:600;border-top:1.5pt solid #000;padding-top:14pt;}
+
+/* Footer */
+footer{background:#fff;color:#000;margin-top:24pt;padding:14pt 0 0;border-top:1.5pt solid #000;page-break-inside:avoid;}
+footer .wrap{padding:0;}
+footer .big{font-family:'Bricolage Grotesque',sans-serif;font-size:11pt;color:#000;font-weight:700;margin-bottom:4pt;}
+footer .ft{font-size:9pt;color:#333;line-height:1.5;}
+footer .ft a{color:#000;text-decoration:underline;}
+
+/* Hide hero glow */
+.herobleed{background-image:none !important;}
+.insight::after,.pullquote::after,.bigq::after,.closing::after,.assess::after,.pledge::after,.pullquote::before,.bigq::before{display:none !important;}
+
+/* Force colorful pieces to render in B&W properly */
+*{box-shadow:none !important;}
+
+</style>
+</head>
+<body>
+
+<div class="herobleed">
+  <div class="hero">
+    <div class="kicker">Course Introduction · Student Reading</div>
+    <h1>The Importance of Civic Education in 21st-Century America</h1>
+    <p class="standfirst">Why this course exists — and what it asks of you.</p>  </div>
+</div>
+
+<div class="wrap">
+
+  <p class="lead">Civic education matters today not because Americans lack opinions, but because they lack <strong>shared practices for engaging across differences.</strong> The United States enters the 21st century as a large, powerful, and deeply interconnected society. Its economic system, military reach, technological platforms, and policy decisions shape life at home and abroad. As citizens and taxpayers in a republic, Americans are implicated in these outcomes whether they feel close to power or not. Participation is not optional — but meaningful participation requires preparation.</p>
+
+  <p class="body">For much of the last century, schools treated civic education as either basic instruction in how the government works or as a means of fostering shared national identity. In recent decades, however, civic education has become increasingly entangled in broader political polarization. Competing pressures, heightened scrutiny from parents and school boards, and contested history classrooms have led many districts to narrow the curriculum or avoid open dialogue altogether — leaving students disengaged and less prepared to grapple with real civic disagreement.</p>
+
+  <div class="pullquote">
+    <p>This course takes a different approach.</p>
+  </div>
+
+  <div class="snum">Section I</div>
+  <h2>What This Course Does Not Do</h2>
+
+  <p class="body">It does not attempt to settle arguments about whether the United States is fundamentally good or bad, or which voices belong in a fixed canon. It does not aim to persuade you toward a particular ideology. Instead, it starts from a simpler and more demanding premise: the United States is the most powerful nation in the world, has been for decades, and its system will continue to shape outcomes regardless of whether people feel represented by it.</p>
+
+  <p class="body">Critique is necessary — but critique alone does not change systems. Shaping outcomes requires working within a <strong>shared political and economic reality</strong>, even when there is deep disagreement about the past and competing visions for the future.</p>
+
+  <div class="snum">Section II</div>
+  <h2>Three Positions — All Present Simultaneously</h2>
+
+  <p class="body" style="color:#6b5d44;font-size:15.5px;">In a society as large and diverse as the United States, all of the following positions exist at once. This course makes space for all three.</p>
+
+  <div class="positions">
+    <div class="pcell">
+      <span class="plabel">Position A</span>
+      <p class="ptext">Some people benefit from the current system and want to preserve it. They see stability, opportunity, and institutional legitimacy in what exists.</p>
+    </div>
+    <div class="pcell">
+      <span class="plabel">Position B</span>
+      <p class="ptext">Others feel harmed by the system and want significant change. They see exclusion, extraction, and structural injustice in what exists.</p>
+    </div>
+    <div class="pcell">
+      <span class="plabel">Position C</span>
+      <p class="ptext">Still others are less interested in political debate and simply want to work, care for their families, and live their lives — leaving complex decisions to those with time or resources to engage them.</p>
+    </div>
+  </div>
+
+  <p class="body">No single group gets to decide the direction of such a society. Economic democracy, in practice, is not about agreement or constant participation by everyone — but about understanding how decisions are made amid conflict, constraint, and competing values, and how those decisions can be influenced responsibly over time.</p>
+
+  <div class="snum">Section III</div>
+  <h2>The Central Civic Skill</h2>
+
+  <p class="body">The most important civic skill today is not memorization or argumentation in isolation, but the ability to <strong>engage seriously with opposing views</strong>, understand why reasonable people disagree, and weigh tradeoffs without retreating into cynicism or certainty.</p>
+
+  <div class="skills-block">
+    <span class="skills-label">What this course asks you to practice</span>
+    <div class="skills-grid">
+      <span class="skill-item">Engage seriously with opposing views</span>
+      <span class="skill-item">Understand why reasonable people disagree</span>
+      <span class="skill-item">Weigh tradeoffs without demanding perfect answers</span>
+      <span class="skill-item">Negotiate and accept partial outcomes</span>
+      <span class="skill-item">Inhabit different perspectives honestly</span>
+      <span class="skill-item">Revise positions in light of new evidence</span>
+    </div>
+  </div>
+
+  <div class="snum">Section IV</div>
+  <h2>Reform as a Democratic Skill</h2>
+
+  <p class="body">American history shows that reform — rather than revolution — has been a primary source of stability and prosperity. This is not a conservative claim about preserving the status quo. It is a <strong>structural observation</strong> about how durable change happens in democratic systems.</p>
+
+  <ul class="reform-list">
+    <li><strong>1787 —</strong> The Constitution replaced the Articles of Confederation rather than discarding the experiment entirely.</li>
+    <li><strong>1865–1877 —</strong> Reconstruction reshaped citizenship without dissolving the union — though its incomplete implementation reveals the fragility of reform as a path.</li>
+    <li><strong>1933–1938 —</strong> The New Deal reformed capitalism instead of abolishing it, so that democracy could survive economic failure.</li>
+  </ul>
+
+  <p class="body">These moments were deeply contested, incomplete, and often unjust in their execution. But they reflect a recurring choice to <strong>build on what exists rather than start from zero.</strong> This course treats that choice — reform over rupture — not as cowardice, but as a democratic skill worth teaching.</p>
+
+  <div class="snum">Section V</div>
+  <h2>Why This Matters Now</h2>
+
+  <p class="body">In a society facing economic transition, demographic change, and technological disruption, the ability to participate thoughtfully remains one of the most important civic capacities we can cultivate. As more decisions are shaped by systems, incentives, and algorithms, the role of human judgment does not disappear — it becomes <em>more</em> important.</p>
+
+  <p class="body">The future will require people who can weigh values, understand consequences, and take responsibility rather than deferring agency to automated processes or distant authorities. This course takes seriously the work of cultivating that judgment — and the responsibility that comes with it.</p>
+
+  <div class="closing">
+    <p>Civic education is not a specialized subject reserved for future politicians or policy experts. <strong>It is foundational for all of us.</strong><br><br>Disagreement is not a failure of democracy — <strong>it is a condition of it.</strong><br><br>Responsibility lies not in having the "right" view, but in engaging the system in ways that move toward productive solutions.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="big">The Importance of Civic Education · Economic Democracy Curriculum</div>
+    <div class="ft">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC &nbsp;&middot;&nbsp; SPCC.1 &nbsp;&middot;&nbsp; <a href="index.html">economicdemocracy.co</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
