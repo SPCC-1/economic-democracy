@@ -434,10 +434,10 @@
       <span></span><span></span><span></span>
     </button>
     <div class="nav-links">
-      <a href="framework.html">The Framework</a>
-      <a href="concepts.html">Concepts</a>
       <a href="ED_ANT_Core_Anthology_250.html">250 Voices</a>
-      <a href="resources.html">Resources</a>
+      <a href="concepts.html">Concepts</a>
+      <a href="ED_LAB_Civic_Labs.html">Civic Labs</a>
+      <a href="resources.html">For Teachers</a>
       <a href="ED_ENGAGE_Ways.html" class="nav-cta">Ways to Engage</a>
     </div>
   </div>
@@ -1154,11 +1154,188 @@
   </script>
 </section>
 
-<!-- RESOURCES CTA -->
+<!-- CIVIC LABS TEASER -->
+<section class="section" id="civic-labs">
+  <p class="section-eyebrow">Economic Democracy in Action</p>
+  <h2 class="section-heading">Civic Labs.<br>Real decisions. Real research.</h2>
+  <p class="section-sub">The third strand. The Framework shows students the argument. The Concepts give them the language. The Civic Labs are where they enter the argument themselves &mdash; by investigating a live economic decision in their own community and taking a position they can defend.</p>
+  <p style="font-size:.88rem;font-weight:300;color:var(--mid);line-height:1.7;margin-bottom:2rem;max-width:680px;">Each lab is a complete, classroom-ready package: an eight-beat investigation of a real, contested choice; background readers with the history and economics; printable field tools so students do genuine research, not worksheets; and a shared methods toolkit and ethics standards that carry across every lab.</p>
+
+  <style>
+    .lab-flagship{
+      display:block;
+      background:var(--paper);
+      border:1px solid var(--rule);
+      text-decoration:none;
+      margin:1.5rem 0 2rem;
+      transition:border-color .15s, box-shadow .15s;
+    }
+    .lab-flagship:hover{border-color:var(--black);box-shadow:0 4px 24px rgba(0,0,0,.06);}
+    .lab-flagship-strip{
+      background:var(--black);
+      color:var(--white);
+      padding:.55rem 1.25rem;
+      display:flex;
+      align-items:center;
+      gap:.85rem;
+      flex-wrap:wrap;
+    }
+    .lab-live{
+      font-family:'IBM Plex Mono',monospace;
+      font-size:.58rem;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--gold);
+      font-weight:600;
+    }
+    .lab-live::before{
+      content:'\25CF';
+      margin-right:.4rem;
+      color:var(--gold);
+    }
+    .lab-strip-meta{
+      font-family:'IBM Plex Mono',monospace;
+      font-size:.6rem;
+      letter-spacing:.1em;
+      color:rgba(255,255,255,.65);
+    }
+    .lab-flagship-body{padding:1.85rem 1.75rem;}
+    .lab-no{
+      font-family:'IBM Plex Mono',monospace;
+      font-size:.6rem;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin-bottom:.5rem;
+      display:block;
+    }
+    .lab-title{
+      font-family:'Playfair Display',serif;
+      font-size:1.75rem;
+      font-weight:700;
+      color:var(--black);
+      line-height:1.1;
+      letter-spacing:-.01em;
+      margin-bottom:.65rem;
+    }
+    .lab-desc{
+      font-size:.92rem;
+      font-weight:300;
+      color:var(--mid);
+      line-height:1.6;
+      margin-bottom:1rem;
+      max-width:60ch;
+    }
+    .lab-includes{
+      font-family:'IBM Plex Mono',monospace;
+      font-size:.62rem;
+      letter-spacing:.06em;
+      color:var(--muted);
+      line-height:1.7;
+      margin-bottom:1rem;
+      text-transform:uppercase;
+    }
+    .lab-go{
+      font-family:'IBM Plex Mono',monospace;
+      font-size:.66rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--black);
+      border-bottom:1px solid var(--black);
+      padding-bottom:.15rem;
+    }
+    .lab-go::after{content:' \2192';}
+
+    .lab-coming{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:1px;
+      background:var(--rule);
+      border:1px solid var(--rule);
+      margin-bottom:1.5rem;
+    }
+    @media(max-width:600px){.lab-coming{grid-template-columns:1fr;}}
+    .lab-coming-card{
+      background:var(--paper);
+      padding:1.4rem 1.5rem;
+      display:flex;
+      flex-direction:column;
+      gap:.45rem;
+    }
+    .lab-coming-card:nth-child(even){background:var(--cream);}
+    .lab-coming-badge{
+      font-family:'IBM Plex Mono',monospace;
+      font-size:.55rem;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--muted);
+      border:1px solid var(--rule);
+      padding:.18rem .5rem;
+      align-self:flex-start;
+    }
+    .lab-coming-title{
+      font-family:'Playfair Display',serif;
+      font-size:1.1rem;
+      font-weight:700;
+      color:var(--black);
+      line-height:1.2;
+    }
+    .lab-coming-desc{
+      font-size:.82rem;
+      font-weight:300;
+      color:var(--mid);
+      line-height:1.6;
+    }
+    .lab-coming-q{
+      font-family:'Playfair Display',serif;
+      font-style:italic;
+      font-size:.85rem;
+      color:var(--charcoal);
+      border-top:1px solid var(--rule);
+      padding-top:.65rem;
+      margin-top:.35rem;
+      line-height:1.4;
+    }
+  </style>
+
+  <a class="lab-flagship" href="ED_LAB_Civic_Labs.html">
+    <div class="lab-flagship-strip">
+      <span class="lab-live">Live</span>
+      <span class="lab-strip-meta">Civic Lab 01 &middot; Food Affordability &middot; Hunts Point, The Bronx</span>
+    </div>
+    <div class="lab-flagship-body">
+      <span class="lab-no">The Flagship</span>
+      <h3 class="lab-title">Who Gets to Eat Affordably?</h3>
+      <p class="lab-desc">Should a city build and own a grocery store? Students investigate the real players, the real money, and the genuine disagreement &mdash; steelmanning the case for the store, the small-grocer&rsquo;s objection, and the alternative of helping the stores already there.</p>
+      <p class="lab-includes">Includes: verified data &middot; three steelmanned positions &middot; two readers &middot; five printable field tools &middot; the full eight-beat investigation</p>
+      <span class="lab-go">Open the lab</span>
+    </div>
+  </a>
+
+  <p class="section-eyebrow" style="margin-top:2.5rem;">In Development</p>
+  <div class="lab-coming">
+    <div class="lab-coming-card">
+      <span class="lab-coming-badge">Lab 02</span>
+      <span class="lab-coming-title">The Cost of Growing Old</span>
+      <span class="lab-coming-desc">Social Security &mdash; the hardest long-term economic decision a society makes, and one almost no one understands. Students investigate how it works, why it&rsquo;s strained, and what the real tradeoffs of fixing it are.</span>
+      <span class="lab-coming-q">Who pays, who benefits, and what do we owe each other across generations?</span>
+    </div>
+    <div class="lab-coming-card">
+      <span class="lab-coming-badge">Lab 03</span>
+      <span class="lab-coming-title">The Machines Next Door</span>
+      <span class="lab-coming-desc">Data centers &mdash; the physical backbone of the AI economy &mdash; are being built across the country. Students compare how three real communities weigh the jobs, the power and water costs, the tax deals, and who actually benefits.</span>
+      <span class="lab-coming-q">When a town trades its resources for growth, who gets the upside?</span>
+    </div>
+  </div>
+
+  <a href="ED_LAB_Civic_Labs.html" class="section-link">Browse all Civic Labs</a>
+</section>
+
+<!-- FOR TEACHERS CTA -->
 <section class="section" id="resources">
-  <p class="section-eyebrow">Resources</p>
+  <p class="section-eyebrow">For Teachers</p>
   <h2 class="section-heading">Every Resource.<br>One Page.</h2>
-  <p class="section-sub">All course units, the full concept library, the teaching toolkit, the 250-voice anthology, the readers, and the documents to share with your department &mdash; consolidated in one place. Free teacher guides. Student materials from $2.99.</p>
+  <p class="section-sub">All course units, the full concept library, the teaching toolkit, the 250-voice anthology, the civic labs, the readers, and the documents to share with your department &mdash; consolidated in one place. All teacher and student materials are free.</p>
 
   <style>
     .resources-cta{
@@ -1210,7 +1387,7 @@
   <div class="resources-cta">
     <div class="resources-cta-text">
       <strong>Open the full Resources page.</strong>
-      <span>Course Units &middot; Concepts &middot; Toolkit &middot; Anthology &middot; Readers &middot; For Administrators</span>
+      <span>Course Units &middot; Concepts &middot; Toolkit &middot; Anthology &middot; Civic Labs &middot; Readers &middot; For Administrators</span>
     </div>
     <a href="resources.html" class="resources-cta-btn">Browse All Resources &rarr;</a>
   </div>
@@ -1289,7 +1466,7 @@
     <a href="ED_SH_Student_Handbook.html">For Students &middot; Start with the Student Handbook &rarr;</a>
     <a href="resources.html#admins">For Administrators &middot; Standards Crosswalk &amp; Educator Overview &rarr;</a>
   </div>
-  <span class="footer-left">&copy; 2026 &nbsp;·&nbsp; Alfredo Mathew III &nbsp;·&nbsp; AM3 LLC &nbsp;·&nbsp; Working World LLC &nbsp;·&nbsp; economicdemocracy.co</span>
+  <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC &nbsp;&middot;&nbsp; SPCC.1 &nbsp;&middot;&nbsp; economicdemocracy.co</span>
   <span class="footer-right">AI Synthesis: Claude (Anthropic, claude-opus-4-7) &nbsp;·&nbsp; Economic Democracy Curriculum</span>
 </footer>
 

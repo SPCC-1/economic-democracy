@@ -5,84 +5,137 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Student Handbook — Economic Democracy Curriculum</title>
 <style>
+/* B&W Student-Friendly Print Stylesheet — Economic Democracy */
 @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
-:root{
-  /* La Bodega palette */
-  --marigold:#F5A623; --marigold-deep:#E8901A; --red:#D63B27; --red-deep:#B32D1C;
-  --cream:#FBF3E2; --ink:#1A1410; --teal:#5BB8C4;
-  --paper:#FEF8EC; --card:#FFFFFF; --rule:#EAD9B8; --wash:#FBEFD6;
-  --green:#3D6B43; --greenwash:#E6F0E2;
-}
+
+@page{size:Letter;margin:.6in .65in;}
+
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;}
-.wrap{max-width:780px;margin:0 auto;padding:0 24px;}
+body{font-family:'DM Sans',system-ui,sans-serif;color:#000;background:#fff;font-size:10.5pt;line-height:1.5;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:100%;margin:0 auto;padding:0;}
 
-/* Hero — marigold bleed */
-.herobleed{background:var(--marigold);background-image:radial-gradient(circle at 85% 15%,rgba(214,59,39,.18),transparent 45%);}
-.hero{max-width:780px;margin:0 auto;padding:50px 24px 44px;}
-.kicker{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cream);background:var(--red);padding:7px 15px;border-radius:100px;margin-bottom:20px;}
-h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:60px;line-height:.96;letter-spacing:-.03em;color:var(--ink);margin-bottom:20px;}
-.standfirst{font-size:22px;line-height:1.4;color:var(--ink);font-weight:500;max-width:42ch;}
+/* Hero — black border, white background, no marigold */
+.herobleed{background:#fff;border-bottom:3px solid #000;margin-bottom:.5em;}
+.hero{max-width:100%;margin:0;padding:.2in 0 .3in;}
+.kicker{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:8pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:#000;padding:4px 11px;border-radius:100px;margin-bottom:14pt;}
+h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:32pt;line-height:1;letter-spacing:-.025em;color:#000;margin-bottom:12pt;}
+.standfirst{font-size:13pt;line-height:1.35;color:#000;font-weight:500;max-width:42em;margin-bottom:10pt;}
+.meta{font-family:'Bricolage Grotesque',sans-serif;font-size:9pt;letter-spacing:.04em;color:#555;font-weight:600;}
 
-p{margin-bottom:15px;}
-strong{color:var(--red-deep);font-weight:600;}
-em{color:#6b5d44;}
+/* Body */
+p{margin-bottom:9pt;}
+strong{color:#000;font-weight:700;}
+em{color:#333;font-style:italic;}
 
-.lead{font-size:19px;line-height:1.7;color:var(--ink);font-weight:400;margin:34px 0 18px;}
-.lead:first-of-type::first-letter{font-family:'Bricolage Grotesque',sans-serif;font-size:80px;font-weight:800;float:left;line-height:.82;margin:6px 14px 0 0;color:var(--red);}
-.body{font-size:17px;line-height:1.7;color:var(--ink);margin-bottom:16px;}
+.lead{font-size:11.5pt;line-height:1.55;color:#000;font-weight:400;margin:14pt 0 9pt;}
+.lead:first-of-type::first-letter{font-family:'Bricolage Grotesque',sans-serif;font-size:42pt;font-weight:800;float:left;line-height:.82;margin:4pt 8pt 0 0;color:#000;}
+.body{font-size:10.5pt;line-height:1.6;color:#000;margin-bottom:9pt;}
 
-/* The big question — red highlight w/ glow */
-.bigq{background:var(--red);color:var(--cream);border-radius:18px;padding:30px 34px;margin:32px 0;position:relative;overflow:hidden;}
-.bigq::after{content:"";position:absolute;right:-30px;bottom:-30px;width:180px;height:180px;background:radial-gradient(circle,rgba(245,166,35,.42),transparent 70%);}
-.bigq p{font-family:'Bricolage Grotesque',sans-serif;font-size:26px;line-height:1.25;color:#fff;font-weight:800;margin-bottom:0;letter-spacing:-.015em;position:relative;}
-.bigq::before{content:"\201C";position:absolute;top:-18px;left:18px;font-family:'Bricolage Grotesque',sans-serif;font-size:110px;color:var(--marigold);font-weight:800;line-height:1;opacity:.55;}
+/* Section headers — black pill */
+.snum{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:8pt;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:#000;padding:3pt 9pt;border-radius:100px;margin-top:20pt;margin-bottom:8pt;}
+h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20pt;line-height:1.05;color:#000;margin-bottom:10pt;letter-spacing:-.02em;}
+h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:12pt;color:#000;margin:14pt 0 5pt;}
 
-/* Section header */
-.snum{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red);background:var(--wash);padding:5px 12px;border-radius:100px;margin-top:42px;margin-bottom:12px;}
-h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:34px;line-height:1.04;color:var(--ink);margin-bottom:18px;letter-spacing:-.02em;}
+/* All offset-shadow cards (triad/positions/steps/moments/handouts/readers) — black outline, no shadow */
+.triad,.positions,.steps,.handout-grid,.reader-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8pt;margin:14pt 0;page-break-inside:avoid;}
+.tcell,.pcell,.step,.handout,.reader-card{background:#fff;border:1.5pt solid #000;border-radius:6pt;padding:11pt 13pt;box-shadow:none !important;}
+.steps,.reader-grid{grid-template-columns:repeat(3,1fr);}
+.reader-grid{grid-template-columns:1fr 1fr;}
 
-/* Three-step rhythm cards */
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:22px 0;}
-@media(max-width:680px){.steps{grid-template-columns:1fr;}}
-.step{background:var(--card);border:2px solid var(--ink);border-radius:14px;padding:20px 22px;}
-.step:nth-child(1){box-shadow:4px 4px 0 var(--marigold);}
-.step:nth-child(2){box-shadow:4px 4px 0 var(--red);}
-.step:nth-child(3){box-shadow:4px 4px 0 var(--green);}
-.step-n{font-family:'Bricolage Grotesque',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#6b5d44;font-weight:700;margin-bottom:6px;display:block;}
-.step-name{font-family:'Bricolage Grotesque',sans-serif;font-size:20px;font-weight:800;color:var(--ink);line-height:1.1;margin-bottom:8px;letter-spacing:-.01em;}
-.step-text{font-size:15px;line-height:1.5;color:#6b5d44;}
+.tnum,.plabel,.step-n,.reader-tag,.handout-pill,.moment-label,.reader-pill{font-family:'Bricolage Grotesque',sans-serif;font-size:8pt;letter-spacing:.12em;text-transform:uppercase;color:#000;font-weight:700;display:inline-block;margin-bottom:5pt;border:1pt solid #000;padding:2pt 7pt;border-radius:100px;background:#fff;}
+.moment-label{background:#000;color:#fff;border:none;}
+.handout-pill{background:#000;color:#fff;border:none;}
+.reader-tag{background:#000;color:#fff;border:none;}
 
-/* Callout — marigold w/ red shadow */
-.callout{background:var(--marigold);border:2px solid var(--ink);border-radius:14px;padding:22px 26px;margin:24px 0;box-shadow:4px 4px 0 var(--red);}
-.callout strong{color:var(--ink);font-weight:700;}
-.callout p{font-size:16.5px;line-height:1.6;color:var(--ink);margin-bottom:0;}
+.tword,.step-name,.handout-name,.reader-name{font-family:'Bricolage Grotesque',sans-serif;font-size:13pt;font-weight:800;color:#000;line-height:1.05;letter-spacing:-.01em;margin-bottom:5pt;display:block;}
+.tdef,.ptext,.step-text,.handout-use,.reader-desc{font-size:9.5pt;line-height:1.5;color:#000;}
+.plabel{background:#000;color:#fff;border:none;}
 
-/* The pieces — row of labeled pieces */
-.pieces{margin:20px 0;border:2px solid var(--ink);border-radius:14px;overflow:hidden;}
-.piece{display:grid;grid-template-columns:10rem 1fr;gap:1.25rem;padding:16px 22px;border-bottom:1px solid var(--rule);align-items:start;background:var(--card);}
-.piece:nth-child(even){background:var(--wash);}
-.piece:last-child{border-bottom:none;}
-.piece-name{font-family:'Bricolage Grotesque',sans-serif;font-size:17px;font-weight:800;color:var(--red-deep);letter-spacing:-.005em;line-height:1.2;}
-.piece-text{font-size:15px;line-height:1.55;color:var(--ink);}
-@media(max-width:680px){.piece{grid-template-columns:1fr;gap:.3rem;}.piece-name{font-size:18px;}}
+/* Moments (Revolution essay) */
+.moment{background:#fff;border:1.5pt solid #000;border-radius:6pt;padding:12pt 16pt;margin:10pt 0;box-shadow:none !important;page-break-inside:avoid;}
+.moment-title{font-family:'Bricolage Grotesque',sans-serif;font-size:13pt;font-weight:800;color:#000;line-height:1.1;margin-bottom:6pt;letter-spacing:-.01em;}
+.moment-body{font-size:10pt;line-height:1.55;color:#000;margin-bottom:0;}
 
-/* Assessment card — ink block w/ marigold */
-.assess{background:var(--ink);border-radius:18px;padding:30px 32px;margin:24px 0;position:relative;overflow:hidden;}
-.assess::after{content:"";position:absolute;right:-40px;bottom:-40px;width:180px;height:180px;background:radial-gradient(circle,rgba(245,166,35,.3),transparent 70%);}
-.assess p{font-size:16px;line-height:1.65;color:var(--cream);margin-bottom:12px;position:relative;}
+/* Insight / pullquote / bigq / closing / assess / pledge — inverse (black bg, white text) */
+.insight,.pullquote,.bigq,.closing,.assess,.pledge{background:#000 !important;color:#fff !important;border-radius:6pt;padding:14pt 18pt;margin:14pt 0;page-break-inside:avoid;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+.insight *,.pullquote *,.bigq *,.closing *,.assess *,.pledge *{color:#fff !important;}
+.insight p,.pullquote p,.bigq p{font-family:'Bricolage Grotesque',sans-serif;font-size:13pt;line-height:1.3;font-weight:700;margin-bottom:0;letter-spacing:-.01em;}
+.assess p{font-size:10pt;line-height:1.55;margin-bottom:7pt;font-weight:400;}
 .assess p:last-child{margin-bottom:0;}
-.assess p strong{color:var(--marigold);font-weight:700;}
+.assess p strong,.closing p strong{color:#fff !important;text-decoration:underline;}
+.closing p{font-family:'Bricolage Grotesque',sans-serif;font-size:11pt;line-height:1.45;font-weight:600;margin-bottom:0;text-align:center;}
+.pledge p{font-family:'Bricolage Grotesque',sans-serif;font-size:12pt;line-height:1.4;font-style:italic;font-weight:600;margin-bottom:0;}
 
-/* Signoff — italic ending */
-.signoff{font-family:'Bricolage Grotesque',sans-serif;font-style:italic;font-size:21px;color:var(--ink);line-height:1.45;margin:32px 0 8px;font-weight:600;letter-spacing:-.01em;}
+/* Callout — outline only */
+.callout{background:#fff;border:1.5pt solid #000;border-left:6pt solid #000;border-radius:0;padding:12pt 16pt;margin:12pt 0;page-break-inside:avoid;}
+.callout p{font-size:10pt;line-height:1.6;margin-bottom:0;}
+.callout strong{color:#000;font-weight:700;}
+
+/* Discussion questions — bordered list w/ inverse numerals */
+.dq{list-style:none;counter-reset:dq;margin:10pt 0;padding:0;}
+.dq li{counter-increment:dq;position:relative;padding:8pt 0 8pt 28pt;border-bottom:.5pt dashed #888;font-size:10.5pt;line-height:1.55;color:#000;page-break-inside:avoid;}
+.dq li:last-child{border-bottom:none;}
+.dq li::before{content:counter(dq);position:absolute;left:0;top:8pt;width:20pt;height:20pt;background:#000;color:#fff;border-radius:50%;font-family:'Bricolage Grotesque',sans-serif;font-size:10pt;font-weight:800;display:flex;align-items:center;justify-content:center;line-height:1;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+
+/* Write blocks — white w/ dashed lines */
+.write-block{background:#fff;border:1.5pt solid #000;border-radius:6pt;padding:12pt 16pt;margin:10pt 0;page-break-inside:avoid;}
+.write-prompt{font-family:'Bricolage Grotesque',sans-serif;font-size:10pt;font-weight:700;color:#000;margin-bottom:8pt;line-height:1.4;}
+.write-line{border-bottom:.7pt dashed #555;height:18pt;margin-bottom:4pt;}
+
+/* Skills block — outline only */
+.skills-block{background:#fff;border:1.5pt solid #000;border-radius:6pt;padding:14pt 18pt;margin:14pt 0;page-break-inside:avoid;}
+.skills-label{font-family:'Bricolage Grotesque',sans-serif;font-size:9pt;letter-spacing:.12em;text-transform:uppercase;color:#000;margin-bottom:9pt;font-weight:700;display:block;}
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:5pt 18pt;}
+.skill-item{position:relative;padding-left:16pt;font-size:10pt;line-height:1.5;color:#000;font-weight:500;}
+.skill-item::before{content:"\2192";position:absolute;left:0;top:0;color:#000;font-weight:800;font-family:'Bricolage Grotesque',sans-serif;}
+
+/* Reform list */
+.reform-list{list-style:none;margin:10pt 0;padding:0;border:1.5pt solid #000;border-radius:6pt;overflow:hidden;}
+.reform-list li{background:#fff;padding:10pt 16pt 10pt 40pt;border-bottom:.5pt solid #888;font-size:10.5pt;line-height:1.55;color:#000;position:relative;page-break-inside:avoid;}
+.reform-list li:last-child{border-bottom:none;}
+.reform-list li strong{font-family:'Bricolage Grotesque',sans-serif;color:#000;font-weight:800;font-size:10pt;letter-spacing:.02em;display:inline-block;margin-right:4pt;}
+.reform-list li::before{content:"\25CF";position:absolute;left:18pt;top:11pt;color:#000;font-size:12pt;}
+
+/* Pieces (Student Handbook) */
+.pieces{margin:12pt 0;border:1.5pt solid #000;border-radius:6pt;overflow:hidden;}
+.piece{display:grid;grid-template-columns:9rem 1fr;gap:14pt;padding:10pt 16pt;border-bottom:.5pt solid #888;align-items:start;background:#fff;page-break-inside:avoid;}
+.piece:last-child{border-bottom:none;}
+.piece-name{font-family:'Bricolage Grotesque',sans-serif;font-size:11pt;font-weight:800;color:#000;line-height:1.15;}
+.piece-text{font-size:10pt;line-height:1.5;color:#000;}
+
+/* Principles (Ethics) */
+.principles{display:flex;flex-direction:column;gap:8pt;margin:14pt 0;}
+.principle{display:flex;gap:14pt;align-items:flex-start;background:#fff;border:1.5pt solid #000;border-radius:6pt;padding:12pt 16pt;box-shadow:none !important;page-break-inside:avoid;}
+.pnum{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:26pt;color:#000;line-height:.85;flex:0 0 auto;width:32pt;}
+.principle .body{margin-bottom:0;}
+.principle .body h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:13pt;color:#000;margin-bottom:4pt;}
+.principle .body p{margin-bottom:0;font-size:10pt;line-height:1.5;}
+
+/* Safety */
+.safety{background:#fff;border:1.5pt solid #000;border-radius:6pt;padding:14pt 18pt;margin:14pt 0;page-break-inside:avoid;}
+.safety .lab{font-family:'Bricolage Grotesque',sans-serif;font-size:9pt;letter-spacing:.13em;text-transform:uppercase;font-weight:700;color:#000;margin-bottom:8pt;}
+.safety h3.shead{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:13pt;color:#000;margin-bottom:8pt;}
+.safety ul{list-style:none;padding:0;}
+.safety li{position:relative;padding-left:22pt;margin-bottom:6pt;line-height:1.45;font-size:10pt;color:#000;}
+.safety li::before{content:"\2713";position:absolute;left:0;top:1pt;color:#000;font-weight:700;font-family:'DM Sans',sans-serif;font-size:11pt;}
+
+/* Signoff */
+.signoff{font-family:'Bricolage Grotesque',sans-serif;font-style:italic;font-size:12pt;color:#000;line-height:1.45;margin:18pt 0 8pt;font-weight:600;border-top:1.5pt solid #000;padding-top:14pt;}
 
 /* Footer */
-footer{background:var(--ink);color:var(--cream);margin-top:54px;padding:30px 0 60px;}
-footer .wrap{padding:0 24px;}
-footer .big{font-family:'Bricolage Grotesque',sans-serif;font-size:17px;color:var(--marigold);font-weight:700;margin-bottom:6px;}
-footer .ft{font-size:14px;color:rgba(251,243,226,.78);line-height:1.55;}
-footer .ft a{color:var(--marigold);text-decoration:underline;}
+footer{background:#fff;color:#000;margin-top:24pt;padding:14pt 0 0;border-top:1.5pt solid #000;page-break-inside:avoid;}
+footer .wrap{padding:0;}
+footer .big{font-family:'Bricolage Grotesque',sans-serif;font-size:11pt;color:#000;font-weight:700;margin-bottom:4pt;}
+footer .ft{font-size:9pt;color:#333;line-height:1.5;}
+footer .ft a{color:#000;text-decoration:underline;}
+
+/* Hide hero glow */
+.herobleed{background-image:none !important;}
+.insight::after,.pullquote::after,.bigq::after,.closing::after,.assess::after,.pledge::after,.pullquote::before,.bigq::before{display:none !important;}
+
+/* Force colorful pieces to render in B&W properly */
+*{box-shadow:none !important;}
+
 </style>
 </head>
 <body>

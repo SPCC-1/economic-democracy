@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revolution, Counterrevolution, and Reform — Economic Democracy Curriculum</title>
+<style>
+/* B&W Student-Friendly Print Stylesheet — Economic Democracy */
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+
+@page{size:Letter;margin:.6in .65in;}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',system-ui,sans-serif;color:#000;background:#fff;font-size:10.5pt;line-height:1.5;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:100%;margin:0 auto;padding:0;}
+
+/* Hero — black border, white background, no marigold */
+.herobleed{background:#fff;border-bottom:3px solid #000;margin-bottom:.5em;}
+.hero{max-width:100%;margin:0;padding:.2in 0 .3in;}
+.kicker{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:8pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:#000;padding:4px 11px;border-radius:100px;margin-bottom:14pt;}
+h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:32pt;line-height:1;letter-spacing:-.025em;color:#000;margin-bottom:12pt;}
+.standfirst{font-size:13pt;line-height:1.35;color:#000;font-weight:500;max-width:42em;margin-bottom:10pt;}
+.meta{font-family:'Bricolage Grotesque',sans-serif;font-size:9pt;letter-spacing:.04em;color:#555;font-weight:600;}
+
+/* Body */
+p{margin-bottom:9pt;}
+strong{color:#000;font-weight:700;}
+em{color:#333;font-style:italic;}
+
+.lead{font-size:11.5pt;line-height:1.55;color:#000;font-weight:400;margin:14pt 0 9pt;}
+.lead:first-of-type::first-letter{font-family:'Bricolage Grotesque',sans-serif;font-size:42pt;font-weight:800;float:left;line-height:.82;margin:4pt 8pt 0 0;color:#000;}
+.body{font-size:10.5pt;line-height:1.6;color:#000;margin-bottom:9pt;}
+
+/* Section headers — black pill */
+.snum{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:8pt;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:#000;padding:3pt 9pt;border-radius:100px;margin-top:20pt;margin-bottom:8pt;}
+h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20pt;line-height:1.05;color:#000;margin-bottom:10pt;letter-spacing:-.02em;}
+h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:12pt;color:#000;margin:14pt 0 5pt;}
+
+/* All offset-shadow cards (triad/positions/steps/moments/handouts/readers) — black outline, no shadow */
+.triad,.positions,.steps,.handout-grid,.reader-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8pt;margin:14pt 0;page-break-inside:avoid;}
+.tcell,.pcell,.step,.handout,.reader-card{background:#fff;border:1.5pt solid #000;border-radius:6pt;padding:11pt 13pt;box-shadow:none !important;}
+.steps,.reader-grid{grid-template-columns:repeat(3,1fr);}
+.reader-grid{grid-template-columns:1fr 1fr;}
+
+.tnum,.plabel,.step-n,.reader-tag,.handout-pill,.moment-label,.reader-pill{font-family:'Bricolage Grotesque',sans-serif;font-size:8pt;letter-spacing:.12em;text-transform:uppercase;color:#000;font-weight:700;display:inline-block;margin-bottom:5pt;border:1pt solid #000;padding:2pt 7pt;border-radius:100px;background:#fff;}
+.moment-label{background:#000;color:#fff;border:none;}
+.handout-pill{background:#000;color:#fff;border:none;}
+.reader-tag{background:#000;color:#fff;border:none;}
+
+.tword,.step-name,.handout-name,.reader-name{font-family:'Bricolage Grotesque',sans-serif;font-size:13pt;font-weight:800;color:#000;line-height:1.05;letter-spacing:-.01em;margin-bottom:5pt;display:block;}
+.tdef,.ptext,.step-text,.handout-use,.reader-desc{font-size:9.5pt;line-height:1.5;color:#000;}
+.plabel{background:#000;color:#fff;border:none;}
+
+/* Moments (Revolution essay) */
+.moment{background:#fff;border:1.5pt solid #000;border-radius:6pt;padding:12pt 16pt;margin:10pt 0;box-shadow:none !important;page-break-inside:avoid;}
+.moment-title{font-family:'Bricolage Grotesque',sans-serif;font-size:13pt;font-weight:800;color:#000;line-height:1.1;margin-bottom:6pt;letter-spacing:-.01em;}
+.moment-body{font-size:10pt;line-height:1.55;color:#000;margin-bottom:0;}
+
+/* Insight / pullquote / bigq / closing / assess / pledge — inverse (black bg, white text) */
+.insight,.pullquote,.bigq,.closing,.assess,.pledge{background:#000 !important;color:#fff !important;border-radius:6pt;padding:14pt 18pt;margin:14pt 0;page-break-inside:avoid;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+.insight *,.pullquote *,.bigq *,.closing *,.assess *,.pledge *{color:#fff !important;}
+.insight p,.pullquote p,.bigq p{font-family:'Bricolage Grotesque',sans-serif;font-size:13pt;line-height:1.3;font-weight:700;margin-bottom:0;letter-spacing:-.01em;}
+.assess p{font-size:10pt;line-height:1.55;margin-bottom:7pt;font-weight:400;}
+.assess p:last-child{margin-bottom:0;}
+.assess p strong,.closing p strong{color:#fff !important;text-decoration:underline;}
+.closing p{font-family:'Bricolage Grotesque',sans-serif;font-size:11pt;line-height:1.45;font-weight:600;margin-bottom:0;text-align:center;}
+.pledge p{font-family:'Bricolage Grotesque',sans-serif;font-size:12pt;line-height:1.4;font-style:italic;font-weight:600;margin-bottom:0;}
+
+/* Callout — outline only */
+.callout{background:#fff;border:1.5pt solid #000;border-left:6pt solid #000;border-radius:0;padding:12pt 16pt;margin:12pt 0;page-break-inside:avoid;}
+.callout p{font-size:10pt;line-height:1.6;margin-bottom:0;}
+.callout strong{color:#000;font-weight:700;}
+
+/* Discussion questions — bordered list w/ inverse numerals */
+.dq{list-style:none;counter-reset:dq;margin:10pt 0;padding:0;}
+.dq li{counter-increment:dq;position:relative;padding:8pt 0 8pt 28pt;border-bottom:.5pt dashed #888;font-size:10.5pt;line-height:1.55;color:#000;page-break-inside:avoid;}
+.dq li:last-child{border-bottom:none;}
+.dq li::before{content:counter(dq);position:absolute;left:0;top:8pt;width:20pt;height:20pt;background:#000;color:#fff;border-radius:50%;font-family:'Bricolage Grotesque',sans-serif;font-size:10pt;font-weight:800;display:flex;align-items:center;justify-content:center;line-height:1;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+
+/* Write blocks — white w/ dashed lines */
+.write-block{background:#fff;border:1.5pt solid #000;border-radius:6pt;padding:12pt 16pt;margin:10pt 0;page-break-inside:avoid;}
+.write-prompt{font-family:'Bricolage Grotesque',sans-serif;font-size:10pt;font-weight:700;color:#000;margin-bottom:8pt;line-height:1.4;}
+.write-line{border-bottom:.7pt dashed #555;height:18pt;margin-bottom:4pt;}
+
+/* Skills block — outline only */
+.skills-block{background:#fff;border:1.5pt solid #000;border-radius:6pt;padding:14pt 18pt;margin:14pt 0;page-break-inside:avoid;}
+.skills-label{font-family:'Bricolage Grotesque',sans-serif;font-size:9pt;letter-spacing:.12em;text-transform:uppercase;color:#000;margin-bottom:9pt;font-weight:700;display:block;}
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:5pt 18pt;}
+.skill-item{position:relative;padding-left:16pt;font-size:10pt;line-height:1.5;color:#000;font-weight:500;}
+.skill-item::before{content:"\2192";position:absolute;left:0;top:0;color:#000;font-weight:800;font-family:'Bricolage Grotesque',sans-serif;}
+
+/* Reform list */
+.reform-list{list-style:none;margin:10pt 0;padding:0;border:1.5pt solid #000;border-radius:6pt;overflow:hidden;}
+.reform-list li{background:#fff;padding:10pt 16pt 10pt 40pt;border-bottom:.5pt solid #888;font-size:10.5pt;line-height:1.55;color:#000;position:relative;page-break-inside:avoid;}
+.reform-list li:last-child{border-bottom:none;}
+.reform-list li strong{font-family:'Bricolage Grotesque',sans-serif;color:#000;font-weight:800;font-size:10pt;letter-spacing:.02em;display:inline-block;margin-right:4pt;}
+.reform-list li::before{content:"\25CF";position:absolute;left:18pt;top:11pt;color:#000;font-size:12pt;}
+
+/* Pieces (Student Handbook) */
+.pieces{margin:12pt 0;border:1.5pt solid #000;border-radius:6pt;overflow:hidden;}
+.piece{display:grid;grid-template-columns:9rem 1fr;gap:14pt;padding:10pt 16pt;border-bottom:.5pt solid #888;align-items:start;background:#fff;page-break-inside:avoid;}
+.piece:last-child{border-bottom:none;}
+.piece-name{font-family:'Bricolage Grotesque',sans-serif;font-size:11pt;font-weight:800;color:#000;line-height:1.15;}
+.piece-text{font-size:10pt;line-height:1.5;color:#000;}
+
+/* Principles (Ethics) */
+.principles{display:flex;flex-direction:column;gap:8pt;margin:14pt 0;}
+.principle{display:flex;gap:14pt;align-items:flex-start;background:#fff;border:1.5pt solid #000;border-radius:6pt;padding:12pt 16pt;box-shadow:none !important;page-break-inside:avoid;}
+.pnum{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:26pt;color:#000;line-height:.85;flex:0 0 auto;width:32pt;}
+.principle .body{margin-bottom:0;}
+.principle .body h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:13pt;color:#000;margin-bottom:4pt;}
+.principle .body p{margin-bottom:0;font-size:10pt;line-height:1.5;}
+
+/* Safety */
+.safety{background:#fff;border:1.5pt solid #000;border-radius:6pt;padding:14pt 18pt;margin:14pt 0;page-break-inside:avoid;}
+.safety .lab{font-family:'Bricolage Grotesque',sans-serif;font-size:9pt;letter-spacing:.13em;text-transform:uppercase;font-weight:700;color:#000;margin-bottom:8pt;}
+.safety h3.shead{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:13pt;color:#000;margin-bottom:8pt;}
+.safety ul{list-style:none;padding:0;}
+.safety li{position:relative;padding-left:22pt;margin-bottom:6pt;line-height:1.45;font-size:10pt;color:#000;}
+.safety li::before{content:"\2713";position:absolute;left:0;top:1pt;color:#000;font-weight:700;font-family:'DM Sans',sans-serif;font-size:11pt;}
+
+/* Signoff */
+.signoff{font-family:'Bricolage Grotesque',sans-serif;font-style:italic;font-size:12pt;color:#000;line-height:1.45;margin:18pt 0 8pt;font-weight:600;border-top:1.5pt solid #000;padding-top:14pt;}
+
+/* Footer */
+footer{background:#fff;color:#000;margin-top:24pt;padding:14pt 0 0;border-top:1.5pt solid #000;page-break-inside:avoid;}
+footer .wrap{padding:0;}
+footer .big{font-family:'Bricolage Grotesque',sans-serif;font-size:11pt;color:#000;font-weight:700;margin-bottom:4pt;}
+footer .ft{font-size:9pt;color:#333;line-height:1.5;}
+footer .ft a{color:#000;text-decoration:underline;}
+
+/* Hide hero glow */
+.herobleed{background-image:none !important;}
+.insight::after,.pullquote::after,.bigq::after,.closing::after,.assess::after,.pledge::after,.pullquote::before,.bigq::before{display:none !important;}
+
+/* Force colorful pieces to render in B&W properly */
+*{box-shadow:none !important;}
+
+</style>
+</head>
+<body>
+
+<div class="herobleed">
+  <div class="hero">
+    <div class="kicker">Conceptual Essay · Student Reading</div>
+    <h1>Revolution, Counterrevolution, and Reform</h1>
+    <p class="standfirst">The cyclical decision point in American history — and the choice every generation is asked to make again.</p>  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="triad">
+    <div class="tcell">
+      <span class="tnum">Option 1</span>
+      <span class="tword">Revolution</span>
+      <span class="tdef">A desire to tear down the existing system and start over.</span>
+    </div>
+    <div class="tcell">
+      <span class="tnum">Option 2</span>
+      <span class="tword">Counter-<br>revolution</span>
+      <span class="tdef">A desire to restore or freeze the old order.</span>
+    </div>
+    <div class="tcell">
+      <span class="tnum">Option 3</span>
+      <span class="tword">Reform</span>
+      <span class="tdef">A decision to rebuild, adapt, and strengthen institutions without abandoning them.</span>
+    </div>
+  </div>
+
+  <p class="lead">A recurring pattern runs through American history, often unnoticed because it cuts across eras, parties, and personalities. Again and again, moments of deep crisis produce three competing impulses. The American experiment is distinctive not because it avoids conflict, but because it has repeatedly chosen <strong>reform over rupture</strong> as its primary response to crisis. This choice — never easy, never clean — has been a central source of both stability and prosperity.</p>
+
+  <p class="body">This is not because Americans lack radical ideas. On the contrary, radical critiques have always been present. But the constitutional system was deliberately designed to absorb radical energy, test it, slow it down, and translate only its most durable insights into law and institutions. The goal was not to suppress change, but to prevent change from destroying the very capacity to govern.</p>
+
+  <div class="snum">Section I</div>
+  <h2>Three Historical Decision Points</h2>
+
+  <div class="moment">
+    <span class="moment-label">Decision Point 1 · 1787</span>
+    <div class="moment-title">The Articles of Confederation</div>
+    <p class="moment-body">Faced with a weak central government, economic disorder, and political fragmentation, the United States stood at a crossroads. One option was to abandon the experiment entirely. Another was to double down on radical decentralization. Instead, the Constitution represented a reformist choice: build on what existed, correct its failures, and strengthen national capacity without abandoning republican principles.</p>
+  </div>
+
+  <div class="moment">
+    <span class="moment-label">Decision Point 2 · 1865–1877</span>
+    <div class="moment-title">Reconstruction After the Civil War</div>
+    <p class="moment-body">The country again faced revolutionary pressure — this time driven by slavery's abolition and the demand for full equality. Counterrevolution also emerged, seeking to restore old hierarchies. The Reconstruction Amendments were a reformist response: they fundamentally reshaped citizenship and rights while preserving the constitutional framework. Their incomplete implementation reveals both the strength and fragility of reform as a path.</p>
+  </div>
+
+  <div class="moment">
+    <span class="moment-label">Decision Point 3 · 1929–1938</span>
+    <div class="moment-title">The Great Depression and the New Deal</div>
+    <p class="moment-body">Economic collapse fueled calls for radical transformation and, in some quarters, authoritarian alternatives. The New Deal did not abolish capitalism, nor did it leave markets untouched. It reformed the system — creating social insurance, regulating finance, and stabilizing demand — so that democracy could survive economic failure.</p>
+  </div>
+
+  <div class="insight">
+    <p>Each of these moments reflects a cyclical decision point: when existing systems fail, societies must choose whether to tear down, restore, or reform. The American tendency — imperfect but persistent — has been to build on top of what exists, layering new institutions, rights, and protections rather than starting from zero.</p>
+  </div>
+
+  <div class="snum">Section II</div>
+  <h2>Why Reform Feels Slow</h2>
+
+  <p class="body">This pattern helps explain why American change often feels slow, frustrating, and incomplete. Reform prioritizes <strong>continuity and legitimacy</strong> over speed and purity. It trades revolutionary clarity for institutional durability. But it also helps explain why the United States has avoided the repeated collapses that have plagued other societies.</p>
+
+  <p class="body">Today, many argue that we are again at such a turning point. Economic inequality, technological disruption, political polarization, and declining trust in institutions have revived revolutionary and counterrevolutionary impulses. Calls to tear everything down coexist with demands to restore an imagined past. Understanding this cycle helps you see that the real question is not whether change is coming, but <em>what kind</em> of change will prevail.</p>
+
+  <p class="body">This course treats reform not as cowardice or compromise, but as a <strong>democratic skill</strong> — the ability to channel pressure into lasting institutions. You'll study moments when reform succeeded, when it failed, and when it was blocked. You'll learn that stability is not the absence of conflict, but the product of repeatedly choosing to rebuild rather than abandon the system.</p>
+
+  <p class="body">Seen this way, American history is not a straight line of progress or decline. It is a series of decisions, made under pressure, about how much of the past to discard and how much to carry forward. <strong>That decision — revolution, counterrevolution, or reform — is the central civic choice of every generation.</strong></p>
+
+  <div class="snum">Section III</div>
+  <h2>Discussion Questions</h2>
+
+  <ol class="dq">
+    <li>In each of the three historical examples, who was pushing for revolution? Who was pushing for counterrevolution? Who argued for reform — and what did they have to give up?</li>
+    <li>The essay says the constitutional system was "designed to absorb radical energy." What does that mean? Is that a feature or a flaw?</li>
+    <li>Can you think of a moment in American history where reform failed or was blocked? What happened next?</li>
+    <li>Where do you see these three impulses — revolution, counterrevolution, reform — in current political debates?</li>
+    <li>The essay calls reform a "democratic skill." Do you agree? What skills does reform require that revolution does not?</li>
+  </ol>
+
+  <div class="snum">Section IV</div>
+  <h2>Apply the Framework</h2>
+
+  <p class="body">After reading, use the Power–Democracy–Economy matrix from the Framework lesson to complete the following:</p>
+
+  <div class="write-block">
+    <p class="write-prompt">Choose one of the three historical moments. Which quadrant best describes the reform that was chosen — and why?</p>
+    <div class="write-line"></div><div class="write-line"></div><div class="write-line"></div>
+  </div>
+
+  <div class="write-block">
+    <p class="write-prompt">Which quadrant would a revolutionary response have occupied? What about a counterrevolutionary one?</p>
+    <div class="write-line"></div><div class="write-line"></div><div class="write-line"></div>
+  </div>
+
+  <div class="write-block">
+    <p class="write-prompt">The essay says we may be at another decision point today. Where would you place the dominant political responses on the matrix — and what does that tell you?</p>
+    <div class="write-line"></div><div class="write-line"></div><div class="write-line"></div><div class="write-line"></div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="big">Revolution, Counterrevolution, and Reform · Economic Democracy Curriculum</div>
+    <div class="ft">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC &nbsp;&middot;&nbsp; SPCC.1 &nbsp;&middot;&nbsp; <a href="index.html">economicdemocracy.co</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
