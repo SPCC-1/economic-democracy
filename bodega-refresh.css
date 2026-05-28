@@ -98,14 +98,21 @@ h1 em, h2 em,
   background:#FFFFFF !important;
   border-bottom:1px solid var(--cs-line) !important;
   padding:.75rem 0 !important;
+  position:sticky !important;
+  top:0 !important;
+  z-index:100 !important;
 }
 .nav-inner{
+  display:flex !important;
   flex-wrap:nowrap !important;
-  max-width:1200px !important;
-  gap:1.25rem !important;
+  justify-content:space-between !important;
   align-items:center !important;
+  max-width:1200px !important;
+  margin:0 auto !important;
+  gap:1.25rem !important;
   padding:0 1.5rem !important;
 }
+.nav-links{ display:flex !important; }
 @media(min-width:769px){
   .nav-toggle{ display:none !important; }
 }
