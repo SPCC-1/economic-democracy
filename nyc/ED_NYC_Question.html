@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Question Beneath the Question — Economic Democracy</title>
+<meta name="robots" content="noindex,nofollow">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600;700&display=swap');
+:root{
+  --ink:#1A1C1E; --charcoal:#2C3036; --slate:#55606B; --mute:#7A848E;
+  --line:#E2E0D8; --paper:#FBFAF6; --card:#FFFFFF; --wash:#F3F1E9;
+  --accent:#7C2D2D; --accent-soft:#A84A3C;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Newsreader',Georgia,serif;color:var(--ink);background:var(--paper);font-size:19px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:780px;margin:0 auto;padding:0 32px;}
+a{color:inherit;text-decoration:none;}
+.sans{font-family:'Inter',system-ui,sans-serif;}
+
+/* confidential strip */
+.strip{background:var(--ink);color:var(--paper);}
+.strip .wrap{display:flex;align-items:center;justify-content:space-between;padding:11px 32px;font-family:'Inter',sans-serif;font-size:12px;font-weight:500;letter-spacing:.04em;color:rgba(251,250,246,.78);}
+.strip .lhs{display:flex;align-items:center;gap:10px;}
+.strip .dot{width:7px;height:7px;border-radius:50%;background:var(--accent-soft);}
+.strip .brand{font-weight:600;color:var(--paper);}
+.strip .rhs{color:rgba(251,250,246,.55);}
+
+/* page locator — promoted 'For New York City' treatment */
+.locator{padding:32px 0 22px;border-bottom:1px solid var(--line);margin-bottom:6px;}
+.locator .nyc{font-family:'Newsreader',serif;font-weight:500;font-size:22px;line-height:1.15;letter-spacing:-.005em;color:var(--ink);margin-bottom:8px;}
+.locator .nyc em{font-style:italic;font-weight:400;color:var(--ink);}
+.locator .nyc a{color:inherit;}
+.locator .nyc a:hover em{color:var(--accent);}
+.locator .pageno{font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);}
+.locator .pageno em{font-family:'Newsreader',serif;font-style:italic;font-weight:500;font-size:13px;color:var(--accent);text-transform:none;letter-spacing:0;margin-left:8px;}
+
+/* hero */
+.hero{padding:18px 0 44px;border-bottom:1px solid var(--line);}
+.hero .eyebrow{font-family:'Inter',sans-serif;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;}
+.hero h1{font-family:'Newsreader',serif;font-weight:600;font-size:52px;line-height:1.02;letter-spacing:-.02em;color:var(--ink);margin-bottom:22px;}
+.hero h1 em{font-style:italic;font-weight:500;}
+.hero .lede{font-size:22px;line-height:1.45;color:var(--slate);max-width:50ch;font-weight:400;}
+
+/* generic content section */
+.sec{padding:46px 0;border-bottom:1px solid var(--line);}
+.sec .tag{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-bottom:14px;}
+.sec h2{font-family:'Newsreader',serif;font-weight:600;font-size:34px;line-height:1.06;letter-spacing:-.015em;color:var(--ink);margin-bottom:14px;}
+.sec h2 em{font-style:italic;font-weight:500;}
+.sec p{font-size:18.5px;line-height:1.6;color:var(--charcoal);max-width:58ch;margin-bottom:14px;}
+.sec p:last-child{margin-bottom:0;}
+.sec p strong{font-weight:600;color:var(--ink);}
+.sec p em{font-style:italic;}
+
+/* pullquote */
+.pq{font-family:'Newsreader',serif;font-style:italic;font-size:24px;line-height:1.32;color:var(--ink);font-weight:500;border-left:3px solid var(--accent);padding:6px 0 6px 24px;margin:28px 0;max-width:54ch;}
+
+/* the steelman pair — the heart of the page */
+.steelpair{padding:54px 0;border-bottom:1px solid var(--line);background:var(--wash);margin-left:calc(-50vw + 50%);margin-right:calc(-50vw + 50%);padding-left:calc(50vw - 50%);padding-right:calc(50vw - 50%);}
+.steelpair .wrap{padding:0 32px;}
+.steelpair .lead{font-family:'Newsreader',serif;font-weight:500;font-style:italic;font-size:22px;line-height:1.45;color:var(--charcoal);max-width:56ch;margin-bottom:36px;}
+.steelpair .pair{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+@media(max-width:720px){.steelpair .pair{grid-template-columns:1fr;}}
+.steelcard{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:30px 30px;}
+.steelcard .label{font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:13px;}
+.steelcard h3{font-family:'Newsreader',serif;font-weight:600;font-size:30px;line-height:1.04;color:var(--ink);margin-bottom:6px;letter-spacing:-.01em;}
+.steelcard .defn{font-family:'Newsreader',serif;font-style:italic;font-size:17px;color:var(--accent-soft);margin-bottom:18px;border-bottom:1px solid var(--line);padding-bottom:14px;}
+.steelcard p{font-size:16.5px;line-height:1.55;color:var(--charcoal);margin-bottom:11px;}
+.steelcard p:last-child{margin-bottom:0;}
+.steelcard p strong{font-weight:600;color:var(--ink);}
+.steelcard .h4{font-family:'Inter',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink);margin:18px 0 7px;}
+.steelcard ul{margin:0 0 14px 18px;padding:0;}
+.steelcard ul li{font-size:16px;line-height:1.5;color:var(--charcoal);margin-bottom:5px;}
+.steelcard .cost{margin-top:16px;padding-top:16px;border-top:1px solid var(--line);}
+.steelcard .cost .lbl{font-family:'Inter',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;}
+.steelcard .cost p{font-size:15.5px;line-height:1.5;color:var(--slate);font-style:italic;}
+
+/* what's at stake — the closing section */
+.stake{padding:48px 0 12px;border-bottom:1px solid var(--line);}
+.stake .tag{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-bottom:14px;}
+.stake h2{font-family:'Newsreader',serif;font-weight:600;font-size:34px;line-height:1.06;letter-spacing:-.015em;color:var(--ink);margin-bottom:14px;}
+.stake h2 em{font-style:italic;font-weight:500;}
+.stake p{font-size:19px;line-height:1.58;color:var(--charcoal);max-width:58ch;margin-bottom:14px;}
+.stake p:last-child{margin-bottom:36px;}
+.stake p strong{font-weight:600;color:var(--ink);}
+.stake p em{font-style:italic;}
+
+/* continue */
+.cont{padding:46px 0 64px;display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+@media(max-width:640px){.cont{grid-template-columns:1fr;}}
+.cont a{padding:22px 26px;border:1px solid var(--line);border-radius:6px;background:var(--card);transition:border-color .15s,box-shadow .15s;display:block;}
+.cont a:hover{border-color:var(--accent);box-shadow:0 4px 24px rgba(26,28,30,.06);}
+.cont a.next{border-color:var(--ink);}
+.cont .l{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);margin-bottom:5px;display:block;}
+.cont a.next .l{color:var(--accent);}
+.cont h3{font-family:'Newsreader',serif;font-weight:600;font-size:20px;color:var(--ink);letter-spacing:-.005em;}
+.cont h3 em{font-style:italic;font-weight:500;}
+.cont .arrow{font-family:'Inter',sans-serif;font-weight:500;font-size:20px;color:var(--accent);margin-top:8px;display:inline-block;}
+
+/* footer */
+footer{background:var(--paper);padding:34px 0 56px;border-top:1px solid var(--line);}
+footer .copy{font-family:'Inter',sans-serif;font-size:12.5px;line-height:1.6;color:var(--mute);}
+footer .copy .conf{display:block;margin-bottom:6px;color:var(--charcoal);font-weight:500;}
+footer .copy .ai{display:block;margin-top:4px;color:#9aa3ab;}
+</style>
+</head>
+<body>
+
+</div>
+
+<div class="wrap">
+
+  <div class="locator">
+    <div class="nyc"><a href="ED_NYC_Overview.html"><em>For New York City</em></a></div>
+    <div class="pageno sans">Page II of IV <em>— The Question</em></div>
+  </div>
+
+  <div class="hero">
+    <div class="eyebrow">Section I · The Frame</div>
+    <h1>The question <em>beneath</em><br>the question.</h1>
+    <p class="lede">What the City is choosing is not only where to put a store. It is what kind of public investment the next decade of New York will be built on. The decision belongs to the City. The conversation around it can belong to New Yorkers.</p>
+  </div>
+
+  <div class="sec">
+    <div class="tag sans">What Is Actually Being Decided</div>
+    <p>The City's announced decision is plain on its face: open five publicly owned grocery stores in the neighborhoods the market has not served. Five neighborhoods, five stores, $70 million. Most of the public debate has been about <em>that</em> decision — whether a city should be in the grocery business at all, whether public stores can compete on price, whether the small grocers already there will be displaced. Those are real questions. The Civic Lab we have built around the Hunts Point store engages them directly, and engages them fairly.</p>
+    <p>But beneath those questions sits another, less visible one — and it is the one this proposal asks the City to consider. <strong>It is not what the City is buying. It is the shape of the public investment itself.</strong></p>
+    <p class="pq">A $70 million decision can express two very different theories of what public capital is for. Both are real. Both are defensible. They produce different cities.</p>
+    <p>To name them plainly: the City can spend this money as <strong>redistribution</strong> — using tax revenue to subsidize a gap the market has left. Or it can spend it as <strong>predistribution</strong> — helping a community own the productive structure that closes the gap in the first place. Neither is obviously right. Both have been used for legitimate ends, by serious people, with real results. The case for each can be made honestly. What follows tries to make both.</p>
+  </div>
+
+  <div class="steelpair">
+  <div class="wrap">
+    <p class="lead">Two ways the City could spend $70 million on the same problem. Taught fairly, so an informed public can weigh them — not advocated.</p>
+    <div class="pair">
+
+      <div class="steelcard">
+        <div class="label sans">Frame I</div>
+        <h3>Redistribution</h3>
+        <div class="defn">Use public revenue to close the gap the market won't.</div>
+
+        <div class="h4 sans">The case for it</div>
+        <p>Markets are remarkable instruments, but they were never designed to serve every citizen equally. They serve those who can pay. When entire neighborhoods cannot — because incomes are too low, density too thin, or institutional discrimination has had a century to compound — the market simply leaves them. Government exists precisely for this. A democratic public, through its taxes, takes resources from where they accumulate and directs them to where the market has failed.</p>
+
+        <p>On this view the City's grocery plan is a textbook case. The Bronx pays taxes; the market does not return groceries; the City uses the tax revenue to provide them. <strong>This is the social contract working as designed.</strong> It is the same logic behind public schools, public libraries, public hospitals, public housing, the SNAP program itself — the public sector closing gaps the private one will not.</p>
+
+        <div class="h4 sans">Where it is strongest</div>
+        <ul>
+          <li>It works <em>now</em>. Subsidy lowers prices immediately, for everyone who walks in.</li>
+          <li>It is politically and legally clean — well-established authority, familiar accounting.</li>
+          <li>It does not require communities to organize themselves to receive it.</li>
+        </ul>
+
+        <div class="cost">
+          <div class="lbl sans">The honest cost</div>
+          <p>Redistribution is perpetual by design. The subsidy must be renewed each budget cycle; the gap, untouched at its structure, returns the moment funding lapses. It builds dependence on the appropriator. And it does not, by itself, build community wealth — the dollar that lowers a price is a dollar that has been spent.</p>
+        </div>
+      </div>
+
+      <div class="steelcard">
+        <div class="label sans">Frame II</div>
+        <h3>Predistribution</h3>
+        <div class="defn">Help a community own the structure that closes the gap.</div>
+
+        <div class="h4 sans">The case for it</div>
+        <p>The trouble with subsidy is not that it fails. It is that it succeeds only as long as it continues. Predistribution accepts the same diagnosis — markets do not serve everyone — and proposes a different cure: rather than perpetually offsetting the market's failure, change <em>who owns</em> the productive structure that creates the failure. If the bodega exists in a neighborhood, the neighborhood should be able to own it. If a grocery store is going to anchor a block, the residents of that block should hold equity in it.</p>
+
+        <p>On this view, public capital is best used not to <em>compensate</em> for missing wealth but to <em>build</em> it where it has not been allowed to form. <strong>The same $70 million can be invested once</strong>, in structure a community holds — not consumed in repeated subsidy. The economic theory is old (Louis Kelso, Elinor Ostrom, the cooperative tradition); the moment is new.</p>
+
+        <div class="h4 sans">Where it is strongest</div>
+        <ul>
+          <li>It builds community wealth — assets, not flows — that compound rather than expire.</li>
+          <li>It is regenerative by design — the structure pays for itself once established.</li>
+          <li>It changes who has economic power in a neighborhood, not only what they can afford.</li>
+        </ul>
+
+        <div class="cost">
+          <div class="lbl sans">The honest cost</div>
+          <p>Predistribution is slower, harder, and riskier. It requires real community governance capacity, which not every neighborhood has. It takes longer to deliver visible benefit. And it can fail in ways subsidy cannot — a cooperative that collapses leaves a real hole, where a subsidy that lapses just ends.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+
+  <div class="sec">
+    <div class="tag sans">A note on how we are using these words</div>
+    <p>Neither term is partisan. <em>Redistribution</em> is the standing logic of every modern social state; <em>predistribution</em> is a term that emerged in academic policy work in the early 2010s and has been taken up by serious people across the political spectrum, from Elizabeth Anderson on the left to ownership-economy conservatives on the right. We use them here as <strong>structural descriptions</strong>, not as political identities. A city can use both at once. Most do.</p>
+    <p>And to be plain about what we are not proposing. We are not proposing that the community decide what the City does with $70 million. That decision belongs to the City — to the Mayor, the agencies, the Council. <strong>The City leads.</strong> What we are proposing is the <em>informed public conversation</em> that runs alongside the decision: a structured process through which the people whose lives the policy will shape can understand what is actually being chosen, weigh it for themselves, and contribute their considered voice. The City still decides. It just decides with a public that has done the work to understand the choice.</p>
+  </div>
+
+  <div class="stake">
+    <div class="tag sans">Why This Matters Beyond One Decision</div>
+    <h2>One decision now. <em>A practice for the city.</em></h2>
+    <p>The grocery rollout is the first cycle. What we are proposing is bigger than any single policy.</p>
+    <p>If New Yorkers learn to participate in this conversation — informed, structured, fair — they can participate in the next one. <strong>Housing. Transit. Energy. The next round of investment, whatever it is.</strong> The same train-the-trainer model that puts schools, CBOs, churches, and youth programs through the curriculum can be re-run on issue after issue, year after year. The cohort that learned to deliberate the grocery decision becomes the cohort that can deliberate the next one.</p>
+    <p>This is what gets planted now and bears fruit later. <strong>An administration's worth of New Yorkers who know how to participate in the decisions about how their city invests public dollars.</strong> Seeds planted under this administration that grow under the next. Not a youth program — a civic instrument. Not a one-off — a practice.</p>
+    <p>The deepest version of the proposition is the one that goes beyond the food question entirely: <em>help the average New Yorker have a real voice in the future of their city — and grow the economic pie while strengthening the democracy that decides how it is shared.</em></p>
+    <p>The next page describes the instrument that begins that work.</p>
+  </div>
+
+  <div class="cont">
+    <a href="ED_NYC_Overview.html">
+      <span class="l sans">← Back · Page I</span>
+      <h3>The proposition</h3>
+      <span class="arrow">←</span>
+    </a>
+    <a class="next" href="ED_NYC_Convening.html">
+      <span class="l sans">Continue · Page III</span>
+      <h3>The <em>civic</em> instrument</h3>
+      <span class="arrow">→</span>
+    </a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="copy sans">
+      © 2026 · Alfredo Mathew III · AM3 LLC · Working World LLC · SPCC.1 · <a href="../index.html" style="color:inherit;border-bottom:1px dotted currentColor;">economicdemocracy.co</a>
+      <span class="ai">AI Synthesis: Claude (Anthropic, claude-opus-4-7) · Economic Democracy Curriculum</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For New York City — Economic Democracy</title>
+<meta name="robots" content="noindex,nofollow">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600;700&display=swap');
+:root{
+  --ink:#1A1C1E; --charcoal:#2C3036; --slate:#55606B; --mute:#7A848E;
+  --line:#E2E0D8; --paper:#FBFAF6; --card:#FFFFFF; --wash:#F3F1E9;
+  --accent:#7C2D2D; --accent-soft:#A84A3C;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Newsreader',Georgia,serif;color:var(--ink);background:var(--paper);font-size:19px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:780px;margin:0 auto;padding:0 32px;}
+a{color:inherit;text-decoration:none;}
+.sans{font-family:'Inter',system-ui,sans-serif;}
+
+/* confidential strip — signals this is not a public page */
+.strip{background:var(--ink);color:var(--paper);}
+.strip .wrap{display:flex;align-items:center;justify-content:space-between;padding:11px 32px;font-family:'Inter',sans-serif;font-size:12px;font-weight:500;letter-spacing:.04em;color:rgba(251,250,246,.78);}
+.strip .lhs{display:flex;align-items:center;gap:10px;}
+.strip .dot{width:7px;height:7px;border-radius:50%;background:var(--accent-soft);}
+.strip .brand{font-weight:600;color:var(--paper);}
+.strip .rhs{color:rgba(251,250,246,.55);}
+
+/* personal note from Alfredo */
+.note{padding:42px 0 30px;border-bottom:1px solid var(--line);}
+
+/* page locator — Direction A */
+.locator{padding:32px 0 22px;border-bottom:1px solid var(--line);margin-bottom:6px;}
+.locator .nyc{font-family:'Newsreader',serif;font-weight:500;font-size:22px;line-height:1.15;letter-spacing:-.005em;color:var(--ink);margin-bottom:8px;}
+.locator .nyc em{font-style:italic;font-weight:400;color:var(--ink);}
+.locator .pageno{font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);}
+.locator .pageno em{font-family:'Newsreader',serif;font-style:italic;font-weight:500;font-size:13px;color:var(--accent);text-transform:none;letter-spacing:0;margin-left:8px;}
+.note .from{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin-bottom:13px;}
+.note p{font-size:18px;line-height:1.55;color:var(--charcoal);max-width:58ch;margin-bottom:11px;font-style:italic;}
+.note p:last-child{margin-bottom:0;}
+.note .sig{font-family:'Newsreader',serif;font-style:italic;font-size:18px;color:var(--charcoal);margin-top:18px;font-weight:500;}
+
+/* hero */
+.hero{padding:54px 0 44px;border-bottom:1px solid var(--line);}
+.hero .eyebrow{font-family:'Inter',sans-serif;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;}
+.hero h1{font-family:'Newsreader',serif;font-weight:600;font-size:54px;line-height:1.02;letter-spacing:-.02em;color:var(--ink);margin-bottom:24px;}
+.hero h1 em{font-style:italic;font-weight:500;}
+.hero .lede{font-size:22px;line-height:1.45;color:var(--slate);max-width:48ch;font-weight:400;}
+
+/* proposition block */
+.prop{padding:48px 0;border-bottom:1px solid var(--line);}
+.prop .tag{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-bottom:14px;}
+.prop p{font-size:20px;line-height:1.55;color:var(--charcoal);max-width:56ch;margin-bottom:14px;}
+.prop p:last-child{margin-bottom:0;}
+.prop p strong{font-weight:600;color:var(--ink);}
+.prop p em{font-style:italic;}
+
+/* the three sections preview */
+.preview{padding:48px 0;border-bottom:1px solid var(--line);}
+.preview .seclabel{font-family:'Inter',sans-serif;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;}
+.preview h2{font-family:'Newsreader',serif;font-weight:600;font-size:34px;line-height:1.06;letter-spacing:-.015em;color:var(--ink);margin-bottom:14px;}
+.preview h2 em{font-style:italic;font-weight:500;}
+.preview .intro{font-size:18px;line-height:1.55;color:var(--slate);max-width:58ch;margin-bottom:32px;}
+.steps{display:flex;flex-direction:column;gap:0;}
+.step{display:grid;grid-template-columns:74px 1fr;gap:24px;padding:22px 0;border-top:1px solid var(--line);}
+.step:last-child{border-bottom:1px solid var(--line);}
+.step .num{font-family:'Newsreader',serif;font-weight:600;font-size:34px;line-height:1;color:var(--accent);font-style:italic;}
+.step .body h3{font-family:'Newsreader',serif;font-weight:600;font-size:22px;line-height:1.1;color:var(--ink);margin-bottom:6px;letter-spacing:-.005em;}
+.step .body h3 em{font-style:italic;font-weight:500;}
+.step .body p{font-size:16.5px;line-height:1.5;color:var(--slate);max-width:56ch;}
+
+/* what this is/isn't — quiet honesty block */
+.framing{padding:46px 0;border-bottom:1px solid var(--line);}
+.framing .tag{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-bottom:14px;}
+.framing .grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+@media(max-width:640px){.framing .grid{grid-template-columns:1fr;}}
+.framing h4{font-family:'Newsreader',serif;font-weight:600;font-size:19px;color:var(--ink);margin-bottom:7px;}
+.framing h4 em{font-style:italic;font-weight:500;}
+.framing p{font-size:16px;line-height:1.5;color:var(--slate);}
+
+/* continue bar */
+.cont{padding:50px 0 64px;}
+.cont a{display:flex;justify-content:space-between;align-items:center;padding:24px 28px;border:1px solid var(--ink);border-radius:6px;background:var(--card);transition:border-color .15s,box-shadow .15s;}
+.cont a:hover{border-color:var(--accent);box-shadow:0 4px 24px rgba(26,28,30,.06);}
+.cont .l{font-family:'Inter',sans-serif;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:5px;display:block;}
+.cont h3{font-family:'Newsreader',serif;font-weight:600;font-size:24px;color:var(--ink);letter-spacing:-.005em;}
+.cont h3 em{font-style:italic;font-weight:500;}
+.cont .arrow{font-family:'Inter',sans-serif;font-weight:500;font-size:24px;color:var(--accent);margin-left:24px;flex:0 0 auto;}
+
+/* footer */
+footer{background:var(--paper);padding:34px 0 56px;border-top:1px solid var(--line);}
+footer .copy{font-family:'Inter',sans-serif;font-size:12.5px;line-height:1.6;color:var(--mute);}
+footer .copy .conf{display:block;margin-bottom:6px;color:var(--charcoal);font-weight:500;}
+footer .copy .ai{display:block;margin-top:4px;color:#9aa3ab;}
+</style>
+</head>
+<body>
+
+</div>
+
+<div class="wrap">
+
+  <div class="note">
+    <div class="from sans">A Note from Alfredo</div>
+    <p>Sandra — you and I worked in adjacent worlds more than twenty years ago. You were at the Youth Development Institute for the Fund for the City of New York, and I was teaching at Mott Haven Village Prep in the South Bronx. My project I worked with you on was a Classroom Without Walls. That is what I have been working on, in one form or another, ever since. This document is the longer version of the conversation I would like to have with you about how to make youth development foundational to community economic development. I would like to bring what I have learned back to New York.</p>
+    <p class="sig">— A.</p>
+  </div>
+
+  <div class="locator">
+    <div class="nyc"><em>For New York City</em></div>
+    <div class="pageno sans">Page I of IV <em>— The Proposition</em></div>
+  </div>
+
+  <div class="hero">
+    <div class="eyebrow">A Civic-Engagement Proposal</div>
+    <h1>A deliberation <em>worthy</em><br>of the decision.</h1>
+    <p class="lede">New York City is making a generational economic decision — to build and own grocery stores in the neighborhoods the market left behind. The decision deserves a deliberation that matches its scale.</p>
+  </div>
+
+  <div class="prop">
+    <div class="tag sans">The Proposition</div>
+    <p>The City has committed roughly <strong>$70 million</strong> to open five publicly owned grocery stores, one borough at a time. The first opens in Hunts Point in 2027. The remaining four will follow over the next several years.</p>
+    <p>That rollout is not just a procurement schedule. It is <strong>five chances to ask a community what kind of economic future it wants</strong> — and to fund a structured, public deliberation that produces a real answer the City can use.</p>
+    <p>This document proposes a <em>civic instrument</em> built for that purpose, paced to the City's own rollout, ready to begin in the Bronx and travel borough by borough. It does not ask the City to fund another youth program. It asks the City to <strong>fund the conversation the policy itself deserves</strong>.</p>
+  </div>
+
+  <div class="preview">
+    <div class="seclabel sans">What Follows</div>
+    <h2>Three pages, <em>one argument.</em></h2>
+    <p class="intro">The proposition above is the headline. The next three pages tell the rest of it — what the City is actually deciding, the instrument we are proposing, and what a 2-to-3-year partnership would look like.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="num">I</div>
+        <div class="body">
+          <h3>The question <em>beneath</em> the question</h3>
+          <p>The City's grocery decision reads, at the surface, as <em>where to put a store</em>. Beneath that sits a deeper question — about the structure of public investment itself, and the choice between subsidizing a gap and helping a community own the structure that closes it. The deliberation we are proposing teaches both honestly.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">II</div>
+        <div class="body">
+          <h3>The civic instrument</h3>
+          <p>What a borough-wide public demonstration of learning actually looks like — schools, CBOs, churches, the Borough President's office, the City. The output is not a class project. It is a synthesized borough position, produced by the community, delivered to the administration.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">III</div>
+        <div class="body">
+          <h3>The 2-to-3 year partnership</h3>
+          <p>Paced to the City's own rollout — one borough-wide convening per store, beginning in the Bronx, traveling borough by borough as the stores open. Not a contract for a curriculum. A partnership to build civic-economic deliberation as infrastructure the City can keep.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="framing">
+    <div class="tag sans">What This Is, And Isn't</div>
+    <div class="grid">
+      <div>
+        <h4>What it <em>is</em></h4>
+        <p>A confidential companion to the one-pager you have already seen. A longer, calmer place to walk through the same proposal — written for you and the people you would share it with inside the administration.</p>
+      </div>
+      <div>
+        <h4>What it <em>isn't</em></h4>
+        <p>A public marketing page. This URL is not in any nav and not indexed. The proposition lives here until the City decides whether to take the conversation further; everything below stays between us until then.</p>
+      </div>
+    </div>
+  </div>
+
+  <a class="cont" href="ED_NYC_Question.html">
+    <div>
+      <span class="l sans">Continue · Page II</span>
+      <h3>The question <em>beneath</em> the question</h3>
+    </div>
+    <span class="arrow">→</span>
+  </a>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="copy sans">
+      © 2026 · Alfredo Mathew III · AM3 LLC · Working World LLC · SPCC.1 · <a href="../index.html" style="color:inherit;border-bottom:1px dotted currentColor;">economicdemocracy.co</a>
+      <span class="ai">AI Synthesis: Claude (Anthropic, claude-opus-4-7) · Economic Democracy Curriculum</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
