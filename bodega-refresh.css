@@ -169,6 +169,7 @@ h1 em, h2 em,
     font-size:.95rem !important;
     border-bottom:1px solid var(--cs-line) !important;
     width:100% !important;
+    text-align:right !important;
   }
   .nav-links a:last-child{ border-bottom:none !important; }
   .nav-links a.active, .nav-links a.nav-cta.active{

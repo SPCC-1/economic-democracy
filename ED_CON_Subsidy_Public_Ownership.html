@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subsidy vs. Public Ownership — Concept Library — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+.concept-tag{display:inline-block;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .6rem;margin-bottom:.9rem;}
+
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+
+.defbox{border:1px solid var(--black);background:var(--white);padding:1.1rem 1.4rem;margin:1.5rem 0;}
+.defbox-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.defbox p{font-size:.92rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.defbox strong{font-weight:600;color:var(--black);}
+
+.types{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.type-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.type-cell:nth-child(even){background:var(--cream);}
+.type-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.type-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.15;}
+.type-text{font-size:.81rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.types{grid-template-columns:1fr;}}
+
+.context{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.context-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.context-name{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.context-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.context-body p{margin-bottom:.5rem;}
+.context-body p:last-child{margin-bottom:0;}
+.context-q{font-size:.82rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.6rem;margin-top:.5rem;line-height:1.5;}
+
+.tbl-wrap{margin:1.25rem 0;overflow-x:auto;}
+.cmp{width:100%;border-collapse:collapse;font-size:.8rem;min-width:520px;}
+.cmp th,.cmp td{border:1px solid var(--rule);padding:.55rem .7rem;vertical-align:top;line-height:1.45;text-align:left;}
+.cmp th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.cmp td:first-child{background:var(--cream);font-weight:600;color:var(--charcoal);font-size:.76rem;}
+.cmp .fill{color:var(--muted);font-style:italic;}
+
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing,.cmp th,.concept-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .context,.task,.types,.defbox,.inset,.tbl-wrap{break-inside:avoid;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="concept-tag">Concept Library · Money &amp; Value</p>
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Concept Primer</p>
+    <h1 class="masthead-title">Subsidy &amp; Public Ownership</h1>
+    <p class="masthead-sub">When a market won't deliver something a society needs, government has two basic moves — pay a private business to deliver it cheaper, or take it out of private hands and deliver it directly. Both answer the same problem with opposite assumptions about who should be running the world.</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">Imagine a neighborhood that doesn't have an affordable grocery store. The private market has looked at the math and walked away — too little revenue, too thin a margin, not worth the trouble. The need is real; the customers are real; the food they need exists three miles away. The market has simply decided this isn't its problem. Now the government has to decide whether <em>it</em> thinks this is its problem, and if so, what to do about it. There are two basic moves, and almost every economic-policy argument is some version of choosing between them.</p>
+
+  <p class="body">The first move is <strong>subsidy</strong>: leave the private market in place and pay to lower the price. Give money to the families so they can afford the food (a consumer subsidy, like SNAP). Or give money to the grocer so they can afford to operate in a neighborhood the market wouldn't otherwise serve (a producer subsidy, like a tax break for opening in a high-need area). The market stays. The price moves. The second move is <strong>public ownership</strong>: take the thing out of the private market entirely and let the government provide it directly. Build the grocery store yourself, hire the staff, set the prices, accept the losses. The market doesn't stay. The government becomes the grocer. Both are real answers. Both have real costs. Knowing the difference is the start of every serious argument about what the state should do.</p>
+
+  <div class="defbox">
+    <p class="defbox-label">The tools, stated plainly</p>
+    <p>A <strong>subsidy</strong> is public money used to make a private transaction cheaper or possible — paid to a consumer to lower what they spend, or to a producer to lower what they charge. The private market keeps doing the work. <strong>Public ownership</strong> is when the government itself owns and operates the thing — the post office, the water system, a city-run hospital. The market is replaced, not supported. Both are public answers to the same question: when the private market won't deliver, what should the public do?</p>
+  </div>
+
+  <!-- SECTION I -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">The Tools — Two Moves, One Problem</span></div>
+
+  <p class="body">Start with the cleanest version of both, because each one is doing something honest in the right circumstances. <strong>Subsidies</strong> work by leaving private firms in place and changing the prices they face. A consumer subsidy — SNAP food benefits, housing vouchers, Medicare paying a doctor's bill — puts money in the buyer's hands so the private seller stays in business and the public goal (people fed, housed, treated) gets met. A producer subsidy — agricultural payments, clean-energy tax credits, a tax exemption for a factory locating in a struggling town — puts money in the seller's hands so they will produce something the market alone wouldn't price into existence. Either way, the seller keeps the profit motive and stays private. The government is paying for an outcome it couldn't get otherwise.</p>
+
+  <p class="body"><strong>Public ownership</strong> works by removing the private firm entirely. The government builds and runs the thing itself, and there's no shareholder to satisfy, no profit margin to extract, no exit if a quarter goes poorly. The post office, the public library, a municipal water system, a state university, a city-owned hospital: each is something a society decided was too important — or too hard to do profitably — to leave to a market. The advantage is that nobody is taking a cut and nobody can walk away. The cost is that the operation now answers to politicians and voters rather than to customers, and the discipline that competition would have provided has to come from somewhere else — accountability, audit, the next election. Both moves are real. Both have failure modes. The choice between them is one of the deepest in economic policy, and pretending one is always the right answer is a sign you haven't really looked.</p>
+
+  <div class="pullquote">
+    <p>Subsidy keeps the private market in place and pays to lower the price. Public ownership removes the private market and delivers the thing directly. Same problem; opposite assumptions about who should be running the world.</p>
+  </div>
+
+  <!-- SECTION II -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">Two Things to Watch in Every Subsidy-or-Ownership Argument</span></div>
+
+  <p class="body">The choice isn't ideological. It's an analysis of where the money actually goes and what kind of accountability you can build. Two questions cut through the noise.</p>
+
+  <div class="types">
+    <div class="type-cell">
+      <p class="type-label">Lever 1</p>
+      <p class="type-name">Who actually captures the money</p>
+      <p class="type-text">A subsidy is supposed to help the buyer, but every subsidy flows through somebody on its way there. SNAP flows through grocers; housing vouchers flow through landlords; tuition aid flows through colleges. The middleman knows the money is coming and prices can rise to absorb it. The original problem persists, only now the public is paying for it. The right question is never "is there a subsidy?" but <em>who's pocketing it by the time it lands</em>, and is the buyer still better off than before?</p>
+    </div>
+    <div class="type-cell">
+      <p class="type-label">Lever 2</p>
+      <p class="type-name">What kind of accountability replaces the market</p>
+      <p class="type-text">A private firm answers to customers (they can walk away) and shareholders (they want returns). Take either away and you need something new in its place. Public ownership swaps customer-and-shareholder accountability for political accountability — voters, councils, audits. That can work, or it can fail catastrophically: a public agency captured by interests, run for the convenience of its employees, or hostage to whichever party is in power. <em>What disciplines this operation when there's no competition to do it?</em> is the question you must answer before you remove the market.</p>
+    </div>
+  </div>
+
+  <div class="inset">
+    <strong>The question to carry everywhere:</strong> when government tries to fix something a market won't deliver, ask both — <em>who's actually capturing the subsidy on its way to the people it's meant to help, and what disciplines a public operation when no competitor can?</em> A subsidy that flows mostly to the seller is a transfer the public is paying for and not a fix. A public agency with no accountability is a captured monopoly wearing a government uniform. The choice isn't subsidy good / ownership bad or the reverse. It's a calculation about leakage and discipline — and you have to do it for every case on its own terms.
+  </div>
+
+  <!-- SECTION III — APPLY -->
+  <div class="sec-header break-before"><span class="sec-roman">III</span><span class="sec-title">The Same Question, Three Contexts</span></div>
+
+  <p class="body">Watch the same question — <em>subsidize the market or replace it?</em> — produce three different answers, depending on what the market is doing and what the public can sustain.</p>
+
+  <div class="context">
+    <p class="context-meta">Context One · Subsidy through the consumer</p>
+    <p class="context-name">SNAP — feeding people through the existing grocery system</p>
+    <div class="context-body">
+      <p>The federal government decides that low-income families should be able to buy groceries even when wages alone won't cover it. Instead of opening government-run food halls, it puts roughly $115 billion a year into the hands of about 42 million people through SNAP (food stamps). Families spend the benefits at private grocers, who get paid in normal dollars and stay private businesses. The advantage: preserves consumer choice, leaves the grocery system in place, scales easily. The cost: a meaningful share of the subsidy is captured by retailers (especially in neighborhoods with little competition, where prices are higher to begin with), and the program does nothing to address why prices were unaffordable in the first place. The market keeps its margin; the public pays the bill.</p>
+      <p class="context-q">When the buyer gets the money, who ends up keeping it — and is the buyer still better off than without it?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Two · Subsidy through the producer</p>
+    <p class="context-name">A tax break to lure a factory or open a store</p>
+    <div class="context-body">
+      <p>A town wants a manufacturing plant, or a state wants more solar panels installed, or a city wants a grocery store in a high-need neighborhood. It offers the producer a deal — years of property-tax abatement, an income-tax credit, free land, a cheap loan. The hope is that the firm will do something the unsubsidized market wouldn't, and the public will benefit from the jobs, the goods, or the access. Sometimes it works (the Inflation Reduction Act's clean-energy credits genuinely accelerated investment that wasn't going to happen otherwise). Sometimes it gets captured: the firm pockets the break and would have built there anyway, or builds there briefly and leaves the moment the subsidy ends. The honest version of the question is always counterfactual — <em>would they have done this without the money</em>, and is what they did worth what we paid?</p>
+      <p class="context-q">Did the subsidy cause the outcome, or just pay for one that was going to happen anyway?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Three · Public ownership</p>
+    <p class="context-name">The thing the market refused to do — done directly</p>
+    <div class="context-body">
+      <p>The post office delivers a letter to every address in the country for the same price, including ones no private carrier would touch. The Tennessee Valley Authority brought electricity to a region the private grid had skipped. A municipal water system charges a regulated rate and serves every household, not just the ones a private water company would find profitable. A city-owned grocery store in a high-need neighborhood is a small version of the same idea: when the market won't deliver something the public considers essential, the public takes it on directly. There's no shareholder pulling profit out, no exit if it loses money some years. But there's also no competitor to keep it sharp, and the accountability has to come from the political process — which works when it works and rots when it doesn't. The post office's universal mandate is its glory and its constant fiscal problem at the same time.</p>
+      <p class="context-q">If no private firm will provide this, and we're going to provide it ourselves, what keeps it honest?</p>
+    </div>
+  </div>
+
+  <!-- ACTIVITY -->
+  <div class="sec-header"><span class="sec-roman">IV</span><span class="sec-title">Activity — Subsidize, Own, or Leave Alone?</span></div>
+
+  <p class="body">For each problem below, the market is either not delivering or delivering poorly. Decide whether you'd subsidize (through consumer or producer), publicly own, or leave the market alone — and name the leakage risk or accountability problem your answer would create.</p>
+
+  <div class="tbl-wrap">
+    <table class="cmp">
+      <thead>
+        <tr><th>The problem</th><th>Subsidize, own, or leave alone?</th><th>What's the leakage or accountability risk?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Affordable groceries in a low-income neighborhood</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Affordable college tuition</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Broadband internet in a rural town</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Childcare for working families</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A pharmacy in a neighborhood the chains left</td><td class="fill">…</td><td class="fill">…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Write</p>
+    <p class="task-title">A subsidy that captured the wrong person</p>
+    <p class="task-body">Find one subsidy program — federal, state, or local — where most observers agree a significant share of the money ended up in the wrong pocket (the landlord instead of the renter, the college instead of the student, the producer instead of the consumer). What happened? Would public ownership have been a better answer, or a worse one — and what would that have cost?</p>
+    <div class="writelines"><div class="writeline"></div><div class="writeline"></div><div class="writeline"></div></div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="sec-header"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list">
+    <li>"Every subsidy flows through somebody on its way to the person it's supposed to help." Why does that matter? Whose interest does it usually serve to ignore the question?</li>
+    <li>A public agency answers to voters instead of customers. Name a case where that swap worked well, and one where it failed. What made the difference?</li>
+    <li>The Hunts Point city-owned grocery store is a hybrid: the city owns the building and sets the rules, but a private operator runs the store. Is that the best of both worlds — or the worst? What does each side give up?</li>
+    <li>If the same money could be spent as a SNAP expansion (consumer subsidy), a bodega tax credit (producer subsidy), or a city-owned store (public ownership), which would do the most good for affordable food in a poor neighborhood — and what's your evidence?</li>
+  </ol>
+
+  <div class="closing">
+    <p>When the market won't deliver, government has two doors —<br>pay the private seller to deliver it cheaper,<br>or take the work in-house and do it itself.<br>Knowing which door fits which problem is the whole craft.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

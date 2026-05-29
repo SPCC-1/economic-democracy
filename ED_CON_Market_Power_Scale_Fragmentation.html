@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Market Power: Scale vs. Fragmentation — Concept Library — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+.concept-tag{display:inline-block;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .6rem;margin-bottom:.9rem;}
+
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+
+.defbox{border:1px solid var(--black);background:var(--white);padding:1.1rem 1.4rem;margin:1.5rem 0;}
+.defbox-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.defbox p{font-size:.92rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.defbox strong{font-weight:600;color:var(--black);}
+
+.types{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.type-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.type-cell:nth-child(even){background:var(--cream);}
+.type-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.type-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.15;}
+.type-text{font-size:.81rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.types{grid-template-columns:1fr;}}
+
+.context{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.context-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.context-name{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.context-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.context-body p{margin-bottom:.5rem;}
+.context-body p:last-child{margin-bottom:0;}
+.context-q{font-size:.82rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.6rem;margin-top:.5rem;line-height:1.5;}
+
+.tbl-wrap{margin:1.25rem 0;overflow-x:auto;}
+.cmp{width:100%;border-collapse:collapse;font-size:.8rem;min-width:520px;}
+.cmp th,.cmp td{border:1px solid var(--rule);padding:.55rem .7rem;vertical-align:top;line-height:1.45;text-align:left;}
+.cmp th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.cmp td:first-child{background:var(--cream);font-weight:600;color:var(--charcoal);font-size:.76rem;}
+.cmp .fill{color:var(--muted);font-style:italic;}
+
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing,.cmp th,.concept-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .context,.task,.types,.defbox,.inset,.tbl-wrap{break-inside:avoid;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="concept-tag">Concept Library · Power</p>
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Concept Primer</p>
+    <h1 class="masthead-title">Market Power: Scale vs. Fragmentation</h1>
+    <p class="masthead-sub">A national chain and a corner store can sell the same product on the same street and still be in two different economies. One sets the terms it sells on; the other accepts the terms it's given. Knowing why is the start of understanding how power actually works in a market.</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">Stand on a corner in a working-class neighborhood and look at the two food stores within walking distance — a national supermarket and an independent bodega. They sell some of the same goods. They serve some of the same customers. They appear, on paper, to be competitors in the same market. They are not. They are two structurally different kinds of businesses, playing two different games, and treating them as equals — as if the bodega is just a smaller version of the chain — misses the most important thing about how modern markets actually work.</p>
+
+  <p class="body">The chain buys eggs at a price the bodega will never be offered. It borrows money at a rate the bodega will never qualify for. It spreads the cost of a logistics system across four thousand stores; the bodega absorbs the same overhead across one. It can run a single store at a loss for years to drive out competition; the bodega can't survive one bad winter. This is a different form of <strong>market power</strong> than what happens when a single company has no rivals. It's the power that comes from being <em>enormous in a market full of small players</em> — the kind that's invisible until you look at the cost sheet, and decisive once you do. The bodega isn't worse-run. It's playing a structurally different game, and most of the rules are stacked against it before the doors open.</p>
+
+  <div class="defbox">
+    <p class="defbox-label">The tool, stated plainly</p>
+    <p>Markets often contain players of vastly unequal size — a few <strong>scaled</strong> firms and many <strong>fragmented</strong> small ones. Scale produces a form of market power that doesn't require being the only seller: lower costs per unit, cheaper capital, more leverage with suppliers and platforms, and the ability to absorb losses that smaller players can't survive. The fragmented competitors, by definition, can't coordinate to push back. The two are technically in the same market and structurally in two different economies.</p>
+  </div>
+
+  <!-- SECTION I -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">The Tool — What Scale Actually Buys</span></div>
+
+  <p class="body">Start with the mechanics, because they're not mysterious. <strong>Economies of scale</strong> means that a business doing more of something almost always pays less per unit to do it. A chain buying ten million pounds of chicken from a supplier negotiates a price the supplier would laugh at if a bodega asked for it. A national company building one logistics system — trucks, warehouses, software — spreads the cost across thousands of stores; the same system for one store would be impossibly expensive. A public company can borrow at investment-grade interest rates because the bond market knows it; a small grocer borrows on a personal credit card at 24%. Insurance, advertising, payroll software, accounting, legal counsel: every single fixed cost gets cheaper per unit as you grow, and the gap between what a giant pays and what a small player pays is not small. It compounds across every line item, every day, forever.</p>
+
+  <p class="body">And the cost asymmetry isn't even the whole story. A scaled firm can <em>absorb losses</em> that would kill a small one — running a store below cost in a contested neighborhood until the competition gives up, then raising prices once the field is clear. A scaled firm has lawyers, lobbyists, and government-relations staff; a fragmented sector has none of those, and can't agree on what it would want even if it had. A scaled firm dictates terms to landlords, payment processors, advertising platforms, and software vendors — because it can credibly take its business elsewhere. The bodega cannot. None of this requires being a monopoly in the textbook sense. It only requires being big enough that the rules of the game bend in your direction without anyone explicitly bending them, and small enough on the other side that no one can push back. That asymmetry is what we mean by scale vs. fragmentation, and it shapes more of modern economic life than most arguments about competition ever notice.</p>
+
+  <div class="pullquote">
+    <p>Two players technically in the same market can be in two different economies. The bodega and the chain both sell food. Only one of them sets the terms it's selling on.</p>
+  </div>
+
+  <!-- SECTION II -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">Two Asymmetries That Decide the Outcome</span></div>
+
+  <p class="body">The gap between scaled and fragmented players opens along two different axes. One is about cost; the other is about politics. Both are real, both are decisive, and most arguments about "competition" treat them as if neither exists.</p>
+
+  <div class="types">
+    <div class="type-cell">
+      <p class="type-label">Asymmetry 1</p>
+      <p class="type-name">The cost gap inside the market</p>
+      <p class="type-text">Bulk purchasing, fixed-cost spreading, cheaper capital, and the ability to run at a loss — every one of these is a structural advantage the small player can't match no matter how hard they work. A bodega owner who runs a tighter operation than a chain still pays more for everything they buy, every day, on every shelf. "Just compete harder" is bad economics: it asks the smaller firm to overcome a gap that comes from the math of being small, not from anything they're doing wrong.</p>
+    </div>
+    <div class="type-cell">
+      <p class="type-label">Asymmetry 2</p>
+      <p class="type-name">The power gap outside the market</p>
+      <p class="type-text">Scaled firms shape the rules of the field they sell on — through lobbying, regulatory engagement, contract leverage with suppliers and platforms, and the ability to threaten exit. Fragmented sellers cannot coordinate; even imagining them organizing tens of thousands of independent owners into a unified position is implausible. So the rules that govern the market — zoning, licensing, fees, supplier terms, platform algorithms — get written without their voice in the room. The asymmetry is structural in the same way the cost gap is.</p>
+    </div>
+  </div>
+
+  <div class="inset">
+    <strong>The question to carry everywhere:</strong> when you see a "competitive market" with players of wildly different sizes, ask both — <em>what's the cost gap inside the market, and what's the power gap outside it?</em> A market in which one side buys cheaper, borrows cheaper, absorbs losses, and writes the rules isn't a contest between competitors — it's a contest between someone who set the terms and someone who is trying to survive them. That doesn't mean the bigger firm did anything wrong. It means "may the best business win" is describing a race that already accounts for who got to design the track.
+  </div>
+
+  <!-- SECTION III — APPLY -->
+  <div class="sec-header break-before"><span class="sec-roman">III</span><span class="sec-title">The Same Asymmetry, Three Contexts</span></div>
+
+  <p class="body">Watch the same scaled-vs.-fragmented dynamic shape three different markets — retail, labor, and supply — and notice how the small player's position changes very little even when the product does.</p>
+
+  <div class="context">
+    <p class="context-meta">Context One · The retail case</p>
+    <p class="context-name">The bodega and the national supermarket chain</p>
+    <div class="context-body">
+      <p>A bodega and a national supermarket sit half a mile apart and sell some of the same items. The supermarket pays roughly 15–25% less for the same goods at wholesale, because its purchase orders are large enough to extract better terms from the supplier. It spreads its logistics, technology, and advertising costs across thousands of stores, while the bodega absorbs every dollar of overhead alone. It borrows money cheaply; the bodega's owner finances inventory on personal credit. The bodega isn't poorly run — by retail standards, many independents are extraordinarily efficient. They are simply structurally outmatched on every cost line, every day. Customers see the price difference and conclude that the chain "competes better." What they're seeing is the cost gap of scale, doing its quiet work.</p>
+      <p class="context-q">Could the bodega close the cost gap by working harder, or is the gap built into the math of being small?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Two · The labor case</p>
+    <p class="context-name">The platform and a million drivers</p>
+    <div class="context-body">
+      <p>A rideshare or delivery platform sets the price of every ride and the share each driver receives. Drivers are technically independent contractors who "negotiate" with the platform on each fare. In reality there is no negotiation: one party sets the terms; the other accepts them or doesn't drive. The platform has scale, code, data, and a single decision-maker. The drivers number in the hundreds of thousands and have no mechanism to act in concert. The market form is "many sellers freely contracting with a buyer," but the structure is one scaled entity facing a fragmented mass that cannot coordinate. The asymmetry isn't an accident of the technology; it is, in significant part, the business model.</p>
+      <p class="context-q">If "competition" requires both sides to be able to set terms, is this competition — or something else wearing competition's clothes?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Three · The supplier case</p>
+    <p class="context-name">The cattle rancher and the four meatpackers</p>
+    <div class="context-body">
+      <p>An American cattle rancher raises beef and sells it "to the market." But the market for cattle, in practice, is four large meatpacking companies that purchase roughly 85% of the country's beef. The rancher has dozens of buyers in theory and four real ones in practice, and those four know it. Prices ranchers receive have, over decades, dropped relative to the prices consumers pay — the spread captured by the scaled middle, which is exactly where you'd predict the money would land. This is the third form of the same asymmetry: not many small sellers competing for many buyers, but a sea of fragmented producers facing a handful of scaled purchasers. The textbook "market" exists; the bargaining power doesn't.</p>
+      <p class="context-q">When "the market" is a few large buyers facing thousands of small sellers, who is actually setting the price?</p>
+    </div>
+  </div>
+
+  <!-- ACTIVITY -->
+  <div class="sec-header"><span class="sec-roman">IV</span><span class="sec-title">Activity — Find the Asymmetry</span></div>
+
+  <p class="body">For each market below, identify who is scaled and who is fragmented. Then name the cost gap (inside the market) and the power gap (outside it) that result. There are no exact answers — the discipline is making the asymmetry visible.</p>
+
+  <div class="tbl-wrap">
+    <table class="cmp">
+      <thead>
+        <tr><th>The market</th><th>Who is scaled? Who is fragmented?</th><th>What asymmetries does it produce?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Grocery in a low-income urban neighborhood</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Restaurants and food-delivery platforms</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Independent farmers and the buyers they sell to</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Local newspapers and digital advertising platforms</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Independent musicians and streaming services</td><td class="fill">…</td><td class="fill">…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Write</p>
+    <p class="task-title">A "competition" that wasn't one</p>
+    <p class="task-body">Find one market you know — local, online, or industry-wide — where a small player went out of business and the public story was that they "couldn't compete." Look closely. What was the actual cost gap? What was the power gap? Was the small player out-run, or was the race itself structurally tilted?</p>
+    <div class="writelines"><div class="writeline"></div><div class="writeline"></div><div class="writeline"></div></div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="sec-header"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list">
+    <li>"The bodega isn't worse-run; it's playing a structurally different game." If that's true, what does "may the best business win" actually mean in a market with scaled and fragmented players?</li>
+    <li>Scale is often genuinely earned — the chain became big by serving customers well, year after year. Does that legitimate origin make the present-day asymmetry less of a problem? Why or why not?</li>
+    <li>Fragmented sellers, by definition, can't coordinate to push back on the rules of the field. Is that something policy should help fix (through co-ops, collective bargaining, or trade associations), or is the fragmentation itself a feature worth preserving?</li>
+    <li>If a city wants to support fragmented small businesses against scaled competitors, what tools does it actually have? Subsidies? Public ownership? Anti-trust enforcement? A change in zoning? Which would do the most good, and what would each cost?</li>
+  </ol>
+
+  <div class="closing">
+    <p>Two players in the same market can be in two different economies.<br>One sets the terms it sells on; the other accepts the terms it's given.<br>The race is real — but the track was built by the bigger runner,<br>and that is the quiet shape that market power actually takes.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

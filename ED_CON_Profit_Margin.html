@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profit Margin — Concept Library — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+.concept-tag{display:inline-block;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .6rem;margin-bottom:.9rem;}
+
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+
+.defbox{border:1px solid var(--black);background:var(--white);padding:1.1rem 1.4rem;margin:1.5rem 0;}
+.defbox-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.defbox p{font-size:.92rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.defbox strong{font-weight:600;color:var(--black);}
+
+.types{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.type-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.type-cell:nth-child(even){background:var(--cream);}
+.type-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.type-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.15;}
+.type-text{font-size:.81rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.types{grid-template-columns:1fr;}}
+
+.context{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.context-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.context-name{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.context-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.context-body p{margin-bottom:.5rem;}
+.context-body p:last-child{margin-bottom:0;}
+.context-q{font-size:.82rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.6rem;margin-top:.5rem;line-height:1.5;}
+
+.tbl-wrap{margin:1.25rem 0;overflow-x:auto;}
+.cmp{width:100%;border-collapse:collapse;font-size:.8rem;min-width:520px;}
+.cmp th,.cmp td{border:1px solid var(--rule);padding:.55rem .7rem;vertical-align:top;line-height:1.45;text-align:left;}
+.cmp th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.cmp td:first-child{background:var(--cream);font-weight:600;color:var(--charcoal);font-size:.76rem;}
+.cmp .fill{color:var(--muted);font-style:italic;}
+
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing,.cmp th,.concept-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .context,.task,.types,.defbox,.inset,.tbl-wrap{break-inside:avoid;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="concept-tag">Concept Library · Engines</p>
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Concept Primer</p>
+    <h1 class="masthead-title">Profit Margin</h1>
+    <p class="masthead-sub">Revenue is what comes in. Profit margin is what stays. The most common mistake in economic conversation is confusing the two — and almost every argument about who's getting rich, and who's barely surviving, turns on the difference.</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">A business sells a hundred thousand dollars of something this year. Is it rich? You cannot answer that question, and the fact that most people think they can is why this primer exists. The hundred thousand is <strong>revenue</strong> — money that came <em>through</em> the business on its way somewhere else. Most of it is already promised: to the supplier who delivered the goods, the worker who handled them, the landlord who owns the space, the utility company, the insurer, the tax collector. What's left after every one of those bills is paid is <strong>profit</strong>. And the share of each dollar of revenue that survives to become profit is the <strong>profit margin</strong>.</p>
+
+  <p class="body">A grocery store and a software company can pull in the same revenue and live in completely different universes. The grocer might keep one or two cents of every dollar — a thin <strong>margin</strong> — because almost everything that comes in goes right back out to pay for the food, the workers, the rent, and the electricity that keeps the coolers cold. The software company might keep thirty cents of every dollar, because once the program is written, selling one more copy costs almost nothing. Same revenue, wildly different businesses. Revenue tells you how much water flowed through the pipe. Margin tells you how much of it filled the bucket.</p>
+
+  <div class="defbox">
+    <p class="defbox-label">The tool, stated plainly</p>
+    <p><strong>Profit margin</strong> is the share of each dollar of revenue that remains as profit after costs are paid, usually expressed as a percentage. If a business takes in $100 and has $95 in costs, its profit is $5 and its margin is 5%. <strong>Revenue</strong> is the total money coming in. <strong>Profit</strong> is what's left. <strong>Margin</strong> is the ratio between them — and it is what tells you whether the business actually works.</p>
+  </div>
+
+  <!-- SECTION I -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">The Tool — Why the Percentage Is the Whole Story</span></div>
+
+  <p class="body">Start with the arithmetic, because it's simpler than people make it. A business takes in revenue. From that revenue it must pay costs — the goods it sold, the people who sold them, the building they sold them in, the systems that tracked the sale, the taxes on what it earned. Whatever is left over after every cost is paid is profit. The <em>margin</em> is just that profit divided by the revenue — the share of each dollar that the business actually got to keep. A 20% margin means 20 cents of every dollar stayed. A 2% margin means 2 cents stayed and 98 cents went straight back out the door.</p>
+
+  <p class="body">This is why the percentage matters more than the dollar amount, and why "they made a million dollars" tells you almost nothing on its own. A business that earned one million dollars in profit on one hundred million dollars of revenue has a 1% margin — and is one bad quarter, one bad supplier, one bad winter from losing money. A business that earned one million dollars in profit on five million dollars of revenue has a 20% margin and a real cushion. Same profit. Opposite businesses. The margin is the difference between barely surviving and genuinely thriving, and the dollar figure alone is built to hide which one you're looking at.</p>
+
+  <div class="pullquote">
+    <p>Revenue is what passes through your hands. Profit margin is what stays. Almost every argument about who's getting rich, and who's barely surviving, turns on the difference.</p>
+  </div>
+
+  <!-- SECTION II -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">Two Things That Make Margin a Lever</span></div>
+
+  <p class="body">The math is neutral. But two features of profit margin make it something people can use to steer your judgment — which is exactly when you need to watch it closely.</p>
+
+  <div class="types">
+    <div class="type-cell">
+      <p class="type-label">Lever 1</p>
+      <p class="type-name">The volume illusion</p>
+      <p class="type-text">A big revenue number sounds like a lot of money — and a politician, a competitor, or a critic can wave it around as proof that a business is rich. But revenue without margin is just turnover. A bodega doing $1.2 million a year might keep $15,000 of it. A neighbor who hears "$1.2 million" thinks the owner is wealthy. The neighbor is reading the wrong number. Whoever cites the revenue figure without the margin is almost always trying to make a thin business look fat.</p>
+    </div>
+    <div class="type-cell">
+      <p class="type-label">Lever 2</p>
+      <p class="type-name">Which costs you count</p>
+      <p class="type-text">There isn't one margin — there are several, depending on which costs you subtract. <em>Gross margin</em> is what's left after the cost of the goods sold. <em>Operating margin</em> subtracts the cost of running the business — rent, wages, utilities. <em>Net margin</em> is what's left after absolutely everything, including taxes and interest. The same company can claim a healthy 40% gross margin and a slim 3% net margin — both true. Whoever picks which margin to show you is choosing your conclusion for you.</p>
+    </div>
+  </div>
+
+  <div class="inset">
+    <strong>The question to carry everywhere:</strong> when someone tells you a business is making "a lot" or "almost nothing," ask the same thing — <em>what's the revenue, what's the margin, and after which costs?</em> A million dollars of revenue at a 1% margin is a different reality from a million dollars of revenue at a 30% margin, and so is a 40% gross margin from a 3% net margin on the same firm. The arithmetic is honest. People pick which slice of it to show you, and that choice is almost never neutral.
+  </div>
+
+  <!-- SECTION III — APPLY -->
+  <div class="sec-header break-before"><span class="sec-roman">III</span><span class="sec-title">The Same Tool, Three Contexts</span></div>
+
+  <p class="body">Watch the gap between revenue and margin do its real work — at the corner store, at the giant tech company, and at the firm that's losing money on purpose.</p>
+
+  <div class="context">
+    <p class="context-meta">Context One · A thin-margin business</p>
+    <p class="context-name">The bodega doing a million dollars a year</p>
+    <div class="context-body">
+      <p>A neighborhood bodega rings up $1.2 million in sales. That sounds like a lot of money until you do the subtraction. About $900,000 goes to buy the goods on the shelves from suppliers — the soda, the snacks, the milk, the deli meat. Another $180,000 goes to wages, $60,000 to rent, $30,000 to electricity, refrigeration, and supplies. Add taxes and small expenses, and the owner is left with $15,000 to $25,000 — a net margin of about 1–2%. The neighbor who hears "a million in sales" pictures wealth. The owner pictures a single broken cooler that could wipe out the year. This is what economists mean when they call independent grocery a <em>thin-margin</em> business: it isn't poor by accident, it's poor by structure.</p>
+      <p class="context-q">Is "a lot of revenue" the same as "a lot of money kept"? What does the margin tell you that the revenue won't?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Two · A fat-margin business</p>
+    <p class="context-name">The software company selling the same product a million times</p>
+    <div class="context-body">
+      <p>A software firm sells a $50 app to two million users — $100 million in revenue. The cost to write the software was real, but it was a one-time cost. Each additional copy costs the company almost nothing to deliver — a server bill, a payment processor's cut, a customer-support ticket here and there. After everything, the firm keeps thirty cents of every revenue dollar: a 30% net margin, $30 million in profit. This is the engine that makes software so valuable and so politically charged: once you've built the thing, scale costs you almost nothing, and the margin can stay high for years. Same dollar figure as a giant grocery chain, completely different economics underneath.</p>
+      <p class="context-q">Why does selling the same product more times raise the margin instead of just the revenue?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Context Three · A trap</p>
+    <p class="context-name">"Billions in revenue and still losing money"</p>
+    <div class="context-body">
+      <p>A delivery startup raises hundreds of millions from investors, undercuts every competitor on price, and grows its revenue tenfold in three years — while losing money every single quarter. Sometimes this is a real strategy: lose money now to capture the market, then raise prices once the competition is gone. Sometimes it's a business that simply doesn't work, kept alive by investors who haven't admitted it yet. The negative margin is the same in both cases; only the future tells you which it was. The lesson is the one most people miss: <em>fast-growing revenue is not the same as a working business</em>, and a company can look enormous and unstoppable right up until the investors stop paying its bills.</p>
+      <p class="context-q">Is this a business that doesn't work yet, or a business that doesn't work at all? What evidence would tell you which?</p>
+    </div>
+  </div>
+
+  <!-- ACTIVITY -->
+  <div class="sec-header"><span class="sec-roman">IV</span><span class="sec-title">Activity — Find the Margin</span></div>
+
+  <p class="body">For each business below, the revenue is given. Your job is to estimate the profit (in dollars) and the net margin (as a percentage) — then say what the margin reveals that the revenue hides. There are no exact answers; the discipline is making the gap visible.</p>
+
+  <div class="tbl-wrap">
+    <table class="cmp">
+      <thead>
+        <tr><th>The business</th><th>Estimated profit &amp; net margin</th><th>What does the margin reveal?</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>A bodega: $1,200,000 in sales</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A national supermarket chain: $50 billion in sales</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A software company: $100 million in sales</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A restaurant: $800,000 in sales</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>A delivery startup: $2 billion in sales, $400 million in losses</td><td class="fill">…</td><td class="fill">…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Write</p>
+    <p class="task-title">A number used to mislead</p>
+    <p class="task-body">Find one place — in the news, in an argument, in a politician's speech — where a revenue figure was used to make a business look richer or poorer than it actually was. What was the margin, if you can find it? What did citing only the revenue let the speaker get away with?</p>
+    <div class="writelines"><div class="writeline"></div><div class="writeline"></div><div class="writeline"></div></div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="sec-header"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list">
+    <li>"Revenue is what passes through your hands; margin is what stays." Why do people so often confuse the two? Whose interest does the confusion usually serve?</li>
+    <li>A bodega's net margin is around 1–2%; a software company's might be 30%. Both might be called "successful." What does each kind of success demand of its owner, and what does each kind of business demand of a society?</li>
+    <li>A company can grow its revenue rapidly while losing money every year. When is that a brilliant strategy, and when is it a business that doesn't work? How would you tell the difference from the outside?</li>
+    <li>If a small grocer has a 2% margin and a subsidized competitor opens nearby and undercuts its prices by 5%, what happens — and what would it mean to argue that the small grocer "just isn't competitive enough"?</li>
+  </ol>
+
+  <div class="closing">
+    <p>Revenue is the water that flows through the pipe.<br>Margin is the share that fills the bucket.<br>The dollar amount tells you the size of the flow —<br>only the percentage tells you whether the business actually works.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Where Power Sits — New York City — Civic Primer — Economic Democracy Curriculum</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0f0f0f;--ink:#1a1a1a;--charcoal:#2d2d2d;
+  --mid:#5a5a5a;--muted:#8a8a8a;--rule:#d4d4d4;
+  --paper:#faf9f7;--cream:#f2f0ec;--white:#ffffff;
+}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:860px;margin:0 auto;padding:0 2rem 4rem;}
+
+.masthead{border-bottom:3px solid var(--black);padding:1.5rem 0 1.25rem;margin-bottom:2.5rem;}
+.masthead-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.masthead-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:.4rem;}
+.masthead-sub{font-size:.88rem;font-style:italic;color:var(--mid);line-height:1.6;margin-bottom:.5rem;max-width:600px;}
+.concept-tag{display:inline-block;background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.25rem .6rem;margin-bottom:.9rem;}
+
+.body-intro{font-size:1rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.25rem;max-width:680px;}
+.body-intro:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:3.6rem;font-weight:900;float:left;line-height:.82;margin:.05em .1em 0 0;color:var(--black);}
+.body{font-size:.92rem;font-weight:300;line-height:1.85;color:var(--ink);margin-bottom:1.15rem;max-width:680px;}
+.body strong{font-weight:600;color:var(--charcoal);}
+
+.pullquote{border-top:2px solid var(--black);border-bottom:2px solid var(--black);padding:1.25rem 0;margin:2rem 0;max-width:600px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--black);line-height:1.55;}
+
+.sec-header{background:var(--black);color:var(--white);padding:.75rem 1.25rem;margin:2.5rem 0 1.25rem;display:flex;align-items:baseline;gap:1rem;}
+.sec-roman{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:rgba(255,255,255,.35);flex-shrink:0;}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);}
+
+.defbox{border:1px solid var(--black);background:var(--white);padding:1.1rem 1.4rem;margin:1.5rem 0;}
+.defbox-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.defbox p{font-size:.92rem;font-weight:300;color:var(--ink);line-height:1.75;}
+.defbox strong{font-weight:600;color:var(--black);}
+
+.types{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black);margin:1.5rem 0;}
+.type-cell{background:var(--paper);padding:1.1rem 1.25rem;}
+.type-cell:nth-child(even){background:var(--cream);}
+.type-label{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.type-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--black);margin-bottom:.35rem;line-height:1.15;}
+.type-text{font-size:.81rem;font-weight:300;color:var(--ink);line-height:1.6;}
+@media(max-width:600px){.types{grid-template-columns:1fr;}}
+
+.context{border-left:3px solid var(--black);padding:.9rem 1.25rem;margin:1.4rem 0;background:var(--cream);}
+.context-meta{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
+.context-name{font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:700;color:var(--black);margin-bottom:.4rem;}
+.context-body{font-size:.85rem;font-weight:300;color:var(--ink);line-height:1.7;}
+.context-body p{margin-bottom:.5rem;}
+.context-body p:last-child{margin-bottom:0;}
+.context-q{font-size:.82rem;font-style:italic;color:var(--charcoal);border-left:2px solid var(--black);padding-left:.6rem;margin-top:.5rem;line-height:1.5;}
+
+.tbl-wrap{margin:1.25rem 0;overflow-x:auto;}
+.cmp{width:100%;border-collapse:collapse;font-size:.8rem;min-width:520px;}
+.cmp th,.cmp td{border:1px solid var(--rule);padding:.55rem .7rem;vertical-align:top;line-height:1.45;text-align:left;}
+.cmp th{background:var(--black);color:var(--white);font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;}
+.cmp td:first-child{background:var(--cream);font-weight:600;color:var(--charcoal);font-size:.76rem;}
+.cmp .fill{color:var(--muted);font-style:italic;}
+
+.inset{border-left:3px solid var(--black);background:var(--cream);padding:1rem 1.25rem;margin:1.5rem 0;font-style:italic;font-size:.9rem;color:var(--charcoal);line-height:1.7;}
+.inset strong{font-style:normal;font-weight:600;color:var(--black);}
+
+.task{background:var(--cream);border:1px solid var(--rule);padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.task-label{font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.task-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--black);margin-bottom:.5rem;}
+.task-body{font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.7;margin-bottom:.6rem;}
+.writelines{margin:1rem 0;}
+.writeline{border-bottom:1px solid var(--rule);height:1.6rem;}
+
+.dq-list{list-style:none;margin:1rem 0;counter-reset:dq;}
+.dq-list li{counter-increment:dq;font-size:.88rem;font-weight:300;color:var(--ink);padding:.6rem 0 .6rem 2rem;position:relative;line-height:1.6;border-bottom:1px solid var(--rule);}
+.dq-list li::before{content:counter(dq);position:absolute;left:0;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--muted);font-weight:500;top:.65rem;}
+
+.closing{background:var(--black);color:var(--white);padding:1.25rem 1.5rem;margin:2.5rem 0 0;text-align:center;}
+.closing p{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:var(--white);line-height:1.75;}
+
+.doc-footer{border-top:2px solid var(--black);padding:1rem 0 .5rem;margin-top:2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.footer-left{font-family:'Source Serif 4',serif;font-size:.75rem;color:var(--charcoal);font-weight:600;}
+.footer-right{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.05em;}
+
+/* Actor map for Section I */
+.actor-map{margin:1.5rem 0;border:1px solid var(--rule);background:var(--white);}
+.actor-row{display:grid;grid-template-columns:170px 1fr;gap:1.25rem;padding:.85rem 1.1rem;border-bottom:1px solid var(--rule);}
+.actor-row:last-child{border-bottom:none;}
+.actor-row:nth-child(even){background:var(--cream);}
+.actor-name{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--black);line-height:1.25;}
+.actor-name span{display:block;font-family:'IBM Plex Mono',monospace;font-size:.58rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:.2rem;}
+.actor-power{font-size:.83rem;font-weight:300;color:var(--ink);line-height:1.65;}
+.actor-power strong{font-weight:600;color:var(--charcoal);}
+@media(max-width:600px){.actor-row{grid-template-columns:1fr;gap:.4rem;}}
+
+@media(max-width:600px){.page{padding:0 1rem 3rem;}}
+@media print{
+  body{background:white;font-size:10pt;}
+  .page{max-width:100%;padding:0;}
+  .sec-header,.closing,.cmp th,.concept-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .context,.task,.types,.defbox,.inset,.tbl-wrap{break-inside:avoid;}
+  .actor-row{break-inside:avoid;}
+  .break-before{break-before:page;}
+}
+.break-before{break-before:page;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <p class="concept-tag">Civic Architecture · New York City</p>
+    <p class="masthead-eyebrow">Economic Democracy Curriculum &nbsp;·&nbsp; Civic Primer</p>
+    <h1 class="masthead-title">Where Power Sits — New York City</h1>
+    <p class="masthead-sub">Every economic decision a city makes — a store, a tax break, a contract, a budget line — runs through a specific set of offices in a specific order. The argument over who should decide what is the deepest argument in any democracy. To take a position on a city decision, you first have to know who actually decides.</p>
+  </div>
+
+  <!-- OPENING -->
+  <p class="body-intro">When New York City announces that it will build a publicly owned grocery store in the South Bronx, the most natural question — <em>who decided that?</em> — has no single answer. It wasn't the Mayor alone. It wasn't the City Council alone. It wasn't the agency executing the plan, or the Borough President where the store will sit, or the local council member whose district contains it. Every one of them played a part, and missing any one of them would have stopped or reshaped the project. Understanding which actors hold which power, and how they fit together, is the first prerequisite for taking any position on a city decision that's worth defending.</p>
+
+  <p class="body">Most civic education teaches the three branches of the federal government and stops there. But almost nothing that touches your daily life is decided in Washington. The school you attend, the rent stabilization on your apartment, the bus that gets you to work, the food vendors on your corner, the police precinct's priorities, the grocery store the city decides to build — all of it is decided closer to home, by an architecture of offices most New Yorkers can't quite name. This primer is the map. It names the actors, what each one actually controls, and how they have to work together (or against each other) for anything to happen at all.</p>
+
+  <div class="defbox">
+    <p class="defbox-label">The tool, stated plainly</p>
+    <p>New York City government runs on a <strong>strong-mayor</strong> structure: the Mayor leads the executive branch and proposes the budget; the <strong>City Council</strong> writes laws, approves the budget, and oversees the agencies; five <strong>Borough Presidents</strong> advocate for their boroughs and shape land-use decisions; <strong>Community Boards</strong> give first review to local zoning and budget priorities; and dozens of <strong>agencies</strong> actually do the work. A city decision is almost always the product of several of these acting together — and almost never the act of any one of them alone.</p>
+  </div>
+
+  <!-- SECTION I -->
+  <div class="sec-header"><span class="sec-roman">I</span><span class="sec-title">The Actors — Who Holds What Power</span></div>
+
+  <p class="body">Start with the map. New York's government is bigger than most countries' — about 300,000 employees and a budget over $115 billion. Below are the actors that matter most for almost any economic decision, with what each one actually controls. Memorize this; almost every later disagreement turns on who has authority to do what.</p>
+
+  <div class="actor-map">
+    <div class="actor-row">
+      <p class="actor-name">The Mayor<span>Currently: Zohran Mamdani</span></p>
+      <p class="actor-power">Heads the <strong>executive branch</strong>. Proposes the city's annual budget, runs the agencies, appoints their commissioners, sets policy direction, and negotiates with the Council to get most things passed. Has veto power, but the Council can override with a two-thirds vote. Wins or loses elections on what gets built and what costs what.</p>
+    </div>
+    <div class="actor-row">
+      <p class="actor-name">The City Council<span>51 members · Speaker Julie Menin</span></p>
+      <p class="actor-power">The <strong>legislative branch</strong>. Writes local laws, approves (and modifies) the Mayor's budget, holds hearings, oversees agencies, and confirms major appointments. Each member represents a district of roughly 165,000 people — your council member is the elected official closest to where you actually live. The Speaker controls which bills come to a vote and is the second-most-powerful elected official in the city.</p>
+    </div>
+    <div class="actor-row">
+      <p class="actor-name">Borough Presidents<span>Five — one per borough · Bronx: Vanessa Gibson</span></p>
+      <p class="actor-power">A hybrid role — part advocate, part administrator. Each Borough President has a budget for capital projects in their borough, formally reviews land-use proposals (zoning, ULURP), appoints members to Community Boards, and is the chief public spokesperson for their borough's interests at City Hall. Less power than the office once had, but a real platform and a real role in shaping what gets built where.</p>
+    </div>
+    <div class="actor-row">
+      <p class="actor-name">Community Boards<span>59 boards · ~50 volunteer members each</span></p>
+      <p class="actor-power">The most local layer of city government. Each board covers roughly 100,000–250,000 residents and gives the first public review of zoning changes, liquor licenses, capital budget priorities, and neighborhood plans. Their votes are <em>advisory</em>, not binding — but they signal the politics of a neighborhood and slow or reshape what passes through. Hunts Point is part of Bronx Community Board 2.</p>
+    </div>
+    <div class="actor-row">
+      <p class="actor-name">The Agencies<span>NYCEDC, DCWP, DOHMH, HPD, DOT, NYCHA, and dozens more</span></p>
+      <p class="actor-power">Where the work actually happens. Agencies like the <strong>Economic Development Corporation</strong> (EDC) negotiate deals and execute capital projects; <strong>Consumer &amp; Worker Protection</strong> (DCWP) enforces price and labor rules; <strong>Health</strong> (DOHMH) inspects food establishments. Agencies report to the Mayor but operate under laws written by the Council and rules they publish themselves. Most "the city decided X" sentences are really "an agency commissioner, with the Mayor's authority, did X."</p>
+    </div>
+    <div class="actor-row">
+      <p class="actor-name">The Comptroller<span>Currently: Mark Levine</span></p>
+      <p class="actor-power">The city's chief financial officer — separately elected, independent of the Mayor. <strong>Audits</strong> agencies, manages the city's pension funds, and registers every contract over $100,000. The Comptroller's audits are how the public learns what an agency actually did versus what it claimed it did. The office is a check on the executive that the Council itself cannot fully provide.</p>
+    </div>
+    <div class="actor-row">
+      <p class="actor-name">The Public Advocate<span>Currently: Jumaane Williams</span></p>
+      <p class="actor-power">An ombudsman with real symbolic power and limited formal power. Investigates complaints against the city, introduces legislation, and is first in line to succeed the Mayor if the office goes vacant. The role amplifies issues the rest of city government would rather not discuss — sometimes effectively, sometimes not.</p>
+    </div>
+  </div>
+
+  <div class="pullquote">
+    <p>Almost nothing that touches your daily life is decided in Washington. It's decided by an architecture of offices most New Yorkers can't quite name. To take a position on a city decision, you first have to know who actually decides.</p>
+  </div>
+
+  <!-- SECTION II -->
+  <div class="sec-header"><span class="sec-roman">II</span><span class="sec-title">Two Things That Decide Whether Anything Actually Happens</span></div>
+
+  <p class="body">Knowing the actors isn't enough — you have to know what makes them act <em>together</em>. Two structural features explain why some plans move and others die.</p>
+
+  <div class="types">
+    <div class="type-cell">
+      <p class="type-label">Lever 1</p>
+      <p class="type-name">The budget is the real legislation</p>
+      <p class="type-text">Most "policy" in New York City is enacted through the budget, not through bills. The Mayor proposes the budget; the Council negotiates and approves it; the Comptroller audits how the money is actually spent. If a program isn't in the budget, it doesn't exist — no matter how many press releases announce it. The annual budget cycle (Preliminary in January, Executive in April, adoption by June 30) is the calendar on which the city actually changes. <em>Follow the money, and you'll find where the power went.</em></p>
+    </div>
+    <div class="type-cell">
+      <p class="type-label">Lever 2</p>
+      <p class="type-name">Land use travels a separate path</p>
+      <p class="type-text">Anything involving real estate — zoning, a new building, a big site change — goes through ULURP (Uniform Land Use Review Procedure): Community Board → Borough President → City Planning Commission → City Council, with each stage giving a recommendation or vote. This is a parallel track to the budget, and the politics are local: the local Council member's position on a land-use item is almost always decisive, by an informal rule called <em>member deference</em>. Knowing whether something is a budget question or a ULURP question tells you who you need to persuade and where.</p>
+    </div>
+  </div>
+
+  <div class="inset">
+    <strong>The question to carry everywhere:</strong> when you hear about a city decision, ask both — <em>whose budget line is this, and does it require a land-use approval?</em> If it's in the budget, the Council and the Comptroller are your leverage. If it requires ULURP, your local Council member is the critical vote, and the Community Board is where the politics first take shape. "The city" never decides anything as a single body. The right question is always: <em>which specific actor, at which specific stage, has the decision in their hands right now?</em>
+  </div>
+
+  <!-- SECTION III — APPLY -->
+  <div class="sec-header break-before"><span class="sec-roman">III</span><span class="sec-title">The Same Architecture, Three Decisions</span></div>
+
+  <p class="body">Watch the same actors take on three different city decisions — and notice how the center of gravity shifts depending on what kind of decision it is.</p>
+
+  <div class="context">
+    <p class="context-meta">Decision One · Building the Hunts Point grocery store</p>
+    <p class="context-name">Mayor's promise · EDC's project · Council's budget · Community Board's first read</p>
+    <div class="context-body">
+      <p>The Mayor campaigned on city-owned grocery stores; the Mayor's office set the policy direction. The Economic Development Corporation (EDC) is executing it — selecting the site at The Peninsula, drafting the RFP, choosing the private operator, writing the city's rules for pricing and labor. The City Council holds the budget power that decides whether the $70 million across five stores actually appears in the city's capital plan — and the Council's Economic Development and Finance committees hold hearings (one on May 29, 2026) to question the agency. The Bronx Borough President supports the project and has a formal role through Bronx Community Board 2, which gives local review. The Comptroller will eventually audit the operator's performance. <em>The Mayor announced it; many other actors will decide whether it works.</em></p>
+      <p class="context-q">If you wanted to shape this project, which actor would you go to — and at which stage?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Decision Two · A new residential tower</p>
+    <p class="context-name">Where the local Council member becomes decisive</p>
+    <div class="context-body">
+      <p>A developer wants to build a 30-story residential tower on a lot zoned for low-rise. To get the rezoning, the proposal enters ULURP. First the local Community Board reviews and votes (advisory). Then the Borough President reviews and recommends. Then the City Planning Commission. Then the City Council — and here, an informal rule called <em>member deference</em> means the local Council member's position will almost always carry the rest of the Council with it. The Mayor has very little say. The agencies have very little say. The local Council member, representing roughly 165,000 people, decides whether 600 new apartments get built — and what the developer has to give the neighborhood to get the votes. <em>This is why your council member is closer to your life than your congressperson.</em></p>
+      <p class="context-q">Who's the most powerful actor on this decision — and how does that match your intuition about whose voice should matter most?</p>
+    </div>
+  </div>
+
+  <div class="context">
+    <p class="context-meta">Decision Three · A program that got announced but didn't get funded</p>
+    <p class="context-name">When the press conference doesn't reach the budget</p>
+    <div class="context-body">
+      <p>A mayor announces a new program — universal childcare, free buses, expanded library hours, a pilot grocery program. The press covers it. The community celebrates. But the program has to make it into the annual budget to actually exist. The Council negotiates it down, or moves the money elsewhere, or funds the program for one year and then drops it. By year three, the program is gone, even though no one ever publicly canceled it. The Comptroller's audits eventually reveal which announcements became real and which quietly faded. <em>In New York City, an announcement is a promise; a budget line is a fact. Confusing the two is the most common mistake in following city politics.</em></p>
+      <p class="context-q">How would you, as a citizen, follow a city promise from announcement to reality — and what would you check at each step?</p>
+    </div>
+  </div>
+
+  <!-- ACTIVITY -->
+  <div class="sec-header"><span class="sec-roman">IV</span><span class="sec-title">Activity — Trace the Decision</span></div>
+
+  <p class="body">For each city action below, name the central actor (whose decision it primarily is), the supporting actors (who has to agree or fund it), and the procedural path (budget, ULURP, agency rule-making, or a combination).</p>
+
+  <div class="tbl-wrap">
+    <table class="cmp">
+      <thead>
+        <tr><th>The city action</th><th>Central actor + supporting actors</th><th>Procedural path</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Building a city-owned grocery store</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Rezoning a neighborhood for taller buildings</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Raising the salary of city childcare workers</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Inspecting food establishments more strictly</td><td class="fill">…</td><td class="fill">…</td></tr>
+        <tr><td>Closing a public hospital</td><td class="fill">…</td><td class="fill">…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="task">
+    <p class="task-label">Write</p>
+    <p class="task-title">A decision in your neighborhood</p>
+    <p class="task-body">Find one decision currently being made by New York City that will affect your neighborhood — a budget item, a rezoning, an agency rule change. Name every actor involved and identify which one holds the decisive vote or signature. If you were trying to influence the outcome, where would you start, and why?</p>
+    <div class="writelines"><div class="writeline"></div><div class="writeline"></div><div class="writeline"></div></div>
+  </div>
+
+  <!-- DISCUSSION -->
+  <div class="sec-header"><span class="sec-roman">V</span><span class="sec-title">For Discussion</span></div>
+
+  <ol class="dq-list">
+    <li>"In New York City, an announcement is a promise; a budget line is a fact." How would you, as a voter, hold elected officials accountable for the gap between the two?</li>
+    <li>Member deference gives a single Council member effective veto power over land-use decisions in their district. Is that democratically appropriate — local voices on local matters — or is it a way for 51 small fiefdoms to override what the city as a whole might want?</li>
+    <li>The Mayor leads on policy; the Council controls the budget; the Comptroller audits the result. Is this division of power a check that protects the public, or a structural recipe for nothing big ever getting done?</li>
+    <li>Community Boards have advisory power but no binding vote. Should they be given real authority, or would that just hand power to whichever 50 volunteers happen to show up?</li>
+  </ol>
+
+  <div class="closing">
+    <p>Every city decision is a small constellation of offices acting together.<br>The Mayor proposes. The Council approves. The agency executes.<br>The Borough President advocates. The board gives the first read.<br>And the citizen who knows the map is the one whose voice actually lands.</p>
+  </div>
+
+  <div class="doc-footer">
+    <span class="footer-left">&copy; 2026 &nbsp;&middot;&nbsp; Alfredo Mathew III &nbsp;&middot;&nbsp; AM3 LLC &nbsp;&middot;&nbsp; Working World LLC</span>
+    <span class="footer-right">Working World LLC &nbsp;&middot;&nbsp; AI Synthesis: Claude (Anthropic, claude-opus-4-7)</span>
+  </div>
+
+</div>
+</body>
+</html>
