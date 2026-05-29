@@ -18,14 +18,6 @@ body{font-family:'Newsreader',Georgia,serif;color:var(--ink);background:var(--pa
 a{color:inherit;text-decoration:none;}
 .sans{font-family:'Inter',system-ui,sans-serif;}
 
-/* confidential strip */
-.strip{background:var(--ink);color:var(--paper);}
-.strip .wrap{display:flex;align-items:center;justify-content:space-between;padding:11px 32px;font-family:'Inter',sans-serif;font-size:12px;font-weight:500;letter-spacing:.04em;color:rgba(251,250,246,.78);}
-.strip .lhs{display:flex;align-items:center;gap:10px;}
-.strip .dot{width:7px;height:7px;border-radius:50%;background:var(--accent-soft);}
-.strip .brand{font-weight:600;color:var(--paper);}
-.strip .rhs{color:rgba(251,250,246,.55);}
-
 /* page locator — promoted 'For New York City' treatment */
 .locator{padding:32px 0 22px;border-bottom:1px solid var(--line);margin-bottom:6px;}
 .locator .nyc{font-family:'Newsreader',serif;font-weight:500;font-size:22px;line-height:1.15;letter-spacing:-.005em;color:var(--ink);margin-bottom:8px;}
@@ -106,8 +98,6 @@ footer .copy .ai{display:block;margin-top:4px;color:#9aa3ab;}
 </head>
 <body>
 
-</div>
-
 <div class="wrap">
 
   <div class="locator">
@@ -187,7 +177,8 @@ footer .copy .ai{display:block;margin-top:4px;color:#9aa3ab;}
   <div class="sec">
     <div class="tag sans">A note on how we are using these words</div>
     <p>Neither term is partisan. <em>Redistribution</em> is the standing logic of every modern social state; <em>predistribution</em> is a term that emerged in academic policy work in the early 2010s and has been taken up by serious people across the political spectrum, from Elizabeth Anderson on the left to ownership-economy conservatives on the right. We use them here as <strong>structural descriptions</strong>, not as political identities. A city can use both at once. Most do.</p>
-    <p>And to be plain about what we are not proposing. We are not proposing that the community decide what the City does with $70 million. That decision belongs to the City — to the Mayor, the agencies, the Council. <strong>The City leads.</strong> What we are proposing is the <em>informed public conversation</em> that runs alongside the decision: a structured process through which the people whose lives the policy will shape can understand what is actually being chosen, weigh it for themselves, and contribute their considered voice. The City still decides. It just decides with a public that has done the work to understand the choice.</p>
+    <p>And to be plain about what we are not proposing. We are not proposing that the community decide what the City does with $70 million. That decision belongs to the City — to the Mayor, the agencies, the Council. <strong>The City leads.</strong> What we are proposing is the <em>informed public conversation</em> that runs alongside the decision: a structured process through which the people whose lives the policy will shape can understand what is actually being chosen, weigh it for themselves, and contribute their considered voice.</p>
+    <p class="pq">The City still decides. It just decides with a public that has done the work to understand the choice.</p>
   </div>
 
   <div class="stake">

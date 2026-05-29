@@ -18,13 +18,6 @@ body{font-family:'Newsreader',Georgia,serif;color:var(--ink);background:var(--pa
 a{color:inherit;text-decoration:none;}
 .sans{font-family:'Inter',system-ui,sans-serif;}
 
-.strip{background:var(--ink);color:var(--paper);}
-.strip .wrap{display:flex;align-items:center;justify-content:space-between;padding:11px 32px;font-family:'Inter',sans-serif;font-size:12px;font-weight:500;letter-spacing:.04em;color:rgba(251,250,246,.78);}
-.strip .lhs{display:flex;align-items:center;gap:10px;}
-.strip .dot{width:7px;height:7px;border-radius:50%;background:var(--accent-soft);}
-.strip .brand{font-weight:600;color:var(--paper);}
-.strip .rhs{color:rgba(251,250,246,.55);}
-
 .locator{padding:32px 0 22px;border-bottom:1px solid var(--line);margin-bottom:6px;}
 .locator .nyc{font-family:'Newsreader',serif;font-weight:500;font-size:22px;line-height:1.15;letter-spacing:-.005em;color:var(--ink);margin-bottom:8px;}
 .locator .nyc em{font-style:italic;font-weight:400;color:var(--ink);}
@@ -49,6 +42,15 @@ a{color:inherit;text-decoration:none;}
 .sec p em{font-style:italic;}
 
 .pq{font-family:'Newsreader',serif;font-style:italic;font-size:23px;line-height:1.34;color:var(--ink);font-weight:500;border-left:3px solid var(--accent);padding:6px 0 6px 24px;margin:24px 0;max-width:54ch;}
+
+/* lab demonstration callout — links to the working civic lab */
+.labshow{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:24px 28px;border:1px solid var(--ink);border-radius:6px;background:var(--card);margin:28px 0 8px;transition:border-color .15s,box-shadow .15s;text-decoration:none;color:inherit;}
+.labshow:hover{border-color:var(--accent);box-shadow:0 4px 24px rgba(26,28,30,.06);}
+.labshow .l{font-family:'Inter',sans-serif;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;display:block;}
+.labshow h3{font-family:'Newsreader',serif;font-weight:600;font-size:24px;color:var(--ink);letter-spacing:-.005em;margin-bottom:8px;}
+.labshow h3 em{font-style:italic;font-weight:500;}
+.labshow p{font-size:16px;line-height:1.5;color:var(--slate);margin:0;max-width:54ch;}
+.labshow .arrow{font-family:'Inter',sans-serif;font-weight:500;font-size:24px;color:var(--accent);margin-left:24px;flex:0 0 auto;}
 
 /* the four-phase flow — the heart of the page */
 .phases{padding:54px 0;border-bottom:1px solid var(--line);background:var(--wash);margin-left:calc(-50vw + 50%);margin-right:calc(-50vw + 50%);padding-left:calc(50vw - 50%);padding-right:calc(50vw - 50%);}
@@ -131,8 +133,6 @@ footer .copy .ai{display:block;margin-top:4px;color:#9aa3ab;}
 </head>
 <body>
 
-</div>
-
 <div class="wrap">
 
   <div class="locator">
@@ -151,6 +151,15 @@ footer .copy .ai{display:block;margin-top:4px;color:#9aa3ab;}
     <p>Most public participation in a major City decision falls into one of two categories. There is the town hall — open, immediate, often loud, rarely structured. And there is the policy comment period — structured, written, accessible only to people already inside the policy conversation. Neither produces what we are proposing: <strong>an informed public, working from shared material, arriving at a considered position over months, in public, alongside the policy as it unfolds.</strong></p>
     <p>The instrument has a familiar shape. It is built from elements already at work in New York City — classroom-based learning in schools and out-of-school programs, train-the-trainer models in CBOs and faith communities, civic competitions and public demonstrations of learning. None of it is new. What is new is <em>applying that infrastructure to the economic-policy decisions the City is already making</em> — turning what is now done for entrepreneurship or for arts education into a practice for democratic economic deliberation.</p>
     <p class="pq">The City is going to make the decision either way. The question is whether it makes it alongside an informed public that has done the work to understand the choice — and that emerges from the process able to do the same work on the next decision, and the one after that.</p>
+
+    <a class="labshow" href="../ED_LAB_Food_Affordability.html">
+      <div>
+        <span class="l sans">See the Working Example</span>
+        <h3>The <em>Hunts Point</em> Civic Lab</h3>
+        <p>A complete student-facing build of one cycle, taking on the actual decision in front of the City — should it build and own the grocery store at The Peninsula? The full eight-beat investigation, the readers, the field instruments. This is what the instrument looks like when it's built.</p>
+      </div>
+      <span class="arrow">→</span>
+    </a>
   </div>
 
   <div class="phases">
