@@ -89,6 +89,21 @@ em{color:#6b5d44;font-style:italic;}
 /* ===== PRINTABLE INSTRUMENTS ===== */
 .kit-intro{margin:40px 0 14px;}
 .kit-label{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-deep);background:var(--gold);padding:6px 13px;border-radius:100px;margin-bottom:12px;}
+
+/* Print-on-paper download card — one after each tool */
+.tool-dl{display:flex;align-items:center;gap:18px;background:var(--card);border:2.5px solid var(--ink);border-radius:14px;padding:18px 22px;text-decoration:none;color:var(--ink);margin:16px 0 6px;box-shadow:4px 4px 0 var(--orange-deep);transition:transform .12s, box-shadow .12s;}
+.tool-dl:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--orange-deep);}
+.tool-dl.teal{box-shadow:4px 4px 0 var(--teal-deep);}
+.tool-dl.teal:hover{box-shadow:5px 5px 0 var(--teal-deep);}
+.tool-dl.clay{box-shadow:4px 4px 0 var(--clay-deep);}
+.tool-dl.clay:hover{box-shadow:5px 5px 0 var(--clay-deep);}
+.tool-dl .dl-icon{font-family:'Bricolage Grotesque',sans-serif;font-size:22px;font-weight:800;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:var(--ink);color:var(--gold);border-radius:50%;flex-shrink:0;}
+.tool-dl .dl-text{display:flex;flex-direction:column;gap:2px;flex:1;}
+.tool-dl .dl-label{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:16px;color:var(--ink);letter-spacing:-.005em;line-height:1.15;}
+.tool-dl .dl-sub{font-size:13px;color:var(--mid);line-height:1.4;}
+.tool-dl .dl-arr{font-family:'Bricolage Grotesque',sans-serif;font-size:22px;color:var(--orange-deep);font-weight:800;flex-shrink:0;}
+.tool-dl.teal .dl-arr{color:var(--teal-deep);}
+.tool-dl.clay .dl-arr{color:var(--clay-deep);}
 .tool{background:var(--card);border:3px solid var(--ink);border-radius:18px;padding:6px;margin:22px 0;box-shadow:7px 7px 0 var(--teal);page-break-inside:avoid;}
 .tool-in{background:var(--cream);border-radius:13px;padding:26px 26px 28px;}
 .tool-hd{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap;border-bottom:2px solid var(--rule);padding-bottom:14px;margin-bottom:16px;}
@@ -301,6 +316,15 @@ footer .dis{margin-top:12px;font-size:12.5px;color:rgba(251,244,230,.5);max-widt
     </div>
   </div>
 
+  <a class="tool-dl" href="ED_WB_Wealth_Lab_Tool1_The_Three_Things.pdf" target="_blank" rel="noopener">
+    <span class="dl-icon">&darr;</span>
+    <div class="dl-text">
+      <span class="dl-label">Download Tool 1 &mdash; Print on paper</span>
+      <span class="dl-sub">The Three Things, formatted as a black &amp; white printable PDF</span>
+    </div>
+    <span class="dl-arr">&rarr;</span>
+  </a>
+
   <!-- TOOL 2 -->
   <div class="kit-intro">
     <span class="kit-label">Tool 2 of 3 · The Position Snapshot</span>
@@ -369,6 +393,15 @@ footer .dis{margin-top:12px;font-size:12.5px;color:rgba(251,244,230,.5);max-widt
     </div>
   </div>
 
+  <a class="tool-dl teal" href="ED_WB_Wealth_Lab_Tool2_Position_Snapshot.pdf" target="_blank" rel="noopener">
+    <span class="dl-icon">&darr;</span>
+    <div class="dl-text">
+      <span class="dl-label">Download Tool 2 &mdash; Print on paper</span>
+      <span class="dl-sub">The Position Snapshot &mdash; net worth statement, stage reading, and six-month tracker</span>
+    </div>
+    <span class="dl-arr">&rarr;</span>
+  </a>
+
   <!-- TOOL 3 -->
   <div class="kit-intro">
     <span class="kit-label">Tool 3 of 3 · The One-Move Plan</span>
@@ -411,6 +444,15 @@ footer .dis{margin-top:12px;font-size:12.5px;color:rgba(251,244,230,.5);max-widt
       <p style="font-size:14.5px;color:var(--mid);margin-top:12px;">If it's structural, say so plainly — that's not the end of the story, it's the doorway to the collective half of the project. No budgeting fixes a wage that doesn't cover a life. That's what the safety-net lessons and the rest of the curriculum are for.</p>
     </div>
   </div>
+
+  <a class="tool-dl clay" href="ED_WB_Wealth_Lab_Tool3_One_Move_Plan.pdf" target="_blank" rel="noopener">
+    <span class="dl-icon">&darr;</span>
+    <div class="dl-text">
+      <span class="dl-label">Download Tool 3 &mdash; Print on paper</span>
+      <span class="dl-sub">The One-Move Plan &mdash; with explanation lines for the Mine-to-Move vs. Structural check</span>
+    </div>
+    <span class="dl-arr">&rarr;</span>
+  </a>
 
   <!-- BUILD THE MOVE -->
   <div class="beat">
