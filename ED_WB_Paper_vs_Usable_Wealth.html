@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paper vs. Usable Wealth · Building Wealth · Economic Democracy</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+:root{
+  --teal:#1E8A8C; --teal-deep:#136466; --teal-soft:#5FB8B6;
+  --orange:#F08A24; --orange-deep:#D9731A; --gold:#F5B940;
+  --clay:#C7553B; --clay-deep:#A8412B;
+  --cream:#FBF4E6; --paper:#FEF9F0; --card:#FFFFFF;
+  --ink:#16211F; --mid:#5d6b66; --rule:#E7DABE; --wash:#F2E9D4;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:720px;margin:0 auto;padding:0 24px;}
+a{color:inherit;}
+
+.herobleed{background:var(--teal);background-image:radial-gradient(circle at 12% 18%,rgba(245,185,64,.34),transparent 52%),radial-gradient(circle at 88% 84%,rgba(240,138,36,.28),transparent 55%);}
+.hero{max-width:720px;margin:0 auto;padding:50px 24px 46px;}
+.labtag{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-deep);background:var(--gold);padding:7px 15px;border-radius:100px;margin-bottom:20px;}
+.kicker{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cream);margin-bottom:13px;opacity:.92;}
+h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:50px;line-height:.98;letter-spacing:-.025em;color:#fff;margin-bottom:16px;}
+.standfirst{font-size:20px;line-height:1.45;color:var(--cream);font-weight:500;max-width:42ch;}
+
+.lesson{padding-top:42px;}
+.step{margin-bottom:30px;}
+.steplab{display:flex;align-items:baseline;gap:11px;margin-bottom:10px;}
+.steplab .num{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:14px;color:var(--orange);letter-spacing:.04em;}
+.steplab .ttl{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;letter-spacing:-.02em;color:var(--ink);}
+.step p{font-size:17px;line-height:1.62;margin-bottom:12px;}
+.step p:last-child{margin-bottom:0;}
+.step strong{color:var(--teal-deep);font-weight:700;}
+.dropcap::first-letter{font-family:'Bricolage Grotesque',sans-serif;font-size:58px;font-weight:800;float:left;line-height:.78;margin:5px 11px 0 0;color:var(--teal);}
+
+/* usable vs locked split */
+.split{background:var(--card);border:2.5px solid var(--ink);border-radius:16px;padding:22px 24px 20px;margin:10px 0 6px;box-shadow:5px 5px 0 var(--rule);}
+.split .sh{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;letter-spacing:.04em;font-weight:700;color:var(--orange-deep);margin-bottom:3px;}
+.split .ss{font-size:13px;color:var(--mid);margin-bottom:16px;font-style:italic;}
+.splbar{display:flex;height:52px;border-radius:9px;overflow:hidden;border:2px solid var(--ink);}
+.splbar .use{background:var(--teal);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:13px;flex:0 0 11%;text-align:center;line-height:1.1;}
+.splbar .lock{background:#cdbf9e;display:flex;align-items:center;justify-content:center;color:var(--ink);font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:14px;flex:0 0 89%;text-align:center;line-height:1.1;}
+.splkey{display:flex;gap:18px;margin-top:13px;flex-wrap:wrap;}
+.splkey div{font-size:13px;color:var(--mid);display:flex;align-items:center;gap:7px;}
+.splkey .sw{width:13px;height:13px;border-radius:3px;display:inline-block;}
+.locklist{margin-top:14px;border-top:1.5px dashed var(--rule);padding-top:12px;}
+.locklist .ll{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;padding:4px 0;color:var(--mid);}
+.locklist .ll b{color:var(--ink);font-weight:600;}
+.locklist .ll span:last-child{font-style:italic;}
+
+.threecol{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;margin:6px 0 4px;}
+.tc2{border:2px solid var(--ink);border-radius:12px;padding:15px 16px;box-shadow:3px 3px 0 var(--rule);}
+.tc2 .h{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;margin-bottom:6px;line-height:1.1;}
+.tc2 .b{font-size:14px;line-height:1.45;color:var(--mid);}
+.tc2.a{background:var(--wash);} .tc2.a .h{color:var(--orange-deep);}
+.tc2.b{background:#e4f2f0;} .tc2.b .h{color:var(--teal-deep);}
+.tc2.c{background:#fbeee6;} .tc2.c .h{color:var(--clay-deep);}
+@media(max-width:600px){.threecol{grid-template-columns:1fr;}}
+
+.applybox{background:var(--teal);background-image:radial-gradient(circle at 90% 10%,rgba(245,185,64,.3),transparent 60%);border-radius:15px;padding:24px 26px;margin:6px 0 4px;}
+.applybox .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:12px;}
+.applybox ul{list-style:none;margin:0;}
+.applybox li{color:#fff;font-size:16px;line-height:1.45;padding:9px 0 9px 30px;position:relative;border-bottom:1px solid rgba(255,255,255,.16);}
+.applybox li:last-child{border-bottom:none;}
+.applybox li::before{content:"→";position:absolute;left:4px;color:var(--gold);font-weight:700;}
+.applybox .tip{margin-top:14px;font-size:14px;color:var(--cream);font-style:italic;line-height:1.5;}
+
+.honest{background:#fbeee6;border-left:5px solid var(--clay);border-radius:0 13px 13px 0;padding:20px 24px;margin:6px 0 4px;}
+.honest .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--clay-deep);margin-bottom:9px;}
+.honest p{font-size:16px;line-height:1.58;margin-bottom:10px;}
+.honest p:last-child{margin-bottom:0;}
+.honest strong{color:var(--clay-deep);}
+
+.pq{font-family:'Bricolage Grotesque',sans-serif;font-size:24px;line-height:1.25;font-weight:700;color:var(--teal);border-left:5px solid var(--gold);padding:6px 0 6px 22px;margin:24px 0;letter-spacing:-.01em;}
+
+.bridge{background:var(--ink);color:var(--cream);border-radius:15px;padding:24px 28px;margin-top:6px;position:relative;overflow:hidden;}
+.bridge::after{content:"";position:absolute;right:-30px;bottom:-30px;width:150px;height:150px;background:radial-gradient(circle,rgba(30,138,140,.5),transparent 70%);}
+.bridge *{position:relative;}
+.bridge .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--teal-soft);margin-bottom:9px;}
+.bridge p{color:var(--cream);font-size:16.5px;line-height:1.58;margin-bottom:10px;}
+.bridge p:last-child{margin-bottom:0;}
+.bridge strong{color:var(--gold);}
+
+footer{background:var(--ink);color:var(--cream);margin-top:30px;padding:30px 0 54px;}
+footer .big{font-family:'Bricolage Grotesque',sans-serif;font-size:16px;color:var(--gold);font-weight:700;margin-bottom:6px;}
+footer .ft{font-size:13px;color:rgba(251,244,230,.7);line-height:1.5;}
+@media(max-width:600px){h1{font-size:40px;}.hero{padding:40px 24px 36px;}}
+</style>
+</head>
+<body>
+
+<div class="herobleed">
+<div class="hero">
+  <div class="labtag">Economic Democracy · Building Wealth</div>
+  <div class="kicker">The number vs. the bank balance</div>
+  <h1>Paper vs.<br>Usable Wealth</h1>
+  <p class="standfirst">Your net worth is a number. The wealth you can actually spend is usually a much smaller one — and the gap matters more than the number.</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="lesson">
+
+  <!-- 01 -->
+  <div class="step">
+    <div class="steplab"><span class="num">01</span><span class="ttl">The concept</span></div>
+    <p class="dropcap">There's a wide gap between wealth on paper and wealth you can actually use. <strong>Paper wealth</strong> is the value of what you own — your net worth figure, a home's market price, a stock that's climbed, a business valuation. It's real wealth, but it isn't money in your hand. <strong>Usable wealth</strong> is what you can reach and spend right now without blowing up your life: cash and liquid savings.</p>
+    <p>These two numbers are often nothing alike. Confusing them is how people come to feel rich and spend rich while being one surprise away from a crisis — because almost none of the "wealth" is actually available.</p>
+  </div>
+
+  <!-- 02 -->
+  <div class="step">
+    <div class="steplab"><span class="num">02</span><span class="ttl">How it works</span></div>
+    <p>Three things sit between a paper number and money you can spend: a gain isn't real until you <strong>sell</strong> (until then it can vanish), selling triggers <strong>taxes and fees</strong>, and much of it is simply <strong>locked up</strong>. Take that same household worth $230,000 on paper — and ask how much they could actually use this month:</p>
+    <div class="split">
+      <div class="sh">$230,000 net worth — how much is usable now?</div>
+      <div class="ss">An illustration of the same household from the net-worth snapshot.</div>
+      <div class="splbar">
+        <div class="use">$25k</div>
+        <div class="lock">~$205,000 locked or on paper</div>
+      </div>
+      <div class="splkey">
+        <div><span class="sw" style="background:var(--teal);"></span> Usable now (cash &amp; savings)</div>
+        <div><span class="sw" style="background:#cdbf9e;"></span> Real, but not spendable today</div>
+      </div>
+      <div class="locklist">
+        <div class="ll"><b>Retirement accounts — $120k</b><span>locked; penalty + tax before retirement age</span></div>
+        <div class="ll"><b>Home equity — $115k</b><span>must sell the house or borrow against it</span></div>
+        <div class="ll"><b>Car equity — $5k</b><span>you need the car</span></div>
+      </div>
+    </div>
+    <p>So a $230,000 net worth yields maybe <strong>$25,000</strong> you could actually touch — about a tenth. The paper figure is pre-tax, pre-sale, and largely out of reach. It's true wealth. It just doesn't answer the phone when this month's emergency calls.</p>
+  </div>
+
+  <!-- 03 -->
+  <div class="step">
+    <div class="steplab"><span class="num">03</span><span class="ttl">In real life</span></div>
+    <p>The gap shows up at every level of wealth:</p>
+    <div class="threecol">
+      <div class="tc2 a"><div class="h">The house-rich retiree</div><div class="b">Hundreds of thousands in home equity, a few hundred in checking. "Wealthy," yet unable to cover a roof repair without selling or borrowing.</div></div>
+      <div class="tc2 b"><div class="h">The employee with stock</div><div class="b">Net worth jumps when the company's shares rise — but the stock is locked, concentrated, and can crater before it can ever be sold.</div></div>
+      <div class="tc2 c"><div class="h">The billionaire who never sells</div><div class="b">Wealth is almost all unrealized stock. They borrow against it to live — never selling, never triggering tax. The paper/usable gap, used on purpose.</div></div>
+    </div>
+    <p class="pq">A big net worth is a number on a page. Usable wealth is what actually answers when you need money.</p>
+  </div>
+
+  <!-- 04 -->
+  <div class="step">
+    <div class="steplab"><span class="num">04</span><span class="ttl">Apply it to your life</span></div>
+    <div class="applybox">
+      <div class="l">Find your usable number</div>
+      <ul>
+        <li>How much could you actually spend this month without selling something essential or paying a penalty? That's your usable wealth.</li>
+        <li>Sort what you own: what's locked (retirement, age limits), what's costly to sell (taxes, fees), what's truly liquid.</li>
+        <li>Don't let a rising paper number talk you into spending — paper can fall before you ever cash it.</li>
+        <li>Keep enough usable wealth that you're never forced to convert paper at the worst possible time.</li>
+      </ul>
+      <p class="tip">Your net worth is the scoreboard. Your usable wealth is the bank account. Never manage your life off the scoreboard alone.</p>
+    </div>
+  </div>
+
+  <!-- 05 -->
+  <div class="step">
+    <div class="steplab"><span class="num">05</span><span class="ttl">The honest part</span></div>
+    <div class="honest">
+      <div class="l">What no one tells you</div>
+      <p>A lot of feeling "behind" or "ahead" is really this gap in disguise. Someone with a big paper net worth can be one emergency from disaster because almost none of it is reachable — while someone with a small net worth but steady usable cash can be far more secure day to day. The headline figures you hear — so-and-so is "worth" billions — are <strong>paper</strong>: unrealized, untaxed, often never sold. Treating that as if it were spendable cash distorts how we picture wealth entirely.</p>
+      <p>And there's a tax twist worth seeing plainly. Paper gains aren't taxed until you sell, which is a quiet, enormous advantage for people whose wealth sits in appreciating assets — <strong>they choose when, or whether, to ever trigger the tax.</strong> A wage-earner has no such choice; their pay is taxed the moment it lands. Don't confuse the scoreboard with the bank account — not yours, and not anyone else's.</p>
+    </div>
+  </div>
+
+  <!-- 06 -->
+  <div class="step">
+    <div class="steplab"><span class="num">06</span><span class="ttl">The bigger picture</span></div>
+    <div class="bridge">
+      <div class="l">Why this matters beyond you</div>
+      <p>The gap between paper and usable wealth is one of the most powerful, least understood machines of concentration. The very rich hold their wealth as appreciating, unrealized assets — so it grows <strong>untaxed</strong>, and rather than sell, they borrow against it, living large while "realizing" almost nothing. For those at the top, paper wealth is actually better than cash: it compounds, it isn't taxed until sold, and it can be borrowed against again and again.</p>
+      <p>Meanwhile ordinary people are taxed on every dollar of wages the moment it arrives, and their main paper wealth — home equity — is illiquid and hard to reach. So this isn't personal-finance trivia. It's a fault line in <strong>who pays tax, who can wait, and who is forced to sell.</strong> An economy where the largest fortunes are paper that's never realized, while working people are taxed on cash as it comes in, is concentration with a tax code wrapped around it.</p>
+    </div>
+  </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="big">Paper vs. Usable Wealth · Building Wealth</div>
+    <div class="ft">Economic Democracy · Building Wealth · economicdemocracy.co<br>A Shared Prosperity education project. General education, not personal financial or tax advice. Figures are illustrative.</div>
+  </div>
+</footer>
+
+</body>
+</html>

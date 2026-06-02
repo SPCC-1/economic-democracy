@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Earned Income (Wages) · Building Wealth · Economic Democracy</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+:root{
+  --teal:#1E8A8C; --teal-deep:#136466; --teal-soft:#5FB8B6;
+  --orange:#F08A24; --orange-deep:#D9731A; --gold:#F5B940;
+  --clay:#C7553B; --clay-deep:#A8412B;
+  --cream:#FBF4E6; --paper:#FEF9F0; --card:#FFFFFF;
+  --ink:#16211F; --mid:#5d6b66; --rule:#E7DABE; --wash:#F2E9D4;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:720px;margin:0 auto;padding:0 24px;}
+a{color:inherit;}
+
+/* HERO */
+.herobleed{background:var(--teal);background-image:radial-gradient(circle at 12% 18%,rgba(245,185,64,.34),transparent 52%),radial-gradient(circle at 88% 84%,rgba(240,138,36,.28),transparent 55%);}
+.hero{max-width:720px;margin:0 auto;padding:50px 24px 46px;}
+.labtag{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-deep);background:var(--gold);padding:7px 15px;border-radius:100px;margin-bottom:20px;}
+.kicker{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cream);margin-bottom:13px;opacity:.92;}
+h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:54px;line-height:.98;letter-spacing:-.025em;color:#fff;margin-bottom:16px;}
+.standfirst{font-size:20px;line-height:1.45;color:var(--cream);font-weight:500;max-width:40ch;}
+
+/* LESSON SHELL */
+.lesson{padding-top:42px;}
+.step{margin-bottom:30px;}
+.steplab{display:flex;align-items:baseline;gap:11px;margin-bottom:10px;}
+.steplab .num{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:14px;color:var(--orange);letter-spacing:.04em;}
+.steplab .ttl{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;letter-spacing:-.02em;color:var(--ink);}
+.step p{font-size:17px;line-height:1.62;margin-bottom:12px;}
+.step p:last-child{margin-bottom:0;}
+.step strong{color:var(--teal-deep);font-weight:700;}
+.dropcap::first-letter{font-family:'Bricolage Grotesque',sans-serif;font-size:58px;font-weight:800;float:left;line-height:.78;margin:5px 11px 0 0;color:var(--teal);}
+
+/* paycheck strip */
+.pay{background:var(--card);border:2.5px solid var(--ink);border-radius:15px;padding:22px 24px;margin:8px 0 6px;box-shadow:5px 5px 0 var(--rule);}
+.pay .ph{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--orange-deep);margin-bottom:14px;}
+.bar{display:flex;height:46px;border-radius:9px;overflow:hidden;border:2px solid var(--ink);}
+.bar .take{background:var(--teal);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;flex:0 0 75%;}
+.bar .tax{background:var(--clay);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:14px;flex:0 0 25%;}
+.paykey{display:flex;gap:20px;margin-top:12px;flex-wrap:wrap;}
+.paykey div{font-size:13.5px;color:var(--mid);display:flex;align-items:center;gap:7px;}
+.paykey .sw{width:13px;height:13px;border-radius:3px;display:inline-block;}
+.paynote{font-size:13px;color:var(--mid);margin-top:12px;font-style:italic;}
+
+/* three real-life cards */
+.threecol{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;margin:6px 0 4px;}
+.tc2{border:2px solid var(--ink);border-radius:12px;padding:15px 16px;box-shadow:3px 3px 0 var(--rule);}
+.tc2 .h{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;margin-bottom:6px;line-height:1.1;}
+.tc2 .b{font-size:14px;line-height:1.45;color:var(--mid);}
+.tc2.a{background:#e4f2f0;} .tc2.a .h{color:var(--teal-deep);}
+.tc2.b{background:var(--wash);} .tc2.b .h{color:var(--orange-deep);}
+.tc2.c{background:#fbeee6;} .tc2.c .h{color:var(--clay-deep);}
+@media(max-width:600px){.threecol{grid-template-columns:1fr;}}
+
+/* apply box */
+.applybox{background:var(--teal);background-image:radial-gradient(circle at 90% 10%,rgba(245,185,64,.3),transparent 60%);border-radius:15px;padding:24px 26px;margin:6px 0 4px;}
+.applybox .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:12px;}
+.applybox ul{list-style:none;margin:0;}
+.applybox li{color:#fff;font-size:16px;line-height:1.45;padding:9px 0 9px 30px;position:relative;border-bottom:1px solid rgba(255,255,255,.16);}
+.applybox li:last-child{border-bottom:none;}
+.applybox li::before{content:"→";position:absolute;left:4px;color:var(--gold);font-weight:700;}
+.applybox .tip{margin-top:14px;font-size:14px;color:var(--cream);font-style:italic;line-height:1.5;}
+
+/* honest box */
+.honest{background:#fbeee6;border-left:5px solid var(--clay);border-radius:0 13px 13px 0;padding:20px 24px;margin:6px 0 4px;}
+.honest .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--clay-deep);margin-bottom:9px;}
+.honest p{font-size:16px;line-height:1.58;margin-bottom:10px;}
+.honest p:last-child{margin-bottom:0;}
+.honest strong{color:var(--clay-deep);}
+
+/* big pull line */
+.pq{font-family:'Bricolage Grotesque',sans-serif;font-size:24px;line-height:1.25;font-weight:700;color:var(--teal);border-left:5px solid var(--gold);padding:6px 0 6px 22px;margin:24px 0;letter-spacing:-.01em;}
+
+/* bridge */
+.bridge{background:var(--ink);color:var(--cream);border-radius:15px;padding:24px 28px;margin-top:6px;position:relative;overflow:hidden;}
+.bridge::after{content:"";position:absolute;right:-30px;bottom:-30px;width:150px;height:150px;background:radial-gradient(circle,rgba(30,138,140,.5),transparent 70%);}
+.bridge *{position:relative;}
+.bridge .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--teal-soft);margin-bottom:9px;}
+.bridge p{color:var(--cream);font-size:16.5px;line-height:1.58;margin-bottom:10px;}
+.bridge p:last-child{margin-bottom:0;}
+.bridge strong{color:var(--gold);}
+
+/* next */
+.next{display:flex;align-items:center;justify-content:space-between;gap:16px;background:var(--gold);border:2.5px solid var(--ink);border-radius:14px;padding:18px 22px;margin:38px 0 0;box-shadow:5px 5px 0 var(--orange);}
+.next .nl{font-family:'Bricolage Grotesque',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--teal-deep);margin-bottom:3px;}
+.next .nm{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:19px;color:var(--ink);letter-spacing:-.01em;}
+.next .arrow{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:26px;color:var(--clay);}
+
+footer{background:var(--ink);color:var(--cream);margin-top:46px;padding:30px 0 54px;}
+footer .big{font-family:'Bricolage Grotesque',sans-serif;font-size:16px;color:var(--gold);font-weight:700;margin-bottom:6px;}
+footer .ft{font-size:13px;color:rgba(251,244,230,.7);line-height:1.5;}
+@media(max-width:600px){h1{font-size:40px;}.hero{padding:40px 24px 36px;}}
+</style>
+</head>
+<body>
+
+<div class="herobleed">
+<div class="hero">
+  <div class="labtag">Economic Democracy · Building Wealth</div>
+  <div class="kicker">Trading time for money</div>
+  <h1>Earned Income<br>(Wages)</h1>
+  <p class="standfirst">The money you're paid for your time. It's how almost everyone starts — and it has one defining limit.</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="lesson">
+
+  <!-- 01 -->
+  <div class="step">
+    <div class="steplab"><span class="num">01</span><span class="ttl">The concept</span></div>
+    <p class="dropcap">Earned income is the money you're paid for your time and your work — a wage by the hour, or a salary by the year. For almost everyone, it's the first money they ever make and the money that funds their whole life: the rent, the groceries, the savings. It is real, necessary, and honorable. It is also the engine that makes everything else in this section possible.</p>
+    <p>But earned income has one defining feature you have to understand clearly: <strong>it stops the moment you stop.</strong> Take a month off, lose the job, get sick — and the money ends with the work. That single fact is what separates a wage from the kinds of income that come later.</p>
+  </div>
+
+  <!-- 02 -->
+  <div class="step">
+    <div class="steplab"><span class="num">02</span><span class="ttl">How it works</span></div>
+    <p>You trade hours, or output, for pay. That trade has two hard ceilings: there are only so many hours in a week, and your pay per hour can only climb so high. So earned income grows in a straight line — work more, earn more; work less, earn less.</p>
+    <p>It's also <strong>taxed at the highest rates of any kind of income</strong> — and the tax comes out before the money ever reaches you. The amount you agree to (your <em>gross</em> pay) is never the amount you take home (your <em>net</em> pay):</p>
+
+    <div class="pay">
+      <div class="ph">For every $1,000 you earn</div>
+      <div class="bar">
+        <div class="take">≈ $750 take-home</div>
+        <div class="tax">taxes</div>
+      </div>
+      <div class="paykey">
+        <div><span class="sw" style="background:var(--teal);"></span> What lands in your account</div>
+        <div><span class="sw" style="background:var(--clay);"></span> Income tax + payroll tax, withheld first</div>
+      </div>
+      <p class="paynote">A rough illustration, not your exact numbers — the share taken out rises as you earn more.</p>
+    </div>
+  </div>
+
+  <!-- 03 -->
+  <div class="step">
+    <div class="steplab"><span class="num">03</span><span class="ttl">In real life</span></div>
+    <p>The same limit shows up at every level of pay:</p>
+    <div class="threecol">
+      <div class="tc2 a"><div class="h">The hourly worker</div><div class="b">Paid for each hour. The only way to earn more is more hours — and the hours run out.</div></div>
+      <div class="tc2 b"><div class="h">The salaried professional</div><div class="b">Higher, steadier pay. But "salary" often means uncapped hours for capped pay, with raises that come slowly.</div></div>
+      <div class="tc2 c"><div class="h">The high earner</div><div class="b">A doctor or lawyer at $400k still only earns. It's taxed hardest, and it ends the day they stop.</div></div>
+    </div>
+    <p class="pq">A high income is not the same thing as wealth. You can earn a great deal and still own nothing.</p>
+  </div>
+
+  <!-- 04 -->
+  <div class="step">
+    <div class="steplab"><span class="num">04</span><span class="ttl">Apply it to your life</span></div>
+    <div class="applybox">
+      <div class="l">Run these on your own paycheck</div>
+      <ul>
+        <li>What's your gross pay versus your take-home? How much do you actually keep?</li>
+        <li>If you worked twice the hours, could you earn twice as much — or is your pay capped?</li>
+        <li>What would your income be next month if you couldn't work at all?</li>
+        <li>Of your last paycheck, how much became something you <em>own</em> — and how much was simply spent?</li>
+      </ul>
+      <p class="tip">That last question is the whole game. The share of each paycheck you turn into something you own is where wealth begins.</p>
+    </div>
+  </div>
+
+  <!-- 05 -->
+  <div class="step">
+    <div class="steplab"><span class="num">05</span><span class="ttl">The honest part</span></div>
+    <div class="honest">
+      <div class="l">What no one tells you</div>
+      <p>There is nothing wrong with a wage — almost every fortune starts with one, and a steady paycheck plus the discipline to save is the foundation everything else is built on. But be clear-eyed about three things: earned income is <strong>taxed the most</strong>, it's <strong>capped by your time</strong>, and it <strong>ends when you stop</strong>.</p>
+      <p>A big salary can feel like the finish line. It isn't. Earn $200,000 and spend $200,000, and you've owned nothing — you've just had an expensive year. The paycheck is the <strong>raw material</strong>, not the result. Wealth only begins when part of the wage is converted into something that keeps working after you've gone home.</p>
+    </div>
+  </div>
+
+  <!-- 06 -->
+  <div class="step">
+    <div class="steplab"><span class="num">06</span><span class="ttl">The bigger picture</span></div>
+    <div class="bridge">
+      <div class="l">Why this matters beyond you</div>
+      <p>For most people, a wage is the only kind of income they will ever have — and that is exactly the issue the rest of this course examines. Wages add in a straight line; owned assets grow on themselves. So an economy where the many earn wages and the few own the assets pulls apart on its own, with no one having to cheat — the gap widens automatically.</p>
+      <p>The point here isn't to look down on the paycheck. It's the opposite: to help the person earning one turn part of it into <strong>ownership</strong> — and to ask why broad ownership is so rare in the first place. <strong>Wages fund the climb. Ownership is the climb.</strong></p>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="big">Earned Income (Wages) · Building Wealth</div>
+    <div class="ft">Economic Democracy · Building Wealth · economicdemocracy.co<br>A Shared Prosperity education project. General education, not personal financial advice. Figures are illustrative.</div>
+  </div>
+</footer>
+
+</body>
+</html>

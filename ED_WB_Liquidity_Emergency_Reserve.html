@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liquidity &amp; Emergency Reserve · Building Wealth · Economic Democracy</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+:root{
+  --teal:#1E8A8C; --teal-deep:#136466; --teal-soft:#5FB8B6;
+  --orange:#F08A24; --orange-deep:#D9731A; --gold:#F5B940;
+  --clay:#C7553B; --clay-deep:#A8412B;
+  --cream:#FBF4E6; --paper:#FEF9F0; --card:#FFFFFF;
+  --ink:#16211F; --mid:#5d6b66; --rule:#E7DABE; --wash:#F2E9D4;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:720px;margin:0 auto;padding:0 24px;}
+a{color:inherit;}
+
+.herobleed{background:var(--teal);background-image:radial-gradient(circle at 12% 18%,rgba(245,185,64,.34),transparent 52%),radial-gradient(circle at 88% 84%,rgba(240,138,36,.28),transparent 55%);}
+.hero{max-width:720px;margin:0 auto;padding:50px 24px 46px;}
+.labtag{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-deep);background:var(--gold);padding:7px 15px;border-radius:100px;margin-bottom:20px;}
+.kicker{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cream);margin-bottom:13px;opacity:.92;}
+h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:46px;line-height:1.0;letter-spacing:-.025em;color:#fff;margin-bottom:16px;}
+.standfirst{font-size:20px;line-height:1.45;color:var(--cream);font-weight:500;max-width:42ch;}
+
+.lesson{padding-top:42px;}
+.step{margin-bottom:30px;}
+.steplab{display:flex;align-items:baseline;gap:11px;margin-bottom:10px;}
+.steplab .num{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:14px;color:var(--orange);letter-spacing:.04em;}
+.steplab .ttl{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:23px;letter-spacing:-.02em;color:var(--ink);}
+.step p{font-size:17px;line-height:1.62;margin-bottom:12px;}
+.step p:last-child{margin-bottom:0;}
+.step strong{color:var(--teal-deep);font-weight:700;}
+.dropcap::first-letter{font-family:'Bricolage Grotesque',sans-serif;font-size:58px;font-weight:800;float:left;line-height:.78;margin:5px 11px 0 0;color:var(--teal);}
+
+/* reserve target */
+.target{background:var(--card);border:2.5px solid var(--ink);border-radius:14px;padding:18px 22px;margin:10px 0 12px;box-shadow:5px 5px 0 var(--rule);}
+.target .th{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;letter-spacing:.04em;font-weight:700;color:var(--orange-deep);margin-bottom:13px;}
+.trow{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+.tblk{text-align:center;border:2px solid var(--ink);border-radius:11px;padding:11px 16px;flex:1;min-width:90px;}
+.tblk .tv{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:19px;line-height:1;}
+.tblk .tl{font-size:11px;color:var(--mid);margin-top:4px;line-height:1.2;}
+.tblk.base{background:var(--wash);} .tblk.base .tv{color:var(--orange-deep);}
+.tblk.three{background:#e8f1ea;} .tblk.three .tv{color:var(--teal-deep);}
+.tblk.six{background:#e4f2f0;} .tblk.six .tv{color:var(--teal-deep);}
+.teq{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:18px;color:var(--mid);}
+
+/* with/without shock */
+.scen{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:0 0 4px;}
+.sc{border:2.5px solid var(--ink);border-radius:15px;padding:18px 20px;box-shadow:5px 5px 0 var(--rule);}
+.sc .sct{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;margin-bottom:8px;letter-spacing:-.01em;}
+.sc p{font-size:14px;line-height:1.45;color:var(--mid);margin:0;}
+.sc.with{background:#e4f2f0;} .sc.with .sct{color:var(--teal-deep);}
+.sc.without{background:#fbeee6;} .sc.without .sct{color:var(--clay-deep);}
+@media(max-width:600px){.scen{grid-template-columns:1fr;}}
+
+.threecol{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;margin:6px 0 4px;}
+.tc2{border:2px solid var(--ink);border-radius:12px;padding:15px 16px;box-shadow:3px 3px 0 var(--rule);}
+.tc2 .h{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;margin-bottom:6px;line-height:1.1;}
+.tc2 .b{font-size:14px;line-height:1.45;color:var(--mid);}
+.tc2.a{background:#e4f2f0;} .tc2.a .h{color:var(--teal-deep);}
+.tc2.b{background:#fbeee6;} .tc2.b .h{color:var(--clay-deep);}
+.tc2.c{background:var(--wash);} .tc2.c .h{color:var(--orange-deep);}
+@media(max-width:600px){.threecol{grid-template-columns:1fr;}}
+
+.applybox{background:var(--teal);background-image:radial-gradient(circle at 90% 10%,rgba(245,185,64,.3),transparent 60%);border-radius:15px;padding:24px 26px;margin:6px 0 4px;}
+.applybox .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:12px;}
+.applybox ul{list-style:none;margin:0;}
+.applybox li{color:#fff;font-size:16px;line-height:1.45;padding:9px 0 9px 30px;position:relative;border-bottom:1px solid rgba(255,255,255,.16);}
+.applybox li:last-child{border-bottom:none;}
+.applybox li::before{content:"→";position:absolute;left:4px;color:var(--gold);font-weight:700;}
+.applybox .tip{margin-top:14px;font-size:14px;color:var(--cream);font-style:italic;line-height:1.5;}
+
+.honest{background:#fbeee6;border-left:5px solid var(--clay);border-radius:0 13px 13px 0;padding:20px 24px;margin:6px 0 4px;}
+.honest .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--clay-deep);margin-bottom:9px;}
+.honest p{font-size:16px;line-height:1.58;margin-bottom:10px;}
+.honest p:last-child{margin-bottom:0;}
+.honest strong{color:var(--clay-deep);}
+
+.pq{font-family:'Bricolage Grotesque',sans-serif;font-size:24px;line-height:1.25;font-weight:700;color:var(--teal);border-left:5px solid var(--gold);padding:6px 0 6px 22px;margin:24px 0;letter-spacing:-.01em;}
+
+.bridge{background:var(--ink);color:var(--cream);border-radius:15px;padding:24px 28px;margin-top:6px;position:relative;overflow:hidden;}
+.bridge::after{content:"";position:absolute;right:-30px;bottom:-30px;width:150px;height:150px;background:radial-gradient(circle,rgba(30,138,140,.5),transparent 70%);}
+.bridge *{position:relative;}
+.bridge .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--teal-soft);margin-bottom:9px;}
+.bridge p{color:var(--cream);font-size:16.5px;line-height:1.58;margin-bottom:10px;}
+.bridge p:last-child{margin-bottom:0;}
+.bridge strong{color:var(--gold);}
+
+footer{background:var(--ink);color:var(--cream);margin-top:30px;padding:30px 0 54px;}
+footer .big{font-family:'Bricolage Grotesque',sans-serif;font-size:16px;color:var(--gold);font-weight:700;margin-bottom:6px;}
+footer .ft{font-size:13px;color:rgba(251,244,230,.7);line-height:1.5;}
+@media(max-width:600px){h1{font-size:38px;}.hero{padding:40px 24px 36px;}}
+</style>
+</head>
+<body>
+
+<div class="herobleed">
+<div class="hero">
+  <div class="labtag">Economic Democracy · Building Wealth</div>
+  <div class="kicker">The cushion under everything else</div>
+  <h1>Liquidity &amp; Emergency Reserve</h1>
+  <p class="standfirst">The cash that turns a catastrophe into an inconvenience. It's pure defense — and it's the floor everything else stands on.</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="lesson">
+
+  <!-- 01 -->
+  <div class="step">
+    <div class="steplab"><span class="num">01</span><span class="ttl">The concept</span></div>
+    <p class="dropcap">For a household, liquidity is how much usable cash you can reach quickly — and the emergency reserve is the deliberate cushion of liquid cash you keep on hand for surprises. It's the most foundational piece of financial security there is, and it's pure <strong>defense</strong>: the thing that lets you invest, take a risk, and build without a single bad month undoing all of it.</p>
+    <p>Offense — assets, returns, growth — gets all the attention. But this is the floor offense stands on. Without a reserve, every plan is one surprise away from collapse.</p>
+  </div>
+
+  <!-- 02 -->
+  <div class="step">
+    <div class="steplab"><span class="num">02</span><span class="ttl">How it works</span></div>
+    <p>You measure a reserve in <strong>months of expenses</strong> — how long you could cover your costs if the income stopped. A common target is three to six months of essential expenses, kept in safe, liquid form:</p>
+    <div class="target">
+      <div class="th">A reserve target, from monthly essentials</div>
+      <div class="trow">
+        <div class="tblk base"><div class="tv">$3,500</div><div class="tl">monthly essentials</div></div>
+        <span class="teq">→</span>
+        <div class="tblk three"><div class="tv">~$10,500</div><div class="tl">3-month reserve</div></div>
+        <div class="tblk six"><div class="tv">~$21,000</div><div class="tl">6-month reserve</div></div>
+      </div>
+    </div>
+    <p>Two rules make it work. It has to be <strong>liquid and safe</strong> — cash or high-yield savings, not stocks that could be down exactly when you need them. And a credit card is <em>not</em> a reserve — it's debt that compounds against you. Here's the whole point, shown on a single $4,000 surprise:</p>
+    <div class="scen">
+      <div class="sc with"><div class="sct">With a reserve</div><p>Pay the $4,000 from cash. Refill it over a few months. Your net worth barely moves, and the emergency stays an emergency — not a turning point.</p></div>
+      <div class="sc without"><div class="sct">Without a reserve</div><p>The $4,000 goes on a card at ~24%, or you sell an asset at a bad time. A one-time event becomes months or years of debt — or a locked-in loss.</p></div>
+    </div>
+  </div>
+
+  <!-- 03 -->
+  <div class="step">
+    <div class="steplab"><span class="num">03</span><span class="ttl">In real life</span></div>
+    <p>The same surprise lands three completely different ways:</p>
+    <div class="threecol">
+      <div class="tc2 a"><div class="h">The shock absorber</div><div class="b">Emergency hits, paid from cash, refilled over months, building continues. Barely a ripple in the long plan.</div></div>
+      <div class="tc2 b"><div class="h">The credit-card spiral</div><div class="b">No reserve, so it goes on plastic at 20%+, compounds, and a single bad week becomes years of payments.</div></div>
+      <div class="tc2 c"><div class="h">The forced sale</div><div class="b">No cash, so an asset gets sold — or retirement raided — at the worst time, locking in a loss and a tax hit a reserve would have avoided.</div></div>
+    </div>
+    <p class="pq">An emergency fund doesn't grow your wealth. It keeps a bad week from destroying it.</p>
+  </div>
+
+  <!-- 04 -->
+  <div class="step">
+    <div class="steplab"><span class="num">04</span><span class="ttl">Apply it to your life</span></div>
+    <div class="applybox">
+      <div class="l">Build the floor first</div>
+      <ul>
+        <li>Know your number: monthly essential expenses × 3 to 6. That's your target.</li>
+        <li>Keep it separate and liquid — its own account, in cash, not invested, and not "the credit card."</li>
+        <li>Build it before investing aggressively. The reserve is what makes the investing survivable.</li>
+        <li>Not there yet? Start with one month — even one week. Any buffer beats none.</li>
+      </ul>
+      <p class="tip">This is the rare money move with no downside. It's not exciting, and that's exactly why it works.</p>
+    </div>
+  </div>
+
+  <!-- 05 -->
+  <div class="step">
+    <div class="steplab"><span class="num">05</span><span class="ttl">The honest part</span></div>
+    <div class="honest">
+      <div class="l">What no one tells you</div>
+      <p>The tidy "three to six months" rule quietly assumes you have spare income to build it — and a great many people don't. For them, the missing reserve isn't a discipline failure; it's the casualty of an income that barely covers life. And that's the cruelest turn of the squeeze: <strong>the people most exposed to financial shocks are the least able to build the cushion that absorbs them</strong>, so every emergency converts straight into debt.</p>
+      <p>Two more honest notes. A reserve sitting in cash earns little and even loses a bit to inflation — that's not a mistake, it's the price of safety; the reserve's job is to <em>be there</em>, not to grow, so don't invest it chasing returns. And building it is slow and unglamorous, feeling like nothing is happening for months. It's still the single most protective thing most people can do — and a privilege the system makes hardest for exactly those who need it most.</p>
+    </div>
+  </div>
+
+  <!-- 06 -->
+  <div class="step">
+    <div class="steplab"><span class="num">06</span><span class="ttl">The bigger picture</span></div>
+    <div class="bridge">
+      <div class="l">Why this matters beyond you</div>
+      <p>The emergency reserve is the household-sized version of something a whole society either organizes or fails to. A cushion is what stands between a shock and a catastrophe — and who has one is starkly unequal: a large share of households can't cover even a few hundred dollars of surprise without borrowing. That fragility, repeated across millions of homes, isn't a moral failing — it's structural, the product of wages that leave no surplus and costs that take everything.</p>
+      <p>And it's exactly why a public safety net exists. Unemployment insurance, public health coverage, disability benefits — these are the <strong>collective reserve</strong> for shocks too big for any household to self-insure against. The personal reserve and the public floor are the same idea at two scales: the buffer that keeps a bad event from becoming a ruined life. Spreading the ability to hold a reserve, and backing it with a real public floor, is how a society keeps shocks from concentrating ruin on the people least able to absorb them.</p>
+    </div>
+  </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="big">Liquidity &amp; Emergency Reserve · Building Wealth</div>
+    <div class="ft">Economic Democracy · Building Wealth · economicdemocracy.co<br>A Shared Prosperity education project. General education, not personal financial advice. Figures are illustrative.</div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Income-Producing Assets · Building Wealth · Economic Democracy</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+:root{
+  --teal:#1E8A8C; --teal-deep:#136466; --teal-soft:#5FB8B6;
+  --orange:#F08A24; --orange-deep:#D9731A; --gold:#F5B940;
+  --clay:#C7553B; --clay-deep:#A8412B;
+  --cream:#FBF4E6; --paper:#FEF9F0; --card:#FFFFFF;
+  --ink:#16211F; --mid:#5d6b66; --rule:#E7DABE; --wash:#F2E9D4;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:720px;margin:0 auto;padding:0 24px;}
+a{color:inherit;}
+
+.herobleed{background:var(--teal);background-image:radial-gradient(circle at 12% 18%,rgba(245,185,64,.34),transparent 52%),radial-gradient(circle at 88% 84%,rgba(240,138,36,.28),transparent 55%);}
+.hero{max-width:720px;margin:0 auto;padding:50px 24px 46px;}
+.labtag{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-deep);background:var(--gold);padding:7px 15px;border-radius:100px;margin-bottom:20px;}
+.kicker{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cream);margin-bottom:13px;opacity:.92;}
+h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:50px;line-height:.98;letter-spacing:-.025em;color:#fff;margin-bottom:16px;}
+.standfirst{font-size:20px;line-height:1.45;color:var(--cream);font-weight:500;max-width:42ch;}
+
+.lesson{padding-top:42px;}
+.step{margin-bottom:30px;}
+.steplab{display:flex;align-items:baseline;gap:11px;margin-bottom:10px;}
+.steplab .num{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:14px;color:var(--orange);letter-spacing:.04em;}
+.steplab .ttl{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;letter-spacing:-.02em;color:var(--ink);}
+.step p{font-size:17px;line-height:1.62;margin-bottom:12px;}
+.step p:last-child{margin-bottom:0;}
+.step strong{color:var(--teal-deep);font-weight:700;}
+.dropcap::first-letter{font-family:'Bricolage Grotesque',sans-serif;font-size:58px;font-weight:800;float:left;line-height:.78;margin:5px 11px 0 0;color:var(--teal);}
+
+/* asset menu */
+.menu{background:var(--card);border:2.5px solid var(--ink);border-radius:16px;padding:8px 22px 14px;margin:10px 0 6px;box-shadow:5px 5px 0 var(--rule);}
+.mrow{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 0;border-top:1.5px solid var(--rule);}
+.mrow:first-child{border-top:none;}
+.mrow .left{flex:1;}
+.mrow .mname{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:16px;letter-spacing:-.01em;margin-bottom:3px;}
+.mrow .mpays{font-size:14px;color:var(--mid);line-height:1.4;}
+.mrow .mpays b{color:var(--teal-deep);font-weight:600;}
+.mtag{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:11px;letter-spacing:.05em;text-transform:uppercase;padding:5px 11px;border-radius:100px;white-space:nowrap;flex-shrink:0;text-align:center;line-height:1.3;}
+.mtag.cap{background:#e4f2f0;color:var(--teal-deep);border:1.5px solid var(--teal-soft);}
+.mtag.work{background:var(--wash);color:var(--orange-deep);border:1.5px solid var(--gold);}
+.mtag.both{background:#fbeee6;color:var(--clay-deep);border:1.5px solid var(--clay);}
+.menukey{font-size:12.5px;color:var(--mid);margin-top:6px;font-style:italic;padding:0 2px;}
+
+.threecol{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;margin:6px 0 4px;}
+.tc2{border:2px solid var(--ink);border-radius:12px;padding:15px 16px;box-shadow:3px 3px 0 var(--rule);}
+.tc2 .tag{font-family:'Bricolage Grotesque',sans-serif;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mid);margin-bottom:6px;}
+.tc2 .h{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;margin-bottom:6px;line-height:1.1;}
+.tc2 .b{font-size:14px;line-height:1.45;color:var(--mid);}
+.tc2.a{background:#e4f2f0;} .tc2.a .h{color:var(--teal-deep);}
+.tc2.b{background:var(--wash);} .tc2.b .h{color:var(--orange-deep);}
+.tc2.c{background:#fbeee6;} .tc2.c .h{color:var(--clay-deep);}
+@media(max-width:600px){.threecol{grid-template-columns:1fr;}}
+
+.applybox{background:var(--teal);background-image:radial-gradient(circle at 90% 10%,rgba(245,185,64,.3),transparent 60%);border-radius:15px;padding:24px 26px;margin:6px 0 4px;}
+.applybox .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:12px;}
+.applybox ul{list-style:none;margin:0;}
+.applybox li{color:#fff;font-size:16px;line-height:1.45;padding:9px 0 9px 30px;position:relative;border-bottom:1px solid rgba(255,255,255,.16);}
+.applybox li:last-child{border-bottom:none;}
+.applybox li::before{content:"→";position:absolute;left:4px;color:var(--gold);font-weight:700;}
+.applybox .tip{margin-top:14px;font-size:14px;color:var(--cream);font-style:italic;line-height:1.5;}
+
+.honest{background:#fbeee6;border-left:5px solid var(--clay);border-radius:0 13px 13px 0;padding:20px 24px;margin:6px 0 4px;}
+.honest .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--clay-deep);margin-bottom:9px;}
+.honest p{font-size:16px;line-height:1.58;margin-bottom:10px;}
+.honest p:last-child{margin-bottom:0;}
+.honest strong{color:var(--clay-deep);}
+
+.pq{font-family:'Bricolage Grotesque',sans-serif;font-size:24px;line-height:1.25;font-weight:700;color:var(--teal);border-left:5px solid var(--gold);padding:6px 0 6px 22px;margin:24px 0;letter-spacing:-.01em;}
+
+.bridge{background:var(--ink);color:var(--cream);border-radius:15px;padding:24px 28px;margin-top:6px;position:relative;overflow:hidden;}
+.bridge::after{content:"";position:absolute;right:-30px;bottom:-30px;width:150px;height:150px;background:radial-gradient(circle,rgba(30,138,140,.5),transparent 70%);}
+.bridge *{position:relative;}
+.bridge .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--teal-soft);margin-bottom:9px;}
+.bridge p{color:var(--cream);font-size:16.5px;line-height:1.58;margin-bottom:10px;}
+.bridge p:last-child{margin-bottom:0;}
+.bridge strong{color:var(--gold);}
+
+.next{display:flex;align-items:center;justify-content:space-between;gap:16px;background:var(--gold);border:2.5px solid var(--ink);border-radius:14px;padding:18px 22px;margin:30px 0 0;box-shadow:5px 5px 0 var(--orange);}
+.next .nl{font-family:'Bricolage Grotesque',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--teal-deep);margin-bottom:3px;}
+.next .nm{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:19px;color:var(--ink);letter-spacing:-.01em;}
+.next .arrow{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:26px;color:var(--clay);}
+
+footer{background:var(--ink);color:var(--cream);margin-top:30px;padding:30px 0 54px;}
+footer .big{font-family:'Bricolage Grotesque',sans-serif;font-size:16px;color:var(--gold);font-weight:700;margin-bottom:6px;}
+footer .ft{font-size:13px;color:rgba(251,244,230,.7);line-height:1.5;}
+@media(max-width:600px){h1{font-size:38px;}.hero{padding:40px 24px 36px;}}
+</style>
+</head>
+<body>
+
+<div class="herobleed">
+<div class="hero">
+  <div class="labtag">Economic Democracy · Building Wealth</div>
+  <div class="kicker">Things that pay you to own them</div>
+  <h1>Income-Producing Assets</h1>
+  <p class="standfirst">The things that pay you for owning them. The menu is shorter than you think — and knowing it is half the battle.</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="lesson">
+
+  <!-- 01 -->
+  <div class="step">
+    <div class="steplab"><span class="num">01</span><span class="ttl">The concept</span></div>
+    <p class="dropcap">An income-producing asset is anything you own that puts cash in your pocket on its own — without you having to show up and work for it. These are the "money-in" things from the sorting lesson, now given names. They are the actual engine of wealth: you acquire them, and from then on they pay you.</p>
+    <p>The good news is that the menu is <strong>knowable and short</strong>. Almost every income-producing asset in the world falls into a handful of categories. Learn the menu, and the mystery mostly disappears.</p>
+  </div>
+
+  <!-- 02 -->
+  <div class="step">
+    <div class="steplab"><span class="num">02</span><span class="ttl">How it works — the menu</span></div>
+    <p>Here are the main kinds of assets that pay you, and what each one takes to get started:</p>
+    <div class="menu">
+      <div class="mrow">
+        <div class="left"><div class="mname">Stocks &amp; index funds</div><div class="mpays"><b>Pays:</b> a share of company profits (dividends) and growth in value.</div></div>
+        <span class="mtag cap">Needs<br>capital</span>
+      </div>
+      <div class="mrow">
+        <div class="left"><div class="mname">Bonds, savings &amp; lending</div><div class="mpays"><b>Pays:</b> interest on money you lend out or park.</div></div>
+        <span class="mtag cap">Needs<br>capital</span>
+      </div>
+      <div class="mrow">
+        <div class="left"><div class="mname">Real estate</div><div class="mpays"><b>Pays:</b> rent, plus the property gaining value over time.</div></div>
+        <span class="mtag both">Capital<br>+ work</span>
+      </div>
+      <div class="mrow">
+        <div class="left"><div class="mname">A business you own</div><div class="mpays"><b>Pays:</b> a share of the profit it makes — without you, if it's built to.</div></div>
+        <span class="mtag both">Capital<br>+ work</span>
+      </div>
+      <div class="mrow">
+        <div class="left"><div class="mname">Intellectual property</div><div class="mpays"><b>Pays:</b> royalties from something you made — a book, song, product, or design.</div></div>
+        <span class="mtag work">Needs<br>work</span>
+      </div>
+    </div>
+    <p class="menukey">Every one of them costs you up front — either money you've saved, or work you put in first. None of them is free.</p>
+    <p>Notice the pattern: some assets you <strong>buy with capital</strong>, others you <strong>build with work</strong>. And whatever the type, the income they throw off grows in proportion to how much of them you own.</p>
+  </div>
+
+  <!-- 03 -->
+  <div class="step">
+    <div class="steplab"><span class="num">03</span><span class="ttl">In real life — where you can start</span></div>
+    <p>The honest question isn't "which asset is best?" — it's "which can <em>I</em> start, from where I am right now?"</p>
+    <div class="threecol">
+      <div class="tc2 a"><div class="tag">Starting with little</div><div class="h">An employer match + an index fund</div><div class="b">A retirement account with low-cost funds. Small amounts, automatic, and your employer may add free money. The real on-ramp for most people.</div></div>
+      <div class="tc2 b"><div class="tag">Starting with some savings</div><div class="h">A broader investment account</div><div class="b">Index funds, dividend stocks, or bonds in a regular brokerage account. Add to it steadily; let it compound.</div></div>
+      <div class="tc2 c"><div class="tag">Starting with real capital or skill</div><div class="h">Property, or a business</div><div class="b">A rental, or a business built to run without you. Higher upside, far more capital, work, and risk.</div></div>
+    </div>
+    <p class="pq">You don't need every asset. You need the first one — the one you can actually start from where you stand.</p>
+  </div>
+
+  <!-- 04 -->
+  <div class="step">
+    <div class="steplab"><span class="num">04</span><span class="ttl">Apply it to your life</span></div>
+    <div class="applybox">
+      <div class="l">Find your next asset</div>
+      <ul>
+        <li>Which income-producing assets do you already own? (A retirement fund counts — it holds them.)</li>
+        <li>Are you leaving any free employer match on the table?</li>
+        <li>Which path fits you now — buying an asset with capital, or building one with work?</li>
+        <li>Name one asset you could realistically start or add to within the next year.</li>
+      </ul>
+      <p class="tip">Most ordinary wealth is built quietly, through a retirement account holding index funds — not through anything exotic.</p>
+    </div>
+  </div>
+
+  <!-- 05 -->
+  <div class="step">
+    <div class="steplab"><span class="num">05</span><span class="ttl">The honest part</span></div>
+    <div class="honest">
+      <div class="l">What no one tells you</div>
+      <p>Three hard truths. First, the income from an asset is <strong>proportional to how much you own</strong> — a small base produces a small trickle, so don't expect to live off it early. Second, every asset carries <strong>real risk</strong>: stocks fall, tenants leave, businesses fail, a book earns nothing. "Income-producing" is a hope, not a guarantee.</p>
+      <p>Third, and least talked about: access is <strong>deeply unequal</strong>. The safest, easiest assets (funds and bonds) need capital many people don't have to spare — while the ones you can start with little money (a side business, intellectual property) demand enormous work at long odds. That gap is exactly why wealth is so hard to start from zero. And beware the noise: most "passive income asset" pitches online — crypto schemes, get-rich seminars, dropshipping courses — are oversold or outright scams. The boring index fund usually beats all of them.</p>
+    </div>
+  </div>
+
+  <!-- 06 -->
+  <div class="step">
+    <div class="steplab"><span class="num">06</span><span class="ttl">The bigger picture</span></div>
+    <div class="bridge">
+      <div class="l">Why this matters beyond you</div>
+      <p>Building wealth is really just one thing repeated: <strong>accumulating income-producing assets</strong> — the productive capital of the economy. And that's exactly where concentration lives. A small few own most of the productive assets — the companies, the land, the intellectual property — while most people own consumer goods that lose value and debts that drain. The income the economy throws off from capital flows to whoever owns the capital.</p>
+      <p>So the deepest question in this whole course is a simple one: <strong>who owns the things that produce income?</strong> Widening that ownership — not just spreading paychecks, but spreading the assets themselves — is the entire project.</p>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="big">Income-Producing Assets · Building Wealth</div>
+    <div class="ft">Economic Democracy · Building Wealth · economicdemocracy.co<br>A Shared Prosperity education project. General education, not personal financial or investment advice.</div>
+  </div>
+</footer>
+
+</body>
+</html>

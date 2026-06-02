@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketability / Liquidity of a Stake · Building Wealth · Economic Democracy</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+:root{
+  --teal:#1E8A8C; --teal-deep:#136466; --teal-soft:#5FB8B6;
+  --orange:#F08A24; --orange-deep:#D9731A; --gold:#F5B940;
+  --clay:#C7553B; --clay-deep:#A8412B;
+  --cream:#FBF4E6; --paper:#FEF9F0; --card:#FFFFFF;
+  --ink:#16211F; --mid:#5d6b66; --rule:#E7DABE; --wash:#F2E9D4;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:720px;margin:0 auto;padding:0 24px;}
+a{color:inherit;}
+
+.herobleed{background:var(--teal);background-image:radial-gradient(circle at 12% 18%,rgba(245,185,64,.34),transparent 52%),radial-gradient(circle at 88% 84%,rgba(240,138,36,.28),transparent 55%);}
+.hero{max-width:720px;margin:0 auto;padding:50px 24px 46px;}
+.labtag{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-deep);background:var(--gold);padding:7px 15px;border-radius:100px;margin-bottom:20px;}
+.kicker{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cream);margin-bottom:13px;opacity:.92;}
+h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:44px;line-height:1.0;letter-spacing:-.025em;color:#fff;margin-bottom:16px;}
+.standfirst{font-size:20px;line-height:1.45;color:var(--cream);font-weight:500;max-width:42ch;}
+
+.lesson{padding-top:42px;}
+.step{margin-bottom:30px;}
+.steplab{display:flex;align-items:baseline;gap:11px;margin-bottom:10px;}
+.steplab .num{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:14px;color:var(--orange);letter-spacing:.04em;}
+.steplab .ttl{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:23px;letter-spacing:-.02em;color:var(--ink);}
+.step p{font-size:17px;line-height:1.62;margin-bottom:12px;}
+.step p:last-child{margin-bottom:0;}
+.step strong{color:var(--teal-deep);font-weight:700;}
+.dropcap::first-letter{font-family:'Bricolage Grotesque',sans-serif;font-size:58px;font-weight:800;float:left;line-height:.78;margin:5px 11px 0 0;color:var(--teal);}
+
+/* liquidity spectrum */
+.spec{background:var(--card);border:2.5px solid var(--ink);border-radius:16px;padding:22px 24px 18px;margin:10px 0 6px;box-shadow:5px 5px 0 var(--rule);}
+.spec .sh{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;letter-spacing:.04em;font-weight:700;color:var(--orange-deep);margin-bottom:14px;}
+.track{height:14px;border-radius:100px;background:linear-gradient(90deg,var(--teal) 0%,var(--teal-soft) 32%,var(--gold) 60%,var(--orange) 80%,var(--clay) 100%);border:2px solid var(--ink);}
+.axis{display:flex;justify-content:space-between;margin-top:7px;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:12px;color:var(--mid);}
+.specrow{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:16px;}
+.si{text-align:center;border:2px solid var(--ink);border-radius:10px;padding:11px 6px;box-shadow:2px 2px 0 var(--rule);}
+.si .sn{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:12.5px;line-height:1.12;margin-bottom:5px;}
+.si .st{font-size:10.5px;color:var(--mid);line-height:1.2;}
+.si.l1{background:#dff0ee;} .si.l1 .sn{color:var(--teal-deep);}
+.si.l2{background:#e8f1ea;} .si.l2 .sn{color:var(--teal-deep);}
+.si.l3{background:var(--wash);} .si.l3 .sn{color:var(--orange-deep);}
+.si.l4{background:#fbe9da;} .si.l4 .sn{color:var(--orange-deep);}
+.si.l5{background:#fbe7df;} .si.l5 .sn{color:var(--clay-deep);}
+@media(max-width:600px){.specrow{grid-template-columns:1fr 1fr;}.specrow .si:last-child{grid-column:1 / -1;}}
+
+.threecol{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;margin:6px 0 4px;}
+.tc2{border:2px solid var(--ink);border-radius:12px;padding:15px 16px;box-shadow:3px 3px 0 var(--rule);}
+.tc2 .h{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;margin-bottom:6px;line-height:1.1;}
+.tc2 .b{font-size:14px;line-height:1.45;color:var(--mid);}
+.tc2.a{background:#e4f2f0;} .tc2.a .h{color:var(--teal-deep);}
+.tc2.b{background:var(--wash);} .tc2.b .h{color:var(--orange-deep);}
+.tc2.c{background:#fbeee6;} .tc2.c .h{color:var(--clay-deep);}
+@media(max-width:600px){.threecol{grid-template-columns:1fr;}}
+
+.applybox{background:var(--teal);background-image:radial-gradient(circle at 90% 10%,rgba(245,185,64,.3),transparent 60%);border-radius:15px;padding:24px 26px;margin:6px 0 4px;}
+.applybox .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:12px;}
+.applybox ul{list-style:none;margin:0;}
+.applybox li{color:#fff;font-size:16px;line-height:1.45;padding:9px 0 9px 30px;position:relative;border-bottom:1px solid rgba(255,255,255,.16);}
+.applybox li:last-child{border-bottom:none;}
+.applybox li::before{content:"→";position:absolute;left:4px;color:var(--gold);font-weight:700;}
+.applybox .tip{margin-top:14px;font-size:14px;color:var(--cream);font-style:italic;line-height:1.5;}
+
+.honest{background:#fbeee6;border-left:5px solid var(--clay);border-radius:0 13px 13px 0;padding:20px 24px;margin:6px 0 4px;}
+.honest .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--clay-deep);margin-bottom:9px;}
+.honest p{font-size:16px;line-height:1.58;margin-bottom:10px;}
+.honest p:last-child{margin-bottom:0;}
+.honest strong{color:var(--clay-deep);}
+
+.pq{font-family:'Bricolage Grotesque',sans-serif;font-size:24px;line-height:1.25;font-weight:700;color:var(--teal);border-left:5px solid var(--gold);padding:6px 0 6px 22px;margin:24px 0;letter-spacing:-.01em;}
+
+.bridge{background:var(--ink);color:var(--cream);border-radius:15px;padding:24px 28px;margin-top:6px;position:relative;overflow:hidden;}
+.bridge::after{content:"";position:absolute;right:-30px;bottom:-30px;width:150px;height:150px;background:radial-gradient(circle,rgba(30,138,140,.5),transparent 70%);}
+.bridge *{position:relative;}
+.bridge .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--teal-soft);margin-bottom:9px;}
+.bridge p{color:var(--cream);font-size:16.5px;line-height:1.58;margin-bottom:10px;}
+.bridge p:last-child{margin-bottom:0;}
+.bridge strong{color:var(--gold);}
+
+.next{display:flex;align-items:center;justify-content:space-between;gap:16px;background:var(--gold);border:2.5px solid var(--ink);border-radius:14px;padding:18px 22px;margin:30px 0 0;box-shadow:5px 5px 0 var(--orange);}
+.next .nl{font-family:'Bricolage Grotesque',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--teal-deep);margin-bottom:3px;}
+.next .nm{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:19px;color:var(--ink);letter-spacing:-.01em;}
+.next .arrow{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:26px;color:var(--clay);}
+
+footer{background:var(--ink);color:var(--cream);margin-top:30px;padding:30px 0 54px;}
+footer .big{font-family:'Bricolage Grotesque',sans-serif;font-size:16px;color:var(--gold);font-weight:700;margin-bottom:6px;}
+footer .ft{font-size:13px;color:rgba(251,244,230,.7);line-height:1.5;}
+@media(max-width:600px){h1{font-size:34px;}.hero{padding:40px 24px 36px;}}
+</style>
+</head>
+<body>
+
+<div class="herobleed">
+<div class="hero">
+  <div class="labtag">Economic Democracy · Building Wealth</div>
+  <div class="kicker">How fast a stake becomes cash</div>
+  <h1>Marketability &amp; Liquidity of a Stake</h1>
+  <p class="standfirst">How fast you can turn what you own into cash — and why a stake you can't sell is worth less than one you can.</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="lesson">
+
+  <!-- 01 -->
+  <div class="step">
+    <div class="steplab"><span class="num">01</span><span class="ttl">The concept</span></div>
+    <p class="dropcap">Liquidity is how easily and quickly you can turn something you own into cash without taking a loss. A share of a public company is highly liquid — you can sell it in seconds at a known price. A stake in a private business is the opposite: there's no posted price, no line of waiting buyers, and a sale can take months or years — at a discount, if it happens at all.</p>
+    <p>That difficulty has a price. It's the second discount from the valuation lesson — the <strong>20% for lack of marketability</strong>. A buyer pays less for a stake they'll have just as much trouble selling later.</p>
+  </div>
+
+  <!-- 02 -->
+  <div class="step">
+    <div class="steplab"><span class="num">02</span><span class="ttl">How it works</span></div>
+    <p>Liquidity is a spectrum, from "cash in hand" to "good luck selling it":</p>
+    <div class="spec">
+      <div class="sh">From instant cash to stuck</div>
+      <div class="track"></div>
+      <div class="axis"><span>Instant cash</span><span>Hard to sell</span></div>
+      <div class="specrow">
+        <div class="si l1"><div class="sn">Cash</div><div class="st">instant</div></div>
+        <div class="si l2"><div class="sn">Savings &amp; bonds</div><div class="st">days</div></div>
+        <div class="si l3"><div class="sn">Public stocks</div><div class="st">seconds–days</div></div>
+        <div class="si l4"><div class="sn">Real estate</div><div class="st">weeks–months</div></div>
+        <div class="si l5"><div class="sn">Private business stake</div><div class="st">months–years, or never</div></div>
+      </div>
+    </div>
+    <p>The harder something is to sell, the bigger the discount a buyer demands to take it on. For a private minority stake the friction stacks up: you have to <strong>find</strong> a buyer yourself, they have to accept the lack of control, the checking-over can drag on for months, and to actually close you often have to accept <strong>less than the "value" on paper</strong>. Illiquidity isn't a small footnote — it's a real haircut on real wealth.</p>
+  </div>
+
+  <!-- 03 -->
+  <div class="step">
+    <div class="steplab"><span class="num">03</span><span class="ttl">In real life</span></div>
+    <p>Same "value," wildly different freedom to use it:</p>
+    <div class="threecol">
+      <div class="tc2 a"><div class="h">Public stock</div><div class="b">$100k of an index fund is cash by tomorrow at a price you can see right now. Fully liquid wealth.</div></div>
+      <div class="tc2 b"><div class="h">Home equity</div><div class="b">Real wealth, but locked. To reach it you must sell (slow) or borrow against it (debt). The illiquid wealth most families hold.</div></div>
+      <div class="tc2 c"><div class="h">A trapped business owner</div><div class="b">Net worth mostly in a stake they can't easily sell. Rich on paper, short on cash — and you can't pay an emergency bill with 35% of a company.</div></div>
+    </div>
+    <p class="pq">Two people can be "worth" the same amount. The one who can reach their money is in a completely different life.</p>
+  </div>
+
+  <!-- 04 -->
+  <div class="step">
+    <div class="steplab"><span class="num">04</span><span class="ttl">Apply it to your life</span></div>
+    <div class="applybox">
+      <div class="l">Measure your real liquidity</div>
+      <ul>
+        <li>How much of your net worth could you turn into cash in a week without a big loss? That's your true liquidity.</li>
+        <li>For each illiquid asset, what's the actual plan to convert it someday — a sale, a buyout, a refinance?</li>
+        <li>Do you hold enough liquid cash, separate from your locked-up wealth, to handle an emergency?</li>
+        <li>Before taking a private stake, ask plainly: how would I ever get my money back out, and how long would it take?</li>
+      </ul>
+      <p class="tip">Net worth tells you what you own. Liquidity tells you what you can actually use this month.</p>
+    </div>
+  </div>
+
+  <!-- 05 -->
+  <div class="step">
+    <div class="steplab"><span class="num">05</span><span class="ttl">The honest part</span></div>
+    <div class="honest">
+      <div class="l">What no one tells you</div>
+      <p>Illiquidity is the hidden risk inside "I'm worth X." You can have a large net worth and still be unable to cover a surprise bill, because your wealth is locked in things you can't quickly sell. <strong>Asset-rich and cash-poor</strong> is a real and dangerous place — especially for business owners, whose net worth often sits almost entirely in one stake they can't move. Illiquid assets also <strong>trap you</strong>: you can't easily exit a bad partnership or a fading business, even when you can see it going wrong.</p>
+      <p>And the "value" of an illiquid stake is soft — it's what someone <em>might</em> pay someday, not what you can get today. In a forced sale, when you need cash now, you'll take far less. So keep enough liquid wealth that you're never forced to sell an illiquid asset at the worst possible moment. <strong>Liquidity is freedom; illiquidity is a cage that can look exactly like wealth.</strong></p>
+    </div>
+  </div>
+
+  <!-- 06 -->
+  <div class="step">
+    <div class="steplab"><span class="num">06</span><span class="ttl">The bigger picture</span></div>
+    <div class="bridge">
+      <div class="l">Why this matters beyond you</div>
+      <p>Liquidity, like control, is handed out unequally — and it's a form of power. The largest players hold liquid assets and have ready access to cash and credit, so their wealth is <strong>flexible</strong>: they can wait out a bad year, seize an opportunity, and never be forced to sell low. The small owner's wealth is stuck in one illiquid stake, exposed to being squeezed at exactly the wrong time.</p>
+      <p>Here's the engine that hides in this. The people <em>with</em> liquidity get to buy the illiquid assets of the people <em>forced</em> to sell — cheaply, in downturns. That's how concentration accelerates in every crisis: patient money scoops up distressed homes and businesses at a discount. Liquidity is the freedom to wait and the freedom to pounce. Spreading not just ownership and control but <strong>liquidity</strong> — cash cushions, fair credit, real markets for ordinary people's assets — is part of the same project.</p>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="big">Marketability &amp; Liquidity of a Stake · Building Wealth</div>
+    <div class="ft">Economic Democracy · Building Wealth · economicdemocracy.co<br>A Shared Prosperity education project. General education, not financial advice. Figures are illustrative.</div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Control vs. Ownership · Building Wealth · Economic Democracy</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+:root{
+  --teal:#1E8A8C; --teal-deep:#136466; --teal-soft:#5FB8B6;
+  --orange:#F08A24; --orange-deep:#D9731A; --gold:#F5B940;
+  --clay:#C7553B; --clay-deep:#A8412B;
+  --cream:#FBF4E6; --paper:#FEF9F0; --card:#FFFFFF;
+  --ink:#16211F; --mid:#5d6b66; --rule:#E7DABE; --wash:#F2E9D4;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:720px;margin:0 auto;padding:0 24px;}
+a{color:inherit;}
+
+.herobleed{background:var(--teal);background-image:radial-gradient(circle at 12% 18%,rgba(245,185,64,.34),transparent 52%),radial-gradient(circle at 88% 84%,rgba(240,138,36,.28),transparent 55%);}
+.hero{max-width:720px;margin:0 auto;padding:50px 24px 46px;}
+.labtag{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-deep);background:var(--gold);padding:7px 15px;border-radius:100px;margin-bottom:20px;}
+.kicker{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cream);margin-bottom:13px;opacity:.92;}
+h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:52px;line-height:.98;letter-spacing:-.025em;color:#fff;margin-bottom:16px;}
+.standfirst{font-size:20px;line-height:1.45;color:var(--cream);font-weight:500;max-width:42ch;}
+
+.lesson{padding-top:42px;}
+.step{margin-bottom:30px;}
+.steplab{display:flex;align-items:baseline;gap:11px;margin-bottom:10px;}
+.steplab .num{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:14px;color:var(--orange);letter-spacing:.04em;}
+.steplab .ttl{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;letter-spacing:-.02em;color:var(--ink);}
+.step p{font-size:17px;line-height:1.62;margin-bottom:12px;}
+.step p:last-child{margin-bottom:0;}
+.step strong{color:var(--teal-deep);font-weight:700;}
+.dropcap::first-letter{font-family:'Bricolage Grotesque',sans-serif;font-size:58px;font-weight:800;float:left;line-height:.78;margin:5px 11px 0 0;color:var(--teal);}
+
+/* gets / doesn't get */
+.gives{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:10px 0 4px;}
+.gcol{border:2.5px solid var(--ink);border-radius:15px;padding:20px 20px;box-shadow:5px 5px 0 var(--rule);}
+.gcol .gh{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:16px;margin-bottom:3px;letter-spacing:-.01em;}
+.gcol .gs{font-size:12.5px;color:var(--mid);margin-bottom:13px;font-style:italic;}
+.gcol ul{list-style:none;margin:0;}
+.gcol li{font-size:14.5px;line-height:1.4;padding:8px 0 8px 24px;position:relative;border-top:1px solid var(--rule);}
+.gcol li:first-of-type{border-top:none;}
+.gcol li::before{position:absolute;left:2px;font-weight:800;font-size:15px;}
+.gcol.have{background:#e4f2f0;} .gcol.have .gh{color:var(--teal-deep);} .gcol.have li::before{content:"✓";color:var(--teal);}
+.gcol.havent{background:#fbeee6;} .gcol.havent .gh{color:var(--clay-deep);} .gcol.havent li::before{content:"✕";color:var(--clay);}
+@media(max-width:600px){.gives{grid-template-columns:1fr;}}
+
+.threecol{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;margin:6px 0 4px;}
+.tc2{border:2px solid var(--ink);border-radius:12px;padding:15px 16px;box-shadow:3px 3px 0 var(--rule);}
+.tc2 .h{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;margin-bottom:6px;line-height:1.1;}
+.tc2 .b{font-size:14px;line-height:1.45;color:var(--mid);}
+.tc2.a{background:#e4f2f0;} .tc2.a .h{color:var(--teal-deep);}
+.tc2.b{background:var(--wash);} .tc2.b .h{color:var(--orange-deep);}
+.tc2.c{background:#fbeee6;} .tc2.c .h{color:var(--clay-deep);}
+@media(max-width:600px){.threecol{grid-template-columns:1fr;}}
+
+.applybox{background:var(--teal);background-image:radial-gradient(circle at 90% 10%,rgba(245,185,64,.3),transparent 60%);border-radius:15px;padding:24px 26px;margin:6px 0 4px;}
+.applybox .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:12px;}
+.applybox ul{list-style:none;margin:0;}
+.applybox li{color:#fff;font-size:16px;line-height:1.45;padding:9px 0 9px 30px;position:relative;border-bottom:1px solid rgba(255,255,255,.16);}
+.applybox li:last-child{border-bottom:none;}
+.applybox li::before{content:"→";position:absolute;left:4px;color:var(--gold);font-weight:700;}
+.applybox .tip{margin-top:14px;font-size:14px;color:var(--cream);font-style:italic;line-height:1.5;}
+
+.honest{background:#fbeee6;border-left:5px solid var(--clay);border-radius:0 13px 13px 0;padding:20px 24px;margin:6px 0 4px;}
+.honest .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--clay-deep);margin-bottom:9px;}
+.honest p{font-size:16px;line-height:1.58;margin-bottom:10px;}
+.honest p:last-child{margin-bottom:0;}
+.honest strong{color:var(--clay-deep);}
+
+.pq{font-family:'Bricolage Grotesque',sans-serif;font-size:24px;line-height:1.25;font-weight:700;color:var(--teal);border-left:5px solid var(--gold);padding:6px 0 6px 22px;margin:24px 0;letter-spacing:-.01em;}
+
+.bridge{background:var(--ink);color:var(--cream);border-radius:15px;padding:24px 28px;margin-top:6px;position:relative;overflow:hidden;}
+.bridge::after{content:"";position:absolute;right:-30px;bottom:-30px;width:150px;height:150px;background:radial-gradient(circle,rgba(30,138,140,.5),transparent 70%);}
+.bridge *{position:relative;}
+.bridge .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--teal-soft);margin-bottom:9px;}
+.bridge p{color:var(--cream);font-size:16.5px;line-height:1.58;margin-bottom:10px;}
+.bridge p:last-child{margin-bottom:0;}
+.bridge strong{color:var(--gold);}
+
+.next{display:flex;align-items:center;justify-content:space-between;gap:16px;background:var(--gold);border:2.5px solid var(--ink);border-radius:14px;padding:18px 22px;margin:30px 0 0;box-shadow:5px 5px 0 var(--orange);}
+.next .nl{font-family:'Bricolage Grotesque',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--teal-deep);margin-bottom:3px;}
+.next .nm{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:19px;color:var(--ink);letter-spacing:-.01em;}
+.next .arrow{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:26px;color:var(--clay);}
+
+footer{background:var(--ink);color:var(--cream);margin-top:30px;padding:30px 0 54px;}
+footer .big{font-family:'Bricolage Grotesque',sans-serif;font-size:16px;color:var(--gold);font-weight:700;margin-bottom:6px;}
+footer .ft{font-size:13px;color:rgba(251,244,230,.7);line-height:1.5;}
+@media(max-width:600px){h1{font-size:42px;}.hero{padding:40px 24px 36px;}}
+</style>
+</head>
+<body>
+
+<div class="herobleed">
+<div class="hero">
+  <div class="labtag">Economic Democracy · Building Wealth</div>
+  <div class="kicker">Owning a piece vs. calling the shots</div>
+  <h1>Control vs.<br>Ownership</h1>
+  <p class="standfirst">You can own a great deal of something and still decide nothing about it. That gap is where a lot of people get hurt.</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="lesson">
+
+  <!-- 01 -->
+  <div class="step">
+    <div class="steplab"><span class="num">01</span><span class="ttl">The concept</span></div>
+    <p class="dropcap">Owning a piece of something and controlling it are two different things, and people who confuse them get burned. <strong>Ownership</strong> is holding a share — you're entitled to your slice of the profits and the value. <strong>Control</strong> is getting to make the decisions — how it's run, when it pays out, whether and when it's sold, who's hired and fired.</p>
+    <p>These can come completely apart. You can own a lot and control nothing; you can control a lot while owning surprisingly little. The last lesson showed control is literally worth money — that 15% discount on a minority stake. This lesson is about <em>why</em>.</p>
+  </div>
+
+  <!-- 02 -->
+  <div class="step">
+    <div class="steplab"><span class="num">02</span><span class="ttl">How it works</span></div>
+    <p>Control usually comes from votes — a majority — or from the agreements that govern the business: who sits on the board, who can approve a sale, who sets pay. If you own 35% and others hold 65%, or a managing partner holds the decision rights, then <strong>you don't decide</strong>. Here's what that actually means for a minority stake:</p>
+    <div class="gives">
+      <div class="gcol have">
+        <div class="gh">What owning 35% gives you</div>
+        <div class="gs">your claim on the value</div>
+        <ul>
+          <li>A claim on 35% of profits — <em>if</em> they're paid out</li>
+          <li>35% of the proceeds — <em>if</em> the company is sold</li>
+          <li>Certain legal rights and access to information</li>
+          <li>A share of the gain if the value grows</li>
+        </ul>
+      </div>
+      <div class="gcol havent">
+        <div class="gh">What it doesn't give you</div>
+        <div class="gs">the decisions that make it real</div>
+        <ul>
+          <li>The power to decide if profits are paid out at all</li>
+          <li>A say in your own salary or role</li>
+          <li>The ability to force — or block — a sale</li>
+          <li>Protection from being diluted by new owners</li>
+        </ul>
+      </div>
+    </div>
+    <p>Read the two columns together and the discount makes sense: a buyer of a minority stake knows they'd be buying a <strong>claim without a steering wheel</strong>. Every "if" in the left column is decided by whoever holds the right one.</p>
+  </div>
+
+  <!-- 03 -->
+  <div class="step">
+    <div class="steplab"><span class="num">03</span><span class="ttl">In real life</span></div>
+    <p>The same gap appears at every scale:</p>
+    <div class="threecol">
+      <div class="tc2 c"><div class="h">The minority partner</div><div class="b">Owns a big chunk of a private business, but the controlling partner decides pay, distributions, and whether to ever sell. Owns much; decides little.</div></div>
+      <div class="tc2 b"><div class="h">The diluted founder</div><div class="b">Raised money, gave up board seats, and now owns a small slice of the company they started — with investors calling the shots.</div></div>
+      <div class="tc2 a"><div class="h">The everyday shareholder</div><div class="b">You "own" pieces of huge companies through funds and your retirement account — with essentially zero say in how any of them is run.</div></div>
+    </div>
+    <p class="pq">The percentage on your share certificate tells you what you're owed. The control terms tell you whether you'll ever see it.</p>
+  </div>
+
+  <!-- 04 -->
+  <div class="step">
+    <div class="steplab"><span class="num">04</span><span class="ttl">Apply it to your life</span></div>
+    <div class="applybox">
+      <div class="l">Know who actually decides</div>
+      <ul>
+        <li>For anything you co-own: who makes the calls on distributions, pay, and selling — you, or someone else?</li>
+        <li>What does your ownership agreement actually say about voting, control, and what happens in a dispute?</li>
+        <li>Are you counting on income or a payout that someone else gets to decide whether to give you?</li>
+        <li>Taking a minority stake? Negotiate control rights — a board seat, a veto on big decisions, a buyout path — <em>before</em> you're in.</li>
+      </ul>
+      <p class="tip">Get control terms in writing before you invest or join. After a dispute starts, it's too late to ask for them.</p>
+    </div>
+  </div>
+
+  <!-- 05 -->
+  <div class="step">
+    <div class="steplab"><span class="num">05</span><span class="ttl">The honest part</span></div>
+    <div class="honest">
+      <div class="l">What no one tells you</div>
+      <p>People fixate on the ownership percentage and ignore the control terms — and that's exactly where it goes wrong. A minority owner can be "worth" a lot on paper and unable to pull out a single dollar, because the people in control can choose to reinvest everything, pay themselves well, never distribute, and never sell. Without control, your ownership is really just a <strong>hope that the controllers treat you fairly.</strong></p>
+      <p>The most common way this blows up is <strong>partner conflict</strong>: owners stop agreeing, one side holds the controls, and the other is simply stuck — owning a fortune on paper they can't touch or direct. So get the control rights in writing up front: minority protections, a distribution policy, a buy-sell agreement, a way to resolve disputes. Control, far more than the size of your share, often decides whether your stake ever becomes real money.</p>
+    </div>
+  </div>
+
+  <!-- 06 -->
+  <div class="step">
+    <div class="steplab"><span class="num">06</span><span class="ttl">The bigger picture</span></div>
+    <div class="bridge">
+      <div class="l">Why this matters beyond you</div>
+      <p>The split between ownership and control is one of the deepest features of how economic power actually works — and a quiet engine of concentration. Across the whole economy, ownership is broad but control is narrow: millions of people "own" shares through funds and pensions, while a small group of executives, large shareholders, and asset managers actually direct the companies. So even where ownership is spread wide, <strong>control stays concentrated</strong> — and with it, the decisions and the rewards.</p>
+      <p>This is why economic democracy is about more than handing out shares. It's about spreading <strong>control</strong> — real voice and a real vote in the things people own. Worker cooperatives, employee ownership with genuine governance, shareholder democracy: the aim isn't only to own a slice, but to have a say. Ownership without control is the most common, most overlooked form of powerlessness there is.</p>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="big">Control vs. Ownership · Building Wealth</div>
+    <div class="ft">Economic Democracy · Building Wealth · economicdemocracy.co<br>A Shared Prosperity education project. General education, not legal or financial advice.</div>
+  </div>
+</footer>
+
+</body>
+</html>

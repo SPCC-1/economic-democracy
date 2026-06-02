@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retirement &amp; Social Security · Building Wealth · Economic Democracy</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+:root{
+  --teal:#1E8A8C; --teal-deep:#136466; --teal-soft:#5FB8B6;
+  --orange:#F08A24; --orange-deep:#D9731A; --gold:#F5B940;
+  --clay:#C7553B; --clay-deep:#A8412B;
+  --cream:#FBF4E6; --paper:#FEF9F0; --card:#FFFFFF;
+  --ink:#16211F; --mid:#5d6b66; --rule:#E7DABE; --wash:#F2E9D4;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:720px;margin:0 auto;padding:0 24px;}
+a{color:inherit;}
+
+.herobleed{background:var(--teal);background-image:radial-gradient(circle at 12% 18%,rgba(245,185,64,.34),transparent 52%),radial-gradient(circle at 88% 84%,rgba(240,138,36,.28),transparent 55%);}
+.hero{max-width:720px;margin:0 auto;padding:50px 24px 46px;}
+.labtag{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-deep);background:var(--gold);padding:7px 15px;border-radius:100px;margin-bottom:20px;}
+.kicker{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cream);margin-bottom:13px;opacity:.92;}
+h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:48px;line-height:1.0;letter-spacing:-.025em;color:#fff;margin-bottom:16px;}
+.standfirst{font-size:20px;line-height:1.45;color:var(--cream);font-weight:500;max-width:42ch;}
+
+.lesson{padding-top:42px;}
+.step{margin-bottom:30px;}
+.steplab{display:flex;align-items:baseline;gap:11px;margin-bottom:10px;}
+.steplab .num{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:14px;color:var(--orange);letter-spacing:.04em;}
+.steplab .ttl{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:23px;letter-spacing:-.02em;color:var(--ink);}
+.step p{font-size:17px;line-height:1.62;margin-bottom:12px;}
+.step p:last-child{margin-bottom:0;}
+.step strong{color:var(--teal-deep);font-weight:700;}
+.dropcap::first-letter{font-family:'Bricolage Grotesque',sans-serif;font-size:58px;font-weight:800;float:left;line-height:.78;margin:5px 11px 0 0;color:var(--teal);}
+
+/* two-layer stack */
+.stack{background:var(--card);border:2.5px solid var(--ink);border-radius:16px;padding:22px 24px 18px;margin:10px 0 6px;box-shadow:5px 5px 0 var(--rule);}
+.stack .sh{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;letter-spacing:.04em;font-weight:700;color:var(--orange-deep);margin-bottom:3px;}
+.stack .ss{font-size:13px;color:var(--mid);margin-bottom:16px;font-style:italic;}
+.layer{border:2px solid var(--ink);border-radius:11px;padding:15px 18px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;gap:12px;}
+.layer:last-of-type{margin-bottom:0;}
+.layer .ln{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;line-height:1.15;}
+.layer .ld{font-size:12.5px;color:var(--mid);margin-top:3px;line-height:1.3;}
+.layer .lp{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;white-space:nowrap;}
+.layer.top{background:#e4f2f0;} .layer.top .ln,.layer.top .lp{color:var(--teal-deep);}
+.layer.floor{background:var(--wash);} .layer.floor .ln,.layer.floor .lp{color:var(--orange-deep);}
+.stacknote{font-size:13px;color:var(--mid);margin-top:13px;font-style:italic;border-top:1.5px dashed var(--rule);padding-top:12px;}
+
+.threecol{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;margin:6px 0 4px;}
+.tc2{border:2px solid var(--ink);border-radius:12px;padding:15px 16px;box-shadow:3px 3px 0 var(--rule);}
+.tc2 .h{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;margin-bottom:6px;line-height:1.1;}
+.tc2 .b{font-size:14px;line-height:1.45;color:var(--mid);}
+.tc2.a{background:#e4f2f0;} .tc2.a .h{color:var(--teal-deep);}
+.tc2.b{background:var(--wash);} .tc2.b .h{color:var(--orange-deep);}
+.tc2.c{background:#fbeee6;} .tc2.c .h{color:var(--clay-deep);}
+@media(max-width:600px){.threecol{grid-template-columns:1fr;}}
+
+.applybox{background:var(--teal);background-image:radial-gradient(circle at 90% 10%,rgba(245,185,64,.3),transparent 60%);border-radius:15px;padding:24px 26px;margin:6px 0 4px;}
+.applybox .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:12px;}
+.applybox ul{list-style:none;margin:0;}
+.applybox li{color:#fff;font-size:16px;line-height:1.45;padding:9px 0 9px 30px;position:relative;border-bottom:1px solid rgba(255,255,255,.16);}
+.applybox li:last-child{border-bottom:none;}
+.applybox li::before{content:"→";position:absolute;left:4px;color:var(--gold);font-weight:700;}
+.applybox .tip{margin-top:14px;font-size:14px;color:var(--cream);font-style:italic;line-height:1.5;}
+
+.honest{background:#fbeee6;border-left:5px solid var(--clay);border-radius:0 13px 13px 0;padding:20px 24px;margin:6px 0 4px;}
+.honest .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--clay-deep);margin-bottom:9px;}
+.honest p{font-size:16px;line-height:1.58;margin-bottom:10px;}
+.honest p:last-child{margin-bottom:0;}
+.honest strong{color:var(--clay-deep);}
+
+.pq{font-family:'Bricolage Grotesque',sans-serif;font-size:24px;line-height:1.25;font-weight:700;color:var(--teal);border-left:5px solid var(--gold);padding:6px 0 6px 22px;margin:24px 0;letter-spacing:-.01em;}
+
+.bridge{background:var(--ink);color:var(--cream);border-radius:15px;padding:24px 28px;margin-top:6px;position:relative;overflow:hidden;}
+.bridge::after{content:"";position:absolute;right:-30px;bottom:-30px;width:150px;height:150px;background:radial-gradient(circle,rgba(30,138,140,.5),transparent 70%);}
+.bridge *{position:relative;}
+.bridge .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--teal-soft);margin-bottom:9px;}
+.bridge p{color:var(--cream);font-size:16.5px;line-height:1.58;margin-bottom:10px;}
+.bridge p:last-child{margin-bottom:0;}
+.bridge strong{color:var(--gold);}
+
+.sources{font-size:12.5px;color:#8a7c62;line-height:1.5;border-top:2px dashed var(--rule);padding-top:16px;margin-top:34px;}
+.sources strong{color:var(--ink);font-family:'Bricolage Grotesque',sans-serif;font-size:11px;letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:5px;}
+
+footer{background:var(--ink);color:var(--cream);margin-top:30px;padding:30px 0 54px;}
+footer .big{font-family:'Bricolage Grotesque',sans-serif;font-size:16px;color:var(--gold);font-weight:700;margin-bottom:6px;}
+footer .ft{font-size:13px;color:rgba(251,244,230,.7);line-height:1.5;}
+@media(max-width:600px){h1{font-size:38px;}.hero{padding:40px 24px 36px;}}
+</style>
+</head>
+<body>
+
+<div class="herobleed">
+<div class="hero">
+  <div class="labtag">Economic Democracy · Building Wealth</div>
+  <div class="kicker">Personal savings + the public floor</div>
+  <h1>Retirement &amp; Social Security</h1>
+  <p class="standfirst">Funding the years your wages stop but your bills don't — through what you build yourself, and the public floor underneath everyone.</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="lesson">
+
+  <!-- 01 -->
+  <div class="step">
+    <div class="steplab"><span class="num">01</span><span class="ttl">The concept</span></div>
+    <p class="dropcap">Retirement is one specific problem: how do you fund the years when you can't or don't work — when the wages stop but the expenses don't? In America the answer comes in two layers. There's what <strong>you</strong> build (personal retirement accounts and assets), and what the <strong>public</strong> provides (Social Security, the floor everyone pays into and draws from).</p>
+    <p>Most people need both. Personal savings to live with some comfort, and the public floor underneath so that if the savings fall short — through bad luck, low wages, or a long life — you don't fall into poverty. One layer is offense; the other is the floor offense rests on.</p>
+  </div>
+
+  <!-- 02 -->
+  <div class="step">
+    <div class="steplab"><span class="num">02</span><span class="ttl">How it works</span></div>
+    <p><strong>Layer one — what you build.</strong> A 401(k) at work (often with an employer match — free money) or an IRA on your own. These are tax-advantaged containers holding income-producing assets that compound for decades. It's the wage-to-asset move aimed squarely at old age: convert a slice of today's pay into assets that pay you later.</p>
+    <p><strong>Layer two — the public floor.</strong> You pay a payroll tax your whole working life; in return you get a guaranteed, inflation-adjusted monthly income in retirement (and coverage for disability and survivors). It isn't an account with your name on it — today's workers fund today's retirees. And it's built as a <em>floor</em>, replacing only about 40% of an average worker's income:</p>
+    <div class="stack">
+      <div class="sh">A comfortable retirement income, by layer</div>
+      <div class="ss">Illustrative. Social Security replaces roughly 40% of an average worker's income.</div>
+      <div class="layer top"><div><div class="ln">Personal savings on top</div><div class="ld">401(k), IRA, other assets — the margin for comfort</div></div><div class="lp">~60%</div></div>
+      <div class="layer floor"><div><div class="ln">Social Security floor</div><div class="ld">guaranteed, inflation-adjusted, lifelong (~$2,000/mo average)</div></div><div class="lp">~40%</div></div>
+      <div class="stacknote">The floor keeps you out of poverty. It was never designed to be the whole thing — the personal layer is what lifts you from "getting by" to "comfortable."</div>
+    </div>
+  </div>
+
+  <!-- 03 -->
+  <div class="step">
+    <div class="steplab"><span class="num">03</span><span class="ttl">In real life</span></div>
+    <p>How the two layers actually land:</p>
+    <div class="threecol">
+      <div class="tc2 a"><div class="h">The backbone</div><div class="b">Around 69 million people receive Social Security. It lifts more Americans out of poverty than any other program — and for many seniors it's most or all of their income.</div></div>
+      <div class="tc2 b"><div class="h">The match left behind</div><div class="b">Workers who don't contribute enough to get the full employer match are turning down free money — often the single best return available anywhere.</div></div>
+      <div class="tc2 c"><div class="h">The thin top layer</div><div class="b">Many reach retirement with little saved — no spare income, no workplace plan — leaning almost entirely on the floor. Which is exactly why the floor matters so much.</div></div>
+    </div>
+    <p class="pq">Build the top layer if you can. Be grateful the floor is there for the years, or the people, when the top layer isn't enough.</p>
+  </div>
+
+  <!-- 04 -->
+  <div class="step">
+    <div class="steplab"><span class="num">04</span><span class="ttl">Apply it to your life</span></div>
+    <div class="applybox">
+      <div class="l">Build the top, count on the floor</div>
+      <ul>
+        <li>Capture the full employer match first — it can be an instant 50–100% return, the best in all of personal finance.</li>
+        <li>Hold retirement assets in tax-advantaged accounts (401(k), IRA) and let compounding and time do the heavy lifting.</li>
+        <li>Find your Social Security estimate at ssa.gov — know your floor, then plan savings on top of it.</li>
+        <li>Treat Social Security as the floor, not the plan. Build the personal layer if you possibly can.</li>
+      </ul>
+      <p class="tip">The match plus decades of compounding is the closest thing to a sure path most working people have. Start the clock early.</p>
+    </div>
+  </div>
+
+  <!-- 05 -->
+  <div class="step">
+    <div class="steplab"><span class="num">05</span><span class="ttl">The honest part</span></div>
+    <div class="honest">
+      <div class="l">What no one tells you</div>
+      <p>First, the big correction: Social Security is <strong>not "going bankrupt"</strong> or disappearing — that's a persistent myth. Its trust-fund reserves are projected to run low in the early-to-mid 2030s, after which ongoing payroll taxes would still cover roughly <strong>77–81% of scheduled benefits</strong>. The shortfall is real and worth fixing, but it's about a one-fifth gap, not zero. The fixes are a known menu — and here the disagreement is genuine: some would <strong>raise revenue</strong> (lift or remove the cap on taxed wages, raise the rate), others would <strong>trim benefits</strong> (adjust the formula or the retirement age). Reasonable people land in different places; acting sooner keeps more options open.</p>
+      <p>Second, the squeeze. The personal layer quietly assumes spare income to save and access to a workplace plan — and <strong>many people have neither</strong>, so they rely almost entirely on a floor that was never meant to be the whole thing. That's not a discipline failure; it's the structure. Counting on personal savings alone leaves you exposed to markets, health, and luck; counting on the floor alone leaves you short. Most people need both — and many can only reach one.</p>
+    </div>
+  </div>
+
+  <!-- 06 -->
+  <div class="step">
+    <div class="steplab"><span class="num">06</span><span class="ttl">The bigger picture</span></div>
+    <div class="bridge">
+      <div class="l">Why this matters beyond you</div>
+      <p>Social Security is, quietly, the most successful broad-distribution program in American history — and a living example of <strong>economic democracy that already exists</strong>. It's a universal, collectively-owned income stream: everyone pays in, everyone is covered, and it keeps tens of millions out of poverty without anyone needing to be a clever investor or get lucky in markets. The wealthy don't need it; nearly everyone else relies on it — the same pooling logic as insurance, applied to old age and run by the whole society.</p>
+      <p>So the fight over its future is really a fight over a single question: should retirement security stay <strong>broadly shared</strong> — a public floor under everyone — or be pushed back onto individuals to manage alone, each carrying their own market risk? That's the same fault line as this entire course: broadly shared security, or concentrated risk and reward. How a society chooses to fund old age tells you whether it treats security as something everyone deserves a floor of — or only something those who can save their way to it will ever have.</p>
+    </div>
+  </div>
+
+  <div class="sources">
+    <strong>Sources &amp; further reading</strong>
+    Trust-fund projections: 2025 Social Security (OASDI) Trustees Report and the Social Security Administration — the retirement (OASI) fund is projected to deplete its reserves around 2033 (about 77% of scheduled benefits payable thereafter) and the combined funds around 2034 (about 81% payable); the date has shifted slightly with recent legislation and assumptions. Beneficiary counts (~69 million) from SSA; poverty-reduction effects from the Center on Budget and Policy Priorities. Figures are approximate and change with each annual report.
+  </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="big">Retirement &amp; Social Security · Building Wealth</div>
+    <div class="ft">Economic Democracy · Building Wealth · economicdemocracy.co<br>A Shared Prosperity education project. General education, not financial or retirement advice. Figures are approximate.</div>
+  </div>
+</footer>
+
+</body>
+</html>

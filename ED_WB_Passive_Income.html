@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Passive Income · Building Wealth · Economic Democracy</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+:root{
+  --teal:#1E8A8C; --teal-deep:#136466; --teal-soft:#5FB8B6;
+  --orange:#F08A24; --orange-deep:#D9731A; --gold:#F5B940;
+  --clay:#C7553B; --clay-deep:#A8412B;
+  --cream:#FBF4E6; --paper:#FEF9F0; --card:#FFFFFF;
+  --ink:#16211F; --mid:#5d6b66; --rule:#E7DABE; --wash:#F2E9D4;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:720px;margin:0 auto;padding:0 24px;}
+a{color:inherit;}
+
+.herobleed{background:var(--teal);background-image:radial-gradient(circle at 12% 18%,rgba(245,185,64,.34),transparent 52%),radial-gradient(circle at 88% 84%,rgba(240,138,36,.28),transparent 55%);}
+.hero{max-width:720px;margin:0 auto;padding:50px 24px 46px;}
+.labtag{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-deep);background:var(--gold);padding:7px 15px;border-radius:100px;margin-bottom:20px;}
+.kicker{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cream);margin-bottom:13px;opacity:.92;}
+h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:54px;line-height:.98;letter-spacing:-.025em;color:#fff;margin-bottom:16px;}
+.standfirst{font-size:20px;line-height:1.45;color:var(--cream);font-weight:500;max-width:42ch;}
+
+.lesson{padding-top:42px;}
+.step{margin-bottom:30px;}
+.steplab{display:flex;align-items:baseline;gap:11px;margin-bottom:10px;}
+.steplab .num{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:14px;color:var(--orange);letter-spacing:.04em;}
+.steplab .ttl{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;letter-spacing:-.02em;color:var(--ink);}
+.step p{font-size:17px;line-height:1.62;margin-bottom:12px;}
+.step p:last-child{margin-bottom:0;}
+.step strong{color:var(--teal-deep);font-weight:700;}
+.dropcap::first-letter{font-family:'Bricolage Grotesque',sans-serif;font-size:58px;font-weight:800;float:left;line-height:.78;margin:5px 11px 0 0;color:var(--teal);}
+
+/* two paths compare */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:10px 0 4px;}
+.cmp{border:2.5px solid var(--ink);border-radius:15px;padding:20px 22px;box-shadow:5px 5px 0 var(--rule);}
+.cmp .ch{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:18px;margin-bottom:4px;letter-spacing:-.01em;}
+.cmp .csub{font-size:13px;color:var(--mid);margin-bottom:13px;font-style:italic;}
+.cmp ul{list-style:none;margin:0;}
+.cmp li{font-size:14.5px;line-height:1.4;padding:7px 0 7px 20px;position:relative;border-top:1px solid var(--rule);}
+.cmp li:first-child{border-top:none;}
+.cmp li::before{content:"•";position:absolute;left:3px;font-weight:800;}
+.cmp.buy{background:#e4f2f0;} .cmp.buy .ch{color:var(--teal-deep);} .cmp.buy li::before{color:var(--teal);}
+.cmp.build{background:var(--wash);} .cmp.build .ch{color:var(--orange-deep);} .cmp.build li::before{color:var(--orange);}
+@media(max-width:600px){.compare{grid-template-columns:1fr;}}
+
+/* yield tiles */
+.yield{background:var(--card);border:2.5px solid var(--ink);border-radius:15px;padding:22px 24px 18px;margin:10px 0 6px;box-shadow:5px 5px 0 var(--rule);}
+.yield .yh{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;letter-spacing:.04em;font-weight:700;color:var(--orange-deep);margin-bottom:4px;}
+.yield .ys{font-size:13px;color:var(--mid);margin-bottom:16px;font-style:italic;}
+.ytiles{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;}
+.yt{text-align:center;border:2px solid var(--ink);border-radius:11px;padding:14px 10px;background:var(--cream);}
+.yt .own{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:13px;color:var(--mid);margin-bottom:6px;}
+.yt .arr{color:var(--teal-soft);font-weight:800;font-size:15px;margin-bottom:4px;}
+.yt .inc{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:21px;color:var(--teal-deep);line-height:1;}
+.yt .per{font-size:11.5px;color:var(--mid);margin-top:3px;}
+@media(max-width:600px){.ytiles{grid-template-columns:1fr;}.yt{display:flex;align-items:center;justify-content:space-between;text-align:left;}.yt .arr{display:none;}}
+
+.threecol{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;margin:6px 0 4px;}
+.tc2{border:2px solid var(--ink);border-radius:12px;padding:15px 16px;box-shadow:3px 3px 0 var(--rule);}
+.tc2 .h{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;margin-bottom:6px;line-height:1.1;}
+.tc2 .b{font-size:14px;line-height:1.45;color:var(--mid);}
+.tc2.a{background:#e4f2f0;} .tc2.a .h{color:var(--teal-deep);}
+.tc2.b{background:var(--wash);} .tc2.b .h{color:var(--orange-deep);}
+.tc2.c{background:#fbeee6;} .tc2.c .h{color:var(--clay-deep);}
+@media(max-width:600px){.threecol{grid-template-columns:1fr;}}
+
+.applybox{background:var(--teal);background-image:radial-gradient(circle at 90% 10%,rgba(245,185,64,.3),transparent 60%);border-radius:15px;padding:24px 26px;margin:6px 0 4px;}
+.applybox .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:12px;}
+.applybox ul{list-style:none;margin:0;}
+.applybox li{color:#fff;font-size:16px;line-height:1.45;padding:9px 0 9px 30px;position:relative;border-bottom:1px solid rgba(255,255,255,.16);}
+.applybox li:last-child{border-bottom:none;}
+.applybox li::before{content:"→";position:absolute;left:4px;color:var(--gold);font-weight:700;}
+.applybox .tip{margin-top:14px;font-size:14px;color:var(--cream);font-style:italic;line-height:1.5;}
+
+.honest{background:#fbeee6;border-left:5px solid var(--clay);border-radius:0 13px 13px 0;padding:20px 24px;margin:6px 0 4px;}
+.honest .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--clay-deep);margin-bottom:9px;}
+.honest p{font-size:16px;line-height:1.58;margin-bottom:10px;}
+.honest p:last-child{margin-bottom:0;}
+.honest strong{color:var(--clay-deep);}
+
+.pq{font-family:'Bricolage Grotesque',sans-serif;font-size:24px;line-height:1.25;font-weight:700;color:var(--teal);border-left:5px solid var(--gold);padding:6px 0 6px 22px;margin:24px 0;letter-spacing:-.01em;}
+
+.bridge{background:var(--ink);color:var(--cream);border-radius:15px;padding:24px 28px;margin-top:6px;position:relative;overflow:hidden;}
+.bridge::after{content:"";position:absolute;right:-30px;bottom:-30px;width:150px;height:150px;background:radial-gradient(circle,rgba(30,138,140,.5),transparent 70%);}
+.bridge *{position:relative;}
+.bridge .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--teal-soft);margin-bottom:9px;}
+.bridge p{color:var(--cream);font-size:16.5px;line-height:1.58;margin-bottom:10px;}
+.bridge p:last-child{margin-bottom:0;}
+.bridge strong{color:var(--gold);}
+
+/* group-complete recap */
+.recap{background:var(--cream);border:2.5px solid var(--ink);border-radius:15px;padding:22px 24px;margin:14px 0 4px;box-shadow:5px 5px 0 var(--teal-soft);}
+.recap .rl{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--teal-deep);margin-bottom:12px;}
+.recap .row{display:flex;align-items:center;gap:12px;padding:8px 0;border-top:1px solid var(--rule);}
+.recap .row:first-of-type{border-top:none;}
+.recap .row .k{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;flex:0 0 142px;}
+.recap .row .v{font-size:14.5px;color:var(--mid);line-height:1.4;}
+.recap .w .k{color:var(--clay-deep);} .recap .s .k{color:var(--orange-deep);} .recap .p .k{color:var(--teal-deep);}
+
+.next{display:flex;align-items:center;justify-content:space-between;gap:16px;background:var(--gold);border:2.5px solid var(--ink);border-radius:14px;padding:18px 22px;margin:30px 0 0;box-shadow:5px 5px 0 var(--orange);}
+.next .nl{font-family:'Bricolage Grotesque',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--teal-deep);margin-bottom:3px;}
+.next .nm{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:19px;color:var(--ink);letter-spacing:-.01em;}
+.next .arrow{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:26px;color:var(--clay);}
+
+footer{background:var(--ink);color:var(--cream);margin-top:30px;padding:30px 0 54px;}
+footer .big{font-family:'Bricolage Grotesque',sans-serif;font-size:16px;color:var(--gold);font-weight:700;margin-bottom:6px;}
+footer .ft{font-size:13px;color:rgba(251,244,230,.7);line-height:1.5;}
+@media(max-width:600px){h1{font-size:40px;}.hero{padding:40px 24px 36px;}}
+</style>
+</head>
+<body>
+
+<div class="herobleed">
+<div class="hero">
+  <div class="labtag">Economic Democracy · Building Wealth</div>
+  <div class="kicker">When your assets pay you</div>
+  <h1>Passive Income</h1>
+  <p class="standfirst">Money that comes in whether or not you show up. It's the whole point of the first two lessons — and the most lied-about idea in personal finance.</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="lesson">
+
+  <!-- 01 -->
+  <div class="step">
+    <div class="steplab"><span class="num">01</span><span class="ttl">The concept</span></div>
+    <p class="dropcap">Passive income is money produced by something you <em>own</em>, not by work you do right now. Rent from a property. Dividends from stocks. Interest from money you've lent. Royalties from something you made. Profit from a business that runs without you. The defining feature is the exact opposite of a wage: it keeps arriving whether or not you show up.</p>
+    <p>This is the destination the whole first group has been pointing at. Wages and self-employment are how you <strong>start</strong> — they're you, working. Passive income is what you're working toward: income that comes from what you've <strong>built or bought</strong>, so that one day your money and your assets do the earning instead of only your hours.</p>
+  </div>
+
+  <!-- 02 -->
+  <div class="step">
+    <div class="steplab"><span class="num">02</span><span class="ttl">How it works</span></div>
+    <p>All passive income comes from owning an <strong>income-producing asset</strong>. There are only two ways to get one — and both cost you up front:</p>
+    <div class="compare">
+      <div class="cmp buy">
+        <div class="ch">Buy it with capital</div>
+        <div class="csub">Pay with money you've saved</div>
+        <ul>
+          <li>Use money you already have to buy an asset that pays you.</li>
+          <li>Rental property, dividend stocks, bonds, a stake in a business.</li>
+          <li>Fast to set up — if you have the capital.</li>
+          <li>This is why saving and building a base comes first.</li>
+        </ul>
+      </div>
+      <div class="cmp build">
+        <div class="ch">Build it with work</div>
+        <div class="csub">Pay with effort, up front</div>
+        <ul>
+          <li>Do the work once; get paid for it many times.</li>
+          <li>A book, a course, a product, a business grown to run itself.</li>
+          <li>Little money needed — but lots of work, with no guarantee.</li>
+          <li>The "passive" part only comes after the hard part.</li>
+        </ul>
+      </div>
+    </div>
+    <p>And the amount you earn scales with the size of what you own. At a typical yield of around 4–5% a year, owning more simply means earning more — which is why the size of your asset base matters more than almost anything else:</p>
+    <div class="yield">
+      <div class="yh">What income-producing assets pay, at ~5% a year</div>
+      <div class="ys">A rough illustration to show the relationship — not a promised return.</div>
+      <div class="ytiles">
+        <div class="yt"><div class="own">$10,000 owned</div><div class="arr">↓</div><div class="inc">~$500</div><div class="per">per year</div></div>
+        <div class="yt"><div class="own">$100,000 owned</div><div class="arr">↓</div><div class="inc">~$5,000</div><div class="per">per year</div></div>
+        <div class="yt"><div class="own">$1,000,000 owned</div><div class="arr">↓</div><div class="inc">~$50,000</div><div class="per">per year</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 03 -->
+  <div class="step">
+    <div class="steplab"><span class="num">03</span><span class="ttl">In real life</span></div>
+    <p>Passive income wears different clothes depending on what you own:</p>
+    <div class="threecol">
+      <div class="tc2 a"><div class="h">The investor</div><div class="b">Owns dividend stocks, bonds, or index funds. The most genuinely hands-off — and it scales directly with how much is invested.</div></div>
+      <div class="tc2 b"><div class="h">The property owner</div><div class="b">Collects rent. Real income, but it takes capital to buy and real work to manage — rarely as passive as it sounds.</div></div>
+      <div class="tc2 c"><div class="h">The creator / owner</div><div class="b">Earns royalties on a book, song, or product — or profit from a business that runs without them. Built once, paid repeatedly.</div></div>
+    </div>
+    <p class="pq">A wage pays you for the hour you just worked. Passive income pays you for an asset you already own.</p>
+  </div>
+
+  <!-- 04 -->
+  <div class="step">
+    <div class="steplab"><span class="num">04</span><span class="ttl">Apply it to your life</span></div>
+    <div class="applybox">
+      <div class="l">Find your first dollar of it</div>
+      <ul>
+        <li>Do you already own anything that pays you without working — even savings interest or a retirement fund's dividends?</li>
+        <li>Of the two paths, which fits you now — buying with capital, or building with work?</li>
+        <li>Is there a skill or thing you make that could be sold more than once instead of once?</li>
+        <li>What's one small asset you could start this year, knowing the income comes later?</li>
+      </ul>
+      <p class="tip">The first dollar that arrives without your working is the most important one you'll ever earn — not for its size, but for what it proves is possible.</p>
+    </div>
+  </div>
+
+  <!-- 05 -->
+  <div class="step">
+    <div class="steplab"><span class="num">05</span><span class="ttl">The honest part</span></div>
+    <div class="honest">
+      <div class="l">What no one tells you</div>
+      <p>This is the most oversold idea in money. "Passive income" gets marketed as free, easy, automatic cash — earn while you sleep, no effort required. That's the lie. Passive income is real, but it is <strong>"pay first, earn later,"</strong> not "earn for nothing." You buy it with capital you had to save, or you build it with work that may not pay off. The word "passive" describes only the back end — after the money or the effort has already gone in.</p>
+      <p>Two more truths. It starts <strong>small</strong> and only grows meaningful once your asset base is large — and growing that base is the slow, hard part. And a lot of so-called passive income is really a <strong>disguised job</strong> (a rental you manage yourself) or an outright scam. Be skeptical of anyone promising it without either real capital or real work behind it.</p>
+    </div>
+  </div>
+
+  <!-- 06 -->
+  <div class="step">
+    <div class="steplab"><span class="num">06</span><span class="ttl">The bigger picture</span></div>
+    <div class="bridge">
+      <div class="l">Why this matters beyond you</div>
+      <p>Passive income is, precisely, the income of <strong>ownership</strong> — and it's the engine behind the gap this course keeps returning to. The person who owns assets earns while they sleep; the person with only a wage stops earning the moment they stop working. When the income of ownership flows to a small few, wealth concentrates automatically, no matter how hard everyone else works.</p>
+      <p>So the goal isn't to chase a fantasy of never working again. It's narrower and more real: get <strong>more people earning at least some income from what they own</strong> — to widen the circle of people who collect the income of ownership, instead of leaving it to the few.</p>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="big">Passive Income · Building Wealth</div>
+    <div class="ft">Economic Democracy · Building Wealth · economicdemocracy.co<br>A Shared Prosperity education project. General education, not personal financial advice. Yields are illustrative, not promised returns.</div>
+  </div>
+</footer>
+
+</body>
+</html>

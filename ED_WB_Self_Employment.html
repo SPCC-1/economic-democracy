@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Self-Employment · Building Wealth · Economic Democracy</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+:root{
+  --teal:#1E8A8C; --teal-deep:#136466; --teal-soft:#5FB8B6;
+  --orange:#F08A24; --orange-deep:#D9731A; --gold:#F5B940;
+  --clay:#C7553B; --clay-deep:#A8412B;
+  --cream:#FBF4E6; --paper:#FEF9F0; --card:#FFFFFF;
+  --ink:#16211F; --mid:#5d6b66; --rule:#E7DABE; --wash:#F2E9D4;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:720px;margin:0 auto;padding:0 24px;}
+a{color:inherit;}
+
+.herobleed{background:var(--teal);background-image:radial-gradient(circle at 12% 18%,rgba(245,185,64,.34),transparent 52%),radial-gradient(circle at 88% 84%,rgba(240,138,36,.28),transparent 55%);}
+.hero{max-width:720px;margin:0 auto;padding:50px 24px 46px;}
+.labtag{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-deep);background:var(--gold);padding:7px 15px;border-radius:100px;margin-bottom:20px;}
+.kicker{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cream);margin-bottom:13px;opacity:.92;}
+h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:54px;line-height:.98;letter-spacing:-.025em;color:#fff;margin-bottom:16px;}
+.standfirst{font-size:20px;line-height:1.45;color:var(--cream);font-weight:500;max-width:42ch;}
+
+.lesson{padding-top:42px;}
+.step{margin-bottom:30px;}
+.steplab{display:flex;align-items:baseline;gap:11px;margin-bottom:10px;}
+.steplab .num{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:14px;color:var(--orange);letter-spacing:.04em;}
+.steplab .ttl{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;letter-spacing:-.02em;color:var(--ink);}
+.step p{font-size:17px;line-height:1.62;margin-bottom:12px;}
+.step p:last-child{margin-bottom:0;}
+.step strong{color:var(--teal-deep);font-weight:700;}
+.dropcap::first-letter{font-family:'Bricolage Grotesque',sans-serif;font-size:58px;font-weight:800;float:left;line-height:.78;margin:5px 11px 0 0;color:var(--teal);}
+
+/* compare cards: sole prop vs gig */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:10px 0 4px;}
+.cmp{border:2.5px solid var(--ink);border-radius:15px;padding:20px 22px;box-shadow:5px 5px 0 var(--rule);}
+.cmp .ch{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:18px;margin-bottom:4px;letter-spacing:-.01em;}
+.cmp .csub{font-size:13px;color:var(--mid);margin-bottom:13px;font-style:italic;}
+.cmp ul{list-style:none;margin:0;}
+.cmp li{font-size:14.5px;line-height:1.4;padding:7px 0 7px 20px;position:relative;border-top:1px solid var(--rule);}
+.cmp li:first-child{border-top:none;}
+.cmp li::before{content:"•";position:absolute;left:3px;font-weight:800;}
+.cmp.sole{background:#e4f2f0;} .cmp.sole .ch{color:var(--teal-deep);} .cmp.sole li::before{color:var(--teal);}
+.cmp.gig{background:var(--wash);} .cmp.gig .ch{color:var(--orange-deep);} .cmp.gig li::before{color:var(--orange);}
+@media(max-width:600px){.compare{grid-template-columns:1fr;}}
+
+/* stat tiles */
+.stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;margin:8px 0 6px;}
+.stat{border:2.5px solid var(--ink);border-radius:14px;padding:18px 16px;text-align:center;box-shadow:4px 4px 0 var(--rule);}
+.stat .big{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:30px;line-height:1;letter-spacing:-.02em;}
+.stat .lbl{font-size:12.5px;line-height:1.35;color:var(--mid);margin-top:7px;}
+.stat.a{background:#e4f2f0;} .stat.a .big{color:var(--teal-deep);}
+.stat.b{background:var(--wash);} .stat.b .big{color:var(--orange-deep);}
+.stat.c{background:#fbeee6;} .stat.c .big{color:var(--clay-deep);}
+@media(max-width:600px){.stats{grid-template-columns:1fr;}.stat{text-align:left;display:flex;align-items:baseline;gap:12px;}.stat .lbl{margin-top:0;}}
+
+/* growth chart */
+.growth{background:var(--card);border:2.5px solid var(--ink);border-radius:15px;padding:22px 24px 18px;margin:10px 0 6px;box-shadow:5px 5px 0 var(--rule);}
+.growth .gh{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;letter-spacing:.04em;font-weight:700;color:var(--orange-deep);margin-bottom:4px;}
+.growth .gs{font-size:13.5px;color:var(--mid);margin-bottom:18px;}
+.bars{display:flex;align-items:flex-end;gap:14px;height:160px;border-bottom:2.5px solid var(--ink);padding-bottom:0;}
+.barcol{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;}
+.barcol .bv{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;color:var(--teal-deep);margin-bottom:6px;}
+.barcol .bk{width:100%;background:var(--teal);border-radius:7px 7px 0 0;border:2px solid var(--ink);border-bottom:none;}
+.barcol:last-child .bk{background:var(--orange);}
+.barcol:last-child .bv{color:var(--orange-deep);}
+.barlabels{display:flex;gap:14px;margin-top:9px;}
+.barlabels div{flex:1;text-align:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:13px;color:var(--mid);}
+
+.callout{background:var(--ink);color:var(--cream);border-radius:13px;padding:18px 22px;margin:14px 0 4px;position:relative;overflow:hidden;}
+.callout::after{content:"";position:absolute;right:-26px;top:-26px;width:130px;height:130px;background:radial-gradient(circle,rgba(245,185,64,.34),transparent 70%);}
+.callout *{position:relative;}
+.callout p{color:var(--cream);font-size:15.5px;line-height:1.5;}
+.callout strong{color:var(--gold);}
+
+.threecol{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;margin:6px 0 4px;}
+.tc2{border:2px solid var(--ink);border-radius:12px;padding:15px 16px;box-shadow:3px 3px 0 var(--rule);}
+.tc2 .h{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;margin-bottom:6px;line-height:1.1;}
+.tc2 .b{font-size:14px;line-height:1.45;color:var(--mid);}
+.tc2.a{background:#e4f2f0;} .tc2.a .h{color:var(--teal-deep);}
+.tc2.b{background:var(--wash);} .tc2.b .h{color:var(--orange-deep);}
+.tc2.c{background:#fbeee6;} .tc2.c .h{color:var(--clay-deep);}
+@media(max-width:600px){.threecol{grid-template-columns:1fr;}}
+
+.applybox{background:var(--teal);background-image:radial-gradient(circle at 90% 10%,rgba(245,185,64,.3),transparent 60%);border-radius:15px;padding:24px 26px;margin:6px 0 4px;}
+.applybox .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:12px;}
+.applybox ul{list-style:none;margin:0;}
+.applybox li{color:#fff;font-size:16px;line-height:1.45;padding:9px 0 9px 30px;position:relative;border-bottom:1px solid rgba(255,255,255,.16);}
+.applybox li:last-child{border-bottom:none;}
+.applybox li::before{content:"→";position:absolute;left:4px;color:var(--gold);font-weight:700;}
+.applybox .tip{margin-top:14px;font-size:14px;color:var(--cream);font-style:italic;line-height:1.5;}
+
+.honest{background:#fbeee6;border-left:5px solid var(--clay);border-radius:0 13px 13px 0;padding:20px 24px;margin:6px 0 4px;}
+.honest .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--clay-deep);margin-bottom:9px;}
+.honest p{font-size:16px;line-height:1.58;margin-bottom:10px;}
+.honest p:last-child{margin-bottom:0;}
+.honest strong{color:var(--clay-deep);}
+
+.pq{font-family:'Bricolage Grotesque',sans-serif;font-size:24px;line-height:1.25;font-weight:700;color:var(--teal);border-left:5px solid var(--gold);padding:6px 0 6px 22px;margin:24px 0;letter-spacing:-.01em;}
+
+.bridge{background:var(--ink);color:var(--cream);border-radius:15px;padding:24px 28px;margin-top:6px;position:relative;overflow:hidden;}
+.bridge::after{content:"";position:absolute;right:-30px;bottom:-30px;width:150px;height:150px;background:radial-gradient(circle,rgba(30,138,140,.5),transparent 70%);}
+.bridge *{position:relative;}
+.bridge .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--teal-soft);margin-bottom:9px;}
+.bridge p{color:var(--cream);font-size:16.5px;line-height:1.58;margin-bottom:10px;}
+.bridge p:last-child{margin-bottom:0;}
+.bridge strong{color:var(--gold);}
+
+.sources{font-size:12.5px;color:#8a7c62;line-height:1.5;border-top:2px dashed var(--rule);padding-top:16px;margin-top:34px;}
+.sources strong{color:var(--ink);font-family:'Bricolage Grotesque',sans-serif;font-size:11px;letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:5px;}
+
+.next{display:flex;align-items:center;justify-content:space-between;gap:16px;background:var(--gold);border:2.5px solid var(--ink);border-radius:14px;padding:18px 22px;margin:30px 0 0;box-shadow:5px 5px 0 var(--orange);}
+.next .nl{font-family:'Bricolage Grotesque',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--teal-deep);margin-bottom:3px;}
+.next .nm{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:19px;color:var(--ink);letter-spacing:-.01em;}
+.next .arrow{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:26px;color:var(--clay);}
+
+footer{background:var(--ink);color:var(--cream);margin-top:30px;padding:30px 0 54px;}
+footer .big{font-family:'Bricolage Grotesque',sans-serif;font-size:16px;color:var(--gold);font-weight:700;margin-bottom:6px;}
+footer .ft{font-size:13px;color:rgba(251,244,230,.7);line-height:1.5;}
+@media(max-width:600px){h1{font-size:40px;}.hero{padding:40px 24px 36px;}}
+</style>
+</head>
+<body>
+
+<div class="herobleed">
+<div class="hero">
+  <div class="labtag">Economic Democracy · Building Wealth</div>
+  <div class="kicker">Owning your job</div>
+  <h1>Self-Employment</h1>
+  <p class="standfirst">Working for yourself feels like owning a business. Usually, it means owning a job — and the difference decides everything.</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="lesson">
+
+  <!-- 01 -->
+  <div class="step">
+    <div class="steplab"><span class="num">01</span><span class="ttl">The concept</span></div>
+    <p class="dropcap">Self-employment is working for yourself instead of for an employer. You find the work, you do the work, and you keep what's left after costs. It's the most common first step out of pure wage work, and millions of people take it every year — for the freedom, the flexibility, or simply because they had to.</p>
+    <p>But here's the distinction this whole section turns on: self-employment usually means you've bought yourself a <strong>job</strong>, not a business. If the income still stops the moment you stop working — the same as a wage — then you own your work, not an asset. You've added freedom and risk, but you haven't yet built anything that could run, or sell, without you.</p>
+  </div>
+
+  <!-- 02 -->
+  <div class="step">
+    <div class="steplab"><span class="num">02</span><span class="ttl">How it works</span></div>
+    <p>When you're self-employed, no one withholds your taxes or covers half of them — you do. You pay <strong>self-employment tax</strong> (about 15.3% for Social Security and Medicare, both halves) on top of income tax, you fund your own benefits, and your income is lumpy: great months and empty ones. In exchange, you control your time and keep the upside of your own effort.</p>
+    <p>Self-employment comes in two main shapes that people often confuse:</p>
+    <div class="compare">
+      <div class="cmp sole">
+        <div class="ch">Sole Proprietorship</div>
+        <div class="csub">The classic "be your own boss"</div>
+        <ul>
+          <li>The simplest business form — one person, unincorporated. You and the business are legally the same.</li>
+          <li>You find your own clients and set your own prices.</li>
+          <li>You own the customer relationship.</li>
+          <li>Plumber, freelance designer, consultant, hair stylist, online shop.</li>
+        </ul>
+      </div>
+      <div class="cmp gig">
+        <div class="ch">Gig / Platform Work</div>
+        <div class="csub">On-demand, through an app</div>
+        <ul>
+          <li>You take short tasks a platform routes to you.</li>
+          <li>The platform sets the price and the rules.</li>
+          <li>The platform owns the customer — not you.</li>
+          <li>Rideshare, delivery, task and freelance marketplaces.</li>
+        </ul>
+      </div>
+    </div>
+    <p>Legally, a gig worker is usually a sole proprietor too. The real difference is <strong>control</strong>: the independent sole proprietor owns their clients and terms; the gig worker rents access to someone else's customers on someone else's terms.</p>
+  </div>
+
+  <!-- 03 -->
+  <div class="step">
+    <div class="steplab"><span class="num">03</span><span class="ttl">How common it is — and growing</span></div>
+    <p>Self-employment is huge and getting bigger, but how big depends entirely on how you count it. Three honest measures:</p>
+    <div class="stats">
+      <div class="stat a"><div class="big">~16.6M</div><div class="lbl">Americans self-employed as their <strong>main job</strong> — about 1 in 10 workers</div></div>
+      <div class="stat b"><div class="big">30.4M</div><div class="lbl">U.S. businesses with <strong>no employees</strong> — mostly sole proprietorships</div></div>
+      <div class="stat c"><div class="big">70M+</div><div class="lbl">Americans doing <strong>any</strong> freelance or gig work — over a third of the workforce</div></div>
+    </div>
+    <p>The gap between "1 in 10" and "more than a third" is the real story: most self-employment is <strong>part-time or on the side</strong>, layered on top of a regular job to make ends meet. And the direction is steadily up — the number of businesses with no employees keeps climbing year after year:</p>
+
+    <div class="growth">
+      <div class="gh">U.S. businesses with no employees (mostly sole proprietorships)</div>
+      <div class="gs">In millions, by year · U.S. Census Bureau, Nonemployer Statistics</div>
+      <div class="bars">
+        <div class="barcol"><div class="bv">27.2</div><div class="bk" style="height:74%;"></div></div>
+        <div class="barcol"><div class="bv">28.5</div><div class="bk" style="height:81%;"></div></div>
+        <div class="barcol"><div class="bv">29.8</div><div class="bk" style="height:90%;"></div></div>
+        <div class="barcol"><div class="bv">30.4</div><div class="bk" style="height:96%;"></div></div>
+      </div>
+      <div class="barlabels"><div>2020</div><div>2021</div><div>2022</div><div>2023</div></div>
+    </div>
+
+    <div class="callout">
+      <p>The fastest-growing slice is <strong>platform gig work</strong>. Gig-app usage has grown roughly <strong>5–8% a year</strong>, and about <strong>43% of Gen Z workers</strong> now do gig work — more than any generation before them at the same age. For a rising share of young people, self-employment isn't a fallback. It's the first job.</p>
+    </div>
+  </div>
+
+  <!-- 04 -->
+  <div class="step">
+    <div class="steplab"><span class="num">04</span><span class="ttl">Apply it to your life</span></div>
+    <div class="applybox">
+      <div class="l">If you work for yourself — or want to</div>
+      <ul>
+        <li>Do you own your customers, or does a platform own them and rent you the access?</li>
+        <li>If you took two months off, would any income keep coming in?</li>
+        <li>After self-employment tax and your own benefits, what do you actually keep?</li>
+        <li>Is there one part of your work someone else could be trained or paid to do?</li>
+      </ul>
+      <p class="tip">That last question is the first real step from owning a job toward owning a business.</p>
+    </div>
+  </div>
+
+  <!-- 05 -->
+  <div class="step">
+    <div class="steplab"><span class="num">05</span><span class="ttl">The honest part</span></div>
+    <div class="honest">
+      <div class="l">What no one tells you</div>
+      <p>Self-employment is real freedom and a real on-ramp — but on its own it rarely builds wealth, because most of it is still <strong>trading time for money</strong>, only now without the benefits, the steady check, or the employer covering half your taxes. You've taken on all the risk of ownership without yet owning an asset.</p>
+      <p>Gig work is the most exposed version of all. You're called "independent," but you don't set the price, you don't own the customer, and you can't sell your route or your rating to anyone. <strong>You own the labor; the platform owns the business.</strong> Being your own boss is not the same as owning something — and confusing the two keeps a lot of hardworking people running in place.</p>
+    </div>
+    <p class="pq">Owning your job is a start. It is not the finish — and mistaking one for the other costs years.</p>
+  </div>
+
+  <!-- 06 -->
+  <div class="step">
+    <div class="steplab"><span class="num">06</span><span class="ttl">The bigger picture</span></div>
+    <div class="bridge">
+      <div class="l">Why this matters beyond you</div>
+      <p>The explosion of "independent" work looks like a spread of ownership. Often it's the opposite. When tens of millions of people drive, deliver, and freelance through a handful of platforms, the workers stay self-employed and asset-less while the <strong>platform</strong> owns the customers, the data, and the pricing power — the things that actually hold value. That's concentration wearing the costume of independence.</p>
+      <p>The goal of this section isn't to talk anyone out of working for themselves — it's the right first move for millions. The goal is to help you take the next step: from owning your <em>job</em> to owning an <strong>asset</strong>, and to notice who owns the real business when you don't.</p>
+    </div>
+  </div>
+
+  <div class="sources">
+    <strong>Sources &amp; further reading</strong>
+    Self-employment as primary job: U.S. Bureau of Labor Statistics / Current Population Survey (Dec 2025), via Carry and the Center for American Progress. Businesses with no employees: U.S. Census Bureau, Nonemployer Statistics by Demographics, reference years 2020–2023 (released Nov 2025). Freelance/gig totals and growth: Upwork / Statista / MBO Partners surveys and "State of the Gig Economy" reporting; platform-usage growth via Goldman Sachs (Marcus); Gen Z participation via Pew Research Center (2025). Figures rounded and current as of early 2026 — and, like all numbers in this course, worth re-checking at the source.
+  </div>
+
+</div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="big">Self-Employment · Building Wealth</div>
+    <div class="ft">Economic Democracy · Building Wealth · economicdemocracy.co<br>A Shared Prosperity education project. General education, not personal financial or tax advice. Figures are rounded estimates.</div>
+  </div>
+</footer>
+
+</body>
+</html>

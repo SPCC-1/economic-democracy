@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Individual Building vs. Concentration · Building Wealth · Economic Democracy</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+:root{
+  --teal:#1E8A8C; --teal-deep:#136466; --teal-soft:#5FB8B6;
+  --orange:#F08A24; --orange-deep:#D9731A; --gold:#F5B940;
+  --clay:#C7553B; --clay-deep:#A8412B;
+  --cream:#FBF4E6; --paper:#FEF9F0; --card:#FFFFFF;
+  --ink:#16211F; --mid:#5d6b66; --rule:#E7DABE; --wash:#F2E9D4;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:720px;margin:0 auto;padding:0 24px;}
+a{color:inherit;}
+
+.herobleed{background:var(--ink);background-image:radial-gradient(circle at 12% 18%,rgba(245,185,64,.30),transparent 50%),radial-gradient(circle at 88% 86%,rgba(30,138,140,.5),transparent 55%);}
+.hero{max-width:720px;margin:0 auto;padding:54px 24px 50px;}
+.labtag{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);background:var(--gold);padding:7px 15px;border-radius:100px;margin-bottom:20px;}
+.kicker{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--gold);margin-bottom:13px;}
+h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:50px;line-height:.98;letter-spacing:-.025em;color:#fff;margin-bottom:16px;}
+.standfirst{font-size:20px;line-height:1.45;color:var(--cream);font-weight:500;max-width:44ch;}
+
+.lesson{padding-top:42px;}
+.step{margin-bottom:30px;}
+.steplab{display:flex;align-items:baseline;gap:11px;margin-bottom:10px;}
+.steplab .num{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:14px;color:var(--orange);letter-spacing:.04em;}
+.steplab .ttl{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:23px;letter-spacing:-.02em;color:var(--ink);}
+.step p{font-size:17px;line-height:1.62;margin-bottom:12px;}
+.step p:last-child{margin-bottom:0;}
+.step strong{color:var(--teal-deep);font-weight:700;}
+.dropcap::first-letter{font-family:'Bricolage Grotesque',sans-serif;font-size:58px;font-weight:800;float:left;line-height:.78;margin:5px 11px 0 0;color:var(--teal);}
+
+/* thesis banner */
+.thesis{background:var(--gold);border:2.5px solid var(--ink);border-radius:15px;padding:20px 24px;margin:10px 0 6px;box-shadow:5px 5px 0 var(--clay);}
+.thesis p{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:21px;line-height:1.25;color:var(--ink);margin:0;letter-spacing:-.01em;}
+
+/* spread vs concentrated */
+.dist{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:10px 0 4px;}
+.dcard{border:2.5px solid var(--ink);border-radius:15px;padding:18px 18px;box-shadow:5px 5px 0 var(--rule);}
+.dcard .dh{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;margin-bottom:12px;letter-spacing:-.01em;}
+.grid{display:grid;grid-template-columns:repeat(8,1fr);gap:4px;margin-bottom:12px;}
+.sq{aspect-ratio:1;border-radius:3px;border:1.5px solid var(--ink);}
+.dcard.spread{background:#e4f2f0;} .dcard.spread .dh{color:var(--teal-deep);}
+.dcard.spread .sq{background:var(--teal);}
+.dcard.conc{background:#fbeee6;} .dcard.conc .dh{color:var(--clay-deep);}
+.dcard.conc .sq.own{background:var(--clay);} .dcard.conc .sq.none{background:transparent;border-color:#d9c4b8;}
+.dtags{font-size:12.5px;line-height:1.5;color:var(--mid);}
+.dtags b{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;}
+.dcard.spread .dtags b{color:var(--teal-deep);}
+.dcard.conc .dtags b{color:var(--clay-deep);}
+.distcap{text-align:center;font-size:13.5px;color:var(--mid);font-style:italic;margin-top:4px;}
+@media(max-width:600px){.dist{grid-template-columns:1fr;}}
+
+/* causal arrow chain */
+.chain{display:flex;align-items:stretch;gap:8px;margin:10px 0 6px;flex-wrap:wrap;}
+.node{flex:1;min-width:120px;background:var(--card);border:2.5px solid var(--ink);border-radius:12px;padding:13px 12px;text-align:center;box-shadow:4px 4px 0 var(--rule);}
+.node .nt{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;color:var(--teal-deep);}
+.node .nd{font-size:11.5px;color:var(--mid);margin-top:3px;line-height:1.25;}
+.chev{display:flex;align-items:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;color:var(--orange);}
+@media(max-width:600px){.chain{flex-direction:column;}.chev{transform:rotate(90deg);justify-content:center;}}
+
+.applybox{background:var(--teal);background-image:radial-gradient(circle at 90% 10%,rgba(245,185,64,.3),transparent 60%);border-radius:15px;padding:24px 26px;margin:6px 0 4px;}
+.applybox .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:12px;}
+.applybox ul{list-style:none;margin:0;}
+.applybox li{color:#fff;font-size:16px;line-height:1.45;padding:9px 0 9px 30px;position:relative;border-bottom:1px solid rgba(255,255,255,.16);}
+.applybox li:last-child{border-bottom:none;}
+.applybox li::before{content:"→";position:absolute;left:4px;color:var(--gold);font-weight:700;}
+.applybox .tip{margin-top:14px;font-size:14px;color:var(--cream);font-style:italic;line-height:1.5;}
+
+.honest{background:#fbeee6;border-left:5px solid var(--clay);border-radius:0 13px 13px 0;padding:20px 24px;margin:6px 0 4px;}
+.honest .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--clay-deep);margin-bottom:9px;}
+.honest p{font-size:16px;line-height:1.58;margin-bottom:10px;}
+.honest p:last-child{margin-bottom:0;}
+.honest strong{color:var(--clay-deep);}
+
+.pq{font-family:'Bricolage Grotesque',sans-serif;font-size:25px;line-height:1.24;font-weight:700;color:var(--teal);border-left:5px solid var(--gold);padding:6px 0 6px 22px;margin:24px 0;letter-spacing:-.01em;}
+
+.bridge{background:var(--ink);color:var(--cream);border-radius:15px;padding:26px 28px;margin-top:6px;position:relative;overflow:hidden;}
+.bridge::after{content:"";position:absolute;right:-30px;bottom:-30px;width:160px;height:160px;background:radial-gradient(circle,rgba(245,185,64,.32),transparent 70%);}
+.bridge *{position:relative;}
+.bridge .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:9px;}
+.bridge p{color:var(--cream);font-size:16.5px;line-height:1.58;margin-bottom:10px;}
+.bridge p:last-child{margin-bottom:0;}
+.bridge strong{color:var(--gold);}
+
+footer{background:var(--ink);color:var(--cream);margin-top:30px;padding:30px 0 54px;border-top:1px solid rgba(245,185,64,.25);}
+footer .big{font-family:'Bricolage Grotesque',sans-serif;font-size:16px;color:var(--gold);font-weight:700;margin-bottom:6px;}
+footer .ft{font-size:13px;color:rgba(251,244,230,.7);line-height:1.5;}
+@media(max-width:600px){h1{font-size:40px;}.hero{padding:42px 24px 38px;}}
+</style>
+</head>
+<body>
+
+<div class="herobleed">
+<div class="hero">
+  <div class="labtag">Economic Democracy · Building Wealth</div>
+  <div class="kicker">Nothing wrong with wealth — concentration is the problem</div>
+  <h1>Individual Building vs. Concentration</h1>
+  <p class="standfirst">This whole section taught you to build wealth — and meant it. Here's the question underneath all of it, and the answer that ties everything together.</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="lesson">
+
+  <!-- 01 -->
+  <div class="step">
+    <div class="steplab"><span class="num">01</span><span class="ttl">The concept</span></div>
+    <p class="dropcap">Every lesson here taught you to build wealth as an individual — own assets, gain a stake, take charge of your future — and meant every word of it. But there's a question sitting underneath all of it: if building wealth is good for you, why is concentrated wealth a problem for everyone? Hold those two ideas at once and they seem to clash.</p>
+    <p>They don't. The resolution is the hinge of this entire project:</p>
+    <div class="thesis"><p>There is nothing wrong with money, wealth, or ownership. The problem is concentration.</p></div>
+    <p>Individual building and concentration are not the same thing. One is the cure; the other is the disease. Telling them apart is the whole point.</p>
+  </div>
+
+  <!-- 02 -->
+  <div class="step">
+    <div class="steplab"><span class="num">02</span><span class="ttl">How it works</span></div>
+    <p><strong>Individual building</strong> means more people owning, holding a stake, gaining independence — it spreads power outward. <strong>Concentration</strong> means wealth and ownership pooling into fewer and fewer hands — it pulls power inward. Here's the thing that surprises people: the <em>same tools</em> — compounding, leverage, ownership, even the tax code — do either one. The difference was never the tool. It's the distribution.</p>
+    <div class="dist">
+      <div class="dcard spread">
+        <div class="dh">Ownership spread wide</div>
+        <div class="grid">
+          <div class="sq"></div><div class="sq"></div><div class="sq"></div><div class="sq"></div><div class="sq"></div><div class="sq"></div><div class="sq"></div><div class="sq"></div>
+          <div class="sq"></div><div class="sq"></div><div class="sq"></div><div class="sq"></div><div class="sq"></div><div class="sq"></div><div class="sq"></div><div class="sq"></div>
+        </div>
+        <div class="dtags"><b>Resilient · independent · democratic.</b> Many owners, each with a stake and a say.</div>
+      </div>
+      <div class="dcard conc">
+        <div class="dh">Ownership concentrated</div>
+        <div class="grid">
+          <div class="sq own"></div><div class="sq own"></div><div class="sq none"></div><div class="sq none"></div><div class="sq none"></div><div class="sq none"></div><div class="sq none"></div><div class="sq none"></div>
+          <div class="sq none"></div><div class="sq none"></div><div class="sq none"></div><div class="sq none"></div><div class="sq none"></div><div class="sq none"></div><div class="sq none"></div><div class="sq none"></div>
+        </div>
+        <div class="dtags"><b>Fragile · dependent · oligarchic.</b> A few own; the rest hold nothing.</div>
+      </div>
+    </div>
+    <div class="distcap">Same wealth. Same tools. The only difference is who owns it.</div>
+  </div>
+
+  <!-- 03 -->
+  <div class="step">
+    <div class="steplab"><span class="num">03</span><span class="ttl">In real life — the arrow runs outward</span></div>
+    <p>When one person builds a stake, they gain independence. When many in a place do, the independence compounds outward into real power:</p>
+    <div class="chain">
+      <div class="node"><div class="nt">Individual</div><div class="nd">owns a stake, gains independence</div></div>
+      <div class="chev">→</div>
+      <div class="node"><div class="nt">Community</div><div class="nd">many owners, shared footing</div></div>
+      <div class="chev">→</div>
+      <div class="node"><div class="nt">Region</div><div class="nd">wealth that stays and circulates</div></div>
+      <div class="chev">→</div>
+      <div class="node"><div class="nt">Nation</div><div class="nd">a free society of owners</div></div>
+    </div>
+    <p>Run it the other way and you get the opposite: as ownership concentrates, individuals become dependent — on an employer, a landlord, a lender — communities hollow out, and power follows the wealth upward. A town of owners behaves nothing like a company town. Broad homeownership builds a different society than one where corporate landlords own the street. Employees who share in what they build stand differently than those who don't.</p>
+    <p class="pq">The goal was never to make you rich and done. It was to make you an owner — because a society of owners is the only kind that stays free.</p>
+  </div>
+
+  <!-- 04 -->
+  <div class="step">
+    <div class="steplab"><span class="num">04</span><span class="ttl">Apply it to your life</span></div>
+    <div class="applybox">
+      <div class="l">Hold both truths at once</div>
+      <ul>
+        <li>Build your own wealth without apology. It's real, it's yours, and it's the foundation of your independence.</li>
+        <li>See your building as part of something larger — the more people who own, the freer the whole society becomes.</li>
+        <li>Don't let "the system is rigged" stop you from building. Don't let "I built mine" blind you to concentration.</li>
+        <li>Back what spreads ownership — employee ownership, broad asset-building, a wider pool — alongside building your own.</li>
+      </ul>
+      <p class="tip">The individual move and the structural fight aren't rivals. They're the same project, worked from two ends.</p>
+    </div>
+  </div>
+
+  <!-- 05 -->
+  <div class="step">
+    <div class="steplab"><span class="num">05</span><span class="ttl">The honest part</span></div>
+    <div class="honest">
+      <div class="l">The honest center of this whole section</div>
+      <p>Individual building is real, and it works — but it does <strong>not scale to everyone as a market</strong>. The same moves that build one person's wealth, played by everyone at once, run into hard limits: not everyone can be the landlord; the surplus that building requires isn't available to all; an asset strategy that lifts an individual can, at scale, turn into the very machine that concentrates. "Just build wealth like I did" is therefore true for a person and incomplete as a universal answer — because at scale, wealth-<em>building</em> quietly becomes wealth-<em>concentration</em> unless the structures spread it.</p>
+      <p>So avoid the two lies. The <strong>grift</strong> says anyone can get rich if they just try hard enough — false, and cruel to the people the math was never going to work for. The <strong>despair</strong> says the system is rigged, so why bother — also false, and it talks people out of the real independence within their reach. The truth sits between them: <strong>build, and also change what concentrates.</strong> Teach the skill straight; tell the truth about the limit. Both, always.</p>
+    </div>
+  </div>
+
+  <!-- 06 -->
+  <div class="step">
+    <div class="steplab"><span class="num">06</span><span class="ttl">The bigger picture — the bridge</span></div>
+    <div class="bridge">
+      <div class="l">Where this section meets the rest</div>
+      <p>This is the bridge to everything else in Economic Democracy. The rest of the project examines <strong>concentration</strong> — monopoly, platform power, the squeeze on labor, the captured state. This section was the other half: the individual, building, gaining a stake, exercising agency. They are not opposites. They're the same argument from two ends — because the cure for concentrated ownership is <strong>widespread ownership</strong>.</p>
+      <p>A free society is one of many independent owners — not a handful of concentrated ones, and not a state that owns everything in their place. That's the old Jeffersonian republic and the economic-democracy vision at once: the enemy is concentration, whether private (monopoly capital) or public (state control), and the answer is broad ownership — spreading the stake, the control, and the liquidity as widely as people can hold them. So building your own wealth and resisting concentration were never in tension. <strong>They are the same project, at two scales</strong> — and where the individual meets the democratic is the whole point of this course.</p>
+    </div>
+  </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="big">Individual Building vs. Concentration · Building Wealth</div>
+    <div class="ft">Economic Democracy · Building Wealth · economicdemocracy.co<br>A Shared Prosperity education project. General education, not personal financial advice.</div>
+  </div>
+</footer>
+
+</body>
+</html>

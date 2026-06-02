@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Risk &amp; Failure · Building Wealth · Economic Democracy</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+:root{
+  --teal:#1E8A8C; --teal-deep:#136466; --teal-soft:#5FB8B6;
+  --orange:#F08A24; --orange-deep:#D9731A; --gold:#F5B940;
+  --clay:#C7553B; --clay-deep:#A8412B;
+  --cream:#FBF4E6; --paper:#FEF9F0; --card:#FFFFFF;
+  --ink:#16211F; --mid:#5d6b66; --rule:#E7DABE; --wash:#F2E9D4;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:720px;margin:0 auto;padding:0 24px;}
+a{color:inherit;}
+
+.herobleed{background:var(--teal);background-image:radial-gradient(circle at 12% 18%,rgba(245,185,64,.34),transparent 52%),radial-gradient(circle at 88% 84%,rgba(240,138,36,.28),transparent 55%);}
+.hero{max-width:720px;margin:0 auto;padding:50px 24px 46px;}
+.labtag{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-deep);background:var(--gold);padding:7px 15px;border-radius:100px;margin-bottom:20px;}
+.kicker{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cream);margin-bottom:13px;opacity:.92;}
+h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:54px;line-height:.98;letter-spacing:-.025em;color:#fff;margin-bottom:16px;}
+.standfirst{font-size:20px;line-height:1.45;color:var(--cream);font-weight:500;max-width:42ch;}
+
+.lesson{padding-top:42px;}
+.step{margin-bottom:30px;}
+.steplab{display:flex;align-items:baseline;gap:11px;margin-bottom:10px;}
+.steplab .num{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:14px;color:var(--orange);letter-spacing:.04em;}
+.steplab .ttl{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;letter-spacing:-.02em;color:var(--ink);}
+.step p{font-size:17px;line-height:1.62;margin-bottom:12px;}
+.step p:last-child{margin-bottom:0;}
+.step strong{color:var(--teal-deep);font-weight:700;}
+.dropcap::first-letter{font-family:'Bricolage Grotesque',sans-serif;font-size:58px;font-weight:800;float:left;line-height:.78;margin:5px 11px 0 0;color:var(--teal);}
+
+/* survival curve */
+.chart{background:var(--card);border:2.5px solid var(--ink);border-radius:16px;padding:22px 24px 18px;margin:10px 0 6px;box-shadow:5px 5px 0 var(--rule);}
+.chart .ch{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;letter-spacing:.04em;font-weight:700;color:var(--orange-deep);margin-bottom:3px;}
+.chart .cs{font-size:13px;color:var(--mid);margin-bottom:18px;font-style:italic;}
+.bars{display:flex;align-items:flex-end;gap:16px;height:175px;border-bottom:2.5px solid var(--ink);}
+.barcol{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;}
+.barcol .bv{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:17px;margin-bottom:6px;}
+.barcol .bk{width:100%;border-radius:7px 7px 0 0;border:2px solid var(--ink);border-bottom:none;}
+.barcol.y0 .bk{background:var(--teal);} .barcol.y0 .bv{color:var(--teal-deep);}
+.barcol.y1 .bk{background:var(--teal-soft);} .barcol.y1 .bv{color:var(--teal-deep);}
+.barcol.y5 .bk{background:var(--orange);} .barcol.y5 .bv{color:var(--orange-deep);}
+.barcol.y10 .bk{background:var(--clay);} .barcol.y10 .bv{color:var(--clay-deep);}
+.barlabels{display:flex;gap:16px;margin-top:9px;}
+.barlabels div{flex:1;text-align:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:12.5px;color:var(--mid);}
+.survnote{font-size:13px;color:var(--mid);margin-top:14px;font-style:italic;border-top:1.5px dashed var(--rule);padding-top:12px;}
+
+.threecol{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;margin:6px 0 4px;}
+.tc2{border:2px solid var(--ink);border-radius:12px;padding:15px 16px;box-shadow:3px 3px 0 var(--rule);}
+.tc2 .h{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;margin-bottom:6px;line-height:1.1;}
+.tc2 .b{font-size:14px;line-height:1.45;color:var(--mid);}
+.tc2.a{background:#fbeee6;} .tc2.a .h{color:var(--clay-deep);}
+.tc2.b{background:var(--wash);} .tc2.b .h{color:var(--orange-deep);}
+.tc2.c{background:#e4f2f0;} .tc2.c .h{color:var(--teal-deep);}
+@media(max-width:600px){.threecol{grid-template-columns:1fr;}}
+
+.applybox{background:var(--teal);background-image:radial-gradient(circle at 90% 10%,rgba(245,185,64,.3),transparent 60%);border-radius:15px;padding:24px 26px;margin:6px 0 4px;}
+.applybox .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:12px;}
+.applybox ul{list-style:none;margin:0;}
+.applybox li{color:#fff;font-size:16px;line-height:1.45;padding:9px 0 9px 30px;position:relative;border-bottom:1px solid rgba(255,255,255,.16);}
+.applybox li:last-child{border-bottom:none;}
+.applybox li::before{content:"→";position:absolute;left:4px;color:var(--gold);font-weight:700;}
+.applybox .tip{margin-top:14px;font-size:14px;color:var(--cream);font-style:italic;line-height:1.5;}
+
+.honest{background:#fbeee6;border-left:5px solid var(--clay);border-radius:0 13px 13px 0;padding:20px 24px;margin:6px 0 4px;}
+.honest .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--clay-deep);margin-bottom:9px;}
+.honest p{font-size:16px;line-height:1.58;margin-bottom:10px;}
+.honest p:last-child{margin-bottom:0;}
+.honest strong{color:var(--clay-deep);}
+
+.pq{font-family:'Bricolage Grotesque',sans-serif;font-size:24px;line-height:1.25;font-weight:700;color:var(--teal);border-left:5px solid var(--gold);padding:6px 0 6px 22px;margin:24px 0;letter-spacing:-.01em;}
+
+.bridge{background:var(--ink);color:var(--cream);border-radius:15px;padding:24px 28px;margin-top:6px;position:relative;overflow:hidden;}
+.bridge::after{content:"";position:absolute;right:-30px;bottom:-30px;width:150px;height:150px;background:radial-gradient(circle,rgba(30,138,140,.5),transparent 70%);}
+.bridge *{position:relative;}
+.bridge .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--teal-soft);margin-bottom:9px;}
+.bridge p{color:var(--cream);font-size:16.5px;line-height:1.58;margin-bottom:10px;}
+.bridge p:last-child{margin-bottom:0;}
+.bridge strong{color:var(--gold);}
+
+.recap{background:var(--cream);border:2.5px solid var(--ink);border-radius:15px;padding:22px 24px;margin:14px 0 4px;box-shadow:5px 5px 0 var(--teal-soft);}
+.recap .rl{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--teal-deep);margin-bottom:12px;}
+.recap .row{display:flex;align-items:flex-start;gap:12px;padding:7px 0;border-top:1px solid var(--rule);}
+.recap .row:first-of-type{border-top:none;}
+.recap .row .k{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:14px;flex:0 0 165px;color:var(--teal-deep);line-height:1.2;}
+.recap .row .v{font-size:13.5px;color:var(--mid);line-height:1.4;}
+
+.sources{font-size:12.5px;color:#8a7c62;line-height:1.5;border-top:2px dashed var(--rule);padding-top:16px;margin-top:34px;}
+.sources strong{color:var(--ink);font-family:'Bricolage Grotesque',sans-serif;font-size:11px;letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:5px;}
+
+.next{display:flex;align-items:center;justify-content:space-between;gap:16px;background:var(--gold);border:2.5px solid var(--ink);border-radius:14px;padding:18px 22px;margin:30px 0 0;box-shadow:5px 5px 0 var(--orange);}
+.next .nl{font-family:'Bricolage Grotesque',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--teal-deep);margin-bottom:3px;}
+.next .nm{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:19px;color:var(--ink);letter-spacing:-.01em;}
+.next .arrow{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:26px;color:var(--clay);}
+
+footer{background:var(--ink);color:var(--cream);margin-top:30px;padding:30px 0 54px;}
+footer .big{font-family:'Bricolage Grotesque',sans-serif;font-size:16px;color:var(--gold);font-weight:700;margin-bottom:6px;}
+footer .ft{font-size:13px;color:rgba(251,244,230,.7);line-height:1.5;}
+@media(max-width:600px){h1{font-size:44px;}.hero{padding:40px 24px 36px;}}
+</style>
+</head>
+<body>
+
+<div class="herobleed">
+<div class="hero">
+  <div class="labtag">Economic Democracy · Building Wealth</div>
+  <div class="kicker">The price of admission to building</div>
+  <h1>Risk &amp; Failure</h1>
+  <p class="standfirst">The downside the whole group has been circling. Most ventures don't make it — and what matters is whether <em>you</em> survive when one doesn't.</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="lesson">
+
+  <!-- 01 -->
+  <div class="step">
+    <div class="steplab"><span class="num">01</span><span class="ttl">The concept</span></div>
+    <p class="dropcap">Every bet has a downside, and the business bet's downside is failure — losing the money and the years you put in. Here's the part the hype skips: risk isn't a flaw you can engineer away. It's the <strong>price of the uncapped upside</strong>. You cannot get the returns a business can produce without accepting its real, ordinary chance of loss.</p>
+    <p>So the grown-up move isn't to avoid risk, and it isn't to ignore it. It's to <strong>size</strong> it — to take the bet in a way where a failure costs you something you can survive, not everything you have.</p>
+  </div>
+
+  <!-- 02 -->
+  <div class="step">
+    <div class="steplab"><span class="num">02</span><span class="ttl">How it works — the survival curve</span></div>
+    <p>Start with the truth most founders learn too late: most businesses don't make it. Track what happens to a batch of new businesses over a decade:</p>
+    <div class="chart">
+      <div class="ch">Of 100 new businesses, how many are still open</div>
+      <div class="cs">U.S. Bureau of Labor Statistics, Business Employment Dynamics. Rounded.</div>
+      <div class="bars">
+        <div class="barcol y0"><div class="bv">100</div><div class="bk" style="height:100%;"></div></div>
+        <div class="barcol y1"><div class="bv">~78</div><div class="bk" style="height:78%;"></div></div>
+        <div class="barcol y5"><div class="bv">~51</div><div class="bk" style="height:51%;"></div></div>
+        <div class="barcol y10"><div class="bv">~35</div><div class="bk" style="height:35%;"></div></div>
+      </div>
+      <div class="barlabels"><div>Start</div><div>Year 1</div><div>Year 5</div><div>Year 10</div></div>
+      <div class="survnote">About 1 in 5 are gone within a year, roughly half within five, and about two-thirds within ten — and of the survivors, only a sliver ever become a real, sellable asset rather than the owner's job. Failure here is the norm, not the exception.</div>
+    </div>
+    <p>The usual causes aren't laziness. They're <strong>running out of cash, no real market need, getting outcompeted, and weak management</strong> — mostly about money and demand, not effort. Working hard improves your odds. It does not make you safe.</p>
+  </div>
+
+  <!-- 03 -->
+  <div class="step">
+    <div class="steplab"><span class="num">03</span><span class="ttl">In real life — three ways it goes</span></div>
+    <p>"Failure" isn't one thing. It comes in three shapes, and the third is the one to aim for:</p>
+    <div class="threecol">
+      <div class="tc2 a"><div class="h">The total loss</div><div class="b">The business folds; the stake and savings are gone. The most common outcome — and devastating if you bet more than you could lose.</div></div>
+      <div class="tc2 b"><div class="h">The walking failure</div><div class="b">It doesn't die, but never thrives — eating years for a job-sized income you could have earned more safely. Failure disguised as survival.</div></div>
+      <div class="tc2 c"><div class="h">The survivable miss</div><div class="b">You sized the bet so a loss is bounded — kept reserves, didn't risk the house. You lose the venture, not your stability, and can try again.</div></div>
+    </div>
+    <p class="pq">The question isn't only whether you might fail. It's whether you'd still be standing if you did.</p>
+  </div>
+
+  <!-- 04 -->
+  <div class="step">
+    <div class="steplab"><span class="num">04</span><span class="ttl">Apply it to your life</span></div>
+    <div class="applybox">
+      <div class="l">Size the downside first</div>
+      <ul>
+        <li>What's the most you could lose — money and time — and could you genuinely absorb it?</li>
+        <li>Is there an emergency reserve kept completely separate from the bet?</li>
+        <li>What's your stop point: at what loss do you walk away? Decide it before, not during.</li>
+        <li>Is the realistic return actually worth the risk, compared to a safer asset? (That's the opportunity cost.)</li>
+      </ul>
+      <p class="tip">Amateurs plan the upside. Professionals plan the downside first — and only then let themselves dream about the win.</p>
+    </div>
+  </div>
+
+  <!-- 05 -->
+  <div class="step">
+    <div class="steplab"><span class="num">05</span><span class="ttl">The honest part</span></div>
+    <div class="honest">
+      <div class="l">What no one tells you</div>
+      <p>The culture worships risk-taking and "failing forward" — but that's easy to say when you can <strong>afford</strong> to fail. For someone with a cushion, a failed venture is a lesson and a story. For someone without one, the same failure is a catastrophe: lost home, crushing debt, a family knocked off course. "Just take the risk" is advice that lands completely differently depending on who's hearing it.</p>
+      <p>And the wins you hear about are filtered by <strong>survivorship bias</strong> and a large dose of luck. Plenty of people did everything right and still lost; plenty who succeeded caught a break they didn't earn. Skill and effort tilt the odds — they don't guarantee. Honor the risk, don't romanticize it: bet only what you can afford to lose, keep a reserve outside the bet, and respect that the odds are honestly against any single venture.</p>
+    </div>
+  </div>
+
+  <!-- 06 -->
+  <div class="step">
+    <div class="steplab"><span class="num">06</span><span class="ttl">The bigger picture</span></div>
+    <div class="bridge">
+      <div class="l">Why this matters beyond you</div>
+      <p>Who can afford to take a risk — and survive losing — is one of the deepest sorting mechanisms in the whole economy. It closes the loop on this group: the bet is only worth taking if you can survive the loss, and value, control, and liquidity all decide how much you keep if you win and how stuck you are if you don't. In a world where only the already-secure can afford to fail, the upside of enterprise flows to those who started ahead — because they're the only ones who can keep rolling the dice until one lands. Everyone else gets <strong>one shot</strong>, and a loss ruins them.</p>
+      <p>So spreading the ability to take risk <em>safely</em> is part of the project: safety nets that make failure survivable, capital that isn't a life-or-death bet, second chances after a failure instead of permanent ruin, and shared or cooperative ownership that spreads the downside. <strong>Concentration isn't only about who wins. It's about who can afford to play.</strong></p>
+    </div>
+  </div>
+
+  <div class="sources">
+    <strong>Sources &amp; further reading</strong>
+    Business survival and failure rates: U.S. Bureau of Labor Statistics, Business Employment Dynamics (BED) — roughly 22% of new businesses close within one year, about 49% within five years, and about 65% within ten, with only around a third surviving past a decade (figures consistent across recent BLS-based analyses, 2024–2026). Common failure causes drawn from standard small-business research. Figures rounded; survival varies widely by industry and location.
+  </div>
+
+</div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="big">Risk &amp; Failure · Building Wealth</div>
+    <div class="ft">Economic Democracy · Building Wealth · economicdemocracy.co<br>A Shared Prosperity education project. General education, not financial advice. Figures are rounded estimates.</div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wealth Transfer · Building Wealth · Economic Democracy</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+:root{
+  --teal:#1E8A8C; --teal-deep:#136466; --teal-soft:#5FB8B6;
+  --orange:#F08A24; --orange-deep:#D9731A; --gold:#F5B940;
+  --clay:#C7553B; --clay-deep:#A8412B;
+  --cream:#FBF4E6; --paper:#FEF9F0; --card:#FFFFFF;
+  --ink:#16211F; --mid:#5d6b66; --rule:#E7DABE; --wash:#F2E9D4;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:720px;margin:0 auto;padding:0 24px;}
+a{color:inherit;}
+
+.herobleed{background:var(--teal);background-image:radial-gradient(circle at 12% 18%,rgba(245,185,64,.34),transparent 52%),radial-gradient(circle at 88% 84%,rgba(240,138,36,.28),transparent 55%);}
+.hero{max-width:720px;margin:0 auto;padding:50px 24px 46px;}
+.labtag{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-deep);background:var(--gold);padding:7px 15px;border-radius:100px;margin-bottom:20px;}
+.kicker{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cream);margin-bottom:13px;opacity:.92;}
+h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:54px;line-height:.98;letter-spacing:-.025em;color:#fff;margin-bottom:16px;}
+.standfirst{font-size:20px;line-height:1.45;color:var(--cream);font-weight:500;max-width:42ch;}
+
+.lesson{padding-top:42px;}
+.step{margin-bottom:30px;}
+.steplab{display:flex;align-items:baseline;gap:11px;margin-bottom:10px;}
+.steplab .num{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:14px;color:var(--orange);letter-spacing:.04em;}
+.steplab .ttl{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;letter-spacing:-.02em;color:var(--ink);}
+.step p{font-size:17px;line-height:1.62;margin-bottom:12px;}
+.step p:last-child{margin-bottom:0;}
+.step strong{color:var(--teal-deep);font-weight:700;}
+.dropcap::first-letter{font-family:'Bricolage Grotesque',sans-serif;font-size:58px;font-weight:800;float:left;line-height:.78;margin:5px 11px 0 0;color:var(--teal);}
+
+/* earn vs inherit compare */
+.ei{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:10px 0 0;}
+.eic{border:2.5px solid var(--ink);border-radius:15px;padding:18px 18px;box-shadow:5px 5px 0 var(--rule);}
+.eic .amt{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:13px;letter-spacing:.03em;margin-bottom:2px;}
+.eic .ttl2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:18px;margin-bottom:12px;letter-spacing:-.01em;}
+.eic .row{padding:8px 0;border-top:1px solid var(--rule);font-size:13.5px;line-height:1.35;}
+.eic .row:first-of-type{border-top:none;}
+.eic .row b{font-family:'Bricolage Grotesque',sans-serif;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;display:block;color:var(--mid);margin-bottom:2px;}
+.eic.earn{background:#fbeee6;} .eic.earn .amt,.eic.earn .ttl2{color:var(--clay-deep);}
+.eic.inh{background:#e4f2f0;} .eic.inh .amt,.eic.inh .ttl2{color:var(--teal-deep);}
+@media(max-width:600px){.ei{grid-template-columns:1fr;}}
+.takeaway{margin-top:11px;background:var(--ink);border-radius:12px;padding:15px 20px;color:var(--cream);font-size:15px;line-height:1.5;}
+.takeaway b{color:var(--gold);font-family:'Bricolage Grotesque',sans-serif;}
+
+.threecol{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;margin:6px 0 4px;}
+.tc2{border:2px solid var(--ink);border-radius:12px;padding:15px 16px;box-shadow:3px 3px 0 var(--rule);}
+.tc2 .h{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;margin-bottom:6px;line-height:1.1;}
+.tc2 .b{font-size:14px;line-height:1.45;color:var(--mid);}
+.tc2.a{background:#e4f2f0;} .tc2.a .h{color:var(--teal-deep);}
+.tc2.b{background:var(--wash);} .tc2.b .h{color:var(--orange-deep);}
+.tc2.c{background:#fbeee6;} .tc2.c .h{color:var(--clay-deep);}
+@media(max-width:600px){.threecol{grid-template-columns:1fr;}}
+
+.applybox{background:var(--teal);background-image:radial-gradient(circle at 90% 10%,rgba(245,185,64,.3),transparent 60%);border-radius:15px;padding:24px 26px;margin:6px 0 4px;}
+.applybox .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:12px;}
+.applybox ul{list-style:none;margin:0;}
+.applybox li{color:#fff;font-size:16px;line-height:1.45;padding:9px 0 9px 30px;position:relative;border-bottom:1px solid rgba(255,255,255,.16);}
+.applybox li:last-child{border-bottom:none;}
+.applybox li::before{content:"→";position:absolute;left:4px;color:var(--gold);font-weight:700;}
+.applybox .tip{margin-top:14px;font-size:14px;color:var(--cream);font-style:italic;line-height:1.5;}
+
+.honest{background:#fbeee6;border-left:5px solid var(--clay);border-radius:0 13px 13px 0;padding:20px 24px;margin:6px 0 4px;}
+.honest .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--clay-deep);margin-bottom:9px;}
+.honest p{font-size:16px;line-height:1.58;margin-bottom:10px;}
+.honest p:last-child{margin-bottom:0;}
+.honest strong{color:var(--clay-deep);}
+
+.pq{font-family:'Bricolage Grotesque',sans-serif;font-size:24px;line-height:1.25;font-weight:700;color:var(--teal);border-left:5px solid var(--gold);padding:6px 0 6px 22px;margin:24px 0;letter-spacing:-.01em;}
+
+.bridge{background:var(--ink);color:var(--cream);border-radius:15px;padding:24px 28px;margin-top:6px;position:relative;overflow:hidden;}
+.bridge::after{content:"";position:absolute;right:-30px;bottom:-30px;width:150px;height:150px;background:radial-gradient(circle,rgba(30,138,140,.5),transparent 70%);}
+.bridge *{position:relative;}
+.bridge .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--teal-soft);margin-bottom:9px;}
+.bridge p{color:var(--cream);font-size:16.5px;line-height:1.58;margin-bottom:10px;}
+.bridge p:last-child{margin-bottom:0;}
+.bridge strong{color:var(--gold);}
+
+.sources{font-size:12.5px;color:#8a7c62;line-height:1.5;border-top:2px dashed var(--rule);padding-top:16px;margin-top:34px;}
+.sources strong{color:var(--ink);font-family:'Bricolage Grotesque',sans-serif;font-size:11px;letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:5px;}
+
+footer{background:var(--ink);color:var(--cream);margin-top:30px;padding:30px 0 54px;}
+footer .big{font-family:'Bricolage Grotesque',sans-serif;font-size:16px;color:var(--gold);font-weight:700;margin-bottom:6px;}
+footer .ft{font-size:13px;color:rgba(251,244,230,.7);line-height:1.5;}
+@media(max-width:600px){h1{font-size:46px;}.hero{padding:40px 24px 36px;}}
+</style>
+</head>
+<body>
+
+<div class="herobleed">
+<div class="hero">
+  <div class="labtag">Economic Democracy · Building Wealth</div>
+  <div class="kicker">How advantage passes down</div>
+  <h1>Wealth Transfer</h1>
+  <p class="standfirst">How wealth moves from one generation to the next — and why it's the single most powerful force deciding whether wealth concentrates or spreads.</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="lesson">
+
+  <!-- 01 -->
+  <div class="step">
+    <div class="steplab"><span class="num">01</span><span class="ttl">The concept</span></div>
+    <p class="dropcap">Wealth transfer is how wealth moves from one generation to the next — through inheritance at death and gifts during life. It's the last piece of the whole picture: not just making wealth and keeping it, but passing it on. And it is the single most powerful force in how wealth concentrates or spreads over time.</p>
+    <p>Because what gets transferred isn't only money. It's a <strong>head start</strong> — and a head start, fed into compounding and ownership, grows into a bigger one in the next generation, and a bigger one after that.</p>
+  </div>
+
+  <!-- 02 -->
+  <div class="step">
+    <div class="steplab"><span class="num">02</span><span class="ttl">How it works</span></div>
+    <p>Wealth passes through two channels — gifts while living, and inheritance at death — and the system is remarkably gentle on what's handed down. Compare two ways to come into $2 million:</p>
+    <div class="ei">
+      <div class="eic earn">
+        <div class="amt">$2,000,000 EARNED</div>
+        <div class="ttl2">You work for it</div>
+        <div class="row"><b>Income tax</b>Paid all along the way, up to 37%</div>
+        <div class="row"><b>Payroll tax</b>Paid on the wages too</div>
+        <div class="row"><b>Result</b>You keep a fraction of each dollar, taxed every year you earn</div>
+      </div>
+      <div class="eic inh">
+        <div class="amt">$2,000,000 INHERITED</div>
+        <div class="ttl2">You're left it</div>
+        <div class="row"><b>Tax on the lifetime gains</b>None — "stepped-up basis" erases them at death</div>
+        <div class="row"><b>Estate tax</b>None below $15M per person ($30M per couple)</div>
+        <div class="row"><b>Result</b>It can arrive almost entirely intact</div>
+      </div>
+    </div>
+    <div class="takeaway">Two mechanisms do the work. <b>Stepped-up basis</b> resets an inherited asset's value to the date of death — so a lifetime of capital gains is never taxed. And the <b>estate tax</b> touches only the very largest estates: with a $15 million exemption per person, it reaches roughly <b>0.1%</b> of deaths. For nearly everyone, wealth passes down untaxed.</div>
+  </div>
+
+  <!-- 03 -->
+  <div class="step">
+    <div class="steplab"><span class="num">03</span><span class="ttl">In real life</span></div>
+    <p>This is where the gap between generations actually gets built:</p>
+    <div class="threecol">
+      <div class="tc2 a"><div class="h">The head start</div><div class="b">Even a modest transfer — a paid-off house, a down-payment gift, a debt-free start — lets the next generation build from a base instead of from zero. Compounding does the rest.</div></div>
+      <div class="tc2 b"><div class="h">The "self-made" myth</div><div class="b">Much of what looks self-made rests on transferred advantage: family help, no student debt, a safety net to take risks against. Not cynicism — just the fuller picture.</div></div>
+      <div class="tc2 c"><div class="h">History, carried forward</div><div class="b">Because wealth transfers and history shaped who could own, the racial wealth gap is far larger and more stubborn than the income gap — and it persists precisely through transfer.</div></div>
+    </div>
+    <p class="pq">Income is what you earn in a life. Wealth transfer is what a life hands to the next one — and it usually decides more.</p>
+  </div>
+
+  <!-- 04 -->
+  <div class="step">
+    <div class="steplab"><span class="num">04</span><span class="ttl">Apply it to your life</span></div>
+    <div class="applybox">
+      <div class="l">Receive it, or pass it, with intention</div>
+      <ul>
+        <li>If you'll receive a transfer, treat it as a head start to build on, not just to spend — invested, the advantage compounds.</li>
+        <li>If you'll leave one, basic planning — a will, named beneficiaries, maybe a trust — makes sure it passes how you intend. Most families are nowhere near the $15M estate-tax threshold.</li>
+        <li>Remember that small transfers matter most: help with a down payment, education, or a debt-free start are among the most powerful moves a family can make.</li>
+        <li>Talk about money across generations. The silence around it is part of what keeps the playbook hidden.</li>
+      </ul>
+      <p class="tip">You don't need a fortune for this to matter. A modest head start, invested early, can change a family's whole trajectory.</p>
+    </div>
+  </div>
+
+  <!-- 05 -->
+  <div class="step">
+    <div class="steplab"><span class="num">05</span><span class="ttl">The honest part</span></div>
+    <div class="honest">
+      <div class="l">The honest debate</div>
+      <p>How to tax inheritance is genuinely contested, so here are both sides. <strong>Defenders</strong> of light taxation argue the money was already taxed once when first earned, that families have every right to pass on what they built, that estate taxes can force the sale of family farms and businesses, and that the tax raises little revenue. <strong>Critics</strong> argue that a large inheritance is unearned by the person receiving it, that stepped-up basis lets enormous gains escape tax entirely, and that concentrated inherited wealth builds a hereditary aristocracy fundamentally at odds with the idea of a merit-based society. Both cases are real, and people weigh them differently in good faith.</p>
+      <p>For an individual, the practical truth is simple: <strong>almost no family will ever owe federal estate tax</strong>, so for the vast majority the job is just passing on what you have, well. The deeper truth is harder: wealth transfer is the main reason advantage and disadvantage persist across generations — far more than we like to admit — and the word "self-made" almost always understates the inheritance, whether of money, stability, or simple safety, that stood behind it.</p>
+    </div>
+  </div>
+
+  <!-- 06 -->
+  <div class="step">
+    <div class="steplab"><span class="num">06</span><span class="ttl">The bigger picture</span></div>
+    <div class="bridge">
+      <div class="l">Why this matters beyond you</div>
+      <p>Wealth transfer is the master engine of concentration — the mechanism that compounds advantage not just across a life but across <strong>generations</strong>. Every other force in building wealth works within a single lifetime; transfer links the lifetimes together, so a head start in one becomes a larger one in the next. Left entirely unchecked, this is how aristocracies form: wealth begetting wealth, handed down, while those who start with nothing must build from zero every single generation.</p>
+      <p>And here is the deepest tension in this whole project, stated plainly. There is <strong>nothing wrong</strong> with wanting to provide for your children — it's among the most human motives there is. But at scale, unlimited untaxed transfer is how economic power becomes <em>hereditary</em>, turning a republic of independent owners into a society of inherited position. So the economic-democracy question was never whether families can pass on wealth — of course they can, and should. It's whether a society <em>also</em> ensures that everyone, whoever their parents were, has a real chance to build wealth of their own. That takes both: the freedom to pass wealth on, and the broad structures — widespread ownership, real opportunity, a public floor — that keep inheritance from hardening into permanent class. Without the second, the head start quietly becomes the whole race.</p>
+    </div>
+  </div>
+
+  <div class="sources">
+    <strong>Sources &amp; further reading</strong>
+    Estate and gift figures (2026): the federal estate, gift, and generation-skipping exemption is $15 million per individual ($30 million per married couple), made permanent and inflation-indexed by the 2025 law (OBBBA), with a top rate of 40% on amounts above the exemption; "stepped-up basis" at death remains in place. The federal estate tax reaches roughly 0.1% of decedents (IRS; Tax Policy Center); twelve states and D.C. levy their own estate taxes at lower thresholds, and several states have inheritance taxes. Racial-wealth-gap persistence: Federal Reserve Survey of Consumer Finances and related research. Figures are approximate and subject to change.
+  </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="big">Wealth Transfer · Building Wealth</div>
+    <div class="ft">Economic Democracy · Building Wealth · economicdemocracy.co<br>A Shared Prosperity education project. General education, not estate, tax, or financial advice. Figures are approximate.</div>
+  </div>
+</footer>
+
+</body>
+</html>

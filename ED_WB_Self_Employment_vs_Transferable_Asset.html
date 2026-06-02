@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Self-Employment vs. a Transferable Asset · Building Wealth · Economic Democracy</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+:root{
+  --teal:#1E8A8C; --teal-deep:#136466; --teal-soft:#5FB8B6;
+  --orange:#F08A24; --orange-deep:#D9731A; --gold:#F5B940;
+  --clay:#C7553B; --clay-deep:#A8412B;
+  --cream:#FBF4E6; --paper:#FEF9F0; --card:#FFFFFF;
+  --ink:#16211F; --mid:#5d6b66; --rule:#E7DABE; --wash:#F2E9D4;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:720px;margin:0 auto;padding:0 24px;}
+a{color:inherit;}
+
+.herobleed{background:var(--teal);background-image:radial-gradient(circle at 12% 18%,rgba(245,185,64,.34),transparent 52%),radial-gradient(circle at 88% 84%,rgba(240,138,36,.28),transparent 55%);}
+.hero{max-width:720px;margin:0 auto;padding:50px 24px 46px;}
+.labtag{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-deep);background:var(--gold);padding:7px 15px;border-radius:100px;margin-bottom:20px;}
+.kicker{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cream);margin-bottom:13px;opacity:.92;}
+h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:44px;line-height:1.0;letter-spacing:-.025em;color:#fff;margin-bottom:16px;}
+.standfirst{font-size:20px;line-height:1.45;color:var(--cream);font-weight:500;max-width:42ch;}
+
+.lesson{padding-top:42px;}
+.step{margin-bottom:30px;}
+.steplab{display:flex;align-items:baseline;gap:11px;margin-bottom:10px;}
+.steplab .num{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:14px;color:var(--orange);letter-spacing:.04em;}
+.steplab .ttl{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:23px;letter-spacing:-.02em;color:var(--ink);}
+.step p{font-size:17px;line-height:1.62;margin-bottom:12px;}
+.step p:last-child{margin-bottom:0;}
+.step strong{color:var(--teal-deep);font-weight:700;}
+.dropcap::first-letter{font-family:'Bricolage Grotesque',sans-serif;font-size:58px;font-weight:800;float:left;line-height:.78;margin:5px 11px 0 0;color:var(--teal);}
+
+/* replacement test visual */
+.rtest{background:var(--card);border:2.5px solid var(--ink);border-radius:16px;padding:22px 24px;margin:10px 0 6px;box-shadow:5px 5px 0 var(--rule);}
+.rtest .rh{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;letter-spacing:.04em;font-weight:700;color:var(--orange-deep);margin-bottom:16px;}
+.rstep{display:flex;align-items:center;gap:14px;padding:11px 0;border-top:1.5px solid var(--rule);}
+.rstep:first-child{border-top:none;}
+.rstep .ic{width:30px;height:30px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:14px;color:#fff;}
+.rstep .tx{font-size:15px;line-height:1.4;}
+.rstep .tx b{font-family:'Bricolage Grotesque',sans-serif;}
+.rstep.good .ic{background:var(--teal);}
+.rstep.minus .ic{background:var(--clay);}
+.rstep.zero .ic{background:var(--ink);}
+.rstep .amt{margin-left:auto;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:17px;white-space:nowrap;}
+.rstep.good .amt{color:var(--teal-deep);}
+.rstep.minus .amt{color:var(--clay-deep);}
+.rstep.zero .amt{color:var(--ink);}
+.rverdict{margin-top:14px;border-top:1.5px dashed var(--rule);padding-top:13px;font-size:14.5px;line-height:1.5;color:var(--mid);}
+.rverdict b{color:var(--clay-deep);}
+
+/* three stages */
+.stages3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;margin:6px 0 4px;}
+.st3{border:2px solid var(--ink);border-radius:12px;padding:15px 16px;box-shadow:3px 3px 0 var(--rule);}
+.st3 .sn{font-family:'Bricolage Grotesque',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:5px;}
+.st3 .h{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;margin-bottom:6px;line-height:1.1;}
+.st3 .b{font-size:13.5px;line-height:1.42;color:var(--mid);}
+.st3.s1{background:#fbeee6;} .st3.s1 .h,.st3.s1 .sn{color:var(--clay-deep);}
+.st3.s2{background:var(--wash);} .st3.s2 .h,.st3.s2 .sn{color:var(--orange-deep);}
+.st3.s3{background:#e4f2f0;} .st3.s3 .h,.st3.s3 .sn{color:var(--teal-deep);}
+@media(max-width:600px){.stages3{grid-template-columns:1fr;}}
+.stuck{font-size:13.5px;color:var(--mid);font-style:italic;margin-top:10px;}
+
+/* interactive diagnostic */
+.diag{background:var(--card);border:2.5px solid var(--ink);border-radius:16px;padding:6px;margin:6px 0 4px;box-shadow:5px 5px 0 var(--teal);}
+.diag-in{background:var(--cream);border-radius:11px;padding:22px 22px 24px;}
+.diag .dl{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--teal-deep);margin-bottom:4px;}
+.diag .dq{font-size:14.5px;color:var(--mid);margin-bottom:16px;}
+.chk{display:flex;align-items:flex-start;gap:12px;background:var(--card);border:2px solid var(--rule);border-radius:11px;padding:13px 15px;margin-bottom:9px;cursor:pointer;transition:border-color .12s,background .12s;}
+.chk:hover{border-color:var(--clay);}
+.chk.on{border-color:var(--clay);background:#fbe7df;}
+.chk input{appearance:none;width:22px;height:22px;border:2.5px solid var(--mid);border-radius:6px;flex-shrink:0;margin-top:1px;cursor:pointer;position:relative;}
+.chk.on input{background:var(--clay);border-color:var(--clay);}
+.chk.on input::after{content:"✓";position:absolute;inset:0;color:#fff;font-size:15px;font-weight:800;display:flex;align-items:center;justify-content:center;}
+.chk span{font-size:15px;line-height:1.4;}
+.result{border-radius:12px;padding:18px 20px;margin-top:8px;border:2.5px solid var(--ink);}
+.result .rl{font-family:'Bricolage Grotesque',sans-serif;font-size:11px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;margin-bottom:6px;}
+.result .verdict{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20px;line-height:1.1;margin-bottom:7px;letter-spacing:-.01em;}
+.result .rd{font-size:14.5px;line-height:1.45;}
+.result.asset{background:#e4f2f0;} .result.asset .rl{color:var(--teal-deep);} .result.asset .verdict{color:var(--teal-deep);}
+.result.mid{background:var(--wash);} .result.mid .rl{color:var(--orange-deep);} .result.mid .verdict{color:var(--orange-deep);}
+.result.job{background:#fbeee6;} .result.job .rl{color:var(--clay-deep);} .result.job .verdict{color:var(--clay-deep);}
+.diag .clincher{margin-top:13px;font-size:14px;color:var(--mid);font-style:italic;line-height:1.5;}
+
+.honest{background:#fbeee6;border-left:5px solid var(--clay);border-radius:0 13px 13px 0;padding:20px 24px;margin:6px 0 4px;}
+.honest .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--clay-deep);margin-bottom:9px;}
+.honest p{font-size:16px;line-height:1.58;margin-bottom:10px;}
+.honest p:last-child{margin-bottom:0;}
+.honest strong{color:var(--clay-deep);}
+
+.pq{font-family:'Bricolage Grotesque',sans-serif;font-size:24px;line-height:1.25;font-weight:700;color:var(--teal);border-left:5px solid var(--gold);padding:6px 0 6px 22px;margin:24px 0;letter-spacing:-.01em;}
+
+.bridge{background:var(--ink);color:var(--cream);border-radius:15px;padding:24px 28px;margin-top:6px;position:relative;overflow:hidden;}
+.bridge::after{content:"";position:absolute;right:-30px;bottom:-30px;width:150px;height:150px;background:radial-gradient(circle,rgba(30,138,140,.5),transparent 70%);}
+.bridge *{position:relative;}
+.bridge .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--teal-soft);margin-bottom:9px;}
+.bridge p{color:var(--cream);font-size:16.5px;line-height:1.58;margin-bottom:10px;}
+.bridge p:last-child{margin-bottom:0;}
+.bridge strong{color:var(--gold);}
+
+.sources{font-size:12.5px;color:#8a7c62;line-height:1.5;border-top:2px dashed var(--rule);padding-top:16px;margin-top:34px;}
+.sources strong{color:var(--ink);font-family:'Bricolage Grotesque',sans-serif;font-size:11px;letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:5px;}
+
+.next{display:flex;align-items:center;justify-content:space-between;gap:16px;background:var(--gold);border:2.5px solid var(--ink);border-radius:14px;padding:18px 22px;margin:30px 0 0;box-shadow:5px 5px 0 var(--orange);}
+.next .nl{font-family:'Bricolage Grotesque',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--teal-deep);margin-bottom:3px;}
+.next .nm{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:19px;color:var(--ink);letter-spacing:-.01em;}
+.next .arrow{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:26px;color:var(--clay);}
+
+footer{background:var(--ink);color:var(--cream);margin-top:30px;padding:30px 0 54px;}
+footer .big{font-family:'Bricolage Grotesque',sans-serif;font-size:16px;color:var(--gold);font-weight:700;margin-bottom:6px;}
+footer .ft{font-size:13px;color:rgba(251,244,230,.7);line-height:1.5;}
+@media(max-width:600px){h1{font-size:34px;}.hero{padding:40px 24px 36px;}}
+</style>
+</head>
+<body>
+
+<div class="herobleed">
+<div class="hero">
+  <div class="labtag">Economic Democracy · Building Wealth</div>
+  <div class="kicker">A job you own vs. an asset you can sell</div>
+  <h1>Self-Employment vs. a Transferable Asset</h1>
+  <p class="standfirst">The line between owning a job and owning a business — and one clean test that tells you which you've built.</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="lesson">
+
+  <!-- 01 -->
+  <div class="step">
+    <div class="steplab"><span class="num">01</span><span class="ttl">The concept</span></div>
+    <p class="dropcap">Every business owner eventually has to face one hard question: have I built a business, or just bought myself a job? A <strong>transferable asset</strong> can operate, grow, and earn without depending entirely on you — someone else could buy it and keep it running. A <strong>job</strong> is when the whole thing falls apart the moment you step away. It can look impressive, carry a title, even turn a profit, and still be a job.</p>
+    <p>The difference isn't cosmetic. It decides whether all your years of work turn into <strong>sellable wealth</strong> — something you can step back from, pass on, or cash out — or whether it simply ends when you do.</p>
+  </div>
+
+  <!-- 02 -->
+  <div class="step">
+    <div class="steplab"><span class="num">02</span><span class="ttl">How it works — the test</span></div>
+    <p>The cleanest test is a single question: <strong>could it run, and be sold, without you?</strong> There's an easy first check — the <em>vacation test</em>: step away for a few weeks; does it keep running, or fall apart? But the sharpest version is the <strong>replacement test</strong>. Pay someone a real market wage to do everything you do — would the business still make a profit?</p>
+    <div class="rtest">
+      <div class="rh">The replacement test — a worked example</div>
+      <div class="rstep good"><div class="ic">1</div><div class="tx"><b>On paper</b> — $2M in revenue, and it shows a profit. Looks like a real business.</div><div class="amt">+$100k</div></div>
+      <div class="rstep minus"><div class="ic">2</div><div class="tx"><b>But the owner</b> works 60-hour weeks and pays themselves almost nothing. Hire a manager at market rate to replace them.</div><div class="amt">−$120k</div></div>
+      <div class="rstep zero"><div class="ic">=</div><div class="tx"><b>The real result</b> — once the owner's true labor is paid for, the profit is gone.</div><div class="amt">−$20k</div></div>
+      <div class="rverdict">The $100k "profit" was never profit. It was the owner <b>subsidizing the business with unpaid labor.</b> A business that's only profitable because you work for free isn't an asset — it's a job in disguise.</div>
+    </div>
+    <p>This is why the discipline of <strong>paying yourself a real salary</strong> matters: only then can you see whether there's a true profit left over, or whether you've simply been working for less than you'd pay anyone else.</p>
+  </div>
+
+  <!-- 03 -->
+  <div class="step">
+    <div class="steplab"><span class="num">03</span><span class="ttl">In real life — the chasm most never cross</span></div>
+    <p>Businesses tend to sit in one of three stages, and most get stuck before the last one:</p>
+    <div class="stages3">
+      <div class="st3 s1"><div class="sn">Stage 1</div><div class="h">Fragile — a job</div><div class="b">The owner does everything; margins are thin. Lose a big client or fall ill, and it could collapse.</div></div>
+      <div class="st3 s2"><div class="sn">Stage 2 · the chasm</div><div class="h">Transitional</div><div class="b">It has a team and some systems, but the owner is still the bottleneck. Profit gets squeezed. It either professionalizes — or stalls.</div></div>
+      <div class="st3 s3"><div class="sn">Stage 3</div><div class="h">Resilient — an asset</div><div class="b">Runs on systems and a team, with healthy margins. Not fragile. Could be sold and keep running without the founder.</div></div>
+    </div>
+    <p class="stuck">Advisors describe a long, treacherous stretch — sometimes called the "$2–5M chasm" or the "Badlands" — where companies must spend on staff and systems before the revenue can comfortably support them. Most never make it across, and stay the owner's job by default.</p>
+    <p class="pq">No one wants to buy your job. They'll buy a business that runs without you — and pay a premium for it.</p>
+  </div>
+
+  <!-- 04 -->
+  <div class="step">
+    <div class="steplab"><span class="num">04</span><span class="ttl">Apply it — job or asset?</span></div>
+    <div class="diag">
+      <div class="diag-in">
+        <div class="dl">A quick diagnostic</div>
+        <div class="dq">Check each one that's true of your business (or one you're imagining). Your read updates below.</div>
+        <label class="chk" data-w="1"><input type="checkbox"><span>It can't run without me — I can't take a few weeks off without things falling apart.</span></label>
+        <label class="chk" data-w="1"><input type="checkbox"><span>I'm the hub — nearly every decision and problem ends up on my desk.</span></label>
+        <label class="chk" data-w="1"><input type="checkbox"><span>I'm always at capacity — 60-hour weeks, and I can't imagine doing more.</span></label>
+        <label class="chk" data-w="1"><input type="checkbox"><span>Revenue is tied to me — if I stopped working tomorrow, the income would stop or crash.</span></label>
+
+        <div class="result asset" id="result">
+          <div class="rl">Your read</div>
+          <div class="verdict" id="verdict">Leaning toward an asset</div>
+          <div class="rd" id="rdesc">Nothing checked — the business may be able to run without you. That's the mark of a transferable asset. Keep documenting and delegating to protect it.</div>
+        </div>
+        <div class="clincher">The clincher, either way: if you paid someone market rate to do your job, would there still be a profit? If not, you own a job — however good a one.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 05 -->
+  <div class="step">
+    <div class="steplab"><span class="num">05</span><span class="ttl">The honest part</span></div>
+    <div class="honest">
+      <div class="l">What no one tells you</div>
+      <p>Most businesses never cross from job to asset — and that's not failure. A business that gives you a good living is a real achievement, and plenty of people are happy there. But be honest about what you hold: an owner-dependent business is <strong>very hard to sell</strong>, because the business <em>is</em> you. Step away — by choice, illness, or burnout — and there may be little anyone will pay for. Years of work can leave almost no transferable value.</p>
+      <p>The trap is mistaking <strong>busy and even profitable</strong> for <em>building an asset</em>. The way across is the hardest thing for a founder to do: make yourself less central — delegate real authority, document how things are done, build a team and systems — which means giving up control. And it takes financial discipline most skip: pay yourself a real wage so you can see the truth, aim for a genuine profit on top of that, and fix the quiet killers — underpricing and overstaffing — that keep a business stuck as a job.</p>
+    </div>
+  </div>
+
+  <!-- 06 -->
+  <div class="step">
+    <div class="steplab"><span class="num">06</span><span class="ttl">The bigger picture</span></div>
+    <div class="bridge">
+      <div class="l">Why this matters beyond you</div>
+      <p>This single line — job or asset — is also where wealth quietly sorts itself. The few businesses that become transferable assets get sold for a multiple of their profits and create real, inheritable wealth. The many that stay owner-dependent jobs leave their owners with nothing to pass on but their own labor. Same effort, same long hours — wildly different endings.</p>
+      <p>And who gets to make the crossing is unequal. It takes a cushion to go underpaid through the "Badlands," capital to build systems, and access to the kind of guidance this lesson is built from. So broadening who can cross — capital ordinary owners can reach, the know-how to build transferable value, and <strong>employee ownership</strong> that lets the people who built the asset share in it — is how the upside of business stops belonging only to those who could already afford the climb.</p>
+    </div>
+  </div>
+
+  <div class="sources">
+    <strong>Sources &amp; further reading</strong>
+    Profit, labor-efficiency, and core-capital principles (10–15% pretax profit as the real benchmark; paying the owner a market salary; cash reserves of about two months of expenses): Greg Crabtree, <em>Simple Numbers, Straight Talk, Big Profits!</em> Job-versus-asset benchmarks, the owner-dependence ceiling, and sale-value points (owner-dependent firms sell for little; profitable, transferable firms sell at a multiple of earnings): business-exit and M&A advisory writing, and small-business finance summaries. Figures are rules of thumb for illustration, not guarantees.
+  </div>
+
+</div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="big">Self-Employment vs. a Transferable Asset · Building Wealth</div>
+    <div class="ft">Economic Democracy · Building Wealth · economicdemocracy.co<br>A Shared Prosperity education project. General education, not personal financial or business advice. Figures are illustrative.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var checks = Array.prototype.slice.call(document.querySelectorAll('.chk'));
+  var result = document.getElementById('result');
+  var verdict = document.getElementById('verdict');
+  var rdesc = document.getElementById('rdesc');
+
+  var states = {
+    asset:{cls:'asset', v:'Leaning toward an asset', d:'Nothing checked — the business may be able to run without you. That\u2019s the mark of a transferable asset. Keep documenting and delegating to protect it.'},
+    mid:{cls:'mid', v:'In the chasm', d:'Part job, part asset — the transition is unfinished. The business still leans on you in real ways. Each thing you delegate or document moves it toward a sellable asset.'},
+    job:{cls:'job', v:'This is a job, not a business', d:'However good the income, the business depends on you to survive. It would be hard to sell, because someone would be buying your job. The way out is making yourself less central, on purpose.'}
+  };
+
+  function recompute(){
+    var n = checks.filter(function(c){return c.querySelector('input').checked;}).length;
+    var s = n===0 ? states.asset : (n<=2 ? states.mid : states.job);
+    result.className = 'result ' + s.cls;
+    verdict.textContent = s.v;
+    rdesc.textContent = s.d;
+  }
+  checks.forEach(function(c){
+    var input = c.querySelector('input');
+    c.addEventListener('click', function(e){
+      if(e.target!==input){ input.checked = !input.checked; }
+      c.classList.toggle('on', input.checked);
+      recompute();
+    });
+  });
+  recompute();
+})();
+</script>
+
+</body>
+</html>

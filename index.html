@@ -438,55 +438,89 @@
       <a href="ED_ANT_Core_Anthology_250.html">250 Voices</a>
       <a href="concepts.html">Concepts</a>
       <a href="ED_LAB_Civic_Labs.html">Civic Labs</a>
+      <a href="ED_WB_Building_Wealth.html">Building Wealth</a>
       <a href="resources.html">For Teachers</a>
       <a href="ED_ENGAGE_Ways.html" class="nav-cta">Ways to Engage</a>
     </div>
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero" id="main">
-  <div class="hero-left">
-    <h1 class="hero-title">Where should<br>power sit?<br><em>Who decides?</em></h1>
-    <p class="hero-body">A framework for understanding how power, markets, and democracy interact — and why intelligent people who have experienced the same political economy reach such different conclusions about what it means and what should change.</p>
-    <div class="hero-actions">
-      <a href="#framework" class="btn-primary">Explore the Framework</a>
-    </div>
-  </div>
-  <div class="hero-right">
-    <div class="stat-stack">
-      <div class="stat-item">
-        <span class="stat-num">250</span>
-        <span class="stat-text"><strong>Voices</strong>One per year of the United States · 1776–2026</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">45</span>
-        <span class="stat-text"><strong>Concept Primers</strong>The economic toolkit, in five clusters</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">10</span>
-        <span class="stat-text"><strong>Units</strong>From the Founding to Artificial Intelligence</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">4</span>
-        <span class="stat-text"><strong>Quadrants</strong>Every worldview mapped — none declared correct</span>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- ════════════════════════════════════════════════════════
+     NEW INTRO · Hero + Argument + What You'll Find
+     Civic-style: centered, white, Newsreader serif, burgundy accent.
+     Below this block: Framework, Concepts, Anthology, Civic Labs,
+     Building Wealth, For Teachers continue unchanged.
+     ════════════════════════════════════════════════════════ -->
 
-<!-- ARGUMENT STRIP -->
-<div class="argument-strip">
-  <div class="argument-inner">
-    <span class="arg-label">The Argument</span>
-    <p class="arg-text">Most political frameworks rely on a single left-right spectrum. <strong>That approach fails to capture the complexity of modern economic life.</strong> This curriculum uses two independent axes to reveal the actual structure of disagreement — where power sits, and who it answers to.</p>
+<style>
+  /* Intro column — narrower than the strand blocks below to read like a front door */
+  .intro-wrap{max-width:860px;margin:0 auto;padding:0 32px;}
+
+  /* Hero */
+  .intro-hero{padding:84px 0 56px;border-bottom:1px solid var(--rule, #E2E0D8);text-align:center;}
+  .intro-hero .eyebrow{font-family:'Inter',sans-serif;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#7C2D2D;margin-bottom:22px;}
+  .intro-hero h1{font-family:'Newsreader',serif;font-weight:600;font-size:clamp(2.4rem,5.4vw,4.1rem);line-height:1;letter-spacing:-.022em;color:#1A1C1E;margin-bottom:26px;}
+  .intro-hero h1 em{font-style:italic;font-weight:500;}
+  .intro-hero .lede{font-size:clamp(1.05rem,1.7vw,1.31rem);line-height:1.5;color:#55606B;max-width:60ch;margin:0 auto;font-weight:400;font-family:'Newsreader',serif;}
+  .intro-hero .ctas{margin-top:34px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  .intro-hero .btn{font-family:'Inter',sans-serif;font-weight:600;font-size:15px;padding:14px 26px;border-radius:4px;text-decoration:none;transition:background .15s,border-color .15s,color .15s;display:inline-block;}
+  .intro-hero .btn-primary{background:#7C2D2D;color:#fff;border:1px solid #7C2D2D;}
+  .intro-hero .btn-primary:hover{background:#5f2222;}
+  .intro-hero .btn-secondary{border:1px solid #E2E0D8;color:#1A1C1E;background:transparent;}
+  .intro-hero .btn-secondary:hover{border-color:#A84A3C;color:#7C2D2D;}
+
+  /* Argument */
+  .intro-argument{padding:56px 0;border-bottom:1px solid #E2E0D8;}
+  .intro-argument .tag{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#7A848E;margin-bottom:16px;display:block;}
+  .intro-argument p{font-family:'Newsreader',serif;font-size:clamp(1rem,1.55vw,1.31rem);line-height:1.6;color:#2C3036;max-width:60ch;margin-bottom:20px;}
+  .intro-argument p:last-child{margin-bottom:0;}
+  .intro-argument p strong{font-weight:600;color:#1A1C1E;}
+  .intro-argument p em{font-style:italic;}
+  .intro-argument .closer{font-family:'Newsreader',serif;font-style:italic;font-weight:500;color:#1A1C1E;}
+
+  /* What You'll Find directory — namespaced so it doesn't collide with .section below */
+  .intro-directory{padding:56px 0 14px;border-bottom:1px solid #E2E0D8;}
+  .intro-directory .seclabel{font-family:'Inter',sans-serif;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#7C2D2D;margin-bottom:14px;display:block;}
+  .intro-directory h2{font-family:'Newsreader',serif;font-weight:600;font-size:clamp(1.9rem,3.4vw,2.4rem);line-height:1.06;letter-spacing:-.015em;color:#1A1C1E;margin-bottom:18px;}
+  .intro-directory h2 em{font-style:italic;font-weight:500;}
+  .intro-directory .dirlead{font-family:'Newsreader',serif;font-size:clamp(1rem,1.4vw,1.19rem);line-height:1.6;color:#55606B;max-width:62ch;margin-bottom:8px;}
+  .intro-directory .dirlead strong{color:#1A1C1E;font-weight:600;}
+  .intro-directory .grouplabel{font-family:'Inter',sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#7C2D2D;margin:34px 0 6px;}
+  .intro-directory .entry{padding:20px 0;border-top:1px solid #E2E0D8;}
+  .intro-directory .entry h3{font-family:'Newsreader',serif;font-weight:600;font-size:1.55rem;line-height:1.1;color:#1A1C1E;margin-bottom:8px;letter-spacing:-.01em;}
+  .intro-directory .entry .edesc{font-family:'Newsreader',serif;font-size:1.06rem;line-height:1.55;color:#55606B;max-width:64ch;margin-bottom:11px;}
+  .intro-directory .entry .edesc em{font-style:italic;color:#2C3036;}
+  .intro-directory .entry .go{font-family:'Inter',sans-serif;font-weight:600;font-size:14px;color:#7C2D2D;text-decoration:none;}
+  .intro-directory .entry a.go:hover{color:#A84A3C;}
+</style>
+
+<div class="intro-wrap" id="main">
+
+  <!-- Hero -->
+  <div class="intro-hero">
+    <div class="eyebrow">A Curriculum on Power, Markets and Democracy</div>
+    <h1>Who does the economy <em>answer</em> to?</h1>
+    <p class="lede">For two centuries we built systems to hold political power accountable — and never built the same for economic power. That gap is the argument of our time: not left against right, but where power sits and who it serves. This is the place to think it through, and to act on it — in your community and in your own life.</p>
+    <div class="ctas">
+      <a class="btn btn-primary" href="#framework">Explore the Framework</a>
+      <a class="btn btn-secondary" href="ED_ANT_Core_Anthology_250.html">Explore the 250 Voices</a>
+    </div>
   </div>
+
+  <!-- Argument -->
+  <div class="intro-argument">
+    <span class="tag">The Argument</span>
+    <p>Capitalism works. It has produced more wealth than any system in history. The question of our time is not whether it produces wealth — it does — but whether it produces <strong>shared</strong> prosperity, and whether the democracy it depends on can survive what concentrated wealth is doing to it.</p>
+    <p>For two centuries we built ever more sophisticated systems to govern political power: separation of powers, checks and balances, the vote. <strong>We never built the equivalent for economic power.</strong> That absence is the argument of our time — and it is not, at bottom, left against right. It is a disagreement about where power should sit and who it should answer to, and intelligent people who have lived through the same economy reach opposite conclusions about it.</p>
+    <p class="closer">This curriculum doesn&rsquo;t tell you which conclusion is right. It hands you the framework to locate any argument, the language to join it, the voices who have argued it since 1776, and the tools to act on it. Not what to think about the economy &mdash; how to participate in it.</p>
+  </div>
+
 </div>
 
 <!-- THE FRAMEWORK -->
 <section class="section" id="framework">
   <p class="section-eyebrow">The Framework</p>
-  <h2 class="section-heading">Two Axes. Four Quadrants.<br>One Endless Argument.</h2>
+  <h2 class="section-heading">Two Axes. Four Quadrants. One Endless Argument.</h2>
   <p class="section-sub">Every thinker, policy, and argument can be placed somewhere on this graph. The goal is not to sort people into boxes — it is to give students precise language for what they are already observing.</p>
 
   <div class="matrix-grid">
@@ -520,184 +554,6 @@
     </div>
   </div>
   <a href="ED_FR_Framework_Rationale.html" class="section-link">Read the Framework Rationale</a>
-</section>
-
-<!-- CONCEPT LIBRARY TEASER -->
-<section class="section" id="concepts-teaser">
-  <p class="section-eyebrow">The Concept Library</p>
-  <h2 class="section-heading">48 Primers.<br>The Economic Toolkit.</h2>
-  <p class="section-sub">The 250 Voices show you the argument. The concepts give you the language to join it. Each primer takes one economic idea &mdash; supply and demand, capital, monopoly, fiscal policy, globalization &mdash; and grants it its full strength before examining exactly where it breaks. Not what to think about the economy. How to think about it, one tool at a time.</p>
-  <p style="font-size:.88rem;font-weight:300;color:var(--mid);line-height:1.7;margin-bottom:2rem;max-width:680px;">Every primer follows the same arc: the tool, granted its real power; the two levers where reasonable people start to disagree; the same tool at work in real situations; and a defended-stance write task that ends on the reform test &mdash; the smallest change that would make the economy both more productive and more democratic, and what it would cost.</p>
-
-  <style>
-    .acc-trigger .acc-left.with-tagline{align-items:flex-start;}
-    .acc-text{display:flex;flex-direction:column;gap:.2rem;}
-    .acc-tagline{
-      font-size:.74rem;
-      font-weight:300;
-      color:var(--mid);
-      line-height:1.4;
-    }
-    .acc-trigger.has-tagline{padding-top:1rem;padding-bottom:1rem;}
-    .acc-name-lead{
-      font-family:'Playfair Display',serif;
-      font-size:1rem;
-      font-weight:700;
-      color:var(--black);
-      line-height:1.2;
-    }
-  </style>
-
-  <!-- CONCEPT CLUSTER DROPDOWNS -->
-  <div class="section-accordion" style="margin-top:1.5rem;max-width:760px;">
-    <div class="acc-row">
-      <button class="acc-trigger has-tagline" aria-expanded="false" onclick="toggleAcc(this)">
-        <span class="acc-left with-tagline">
-          <span class="acc-roman">I</span>
-          <span class="acc-text">
-            <span class="acc-name-lead">Allocation</span>
-            <span class="acc-tagline">How scarce things get divided.</span>
-          </span>
-        </span>
-        <span class="acc-arrow">›</span>
-      </button>
-      <div class="acc-panel">
-        <ul>
-          <li><a href="ED_CON_Scarcity.html">Scarcity</a></li>
-          <li><a href="ED_CON_Opportunity_Cost.html">Opportunity Cost</a></li>
-          <li><a href="ED_CON_Incentives.html">Incentives</a></li>
-          <li><a href="ED_CON_Supply_And_Demand.html">Supply &amp; Demand</a></li>
-          <li><a href="ED_CON_Externalities.html">Externalities</a></li>
-          <li><a href="ED_CON_Public_Goods.html">Public Goods</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="acc-row">
-      <button class="acc-trigger has-tagline" aria-expanded="false" onclick="toggleAcc(this)">
-        <span class="acc-left with-tagline">
-          <span class="acc-roman">II</span>
-          <span class="acc-text">
-            <span class="acc-name-lead">Engines</span>
-            <span class="acc-tagline">What drives growth.</span>
-          </span>
-        </span>
-        <span class="acc-arrow">›</span>
-      </button>
-      <div class="acc-panel">
-        <ul>
-          <li><a href="ED_CON_Profit_Motive.html">Profit Motive</a></li>
-          <li><a href="ED_CON_Compounding.html">Compounding</a></li>
-          <li><a href="ED_CON_Competition.html">Competition</a></li>
-          <li><a href="ED_CON_Productivity.html">Productivity</a></li>
-          <li><a href="ED_CON_Creative_Destruction.html">Creative Destruction</a></li>
-          <li><a href="ED_CON_Business_Cycles.html">Business Cycles</a></li>
-          <li><a href="ED_CON_Entrepreneur.html">The Entrepreneur</a></li>
-          <li><a href="ED_CON_Investment.html">Investment</a></li>
-          <li><a href="ED_CON_Specialization.html">Specialization</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="acc-row">
-      <button class="acc-trigger has-tagline" aria-expanded="false" onclick="toggleAcc(this)">
-        <span class="acc-left with-tagline">
-          <span class="acc-roman">III</span>
-          <span class="acc-text">
-            <span class="acc-name-lead">Power</span>
-            <span class="acc-tagline">How advantage concentrates.</span>
-          </span>
-        </span>
-        <span class="acc-arrow">›</span>
-      </button>
-      <div class="acc-panel">
-        <ul>
-          <li><a href="ED_CON_Monopoly.html">Monopoly</a></li>
-          <li><a href="ED_CON_Network_Effects.html">Network Effects</a></li>
-          <li><a href="ED_CON_Economies_Of_Scale.html">Economies of Scale</a></li>
-          <li><a href="ED_CON_Rent_Seeking.html">Rent-Seeking</a></li>
-          <li><a href="ED_CON_Sovereignty.html">Sovereignty</a></li>
-          <li><a href="ED_CON_The_Trust.html">The Trust</a></li>
-          <li><a href="ED_CON_Globalization.html">Globalization</a></li>
-          <li><a href="ED_CON_Consolidation.html">Consolidation</a></li>
-          <li><a href="ED_CON_What_Is_A_Platform.html">Platforms</a></li>
-          <li><a href="ED_CON_Market_Power_Scale_Fragmentation.html">Market Power: Scale vs. Fragmentation</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="acc-row">
-      <button class="acc-trigger has-tagline" aria-expanded="false" onclick="toggleAcc(this)">
-        <span class="acc-left with-tagline">
-          <span class="acc-roman">IV</span>
-          <span class="acc-text">
-            <span class="acc-name-lead">Distribution</span>
-            <span class="acc-tagline">Who ends up with what.</span>
-          </span>
-        </span>
-        <span class="acc-arrow">›</span>
-      </button>
-      <div class="acc-panel">
-        <ul>
-          <li><a href="ED_CON_The_Commons.html">The Commons</a></li>
-          <li><a href="ED_CON_Predistribution.html">Predistribution</a></li>
-          <li><a href="ED_CON_Redistribution.html">Redistribution</a></li>
-          <li><a href="ED_CON_Labor.html">Labor</a></li>
-          <li><a href="ED_CON_Small_Business_Owner.html">The Small Business Owner</a></li>
-          <li><a href="ED_CON_Inequality.html">Inequality</a></li>
-          <li><a href="ED_CON_Subsidy_Public_Ownership.html">Subsidy vs. Public Ownership</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="acc-row">
-      <button class="acc-trigger has-tagline" aria-expanded="false" onclick="toggleAcc(this)">
-        <span class="acc-left with-tagline">
-          <span class="acc-roman">V</span>
-          <span class="acc-text">
-            <span class="acc-name-lead">Money &amp; Value</span>
-            <span class="acc-tagline">The machinery underneath.</span>
-          </span>
-        </span>
-        <span class="acc-arrow">›</span>
-      </button>
-      <div class="acc-panel">
-        <ul>
-          <li><a href="ED_CON_Ownership_Equity.html">Ownership &amp; Equity</a></li>
-          <li><a href="ED_CON_Inflation.html">Inflation</a></li>
-          <li><a href="ED_CON_Capital.html">Capital</a></li>
-          <li><a href="ED_CON_Wages_And_Assets.html">Wages &amp; Assets</a></li>
-          <li><a href="ED_CON_Credit.html">Credit</a></li>
-          <li><a href="ED_CON_Debt.html">Debt</a></li>
-          <li><a href="ED_CON_Corporation.html">The Corporation</a></li>
-          <li><a href="ED_CON_PL_vs_Balance_Sheet.html">P&amp;L vs. Balance Sheet</a></li>
-          <li><a href="ED_CON_Banking_Central_Banks.html">Banking &amp; Central Banks</a></li>
-          <li><a href="ED_CON_Fiscal_Policy.html">Fiscal Policy</a></li>
-          <li><a href="ED_CON_Taxation.html">Taxation</a></li>
-          <li><a href="ED_CON_Cryptocurrency.html">Cryptocurrency</a></li>
-          <li><a href="ED_CON_Data.html">Data</a></li>
-          <li><a href="ED_CON_Wealth_Of_Nations.html">The Wealth of Nations</a></li>
-          <li><a href="ED_CON_Wealth_Of_The_Nation.html">The Wealth of the Nation</a></li>
-          <li><a href="ED_CON_Profit_Margin.html">Profit Margin</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="acc-row">
-      <button class="acc-trigger has-tagline" aria-expanded="false" onclick="toggleAcc(this)">
-        <span class="acc-left with-tagline">
-          <span class="acc-roman">VI</span>
-          <span class="acc-text">
-            <span class="acc-name-lead">Civics</span>
-            <span class="acc-tagline">Where the decisions actually get made.</span>
-          </span>
-        </span>
-        <span class="acc-arrow">&rsaquo;</span>
-      </button>
-      <div class="acc-panel">
-        <ul>
-          <li><a href="ED_CIV_Where_Power_Sits_NYC.html">Where Power Sits &mdash; New York City</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <a href="concepts.html" class="section-link">Browse the Concept Library</a>
 </section>
 
 <!-- ANTHOLOGY -->
@@ -1173,6 +1029,184 @@
   </script>
 </section>
 
+<!-- CONCEPT LIBRARY TEASER -->
+<section class="section" id="concepts-teaser">
+  <p class="section-eyebrow">The Concept Library</p>
+  <h2 class="section-heading">The Concept Library.<br>The economic toolkit.</h2>
+  <p class="section-sub">The 250 Voices show you the argument. The concepts give you the language to join it. Each primer takes one economic idea &mdash; supply and demand, capital, monopoly, fiscal policy, globalization &mdash; and grants it its full strength before examining exactly where it breaks. Not what to think about the economy. How to think about it, one tool at a time.</p>
+  <p style="font-size:.88rem;font-weight:300;color:var(--mid);line-height:1.7;margin-bottom:2rem;max-width:680px;">Every primer follows the same arc: the tool, granted its real power; the two levers where reasonable people start to disagree; the same tool at work in real situations; and a defended-stance write task that ends on the reform test &mdash; the smallest change that would make the economy both more productive and more democratic, and what it would cost.</p>
+
+  <style>
+    .acc-trigger .acc-left.with-tagline{align-items:flex-start;}
+    .acc-text{display:flex;flex-direction:column;gap:.2rem;}
+    .acc-tagline{
+      font-size:.74rem;
+      font-weight:300;
+      color:var(--mid);
+      line-height:1.4;
+    }
+    .acc-trigger.has-tagline{padding-top:1rem;padding-bottom:1rem;}
+    .acc-name-lead{
+      font-family:'Playfair Display',serif;
+      font-size:1rem;
+      font-weight:700;
+      color:var(--black);
+      line-height:1.2;
+    }
+  </style>
+
+  <!-- CONCEPT CLUSTER DROPDOWNS -->
+  <div class="section-accordion" style="margin-top:1.5rem;max-width:760px;">
+    <div class="acc-row">
+      <button class="acc-trigger has-tagline" aria-expanded="false" onclick="toggleAcc(this)">
+        <span class="acc-left with-tagline">
+          <span class="acc-roman">I</span>
+          <span class="acc-text">
+            <span class="acc-name-lead">Allocation</span>
+            <span class="acc-tagline">How scarce things get divided.</span>
+          </span>
+        </span>
+        <span class="acc-arrow">›</span>
+      </button>
+      <div class="acc-panel">
+        <ul>
+          <li><a href="ED_CON_Scarcity.html">Scarcity</a></li>
+          <li><a href="ED_CON_Opportunity_Cost.html">Opportunity Cost</a></li>
+          <li><a href="ED_CON_Incentives.html">Incentives</a></li>
+          <li><a href="ED_CON_Supply_And_Demand.html">Supply &amp; Demand</a></li>
+          <li><a href="ED_CON_Externalities.html">Externalities</a></li>
+          <li><a href="ED_CON_Public_Goods.html">Public Goods</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="acc-row">
+      <button class="acc-trigger has-tagline" aria-expanded="false" onclick="toggleAcc(this)">
+        <span class="acc-left with-tagline">
+          <span class="acc-roman">II</span>
+          <span class="acc-text">
+            <span class="acc-name-lead">Engines</span>
+            <span class="acc-tagline">What drives growth.</span>
+          </span>
+        </span>
+        <span class="acc-arrow">›</span>
+      </button>
+      <div class="acc-panel">
+        <ul>
+          <li><a href="ED_CON_Profit_Motive.html">Profit Motive</a></li>
+          <li><a href="ED_CON_Compounding.html">Compounding</a></li>
+          <li><a href="ED_CON_Competition.html">Competition</a></li>
+          <li><a href="ED_CON_Productivity.html">Productivity</a></li>
+          <li><a href="ED_CON_Creative_Destruction.html">Creative Destruction</a></li>
+          <li><a href="ED_CON_Business_Cycles.html">Business Cycles</a></li>
+          <li><a href="ED_CON_Entrepreneur.html">The Entrepreneur</a></li>
+          <li><a href="ED_CON_Investment.html">Investment</a></li>
+          <li><a href="ED_CON_Specialization.html">Specialization</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="acc-row">
+      <button class="acc-trigger has-tagline" aria-expanded="false" onclick="toggleAcc(this)">
+        <span class="acc-left with-tagline">
+          <span class="acc-roman">III</span>
+          <span class="acc-text">
+            <span class="acc-name-lead">Power</span>
+            <span class="acc-tagline">How advantage concentrates.</span>
+          </span>
+        </span>
+        <span class="acc-arrow">›</span>
+      </button>
+      <div class="acc-panel">
+        <ul>
+          <li><a href="ED_CON_Monopoly.html">Monopoly</a></li>
+          <li><a href="ED_CON_Network_Effects.html">Network Effects</a></li>
+          <li><a href="ED_CON_Economies_Of_Scale.html">Economies of Scale</a></li>
+          <li><a href="ED_CON_Rent_Seeking.html">Rent-Seeking</a></li>
+          <li><a href="ED_CON_Sovereignty.html">Sovereignty</a></li>
+          <li><a href="ED_CON_The_Trust.html">The Trust</a></li>
+          <li><a href="ED_CON_Globalization.html">Globalization</a></li>
+          <li><a href="ED_CON_Consolidation.html">Consolidation</a></li>
+          <li><a href="ED_CON_What_Is_A_Platform.html">Platforms</a></li>
+          <li><a href="ED_CON_Market_Power_Scale_Fragmentation.html">Market Power: Scale vs. Fragmentation</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="acc-row">
+      <button class="acc-trigger has-tagline" aria-expanded="false" onclick="toggleAcc(this)">
+        <span class="acc-left with-tagline">
+          <span class="acc-roman">IV</span>
+          <span class="acc-text">
+            <span class="acc-name-lead">Distribution</span>
+            <span class="acc-tagline">Who ends up with what.</span>
+          </span>
+        </span>
+        <span class="acc-arrow">›</span>
+      </button>
+      <div class="acc-panel">
+        <ul>
+          <li><a href="ED_CON_The_Commons.html">The Commons</a></li>
+          <li><a href="ED_CON_Predistribution.html">Predistribution</a></li>
+          <li><a href="ED_CON_Redistribution.html">Redistribution</a></li>
+          <li><a href="ED_CON_Labor.html">Labor</a></li>
+          <li><a href="ED_CON_Small_Business_Owner.html">The Small Business Owner</a></li>
+          <li><a href="ED_CON_Inequality.html">Inequality</a></li>
+          <li><a href="ED_CON_Subsidy_Public_Ownership.html">Subsidy vs. Public Ownership</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="acc-row">
+      <button class="acc-trigger has-tagline" aria-expanded="false" onclick="toggleAcc(this)">
+        <span class="acc-left with-tagline">
+          <span class="acc-roman">V</span>
+          <span class="acc-text">
+            <span class="acc-name-lead">Money &amp; Value</span>
+            <span class="acc-tagline">The machinery underneath.</span>
+          </span>
+        </span>
+        <span class="acc-arrow">›</span>
+      </button>
+      <div class="acc-panel">
+        <ul>
+          <li><a href="ED_CON_Ownership_Equity.html">Ownership &amp; Equity</a></li>
+          <li><a href="ED_CON_Inflation.html">Inflation</a></li>
+          <li><a href="ED_CON_Capital.html">Capital</a></li>
+          <li><a href="ED_CON_Wages_And_Assets.html">Wages &amp; Assets</a></li>
+          <li><a href="ED_CON_Credit.html">Credit</a></li>
+          <li><a href="ED_CON_Debt.html">Debt</a></li>
+          <li><a href="ED_CON_Corporation.html">The Corporation</a></li>
+          <li><a href="ED_CON_PL_vs_Balance_Sheet.html">P&amp;L vs. Balance Sheet</a></li>
+          <li><a href="ED_CON_Banking_Central_Banks.html">Banking &amp; Central Banks</a></li>
+          <li><a href="ED_CON_Fiscal_Policy.html">Fiscal Policy</a></li>
+          <li><a href="ED_CON_Taxation.html">Taxation</a></li>
+          <li><a href="ED_CON_Cryptocurrency.html">Cryptocurrency</a></li>
+          <li><a href="ED_CON_Data.html">Data</a></li>
+          <li><a href="ED_CON_Wealth_Of_Nations.html">The Wealth of Nations</a></li>
+          <li><a href="ED_CON_Wealth_Of_The_Nation.html">The Wealth of the Nation</a></li>
+          <li><a href="ED_CON_Profit_Margin.html">Profit Margin</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="acc-row">
+      <button class="acc-trigger has-tagline" aria-expanded="false" onclick="toggleAcc(this)">
+        <span class="acc-left with-tagline">
+          <span class="acc-roman">VI</span>
+          <span class="acc-text">
+            <span class="acc-name-lead">Civics</span>
+            <span class="acc-tagline">Where the decisions actually get made.</span>
+          </span>
+        </span>
+        <span class="acc-arrow">&rsaquo;</span>
+      </button>
+      <div class="acc-panel">
+        <ul>
+          <li><a href="ED_CIV_Where_Power_Sits_NYC.html">Where Power Sits &mdash; New York City</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <a href="concepts.html" class="section-link">Browse the Concept Library</a>
+</section>
+
 <!-- CIVIC LABS TEASER -->
 <section class="section" id="civic-labs">
   <p class="section-eyebrow">Economic Democracy in Action</p>
@@ -1348,6 +1382,30 @@
   </div>
 
   <a href="ED_LAB_Civic_Labs.html" class="section-link">Browse all Civic Labs</a>
+</section>
+
+<!-- BUILDING WEALTH TEASER -->
+<section class="section" id="building-wealth">
+  <p class="section-eyebrow">Building Wealth</p>
+  <h2 class="section-heading">Your assets.<br>Your move.</h2>
+  <p class="section-sub">The inward counterpart to Civic Labs. Where Civic Labs send the learner outward &mdash; into the community's economy &mdash; Building Wealth turns inward, to the learner&rsquo;s own ownership stake. Same &ldquo;do the work&rdquo; format, two directions. Built for students learning how wealth is actually built, and workers building it.</p>
+  <p style="font-size:.88rem;font-weight:300;color:var(--mid);line-height:1.7;margin-bottom:2rem;max-width:680px;">A pillar of concept primers, the Wealth Lab as the front door, and the framework essay <em>The Tool and the End</em> &mdash; the philosophical hinge between the structural side of the curriculum and the agency side. The primers live alongside the Economic and Civics primers on the <a href="concepts.html" style="color:var(--charcoal);border-bottom:1px solid var(--rule);">Concepts page</a>; the pillar landing is where the work begins.</p>
+
+  <a class="lab-flagship" href="ED_WB_Building_Wealth.html">
+    <div class="lab-flagship-strip">
+      <span class="lab-live">Front Door</span>
+      <span class="lab-strip-meta">The Wealth Lab &middot; A self-investigation with three printable tools</span>
+    </div>
+    <div class="lab-flagship-body">
+      <span class="lab-no">The Pillar</span>
+      <h3 class="lab-title">Building Wealth.</h3>
+      <p class="lab-desc">The agency side of the curriculum. Learn how wealth is actually built &mdash; what to measure, how money comes in, how to protect a floor, how to own things, how growth mechanics work, the business bet, and how to protect and pass it on. Start with the Wealth Lab; the primers and the essay deepen the work.</p>
+      <p class="lab-includes">Includes: the Wealth Lab front door &middot; the concept primers (cataloged on Concepts) &middot; <em>The Tool and the End</em> essay &middot; the capstone on individual building vs. concentration</p>
+      <span class="lab-go">Open Building Wealth</span>
+    </div>
+  </a>
+
+  <a href="ED_WB_Building_Wealth.html" class="section-link">Enter Building Wealth</a>
 </section>
 
 <!-- FOR TEACHERS CTA -->

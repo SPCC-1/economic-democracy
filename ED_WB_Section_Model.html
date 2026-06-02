@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Wealth Is Actually Built · Economic Democracy</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+:root{
+  --teal:#1E8A8C; --teal-deep:#136466; --teal-soft:#5FB8B6;
+  --orange:#F08A24; --orange-deep:#D9731A; --gold:#F5B940;
+  --clay:#C7553B; --clay-deep:#A8412B;
+  --cream:#FBF4E6; --paper:#FEF9F0; --card:#FFFFFF;
+  --ink:#16211F; --mid:#5d6b66; --rule:#E7DABE; --wash:#F2E9D4;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+a{color:inherit;}
+
+/* HERO */
+.herobleed{background:var(--teal);background-image:radial-gradient(circle at 12% 18%,rgba(245,185,64,.34),transparent 52%),radial-gradient(circle at 88% 84%,rgba(240,138,36,.28),transparent 55%);}
+.hero{max-width:760px;margin:0 auto;padding:54px 24px 50px;}
+.labtag{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-deep);background:var(--gold);padding:7px 15px;border-radius:100px;margin-bottom:22px;}
+.kicker{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cream);margin-bottom:14px;opacity:.9;}
+h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:58px;line-height:.97;letter-spacing:-.025em;color:#fff;margin-bottom:18px;}
+.standfirst{font-size:20px;line-height:1.45;color:var(--cream);font-weight:500;max-width:42ch;}
+.who{margin-top:22px;display:flex;gap:8px;flex-wrap:wrap;}
+.who span{font-family:'Bricolage Grotesque',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.04em;color:#fff;background:rgba(255,255,255,.16);border:1.5px solid rgba(255,255,255,.4);padding:6px 13px;border-radius:100px;}
+
+section{padding:46px 0 6px;}
+.eyebrow{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange-deep);margin-bottom:8px;}
+h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:33px;line-height:1.04;color:var(--ink);margin-bottom:10px;letter-spacing:-.02em;}
+.lede{font-size:18px;color:var(--mid);max-width:54ch;margin-bottom:26px;}
+
+/* THESIS — front and center */
+.thesis{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+.tcard{border:3px solid var(--ink);border-radius:16px;padding:24px 24px;}
+.tcard .tag{font-family:'Bricolage Grotesque',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+.tcard h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:23px;line-height:1.05;letter-spacing:-.02em;margin-bottom:10px;}
+.tcard p{font-size:15.5px;line-height:1.5;}
+.tcard.good{background:#e4f2f0;box-shadow:5px 5px 0 var(--teal-soft);}
+.tcard.good .tag{background:var(--teal);color:#fff;}
+.tcard.good h3{color:var(--teal-deep);}
+.tcard.bad{background:#fbeee6;box-shadow:5px 5px 0 var(--clay);}
+.tcard.bad .tag{background:var(--clay);color:#fff;}
+.tcard.bad h3{color:var(--clay-deep);}
+.thesisband{background:var(--ink);color:var(--cream);border-radius:14px;padding:22px 26px;position:relative;overflow:hidden;}
+.thesisband::after{content:"";position:absolute;right:-30px;top:-30px;width:160px;height:160px;background:radial-gradient(circle,rgba(245,185,64,.4),transparent 70%);}
+.thesisband *{position:relative;}
+.thesisband p{font-family:'Bricolage Grotesque',sans-serif;font-size:20px;line-height:1.35;font-weight:700;color:#fff;letter-spacing:-.01em;}
+.thesisband strong{color:var(--gold);}
+@media(max-width:600px){.thesis{grid-template-columns:1fr;}}
+
+/* FIVE STAGES */
+.zonelab{display:flex;align-items:center;gap:10px;margin:6px 0 12px;}
+.zonelab .pill{font-family:'Bricolage Grotesque',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 13px;border-radius:100px;}
+.zonelab.live .pill{background:var(--teal);color:#fff;}
+.zonelab .ztext{font-size:14px;color:var(--mid);}
+.zonelab.prob{margin-top:24px;}
+.zonelab.prob .pill{background:var(--clay);color:#fff;}
+.stages{display:flex;flex-direction:column;gap:12px;}
+.stage{display:grid;grid-template-columns:54px 1fr auto;gap:18px;align-items:center;background:var(--card);border:2.5px solid var(--ink);border-radius:14px;padding:16px 20px;box-shadow:5px 5px 0 var(--rule);}
+.stage .n{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:26px;width:54px;height:54px;display:flex;align-items:center;justify-content:center;border-radius:50%;color:#fff;flex-shrink:0;}
+.stage .nm{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20px;letter-spacing:-.01em;margin-bottom:2px;}
+.stage .ds{font-size:15px;line-height:1.4;color:var(--mid);}
+.stage .pct{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:17px;text-align:right;line-height:1.1;white-space:nowrap;}
+.stage .pct small{display:block;font-family:'DM Sans';font-weight:500;font-size:11.5px;letter-spacing:.03em;color:var(--mid);text-transform:uppercase;}
+.s1 .n{background:var(--clay);} .s1 .pct{color:var(--clay-deep);}
+.s2 .n{background:var(--orange);} .s2 .pct{color:var(--orange-deep);}
+.s3 .n{background:var(--teal);} .s3 .pct{color:var(--teal-deep);} .s3{box-shadow:5px 5px 0 var(--teal-soft);}
+.stage.dim{background:#f4efe4;border-color:#bdb39c;border-style:dashed;box-shadow:none;opacity:.85;}
+.stage.dim .n{background:#b0a890;} .stage.dim .pct{color:#9a8f76;} .stage.dim .nm{color:#7d7361;}
+.purpose{background:var(--gold);border:2.5px solid var(--ink);border-radius:14px;padding:20px 24px;margin-top:20px;box-shadow:5px 5px 0 var(--orange);}
+.purpose .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--teal-deep);margin-bottom:6px;}
+.purpose p{font-family:'Bricolage Grotesque',sans-serif;font-size:19px;line-height:1.3;font-weight:700;color:var(--ink);letter-spacing:-.01em;}
+
+/* RUBRIC (interactive) */
+.rubric{background:var(--card);border:3px solid var(--ink);border-radius:18px;padding:6px;box-shadow:7px 7px 0 var(--teal);}
+.rubric-in{background:var(--cream);border-radius:13px;padding:26px 26px 30px;}
+.rblk{margin-bottom:18px;}
+.rblk .rh{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;color:var(--teal-deep);margin-bottom:8px;letter-spacing:.01em;}
+.chk{display:flex;align-items:flex-start;gap:12px;background:var(--card);border:2px solid var(--rule);border-radius:11px;padding:13px 15px;margin-bottom:9px;cursor:pointer;transition:border-color .12s,background .12s;}
+.chk:hover{border-color:var(--teal-soft);}
+.chk.on{border-color:var(--teal);background:#e9f4f3;}
+.chk input{appearance:none;width:22px;height:22px;border:2.5px solid var(--mid);border-radius:6px;flex-shrink:0;margin-top:1px;cursor:pointer;position:relative;}
+.chk.on input{background:var(--teal);border-color:var(--teal);}
+.chk.on input::after{content:"✓";position:absolute;inset:0;color:#fff;font-size:15px;font-weight:800;display:flex;align-items:center;justify-content:center;}
+.chk span{font-size:15.5px;line-height:1.4;}
+.result{background:var(--teal);background-image:radial-gradient(circle at 90% 12%,rgba(245,185,64,.32),transparent 60%);border-radius:13px;padding:22px 24px;margin-top:8px;}
+.result .rl{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:6px;}
+.result .now{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:28px;color:#fff;line-height:1.05;margin-bottom:12px;letter-spacing:-.01em;}
+.result .next{background:rgba(255,255,255,.14);border:1.5px solid rgba(255,255,255,.34);border-radius:10px;padding:14px 16px;}
+.result .next .nl{font-family:'Bricolage Grotesque',sans-serif;font-size:11px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:5px;}
+.result .next p{color:#fff;font-size:15.5px;line-height:1.45;}
+
+/* CONCEPT HUB */
+.group{margin-bottom:30px;}
+.grouphd{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+.grouphd .dot{width:14px;height:14px;border-radius:50%;flex-shrink:0;}
+.grouphd h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:19px;letter-spacing:-.01em;}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.c{background:var(--card);border:2px solid var(--ink);border-radius:13px;padding:14px 16px;box-shadow:3px 3px 0 var(--rule);transition:transform .12s ease,box-shadow .12s ease;}
+.c:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--wash);}
+.c .ct{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:16px;margin-bottom:4px;letter-spacing:-.01em;}
+.c .cd{font-size:14px;line-height:1.42;color:var(--mid);}
+@media(max-width:600px){.cards{grid-template-columns:1fr;}}
+
+/* SAMPLE LESSON */
+.lessonwrap{background:var(--cream);border:3px solid var(--ink);border-radius:20px;padding:6px;margin-top:14px;box-shadow:7px 7px 0 var(--teal);}
+.lesson{background:var(--card);border-radius:15px;padding:34px 30px;}
+.lhead{border-bottom:2.5px dashed var(--rule);padding-bottom:20px;margin-bottom:24px;}
+.lhead .pin{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--teal);padding:5px 12px;border-radius:100px;margin-bottom:12px;}
+.lhead h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:30px;line-height:1.04;letter-spacing:-.02em;margin-bottom:8px;}
+.lhead .sub{font-size:16px;color:var(--mid);}
+.step{margin-bottom:24px;}
+.steplab{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;}
+.steplab .num{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:13px;color:var(--orange);letter-spacing:.04em;}
+.steplab .ttl{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:18px;letter-spacing:-.01em;}
+.step p{font-size:16.5px;line-height:1.6;margin-bottom:10px;}
+.step p:last-child{margin-bottom:0;}
+.step strong{color:var(--teal-deep);font-weight:700;}
+.threecol{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:6px 0 4px;}
+.tc2{border:2px solid var(--ink);border-radius:11px;padding:13px 14px;box-shadow:3px 3px 0 var(--rule);}
+.tc2 .h{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:14.5px;margin-bottom:5px;line-height:1.1;}
+.tc2 .b{font-size:13.5px;line-height:1.4;color:var(--mid);}
+.tc2.job{background:#fbeee6;} .tc2.job .h{color:var(--clay-deep);}
+.tc2.bet{background:var(--wash);} .tc2.bet .h{color:var(--orange-deep);}
+.tc2.asset{background:#e4f2f0;} .tc2.asset .h{color:var(--teal-deep);}
+@media(max-width:600px){.threecol{grid-template-columns:1fr;}}
+.applybox{background:var(--teal);background-image:radial-gradient(circle at 90% 10%,rgba(245,185,64,.3),transparent 60%);border-radius:14px;padding:24px 26px;margin:6px 0 4px;}
+.applybox .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:12px;}
+.applybox ul{list-style:none;margin:0;}
+.applybox li{color:#fff;font-size:16px;line-height:1.45;padding:8px 0 8px 30px;position:relative;border-bottom:1px solid rgba(255,255,255,.16);}
+.applybox li:last-child{border-bottom:none;}
+.applybox li::before{content:"→";position:absolute;left:4px;color:var(--gold);font-weight:700;}
+.honest{background:#fbeee6;border-left:5px solid var(--clay);border-radius:0 12px 12px 0;padding:18px 22px;margin:6px 0 4px;}
+.honest .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--clay-deep);margin-bottom:8px;}
+.honest p{font-size:15.5px;line-height:1.55;}
+.honest strong{color:var(--clay-deep);}
+.bridge{background:var(--ink);color:var(--cream);border-radius:14px;padding:22px 26px;margin-top:6px;position:relative;overflow:hidden;}
+.bridge::after{content:"";position:absolute;right:-30px;bottom:-30px;width:150px;height:150px;background:radial-gradient(circle,rgba(30,138,140,.5),transparent 70%);}
+.bridge *{position:relative;}
+.bridge .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--teal-soft);margin-bottom:8px;}
+.bridge p{color:var(--cream);font-size:16px;line-height:1.55;}
+.bridge strong{color:var(--gold);}
+
+footer{background:var(--ink);color:var(--cream);margin-top:50px;padding:30px 0 54px;}
+footer .big{font-family:'Bricolage Grotesque',sans-serif;font-size:17px;color:var(--gold);font-weight:700;margin-bottom:6px;}
+footer .ft{font-size:13px;color:rgba(251,244,230,.7);line-height:1.5;}
+@media(max-width:600px){h1{font-size:42px;}.lesson{padding:26px 20px;}}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="herobleed">
+<div class="hero">
+  <div class="labtag">Economic Democracy · Building Wealth</div>
+  <div class="kicker">The part of the economy no one explains — in one place</div>
+  <h1>How Wealth<br>Is Actually Built</h1>
+  <p class="standfirst">A set of plain lessons on how a working family moves from earning to owning — and a way to see exactly which rung you're on, and how to climb the next one.</p>
+  <div class="who">
+    <span>For students</span><span>For working adults</span><span>Apply it to your own life</span>
+  </div>
+</div>
+</div>
+
+<div class="wrap">
+
+<!-- THESIS: front and center -->
+<section>
+  <div class="eyebrow">The whole point</div>
+  <h2>Building Wealth vs. Concentrating Wealth</h2>
+  <p class="lede">Start with the distinction everything here rests on. There is nothing wrong with money, wealth, or ownership. The problem is what happens when ownership pools in too few hands.</p>
+  <div class="thesis">
+    <div class="tcard good">
+      <span class="tag">Worth doing</span>
+      <h3>Individual wealth building</h3>
+      <p>Owning a base of your own — savings, a home, investments, a business — is how a family becomes secure and free. Everyone should be able to do it, and this section is about how.</p>
+    </div>
+    <div class="tcard bad">
+      <span class="tag">The problem</span>
+      <h3>Concentration of wealth</h3>
+      <p>When a few people and firms own the assets everyone else only works for or rents from, the same tools that free one family lock out a whole community. That's the real challenge.</p>
+    </div>
+  </div>
+  <div class="thesisband">
+    <p>This section is for the <strong>broad middle</strong> — helping people build and own. Keeping ownership <strong>wide</strong> instead of concentrated is the whole game.</p>
+  </div>
+</section>
+
+<!-- FIVE STAGES -->
+<section>
+  <div class="eyebrow">Locate yourself</div>
+  <h2>The Five Stages of Wealth</h2>
+  <p class="lede">Every household sits on one of five rungs. Almost everyone reading this is on one of the first three — and that's exactly where this section does its work.</p>
+
+  <div class="zonelab live"><span class="pill">Where this section works</span><span class="ztext">the broad middle — and the climb</span></div>
+  <div class="stages">
+    <div class="stage s1"><div class="n">1</div><div><div class="nm">Survival</div><div class="ds">Basic needs met, little or no savings, high financial stress.</div></div><div class="pct">~44%<small>of households</small></div></div>
+    <div class="stage s2"><div class="n">2</div><div><div class="nm">Safety Net</div><div class="ds">Emergency savings in place, debt is manageable, some stability.</div></div><div class="pct">~30%<small>of households</small></div></div>
+    <div class="stage s3"><div class="n">3</div><div><div class="nm">Wealth-Building</div><div class="ds">Assets are growing, income exceeds expenses, surplus is invested.</div></div><div class="pct">~20%<small>of households</small></div></div>
+  </div>
+
+  <div class="zonelab prob"><span class="pill">The concentration zone</span><span class="ztext">celebrated, where power sits — and part of the problem</span></div>
+  <div class="stages">
+    <div class="stage s4 dim"><div class="n">4</div><div><div class="nm">Work-Optional</div><div class="ds">Income from what you own covers expenses. We take this up in a separate section — because it's where power begins to concentrate.</div></div><div class="pct">~5%<small>of households</small></div></div>
+    <div class="stage s5 dim"><div class="n">5</div><div><div class="nm">Escape Velocity</div><div class="ds">Wealth compounds far faster than it's spent. This is what gets celebrated — and it's the concentration the rest of the course examines.</div></div><div class="pct">~1%<small>of households</small></div></div>
+  </div>
+
+  <div class="purpose">
+    <div class="l">The purpose of this section</div>
+    <p>Help you move one rung up. Set a realistic goal — the next rung, not the summit.</p>
+  </div>
+</section>
+
+<!-- INTERACTIVE RUBRIC -->
+<section>
+  <div class="eyebrow">Track it</div>
+  <h2>Where Are You Right Now?</h2>
+  <p class="lede">Check what's true for you today. Your rung and your one-rung-up goal update as you go. A family can do this together and come back to it.</p>
+
+  <div class="rubric">
+    <div class="rubric-in">
+      <div class="rblk">
+        <div class="rh">Getting out of survival</div>
+        <label class="chk" data-stage="2"><input type="checkbox"><span>I can cover my basic monthly needs without taking on new debt.</span></label>
+      </div>
+      <div class="rblk">
+        <div class="rh">Reaching the safety net</div>
+        <label class="chk" data-stage="2"><input type="checkbox"><span>I have at least 3 months of expenses saved in cash I can reach.</span></label>
+        <label class="chk" data-stage="2"><input type="checkbox"><span>My high-interest and consumer debt is under control or gone.</span></label>
+      </div>
+      <div class="rblk">
+        <div class="rh">Beginning to build wealth</div>
+        <label class="chk" data-stage="3"><input type="checkbox"><span>After expenses, I have money left over that I invest each month.</span></label>
+        <label class="chk" data-stage="3"><input type="checkbox"><span>I own at least one asset that grows or earns — retirement, property, investments, or a business.</span></label>
+      </div>
+
+      <div class="result" id="result">
+        <div class="rl">You're on</div>
+        <div class="now" id="nowStage">Stage 1 · Survival</div>
+        <div class="next">
+          <div class="nl">Your one-rung-up goal</div>
+          <p id="nextGoal">Get to where your basic monthly needs are covered without new debt. That's the first climb — and the rest follows from it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONCEPT HUB -->
+<section>
+  <div class="eyebrow">The lessons</div>
+  <h2>The Concepts</h2>
+  <p class="lede">Each is a short, standalone lesson — a plain definition, how it works, and how to apply it to your own life. We build these out one at a time.</p>
+
+  <div class="group">
+    <div class="grouphd"><span class="dot" style="background:var(--teal);"></span><h3>How money comes in</h3></div>
+    <div class="cards">
+      <div class="c"><div class="ct">Earned Income (Wages)</div><div class="cd">Money paid for your time. Stops when you stop. Taxed the highest.</div></div>
+      <div class="c"><div class="ct">Self-Employment</div><div class="cd">Owning your own job — still trading time, with nothing left if you walk away.</div></div>
+      <div class="c"><div class="ct">Passive Income</div><div class="cd">Money produced by what you own, not by work you perform.</div></div>
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="grouphd"><span class="dot" style="background:var(--orange);"></span><h3>Owning things</h3></div>
+    <div class="cards">
+      <div class="c"><div class="ct">Asset vs. Liability</div><div class="cd">An asset puts money in your pocket; a liability takes it out. The core sorting skill.</div></div>
+      <div class="c"><div class="ct">Equity / Ownership Stake</div><div class="cd">Owning a share of something — the source of growth without more hours.</div></div>
+      <div class="c"><div class="ct">Income-Producing Assets</div><div class="cd">Things you own that generate cash without your labor.</div></div>
+      <div class="c"><div class="ct">The Wage-to-Asset Move</div><div class="cd">Deliberately turning earned income into owned assets. The central act.</div></div>
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="grouphd"><span class="dot" style="background:var(--gold);"></span><h3>The growth mechanics</h3></div>
+    <div class="cards">
+      <div class="c"><div class="ct">Compounding</div><div class="cd">Growth earned on top of prior growth. Time is the dominant variable.</div></div>
+      <div class="c"><div class="ct">Leverage</div><div class="cd">Using borrowed money to acquire assets. Amplifies gains and losses alike.</div></div>
+      <div class="c"><div class="ct">Reinvestment Rate</div><div class="cd">How much income or profit you put back to work versus take out.</div></div>
+      <div class="c"><div class="ct">Time &amp; Starting Early</div><div class="cd">The multiplier on compounding — and why a late start still works.</div></div>
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="grouphd"><span class="dot" style="background:var(--clay);"></span><h3>Business as the bet</h3></div>
+    <div class="cards">
+      <div class="c"><div class="ct">Business as the Bet</div><div class="cd">Equity in a company: uncapped, transferable upside — and the highest failure rate.</div></div>
+      <div class="c"><div class="ct">Self-Employment vs. a Transferable Asset</div><div class="cd">Can it run and sell without you? A job can't. A real business can.</div></div>
+      <div class="c"><div class="ct">Business Valuation</div><div class="cd">How a company becomes a dollar figure: earnings, revenue, and cash-flow methods.</div></div>
+      <div class="c"><div class="ct">Control vs. Ownership</div><div class="cd">Owning a stake isn't controlling the asset. Minority owners get discounted.</div></div>
+      <div class="c"><div class="ct">Marketability / Liquidity of a Stake</div><div class="cd">A private share you can't easily sell is worth less than its slice of the whole.</div></div>
+      <div class="c"><div class="ct">Risk &amp; Failure</div><div class="cd">Most ventures fail. Success stories hide the ones that didn't make it.</div></div>
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="grouphd"><span class="dot" style="background:var(--teal-soft);"></span><h3>Your financial base</h3></div>
+    <div class="cards">
+      <div class="c"><div class="ct">Net Worth</div><div class="cd">Everything you own minus everything you owe. The one number that defines your base.</div></div>
+      <div class="c"><div class="ct">Cash Flow vs. Net Worth</div><div class="cd">Money moving each month versus total wealth held. You can be rich on paper and cash-poor.</div></div>
+      <div class="c"><div class="ct">Paper vs. Usable Wealth</div><div class="cd">A valuation isn't spendable until you can reach, sell, or direct it.</div></div>
+      <div class="c"><div class="ct">Liquidity &amp; Emergency Reserve</div><div class="cd">Cash you can reach now — months of expenses held before investing.</div></div>
+      <div class="c"><div class="ct">Savings Rate</div><div class="cd">The gap between income and spending. No surplus, nothing to invest.</div></div>
+      <div class="c"><div class="ct">Reading the Statements</div><div class="cd">Profit-and-loss, balance sheet, cash flow — the three views of any finances.</div></div>
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="grouphd"><span class="dot" style="background:var(--orange-deep);"></span><h3>Protecting &amp; passing it on</h3></div>
+    <div class="cards">
+      <div class="c"><div class="ct">Diversification</div><div class="cd">Spreading wealth across real estate, investments, business, cash, and insurance.</div></div>
+      <div class="c"><div class="ct">Good Debt vs. Bad Debt</div><div class="cd">Debt that buys appreciating assets versus debt that funds consumption.</div></div>
+      <div class="c"><div class="ct">Tax by Income Type</div><div class="cd">Why wages, capital gains, and business income are taxed differently.</div></div>
+      <div class="c"><div class="ct">Wealth Transfer</div><div class="cd">Moving a base to the next generation — insurance, estate, continuity.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SAMPLE LESSON -->
+<section>
+  <div class="eyebrow">What one lesson looks like</div>
+  <h2>Sample Lesson</h2>
+  <p class="lede">The full template, built out for one concept. Every lesson follows these same six beats.</p>
+
+  <div class="lessonwrap">
+  <div class="lesson">
+    <div class="lhead">
+      <span class="pin">Business as the bet · Lesson</span>
+      <h3>Self-Employment vs. a Transferable Asset</h3>
+      <p class="sub">The difference between owning your job and owning something that has value without you.</p>
+    </div>
+
+    <div class="step">
+      <div class="steplab"><span class="num">01</span><span class="ttl">The concept</span></div>
+      <p>Working for yourself feels like ownership, but most of the time it isn't. If the income stops the moment you stop showing up, you don't own a business — you own a <strong>job</strong>. A real business asset is different: it keeps producing value, and it could be sold to someone else, even if you walked away tomorrow.</p>
+    </div>
+    <div class="step">
+      <div class="steplab"><span class="num">02</span><span class="ttl">How it works</span></div>
+      <p>Ask one question of anything you run: <strong>could it operate, and be sold, without you?</strong> If no, its value is tied to your presence and disappears when you leave. If yes — because it has customers, a team, systems, and steady cash flow — it has a value of its own that a buyer would pay for. That transferable value is what turns labor into wealth.</p>
+    </div>
+    <div class="step">
+      <div class="steplab"><span class="num">03</span><span class="ttl">In real life</span></div>
+      <p>Three things people all call "my business" are really three different stages:</p>
+      <div class="threecol">
+        <div class="tc2 job"><div class="h">The job you own</div><div class="b">A consultant or solo trade. Work in, money out. Stops when you stop. No value to sell.</div></div>
+        <div class="tc2 bet"><div class="h">The bet</div><div class="b">A startup still finding revenue. Burning savings, founder often unpaid. Could become an asset — or fail.</div></div>
+        <div class="tc2 asset"><div class="h">The asset</div><div class="b">Steady revenue, a team, systems. Runs without the owner day-to-day. Has a real sale value.</div></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="steplab"><span class="num">04</span><span class="ttl">Apply it to your life</span></div>
+      <div class="applybox">
+        <div class="l">Run these on your own situation</div>
+        <ul>
+          <li>If you stopped working for 90 days, would any of your income continue?</li>
+          <li>Is there anything you own that someone else would pay to take over?</li>
+          <li>What is one task you do yourself that a system or person could do instead?</li>
+          <li>Of your income, how much is "you working" versus "something you own working"?</li>
+        </ul>
+      </div>
+    </div>
+    <div class="step">
+      <div class="steplab"><span class="num">05</span><span class="ttl">The honest part</span></div>
+      <div class="honest">
+        <div class="l">What no one tells you</div>
+        <p>Crossing from self-employment to a transferable asset is genuinely hard, and most people who try never finish it. Even when you build real value, two things can keep it out of your hands: if you don't <strong>control</strong> it — a minority stake means others decide — and if you can't easily <strong>sell</strong> it. Both lower what your share is actually worth. A number on a valuation is not money in your pocket until you can direct it and sell it.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="steplab"><span class="num">06</span><span class="ttl">The bigger picture</span></div>
+      <div class="bridge">
+        <div class="l">Why this matters beyond you</div>
+        <p>Building a transferable asset is one of the most powerful ways an ordinary person creates lasting wealth — and it's worth doing. The danger isn't ownership; it's <strong>concentration</strong>. When a few firms own the assets everyone else works for or rents from, the same move that frees one family can trap a whole community. The goal is ownership spread <strong>wide</strong>.</p>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="big">How Wealth Is Actually Built — a working model</div>
+    <div class="ft">Economic Democracy · Building Wealth section.<br>economicdemocracy.co · A Shared Prosperity education project. Figures and structure are a draft for review.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var checks = Array.prototype.slice.call(document.querySelectorAll('.chk'));
+  var nowStage = document.getElementById('nowStage');
+  var nextGoal = document.getElementById('nextGoal');
+
+  var stages = {
+    1:{name:"Stage 1 · Survival", goal:"Get to where your basic monthly needs are covered without new debt. That's the first climb — and everything else follows from it."},
+    2:{name:"Stage 2 · Safety Net", goal:"Build toward 3 months of expenses in reachable cash and get high-interest debt under control. That cushion is what makes investing possible."},
+    3:{name:"Stage 3 · Wealth-Building", goal:"Keep widening the gap between income and spending, invest the surplus, and add a second kind of asset. Stay diversified — this is the rung this section is built to help you hold and grow."}
+  };
+
+  function recompute(){
+    // safety-net criteria: all three data-stage=2 boxes; wealth: the two data-stage=3 boxes
+    var s2boxes = checks.filter(function(c){return c.getAttribute('data-stage')==='2';});
+    var s3boxes = checks.filter(function(c){return c.getAttribute('data-stage')==='3';});
+    var s2done = s2boxes.every(function(c){return c.querySelector('input').checked;});
+    var s3any = s3boxes.some(function(c){return c.querySelector('input').checked;});
+    var s3done = s3boxes.every(function(c){return c.querySelector('input').checked;});
+
+    var stage = 1;
+    if(s2done && (s3any)) stage = 3;
+    else if(s2done) stage = 2;
+    else stage = 1;
+
+    nowStage.textContent = stages[stage].name;
+    nextGoal.textContent = stages[stage].goal;
+  }
+
+  checks.forEach(function(c){
+    var input = c.querySelector('input');
+    c.addEventListener('click', function(e){
+      if(e.target!==input){ input.checked = !input.checked; }
+      c.classList.toggle('on', input.checked);
+      recompute();
+    });
+  });
+  recompute();
+})();
+</script>
+
+</body>
+</html>

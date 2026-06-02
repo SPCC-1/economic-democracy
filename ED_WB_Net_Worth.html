@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Net Worth · Building Wealth · Economic Democracy</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+:root{
+  --teal:#1E8A8C; --teal-deep:#136466; --teal-soft:#5FB8B6;
+  --orange:#F08A24; --orange-deep:#D9731A; --gold:#F5B940;
+  --clay:#C7553B; --clay-deep:#A8412B;
+  --cream:#FBF4E6; --paper:#FEF9F0; --card:#FFFFFF;
+  --ink:#16211F; --mid:#5d6b66; --rule:#E7DABE; --wash:#F2E9D4;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:720px;margin:0 auto;padding:0 24px;}
+a{color:inherit;}
+
+.herobleed{background:var(--teal);background-image:radial-gradient(circle at 12% 18%,rgba(245,185,64,.34),transparent 52%),radial-gradient(circle at 88% 84%,rgba(240,138,36,.28),transparent 55%);}
+.hero{max-width:720px;margin:0 auto;padding:50px 24px 46px;}
+.labtag{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-deep);background:var(--gold);padding:7px 15px;border-radius:100px;margin-bottom:20px;}
+.kicker{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cream);margin-bottom:13px;opacity:.92;}
+h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:54px;line-height:.98;letter-spacing:-.025em;color:#fff;margin-bottom:16px;}
+.standfirst{font-size:20px;line-height:1.45;color:var(--cream);font-weight:500;max-width:42ch;}
+
+.lesson{padding-top:42px;}
+.step{margin-bottom:30px;}
+.steplab{display:flex;align-items:baseline;gap:11px;margin-bottom:10px;}
+.steplab .num{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:14px;color:var(--orange);letter-spacing:.04em;}
+.steplab .ttl{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;letter-spacing:-.02em;color:var(--ink);}
+.step p{font-size:17px;line-height:1.62;margin-bottom:12px;}
+.step p:last-child{margin-bottom:0;}
+.step strong{color:var(--teal-deep);font-weight:700;}
+.dropcap::first-letter{font-family:'Bricolage Grotesque',sans-serif;font-size:58px;font-weight:800;float:left;line-height:.78;margin:5px 11px 0 0;color:var(--teal);}
+
+/* balance sheet */
+.bal{background:var(--card);border:2.5px solid var(--ink);border-radius:16px;padding:22px 24px 20px;margin:10px 0 6px;box-shadow:5px 5px 0 var(--rule);}
+.bal .bh{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;letter-spacing:.04em;font-weight:700;color:var(--orange-deep);margin-bottom:16px;}
+.bcols{display:grid;grid-template-columns:1fr 1fr;gap:13px;}
+.bcol{border:2px solid var(--ink);border-radius:12px;padding:15px 16px;}
+.bcol.own{background:#e4f2f0;}
+.bcol.owe{background:#fbeee6;}
+.bcol .ch{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:14px;margin-bottom:10px;letter-spacing:.02em;}
+.bcol.own .ch{color:var(--teal-deep);}
+.bcol.owe .ch{color:var(--clay-deep);}
+.bcol .line{display:flex;justify-content:space-between;gap:8px;font-size:13.5px;padding:5px 0;color:var(--ink);}
+.bcol .line span:last-child{font-variant-numeric:tabular-nums;color:var(--mid);}
+.bcol .tot{display:flex;justify-content:space-between;gap:8px;border-top:2px solid var(--ink);margin-top:7px;padding-top:8px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;}
+.bcol.own .tot{color:var(--teal-deep);}
+.bcol.owe .tot{color:var(--clay-deep);}
+.bresult{margin-top:13px;background:var(--ink);border-radius:12px;padding:16px 22px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;position:relative;overflow:hidden;}
+.bresult::after{content:"";position:absolute;right:-26px;top:-26px;width:120px;height:120px;background:radial-gradient(circle,rgba(245,185,64,.32),transparent 70%);}
+.bresult *{position:relative;}
+.bresult .rl{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;letter-spacing:.03em;font-weight:700;color:var(--teal-soft);}
+.bresult .rl small{display:block;color:rgba(251,244,230,.6);font-size:11px;font-weight:500;letter-spacing:0;margin-top:2px;}
+.bresult .rv{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:28px;color:var(--gold);}
+@media(max-width:600px){.bcols{grid-template-columns:1fr;}}
+
+.threecol{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;margin:6px 0 4px;}
+.tc2{border:2px solid var(--ink);border-radius:12px;padding:15px 16px;box-shadow:3px 3px 0 var(--rule);}
+.tc2 .h{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;margin-bottom:6px;line-height:1.1;}
+.tc2 .b{font-size:14px;line-height:1.45;color:var(--mid);}
+.tc2.a{background:#fbeee6;} .tc2.a .h{color:var(--clay-deep);}
+.tc2.b{background:#e4f2f0;} .tc2.b .h{color:var(--teal-deep);}
+.tc2.c{background:var(--wash);} .tc2.c .h{color:var(--orange-deep);}
+@media(max-width:600px){.threecol{grid-template-columns:1fr;}}
+
+.applybox{background:var(--teal);background-image:radial-gradient(circle at 90% 10%,rgba(245,185,64,.3),transparent 60%);border-radius:15px;padding:24px 26px;margin:6px 0 4px;}
+.applybox .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:12px;}
+.applybox ul{list-style:none;margin:0;}
+.applybox li{color:#fff;font-size:16px;line-height:1.45;padding:9px 0 9px 30px;position:relative;border-bottom:1px solid rgba(255,255,255,.16);}
+.applybox li:last-child{border-bottom:none;}
+.applybox li::before{content:"→";position:absolute;left:4px;color:var(--gold);font-weight:700;}
+.applybox .tip{margin-top:14px;font-size:14px;color:var(--cream);font-style:italic;line-height:1.5;}
+
+.honest{background:#fbeee6;border-left:5px solid var(--clay);border-radius:0 13px 13px 0;padding:20px 24px;margin:6px 0 4px;}
+.honest .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--clay-deep);margin-bottom:9px;}
+.honest p{font-size:16px;line-height:1.58;margin-bottom:10px;}
+.honest p:last-child{margin-bottom:0;}
+.honest strong{color:var(--clay-deep);}
+
+.pq{font-family:'Bricolage Grotesque',sans-serif;font-size:24px;line-height:1.25;font-weight:700;color:var(--teal);border-left:5px solid var(--gold);padding:6px 0 6px 22px;margin:24px 0;letter-spacing:-.01em;}
+
+.bridge{background:var(--ink);color:var(--cream);border-radius:15px;padding:24px 28px;margin-top:6px;position:relative;overflow:hidden;}
+.bridge::after{content:"";position:absolute;right:-30px;bottom:-30px;width:150px;height:150px;background:radial-gradient(circle,rgba(30,138,140,.5),transparent 70%);}
+.bridge *{position:relative;}
+.bridge .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--teal-soft);margin-bottom:9px;}
+.bridge p{color:var(--cream);font-size:16.5px;line-height:1.58;margin-bottom:10px;}
+.bridge p:last-child{margin-bottom:0;}
+.bridge strong{color:var(--gold);}
+
+.sources{font-size:12.5px;color:#8a7c62;line-height:1.5;border-top:2px dashed var(--rule);padding-top:16px;margin-top:34px;}
+.sources strong{color:var(--ink);font-family:'Bricolage Grotesque',sans-serif;font-size:11px;letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:5px;}
+
+.next{display:flex;align-items:center;justify-content:space-between;gap:16px;background:var(--gold);border:2.5px solid var(--ink);border-radius:14px;padding:18px 22px;margin:30px 0 0;box-shadow:5px 5px 0 var(--orange);}
+.next .nl{font-family:'Bricolage Grotesque',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--teal-deep);margin-bottom:3px;}
+.next .nm{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:19px;color:var(--ink);letter-spacing:-.01em;}
+.next .arrow{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:26px;color:var(--clay);}
+
+footer{background:var(--ink);color:var(--cream);margin-top:30px;padding:30px 0 54px;}
+footer .big{font-family:'Bricolage Grotesque',sans-serif;font-size:16px;color:var(--gold);font-weight:700;margin-bottom:6px;}
+footer .ft{font-size:13px;color:rgba(251,244,230,.7);line-height:1.5;}
+@media(max-width:600px){h1{font-size:46px;}.hero{padding:40px 24px 36px;}}
+</style>
+</head>
+<body>
+
+<div class="herobleed">
+<div class="hero">
+  <div class="labtag">Economic Democracy · Building Wealth</div>
+  <div class="kicker">The one number that tells the truth</div>
+  <h1>Net Worth</h1>
+  <p class="standfirst">The one number that tells the truth about your wealth — not what you earn, but what you've actually kept.</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="lesson">
+
+  <!-- 01 -->
+  <div class="step">
+    <div class="steplab"><span class="num">01</span><span class="ttl">The concept</span></div>
+    <p class="dropcap">Net worth is the single number that captures your whole financial position: everything you own, minus everything you owe. It's the real scoreboard of wealth — not your salary, not your income, but what you've actually accumulated and get to keep. Assets minus liabilities, full stop.</p>
+    <p>Everything in the earlier groups feeds this one number. Your net worth is just the <strong>sum of all your equity</strong> — every slice you own across a home, a retirement account, a business, savings — added up, with your debts subtracted. If you want to know whether you're truly building wealth, this is the number to watch.</p>
+  </div>
+
+  <!-- 02 -->
+  <div class="step">
+    <div class="steplab"><span class="num">02</span><span class="ttl">How it works</span></div>
+    <p>You build the number the way an accountant would: total what you own, total what you owe, and take the difference.</p>
+    <div class="bal">
+      <div class="bh">A snapshot of one household's net worth</div>
+      <div class="bcols">
+        <div class="bcol own">
+          <div class="ch">What you own</div>
+          <div class="line"><span>Home</span><span>$400,000</span></div>
+          <div class="line"><span>Retirement accounts</span><span>$120,000</span></div>
+          <div class="line"><span>Savings &amp; investments</span><span>$25,000</span></div>
+          <div class="line"><span>Car</span><span>$15,000</span></div>
+          <div class="tot"><span>Assets</span><span>$560,000</span></div>
+        </div>
+        <div class="bcol owe">
+          <div class="ch">What you owe</div>
+          <div class="line"><span>Mortgage</span><span>$285,000</span></div>
+          <div class="line"><span>Student loans</span><span>$30,000</span></div>
+          <div class="line"><span>Car loan</span><span>$10,000</span></div>
+          <div class="line"><span>Credit cards</span><span>$5,000</span></div>
+          <div class="tot"><span>Liabilities</span><span>$330,000</span></div>
+        </div>
+      </div>
+      <div class="bresult"><span class="rl">Net worth<small>assets minus liabilities</small></span><span class="rv">$230,000</span></div>
+    </div>
+    <p>That number can be positive or negative, and building wealth simply means <strong>growing it over time</strong>. There are only two ways to do that — and this is where the whole section comes together: grow what you own (<strong>offense</strong>), and shrink what you owe or protect it from being wiped out (<strong>defense</strong>). Net worth is the one scoreboard where both show up.</p>
+  </div>
+
+  <!-- 03 -->
+  <div class="step">
+    <div class="steplab"><span class="num">03</span><span class="ttl">In real life — income is not net worth</span></div>
+    <p>This is the trap that fools almost everyone. A paycheck and a net worth are completely different things:</p>
+    <div class="threecol">
+      <div class="tc2 a"><div class="h">High income, low net worth</div><div class="b">A big salary spent as fast as it arrives — nice car, big rent, little owned, plenty owed. Looks wealthy. Isn't.</div></div>
+      <div class="tc2 b"><div class="h">Modest income, high net worth</div><div class="b">An ordinary paycheck, lived below means, owned assets for years. Quietly, genuinely wealthy.</div></div>
+      <div class="tc2 c"><div class="h">Negative net worth</div><div class="b">Student debt, few assets, a number below zero. Normal early in life — a starting line, not a verdict.</div></div>
+    </div>
+    <p class="pq">Income is what passes through your hands. Net worth is what stays.</p>
+  </div>
+
+  <!-- 04 -->
+  <div class="step">
+    <div class="steplab"><span class="num">04</span><span class="ttl">Apply it to your life</span></div>
+    <div class="applybox">
+      <div class="l">Find your number</div>
+      <ul>
+        <li>Calculate it once: list what you own, list what you owe, subtract. Rough is fine.</li>
+        <li>Check it a few times a year. The <em>trend</em> matters far more than any single reading.</li>
+        <li>Name one move on each side: one asset to grow, one debt to shrink.</li>
+        <li>Be honest about whether a good income is actually turning into a rising net worth — they don't always go together.</li>
+      </ul>
+      <p class="tip">What gets measured gets managed. Most people never calculate this number even once — doing it puts you ahead of the game.</p>
+    </div>
+  </div>
+
+  <!-- 05 -->
+  <div class="step">
+    <div class="steplab"><span class="num">05</span><span class="ttl">The honest part</span></div>
+    <div class="honest">
+      <div class="l">What no one tells you</div>
+      <p>Net worth is the honest scoreboard, but read it honestly. It <strong>isn't a straight line</strong> — it dips in bad years when markets fall or a big expense hits, and a down year is not failure, though panic-selling in one can be. It can also be <strong>inflated by values you can't spend</strong>: a business "worth" a lot, home equity you'd have to sell or borrow against. A big number locked in illiquid assets is not the same as money you can use.</p>
+      <p>Two more truths. Starting at zero — or below — is the <strong>norm, not a personal failing</strong>: many people spend their first working decades at low or negative net worth because of student debt and wages that barely cover life, and that's structural. And the number is <strong>fragile</strong>: one uninsured catastrophe — a medical crisis, a disability, a lawsuit — can erase decades of building in a few months. That's why protecting your net worth matters every bit as much as growing it. The defense is coming up.</p>
+    </div>
+  </div>
+
+  <!-- 06 -->
+  <div class="step">
+    <div class="steplab"><span class="num">06</span><span class="ttl">The bigger picture</span></div>
+    <div class="bridge">
+      <div class="l">Why this matters beyond you</div>
+      <p>Net worth is how the wealth gap is actually measured — and it's far more extreme than the income gap people usually argue about. In the United States, the wealthiest 10% of households own roughly <strong>two-thirds of all wealth</strong>, while the bottom half holds only about <strong>2 to 3%</strong>. Income is unequal; <em>wealth</em> is in a different league, because it compounds and concentrates across whole lifetimes and generations.</p>
+      <p>And net worth carries <strong>history</strong> in a way a paycheck doesn't — who was allowed to own, who could inherit, who was shut out — which is why gaps by race and family background are even starker in wealth than in earnings. So net worth is the truest single picture of economic democracy, or its absence: not what people <em>earn</em>, but what they <em>own</em>. Moving more households from zero or negative into real, positive, owned wealth is the entire project, written as one number.</p>
+    </div>
+  </div>
+
+  <div class="sources">
+    <strong>Sources &amp; further reading</strong>
+    U.S. wealth-distribution figures: Federal Reserve, Distributional Financial Accounts (top 10% holding roughly two-thirds of household wealth and the bottom 50% around 2–3%, as of late 2025) and the Survey of Consumer Finances (median household net worth near $193,000 in the 2023 release). Shares of wealth shift over time; figures are approximate and rounded.
+  </div>
+
+</div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="big">Net Worth · Building Wealth</div>
+    <div class="ft">Economic Democracy · Building Wealth · economicdemocracy.co<br>A Shared Prosperity education project. General education, not personal financial advice. Figures are illustrative.</div>
+  </div>
+</footer>
+
+</body>
+</html>

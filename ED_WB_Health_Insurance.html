@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Health Insurance · Building Wealth · Economic Democracy</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+:root{
+  --teal:#1E8A8C; --teal-deep:#136466; --teal-soft:#5FB8B6;
+  --orange:#F08A24; --orange-deep:#D9731A; --gold:#F5B940;
+  --clay:#C7553B; --clay-deep:#A8412B;
+  --cream:#FBF4E6; --paper:#FEF9F0; --card:#FFFFFF;
+  --ink:#16211F; --mid:#5d6b66; --rule:#E7DABE; --wash:#F2E9D4;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:720px;margin:0 auto;padding:0 24px;}
+a{color:inherit;}
+
+.herobleed{background:var(--teal);background-image:radial-gradient(circle at 12% 18%,rgba(245,185,64,.34),transparent 52%),radial-gradient(circle at 88% 84%,rgba(240,138,36,.28),transparent 55%);}
+.hero{max-width:720px;margin:0 auto;padding:50px 24px 46px;}
+.labtag{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-deep);background:var(--gold);padding:7px 15px;border-radius:100px;margin-bottom:20px;}
+.kicker{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cream);margin-bottom:13px;opacity:.92;}
+h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:52px;line-height:.98;letter-spacing:-.025em;color:#fff;margin-bottom:16px;}
+.standfirst{font-size:20px;line-height:1.45;color:var(--cream);font-weight:500;max-width:42ch;}
+
+.lesson{padding-top:42px;}
+.step{margin-bottom:30px;}
+.steplab{display:flex;align-items:baseline;gap:11px;margin-bottom:10px;}
+.steplab .num{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:14px;color:var(--orange);letter-spacing:.04em;}
+.steplab .ttl{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;letter-spacing:-.02em;color:var(--ink);}
+.step p{font-size:17px;line-height:1.62;margin-bottom:12px;}
+.step p:last-child{margin-bottom:0;}
+.step strong{color:var(--teal-deep);font-weight:700;}
+.dropcap::first-letter{font-family:'Bricolage Grotesque',sans-serif;font-size:58px;font-weight:800;float:left;line-height:.78;margin:5px 11px 0 0;color:var(--teal);}
+
+/* exposure ladder */
+.ladder{background:var(--card);border:2.5px solid var(--ink);border-radius:16px;padding:22px 24px 18px;margin:10px 0 6px;box-shadow:5px 5px 0 var(--rule);}
+.ladder .lh{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;letter-spacing:.04em;font-weight:700;color:var(--orange-deep);margin-bottom:3px;}
+.ladder .ls{font-size:13px;color:var(--mid);margin-bottom:16px;font-style:italic;}
+.tier{display:flex;align-items:center;gap:14px;border:2px solid var(--ink);border-radius:11px;padding:14px 16px;margin-bottom:9px;}
+.tier:last-of-type{margin-bottom:0;}
+.tier .tn{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:14px;flex:1;line-height:1.2;}
+.tier .td{font-size:13px;color:var(--mid);flex:1.4;line-height:1.35;}
+.tier .ta{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:16px;white-space:nowrap;}
+.tier.t1{background:#fbeee6;} .tier.t1 .tn,.tier.t1 .ta{color:var(--clay-deep);}
+.tier.t2{background:var(--wash);} .tier.t2 .tn,.tier.t2 .ta{color:var(--orange-deep);}
+.tier.t3{background:#e4f2f0;} .tier.t3 .tn,.tier.t3 .ta{color:var(--teal-deep);}
+.laddernote{font-size:13px;color:var(--mid);margin-top:13px;font-style:italic;border-top:1.5px dashed var(--rule);padding-top:12px;}
+
+.threecol{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;margin:6px 0 4px;}
+.tc2{border:2px solid var(--ink);border-radius:12px;padding:15px 16px;box-shadow:3px 3px 0 var(--rule);}
+.tc2 .h{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;margin-bottom:6px;line-height:1.1;}
+.tc2 .b{font-size:14px;line-height:1.45;color:var(--mid);}
+.tc2.a{background:#fbeee6;} .tc2.a .h{color:var(--clay-deep);}
+.tc2.b{background:var(--wash);} .tc2.b .h{color:var(--orange-deep);}
+.tc2.c{background:#e4f2f0;} .tc2.c .h{color:var(--teal-deep);}
+@media(max-width:600px){.threecol{grid-template-columns:1fr;}}
+
+.applybox{background:var(--teal);background-image:radial-gradient(circle at 90% 10%,rgba(245,185,64,.3),transparent 60%);border-radius:15px;padding:24px 26px;margin:6px 0 4px;}
+.applybox .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:12px;}
+.applybox ul{list-style:none;margin:0;}
+.applybox li{color:#fff;font-size:16px;line-height:1.45;padding:9px 0 9px 30px;position:relative;border-bottom:1px solid rgba(255,255,255,.16);}
+.applybox li:last-child{border-bottom:none;}
+.applybox li::before{content:"→";position:absolute;left:4px;color:var(--gold);font-weight:700;}
+.applybox .tip{margin-top:14px;font-size:14px;color:var(--cream);font-style:italic;line-height:1.5;}
+
+.honest{background:#fbeee6;border-left:5px solid var(--clay);border-radius:0 13px 13px 0;padding:20px 24px;margin:6px 0 4px;}
+.honest .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--clay-deep);margin-bottom:9px;}
+.honest p{font-size:16px;line-height:1.58;margin-bottom:10px;}
+.honest p:last-child{margin-bottom:0;}
+.honest strong{color:var(--clay-deep);}
+
+.pq{font-family:'Bricolage Grotesque',sans-serif;font-size:24px;line-height:1.25;font-weight:700;color:var(--teal);border-left:5px solid var(--gold);padding:6px 0 6px 22px;margin:24px 0;letter-spacing:-.01em;}
+
+.bridge{background:var(--ink);color:var(--cream);border-radius:15px;padding:24px 28px;margin-top:6px;position:relative;overflow:hidden;}
+.bridge::after{content:"";position:absolute;right:-30px;bottom:-30px;width:150px;height:150px;background:radial-gradient(circle,rgba(30,138,140,.5),transparent 70%);}
+.bridge *{position:relative;}
+.bridge .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--teal-soft);margin-bottom:9px;}
+.bridge p{color:var(--cream);font-size:16.5px;line-height:1.58;margin-bottom:10px;}
+.bridge p:last-child{margin-bottom:0;}
+.bridge strong{color:var(--gold);}
+
+.sources{font-size:12.5px;color:#8a7c62;line-height:1.5;border-top:2px dashed var(--rule);padding-top:16px;margin-top:34px;}
+.sources strong{color:var(--ink);font-family:'Bricolage Grotesque',sans-serif;font-size:11px;letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:5px;}
+
+footer{background:var(--ink);color:var(--cream);margin-top:30px;padding:30px 0 54px;}
+footer .big{font-family:'Bricolage Grotesque',sans-serif;font-size:16px;color:var(--gold);font-weight:700;margin-bottom:6px;}
+footer .ft{font-size:13px;color:rgba(251,244,230,.7);line-height:1.5;}
+@media(max-width:600px){h1{font-size:42px;}.hero{padding:40px 24px 36px;}.tier{flex-wrap:wrap;}.tier .td{flex:1 1 100%;}}
+</style>
+</head>
+<body>
+
+<div class="herobleed">
+<div class="hero">
+  <div class="labtag">Economic Democracy · Building Wealth</div>
+  <div class="kicker">Coverage as wealth defense</div>
+  <h1>Health Insurance</h1>
+  <p class="standfirst">In the U.S., it isn't really about health — it's the main thing standing between an illness and financial ruin. And even having it isn't always enough.</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="lesson">
+
+  <!-- 01 -->
+  <div class="step">
+    <div class="steplab"><span class="num">01</span><span class="ttl">The concept</span></div>
+    <p class="dropcap">Health insurance is the risk pool aimed at the one catastrophe almost everyone eventually faces: getting sick or hurt. In the United States that's not a small thing, because medical care here can cost more than nearly any other disaster a household meets — a serious illness or injury can run to tens or even hundreds of thousands of dollars.</p>
+    <p>So health insurance, in practice, isn't mainly about health. It's the single most important piece of <strong>wealth defense</strong> most people have. Without it, one diagnosis can erase every asset you've built — and, as you'll see, even with it, the gap can still be large.</p>
+  </div>
+
+  <!-- 02 -->
+  <div class="step">
+    <div class="steplab"><span class="num">02</span><span class="ttl">How it works</span></div>
+    <p>You (and usually an employer) pay premiums; the plan covers big costs — but only after you've paid your share. Three numbers define your real exposure: the <strong>premium</strong> (monthly cost), the <strong>deductible</strong> (what you pay before it kicks in), and the <strong>out-of-pocket maximum</strong> (your ceiling for the year). Here's what "insured" can still cost you in a bad year:</p>
+    <div class="ladder">
+      <div class="lh">What you can owe in one year — even insured</div>
+      <div class="ls">Illustrative, using typical 2026 marketplace figures.</div>
+      <div class="tier t1"><div class="tn">The deductible</div><div class="td">You pay every dollar yourself until you hit it.</div><div class="ta">~$5,300</div></div>
+      <div class="tier t2"><div class="tn">Cost-sharing above it</div><div class="td">You and the insurer split costs (coinsurance) past the deductible.</div><div class="ta">+ more</div></div>
+      <div class="tier t3"><div class="tn">Out-of-pocket maximum</div><div class="td">Once you hit the cap, the insurer pays 100% for the rest of the year.</div><div class="ta">~$9,200</div></div>
+    </div>
+    <p class="laddernote">So "covered" can still mean owing around $9,000 in a single year before protection becomes total — and that resets every year.</p>
+    <p>Coverage comes from a few places: <strong>employer plans</strong> (most working-age adults), the <strong>ACA marketplace</strong> (buy your own), and <strong>public programs</strong> — Medicare for those 65+, Medicaid for low-income households. The defining feature of the U.S. system is that high deductibles leave even insured people owing thousands before the pool does much at all.</p>
+  </div>
+
+  <!-- 03 -->
+  <div class="step">
+    <div class="steplab"><span class="num">03</span><span class="ttl">In real life</span></div>
+    <p>The numbers say the protection is real but full of holes:</p>
+    <div class="threecol">
+      <div class="tc2 a"><div class="h">Debt even for the insured</div><div class="b">Americans owe at least $220 billion in medical debt — and over 4 in 10 <em>insured</em> adults carry health-care debt. Insurance reduces the risk; it doesn't erase it.</div></div>
+      <div class="tc2 b"><div class="h">Job-lock</div><div class="b">People stay in jobs they'd leave — can't start a business, switch careers, or retire early — because quitting means losing coverage. The system quietly chains workers to employers.</div></div>
+      <div class="tc2 c"><div class="h">The uninsured</div><div class="b">Highest exposure of all: charged more, skipping needed care, one event from ruin — and concentrated among lower-income households and, disproportionately, Black and Hispanic families.</div></div>
+    </div>
+    <p class="pq">A diagnosis shouldn't be able to undo a lifetime of saving. In much of the U.S. system, it still can.</p>
+  </div>
+
+  <!-- 04 -->
+  <div class="step">
+    <div class="steplab"><span class="num">04</span><span class="ttl">Apply it to your life</span></div>
+    <div class="applybox">
+      <div class="l">Know your exposure, close the gap</div>
+      <ul>
+        <li>Learn your plan's three numbers — premium, deductible, out-of-pocket max. That max is your true worst-case for the year.</li>
+        <li>Don't go uninsured if you can avoid it. Even a high-deductible catastrophic plan beats nothing.</li>
+        <li>Size part of your emergency reserve to your deductible and out-of-pocket max — that's the gap insurance leaves you holding.</li>
+        <li>Factor coverage into big moves. Quitting to start a business? The cost of replacing your health plan is part of the math.</li>
+      </ul>
+      <p class="tip">When comparing plans, the out-of-pocket maximum matters more than the premium. It's the number that decides whether a bad year is survivable.</p>
+    </div>
+  </div>
+
+  <!-- 05 -->
+  <div class="step">
+    <div class="steplab"><span class="num">05</span><span class="ttl">The honest part</span></div>
+    <div class="honest">
+      <div class="l">What no one tells you</div>
+      <p>The United States is unusual among wealthy countries in <strong>tying health coverage to employment</strong> and leaving large gaps even for the insured — so health risk is a major source of American financial fragility in a way it simply isn't in most peer nations. Two-thirds of Americans say they worry about affording care. Even doing everything right, a serious illness can produce debt, and that debt falls hardest on the people least able to absorb it — disproportionately Black and Hispanic households, and those in states that didn't expand Medicaid.</p>
+      <p>It's also genuinely <strong>contested ground</strong>, and worth stating fairly. Enhanced ACA subsidies expired at the end of 2025, which is expected to push premiums up and the number of uninsured higher — and people disagree in good faith about the remedy. Some argue the fix is broader <strong>public coverage</strong> that pools everyone; others argue it's more <strong>market competition, price transparency, and choice</strong> to bring costs down. The honest bottom line for an individual is the same either way: stay covered if you possibly can, reserve for the gap, and know that this system loads more catastrophic risk onto households than most rich countries do.</p>
+    </div>
+  </div>
+
+  <!-- 06 -->
+  <div class="step">
+    <div class="steplab"><span class="num">06</span><span class="ttl">The bigger picture</span></div>
+    <div class="bridge">
+      <div class="l">Why this matters beyond you</div>
+      <p>Health is where "who's in the pool" becomes unavoidable, because everyone gets sick eventually — it's the one risk no one truly escapes. Tying that pool to a job means losing the job can mean losing protection at the worst possible moment, and it quietly chains people to employers — the <strong>opposite</strong> of the independence and risk-taking that building wealth through ownership requires. You can't take the bet, or make the leap to working for yourself, if it costs your family their coverage.</p>
+      <p>Most wealthy countries pool health risk across the whole population; the U.S. pools it in fragments — by employer, by age, by income, by market — leaving holes people fall through. The economic-democracy question here isn't about any one political plan. It's the structural one: <strong>is the catastrophe everyone eventually faces something a society pools broadly, or leaves each household to meet alone?</strong> How that's answered shapes who can take risks, who can build, and who gets wiped out by plain bad luck.</p>
+    </div>
+  </div>
+
+  <div class="sources">
+    <strong>Sources &amp; further reading</strong>
+    Medical-debt totals and the share of insured adults with health-care debt: KFF and the Peterson-KFF Health System Tracker (at least $220 billion owed; over 4 in 10 insured adults reporting health-care debt). Deductible and out-of-pocket figures: KFF analysis of 2026 marketplace plans (average silver deductible around $5,300; ACA out-of-pocket maximums near $9,000+ for an individual). The expiration of enhanced ACA premium subsidies at the end of 2025, and its projected effect on premiums and the uninsured rate, is widely reported and still developing. Figures are approximate and change over time.
+  </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="big">Health Insurance · Building Wealth</div>
+    <div class="ft">Economic Democracy · Building Wealth · economicdemocracy.co<br>A Shared Prosperity education project. General education, not insurance, medical, or financial advice. Figures are approximate.</div>
+  </div>
+</footer>
+
+</body>
+</html>

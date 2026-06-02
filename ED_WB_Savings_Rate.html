@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Savings Rate · Building Wealth · Economic Democracy</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+:root{
+  --teal:#1E8A8C; --teal-deep:#136466; --teal-soft:#5FB8B6;
+  --orange:#F08A24; --orange-deep:#D9731A; --gold:#F5B940;
+  --clay:#C7553B; --clay-deep:#A8412B;
+  --cream:#FBF4E6; --paper:#FEF9F0; --card:#FFFFFF;
+  --ink:#16211F; --mid:#5d6b66; --rule:#E7DABE; --wash:#F2E9D4;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:720px;margin:0 auto;padding:0 24px;}
+a{color:inherit;}
+
+.herobleed{background:var(--teal);background-image:radial-gradient(circle at 12% 18%,rgba(245,185,64,.34),transparent 52%),radial-gradient(circle at 88% 84%,rgba(240,138,36,.28),transparent 55%);}
+.hero{max-width:720px;margin:0 auto;padding:50px 24px 46px;}
+.labtag{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-deep);background:var(--gold);padding:7px 15px;border-radius:100px;margin-bottom:20px;}
+.kicker{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cream);margin-bottom:13px;opacity:.92;}
+h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:54px;line-height:.98;letter-spacing:-.025em;color:#fff;margin-bottom:16px;}
+.standfirst{font-size:20px;line-height:1.45;color:var(--cream);font-weight:500;max-width:42ch;}
+
+.lesson{padding-top:42px;}
+.step{margin-bottom:30px;}
+.steplab{display:flex;align-items:baseline;gap:11px;margin-bottom:10px;}
+.steplab .num{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:14px;color:var(--orange);letter-spacing:.04em;}
+.steplab .ttl{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;letter-spacing:-.02em;color:var(--ink);}
+.step p{font-size:17px;line-height:1.62;margin-bottom:12px;}
+.step p:last-child{margin-bottom:0;}
+.step strong{color:var(--teal-deep);font-weight:700;}
+.dropcap::first-letter{font-family:'Bricolage Grotesque',sans-serif;font-size:58px;font-weight:800;float:left;line-height:.78;margin:5px 11px 0 0;color:var(--teal);}
+
+/* savings rate chart */
+.chart{background:var(--card);border:2.5px solid var(--ink);border-radius:16px;padding:22px 24px 18px;margin:10px 0 6px;box-shadow:5px 5px 0 var(--rule);}
+.chart .ch{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;letter-spacing:.04em;font-weight:700;color:var(--orange-deep);margin-bottom:3px;}
+.chart .cs{font-size:13px;color:var(--mid);margin-bottom:18px;font-style:italic;}
+.bars{display:flex;align-items:flex-end;gap:16px;height:185px;border-bottom:2.5px solid var(--ink);}
+.barcol{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;}
+.barcol .bv{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;margin-bottom:6px;line-height:1;}
+.barcol .bk{width:100%;border-radius:7px 7px 0 0;border:2px solid var(--ink);border-bottom:none;}
+.barcol.r1 .bk{background:var(--clay);} .barcol.r1 .bv{color:var(--clay-deep);}
+.barcol.r2 .bk{background:var(--orange);} .barcol.r2 .bv{color:var(--orange-deep);}
+.barcol.r3 .bk{background:var(--teal-soft);} .barcol.r3 .bv{color:var(--teal-deep);}
+.barcol.r4 .bk{background:var(--teal);} .barcol.r4 .bv{color:var(--teal-deep);}
+.barlabels{display:flex;gap:16px;margin-top:9px;}
+.barlabels div{flex:1;text-align:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:13px;color:var(--mid);}
+.chartnote{font-size:12.5px;color:var(--mid);margin-top:13px;font-style:italic;border-top:1.5px dashed var(--rule);padding-top:12px;}
+
+.threecol{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;margin:6px 0 4px;}
+.tc2{border:2px solid var(--ink);border-radius:12px;padding:15px 16px;box-shadow:3px 3px 0 var(--rule);}
+.tc2 .h{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;margin-bottom:6px;line-height:1.1;}
+.tc2 .b{font-size:14px;line-height:1.45;color:var(--mid);}
+.tc2.a{background:#e4f2f0;} .tc2.a .h{color:var(--teal-deep);}
+.tc2.b{background:var(--wash);} .tc2.b .h{color:var(--orange-deep);}
+.tc2.c{background:#fbeee6;} .tc2.c .h{color:var(--clay-deep);}
+@media(max-width:600px){.threecol{grid-template-columns:1fr;}}
+
+.applybox{background:var(--teal);background-image:radial-gradient(circle at 90% 10%,rgba(245,185,64,.3),transparent 60%);border-radius:15px;padding:24px 26px;margin:6px 0 4px;}
+.applybox .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:12px;}
+.applybox ul{list-style:none;margin:0;}
+.applybox li{color:#fff;font-size:16px;line-height:1.45;padding:9px 0 9px 30px;position:relative;border-bottom:1px solid rgba(255,255,255,.16);}
+.applybox li:last-child{border-bottom:none;}
+.applybox li::before{content:"→";position:absolute;left:4px;color:var(--gold);font-weight:700;}
+.applybox .tip{margin-top:14px;font-size:14px;color:var(--cream);font-style:italic;line-height:1.5;}
+
+.honest{background:#fbeee6;border-left:5px solid var(--clay);border-radius:0 13px 13px 0;padding:20px 24px;margin:6px 0 4px;}
+.honest .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--clay-deep);margin-bottom:9px;}
+.honest p{font-size:16px;line-height:1.58;margin-bottom:10px;}
+.honest p:last-child{margin-bottom:0;}
+.honest strong{color:var(--clay-deep);}
+
+.pq{font-family:'Bricolage Grotesque',sans-serif;font-size:24px;line-height:1.25;font-weight:700;color:var(--teal);border-left:5px solid var(--gold);padding:6px 0 6px 22px;margin:24px 0;letter-spacing:-.01em;}
+
+.bridge{background:var(--ink);color:var(--cream);border-radius:15px;padding:24px 28px;margin-top:6px;position:relative;overflow:hidden;}
+.bridge::after{content:"";position:absolute;right:-30px;bottom:-30px;width:150px;height:150px;background:radial-gradient(circle,rgba(30,138,140,.5),transparent 70%);}
+.bridge *{position:relative;}
+.bridge .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--teal-soft);margin-bottom:9px;}
+.bridge p{color:var(--cream);font-size:16.5px;line-height:1.58;margin-bottom:10px;}
+.bridge p:last-child{margin-bottom:0;}
+.bridge strong{color:var(--gold);}
+
+footer{background:var(--ink);color:var(--cream);margin-top:30px;padding:30px 0 54px;}
+footer .big{font-family:'Bricolage Grotesque',sans-serif;font-size:16px;color:var(--gold);font-weight:700;margin-bottom:6px;}
+footer .ft{font-size:13px;color:rgba(251,244,230,.7);line-height:1.5;}
+@media(max-width:600px){h1{font-size:46px;}.hero{padding:40px 24px 36px;}}
+</style>
+</head>
+<body>
+
+<div class="herobleed">
+<div class="hero">
+  <div class="labtag">Economic Democracy · Building Wealth</div>
+  <div class="kicker">The one lever you most control</div>
+  <h1>Savings Rate</h1>
+  <p class="standfirst">Not how much you earn or what your investments return — the share of your income you keep is the lever that moves your whole future.</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="lesson">
+
+  <!-- 01 -->
+  <div class="step">
+    <div class="steplab"><span class="num">01</span><span class="ttl">The concept</span></div>
+    <p class="dropcap">Your savings rate is the share of your income you keep and turn into assets, instead of spending it. Of all the levers in building wealth, it's the one you most directly control. You can't dictate what the market returns, and you often can't quickly change what you earn — but how much of what comes in you keep is, for anyone with room to move it, the most powerful dial on the board.</p>
+    <p>And it matters most <strong>early</strong>, when your balance is small and your own contributions, not investment gains, are doing nearly all the work.</p>
+  </div>
+
+  <!-- 02 -->
+  <div class="step">
+    <div class="steplab"><span class="num">02</span><span class="ttl">How it works</span></div>
+    <p>The math is just savings ÷ income. The surprising part is that it works on <strong>both ends at once</strong>: a higher savings rate puts more money to work <em>and</em> means you're living on less — so you need a smaller pile to be free. That double effect is why your savings rate, far more than your investment return, decides how fast you reach the point where work becomes optional:</p>
+    <div class="chart">
+      <div class="ch">Savings rate → years until work is optional</div>
+      <div class="cs">Illustrative. Assumes the savings are invested and you live on the rest.</div>
+      <div class="bars">
+        <div class="barcol r1"><div class="bv">~51 yrs</div><div class="bk" style="height:100%;"></div></div>
+        <div class="barcol r2"><div class="bv">~32 yrs</div><div class="bk" style="height:63%;"></div></div>
+        <div class="barcol r3"><div class="bv">~17 yrs</div><div class="bk" style="height:33%;"></div></div>
+        <div class="barcol r4"><div class="bv">~10.5 yrs</div><div class="bk" style="height:21%;"></div></div>
+      </div>
+      <div class="barlabels"><div>Save 10%</div><div>Save 25%</div><div>Save 50%</div><div>Save 65%</div></div>
+      <div class="chartnote">Notice the return on the investments barely changes between these — it's the <em>rate</em> doing the work, on both ends.</div>
+    </div>
+    <p>The lesson is blunt: for someone with a surplus to move, raising the savings rate beats chasing a higher return, and it's the thing you can actually change this month.</p>
+  </div>
+
+  <!-- 03 -->
+  <div class="step">
+    <div class="steplab"><span class="num">03</span><span class="ttl">In real life</span></div>
+    <p>Three patterns show up again and again:</p>
+    <div class="threecol">
+      <div class="tc2 a"><div class="h">Two identical earners</div><div class="b">Same paycheck, one saves 10% and one saves 30%. Within a decade they're living in completely different financial worlds — on the same income.</div></div>
+      <div class="tc2 b"><div class="h">The raise that vanishes</div><div class="b">Lifestyle creep: every raise gets absorbed by bigger spending, so the savings rate never moves. Income rises for years and the rate stays flat.</div></div>
+      <div class="tc2 c"><div class="h">Income isn't the predictor</div><div class="b">A high earner who saves nothing builds less than a modest earner who saves a lot. The rate, not the salary, is what forecasts wealth.</div></div>
+    </div>
+    <p class="pq">It's not what you make. It's the gap between what you make and what you spend — and what you do with it.</p>
+  </div>
+
+  <!-- 04 -->
+  <div class="step">
+    <div class="steplab"><span class="num">04</span><span class="ttl">Apply it to your life</span></div>
+    <div class="applybox">
+      <div class="l">Move the dial you control</div>
+      <ul>
+        <li>Calculate yours: what share of your take-home did you actually save or invest last month?</li>
+        <li>Raise it gradually — even one percentage point at a time — and automate it so it happens before you can spend it.</li>
+        <li>Bank your raises: route the next pay bump straight to savings before your lifestyle absorbs it.</li>
+        <li>Remember the double power: cutting a recurring expense raises your rate <em>and</em> lowers the finish line at the same time.</li>
+      </ul>
+      <p class="tip">A small, automated, rising savings rate beats a perfect investment strategy you never fund.</p>
+    </div>
+  </div>
+
+  <!-- 05 -->
+  <div class="step">
+    <div class="steplab"><span class="num">05</span><span class="ttl">The honest part</span></div>
+    <div class="honest">
+      <div class="l">What no one tells you</div>
+      <p>No piece of money advice is more abused than this one. The "just save more, skip the coffee" sermon blames people for math they can't win. The blunt truth: your savings rate is <strong>capped by the gap between your income and the real cost of living</strong> — and for many people that gap is zero or negative, not because of lattes but because rent, health care, child care, and debt take everything. A 50% savings rate is a fantasy for someone whose income barely covers survival, and telling them to try harder is both useless and insulting.</p>
+      <p>So hold both truths. If you have room above your real costs, raising your savings rate is the single most powerful move you can make — start small, automate it, let it climb. And if you don't have room, the problem is <strong>income and costs, not your discipline</strong>, and no amount of frugality closes a structural gap. Savings rate is a superpower for those with a surplus to move, and a cruel myth when it's aimed at those who were never left one.</p>
+    </div>
+  </div>
+
+  <!-- 06 -->
+  <div class="step">
+    <div class="steplab"><span class="num">06</span><span class="ttl">The bigger picture</span></div>
+    <div class="bridge">
+      <div class="l">Why this matters beyond you</div>
+      <p>The savings rate exposes the deepest divide in the economy: between those who have a surplus to convert into ownership and those who don't. Every engine of wealth — compounding, assets, the move from wages to ownership — only switches on once there's a gap between income and expenses to feed it. So the question of who can save isn't about character. It's about whether wages are high enough, and costs low enough, to leave ordinary people any surplus at all.</p>
+      <p>A society where most people can save a meaningful share of their income is one where ownership spreads. A society where the surplus exists only at the top is one where ownership — and all the wealth it builds — <strong>concentrates there by default</strong>. So raising the savings rate of the broad middle isn't only a personal project; it rests on wages, housing, health care, and child care that leave room to save. The individual lever and the structural conditions are the same fight: <strong>you can't convert a surplus you were never allowed to have.</strong></p>
+    </div>
+  </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="big">Savings Rate · Building Wealth</div>
+    <div class="ft">Economic Democracy · Building Wealth · economicdemocracy.co<br>A Shared Prosperity education project. General education, not personal financial advice. Figures are illustrative.</div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reinvestment Rate · Building Wealth · Economic Democracy</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+:root{
+  --teal:#1E8A8C; --teal-deep:#136466; --teal-soft:#5FB8B6;
+  --orange:#F08A24; --orange-deep:#D9731A; --gold:#F5B940;
+  --clay:#C7553B; --clay-deep:#A8412B;
+  --cream:#FBF4E6; --paper:#FEF9F0; --card:#FFFFFF;
+  --ink:#16211F; --mid:#5d6b66; --rule:#E7DABE; --wash:#F2E9D4;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:720px;margin:0 auto;padding:0 24px;}
+a{color:inherit;}
+
+.herobleed{background:var(--teal);background-image:radial-gradient(circle at 12% 18%,rgba(245,185,64,.34),transparent 52%),radial-gradient(circle at 88% 84%,rgba(240,138,36,.28),transparent 55%);}
+.hero{max-width:720px;margin:0 auto;padding:50px 24px 46px;}
+.labtag{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-deep);background:var(--gold);padding:7px 15px;border-radius:100px;margin-bottom:20px;}
+.kicker{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cream);margin-bottom:13px;opacity:.92;}
+h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:52px;line-height:.98;letter-spacing:-.025em;color:#fff;margin-bottom:16px;}
+.standfirst{font-size:20px;line-height:1.45;color:var(--cream);font-weight:500;max-width:42ch;}
+
+.lesson{padding-top:42px;}
+.step{margin-bottom:30px;}
+.steplab{display:flex;align-items:baseline;gap:11px;margin-bottom:10px;}
+.steplab .num{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:14px;color:var(--orange);letter-spacing:.04em;}
+.steplab .ttl{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;letter-spacing:-.02em;color:var(--ink);}
+.step p{font-size:17px;line-height:1.62;margin-bottom:12px;}
+.step p:last-child{margin-bottom:0;}
+.step strong{color:var(--teal-deep);font-weight:700;}
+.dropcap::first-letter{font-family:'Bricolage Grotesque',sans-serif;font-size:58px;font-weight:800;float:left;line-height:.78;margin:5px 11px 0 0;color:var(--teal);}
+
+/* reinvestment comparison */
+.chart{background:var(--card);border:2.5px solid var(--ink);border-radius:16px;padding:22px 24px 18px;margin:10px 0 6px;box-shadow:5px 5px 0 var(--rule);}
+.chart .ch{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;letter-spacing:.04em;font-weight:700;color:var(--orange-deep);margin-bottom:3px;}
+.chart .cs{font-size:13px;color:var(--mid);margin-bottom:18px;font-style:italic;}
+.bars{display:flex;align-items:flex-end;gap:16px;height:185px;border-bottom:2.5px solid var(--ink);}
+.barcol{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;}
+.barcol .bv{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:16px;margin-bottom:6px;}
+.barcol .bk{width:100%;border-radius:7px 7px 0 0;border:2px solid var(--ink);border-bottom:none;}
+.barcol.c0 .bk{background:#cdbf9e;} .barcol.c0 .bv{color:var(--clay-deep);}
+.barcol.c50 .bk{background:var(--teal-soft);} .barcol.c50 .bv{color:var(--teal-deep);}
+.barcol.c100 .bk{background:var(--teal);} .barcol.c100 .bv{color:var(--teal-deep);}
+.barlabels{display:flex;gap:16px;margin-top:9px;}
+.barlabels div{flex:1;text-align:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:12.5px;color:var(--mid);line-height:1.3;}
+
+.threecol{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;margin:6px 0 4px;}
+.tc2{border:2px solid var(--ink);border-radius:12px;padding:15px 16px;box-shadow:3px 3px 0 var(--rule);}
+.tc2 .h{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;margin-bottom:6px;line-height:1.1;}
+.tc2 .b{font-size:14px;line-height:1.45;color:var(--mid);}
+.tc2.a{background:#e4f2f0;} .tc2.a .h{color:var(--teal-deep);}
+.tc2.b{background:var(--wash);} .tc2.b .h{color:var(--orange-deep);}
+.tc2.c{background:#fbeee6;} .tc2.c .h{color:var(--clay-deep);}
+@media(max-width:600px){.threecol{grid-template-columns:1fr;}}
+
+.applybox{background:var(--teal);background-image:radial-gradient(circle at 90% 10%,rgba(245,185,64,.3),transparent 60%);border-radius:15px;padding:24px 26px;margin:6px 0 4px;}
+.applybox .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:12px;}
+.applybox ul{list-style:none;margin:0;}
+.applybox li{color:#fff;font-size:16px;line-height:1.45;padding:9px 0 9px 30px;position:relative;border-bottom:1px solid rgba(255,255,255,.16);}
+.applybox li:last-child{border-bottom:none;}
+.applybox li::before{content:"→";position:absolute;left:4px;color:var(--gold);font-weight:700;}
+.applybox .tip{margin-top:14px;font-size:14px;color:var(--cream);font-style:italic;line-height:1.5;}
+
+.honest{background:#fbeee6;border-left:5px solid var(--clay);border-radius:0 13px 13px 0;padding:20px 24px;margin:6px 0 4px;}
+.honest .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--clay-deep);margin-bottom:9px;}
+.honest p{font-size:16px;line-height:1.58;margin-bottom:10px;}
+.honest p:last-child{margin-bottom:0;}
+.honest strong{color:var(--clay-deep);}
+
+.pq{font-family:'Bricolage Grotesque',sans-serif;font-size:24px;line-height:1.25;font-weight:700;color:var(--teal);border-left:5px solid var(--gold);padding:6px 0 6px 22px;margin:24px 0;letter-spacing:-.01em;}
+
+.bridge{background:var(--ink);color:var(--cream);border-radius:15px;padding:24px 28px;margin-top:6px;position:relative;overflow:hidden;}
+.bridge::after{content:"";position:absolute;right:-30px;bottom:-30px;width:150px;height:150px;background:radial-gradient(circle,rgba(30,138,140,.5),transparent 70%);}
+.bridge *{position:relative;}
+.bridge .l{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--teal-soft);margin-bottom:9px;}
+.bridge p{color:var(--cream);font-size:16.5px;line-height:1.58;margin-bottom:10px;}
+.bridge p:last-child{margin-bottom:0;}
+.bridge strong{color:var(--gold);}
+
+.next{display:flex;align-items:center;justify-content:space-between;gap:16px;background:var(--gold);border:2.5px solid var(--ink);border-radius:14px;padding:18px 22px;margin:30px 0 0;box-shadow:5px 5px 0 var(--orange);}
+.next .nl{font-family:'Bricolage Grotesque',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--teal-deep);margin-bottom:3px;}
+.next .nm{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:19px;color:var(--ink);letter-spacing:-.01em;}
+.next .arrow{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:26px;color:var(--clay);}
+
+footer{background:var(--ink);color:var(--cream);margin-top:30px;padding:30px 0 54px;}
+footer .big{font-family:'Bricolage Grotesque',sans-serif;font-size:16px;color:var(--gold);font-weight:700;margin-bottom:6px;}
+footer .ft{font-size:13px;color:rgba(251,244,230,.7);line-height:1.5;}
+@media(max-width:600px){h1{font-size:40px;}.hero{padding:40px 24px 36px;}}
+</style>
+</head>
+<body>
+
+<div class="herobleed">
+<div class="hero">
+  <div class="labtag">Economic Democracy · Building Wealth</div>
+  <div class="kicker">How much you put back to work</div>
+  <h1>Reinvestment Rate</h1>
+  <p class="standfirst">How much of what your assets earn you put back to work. It's the throttle on compounding — and not everyone can reach it.</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="lesson">
+
+  <!-- 01 -->
+  <div class="step">
+    <div class="steplab"><span class="num">01</span><span class="ttl">The concept</span></div>
+    <p class="dropcap">When an asset earns — a dividend, a profit, some interest — you face a choice every time: take that money out and spend it, or feed it back in to buy more and grow. Your <em>reinvestment rate</em> is that choice written as a percentage: the share of returns you put back to work instead of taking out.</p>
+    <p>It matters enormously because it's the throttle on compounding. Compounding only happens to the part you <strong>leave in</strong>. Take all the returns out, and your base never grows. Put them back, and each year's earnings start earning too.</p>
+  </div>
+
+  <!-- 02 -->
+  <div class="step">
+    <div class="steplab"><span class="num">02</span><span class="ttl">How it works</span></div>
+    <p>Take the same $100,000 asset earning 8% a year for 20 years. The only thing that changes is how much of the return you reinvest versus spend:</p>
+    <div class="chart">
+      <div class="ch">$100,000 at 8% a year, 20 years — by reinvestment rate</div>
+      <div class="cs">Where the base ends up. An illustration, not a promised return.</div>
+      <div class="bars">
+        <div class="barcol c0"><div class="bv">$100k</div><div class="bk" style="height:21%;"></div></div>
+        <div class="barcol c50"><div class="bv">~$219k</div><div class="bk" style="height:47%;"></div></div>
+        <div class="barcol c100"><div class="bv">~$466k</div><div class="bk" style="height:100%;"></div></div>
+      </div>
+      <div class="barlabels"><div>Reinvest 0%<br>(spend it all)</div><div>Reinvest 50%</div><div>Reinvest 100%<br>(leave it all in)</div></div>
+    </div>
+    <p>Same asset, same return, same two decades — and the base ends up more than <strong>four times</strong> larger purely from the choice to reinvest. At 0%, you enjoyed the income along the way but the base never moved. The reinvestment rate, quietly, is one of the most powerful numbers in your financial life.</p>
+  </div>
+
+  <!-- 03 -->
+  <div class="step">
+    <div class="steplab"><span class="num">03</span><span class="ttl">In real life</span></div>
+    <p>The same choice shows up everywhere money is earned:</p>
+    <div class="threecol">
+      <div class="tc2 a"><div class="h">The business owner</div><div class="b">Plows profits back into the business to grow it, instead of taking them all home. Builds the asset's value — at the cost of income now.</div></div>
+      <div class="tc2 b"><div class="h">The dividend reinvestor</div><div class="b">Sets dividends to automatically buy more shares rather than pay out cash. Over decades, this single setting changes the result dramatically.</div></div>
+      <div class="tc2 c"><div class="h">The survival constraint</div><div class="b">Someone living paycheck to paycheck reinvests near 0% — not by choice, but because every dollar is needed to live.</div></div>
+    </div>
+    <p class="pq">A dollar taken out is enjoyed once. A dollar reinvested keeps earning for as long as you let it.</p>
+  </div>
+
+  <!-- 04 -->
+  <div class="step">
+    <div class="steplab"><span class="num">04</span><span class="ttl">Apply it to your life</span></div>
+    <div class="applybox">
+      <div class="l">Set your own rate</div>
+      <ul>
+        <li>Whatever your assets earn — even savings interest or small dividends — are you reinvesting it or spending it?</li>
+        <li>Switch on automatic dividend reinvestment anywhere you can; let it happen without a decision.</li>
+        <li>Pick a reinvestment rate you can actually sustain — not the highest, the most durable.</li>
+        <li>Decide in advance: when a raise or windfall lands, what share goes back to work before lifestyle absorbs it?</li>
+      </ul>
+      <p class="tip">You don't need a high reinvestment rate to start — you need a consistent one that grows as your income does.</p>
+    </div>
+  </div>
+
+  <!-- 05 -->
+  <div class="step">
+    <div class="steplab"><span class="num">05</span><span class="ttl">The honest part</span></div>
+    <div class="honest">
+      <div class="l">What no one tells you</div>
+      <p>There's a hard limit that the "just reinvest everything" advice ignores: <strong>you can only reinvest what you don't need to live on.</strong> A high reinvestment rate is partly a privilege of already having enough — the family living on its income reinvests little, and that's not a failure of discipline, it's arithmetic. Don't feel like you're doing it wrong for spending what you genuinely need.</p>
+      <p>Two more truths. Reinvesting means resisting the pull to take the money and enjoy it now — and then waiting through compounding's slow middle before it shows. And reinvesting <em>everything back into the same thing</em> quietly concentrates your risk; even a high reinvestment rate should still spread out. The honest target isn't 100%. It's the highest rate you can hold without starving the present.</p>
+    </div>
+  </div>
+
+  <!-- 06 -->
+  <div class="step">
+    <div class="steplab"><span class="num">06</span><span class="ttl">The bigger picture</span></div>
+    <div class="bridge">
+      <div class="l">Why this matters beyond you</div>
+      <p>Reinvestment rate is a quiet engine of concentration, because the ability to reinvest scales with how much you already have. A family that needs its income to live reinvests little; a fortune that doesn't need its income can put nearly all of it back to work, compounding faster and faster. The gap widens not only because the wealthy <em>earn</em> more, but because they can <strong>afford to keep more of it working</strong>. The same holds for firms: those that can retain and reinvest earnings outgrow those forced to pay them out.</p>
+      <p>So the structural question is the real one: how do we make reinvestment <strong>possible for ordinary people</strong> — incomes high enough, and assets accessible enough, that a working family can also afford to put returns back to work, instead of spending every dollar just to get through the month?</p>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="big">Reinvestment Rate · Building Wealth</div>
+    <div class="ft">Economic Democracy · Building Wealth · economicdemocracy.co<br>A Shared Prosperity education project. General education, not personal financial advice. Figures are illustrative.</div>
+  </div>
+</footer>
+
+</body>
+</html>

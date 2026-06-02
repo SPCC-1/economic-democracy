@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Wealth Lab · The Game of Life · Economic Democracy</title>
+<meta name="description" content="A self-positioning instrument. Learn the five stages of building wealth, see where you stand across money, time, and security, decide the life you want for your family, and plan the one real move to get there.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+:root{
+  --teal:#1E8A8C; --teal-deep:#136466; --teal-soft:#5FB8B6;
+  --orange:#F08A24; --orange-deep:#D9731A; --gold:#F5B940;
+  --clay:#C7553B; --clay-deep:#A8412B;
+  --cream:#FBF4E6; --paper:#FEF9F0; --card:#FFFFFF;
+  --ink:#16211F; --mid:#5d6b66; --rule:#E7DABE; --wash:#F2E9D4;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:780px;margin:0 auto;padding:0 24px;}
+a{color:inherit;}
+
+/* HERO */
+.herobleed{background:var(--teal);background-image:radial-gradient(circle at 12% 16%,rgba(245,185,64,.36),transparent 52%),radial-gradient(circle at 90% 86%,rgba(240,138,36,.30),transparent 55%);}
+.hero{max-width:780px;margin:0 auto;padding:48px 24px 42px;}
+.labtag{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-deep);background:var(--gold);padding:7px 15px;border-radius:100px;margin-bottom:22px;}
+.kicker{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cream);margin-bottom:12px;opacity:.92;}
+h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:60px;line-height:.95;letter-spacing:-.025em;color:#fff;margin-bottom:20px;}
+.standfirst{font-size:21px;line-height:1.42;color:var(--cream);font-weight:500;max-width:42ch;}
+.metaline{margin-top:24px;display:flex;gap:8px;flex-wrap:wrap;}
+.metaline span{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:.03em;color:#fff;background:rgba(255,255,255,.16);border:1.5px solid rgba(255,255,255,.4);padding:6px 13px;border-radius:100px;}
+
+/* INTRO STRIP */
+.introband{background:var(--ink);color:var(--cream);}
+.introband .wrap{padding:34px 24px;}
+.introband p{font-family:'Bricolage Grotesque',sans-serif;font-size:21px;line-height:1.34;font-weight:700;color:#fff;letter-spacing:-.01em;max-width:54ch;}
+.introband strong{color:var(--gold);}
+
+/* BEATS */
+.beat{margin:46px 0;scroll-margin-top:20px;}
+.beatnum{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-deep);background:var(--wash);padding:5px 12px;border-radius:100px;margin-bottom:12px;}
+h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:34px;line-height:1.04;color:var(--ink);margin-bottom:14px;letter-spacing:-.02em;}
+h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:19px;color:var(--ink);margin:22px 0 6px;}
+p{margin-bottom:15px;}
+.lede{font-size:18px;color:var(--mid);max-width:58ch;}
+strong{color:var(--teal-deep);font-weight:600;}
+em{color:#6b5d44;font-style:italic;}
+.caption{font-size:13.5px;color:#8a7a5e;margin:6px 0 0;font-style:italic;}
+
+/* five stages */
+.stages{display:flex;flex-direction:column;gap:11px;margin:18px 0 6px;}
+.stage{display:grid;grid-template-columns:48px 1fr auto;gap:16px;align-items:center;background:var(--card);border:2.5px solid var(--ink);border-radius:13px;padding:14px 18px;box-shadow:5px 5px 0 var(--rule);}
+.stage .n{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:50%;color:#fff;flex-shrink:0;}
+.stage .nm{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:18px;letter-spacing:-.01em;margin-bottom:2px;}
+.stage .ds{font-size:14px;line-height:1.38;color:var(--mid);}
+.stage .pct{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:16px;text-align:right;line-height:1.1;white-space:nowrap;}
+.stage .pct small{display:block;font-family:'DM Sans';font-weight:500;font-size:11px;letter-spacing:.03em;color:var(--mid);text-transform:uppercase;}
+.s1 .n{background:var(--clay);} .s1 .pct{color:var(--clay-deep);}
+.s2 .n{background:var(--orange);} .s2 .pct{color:var(--orange-deep);}
+.s3 .n{background:var(--teal);} .s3 .pct{color:var(--teal-deep);} .s3{box-shadow:5px 5px 0 var(--teal-soft);}
+.stage.dim{background:#f4efe4;border-color:#bdb39c;border-style:dashed;box-shadow:none;opacity:.9;}
+.stage.dim .n{background:#b0a890;} .stage.dim .pct{color:#9a8f76;} .stage.dim .nm{color:#7d7361;}
+
+/* three things */
+.axes{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:20px 0;}
+@media(max-width:600px){.axes{grid-template-columns:1fr;}}
+.axis{background:var(--card);border:2.5px solid var(--ink);border-radius:14px;padding:20px 18px;box-shadow:5px 5px 0 var(--rule);}
+.axis .ah{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:18px;letter-spacing:-.01em;margin-bottom:6px;}
+.axis .aq{font-size:14.5px;line-height:1.45;color:var(--mid);}
+.axis.own .ah{color:var(--orange-deep);}
+.axis.time .ah{color:var(--teal-deep);}
+.axis.sec .ah{color:var(--clay-deep);}
+
+/* generic boxes */
+.box{border-radius:14px;padding:22px 24px;margin:20px 0;}
+.box .lab{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;margin-bottom:8px;}
+.box.bridge{background:var(--teal);background-image:radial-gradient(circle at 90% 14%,rgba(245,185,64,.30),transparent 60%);}
+.box.bridge .lab{color:var(--gold);}
+.box.bridge p{color:#fff;} .box.bridge strong{color:var(--gold);}
+.box.honest{background:#fbeee6;border:2px solid var(--clay);}
+.box.honest .lab{color:var(--clay-deep);}
+.box.honest p{margin-bottom:0;}
+.box.honest strong{color:var(--clay-deep);}
+
+/* concept links */
+.conlinks{font-size:16.5px;line-height:1.7;}
+.conlinks a{color:var(--teal-deep);border-bottom:1.5px solid var(--teal-soft);text-decoration:none;font-weight:600;}
+.conlinks a:hover{background:var(--wash);}
+
+/* ===== PRINTABLE INSTRUMENTS ===== */
+.kit-intro{margin:40px 0 14px;}
+.kit-label{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-deep);background:var(--gold);padding:6px 13px;border-radius:100px;margin-bottom:12px;}
+.tool{background:var(--card);border:3px solid var(--ink);border-radius:18px;padding:6px;margin:22px 0;box-shadow:7px 7px 0 var(--teal);page-break-inside:avoid;}
+.tool-in{background:var(--cream);border-radius:13px;padding:26px 26px 28px;}
+.tool-hd{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap;border-bottom:2px solid var(--rule);padding-bottom:14px;margin-bottom:16px;}
+.tool-hd .tt{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;letter-spacing:-.01em;color:var(--ink);}
+.tool-hd .tnum{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-deep);}
+.tool-sub{font-size:15.5px;color:var(--mid);margin-bottom:8px;line-height:1.5;}
+.howto{display:flex;align-items:center;gap:10px;background:var(--wash);border:1.5px solid var(--rule);border-radius:10px;padding:11px 15px;font-size:14px;line-height:1.4;color:var(--ink);margin:6px 0 18px;}
+.howto b{font-family:'Bricolage Grotesque',sans-serif;color:var(--teal-deep);}
+
+.row{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;padding:13px 0;border-bottom:1px dashed var(--rule);}
+.row .q{font-size:15.5px;line-height:1.42;}
+.row .q b{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;color:var(--teal-deep);}
+.row .q .anc{display:block;font-size:13px;color:var(--mid);margin-top:3px;}
+.score{display:flex;gap:9px;flex-shrink:0;}
+.score .s{width:42px;height:42px;border:2.5px solid var(--mid);border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:17px;color:var(--mid);background:#fff;}
+@media(max-width:560px){.row{grid-template-columns:1fr;}.score{margin-top:4px;}}
+
+.fill{border:1.5px solid var(--mid);border-radius:8px;min-height:44px;background:rgba(255,255,255,.6);margin:8px 0 4px;}
+.fill.tall{min-height:72px;}
+.gridfill{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:560px){.gridfill{grid-template-columns:1fr;}}
+.lineitem{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px dashed var(--rule);}
+.lineitem .lbl{font-size:15.5px;flex:1;line-height:1.4;}
+.lineitem .lbl b{font-family:'Bricolage Grotesque',sans-serif;color:var(--teal-deep);font-weight:700;}
+.lineitem .blank{width:130px;border-bottom:2px solid var(--mid);height:24px;flex-shrink:0;}
+.bandrow{font-size:14.5px;color:var(--ink);margin:4px 0 10px;line-height:1.9;}
+.bandrow span{display:inline-block;border:1.5px solid var(--mid);border-radius:7px;padding:3px 12px;margin:0 5px 5px 0;background:#fff;}
+
+.tally{background:var(--ink);color:var(--cream);border-radius:11px;padding:17px 19px;margin-top:16px;}
+.tally .tl{font-family:'Bricolage Grotesque',sans-serif;font-size:11px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:7px;}
+.tally p{color:#fff;font-size:15px;line-height:1.55;margin:0;}
+.tally strong{color:var(--gold);}
+
+.pickrow{display:flex;gap:10px;margin:10px 0 4px;}
+.pick{flex:1;border:2.5px solid var(--mid);border-radius:10px;padding:13px 14px;text-align:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:16px;color:var(--ink);background:#fff;}
+.pick.mine{border-color:var(--teal);color:var(--teal-deep);}
+.pick.struct{border-color:var(--clay);color:var(--clay-deep);}
+
+/* net-worth statement */
+.nw{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:10px 0 6px;}
+@media(max-width:560px){.nw{grid-template-columns:1fr;}}
+.nw h4{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;letter-spacing:-.01em;margin-bottom:4px;}
+.nw .own h4{color:var(--teal-deep);} .nw .owe h4{color:var(--clay-deep);}
+.nwline{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:7px 0;border-bottom:1px dashed var(--rule);font-size:14.5px;line-height:1.3;}
+.amt{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;color:var(--ink);white-space:nowrap;}
+.ublank{display:inline-block;width:92px;border-bottom:2px solid var(--mid);height:17px;margin-left:2px;vertical-align:baseline;}
+.nwtotal{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 0 2px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;border-top:2px solid var(--ink);margin-top:2px;}
+.nwresult{background:var(--ink);color:var(--cream);border-radius:11px;padding:15px 18px;margin-top:14px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;}
+.nwresult .rl{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:17px;color:#fff;}
+.nwresult .rb{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:15px;color:var(--gold);}
+.nwresult .rb .ublank{border-color:var(--gold);width:120px;}
+
+/* health metaphor callout */
+.metaphor{background:var(--wash);border:2px dashed var(--teal-soft);border-radius:12px;padding:16px 20px;margin:18px 0;font-size:15.5px;line-height:1.5;}
+.metaphor b{font-family:'Bricolage Grotesque',sans-serif;color:var(--teal-deep);}
+
+/* six-month tracker */
+.track{width:100%;border-collapse:collapse;margin-top:12px;font-size:14px;}
+.track th{background:var(--ink);color:var(--cream);font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;padding:9px 10px;text-align:left;}
+.track td{border:1px solid var(--rule);height:36px;padding:6px 10px;background:#fff;}
+
+/* lesson clusters (the build) */
+.cluster{display:grid;grid-template-columns:34px 1fr;gap:14px;padding:15px 0;border-bottom:1px dashed var(--rule);}
+.cluster .cnum{width:34px;height:34px;border-radius:50%;background:var(--teal);color:#fff;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
+.cluster .cname{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:17px;color:var(--ink);margin-bottom:2px;letter-spacing:-.01em;}
+.cluster .cdesc{font-size:15px;color:var(--mid);line-height:1.45;margin-bottom:7px;}
+.cluster .clinks{font-size:15.5px;line-height:1.75;}
+.cluster .clinks a{color:var(--teal-deep);border-bottom:1.5px solid var(--teal-soft);text-decoration:none;font-weight:600;}
+.cluster .clinks a:hover{background:var(--wash);}
+.pathnote{background:var(--wash);border-left:4px solid var(--teal);border-radius:0 10px 10px 0;padding:16px 20px;margin:6px 0 20px;font-size:15.5px;line-height:1.55;}
+.pathnote b{font-family:'Bricolage Grotesque',sans-serif;color:var(--teal-deep);}
+
+/* privacy note */
+.privacy{display:flex;gap:14px;align-items:flex-start;background:var(--wash);border:2px dashed var(--teal-soft);border-radius:13px;padding:18px 20px;margin:22px 0;}
+.privacy .pk{font-size:26px;line-height:1;}
+.privacy p{font-size:15px;line-height:1.5;margin:0;color:var(--ink);}
+.privacy b{color:var(--teal-deep);font-family:'Bricolage Grotesque',sans-serif;}
+
+/* shared standards */
+.standards{background:var(--card);border:2.5px solid var(--ink);border-radius:16px;padding:24px 26px;margin:24px 0;box-shadow:5px 5px 0 var(--orange);}
+.standards .lab{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:var(--orange-deep);margin-bottom:10px;}
+.standards ul{list-style:none;}
+.standards li{padding:9px 0;border-bottom:1px dashed var(--rule);font-size:16px;line-height:1.45;display:flex;gap:11px;}
+.standards li:last-child{border-bottom:none;}
+.standards li::before{content:"";flex-shrink:0;width:20px;height:20px;border:2.5px solid var(--teal);border-radius:6px;margin-top:2px;}
+.standards li b{font-family:'Bricolage Grotesque',sans-serif;color:var(--teal-deep);font-weight:700;}
+
+footer{background:var(--ink);color:var(--cream);margin-top:46px;}
+footer .wrap{padding:40px 24px;}
+footer .big{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;color:#fff;margin-bottom:8px;letter-spacing:-.01em;}
+footer .ft{font-size:13.5px;line-height:1.6;color:rgba(251,244,230,.7);}
+footer .ft a{color:var(--gold);}
+footer .dis{margin-top:12px;font-size:12.5px;color:rgba(251,244,230,.5);max-width:60ch;}
+
+@media print{
+  body{background:#fff;font-size:12pt;}
+  .herobleed,.introband,footer{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .tool{box-shadow:none;border-width:2px;page-break-inside:avoid;}
+  .beat{margin:18px 0;}
+}
+</style>
+</head>
+<body>
+
+<div class="herobleed">
+  <div class="hero">
+    <span class="labtag">The Wealth Lab · A Lab You Run on Yourself</span>
+    <div class="kicker">Economic Democracy · The Individual Agency Strand</div>
+    <h1>The Game<br>of Life.</h1>
+    <p class="standfirst">Five stages of building wealth. Money is a tool — for the time and security it buys, and the life those are for. Find where you stand, decide the life you want for your family, and plan the one real move toward it.</p>
+    <div class="metaline">
+      <span>● A self-investigation</span>
+      <span>3 printable tools</span>
+      <span>Private · nothing submitted</span>
+    </div>
+  </div>
+</div>
+
+<div class="introband">
+  <div class="wrap">
+    <p>A Civic Lab points outward — at a decision in your community. This one points <strong>inward</strong>, at your own life. Same discipline: gather honest numbers, skip the comforting story, and decide where you actually stand — and where you want to go.</p>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- BEAT 1 -->
+  <div class="beat">
+    <div class="beatnum">Beat 1 · The Five Stages</div>
+    <h2>The five stages of building wealth</h2>
+    <p class="lede">Building wealth happens in roughly five stages. Here's about how American households are spread across them.</p>
+    <div class="stages">
+      <div class="stage s1"><div class="n">1</div><div><div class="nm">Survival</div><div class="ds">Covering the basics, little or no savings, money is a constant source of stress.</div></div><div class="pct">~44%<small>of households</small></div></div>
+      <div class="stage s2"><div class="n">2</div><div><div class="nm">Stable</div><div class="ds">An emergency cushion in place, debt under control, some breathing room.</div></div><div class="pct">~30%<small>of households</small></div></div>
+      <div class="stage s3"><div class="n">3</div><div><div class="nm">Building Wealth</div><div class="ds">Income is ahead of spending, the surplus gets invested, assets are growing.</div></div><div class="pct">~20%<small>of households</small></div></div>
+      <div class="stage s4 dim"><div class="n">4</div><div><div class="nm">Work-Optional</div><div class="ds">What you own earns enough to cover your life. You can work — but you don't have to.</div></div><div class="pct">~5%<small>of households</small></div></div>
+      <div class="stage s5 dim"><div class="n">5</div><div><div class="nm">Surplus</div><div class="ds">Wealth grows faster than it's spent. Rare — and where the wider course picks up the story.</div></div><div class="pct">~1%<small>of households</small></div></div>
+    </div>
+    <p>Two honest things to notice. <strong>Very few people ever reach the point where what they own pays for their life without working</strong> — that's the top rung or two, and it's rare. Most of us spend our lives somewhere in the first three: Survival, Stable, or Building Wealth. That's normal, not a failure.</p>
+    <p>And here's the real work: the goal isn't to chase the top rung. It's to <strong>decide what kind of life you actually want for yourself and your family — and then plan your life to get there.</strong> For some people that's reaching Stable and staying there, secure, with time to spare. For others it's Building toward something larger. There's no single right rung.</p>
+    <p>It was also never only about money. <strong>Money is a tool</strong> — what matters is what it buys you (time and security) and what those, in turn, are for (a life, and the people in it). The next beat sets that order straight.</p>
+    <p class="caption">Distribution figures drawn from public sources (Federal Reserve Survey of Consumer Finances and related data). Educational framing — not personalized financial advice.</p>
+  </div>
+
+  <!-- BEAT 2 -->
+  <div class="beat">
+    <div class="beatnum">Beat 2 · What It's For</div>
+    <h2>Money is a tool. Know what it's for.</h2>
+    <p class="lede"><strong>Money is an extremely useful tool. It is the means, not the end.</strong> It buys two things worth having: <strong>time</strong> and <strong>security</strong>. And those two exist to free you for the things money can't buy — the people you love, and work that means something. Build the money so it can buy those. Not so it can buy more money.</p>
+    <div class="axes">
+      <div class="axis own">
+        <div class="ah">Money &amp; Ownership <span style="font-family:'DM Sans';font-weight:500;font-size:12px;color:var(--mid);">· the tool</span></div>
+        <div class="aq">Do you own things that grow and pay you — or only earn a wage? A wage stops when you stop. Assets keep working.</div>
+      </div>
+      <div class="axis time">
+        <div class="ah">Time <span style="font-family:'DM Sans';font-weight:500;font-size:12px;color:var(--mid);">· what it buys</span></div>
+        <div class="aq">Do you own your time, or does life require selling all of it? Time you can't get back is the cost nobody puts on the receipt.</div>
+      </div>
+      <div class="axis sec">
+        <div class="ah">Security <span style="font-family:'DM Sans';font-weight:500;font-size:12px;color:var(--mid);">· what it buys</span></div>
+        <div class="aq">Could you take a hit — a job loss, an illness — without it turning into a catastrophe? Reserved, insured, not riding on one thing.</div>
+      </div>
+    </div>
+    <p>These three you can build, and the tools below help you measure them honestly. What they're <em>for</em> — belonging, meaning, a life — you can't put a number on, and this lab won't try. Just keep it in view: a bigger paycheck that costs all your time and leaves you exposed isn't the win it looks like. <a href="ED_FR_The_Tool_And_The_End.html" style="color:var(--teal-deep);border-bottom:1.5px solid var(--teal-soft);font-weight:600;">The Tool and the End</a> is the full essay behind this, if you want it.</p>
+  </div>
+
+  <!-- THE ASSIGNMENT -->
+  <div class="beat">
+    <div class="beatnum">The Assignment</div>
+    <h2>Run the lab on yourself</h2>
+    <p class="lede">Three instruments, done in order. The first and third are quick, honest self-assessment — letters, not numbers. The middle one is the real measurement: you'll <strong>look up your actual accounts and calculate your net worth to the dollar</strong>, because you can't manage what you won't measure. Print them, or copy the lines onto your own paper.</p>
+    <div class="privacy">
+      <span class="pk">&#128274;</span>
+      <p><b>Your numbers never leave your hands.</b> Nothing to log into, nothing to submit, nothing stored anywhere — which matters most for Tool 2, where you'll write real figures. This is paper-and-pencil work, built so the only person who ever sees them is you.</p>
+    </div>
+  </div>
+
+  <!-- TOOL 1 -->
+  <div class="kit-intro">
+    <span class="kit-label">Tool 1 of 3 · The Three Things</span>
+  </div>
+  <div class="tool">
+    <div class="tool-in">
+      <div class="tool-hd">
+        <span class="tt">The Three Things</span>
+        <span class="tnum">Tool 01</span>
+      </div>
+      <p class="tool-sub">Score yourself on money &amp; ownership, time, and security. Answer for where you are now — not where you mean to be.</p>
+      <div class="howto"><b>How to use it:</b>&nbsp; Circle one letter per line. <b>A</b> = not you yet · <b>B</b> = partway · <b>C</b> = a real strength.</div>
+
+      <h3 style="color:var(--orange-deep);">Money &amp; Ownership</h3>
+      <div class="row"><div class="q">Do you own anything that grows or pays you without your labor — retirement, property equity, investments, a business that runs without you?<span class="anc">A: none &nbsp;·&nbsp; B: a little &nbsp;·&nbsp; C: several</span></div><div class="score"><span class="s">A</span><span class="s">B</span><span class="s">C</span></div></div>
+      <div class="row"><div class="q">If your employer offers a <b>retirement match</b>, are you capturing all of it?<span class="anc">A: no, or none offered &nbsp;·&nbsp; B: some &nbsp;·&nbsp; C: all of it</span></div><div class="score"><span class="s">A</span><span class="s">B</span><span class="s">C</span></div></div>
+      <div class="row"><div class="q">How much of your income comes from <b>things you own</b> rather than <b>hours you work</b>?<span class="anc">A: none &nbsp;·&nbsp; B: a little &nbsp;·&nbsp; C: a real share</span></div><div class="score"><span class="s">A</span><span class="s">B</span><span class="s">C</span></div></div>
+
+      <h3 style="color:var(--teal-deep);">Time</h3>
+      <div class="row"><div class="q">Could you take <b>two full weeks off</b> without losing income?<span class="anc">A: no &nbsp;·&nbsp; B: tight &nbsp;·&nbsp; C: yes</span></div><div class="score"><span class="s">A</span><span class="s">B</span><span class="s">C</span></div></div>
+      <div class="row"><div class="q">How much <b>control</b> do you have over your hours and schedule?<span class="anc">A: none &nbsp;·&nbsp; B: some &nbsp;·&nbsp; C: full</span></div><div class="score"><span class="s">A</span><span class="s">B</span><span class="s">C</span></div></div>
+      <div class="row"><div class="q">One job at reasonable hours, or stacking jobs and long weeks to stay afloat?<span class="anc">A: stacked &nbsp;·&nbsp; B: busy &nbsp;·&nbsp; C: reasonable</span></div><div class="score"><span class="s">A</span><span class="s">B</span><span class="s">C</span></div></div>
+
+      <h3 style="color:var(--clay-deep);">Security</h3>
+      <div class="row"><div class="q">How many <b>months of expenses</b> could you cover from cash you can reach?<span class="anc">A: under 1 &nbsp;·&nbsp; B: 1–3 &nbsp;·&nbsp; C: 3–6 or more</span></div><div class="score"><span class="s">A</span><span class="s">B</span><span class="s">C</span></div></div>
+      <div class="row"><div class="q">Are you covered for the <b>big risks</b> — health insurance, plus income/disability and life cover if people depend on you?<span class="anc">A: no &nbsp;·&nbsp; B: partly &nbsp;·&nbsp; C: yes</span></div><div class="score"><span class="s">A</span><span class="s">B</span><span class="s">C</span></div></div>
+      <div class="row"><div class="q">Is your wealth <b>spread</b> across more than one thing, or riding on a single job, asset, or bet?<span class="anc">A: one thing &nbsp;·&nbsp; B: a few &nbsp;·&nbsp; C: spread</span></div><div class="score"><span class="s">A</span><span class="s">B</span><span class="s">C</span></div></div>
+
+      <div class="tally">
+        <div class="tl">Your three scores</div>
+        <p>Take your <strong>lowest letter</strong> in each block as that area's score. &nbsp; Money &amp; Ownership: ____ &nbsp;·&nbsp; Time: ____ &nbsp;·&nbsp; Security: ____. &nbsp; The <strong>area with the most A's is where your next move lives</strong> — carry it to Tool 3.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOOL 2 -->
+  <div class="kit-intro">
+    <span class="kit-label">Tool 2 of 3 · The Position Snapshot</span>
+  </div>
+  <div class="tool">
+    <div class="tool-in">
+      <div class="tool-hd">
+        <span class="tt">The Position Snapshot</span>
+        <span class="tnum">Tool 02</span>
+      </div>
+      <p class="tool-sub">This is the real one. Don't estimate — <b>open your accounts and write the true numbers.</b> You'll calculate your net worth, read which of the five stages you're in, and set a date to do it again.</p>
+      <div class="howto"><b>How to use it:</b>&nbsp; Fill in Part A from your actual statements. Answer Part B honestly (<b>A</b> = not yet · <b>B</b> = partway · <b>C</b> = yes). Then read your stage and book your next check-in.</div>
+
+      <h3>Part A · Your net worth statement</h3>
+      <p style="font-size:15px;color:var(--mid);margin:2px 0 8px;">Pull up your accounts and write the real figures. This is the single most important number in the lab — and the one you'll watch over time.</p>
+      <div class="nw">
+        <div class="own">
+          <h4>What you own &mdash; assets</h4>
+          <div class="nwline"><span>Cash &amp; checking</span><span class="amt">$<span class="ublank"></span></span></div>
+          <div class="nwline"><span>Savings &amp; emergency fund</span><span class="amt">$<span class="ublank"></span></span></div>
+          <div class="nwline"><span>Retirement (401k, IRA)</span><span class="amt">$<span class="ublank"></span></span></div>
+          <div class="nwline"><span>Other investments</span><span class="amt">$<span class="ublank"></span></span></div>
+          <div class="nwline"><span>Home (market value)</span><span class="amt">$<span class="ublank"></span></span></div>
+          <div class="nwline"><span>Vehicles (resale value)</span><span class="amt">$<span class="ublank"></span></span></div>
+          <div class="nwline"><span>Business / other assets</span><span class="amt">$<span class="ublank"></span></span></div>
+          <div class="nwtotal"><span>Total assets</span><span class="amt">$<span class="ublank"></span></span></div>
+        </div>
+        <div class="owe">
+          <h4>What you owe &mdash; debts</h4>
+          <div class="nwline"><span>Mortgage</span><span class="amt">$<span class="ublank"></span></span></div>
+          <div class="nwline"><span>Student loans</span><span class="amt">$<span class="ublank"></span></span></div>
+          <div class="nwline"><span>Credit cards</span><span class="amt">$<span class="ublank"></span></span></div>
+          <div class="nwline"><span>Auto loans</span><span class="amt">$<span class="ublank"></span></span></div>
+          <div class="nwline"><span>Medical / other debt</span><span class="amt">$<span class="ublank"></span></span></div>
+          <div class="nwline" style="border-bottom:none;height:30px;"><span></span></div>
+          <div class="nwline" style="border-bottom:none;height:30px;"><span></span></div>
+          <div class="nwtotal"><span>Total debts</span><span class="amt">$<span class="ublank"></span></span></div>
+        </div>
+      </div>
+      <div class="nwresult">
+        <span class="rl">Net worth = total assets &minus; total debts</span>
+        <span class="rb">$<span class="ublank"></span></span>
+      </div>
+
+      <h3>Part B · Read your stage</h3>
+      <div class="row"><div class="q">In a normal month, does income <b>cover essentials</b> without new debt?<span class="anc">A: no &nbsp;·&nbsp; B: just barely &nbsp;·&nbsp; C: yes</span></div><div class="score"><span class="s">A</span><span class="s">B</span><span class="s">C</span></div></div>
+      <div class="row"><div class="q">After essentials, is there a <b>surplus you can save or invest</b>?<span class="anc">A: deficit &nbsp;·&nbsp; B: about flat &nbsp;·&nbsp; C: surplus</span></div><div class="score"><span class="s">A</span><span class="s">B</span><span class="s">C</span></div></div>
+      <div class="row"><div class="q">From your statement: how many <b>months of expenses</b> would your reachable cash cover?<span class="anc">A: under 1 &nbsp;·&nbsp; B: 1–3 &nbsp;·&nbsp; C: 3–6 or more</span></div><div class="score"><span class="s">A</span><span class="s">B</span><span class="s">C</span></div></div>
+      <div class="row"><div class="q">Do you own at least one <b>asset that grows</b> (retirement, investments, equity, a business)?<span class="anc">A: no &nbsp;·&nbsp; B: a little &nbsp;·&nbsp; C: yes</span></div><div class="score"><span class="s">A</span><span class="s">B</span><span class="s">C</span></div></div>
+
+      <div class="tally">
+        <div class="tl">Read your stage</div>
+        <p><strong>Survival</strong> — a normal month doesn't cover essentials, or ends in deficit. &nbsp; <strong>Stable</strong> — essentials covered, high-interest debt under control, a starter cushion. &nbsp; <strong>Building Wealth</strong> — 3+ months reserve, a surplus you invest, and at least one asset that grows. &nbsp; Beyond Building Wealth, the lab hands you to the wider course.</p>
+      </div>
+
+      <h3>Part C · Track it every six months</h3>
+      <div class="metaphor">Track your wealth like you track your health. <b>Generational wealth is generational health</b> — what you measure, you can manage; what you build and protect, you pass on. Run this statement every six months and watch the <em>trajectory</em>, not just the number.</div>
+      <table class="track">
+        <tr><th>Date</th><th>Net worth</th><th>Change since last</th><th>Stage</th><th>One thing to do next</th></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- TOOL 3 -->
+  <div class="kit-intro">
+    <span class="kit-label">Tool 3 of 3 · The One-Move Plan</span>
+  </div>
+  <div class="tool">
+    <div class="tool-in">
+      <div class="tool-hd">
+        <span class="tt">The One-Move Plan</span>
+        <span class="tnum">Tool 03</span>
+      </div>
+      <p class="tool-sub">Not a to-do list — <b>one move</b>, the one that comes off your weakest area. Name it, then build it with the lessons listed after.</p>
+
+      <h3>The life I'm planning for</h3>
+      <div class="lineitem" style="border-bottom:none;padding-bottom:4px;"><span class="lbl" style="font-size:14.5px;color:var(--mid);">In a sentence: the kind of life I want for myself and my family, and the stage that life needs.</span></div>
+      <div class="fill"></div>
+
+      <h3>My weakest area right now</h3>
+      <div class="lineitem" style="border-bottom:none;padding-bottom:4px;"><span class="lbl" style="font-size:14.5px;color:var(--mid);">From Tool 1 (most A's) or Tool 2 (lowest stage).</span></div>
+      <div class="fill"></div>
+
+      <h3>Match it to the move</h3>
+      <div class="lineitem"><span class="lbl"><b>Month ends in deficit</b> &rarr; close the gap before anything else.</span></div>
+      <div class="lineitem"><span class="lbl"><b>No cushion</b> &rarr; build a 3-month reserve in cash you can reach.</span></div>
+      <div class="lineitem"><span class="lbl"><b>High-interest debt</b> &rarr; kill the bad debt first; it outruns any return.</span></div>
+      <div class="lineitem"><span class="lbl"><b>Exposed to a big risk</b> &rarr; cover the catastrophes (health, income, life).</span></div>
+      <div class="lineitem"><span class="lbl"><b>Wages only, no growing asset</b> &rarr; capture the match; make the wage-to-asset move.</span></div>
+      <div class="lineitem"><span class="lbl"><b>You own a job, not an asset</b> &rarr; build something that runs and sells without you.</span></div>
+      <div class="lineitem"><span class="lbl"><b>Earning well but short on time and assets</b> &rarr; build one income stream that isn't your hours.</span></div>
+      <div class="lineitem"><span class="lbl"><b>Building but concentrated</b> &rarr; diversify and protect what you've built.</span></div>
+
+      <h3>My one move, in a sentence</h3>
+      <div class="fill tall"></div>
+
+      <h3>The honest check</h3>
+      <p style="font-size:15px;margin:2px 0 4px;">Is this something <b style="font-family:'Bricolage Grotesque';color:var(--teal-deep);">I can move</b> myself, or is it <b style="font-family:'Bricolage Grotesque';color:var(--clay-deep);">structural</b> — income or costs that no personal move fixes? Circle one:</p>
+      <div class="pickrow">
+        <div class="pick mine">Mine to move</div>
+        <div class="pick struct">Structural</div>
+      </div>
+      <p style="font-size:14.5px;color:var(--mid);margin-top:12px;">If it's structural, say so plainly — that's not the end of the story, it's the doorway to the collective half of the project. No budgeting fixes a wage that doesn't cover a life. That's what the safety-net lessons and the rest of the curriculum are for.</p>
+    </div>
+  </div>
+
+  <!-- BUILD THE MOVE -->
+  <div class="beat">
+    <div class="beatnum">The Build · The Lessons</div>
+    <h2>How to use the lessons</h2>
+    <p class="lede">Every concept below is a short, standalone lesson. Use them one of two ways.</p>
+    <div class="pathnote"><b>Two ways in.</b> &nbsp;If you just want your one move, jump straight to the cluster that matches your constraint and read only those. &nbsp;If you want the whole picture — and to really understand wealth, you eventually should — read the clusters in order, top to bottom: measure first, see how money comes in, protect the floor, build ownership, learn the growth mechanics, then (if you're an owner) the business clusters, and finally how to protect and pass it on.</div>
+
+    <div class="cluster">
+      <div class="cnum">1</div>
+      <div>
+        <div class="cname">Measure it &mdash; start here</div>
+        <div class="cdesc">The numbers and statements behind Tool 2. You can't build what you won't track, so learn to read your own financial picture first.</div>
+        <div class="clinks"><a href="ED_WB_Net_Worth.html">Net Worth</a> · <a href="ED_WB_Reading_the_Statements.html">Reading the Statements</a> · <a href="ED_WB_Cash_Flow_vs_Net_Worth.html">Cash Flow vs. Net Worth</a> · <a href="ED_WB_Paper_vs_Usable_Wealth.html">Paper vs. Usable Wealth</a> · <a href="ED_WB_Savings_Rate.html">Savings Rate</a></div>
+      </div>
+    </div>
+
+    <div class="cluster">
+      <div class="cnum">2</div>
+      <div>
+        <div class="cname">How money comes in</div>
+        <div class="cdesc">The three ways income arrives — and why its <em>source</em> matters as much as its size. A wage and an asset are not the same kind of money.</div>
+        <div class="clinks"><a href="ED_WB_Earned_Income_Wages.html">Earned Income (Wages)</a> · <a href="ED_WB_Self_Employment.html">Self-Employment</a> · <a href="ED_WB_Passive_Income.html">Passive Income</a></div>
+      </div>
+    </div>
+
+    <div class="cluster">
+      <div class="cnum">3</div>
+      <div>
+        <div class="cname">Protect the floor first</div>
+        <div class="cdesc">Before you grow anything, make it shock-proof: a cushion, the right kind of debt, and cover for the catastrophes that otherwise wipe out years of building.</div>
+        <div class="clinks"><a href="ED_WB_Liquidity_Emergency_Reserve.html">Liquidity &amp; Emergency Reserve</a> · <a href="ED_WB_Good_vs_Bad_Debt.html">Good Debt vs. Bad Debt</a> · <a href="ED_WB_Health_Insurance.html">Health Insurance</a> · <a href="ED_WB_Retirement_Social_Security.html">Retirement &amp; Social Security</a> · <a href="ED_WB_Medicare_Medicaid.html">Medicare &amp; Medicaid</a></div>
+      </div>
+    </div>
+
+    <div class="cluster">
+      <div class="cnum">4</div>
+      <div>
+        <div class="cname">Own things &mdash; the wage-to-asset move</div>
+        <div class="cdesc">The heart of building: turning a paycheck you trade hours for into assets that work whether or not you show up.</div>
+        <div class="clinks"><a href="ED_WB_Asset_vs_Liability.html">Asset vs. Liability</a> · <a href="ED_WB_Income_Producing_Assets.html">Income-Producing Assets</a> · <a href="ED_WB_Equity_Ownership_Stake.html">Equity / Ownership Stake</a> · <a href="ED_WB_Wage_to_Asset_Move.html">The Wage-to-Asset Move</a></div>
+      </div>
+    </div>
+
+    <div class="cluster">
+      <div class="cnum">5</div>
+      <div>
+        <div class="cname">The growth mechanics</div>
+        <div class="cdesc">How small, steady moves become large over time — the math that quietly rewards starting early and reinvesting.</div>
+        <div class="clinks"><a href="ED_WB_Compounding.html">Compounding</a> · <a href="ED_WB_Reinvestment_Rate.html">Reinvestment Rate</a> · <a href="ED_WB_Time_Starting_Early.html">Time &amp; Starting Early</a> · <a href="ED_WB_Leverage.html">Leverage</a></div>
+      </div>
+    </div>
+
+    <div class="cluster">
+      <div class="cnum">6</div>
+      <div>
+        <div class="cname">Business as the bet</div>
+        <div class="cdesc">For owners and would-be owners: building something that runs without you, holds value, and can one day be sold — and the real risks of the bet.</div>
+        <div class="clinks"><a href="ED_WB_Business_as_the_Bet.html">Business as the Bet</a> · <a href="ED_WB_Self_Employment_vs_Transferable_Asset.html">Self-Employment vs. a Transferable Asset</a> · <a href="ED_WB_Business_Valuation.html">Business Valuation</a> · <a href="ED_WB_Control_vs_Ownership.html">Control vs. Ownership</a> · <a href="ED_WB_Marketability_Liquidity.html">Marketability &amp; Liquidity</a> · <a href="ED_WB_Risk_and_Failure.html">Risk &amp; Failure</a></div>
+      </div>
+    </div>
+
+    <div class="cluster">
+      <div class="cnum">7</div>
+      <div>
+        <div class="cname">Protect it &amp; pass it on</div>
+        <div class="cdesc">Keep more of what you build, spread the risk, and move it to the next generation intact — where individual building meets the bigger picture.</div>
+        <div class="clinks"><a href="ED_WB_Tax_by_Income_Type.html">Tax by Income Type</a> · <a href="ED_WB_Diversification.html">Diversification</a> · <a href="ED_WB_Wealth_Transfer.html">Wealth Transfer</a> · <a href="ED_WB_Individual_Building_vs_Concentration.html">Individual Building vs. Concentration</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HONEST PART · THE TRAP -->
+  <div class="beat">
+    <div class="beatnum">The Honest Part</div>
+    <h2>Build — but know the trap</h2>
+    <p class="lede">Here's the thing most money tools won't tell you. A lot of what drives us to want more isn't need — it's comparison. We measure ourselves against the neighbors, the feed, the highlight reel, and feel behind. That's the oldest trap in the game: chasing status to fill an emptiness that no amount of money fills.</p>
+    <div class="box honest">
+      <div class="lab">The line between building and hoarding</div>
+      <p>There's nothing wrong with wealth — the problem is accumulation with nothing behind it. Past the point where money buys you enough <strong>time and security</strong>, more of it stops buying more life; it just feeds the scoreboard. The difference between <strong>building</strong> and <strong>hoarding</strong> was never the size of the pile. It's whether it still serves a life — yours, and the people in it.</p>
+    </div>
+    <p>So as you name your one move, name what it's for, too. Build your ownership stake. Just don't let the building quietly become the point.</p>
+  </div>
+
+  <!-- HONEST MONEY STANDARDS -->
+  <div class="beat">
+    <div class="beatnum">Before You Begin · Shared Standards</div>
+    <h2>Honest Money Standards</h2>
+    <p class="lede">The Civic Labs have Ethics &amp; Fieldwork Standards for research on a community. This is the individual version — the pledge you make to yourself before you score a single line.</p>
+    <div class="standards">
+      <div class="lab">The pledge</div>
+      <ul>
+        <li><b>Answer for today.</b> Score where you are now, not where you intend to be. The flattering answer only fools you.</li>
+        <li><b>Measure for real, and keep it private.</b> Your net worth statement uses true numbers — look them up, write them down, and keep the page to yourself. What you measure, you can manage.</li>
+        <li><b>Decide the life first.</b> The point isn't the highest rung — it's the life you actually want for your family, and the stage that life needs.</li>
+        <li><b>Name the structural honestly.</b> When the constraint is income or cost that no personal move fixes, say so — and follow it to the collective half of the course.</li>
+        <li><b>Money is the means, not the end.</b> Keep in view what the time and security are for. A bigger paycheck that costs all your time and leaves you exposed isn't the win it looks like.</li>
+        <li><b>Check in every six months.</b> Run your net worth statement twice a year and track the trajectory. Wealth, like health, is managed by measuring it — not by hoping.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- THE BRIDGE -->
+  <div class="beat">
+    <div class="beatnum">The Bigger Picture</div>
+    <h2>The same project, at two scales</h2>
+    <div class="box bridge">
+      <div class="lab">Why this matters beyond you</div>
+      <p>Building an ownership stake is one of the most powerful, freeing things an ordinary person can do — so build. The danger was never ownership; it's <strong>concentration</strong> — wealth piled past any purpose. At the scale of a society we call that monopoly; at the scale of a life, hoarding. Same thing, two sizes. And both cut us off from the truth underneath all of it: we build alone, more or less, but we were never meant to <em>live</em> that way. The thinnest life is the one measured only in what you personally own. The deepest security was never a bigger pile — it's <strong>people who'd catch you, and a reason you're building at all.</strong> So the personal plan and the democratic project are the same project at two scales: build your ownership stake, and widen the circle of who gets to build one.</p>
+    </div>
+    <p class="conlinks" style="margin-top:18px;">Cross the bridge: <a href="ED_FR_The_Tool_And_The_End.html">The Tool and the End</a> · <a href="ED_WB_Individual_Building_vs_Concentration.html">Individual Building vs. Concentration</a> · <a href="ED_WB_Section_Model.html">How Wealth Is Actually Built</a> · <a href="concepts.html">The Concept Library</a> · <a href="ED_LAB_Civic_Labs.html">The Civic Labs</a></p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="big">The Wealth Lab · The Game of Life</div>
+    <div class="ft">
+      Economic Democracy · The individual-agency strand, beside the Civic Labs.<br>
+      &copy; 2026 · Alfredo Mathew III · AM3 LLC · Working World LLC · SPCC.1 · <a href="index.html">economicdemocracy.co</a>
+      <div class="dis">An educational instrument for self-reflection, not personalized financial, investment, tax, or legal advice. Figures are illustrative and drawn from public sources; this is a draft for review.</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
