@@ -12,7 +12,7 @@
   --rule:#d0ccc6;--paper:#f7f5f0;--cream:#efede7;--warm:#e8e4db;--white:#fff;--gold:#8a6f3e;
   --tool:#2f5e8a;--arg:#8a6f3e;--stance:#1f6f43;
 }
-body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased;font-size:14px;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--white);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased;font-size:14px;}
 .page{max-width:940px;margin:0 auto;padding:0 2rem 4rem;}
 
 .masthead{border-bottom:3px solid var(--black);padding:2rem 0 1.4rem;margin-bottom:1.5rem;}
@@ -27,7 +27,7 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:va
 .sec-note em{font-style:italic;}
 
 .rhythm{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin:1.25rem 0;}
-.beat{background:var(--white);padding:1rem 1.15rem;}
+.beat{background:var(--paper);padding:1rem 1.15rem;}
 .beat-n{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.4rem;font-weight:500;}
 .beat.tool .beat-n{color:var(--tool);}
 .beat.arg .beat-n{color:var(--arg);}
@@ -42,7 +42,7 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--paper);color:va
 .steps li::before{content:counter(st);position:absolute;left:0;top:.55rem;font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--gold);font-weight:500;border:1px solid var(--rule);width:1.5rem;height:1.5rem;display:flex;align-items:center;justify-content:center;}
 .steps li b{font-weight:600;color:var(--black);}
 
-.unit{border:1px solid var(--black);background:var(--white);margin:1.5rem 0;break-inside:avoid;}
+.unit{border:1px solid var(--black);background:var(--paper);margin:1.5rem 0;break-inside:avoid;}
 .unit-head{background:var(--black);color:var(--white);padding:.8rem 1.2rem;}
 .unit-tag{font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.25rem;}
 .unit-name{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:var(--white);line-height:1.1;}
