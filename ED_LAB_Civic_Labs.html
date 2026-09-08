@@ -51,6 +51,8 @@ a{color:inherit;text-decoration:none;}
 .section .intro a{color:var(--accent);border-bottom:1px solid var(--accent-soft);}
 
 /* flagship lab card */
+.live-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch;}
+@media(max-width:720px){.live-grid{grid-template-columns:1fr;}}
 .flagship{display:block;border:1px solid var(--line);border-radius:6px;background:var(--card);overflow:hidden;transition:border-color .15s,box-shadow .15s;}
 .flagship:hover{border-color:var(--accent-soft);box-shadow:0 4px 24px rgba(26,28,30,.06);}
 .flagship .strip{display:flex;align-items:center;gap:12px;padding:14px 26px;border-bottom:1px solid var(--line);background:var(--wash);}
@@ -133,45 +135,40 @@ footer .copy .ai{display:block;margin-top:4px;color:#9aa3ab;}
 
   <div class="section">
     <div class="seclabel sans">Section I · Live Now</div>
-    <h2>The Flagship: <em>Who Gets to Eat Affordably?</em></h2>
-    <p class="intro">The first Civic Lab is built around a decision happening right now in New York City — its plan to open a publicly owned grocery store in Hunts Point, one of the poorest neighborhoods in the country. It is complete, classroom-ready, and the template every future lab follows.</p>
-    <a class="flagship" href="ED_LAB_Food_Affordability.html">
-      <div class="strip">
-        <span class="live sans">● Live</span>
-        <span class="stripmeta sans">Civic Lab 01 · Food Affordability · Hunts Point, The Bronx</span>
-      </div>
-      <div class="body">
-        <div class="labno sans">Civic Lab 01</div>
-        <h3>Who Gets to Eat Affordably?</h3>
-        <p>Should a city build and own a grocery store? Students investigate the real players, the real money, and the genuine disagreement — steelmanning the case for the store, the small-grocer's objection, and the alternative of helping the stores already there.</p>
-        <div class="incl sans"><b>The lab includes:</b> verified neighborhood data · three steelmanned positions · two background readers (the history and the economics) · five printable field tools · the full eight-beat investigation.</div>
-        <span class="go sans">Open the lab →</span>
-      </div>
-    </a>
-  </div>
-
-  <div class="section">
-    <div class="seclabel sans">Section II · Expanding</div>
-    <h2>More Labs, <em>In Development.</em></h2>
-    <p class="intro">The flagship proves the model. The next labs take on decisions that reach beyond any single city — the questions every community in the country is being asked to answer.</p>
-    <div class="expand">
-      <div class="ecard">
-        <span class="soon sans">In development</span>
-        <h3>The Cost of Growing Old</h3>
-        <p>Social Security — the hardest long-term economic decision a society makes, and one almost no one understands. Students investigate how it works, why it's strained, and what the real tradeoffs of fixing it are.</p>
-        <div class="q">Who pays, who benefits, and what do we owe each other across generations?</div>
-      </div>
-      <div class="ecard">
-        <span class="soon sans">In development</span>
-        <h3>The Machines Next Door</h3>
-        <p>Data centers — the physical backbone of the AI economy — are being built across the country. Students compare how three real communities weigh the jobs, the power and water costs, the tax deals, and who actually benefits.</p>
-        <div class="q">When a town trades its resources for growth, who gets the upside?</div>
-      </div>
+    <h2>Two questions. <em>Two live Civic Labs.</em></h2>
+    <p class="intro">Both labs begin with a consequential decision unfolding now in New York City. Students encounter the issue, investigate competing claims, listen to people who experience it differently, and create public work that a real audience can answer.</p>
+    <div class="live-grid">
+      <a class="flagship" href="ED_LAB_Food_Affordability.html">
+        <div class="strip">
+          <span class="live sans">● Live</span>
+          <span class="stripmeta sans">Civic Lab 01 · Food Affordability · The Bronx</span>
+        </div>
+        <div class="body">
+          <div class="labno sans">Civic Lab 01</div>
+          <h3>Who Gets to Eat Affordably?</h3>
+          <p>Should a city build and own a grocery store? Students investigate the public plan, neighborhood food economy, real money, and genuine disagreement.</p>
+          <div class="incl sans"><b>Students create:</b> a defensible public position grounded in data, field research, stakeholder voices, and competing proposals.</div>
+          <span class="go sans">Open the food affordability lab →</span>
+        </div>
+      </a>
+      <a class="flagship" href="ai-in-schools/">
+        <div class="strip">
+          <span class="live sans">● Live</span>
+          <span class="stripmeta sans">Civic Lab 02 · AI in Schools · New York City</span>
+        </div>
+        <div class="body">
+          <div class="labno sans">Civic Lab 02</div>
+          <h3>Who Should Govern AI in Schools?</h3>
+          <p>New York City is deciding what role artificial intelligence should play in public education. Students should not merely be governed by it. They should help shape it.</p>
+          <div class="incl sans"><b>Students create:</b> a public framework for learning, rights, ownership, accountability, and the responsible use of AI in schools.</div>
+          <span class="go sans">Open the AI in Schools lab →</span>
+        </div>
+      </a>
     </div>
   </div>
 
   <div class="section">
-    <div class="seclabel sans">Section III · Anatomy</div>
+    <div class="seclabel sans">Section II · Anatomy</div>
     <h2>What's in <em>Every</em> Civic Lab.</h2>
     <p class="intro">Each lab is a complete, ready-to-run package built on the same structure — so once an educator has run one, they can run any of them. The shared research tools carry across every lab; only the issue changes.</p>
     <div class="anatomy">
@@ -195,11 +192,12 @@ footer .copy .ai{display:block;margin-top:4px;color:#9aa3ab;}
 
   <div class="section" style="border-bottom:none;">
     <div class="bridge">
-      <div class="seclabel sans">Section IV · For Students</div>
+      <div class="seclabel sans">Section III · For Students</div>
       <h2>The lab they work in looks <em>different</em> — on purpose.</h2>
       <p>An educator evaluates the curriculum on a page like this one: calm, complete, rigorous. But the surface a <strong>student</strong> actually works in is built differently — brighter, bolder, rooted in the place the lab is about. The shift in feel is deliberate: it marks the move from <em>studying</em> a decision to <em>investigating</em> one.</p>
-      <p>Step into the student-facing version of the flagship lab to see what your class would actually use.</p>
-      <a class="go sans" href="ED_LAB_Food_Affordability.html">Enter the student lab →</a>
+      <p>Step into either live issue to see what students and educators can use now.</p>
+      <a class="go sans" href="ED_LAB_Food_Affordability.html">Explore food affordability →</a>
+      <a class="go sans" href="ai-in-schools/" style="margin-left:10px;">Explore AI in schools →</a>
     </div>
   </div>
 
